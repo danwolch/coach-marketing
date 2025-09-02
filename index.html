@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Executive-level AI career coach in your pocket. Weekly voice sessions that turn your context into clear next steps—private, proactive, and built for builders." />
   <meta name="color-scheme" content="light dark" />
   <title>Coach — Executive-level career coach. In your pocket.</title>
@@ -50,14 +50,21 @@
     img{max-width:100%;display:block}
 
     /* --- Layout --- */
-    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+    /* Container provides consistent side padding, with safe-area support */
+    .container{
+      max-width:var(--maxw);
+      margin-inline:auto;
+      padding-block:0;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
     header{
       position:sticky;top:0;z-index:50;
       backdrop-filter:saturate(120%) blur(10px);
       background: color-mix(in oklab, var(--bg) 85%, transparent);
       border-bottom:1px solid var(--border);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
     .nav a{opacity:.9;text-decoration:none}
@@ -79,7 +86,7 @@
                   radial-gradient(1000px 500px at 10% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%);
       border-bottom:1px solid var(--border);
     }
-    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:80px 0}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:80px}
     .eyebrow{display:inline-block;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
     h1{font-size: clamp(2rem, 4.8vw, 3.5rem); line-height:1.1; margin:12px 0 16px;}
     .sub{font-size: clamp(1rem, 1.6vw, 1.2rem);color:var(--muted);max-width:52ch}
@@ -124,7 +131,7 @@
 
     /* --- CTA band --- */
     .cta-band{background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 25%, var(--bg)), color-mix(in oklab, var(--accent-2) 12%, var(--bg)));border:1px solid var(--border);border-left:0;border-right:0}
-    .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:28px 0}
+    .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-block:28px}
 
     footer{padding:30px 0;color:var(--muted)}
 
