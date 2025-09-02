@@ -144,6 +144,22 @@
     .mt-2{margin-top:10px}
     .mt-3{margin-top:16px}
     .mt-4{margin-top:22px}
+
+    /* --- Accessibility --- */
+    /* Visually hide skip link until focused, keep accessible to screen readers */
+    .sr-only{
+      position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;
+      clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .sr-only:focus,.sr-only:active{
+      left:16px;top:12px;width:auto;height:auto;overflow:visible;
+      clip:auto;clip-path:none;white-space:normal;z-index:1000;
+      padding:8px 12px;border:1px solid var(--border);border-radius:8px;
+      background:var(--surface);color:var(--text);
+      outline:2px solid color-mix(in oklab, var(--accent) 60%, white);outline-offset:2px;
+      box-shadow: var(--shadow);
+    }
   </style>
 </head>
 <body>
