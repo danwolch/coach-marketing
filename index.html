@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Executive-level AI career coach in your pocket. Weekly voice sessions that turn your context into clear next steps—private, proactive, and built for builders." />
+  <meta name="color-scheme" content="light dark" />
+  <title>Coach — Executive-level career coach. In your pocket.</title>
+  <!-- TODO: Replace the two CTA links below with your real TestFlight / App Store / Waitlist URLs. -->
+  <style>
+    /* --- Base / Reset --- */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.55; 
+      -webkit-font-smoothing: antialiased; 
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    :root{
+      --bg: #0b0c10;
+      --surface: #111217;
+      --muted: #a3aab8;
+      --text: #e6e8ee;
+      --card: #0f1117;
+      --border: #20232b;
+      --accent: #7c8cff; /* Indigo-ish */
+      --accent-2: #6ef3d6; /* Mint */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f8fb;
+        --surface: #ffffff;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: #e5e7eb;
+        --shadow: 0 8px 24px rgba(2,6,23,0.08);
+      }
+    }
+
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    /* --- Layout --- */
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(120%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .nav a{opacity:.9;text-decoration:none}
+    .nav-links{display:flex;gap:22px;align-items:center}
+    .nav-links a{font-weight:600}
+
+    /* --- Buttons --- */
+    .btn{appearance:none;border:1px solid var(--border);background:transparent;color:var(--text);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:none;transition:transform .05s ease, background .2s ease,border-color .2s ease}
+    .btn:focus{outline:2px solid color-mix(in oklab, var(--accent) 60%, white);outline-offset:2px}
+    .btn:hover{border-color:color-mix(in oklab, var(--border) 50%, var(--accent) 50%)}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0c10;border-color:transparent}
+    .btn-ghost{background:transparent}
+
+    /* --- Hero --- */
+    .hero{
+      position:relative;overflow:hidden;
+      background: radial-gradient(1200px 600px at 70% -20%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
+                  radial-gradient(1000px 500px at 10% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%);
+      border-bottom:1px solid var(--border);
+    }
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:80px 0}
+    .eyebrow{display:inline-block;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size: clamp(2rem, 4.8vw, 3.5rem); line-height:1.1; margin:12px 0 16px;}
+    .sub{font-size: clamp(1rem, 1.6vw, 1.2rem);color:var(--muted);max-width:52ch}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .phone-card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 34px;
+      padding: 22px 16px; 
+      box-shadow: var(--shadow);
+      width:min(360px, 90%);
+      justify-self:end;
+    }
+    .status{display:flex;gap:10px;align-items:center;margin-bottom:12px;color:var(--muted);font-size:.9rem}
+    .status .pulse{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent);animation:pulse 2s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklab,var(--accent) 60%, transparent)}70%{box-shadow:0 0 0 12px rgba(0,0,0,0)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
+    .bubble{background:color-mix(in oklab, var(--accent) 18%, var(--card) 82%);border:1px solid var(--border);padding:12px 14px;border-radius:14px;margin:10px 0}
+    .me{margin-left:auto;background:transparent;border:1px solid var(--border)}
+
+    /* --- Sections --- */
+    section{padding:64px 0;border-bottom:1px solid var(--border)}
+    h2{font-size: clamp(1.4rem, 2.2vw, 2rem); margin:0 0 14px}
+    p.lead{color:var(--muted);max-width:70ch}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .list{display:grid;gap:10px;padding:0;margin:0}
+    .list li{list-style:none;padding-left:28px;position:relative}
+    .list li::before{content:"✓";position:absolute;left:0;top:0.1rem;color:var(--accent)}
+
+    /* --- Trust strip --- */
+    .trust{display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:var(--muted)}
+    .pill{border:1px solid var(--border);border-radius:999px;padding:8px 12px;background:var(--surface)}
+
+    /* --- Two-up features --- */
+    .feature{display:flex;gap:16px;align-items:flex-start}
+    .icon{flex:0 0 36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));opacity:.9;display:grid;place-items:center;color:#0b0c10;font-weight:900}
+
+    /* --- FAQ --- */
+    details{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:var(--surface)}
+    details+details{margin-top:10px}
+    details summary{cursor:pointer;font-weight:700}
+
+    /* --- CTA band --- */
+    .cta-band{background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 25%, var(--bg)), color-mix(in oklab, var(--accent-2) 12%, var(--bg)));border:1px solid var(--border);border-left:0;border-right:0}
+    .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:28px 0}
+
+    footer{padding:30px 0;color:var(--muted)}
+
+    /* --- Responsive --- */
+    @media (max-width: 940px){
+      .hero .wrap{grid-template-columns:1fr;gap:28px}
+      .phone-card{justify-self:start}
+      .grid-2{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+
+    /* --- Utilities --- */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .mb-0{margin-bottom:0}
+    .mt-0{margin-top:0}
+    .mt-2{margin-top:10px}
+    .mt-3{margin-top:16px}
+    .mt-4{margin-top:22px}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Coach home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Coach</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how-it-works">How it works</a>
+        <a href="#why-different">Why different</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-primary" href="https://example.com/testflight">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container wrap">
+        <div>
+          <span class="eyebrow">Voice-first AI coaching</span>
+          <h1 id="hero-title">Executive-level career coach. In your pocket.</h1>
+          <p class="sub">Weekly voice sessions that turn your context into clear next steps—private, proactive, and built for builders. <em class="muted">Not a note‑taker. A coach.</em></p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://example.com/testflight">Get the app</a>
+            <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+          </div>
+          <div class="mt-4 trust">
+            <span class="muted">Early users:</span>
+            <span class="pill">PMs</span>
+            <span class="pill">Engineering Leads</span>
+            <span class="pill">ICs at high‑growth teams</span>
+          </div>
+        </div>
+        <aside class="phone-card" aria-label="Conversation preview">
+          <div class="status"><span class="pulse" aria-hidden="true"></span><span>Live session • 19:58</span></div>
+          <div class="bubble" aria-label="Coach message">Tell me what matters this week. What outcome are you aiming for, and who do you need to influence?</div>
+          <div class="bubble me" aria-label="User message">I need to align the platform team and my VP on resourcing. Unsure how to frame it.</div>
+          <div class="bubble" aria-label="Coach message">Let’s choose: 1) Decision you want 2) Options you’ll present 3) What each stakeholder cares about. I’ll draft your ask and follow‑ups.</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Why this -->
+    <section id="why" aria-labelledby="why-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="why-title">Progress on purpose</h2>
+          <p class="lead">Most people react to tasks, skip advocacy, and stall. Coach creates a weekly space to think, decide, and act—so you move forward intentionally.</p>
+          <ul class="list mt-3">
+            <li>Think out loud, leave with a plan.</li>
+            <li>Specific next steps and accountability nudges.</li>
+            <li>No doc‑dump required—the context is in your head.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="feature"><div class="icon" aria-hidden="true">1</div><div><strong>5‑minute context</strong><br/><span class="muted">Quick voice onboarding—goals, role, immediate decisions.</span></div></div>
+          <div class="feature mt-3"><div class="icon" aria-hidden="true">2</div><div><strong>Weekly 20‑minute session</strong><br/><span class="muted">Like a call with an executive coach—clarify, choose, commit.</span></div></div>
+          <div class="feature mt-3"><div class="icon" aria-hidden="true">3</div><div><strong>Action loop</strong><br/><span class="muted">Summaries, prioritized to‑dos, and check‑ins to keep momentum.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transcripts & mobile fit -->
+    <section id="how-it-works" aria-labelledby="how-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="how-title">What about meeting transcripts?</h2>
+          <p class="lead">Optional and coaching‑only. Opt‑in specific meetings to analyze how you lead, influence, and decide. No always‑on recording. No meeting notes service.</p>
+          <ul class="list mt-3">
+            <li>Scoped, explicit opt‑in per meeting.</li>
+            <li>Used purely to improve your leadership—not to replace note tools.</li>
+            <li>Delete anytime. You stay in control.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Designed for mobile—without laptop friction</h2>
+          <ul class="list mt-2">
+            <li><strong>Voice‑first</strong> so you can coach while walking.</li>
+            <li><strong>Zero prep</strong>—capture the context that lives only in your head.</li>
+            <li><strong>Follow‑ups, not busywork</strong>—clear actions, no tab‑sprawl mid‑work.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiation -->
+    <section id="why-different" aria-labelledby="diff-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="diff-title">Why it’s different from a custom GPT or Gemini’s coach</h2>
+          <ul class="list mt-2">
+            <li><strong>Relationship, not a chat</strong> — persistent memory + weekly cadence.</li>
+            <li><strong>Proactive</strong> — brings relevant playbooks/examples to you.</li>
+            <li><strong>Company‑aware</strong> — learns your org, stakeholders, and norms.</li>
+            <li><strong>Only on your side</strong> — built for individuals; reimbursable, not owned by work.</li>
+            <li><strong>Voice‑native</strong> — optimized for thinking out loud, not editing PRDs.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">Today & Roadmap</h3>
+          <div class="grid-2 mt-2">
+            <div>
+              <strong>What it does today</strong>
+              <ul class="list mt-2">
+                <li>Weekly voice sessions + concise summaries</li>
+                <li>Personal memory of goals & stakeholders</li>
+                <li>Accountability nudges</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Where it’s going</strong>
+              <ul class="list mt-2">
+                <li>Deeper examples from analogous wins</li>
+                <li>Scoped meeting transcripts (opt‑in)</li>
+                <li>Personalized industry intel (news/podcasts)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Who -->
+    <section id="privacy" aria-labelledby="privacy-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="privacy-title">Privacy & control</h2>
+          <ul class="list mt-2">
+            <li>Your recordings and transcripts are <strong>yours</strong>.</li>
+            <li>Opt‑in sources only. Delete anytime.</li>
+            <li>Data isn’t used to train shared models.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Who it’s for</h2>
+          <p class="lead">PMs, engineers, and leaders who want executive‑level coaching without the executive‑level price—or calendar overhead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <h2 id="cta-title" class="mb-0">Coach your career on purpose.</h2>
+        <div>
+          <a class="btn btn-primary" href="https://example.com/testflight">Get the app</a>
+          <a class="btn btn-ghost" href="https://example.com/waitlist">Join the waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <details>
+          <summary>How do I give it context fast?</summary>
+          <p>Start with a 5‑minute voice onboarding. Optionally add past reviews/goals later.</p>
+        </details>
+        <details>
+          <summary>Will it replace my meeting note tool?</summary>
+          <p>No—this is for <em>coaching</em>, not notes. You can opt‑in select meetings purely to improve your leadership.</p>
+        </details>
+        <details>
+          <summary>Will it slow me down at work?</summary>
+          <p>Sessions are short, mobile‑friendly, and produce clear actions. No tab‑sprawl.</p>
+        </details>
+        <details>
+          <summary>Who sees my data?</summary>
+          <p>You. Not your employer. You can delete your data anytime.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="center muted">© <span id="year"></span> Coach. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Tiny enhancement: current year; safe in vanilla HTML (can be removed if you prefer 0 JS)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
