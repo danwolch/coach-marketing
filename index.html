@@ -44,14 +44,14 @@
     }
 
     :root{
-      --bg: #0b0c10;
-      --surface: #111217;
-      --muted: #a3aab8;
-      --text: #e6e8ee;
-      --card: #0f1117;
-      --border: #20232b;
-      --accent: #7c8cff; /* Indigo-ish */
-      --accent-2: #6ef3d6; /* Mint */
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178; /* Emerald */
+      --accent-2: #83f5a2; /* Soft mint */
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 16px;
       --maxw: 1100px;
@@ -59,13 +59,13 @@
 
     @media (prefers-color-scheme: light){
       :root{
-        --bg: #f7f8fb;
-        --surface: #ffffff;
-        --card: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --border: #e5e7eb;
-        --shadow: 0 8px 24px rgba(2,6,23,0.08);
+        --bg: #0c2f1b;
+        --surface: #123922;
+        --card: #10301e;
+        --text: #f2fff5;
+        --muted: #c3d8c8;
+        --border: #1f4a30;
+        --shadow: 0 8px 24px rgba(0,0,0,0.35);
       }
     }
 
@@ -89,7 +89,7 @@
     }
     .nav{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:var(--accent)}
     .nav a{opacity:.9;text-decoration:none}
     .nav-links{display:flex;gap:22px;align-items:center}
     .nav-links a{font-weight:600}
@@ -99,14 +99,14 @@
     .btn:focus{outline:2px solid color-mix(in oklab, var(--accent) 60%, white);outline-offset:2px}
     .btn:hover{border-color:color-mix(in oklab, var(--border) 50%, var(--accent) 50%)}
     .btn:active{transform:translateY(1px)}
-    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0c10;border-color:transparent}
+    .btn-primary{background:var(--accent);color:#0c2f1b;border-color:transparent;transition:background .2s ease}
+    .btn-primary:hover{background:color-mix(in oklab, var(--accent) 85%, white)}
     .btn-ghost{background:transparent}
 
     /* --- Hero --- */
     .hero{
       position:relative;overflow:hidden;
-      background: radial-gradient(1200px 600px at 70% -20%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
-                  radial-gradient(1000px 500px at 10% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%);
+      background: var(--bg);
       border-bottom:1px solid var(--border);
     }
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:80px}
@@ -145,7 +145,7 @@
 
     /* --- Two-up features --- */
     .feature{display:flex;gap:16px;align-items:flex-start}
-    .icon{flex:0 0 36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));opacity:.9;display:grid;place-items:center;color:#0b0c10;font-weight:900}
+    .icon{flex:0 0 36px;height:36px;border-radius:10px;background:var(--accent);opacity:.9;display:grid;place-items:center;color:#0c2f1b;font-weight:900}
 
     /* --- FAQ --- */
     details{border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:var(--surface)}
@@ -153,7 +153,7 @@
     details summary{cursor:pointer;font-weight:700}
 
     /* --- CTA band --- */
-    .cta-band{background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 25%, var(--bg)), color-mix(in oklab, var(--accent-2) 12%, var(--bg)));border:1px solid var(--border);border-left:0;border-right:0}
+    .cta-band{background: var(--surface);border:1px solid var(--border);border-left:0;border-right:0}
     .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-block:28px}
 
     footer{padding:30px 0;color:var(--muted)}
@@ -215,8 +215,8 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="container wrap">
         <div>
-          <h1 id="hero-title"><b>Accelerate your career</b></h1>
-          <p class="sub">The AI powered app that helps you get that promotion, a raise, build influence, and manage up. <em class="muted">Realize your potential.<em></p>
+          <h1 id="hero-title"><b>Exec career coaching for everyone.</b></h1>
+          <p class="sub">Pro athletes and CEOs have coaches to help them be at their best. You should too. <em class="muted">Invest in yourself.<em></p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="https://testflight.apple.com/join/m9fgUvak">Get the app</a>
             <!-- <a class="btn btn-ghost" href="#how-it-works">See how it works</a> -->
@@ -233,7 +233,7 @@
           <div class="status"><span class="pulse" aria-hidden="true"></span><span>Live session • 19:58</span></div>
           <div class="bubble" aria-label="Coach message">Tell me what matters this week. What outcome are you aiming for, and who do you need to influence?</div>
           <div class="bubble me" aria-label="User message">I need to align the platform team and my VP on resourcing. Unsure how to frame it.</div>
-          <div class="bubble" aria-label="Coach message">Let’s choose: 1) Decision you want 2) Options you’ll present 3) What each stakeholder cares about. I’ll draft your ask and follow‑ups.</div>
+          <div class="bubble" aria-label="Coach message">Let’s choose: 1) Decision you want 2) Options you’ll present 3) What each stakeholder cares about. Lets role play your conversation with your manager.</div>
         </aside>
       </div>
     </section>
