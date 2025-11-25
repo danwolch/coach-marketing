@@ -12,14 +12,28 @@
     body{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       line-height:1.6;
-      color:#0d1f14;
-      background:#f6fbf7;
+      -webkit-font-smoothing: antialiased;
+      color: var(--text);
+      background: var(--bg);
     }
-    a{color:inherit}
+
+    :root{
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    a{color:var(--accent)}
+    a:hover{color:color-mix(in oklab, var(--accent) 85%, white)}
     header{
       position:sticky;top:0;z-index:10;
-      background:rgba(246,251,247,0.95);
-      border-bottom:1px solid #d7e4d9;
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--border);
       backdrop-filter:saturate(120%) blur(10px);
     }
     .container{
@@ -29,23 +43,26 @@
       padding-right:max(20px, env(safe-area-inset-right));
     }
     .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#0c2f1b;text-decoration:none}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:#31c178}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);text-decoration:none}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
     main{padding:40px 0 60px}
-    h1{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 8px;color:#0c2f1b}
-    h2{margin-top:30px;font-size:1.1rem;color:#0c2f1b}
-    p,li{color:#0d1f14}
-    .muted{color:#4b6354}
+    h1{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 8px}
+    h2{margin-top:30px;font-size:1.1rem}
+    h3{margin-top:20px;font-size:1rem;color:var(--text)}
+    p,li{color:var(--text)}
+    ul{padding-left:20px}
+    ul li{margin-bottom:6px}
+    .muted{color:var(--muted)}
     .card{
-      background:#fff;
-      border:1px solid #d7e4d9;
+      background:var(--card);
+      border:1px solid var(--border);
       border-radius:16px;
       padding:24px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+      box-shadow:var(--shadow);
     }
     ol{padding-left:20px}
     ol li{margin-bottom:8px}
-    footer{padding:20px 0;color:#4b6354;border-top:1px solid #d7e4d9;text-align:center}
+    footer{padding:20px 0;color:var(--muted);border-top:1px solid var(--border);text-align:center}
     .small{font-size:.95rem}
   </style>
 </head>
@@ -186,7 +203,7 @@
         <li>Their feedback contributes to synthesized insights</li>
         <li>Select quotes may be included for authenticity</li>
         <li>Manager feedback is attributed by default</li>
-        <li>Other feedback is presented anonymously (solely on a “best efforts” basis; we cannot guarantee complete anonymity)</li>
+        <li>Other feedback is presented anonymously (solely on a "best efforts" basis; we cannot guarantee complete anonymity)</li>
       </ul>
 
       <h3>3.4 Legal Requirements</h3>
