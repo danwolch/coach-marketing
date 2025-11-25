@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Support for Work Coach." />
+  <title>Work Coach — Support</title>
+  <link rel="icon" href="img/favicon.ico">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      color:#0d1f14;
+      background:#f6fbf7;
+    }
+    a{color:inherit}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(246,251,247,0.95);
+      border-bottom:1px solid #d7e4d9;
+      backdrop-filter:saturate(120%) blur(10px);
+    }
+    .container{
+      max-width:900px;
+      margin-inline:auto;
+      padding-left:max(20px, env(safe-area-inset-left));
+      padding-right:max(20px, env(safe-area-inset-right));
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#0c2f1b;text-decoration:none}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:#31c178}
+    main{padding:40px 0 60px}
+    h1{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 8px;color:#0c2f1b}
+    h2{margin-top:30px;font-size:1.1rem;color:#0c2f1b}
+    p,li{color:#0d1f14}
+    .muted{color:#4b6354}
+    .card{
+      background:#fff;
+      border:1px solid #d7e4d9;
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+    .support-section{
+      margin-top:32px;
+      padding:24px;
+      background:#edf7f0;
+      border-radius:12px;
+    }
+    .support-section h2{margin-top:0}
+    .email-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:12px 24px;
+      background:#31c178;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:600;
+      margin-top:12px;
+      transition:background 0.2s ease;
+    }
+    .email-link:hover{background:#28a866}
+    footer{padding:20px 0;color:#4b6354;border-top:1px solid #d7e4d9;text-align:center}
+    .small{font-size:.95rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./" aria-label="Work Coach home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Work Coach</span>
+      </a>
+      <nav aria-label="Secondary">
+        <a class="muted" href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container card">
+      <h1>Support</h1>
+      <p>We're here to help you get the most out of Work Coach. Find answers to common questions below or reach out to our support team.</p>
+
+      <div class="support-section">
+        <h2>Keep Your App Updated</h2>
+        <p>For the best experience and access to the latest features, please make sure you have the most recent version of Work Coach installed.</p>
+        <p><strong>How to update:</strong></p>
+        <ul>
+          <li>Open the App Store on your device</li>
+          <li>Search for "Work Coach" or visit your purchased apps</li>
+          <li>Tap "Update" if an update is available</li>
+        </ul>
+        <p class="muted small">Keeping your app updated ensures you have the latest improvements, bug fixes, and security updates.</p>
+      </div>
+
+      <div class="support-section">
+        <h2>Contact Support</h2>
+        <p>Have a question or need assistance? Our support team is ready to help.</p>
+        <a class="email-link" href="mailto:support@work.coach">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          support@work.coach
+        </a>
+        <p class="muted small" style="margin-top:16px">We typically respond within 24–48 hours.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Work Coach. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
