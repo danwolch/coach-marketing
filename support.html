@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Support for Work Coach." />
+  <title>Work Coach — Support</title>
+  <link rel="icon" href="img/favicon.ico">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    :root{
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    a{color:inherit}
+    header{
+      position:sticky;top:0;z-index:10;
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:saturate(120%) blur(10px);
+    }
+    .container{
+      max-width:900px;
+      margin-inline:auto;
+      padding-left:max(20px, env(safe-area-inset-left));
+      padding-right:max(20px, env(safe-area-inset-right));
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    main{padding:40px 0 60px}
+    h1{font-size:clamp(1.8rem,3vw,2.4rem);margin:0 0 8px}
+    h2{margin-top:30px;font-size:1.1rem}
+    p,li{color:var(--text)}
+    .muted{color:var(--muted)}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .email-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--accent);
+      color:#0c2f1b;
+      padding:12px 24px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:12px;
+      transition:background 0.2s;
+    }
+    .email-link:hover{background:color-mix(in oklab, var(--accent) 85%, white)}
+    .tip-box{
+      background:var(--surface);
+      border-left:4px solid var(--accent);
+      padding:16px 20px;
+      border-radius:0 8px 8px 0;
+      margin-top:20px;
+    }
+    footer{padding:20px 0;color:var(--muted);border-top:1px solid var(--border);text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="./" aria-label="Work Coach home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Work Coach</span>
+      </a>
+      <nav aria-label="Secondary">
+        <a class="muted" href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container card">
+      <h1>Support</h1>
+      <p>We're here to help you get the most out of Work Coach. If you have questions, feedback, or need assistance, don't hesitate to reach out.</p>
+
+      <h2>Contact Us</h2>
+      <p>For any questions or support requests, email our team directly:</p>
+      <a class="email-link" href="mailto:support@work.coach">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        support@work.coach
+      </a>
+
+      <h2>Keep Your App Updated</h2>
+      <p>For the best experience, make sure you're running the latest version of Work Coach. Updates include new features, performance improvements, and bug fixes.</p>
+      <div class="tip-box">
+        <strong>Tip:</strong> Open the App Store on your device, search for "Work Coach," and tap <strong>Update</strong> if an update is available. You can also enable automatic updates in your device settings.
+      </div>
+
+      <h2>Common Questions</h2>
+      <p>Before reaching out, you might find your answer faster by updating to the latest app version—many issues are resolved in recent updates.</p>
+      <p>If you're still experiencing problems after updating, please email us with details about your issue, and we'll get back to you as soon as possible.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Work Coach. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
