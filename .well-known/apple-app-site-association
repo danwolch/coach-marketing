@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "76TVFCUKK7.com.danwolch.Coach",
+        "paths": ["/app/conversation/*"]
+      }
+    ]
+  }
+}
