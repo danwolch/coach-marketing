@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="360 Feedback cycles with Work Coach. Hear candid truth from leaders, peers, and reports so you can grow faster." />
+  <meta name="color-scheme" content="light dark" />
+  <title>360 Feedback — Work Coach</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      -webkit-font-smoothing: antialiased;
+      color: var(--text);
+      background: radial-gradient(circle at 15% 20%, color-mix(in oklab, var(--accent) 30%, transparent) 0 160px, transparent 200px),
+                  radial-gradient(circle at 90% 10%, color-mix(in oklab, var(--accent-2) 22%, transparent) 0 180px, transparent 220px),
+                  var(--bg);
+      min-height: 100vh;
+    }
+    :root{
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178;
+      --accent-2: #83f5a2;
+      --shadow: 0 14px 40px rgba(0,0,0,.38);
+      --radius: 18px;
+      --maxw: 1100px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#0c2f1b;--surface:#123922;--card:#10301e;--text:#f2fff5;--muted:#c3d8c8;--border:#1f4a30;--shadow:0 12px 32px rgba(0,0,0,.35)}
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin-inline:auto;padding-left:max(20px, env(safe-area-inset-left));padding-right:max(20px, env(safe-area-inset-right));}
+    header{position:sticky;top:0;z-index:40;background:color-mix(in oklab, var(--bg) 88%, transparent);backdrop-filter: blur(10px);border-bottom:1px solid var(--border);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:var(--accent)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .btn{appearance:none;border:1px solid var(--border);background:transparent;color:var(--text);padding:10px 16px;border-radius:999px;font-weight:700;display:inline-flex;gap:10px;align-items:center;transition:transform .05s ease, background .2s ease,border-color .2s ease;}
+    .btn:hover{border-color:color-mix(in oklab, var(--border) 50%, var(--accent) 50%)}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:var(--accent);color:#0c2f1b;border-color:transparent;}
+    .btn-primary:hover{background:color-mix(in oklab, var(--accent) 85%, white)}
+    .hero{padding:80px 0 60px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg, transparent 0%, color-mix(in oklab, var(--accent) 8%, transparent) 50%, transparent 70%);pointer-events:none;}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center;position:relative;z-index:1;}
+    .eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+    h1{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.12;margin:12px 0 16px;}
+    p.lead{color:var(--muted);max-width:70ch;font-size:1.05rem;}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;align-items:center;}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-weight:700;font-size:.95rem;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);}
+    .glow{position:relative;overflow:hidden;}
+    .glow::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(120deg, rgba(131,245,162,.4), rgba(49,193,120,.5), rgba(131,245,162,.25));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.5;}
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:12px;margin-top:18px;}
+    .stat{padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:var(--surface);}
+    .stat strong{display:block;font-size:1.4rem;}
+    section{padding:64px 0;border-bottom:1px solid var(--border);}
+    h2{font-size:clamp(1.5rem,2.3vw,2.2rem);margin:0 0 14px;}
+    .grid-2{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:22px;align-items:start;}
+    .list{padding:0;margin:0;display:grid;gap:12px;}
+    .list li{list-style:none;padding-left:30px;position:relative;color:var(--muted);}
+    .list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:900;}
+    .pill-list{display:flex;flex-wrap:wrap;gap:10px;}
+    .pill{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:8px 12px;color:var(--muted);}
+    .step{display:flex;gap:14px;align-items:flex-start;}
+    .step .num{width:32px;height:32px;border-radius:10px;background:var(--accent);color:#0c2f1b;font-weight:800;display:grid;place-items:center;flex-shrink:0;}
+    .muted{color:var(--muted)}
+    .quote{border-left:3px solid var(--accent);padding-left:14px;color:var(--muted);font-style:italic;}
+    .table{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:14px;}
+    .table .cell{padding:16px;border-radius:14px;background:var(--surface);border:1px solid var(--border);}
+    .inversion li::before{content:"✗";color:#ffb4b4;font-weight:900;}
+    .cta-band{background:var(--surface);border:1px solid var(--border);border-left:0;border-right:0;}
+    .cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-block:28px;}
+    footer{padding:30px 0;color:var(--muted);text-align:center;}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.nav-links{display:none;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Coach home">
+        <span class="dot" aria-hidden="true"></span><span>Work Coach</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="#how">How it works</a>
+        <a href="#lineup">12-person lineup</a>
+        <a href="#inversion">Munger inversion</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/work-coach/id6749246024">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">360 feedback, rethought</span>
+          <h1 id="hero-title">See how your org really sees you — then act with confidence.</h1>
+          <p class="lead">Work Coach runs full-cycle 360s across leaders, peers, and reports. You get candid truth, anonymized insights, and a battle plan for how to lead better next week.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://apps.apple.com/us/app/work-coach/id6749246024">Start a 360 cycle</a>
+            <a class="btn" href="#inversion">See what to avoid</a>
+          </div>
+          <div class="badge" aria-label="Cycle cadence"><span aria-hidden="true">⏱</span>20 minute voice kickoff • actions in 24h</div>
+        </div>
+        <div class="card glow" aria-label="360 snapshot">
+          <div class="badge" style="margin-bottom:12px;">360 Snapshot</div>
+          <p class="quote">“Work Coach collected the tough feedback my peers wouldn’t say directly and turned it into three moves I could make that week.”</p>
+          <div class="stat-grid">
+            <div class="stat"><strong>12 voices</strong><span class="muted">4 leaders • 4 peers • 4 reports</span></div>
+            <div class="stat"><strong>24 hrs</strong><span class="muted">to first narrative & action plan</span></div>
+            <div class="stat"><strong>3x</strong><span class="muted">more specifics than annual reviews</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="how-title">How a Work Coach 360 works</h2>
+          <p class="lead">Short, voice-first cycles that respect everyone’s time and turn raw comments into tactical moves.</p>
+          <div class="list">
+            <div class="step"><div class="num">1</div><div><strong>Kickoff</strong><br/><span class="muted">5-minute voice brief on your goals, current projects, and concerns.</span></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Stakeholder outreach</strong><br/><span class="muted">Coach interviews leaders, peers, and reports with targeted prompts—no spammy forms.</span></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Synthesis</strong><br/><span class="muted">Signals are anonymized and tagged by theme: decision-making, influence, execution, teaming.</span></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Action plan</strong><br/><span class="muted">You get three plays to run within 7 days plus scripts to close the loop with each group.</span></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">What you’ll see</h3>
+          <ul class="list">
+            <li>Blind spots surfaced early—before a perf review surprises you.</li>
+            <li>Strengths you can double-down on to influence decisions faster.</li>
+            <li>Role-play scripts for delicate follow-ups with leaders and reports.</li>
+            <li>One-page summary you can share with your manager if you choose.</li>
+          </ul>
+          <div class="pill-list" style="margin-top:14px;">
+            <span class="pill">Voice-first</span>
+            <span class="pill">Anon where it matters</span>
+            <span class="pill">Company-aware</span>
+            <span class="pill">Zero busywork</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lineup" aria-labelledby="lineup-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="lineup-title">The 12-person lineup that makes a 360 honest</h2>
+          <p class="lead">We recommend at least 12 voices: 4 above you, 4 peers, 4 reports. Anything less creates echo chambers.</p>
+          <div class="table">
+            <div class="cell">
+              <strong>Leadership (4)</strong>
+              <p class="muted">Manager, skip-level, and two senior leaders who depend on your work.</p>
+            </div>
+            <div class="cell">
+              <strong>Peers (4)</strong>
+              <p class="muted">Cross-functional partners who feel the impact of your collaboration daily.</p>
+            </div>
+            <div class="cell">
+              <strong>Reports (4)</strong>
+              <p class="muted">Direct reports or ICs downstream from your decisions—the candor you rarely hear.</p>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:12px;">You can add more voices, but this mix gives you the full org-level mirror without overwhelming anyone.</p>
+        </div>
+        <div class="card glow">
+          <h3 class="mt-0">Why it works better than a perf review</h3>
+          <ul class="list">
+            <li>More depth than manager-only reviews; you hear how peers really experience you.</li>
+            <li>Anonymity toggles let you separate sharp truth from identity to keep relationships healthy.</li>
+            <li>Coach knows your org, products, and politics—no generic leadership templates.</li>
+            <li>Follow-ups include scripts so you can close loops and build trust fast.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inversion" aria-labelledby="inversion-title">
+      <div class="container">
+        <h2 id="inversion-title">Charlie Munger’s inversion: how to sabotage a 360 (and how we prevent it)</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="mt-0">If you wanted the 360 to fail…</h3>
+            <ul class="list inversion">
+              <li>Ask only the people who already praise you and ignore dissenting peers.</li>
+              <li>Collect vague platitudes instead of hard examples—so nothing can change.</li>
+              <li>Make it unsafe to share; attach names to every sharp comment.</li>
+              <li>Delay synthesis until the annual review so feedback is stale.</li>
+              <li>Hide the action plan so no one knows you listened.</li>
+            </ul>
+          </div>
+          <div class="card glow">
+            <h3 class="mt-0">Work Coach flips the script</h3>
+            <ul class="list">
+              <li>We recruit a balanced 4/4/4 panel and weight feedback by proximity to outcomes.</li>
+              <li>Interviews use pointed prompts to pull specific examples, not generic praise.</li>
+              <li>Anon where it matters; sources stay protected so candor increases.</li>
+              <li>Insights synthesized in 24 hours with trend tags and priority calls.</li>
+              <li>Ready-to-send follow-ups show stakeholders you acted on what they shared.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="next-title">
+      <div class="container grid-2">
+        <div>
+          <h2 id="next-title">What happens after the cycle</h2>
+          <p class="lead">Your coach doesn’t disappear. We keep you accountable to the actions that earn trust back.</p>
+          <ul class="list">
+            <li>Weekly 20-minute voice sessions to review progress against the action plan.</li>
+            <li>Receipts you can bring to your manager to show growth before the next review.</li>
+            <li>Role-play sensitive conversations so you close gaps without damaging relationships.</li>
+            <li>Momentum tracking with reminders tailored to your org’s rhythms.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">Signals we monitor</h3>
+          <ul class="list">
+            <li>Influence on decisions and roadmap changes.</li>
+            <li>Reliability and follow-through as seen by peers.</li>
+            <li>Leadership presence: how often you proactively communicate.</li>
+            <li>Health of your direct reports: clarity, morale, and trust.</li>
+          </ul>
+          <div class="badge" style="margin-top:12px;">No extra tools — all inside Work Coach</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 id="cta-title" class="mb-0">Ready to hear the truth and act on it?</h2>
+          <p class="muted mt-0">Start your 360 cycle today. We’ll have a first read-out within 24 hours.</p>
+        </div>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/work-coach/id6749246024">Start a 360</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container muted">© <span id="year"></span> Coach. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
