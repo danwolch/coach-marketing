@@ -4,7 +4,11 @@
     "details": [
       {
         "appID": "26HC9LC3C4.com.danwolch.Coach",
-        "paths": ["/app/conversation/*"]
+        "paths": [
+          "/app",
+          "/app/open",
+          "/app/conversation/*"
+        ]
       }
     ]
   }
