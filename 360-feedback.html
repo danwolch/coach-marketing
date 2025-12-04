@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="What your direct reports will never say to your face. Get the candid 360 feedback you need to grow as a leader." />
   <meta name="color-scheme" content="light dark" />
-  <title>What Your Direct Reports Will Never Say | Work Coach</title>
+  <title>360 Feedback Cycles | Work Coach</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
@@ -533,6 +533,17 @@
       color: var(--text);
     }
 
+    /* Text cycling animation */
+    .cycling-text {
+      display: inline-block;
+      position: relative;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .cycling-text.fade-out {
+      opacity: 0;
+    }
+
     /* Accessibility */
     .sr-only {
       position: absolute;
@@ -589,7 +600,7 @@
     <section class="hero">
       <div class="container">
         <p class="hero-kicker">The feedback you're not getting</p>
-        <h1>What your direct reports will <em>never</em> say to your face</h1>
+        <h1>What your <span class="cycling-text" id="cycling-text">direct reports</span> will <em>never</em> say to your face</h1>
         <p class="hero-deck">You've built psychological safety. You have an open door policy. And you're still missing the full picture.</p>
       </div>
     </section>
@@ -632,6 +643,7 @@
             <p>Executive coaches have known this for decades. The first thing a good coach does is <strong>interview the people around you</strong> — leadership, peers, direct reports — to build a picture of how you're actually perceived.</p>
             <p>They ask questions you can't ask. They hear things people won't say to your face. They <strong>anonymize the sources</strong> and synthesize it into patterns you can act on.</p>
             <p>This is the work that costs $25,000 and takes months. It's also the work that separates managers who plateau from leaders who keep growing.</p>
+            <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get honest feedback</a>
           </div>
         </div>
       </div>
@@ -671,7 +683,7 @@
       <div class="container">
         <div class="pullquote-inner">
           <blockquote>"The feedback gap between what people say to your face and what they say about you is where careers stall."</blockquote>
-          <cite>— The uncomfortable truth about leadership</cite>
+          <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 40px; display: inline-block;">Start your 360 today</a>
         </div>
       </div>
     </section>
@@ -725,5 +737,36 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const phrases = ['direct reports', 'leadership', 'peers'];
+      const element = document.getElementById('cycling-text');
+      let currentIndex = 0;
+      const pauseDuration = 5000;
+      const fadeDuration = 500;
+
+      function cycle() {
+        setTimeout(function() {
+          // Fade out
+          element.classList.add('fade-out');
+          
+          setTimeout(function() {
+            // Change text while invisible
+            currentIndex = (currentIndex + 1) % phrases.length;
+            element.textContent = phrases[currentIndex];
+            
+            // Fade in
+            element.classList.remove('fade-out');
+            
+            // Continue cycling
+            cycle();
+          }, fadeDuration);
+        }, pauseDuration);
+      }
+
+      cycle();
+    })();
+  </script>
 </body>
 </html>
