@@ -155,7 +155,7 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
-      padding: 48px 0;
+      padding: 60px 0;
     }
 
     .divider-line {
@@ -173,6 +173,7 @@
     /* Uncomfortable truths */
     .truths {
       padding: 60px 0 100px;
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
 
@@ -260,6 +261,55 @@
 
     .content-body strong {
       color: var(--text);
+    }
+
+    /* Video demo section */
+    .video-demo {
+      padding: 100px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .video-demo-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .video-demo-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .video-demo-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .video-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+    }
+
+    .video-container {
+      position: relative;
+      padding-top: 65.06%;
+      background: var(--card);
+    }
+
+    .video-container iframe {
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
     }
 
     /* Solution section */
@@ -353,7 +403,7 @@
     /* Pull quote */
     .pullquote {
       padding: 100px 0;
-      background: var(--surface);
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
 
@@ -383,7 +433,7 @@
     /* How it works */
     .process {
       padding: 100px 0;
-      background: var(--card);
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
     }
 
@@ -605,45 +655,20 @@
       </div>
     </section>
 
-    <div class="divider">
-      <span class="divider-line"></span>
-      <span class="divider-symbol" aria-hidden="true">§</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <section class="truths" aria-labelledby="truths-title">
-      <h2 id="truths-title" class="sr-only">Uncomfortable truths</h2>
+    <section class="video-demo" aria-labelledby="video-title">
       <div class="container">
-        <div class="truths-grid">
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>Your 1:1s feel performative</h3>
-            <p>They tell you what they think you want to hear. The real concerns get saved for Slack DMs with peers.</p>
-          </div>
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>Your feedback lands wrong</h3>
-            <p>What you meant as coaching came across as criticism. They nodded and then vented to a friend.</p>
-          </div>
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>You have a blind spot</h3>
-            <p>There's a pattern everyone sees but you. And nobody's going to risk their job to tell you.</p>
-          </div>
+        <div class="video-demo-header">
+          <h2 id="video-title">See it in action</h2>
+          <p>Watch how Work Coach gathers and synthesizes 360 feedback</p>
         </div>
-      </div>
-    </section>
-
-    <section class="content" aria-labelledby="content-title">
-      <h2 id="content-title" class="sr-only">The power dynamic problem</h2>
-      <div class="container">
-        <div class="content-grid">
-          <p class="content-lead">The power dynamic makes honesty expensive. No matter how approachable you are, you still impact their raises, their projects, their career trajectory. That asymmetry shapes every interaction.</p>
-          <div class="content-body">
-            <p>Executive coaches have known this for decades. The first thing a good coach does is <strong>interview the people around you</strong> — leadership, peers, direct reports — to build a picture of how you're actually perceived.</p>
-            <p>They ask questions you can't ask. They hear things people won't say to your face. They <strong>anonymize the sources</strong> and synthesize it into patterns you can act on.</p>
-            <p>This is the work that costs $25,000 and takes months. It's also the work that separates managers who plateau from leaders who keep growing.</p>
-            <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get honest feedback</a>
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe
+              src="https://customer-k4gom1968lo53ti1.cloudflarestream.com/be1b6790ed73e9ebf82d574f8bbfd200/iframe?poster=https%3A%2F%2Fcustomer-k4gom1968lo53ti1.cloudflarestream.com%2Fbe1b6790ed73e9ebf82d574f8bbfd200%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+              loading="lazy"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+              allowfullscreen="true"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -673,6 +698,21 @@
             <h3>Interview junior staff</h3>
             <p>The feedback that's hardest to get and most important to hear.</p>
             <p class="feature-detail">Anonymized and aggregated to protect relationships</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="content-title">
+      <h2 id="content-title" class="sr-only">The power dynamic problem</h2>
+      <div class="container">
+        <div class="content-grid">
+          <p class="content-lead">The power dynamic makes honesty expensive. No matter how approachable you are, you still impact their raises, their projects, their career trajectory. That asymmetry shapes every interaction.</p>
+          <div class="content-body">
+            <p>Executive coaches have known this for decades. The first thing a good coach does is <strong>interview the people around you</strong> — leadership, peers, direct reports — to build a picture of how you're actually perceived.</p>
+            <p>They ask questions you can't ask. They hear things people won't say to your face. They <strong>anonymize the sources</strong> and synthesize it into patterns you can act on.</p>
+            <p>This is the work that costs $25,000 and takes months. It's also the work that separates managers who plateau from leaders who keep growing.</p>
+            <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get honest feedback</a>
           </div>
         </div>
       </div>
@@ -711,6 +751,35 @@
             <p class="step-number" aria-hidden="true">4</p>
             <h4>You get a clear picture</h4>
             <p>Strengths, blind spots, and concrete next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">
+      <span class="divider-line"></span>
+      <span class="divider-symbol" aria-hidden="true">The uncomfortable truths</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <section class="truths" aria-labelledby="truths-title">
+      <h2 id="truths-title" class="sr-only">Uncomfortable truths</h2>
+      <div class="container">
+        <div class="truths-grid">
+          <div class="truth">
+            <p class="truth-quote" aria-hidden="true">"</p>
+            <h3>Your 1:1s feel performative</h3>
+            <p>They tell you what they think you want to hear. The real concerns get saved for Slack DMs with peers.</p>
+          </div>
+          <div class="truth">
+            <p class="truth-quote" aria-hidden="true">"</p>
+            <h3>Your feedback lands wrong</h3>
+            <p>What you meant as coaching came across as criticism. They nodded and then vented to a friend.</p>
+          </div>
+          <div class="truth">
+            <p class="truth-quote" aria-hidden="true">"</p>
+            <h3>You have a blind spot</h3>
+            <p>There's a pattern everyone sees but you. And nobody's going to risk their job to tell you.</p>
           </div>
         </div>
       </div>
