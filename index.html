@@ -451,7 +451,7 @@
 
     /* How it works */
     .process {
-      padding: 80px 0;
+      padding: 100px 0;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
@@ -461,50 +461,77 @@
       font-size: 36px;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
       color: var(--text);
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
     }
 
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .steps {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
     }
 
     .step {
-      text-align: center;
-      padding: 32px 24px;
-    }
-
-    .step-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      color: var(--accent);
-      margin-bottom: 16px;
+      position: relative;
+      padding: 48px 40px 48px 120px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .step h4 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
       color: var(--text);
+      position: relative;
     }
 
     .step p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--muted);
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .step p.step-number {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-60%);
+      font-family: 'Playfair Display', serif;
+      font-size: 160px;
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0.25;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 700px) {
+      .step {
+        padding: 40px 32px 40px 100px;
+        min-height: 160px;
+      }
+      
+      .step p.step-number {
+        font-size: 120px;
+        left: 12px;
+      }
     }
 
     /* Comparison section */
@@ -565,8 +592,30 @@
       flex-shrink: 0;
     }
 
+    .comparison-list .check--muted {
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
     .comparison-list strong {
       color: var(--text);
+    }
+
+    .comparison-card--passive {
+      opacity: 0.7;
+    }
+
+    .comparison-card--passive h3 {
+      color: var(--muted);
+    }
+
+    .comparison-card--passive .comparison-list li {
+      color: color-mix(in oklab, var(--muted) 70%, transparent);
+    }
+
+    .comparison-card--active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), var(--shadow);
     }
 
     /* FAQ */
@@ -826,8 +875,8 @@
         <div class="steps">
           <div class="step">
             <p class="step-number" aria-hidden="true">1</p>
-            <h4>5-minute context</h4>
-            <p>Quick voice onboarding—goals, role, immediate decisions.</p>
+            <h4>Critical context</h4>
+            <p>Prior Reviews + company context + the clarity that comes from thinking out loud.</p>
           </div>
           <div class="step">
             <p class="step-number" aria-hidden="true">2</p>
@@ -851,28 +900,28 @@
     <section class="comparison" aria-labelledby="comparison-title">
       <div class="container">
         <div class="section-header">
-          <h2 id="comparison-title">Built for you, not your company</h2>
-          <p>Private, personal, and always on your side.</p>
+          <h2 id="comparison-title">Built for you to own your career</h2>
+          <p>Not your company. Not HR. You.</p>
         </div>
         <div class="comparison-grid">
-          <div class="comparison-card">
-            <h3>What it does today</h3>
+          <div class="comparison-card comparison-card--passive">
+            <h3>Waiting</h3>
             <ul class="comparison-list">
-              <li><span class="check">✓</span> <span><strong>Weekly voice sessions</strong> + concise summaries</span></li>
-              <li><span class="check">✓</span> <span><strong>Personal memory</strong> of goals & stakeholders</span></li>
-              <li><span class="check">✓</span> <span><strong>360 feedback cycles</strong> with anonymization</span></li>
-              <li><span class="check">✓</span> <span><strong>Role-play scenarios</strong> to prepare for tough conversations</span></li>
-              <li><span class="check">✓</span> <span><strong>Managing up</strong> strategies tailored to your manager</span></li>
+              <li><span class="check check--muted">×</span> <span>Hoping for feedback at review time</span></li>
+              <li><span class="check check--muted">×</span> <span>Waiting to be developed by L&D</span></li>
+              <li><span class="check check--muted">×</span> <span>Expecting your work to speak for itself</span></li>
+              <li><span class="check check--muted">×</span> <span>Reacting to opportunities as they appear</span></li>
+              <li><span class="check check--muted">×</span> <span>Letting your manager set the agenda</span></li>
             </ul>
           </div>
-          <div class="comparison-card">
-            <h3>Where it's going</h3>
+          <div class="comparison-card comparison-card--active">
+            <h3>Owning</h3>
             <ul class="comparison-list">
-              <li><span class="check">✓</span> <span><strong>Deeper examples</strong> from analogous wins</span></li>
-              <li><span class="check">✓</span> <span><strong>Scoped meeting transcripts</strong> (opt-in)</span></li>
-              <li><span class="check">✓</span> <span><strong>Personalized industry intel</strong> (news/podcasts)</span></li>
-              <li><span class="check">✓</span> <span><strong>Promotion planning</strong> with milestone tracking</span></li>
-              <li><span class="check">✓</span> <span><strong>Team dynamics</strong> analysis and coaching</span></li>
+              <li><span class="check">✓</span> <span><strong>Seeking feedback</strong> continuously</span></li>
+              <li><span class="check">✓</span> <span><strong>Investing</strong> in your own growth</span></li>
+              <li><span class="check">✓</span> <span><strong>Advocating</strong> for your impact</span></li>
+              <li><span class="check">✓</span> <span><strong>Planning</strong> your next move proactively</span></li>
+              <li><span class="check">✓</span> <span><strong>Managing up</strong> — maximize the help of your manager</span></li>
             </ul>
           </div>
         </div>
@@ -884,24 +933,24 @@
         <h2 id="faq-title">Frequently asked questions</h2>
         <div class="faq-grid">
           <details>
-            <summary>How do I give it context fast?</summary>
-            <p>Start with a 5-minute voice onboarding. Talk through your role, your goals, and your current challenges. Optionally add past reviews or goals later—the coach gets smarter over time.</p>
+            <summary>What do I need to get started?</summary>
+            <p>Start with a 5-minute voice call. Talk through your role, your goals, and your current challenges. Optionally add past reviews, your manager's feedback, your company's career ladder, or goals later—the coach gets smarter over time.</p>
           </details>
           <details>
-            <summary>Will it replace my meeting note tool?</summary>
-            <p>No—this is for coaching, not notes. You can opt-in select meetings purely to improve your leadership, but Work Coach focuses on helping you grow, not transcribing your day.</p>
+            <summary>Is this for someone looking for a job?</summary>
+            <p>No—this is for coaching in your current role. The grass can often times seem greener elsewhere, but Work Coach is focused on helping you thrive at your current company.</p>
           </details>
           <details>
-            <summary>Will it slow me down at work?</summary>
-            <p>Sessions are short, mobile-friendly, and produce clear actions. Think of it as a 20-minute investment that saves hours of overthinking and missteps.</p>
+            <summary>Will my employer allow this?</summary>
+            <p>Work Coach doesn't want any of your company's sensitive or proprietary information. It's all about you, your performance, and how you make plans to improve. We use industry best practices to protect your data, don't share data with LLM providers, and never share your information without your permissions. If your employer doesn't want you to improve, that sounds like a red flag.</p>
           </details>
           <details>
-            <summary>Who sees my data?</summary>
-            <p>You. Not your employer. Your recordings and transcripts are yours. Data isn't used to train shared models. You can delete everything anytime.</p>
+            <summary>Do you share data with anyone (other users, my employer, etc)?</summary>
+            <p>We don't share data with anyone. Not your employer. Not other users. Your recordings and transcripts are yours. Data isn't used to train shared models. You can delete everything anytime.</p>
           </details>
           <details>
             <summary>Who is this for?</summary>
-            <p>PMs, engineers, marketers, designers, and leaders who want executive-level coaching without the executive-level price—or calendar overhead.</p>
+            <p>PMs, engineers, marketers, designers, and leaders who want executive-level coaching without the executive-level price.</p>
           </details>
         </div>
       </div>
