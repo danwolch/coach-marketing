@@ -442,56 +442,145 @@
       font-size: 36px;
       font-weight: 400;
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
       color: var(--text);
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
     }
 
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .steps {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
     }
 
     .step {
-      text-align: center;
-      padding: 32px 24px;
-    }
-
-    .step-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      color: var(--accent);
-      margin-bottom: 16px;
+      position: relative;
+      padding: 48px 40px 48px 120px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .step h4 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
       color: var(--text);
+      position: relative;
     }
 
     .step p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--muted);
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .step p.step-number {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-60%);
+      font-family: 'Playfair Display', serif;
+      font-size: 160px;
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0.25;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @media (max-width: 700px) {
+      .step {
+        padding: 40px 32px 40px 100px;
+        min-height: 160px;
+      }
+      
+      .step p.step-number {
+        font-size: 120px;
+        left: 12px;
+      }
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 100px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 60px;
+      color: var(--text);
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      background: var(--card);
+      margin-bottom: 16px;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--text);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details summary::after {
+      content: "+";
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     /* CTA */
     .cta {
       padding: 120px 0;
-      background: var(--surface);
+      background: var(--bg);
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
@@ -684,7 +773,7 @@
           <div class="feature">
             <div class="feature-icon" aria-hidden="true">↑</div>
             <h3>Interview leadership</h3>
-            <p>Understand how you're perceived by the people who influence your career trajectory.</p>
+            <p>Feedback from the people who influence your career trajectory.</p>
             <p class="feature-detail">Structured questions that surface strategic perception gaps</p>
           </div>
           <div class="feature">
@@ -781,6 +870,30 @@
             <h3>You have a blind spot</h3>
             <p>There's a pattern everyone sees but you. And nobody's going to risk their job to tell you.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">Frequently asked questions</h2>
+        <div class="faq-grid">
+          <details>
+            <summary>How is feedback collected?</summary>
+            <p>Work Coach conducts AI voice calls with each person you select. It's a natural conversation designed to surface candid, thoughtful feedback—not a form to fill out.</p>
+          </details>
+          <details>
+            <summary>Do others need to download the app?</summary>
+            <p>No. Feedback providers access a simple web page that works on any device. No app download, no account creation—just a link and a conversation.</p>
+          </details>
+          <details>
+            <summary>How are answers anonymized?</summary>
+            <p>You control the visibility. Feedback from executives is attributed by name. Feedback from peers and direct reports is anonymized and aggregated—so you get the real, unfiltered truth without anyone risking their relationship with you.</p>
+          </details>
+          <details>
+            <summary>Who are the responses shared with?</summary>
+            <p>Just you. Nobody else. Not your manager, not HR, not your company. This is your feedback for your growth.</p>
+          </details>
         </div>
       </div>
     </section>
