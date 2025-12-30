@@ -288,63 +288,6 @@
       color: var(--muted);
     }
 
-    /* Metrics section */
-    .metrics {
-      padding: 100px 0;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .metrics h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 80px;
-      color: var(--text);
-    }
-
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    @media (max-width: 900px) {
-      .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 500px) {
-      .metrics-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .metric {
-      text-align: center;
-      padding: 32px 24px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .metric-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 600;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .metric-label {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
     /* Pull quote */
     .pullquote {
       padding: 100px 0;
@@ -373,63 +316,6 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-    }
-
-    /* Education section */
-    .education {
-      padding: 100px 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .education h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 80px;
-      color: var(--text);
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .education-item {
-      text-align: center;
-      padding: 40px 32px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .education-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .education-item p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .education-item .degree {
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 4px;
     }
 
     /* CTA */
@@ -582,33 +468,8 @@
   <main id="main">
     <section class="hero">
       <div class="container">
-        <p class="hero-kicker">Meet the founder</p>
-        <h1>Dan <em>Wolchonok</em></h1>
-        <p class="hero-deck">20 years building products and growth systems at high-growth technology companies.</p>
-      </div>
-    </section>
-
-    <section class="content" aria-labelledby="content-title">
-      <h2 id="content-title" class="sr-only">Background</h2>
-      <div class="container">
-        <div class="content-grid">
-          <p class="content-lead">Dan's career spans founding an acquired startup, five years at HubSpot on the founding team of HubSpot Sales, and seven years at Reforge helping scale the company from five employees to 180.</p>
-          <div class="content-body">
-            <p>After earning a <strong>Computer Science degree from Tufts University</strong>, Dan spent three years in <strong>management consulting at PwC</strong>, followed by three years at <strong>Microsoft as a Technical Lead</strong> working on enterprise search systems.</p>
-            <p>In 2011, Dan enrolled at <strong>Yale School of Management</strong>. During his MBA, he founded PrepWork—a personal research assistant that was <strong>acquired by HubSpot in 2013</strong>, just nine months after founding.</p>
-            <p>That acquisition launched a five-year career at HubSpot, where Dan rose to Director of Product Analytics and was on the founding team of <strong>HubSpot Sales—now over $1 billion in ARR</strong>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pullquote" aria-labelledby="why-jane-title">
-      <h2 id="why-jane-title" class="sr-only">Why the coach is named Jane</h2>
-      <div class="container">
-        <div class="pullquote-inner">
-          <blockquote>"I named the coach Jane after my mom. She was the person I'd go to with questions and look for advice. It was invaluable to get her perspective."</blockquote>
-          <cite>Dan Wolchonok</cite>
-        </div>
+        <p class="hero-kicker">About</p>
+        <h1>I named this app after my <em>mom</em>.</h1>
       </div>
     </section>
 
@@ -616,89 +477,87 @@
       <h2 id="jane-title" class="sr-only">About Jane</h2>
       <div class="container">
         <div class="content-grid">
-          <p class="content-lead">Jane Wolchonok built a distinguished career in banking over four decades, rising from entry-level customer service to Senior Vice President at Brookline Bank. Her journey is the kind of growth that everyone deserves support for.</p>
+          <p class="content-lead">Jane Wolchonok spent four decades in banking, rising from answering customer service calls at Arm & Hammer to Senior Vice President at Brookline Bank.</p>
           <div class="content-body">
-            <p>Jane started at <strong>Arm and Hammer</strong> answering customer questions. Strong female mentors there inspired her to pursue an <strong>MBA at NYU Stern</strong>—a credential that transformed her career trajectory.</p>
-            <p>That MBA launched a banking career spanning <strong>Citibank, Citizens Bank, HarborOne Bank</strong>, and ultimately <strong>Brookline Bank</strong>, where she served as SVP of Community Banking. She led strategic branch expansions and was quoted in press releases as a company spokesperson.</p>
-            <p>Throughout Dan's career, Jane was his sounding board—the person who knew his context, asked the right questions, and gave honest perspective. <strong>Work Coach is built to give everyone that same advantage.</strong></p>
+            <p>Strong female mentors inspired her to get an <strong>MBA at NYU Stern</strong>. That credential transformed her trajectory.</p>
+            <p>Throughout my career, she was my sounding board—the person who knew my context, asked the right questions, and gave honest perspective.</p>
+            <p><strong>Work Coach exists because not everyone has a Jane.</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="content" aria-labelledby="motivation-title">
-      <h2 id="motivation-title" class="sr-only">Why Work Coach exists</h2>
+    <section class="pullquote" aria-labelledby="lessons-title">
+      <h2 id="lessons-title" class="sr-only">Lessons learned</h2>
+      <div class="container">
+        <div class="pullquote-inner">
+          <blockquote>"I learned this the hard way."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="story-title">
+      <h2 id="story-title" class="sr-only">My story</h2>
       <div class="container">
         <div class="content-grid">
-          <p class="content-lead">Inspired by my mom, I want everyone to have a coach who truly understands their situation—not just someone giving generic advice without the right context.</p>
+          <p class="content-lead">Early in my career at PwC, I watched my peers get promoted while I didn't. I was crushed. I had been putting my head down, doing good work, assuming it would speak for itself.</p>
           <div class="content-body">
-            <p>A great coach needs to understand your <strong>industry</strong>, your <strong>company</strong>, your <strong>role and department</strong>. They need to know your <strong>goals</strong>, the <strong>dynamic with your manager</strong>, how you're <strong>evaluated</strong>, and the <strong>feedback you've received</strong>.</p>
-            <p>Today, you have two options: pay a fortune for an executive coach, or get advice from people who don't have the context to help you make good decisions.</p>
-            <p><strong>Work Coach is someone who's fully on your side, with all of the context to help you achieve your goals.</strong></p>
+            <p>It didn't.</p>
+            <p>I wasn't advocating for myself. I wasn't asking for work that would give me visibility. I wasn't talking to people familiar with my work to understand how they actually saw my contributions. <strong>The gap between how I saw myself and how others saw me was enormous</strong>—and I had no idea.</p>
+            <p>Years later at Reforge, I got a 360 review that stung. One piece of feedback: <em>"I have yet to see Dan make teams greater than the sum of their parts."</em> Another: <em>"He hasn't invested the time in really coaching others, allowing them to fail, helping them learn from their mistakes."</em></p>
+            <p>I had repeated the pattern. Head down. Do the work. Assume it's enough.</p>
+            <p>The difference this time? I had people around me who knew my context and could tell me the truth. <strong>That feedback changed how I lead.</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="metrics" aria-labelledby="metrics-title">
+    <section class="pullquote" aria-labelledby="problem-title">
+      <h2 id="problem-title" class="sr-only">The problem</h2>
       <div class="container">
-        <h2 id="metrics-title">By the numbers</h2>
-        <div class="metrics-grid">
-          <div class="metric">
-            <p class="metric-value">$1B+</p>
-            <p class="metric-label">HubSpot Sales ARR<br>(founding team)</p>
-          </div>
-          <div class="metric">
-            <p class="metric-value">15x</p>
-            <p class="metric-label">Reforge revenue growth<br>($2M to $30M+)</p>
-          </div>
-          <div class="metric">
-            <p class="metric-value">20</p>
-            <p class="metric-label">Years in product,<br>growth &amp; analytics</p>
+        <div class="pullquote-inner">
+          <blockquote>"The problem I'm solving"</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="solution-title">
+      <h2 id="solution-title" class="sr-only">The solution</h2>
+      <div class="container">
+        <div class="content-grid">
+          <p class="content-lead">A great coach needs to understand your industry, your company, your role. They need to know your goals, the dynamic with your manager, how you're evaluated, and the feedback you've received.</p>
+          <div class="content-body">
+            <p>Today you have two options: pay <strong>$25,000 for an executive coach</strong>, or get advice from people who don't have the context to actually help.</p>
+            <p><strong>Work Coach gives you someone fully on your side, with all the context to help you see what you can't see yourself.</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="timeline" id="career" aria-labelledby="timeline-title">
+    <section class="timeline" id="background" aria-labelledby="background-title">
       <div class="container">
-        <h2 id="timeline-title">Career</h2>
+        <h2 id="background-title">My background</h2>
+        <p style="text-align: center; color: var(--muted); margin-top: -60px; margin-bottom: 60px;">20 years in product, growth, and analytics at high-growth companies.</p>
         <div class="timeline-grid">
           <div class="timeline-item">
-            <p class="timeline-date">2018 — 2025</p>
             <h3>Reforge</h3>
             <h4>5th employee</h4>
-            <p>Helped scale from $2M to $30M+ in revenue and from 5 to 180 employees. Helped raise the Series A and Series B.</p>
+            <p>Helped scale from $2M to $30M+ revenue, 5 to 180 people. Raised Series A and B.</p>
           </div>
           <div class="timeline-item">
-            <p class="timeline-date">2013 — 2018</p>
             <h3>HubSpot</h3>
             <h4>Founding team, HubSpot Sales</h4>
-            <p>Pioneered product-led growth. On the founding team of HubSpot Sales, now over $1 billion in ARR. HubSpot grew from 600 to 2,600 employees during this time.</p>
+            <p>Now $1B+ ARR. Director of Product Analytics.</p>
           </div>
           <div class="timeline-item">
-            <p class="timeline-date">2012 — 2013</p>
-            <h3>Founder</h3>
-            <h4>PrepWork (acquired by HubSpot)</h4>
-            <p>Built a personal research assistant during Yale MBA. Acquired by HubSpot in nine months, before graduation.</p>
+            <h3>PrepWork</h3>
+            <h4>Founder</h4>
+            <p>Founded during Yale MBA. Acquired by HubSpot in 9 months.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="education" id="education" aria-labelledby="education-title">
-      <div class="container">
-        <h2 id="education-title">Education</h2>
-        <div class="education-grid">
-          <div class="education-item">
-            <h3>Yale School of Management</h3>
-            <p class="degree">MBA, 2013</p>
-            <p>Yale Entrepreneurial Institute</p>
-          </div>
-          <div class="education-item">
-            <h3>Tufts University</h3>
-            <p class="degree">BS Computer Science, 2005</p>
-            <p>Cross country &amp; track</p>
+          <div class="timeline-item">
+            <h3>Earlier</h3>
+            <h4>Microsoft, PwC, Tufts</h4>
+            <p>Technical Lead at Microsoft. Management consulting at PwC. CS degree from Tufts.</p>
           </div>
         </div>
       </div>
@@ -707,10 +566,8 @@
     <section class="cta" aria-labelledby="cta-title">
       <div class="container">
         <h2 id="cta-title">Try Work Coach</h2>
-        <p>Executive-level coaching built on years of experience in growth, product, and leadership.</p>
         <div class="cta-buttons">
           <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary">Get the app</a>
-          <a href="/" class="btn-outline">Learn more</a>
         </div>
       </div>
     </section>
