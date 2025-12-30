@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Dan Wolchonok is VP of New Products at Reforge with 15+ years experience in product, growth, and analytics at HubSpot and other high-growth companies." />
+  <meta name="color-scheme" content="light dark" />
+  <title>About Dan Wolchonok | Work Coach</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getawork.coach/about">
+  <meta property="og:site_name" content="Work Coach">
+  <meta property="og:title" content="About Dan Wolchonok | Work Coach">
+  <meta property="og:description" content="VP of New Products at Reforge. 15+ years in product, growth, and analytics at high-growth tech companies.">
+  <meta property="og:image" content="https://getawork.coach/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Dan Wolchonok | Work Coach">
+  <meta name="twitter:description" content="VP of New Products at Reforge. 15+ years in product, growth, and analytics at high-growth tech companies.">
+  <meta name="twitter:image" content="https://getawork.coach/img/og-image.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178;
+      --accent-2: #83f5a2;
+      --accent-dark: #238a54;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    /* Nav */
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(120%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: color-mix(in oklab, var(--accent) 85%, white);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 400;
+      line-height: 1.1;
+      max-width: 900px;
+      margin: 0 auto 32px;
+      color: var(--text);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent-2);
+    }
+
+    .hero-deck {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Main content - magazine style */
+    .content {
+      padding: 80px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+    }
+
+    .content-lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .content-lead::first-letter {
+      font-size: 72px;
+      float: left;
+      line-height: 0.8;
+      margin-right: 12px;
+      margin-top: 8px;
+      color: var(--accent);
+    }
+
+    .content-body p {
+      margin-bottom: 24px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .content-body strong {
+      color: var(--text);
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 60px 0;
+    }
+
+    .divider-line {
+      width: 80px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider-symbol {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--accent);
+    }
+
+    /* Timeline section */
+    .timeline {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 80px;
+      color: var(--text);
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 700px) {
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    .timeline-item {
+      padding: 40px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.45);
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .timeline-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .timeline-item h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent-2);
+      margin-bottom: 16px;
+    }
+
+    .timeline-item p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* Metrics section */
+    .metrics {
+      padding: 100px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .metrics h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 80px;
+      color: var(--text);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric {
+      text-align: center;
+      padding: 32px 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .metric-label {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Pull quote */
+    .pullquote {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pullquote-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pullquote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .pullquote cite {
+      font-style: normal;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Companies section */
+    .companies {
+      padding: 100px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .companies h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 80px;
+      color: var(--text);
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    @media (max-width: 768px) {
+      .companies-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .company-card {
+      padding: 40px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .company-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .company-stats {
+      list-style: none;
+    }
+
+    .company-stats li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .company-stats li:last-child {
+      border-bottom: none;
+    }
+
+    .company-stats .stat-icon {
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .company-stats strong {
+      color: var(--text);
+    }
+
+    /* Education section */
+    .education {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 80px;
+      color: var(--text);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .education-item {
+      text-align: center;
+      padding: 40px 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .education-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .education-item p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .education-item .degree {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 120px 0;
+      background: var(--surface);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .cta > .container > p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: color-mix(in oklab, var(--accent) 85%, white);
+    }
+
+    .btn-outline {
+      padding: 16px 32px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: color-mix(in oklab, var(--border) 50%, var(--accent) 50%);
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      background: var(--bg);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .sr-only:focus, .sr-only:active {
+      left: 16px;
+      top: 12px;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
+      z-index: 1000;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+      outline-offset: 2px;
+      box-shadow: var(--shadow);
+    }
+
+    a:focus {
+      outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Work Coach</span>
+      </a>
+      <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="nav-cta">Get the app</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">Meet the founder</p>
+        <h1>Dan <em>Wolchonok</em></h1>
+        <p class="hero-deck">VP of New Products at Reforge. 15+ years building products and growth systems at high-growth technology companies.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="content-title">
+      <h2 id="content-title" class="sr-only">Background</h2>
+      <div class="container">
+        <div class="content-grid">
+          <p class="content-lead">Dan's career spans founding an acquired startup, five years at HubSpot driving product growth, and leadership roles at Reforge building the premier professional education platform for growth and product professionals.</p>
+          <div class="content-body">
+            <p>After earning a <strong>Computer Science degree from Tufts University</strong>, Dan spent five years at <strong>Microsoft as a Technical Lead</strong>, working on enterprise search systems processing hundreds of millions of documents and millions of search queries per day.</p>
+            <p>In 2011, Dan enrolled at <strong>Yale School of Management</strong>. During his MBA, he founded PrepWork—a personal research assistant that was <strong>acquired by HubSpot in 2013</strong>, just nine months after founding.</p>
+            <p>That acquisition launched a five-year career at HubSpot, where Dan rose to Director of Product Analytics and helped grow <strong>Sidekick from 1,000 to over 300,000 weekly active users</strong>. Colleagues nicknamed him "Data Dan" for his relentless measurement and analysis approach.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-labelledby="metrics-title">
+      <div class="container">
+        <h2 id="metrics-title">By the numbers</h2>
+        <div class="metrics-grid">
+          <div class="metric">
+            <p class="metric-value">300x</p>
+            <p class="metric-label">Sidekick user growth<br>(1K to 300K+ WAU)</p>
+          </div>
+          <div class="metric">
+            <p class="metric-value">$81M</p>
+            <p class="metric-label">Reforge funding<br>(a16z, Insight Partners)</p>
+          </div>
+          <div class="metric">
+            <p class="metric-value">15+</p>
+            <p class="metric-label">Years in product,<br>growth &amp; analytics</p>
+          </div>
+          <div class="metric">
+            <p class="metric-value">2x</p>
+            <p class="metric-label">Email conversion lift<br>via AI personalization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline" id="career" aria-labelledby="timeline-title">
+      <div class="container">
+        <h2 id="timeline-title">Career</h2>
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <p class="timeline-date">2024 — Present</p>
+            <h3>VP, New Products</h3>
+            <h4>Reforge</h4>
+            <p>Leading new product development at the premier professional education platform for growth and product professionals.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-date">2018 — 2024</p>
+            <h3>Head of Data</h3>
+            <h4>Reforge</h4>
+            <p>Built the data team and infrastructure from scratch. Implemented AI-powered email personalization that doubled conversion rates.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-date">2013 — 2018</p>
+            <h3>Director of Product Analytics</h3>
+            <h4>HubSpot</h4>
+            <p>Rose from PM to Director across five years. Led growth for Sidekick, growing it from 1,000 to 300,000+ weekly active users.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="timeline-date">2012 — 2013</p>
+            <h3>Founder</h3>
+            <h4>PrepWork (acquired by HubSpot)</h4>
+            <p>Built a personal research assistant during Yale MBA. Acquired by HubSpot in nine months, before graduation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pullquote" aria-labelledby="pullquote-title">
+      <h2 id="pullquote-title" class="sr-only">Recognition</h2>
+      <div class="container">
+        <div class="pullquote-inner">
+          <blockquote>"One of the most pragmatic and tactical product managers—relentless in pursuit to improve high-value business metrics and a true champion of the customer."</blockquote>
+          <cite>Former colleague</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="companies" aria-labelledby="companies-title">
+      <div class="container">
+        <h2 id="companies-title">Company credentials</h2>
+        <div class="companies-grid">
+          <div class="company-card">
+            <h3>HubSpot</h3>
+            <ul class="company-stats">
+              <li><span class="stat-icon">$</span> <span><strong>$2.63 billion</strong> annual revenue (2024)</span></li>
+              <li><span class="stat-icon">%</span> <span><strong>2,100%+</strong> market cap growth since 2014 IPO</span></li>
+              <li><span class="stat-icon">#</span> <span><strong>247,939</strong> paying customers in 135+ countries</span></li>
+              <li><span class="stat-icon">1</span> <span><strong>#1 in marketing automation</strong> with 38% global market share</span></li>
+            </ul>
+          </div>
+          <div class="company-card">
+            <h3>Reforge</h3>
+            <ul class="company-stats">
+              <li><span class="stat-icon">$</span> <span><strong>$81M funding</strong> from Andreessen Horowitz, Insight Partners, TCV</span></li>
+              <li><span class="stat-icon">+</span> <span><strong>1,000+ teams</strong> using Reforge programs</span></li>
+              <li><span class="stat-icon">*</span> <span>Members from <strong>Google, Netflix, Airbnb, Spotify, Uber</strong></span></li>
+              <li><span class="stat-icon">!</span> <span>Rated <strong>"better than their MBA"</strong> by members</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="education" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <h2 id="education-title">Education</h2>
+        <div class="education-grid">
+          <div class="education-item">
+            <h3>Yale School of Management</h3>
+            <p class="degree">MBA, 2013</p>
+            <p>Yale Entrepreneurial Institute</p>
+          </div>
+          <div class="education-item">
+            <h3>Tufts University</h3>
+            <p class="degree">BS Computer Science, 2005</p>
+            <p>Cross country &amp; track</p>
+          </div>
+          <div class="education-item">
+            <h3>Wharton School</h3>
+            <p class="degree">Executive Education, 2024</p>
+            <p>Leadership program</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 id="cta-title">Try Work Coach</h2>
+        <p>Executive-level coaching built on years of experience in growth, product, and leadership.</p>
+        <div class="cta-buttons">
+          <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary">Get the app</a>
+          <a href="/" class="btn-outline">Learn more</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Your data is never shared with your employer.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
