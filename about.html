@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Meet Dan Wolchonok and learn why Work Coach is named Jane, in honor of his mom who was his greatest coach." />
+  <meta name="color-scheme" content="light dark" />
+  <title>About — Work Coach</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getawork.coach/about">
+  <meta property="og:site_name" content="Work Coach">
+  <meta property="og:title" content="About Work Coach and Jane">
+  <meta property="og:description" content="Meet Dan Wolchonok and learn why Work Coach is named Jane, in honor of his mom who was his greatest coach.">
+  <meta property="og:image" content="https://getawork.coach/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Coach whistle logo">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Work Coach and Jane">
+  <meta name="twitter:description" content="Meet Dan Wolchonok and learn why Work Coach is named Jane, in honor of his mom who was his greatest coach.">
+  <meta name="twitter:image" content="https://getawork.coach/img/og-image.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c2f1b;
+      --surface: #123922;
+      --muted: #c3d8c8;
+      --text: #f2fff5;
+      --card: #10301e;
+      --border: #1f4a30;
+      --accent: #31c178;
+      --accent-2: #83f5a2;
+      --accent-dark: #238a54;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --maxw: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-left: max(20px, env(safe-area-inset-left));
+      padding-right: max(20px, env(safe-area-inset-right));
+    }
+
+    /* Nav */
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(120%) blur(10px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: color-mix(in oklab, var(--accent) 85%, white);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 400;
+      line-height: 1.1;
+      max-width: 900px;
+      margin: 0 auto 32px;
+      color: var(--text);
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent-2);
+    }
+
+    .hero-deck {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    /* Content sections */
+    .content {
+      padding: 80px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .content-lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .content-lead::first-letter {
+      font-size: 72px;
+      float: left;
+      line-height: 0.8;
+      margin-right: 12px;
+      margin-top: 8px;
+      color: var(--accent);
+    }
+
+    .content-body p {
+      margin-bottom: 24px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .content-body strong {
+      color: var(--text);
+    }
+
+    .content-single {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content-single p {
+      margin-bottom: 24px;
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .content-single strong {
+      color: var(--text);
+    }
+
+    /* Pull quote */
+    .pullquote {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pullquote-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pullquote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .pullquote cite {
+      font-style: normal;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Section header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* Timeline */
+    .timeline {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      padding-left: 40px;
+      border-left: 2px solid var(--border);
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      background: var(--bg);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    a:focus {
+      outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Work Coach</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="360-feedback.html">360 Feedback</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="nav-cta">Get the app</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="hero-kicker">About Work Coach</p>
+        <h1>Why I named the coach <em>Jane</em></h1>
+        <p class="hero-deck">A tribute to my mom, my greatest coach</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="content-grid">
+          <p class="content-lead">My mom was my first and most important coach. She didn't have the title, but she had the instinct—the ability to see what I couldn't see in myself and help me find my way forward.</p>
+          <div class="content-body">
+            <p>She knew how to ask the right questions. How to challenge me without crushing me. How to celebrate wins while keeping me grounded. <strong>That's what great coaches do</strong>—they don't just tell you what to do, they help you figure out who you want to become.</p>
+            <p>Since her passing, I've felt the absence of that coaching presence. Someone who knew my context, understood my goals, and helped me think through the decisions that mattered.</p>
+            <p>I named this coach Jane because I wanted to honor what she gave me. <strong>A voice in my corner.</strong> Someone who believes in me and pushes me to be better.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pullquote">
+      <div class="container">
+        <div class="pullquote-inner">
+          <blockquote>"Everyone deserves someone in their corner who helps them see clearly, think deeply, and move forward with confidence."</blockquote>
+          <cite>In memory of Jane</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" style="background: var(--bg);">
+      <div class="container">
+        <div class="section-header">
+          <h2>About me</h2>
+          <p>Building products and helping others grow</p>
+        </div>
+        <div class="content-single">
+          <p>I'm <strong>Dan Wolchonok</strong>, currently VP of New Products at Reforge, the premier professional development platform backed by Andreessen Horowitz and used by teams at Google, Netflix, Airbnb, and hundreds of other companies.</p>
+
+          <p>My career has been built around understanding what helps people grow. I founded PrepWork (acquired by HubSpot in 2013), spent five years at HubSpot leading product and analytics teams, and have spent the last six years at Reforge building the data infrastructure and new products that help thousands of professionals level up.</p>
+
+          <p>At HubSpot, I helped grow Sidekick from 1,000 to over 300,000 weekly active users. My colleagues called me "Data Dan" because I measured everything—not for the sake of metrics, but to understand what actually worked. <strong>I learned that the best growth comes from deeply understanding people</strong>—what they need, where they get stuck, and how to help them succeed.</p>
+
+          <p>That same philosophy drives Work Coach. This isn't about AI replacing human connection—it's about making coaching accessible to everyone who wants to invest in themselves but doesn't have access to a $25,000 executive coach.</p>
+
+          <p><strong>I built Work Coach because I believe everyone deserves what my mom gave me</strong>: someone who helps you think clearly, see your blind spots, and move forward with confidence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Career highlights</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2024–Present</div>
+            <div class="timeline-title">VP of New Products, Reforge</div>
+            <div class="timeline-desc">Leading new product development at the premier platform for growth and product professionals.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018–2024</div>
+            <div class="timeline-title">Head of Data & Product, Reforge</div>
+            <div class="timeline-desc">Built the data team and infrastructure from scratch. Implemented AI-powered personalization that doubled email conversion rates.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2013–2018</div>
+            <div class="timeline-title">Product & Analytics Leadership, HubSpot</div>
+            <div class="timeline-desc">Grew Sidekick from 1,000 to 300,000+ weekly active users. Rose from Product Manager to Director of Product Analytics.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2012–2013</div>
+            <div class="timeline-title">Founded PrepWork (Acquired by HubSpot)</div>
+            <div class="timeline-desc">Built a personal research assistant that synced with calendars and delivered daily briefings. Acquired by HubSpot 9 months after founding while still at Yale.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2011–2013</div>
+            <div class="timeline-title">MBA, Yale School of Management</div>
+            <div class="timeline-desc">Participated in Yale Entrepreneurial Institute where PrepWork was founded.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2005–2011</div>
+            <div class="timeline-title">Technical Lead, Microsoft</div>
+            <div class="timeline-desc">Worked on enterprise search systems processing hundreds of millions of documents and millions of queries daily.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <div class="timeline-title">BS Computer Science, Tufts University</div>
+            <div class="timeline-desc">Ran cross country and track and field.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pullquote" style="background: var(--bg); padding: 80px 0;">
+      <div class="container">
+        <div class="pullquote-inner">
+          <p style="font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto;">
+            If you want to connect, you can find me on <a href="https://twitter.com/danwolch" style="color: var(--accent); text-decoration: none;">Twitter</a>, read my writing on <a href="https://danwolch.com" style="color: var(--accent); text-decoration: none;">my blog</a>, or reach out through <a href="support.html" style="color: var(--accent); text-decoration: none;">support</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Your data is never shared with your employer.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
