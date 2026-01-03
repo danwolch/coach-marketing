@@ -112,6 +112,30 @@
       background: color-mix(in oklab, var(--accent) 85%, white);
     }
 
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
     /* Hero */
     .hero {
       padding: 100px 0 80px;
@@ -461,6 +485,9 @@
         <span class="dot" aria-hidden="true"></span>
         <span>Work Coach</span>
       </a>
+      <div class="nav-links">
+        <a href="360-feedback">360 Feedback</a>
+      </div>
       <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="nav-cta">Get the app</a>
     </div>
   </nav>
