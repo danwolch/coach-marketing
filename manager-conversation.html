@@ -3,27 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="What your direct reports will never say to your face. Get the candid 360 feedback you need to grow as a leader." />
+  <meta name="description" content="How to tell your manager you're doing a 360 feedback cycle. Templates and talking points that reframe the conversation." />
   <meta name="color-scheme" content="light dark" />
-  <title>360 Feedback Cycles | Work Coach</title>
+  <title>Talk to Your Manager About 360 Feedback | Work Coach</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://getawork.coach/360-feedback">
+  <meta property="og:url" content="https://getawork.coach/manager-conversation">
   <meta property="og:site_name" content="Work Coach">
-  <meta property="og:title" content="What Your Direct Reports Will Never Say | Work Coach">
-  <meta property="og:description" content="Get the candid 360 feedback you need to grow as a leader.">
+  <meta property="og:title" content="Talk to Your Manager About 360 Feedback | Work Coach">
+  <meta property="og:description" content="How to tell your manager you're doing a 360 feedback cycle. Templates and talking points that reframe the conversation.">
   <meta property="og:image" content="https://getawork.coach/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What Your Direct Reports Will Never Say | Work Coach">
-  <meta name="twitter:description" content="Get the candid 360 feedback you need to grow as a leader.">
+  <meta name="twitter:title" content="Talk to Your Manager About 360 Feedback | Work Coach">
+  <meta name="twitter:description" content="How to tell your manager you're doing a 360 feedback cycle. Templates and talking points that reframe the conversation.">
   <meta name="twitter:image" content="https://getawork.coach/img/og-image.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -153,7 +153,7 @@
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 7vw, 72px);
+      font-size: clamp(36px, 6vw, 64px);
       font-weight: 400;
       line-height: 1.1;
       max-width: 900px;
@@ -169,186 +169,107 @@
     .hero-deck {
       font-size: 20px;
       color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Reframe section */
+    .reframe {
+      padding: 100px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .reframe-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .reframe-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .reframe-header p {
+      color: var(--muted);
+      font-size: 18px;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    /* Divider */
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 60px 0;
-    }
-
-    .divider-line {
-      width: 80px;
-      height: 1px;
-      background: var(--border);
-    }
-
-    .divider-symbol {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      color: var(--accent);
-    }
-
-    /* Uncomfortable truths */
-    .truths {
-      padding: 60px 0 100px;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .truths-grid {
+    .reframe-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     @media (max-width: 768px) {
-      .truths-grid {
+      .reframe-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
       }
     }
 
-    .truth {
-      text-align: center;
-    }
-
-    .truth-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 64px;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .truth h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .truth p {
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    /* Main content - magazine style */
-    .content {
-      padding: 80px 0;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-    }
-
-    .content-lead {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    .content-lead::first-letter {
-      font-size: 72px;
-      float: left;
-      line-height: 0.8;
-      margin-right: 12px;
-      margin-top: 8px;
-      color: var(--accent);
-    }
-
-    .content-body p {
-      margin-bottom: 24px;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    .content-body strong {
-      color: var(--text);
-    }
-
-    /* Video demo section */
-    .video-demo {
-      padding: 100px 0;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .video-demo-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .video-demo-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 400;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .video-demo-header p {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .video-wrapper {
-      max-width: 800px;
-      margin: 0 auto;
+    .reframe-card {
+      padding: 40px;
       border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
       border: 1px solid var(--border);
     }
 
-    .video-container {
-      position: relative;
-      padding-top: 65.06%;
+    .reframe-card--old {
       background: var(--card);
     }
 
-    .video-container iframe {
-      border: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+    .reframe-card--new {
+      background: color-mix(in oklab, var(--accent-dark) 30%, var(--card));
+      border-color: var(--accent-dark);
     }
 
-    /* Solution section */
-    .solution {
+    .reframe-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reframe-card--old h3 {
+      color: var(--muted);
+    }
+
+    .reframe-card--new h3 {
+      color: var(--accent-2);
+    }
+
+    .reframe-card p {
+      font-size: 16px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .reframe-card--new p {
+      color: var(--text);
+    }
+
+    /* Benefits section */
+    .benefits {
       padding: 100px 0;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
 
-    .solution-header {
+    .benefits-header {
       text-align: center;
       margin-bottom: 80px;
     }
 
-    .solution-header h2 {
+    .benefits-header h2 {
       font-family: 'Playfair Display', serif;
       font-size: 42px;
       font-weight: 400;
@@ -356,24 +277,24 @@
       color: var(--text);
     }
 
-    .solution-header p {
+    .benefits-header p {
       color: var(--muted);
       font-size: 18px;
     }
 
-    .features {
+    .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
 
     @media (max-width: 900px) {
-      .features {
+      .benefits-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .feature {
+    .benefit {
       padding: 40px;
       background: var(--card);
       border: 1px solid var(--border);
@@ -382,12 +303,12 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .feature:hover {
+    .benefit:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 50px rgba(0,0,0,0.45);
     }
 
-    .feature-icon {
+    .benefit-icon {
       width: 48px;
       height: 48px;
       background: var(--accent);
@@ -401,7 +322,7 @@
       font-weight: 900;
     }
 
-    .feature h3 {
+    .benefit h3 {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
       font-weight: 400;
@@ -409,25 +330,15 @@
       color: var(--text);
     }
 
-    .feature p {
+    .benefit p {
       font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .feature-detail {
-      font-size: 13px;
-      padding: 12px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
       color: var(--muted);
     }
 
     /* Pull quote */
     .pullquote {
       padding: 100px 0;
-      background: var(--bg);
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
     }
 
@@ -439,10 +350,10 @@
 
     .pullquote blockquote {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-style: italic;
       line-height: 1.4;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       color: var(--text);
     }
 
@@ -454,7 +365,121 @@
       color: var(--muted);
     }
 
-    /* How it works */
+    /* Template section */
+    .template {
+      padding: 100px 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .template-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .template-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .template-header p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .template-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .template-card-header {
+      padding: 20px 32px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .template-card-header span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .copy-btn {
+      padding: 8px 16px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: color-mix(in oklab, var(--accent) 85%, white);
+    }
+
+    .copy-btn.copied {
+      background: var(--accent-dark);
+    }
+
+    .template-content {
+      padding: 32px;
+    }
+
+    .template-content p {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .template-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .template-content .greeting {
+      color: var(--accent-2);
+    }
+
+    .template-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .template-note p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .template-note strong {
+      color: var(--text);
+    }
+
+    /* Process section */
     .process {
       padding: 100px 0;
       background: var(--surface);
@@ -532,7 +557,7 @@
         padding: 40px 32px 40px 100px;
         min-height: 160px;
       }
-      
+
       .step p.step-number {
         font-size: 120px;
         left: 12px;
@@ -542,7 +567,7 @@
     /* FAQ */
     .faq {
       padding: 100px 0;
-      background: var(--surface);
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
 
@@ -604,7 +629,7 @@
     /* CTA */
     .cta {
       padding: 120px 0;
-      background: var(--bg);
+      background: var(--surface);
       text-align: center;
       border-bottom: 1px solid var(--border);
     }
@@ -696,17 +721,6 @@
       color: var(--text);
     }
 
-    /* Text cycling animation */
-    .cycling-text {
-      display: inline-block;
-      position: relative;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .cycling-text.fade-out {
-      opacity: 0;
-    }
-
     /* Accessibility */
     .sr-only {
       position: absolute;
@@ -756,7 +770,7 @@
         <span>Work Coach</span>
       </a>
       <div class="nav-links">
-        <a href="manager-conversation">Talk to your manager</a>
+        <a href="360-feedback">360 Feedback</a>
         <a href="about">About</a>
       </div>
       <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="nav-cta">Get the app</a>
@@ -766,70 +780,52 @@
   <main id="main">
     <section class="hero">
       <div class="container">
-        <p class="hero-kicker">The feedback you're not getting</p>
-        <h1>What your <span class="cycling-text" id="cycling-text">direct reports</span> will <em>never</em> say to your face</h1>
-        <p class="hero-deck">You ask for feedback. You say you want to hear it. And you're still missing the full picture.</p>
+        <p class="hero-kicker">For proactive professionals</p>
+        <h1>You don't need permission to <em>own your growth</em></h1>
+        <p class="hero-deck">Stop asking if you can do a 360. Start telling your manager why it's a win for everyone.</p>
       </div>
     </section>
 
-    <section class="video-demo" aria-labelledby="video-title">
+    <section class="reframe" aria-labelledby="reframe-title">
       <div class="container">
-        <div class="video-demo-header">
-          <h2 id="video-title">See it in action</h2>
-          <p>Watch how Work Coach gathers and synthesizes 360 feedback</p>
+        <div class="reframe-header">
+          <h2 id="reframe-title">Reframe the conversation</h2>
+          <p>This isn't about getting permission. It's about taking ownership of your career development.</p>
         </div>
-        <div class="video-wrapper">
-          <div class="video-container">
-            <iframe
-              src="https://customer-k4gom1968lo53ti1.cloudflarestream.com/be1b6790ed73e9ebf82d574f8bbfd200/iframe?poster=https%3A%2F%2Fcustomer-k4gom1968lo53ti1.cloudflarestream.com%2Fbe1b6790ed73e9ebf82d574f8bbfd200%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-              loading="lazy"
-              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-              allowfullscreen="true"
-            ></iframe>
+        <div class="reframe-grid">
+          <div class="reframe-card reframe-card--old">
+            <h3><span aria-hidden="true">&#10005;</span> The old way</h3>
+            <p>"Hey, is it okay if I do a 360 feedback cycle? I know it's extra work, but I think it could be helpful..."</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="solution" id="solution" aria-labelledby="solution-title">
-      <div class="container">
-        <div class="solution-header">
-          <h2 id="solution-title">360 feedback, without the overhead</h2>
-          <p>Work Coach gathers candid feedback and turns it into a clear picture of what to work on.</p>
-        </div>
-        <div class="features">
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true">↑</div>
-            <h3>Interview leadership</h3>
-            <p>Feedback from the people who influence your career trajectory.</p>
-            <p class="feature-detail">Structured questions that surface strategic perception gaps</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true">↔</div>
-            <h3>Interview your peers</h3>
-            <p>Your peers are how you build consensus and influence. Know where you stand.</p>
-            <p class="feature-detail">Cross-functional feedback on collaboration and communication</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true">↓</div>
-            <h3>Interview junior staff</h3>
-            <p>The feedback that's hardest to get and most important to hear.</p>
-            <p class="feature-detail">Anonymized and aggregated to protect relationships</p>
+          <div class="reframe-card reframe-card--new">
+            <h3><span aria-hidden="true">&#10003;</span> The new way</h3>
+            <p>"I'm taking the initiative to gather 360 feedback. Here's how it benefits both of us and what you can expect."</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="content" aria-labelledby="content-title">
-      <h2 id="content-title" class="sr-only">The power dynamic problem</h2>
+    <section class="benefits" aria-labelledby="benefits-title">
       <div class="container">
-        <div class="content-grid">
-          <p class="content-lead">The power dynamic makes honesty expensive. No matter how approachable you are, you still impact their raises, their projects, their career trajectory. That asymmetry shapes every interaction.</p>
-          <div class="content-body">
-            <p>Executive coaches have known this for decades. The first thing a good coach does is <strong>interview the people around you</strong> — leadership, peers, direct reports — to build a picture of how you're actually perceived.</p>
-            <p>They ask questions you can't ask. They hear things people won't say to your face. They <strong>anonymize the sources</strong> and synthesize it into patterns you can act on.</p>
-            <p>This is the work that costs $25,000 and takes months. It's also the work that separates managers who plateau from leaders who keep growing.</p>
-            <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 16px; display: inline-block;">Get honest feedback</a>
+        <div class="benefits-header">
+          <h2 id="benefits-title">What's in it for your manager</h2>
+          <p>This saves them time and makes their job easier.</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">&#8722;</div>
+            <h3>Less work on their plate</h3>
+            <p>Gathering feedback is time-consuming. You're doing the heavy lifting so they don't have to chase down colleagues for performance input.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">&#8593;</div>
+            <h3>More signal, less noise</h3>
+            <p>You're collecting feedback from more people than they ever could. Leadership, peers, direct reports. A fuller picture than any manager has time to build.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon" aria-hidden="true">&#9733;</div>
+            <h3>You come prepared</h3>
+            <p>Instead of vague conversations, you'll bring a synthesized report with specific strengths, growth areas, and your own plan for what to work on next.</p>
           </div>
         </div>
       </div>
@@ -839,64 +835,60 @@
       <h2 id="pullquote-title" class="sr-only">Key insight</h2>
       <div class="container">
         <div class="pullquote-inner">
-          <blockquote>"The feedback gap between what people say to your face and what they say about you is where careers stall."</blockquote>
-          <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary" style="margin-top: 40px; display: inline-block;">Start your 360 today</a>
+          <blockquote>"The best employees don't wait for their manager to hand them a development plan. They show up with one."</blockquote>
         </div>
       </div>
     </section>
 
-    <section class="process" id="how-it-works" aria-labelledby="process-title">
+    <section class="template" id="template" aria-labelledby="template-title">
       <div class="container">
-        <h2 id="process-title">How it works</h2>
+        <div class="template-header">
+          <h2 id="template-title">Copy this message</h2>
+          <p>Here's a template you can customize and send to your manager via Slack, email, or whatever works.</p>
+        </div>
+        <div class="template-card">
+          <div class="template-card-header">
+            <span>Message template</span>
+            <button class="copy-btn" id="copy-btn">Copy to clipboard</button>
+          </div>
+          <div class="template-content" id="template-text">
+            <p><span class="greeting">Hi [Manager name],</span></p>
+            <p>I wanted to give you a heads up that I'm doing a 360 feedback cycle to get input on my performance from people I work with closely.</p>
+            <p>I'll be reaching out to a few folks across leadership, peers, and direct reports to gather their candid perspectives. The feedback gets anonymized and synthesized into themes I can actually act on.</p>
+            <p>Once I have the results, I'll review them against my career ladder to identify specific strengths and areas for improvement. Then I'd love to set up time to walk you through what I learned and discuss which areas make the most sense to focus on.</p>
+            <p>I know gathering this kind of feedback typically falls on managers during review cycles, so I'm hoping this takes some of that work off your plate while also giving me more ownership over my own development.</p>
+            <p>Let me know if you have any questions!</p>
+          </div>
+        </div>
+        <div class="template-note">
+          <p><strong>Pro tip:</strong> Customize this to match your voice and your relationship with your manager. The key points are: you're being proactive, you'll do the work, and you'll come back with something concrete to discuss.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="what-happens" aria-labelledby="process-title">
+      <div class="container">
+        <h2 id="process-title">What happens next</h2>
         <div class="steps">
           <div class="step">
             <p class="step-number" aria-hidden="true">1</p>
-            <h4>You identify who to interview</h4>
-            <p>Select leadership, peers, and direct reports you want feedback from.</p>
+            <h4>You gather feedback</h4>
+            <p>Work Coach reaches out to the people you select with structured questions designed to surface honest, useful input.</p>
           </div>
           <div class="step">
             <p class="step-number" aria-hidden="true">2</p>
-            <h4>Work Coach reaches out</h4>
-            <p>Structured questions designed to surface candid, actionable feedback.</p>
+            <h4>Responses get synthesized</h4>
+            <p>Feedback is anonymized where appropriate and organized into clear themes about your strengths and growth areas.</p>
           </div>
           <div class="step">
             <p class="step-number" aria-hidden="true">3</p>
-            <h4>Responses are anonymized</h4>
-            <p>Sensitive sources are protected. Patterns are surfaced.</p>
+            <h4>You analyze against your ladder</h4>
+            <p>Compare the feedback to your career ladder or role expectations. Identify what to keep doing and what to work on.</p>
           </div>
           <div class="step">
             <p class="step-number" aria-hidden="true">4</p>
-            <h4>You get a clear picture</h4>
-            <p>Strengths, blind spots, and concrete next steps.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider">
-      <span class="divider-line"></span>
-      <span class="divider-symbol" aria-hidden="true">The uncomfortable truths</span>
-      <span class="divider-line"></span>
-    </div>
-
-    <section class="truths" aria-labelledby="truths-title">
-      <h2 id="truths-title" class="sr-only">Uncomfortable truths</h2>
-      <div class="container">
-        <div class="truths-grid">
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>Your 1:1s feel performative</h3>
-            <p>They tell you what they think you want to hear. The real concerns get saved for Slack DMs with peers.</p>
-          </div>
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>Your feedback lands wrong</h3>
-            <p>What you meant as coaching came across as criticism. They nodded and then vented to a friend.</p>
-          </div>
-          <div class="truth">
-            <p class="truth-quote" aria-hidden="true">"</p>
-            <h3>You have a blind spot</h3>
-            <p>There's a pattern everyone sees but you. And nobody's going to risk their job to tell you.</p>
+            <h4>You bring a plan to your manager</h4>
+            <p>Show up with insights, priorities, and ideas. Turn a vague check-in into a focused development conversation.</p>
           </div>
         </div>
       </div>
@@ -904,23 +896,27 @@
 
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="container">
-        <h2 id="faq-title">Frequently asked questions</h2>
+        <h2 id="faq-title">Common questions</h2>
         <div class="faq-grid">
           <details>
-            <summary>How is feedback collected?</summary>
-            <p>Work Coach conducts AI voice calls with each person you select. It's a natural conversation designed to surface candid, thoughtful feedback—not a form to fill out.</p>
+            <summary>What if my manager says no?</summary>
+            <p>This feedback is for you, not them. You're not asking permission to improve yourself. If they have concerns, the template above addresses the main ones: it saves them time, gives them better signal, and shows initiative. Most managers appreciate employees who take ownership of their growth.</p>
           </details>
           <details>
-            <summary>Do others need to download the app?</summary>
-            <p>No. Feedback providers access a simple web page that works on any device. No app download, no account creation—just a link and a conversation.</p>
+            <summary>Will my manager see the raw feedback?</summary>
+            <p>No. The feedback is yours and yours alone. You control what you share. When you meet with your manager, you're sharing your synthesis and your plan—not forwarding them a transcript.</p>
           </details>
           <details>
-            <summary>How are answers anonymized?</summary>
-            <p>You control the visibility. Feedback from executives is attributed by name. Feedback from peers and direct reports is anonymized and aggregated—so you get the real, unfiltered truth without anyone risking their relationship with you.</p>
+            <summary>What if my company already does 360s?</summary>
+            <p>Company 360s are usually annual, surface-level, and designed for HR. This is different: it's continuous, it's private, and it's focused on your actual development. Think of it as the feedback loop you run yourself, on your own timeline.</p>
           </details>
           <details>
-            <summary>Who are the responses shared with?</summary>
-            <p>Just you. Nobody else. Not your manager, not HR, not your company. This is your feedback for your growth.</p>
+            <summary>How is this different from just asking for feedback myself?</summary>
+            <p>When you ask directly, people filter. They don't want to hurt your feelings or damage the relationship. Work Coach creates the psychological safety of a third party—plus structured questions that go deeper than "how am I doing?"</p>
+          </details>
+          <details>
+            <summary>How much time does this take?</summary>
+            <p>About 5 minutes to set up. The people giving feedback spend 10-15 minutes in a voice conversation. You'll spend maybe 30 minutes reviewing the synthesis and preparing for your manager conversation. That's it.</p>
           </details>
         </div>
       </div>
@@ -928,11 +924,11 @@
 
     <section class="cta" aria-labelledby="cta-title">
       <div class="container">
-        <h2 id="cta-title">Find out what you're missing</h2>
-        <p>5-minute onboarding. Private by default. Built for you, not your company.</p>
+        <h2 id="cta-title">Take charge of your development</h2>
+        <p>Don't wait for your next review cycle. Start gathering feedback today.</p>
         <div class="cta-buttons">
-          <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary">Start your 360</a>
-          <a href="/" class="btn-outline">Learn more</a>
+          <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary">Get Work Coach</a>
+          <a href="360-feedback" class="btn-outline">Learn about 360 feedback</a>
         </div>
       </div>
     </section>
@@ -943,39 +939,29 @@
       <p>Your data is never shared with your employer.</p>
       <div class="footer-links">
         <a href="privacy.html">Privacy</a>
-        <a href="/#faq">FAQ</a>
+        <a href="support.html">Support</a>
       </div>
     </div>
   </footer>
 
   <script>
     (function() {
-      const phrases = ['direct reports', 'leadership', 'peers'];
-      const element = document.getElementById('cycling-text');
-      let currentIndex = 0;
-      const pauseDuration = 5000;
-      const fadeDuration = 500;
+      const copyBtn = document.getElementById('copy-btn');
+      const templateText = document.getElementById('template-text');
 
-      function cycle() {
-        setTimeout(function() {
-          // Fade out
-          element.classList.add('fade-out');
-          
+      copyBtn.addEventListener('click', function() {
+        const text = templateText.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
           setTimeout(function() {
-            // Change text while invisible
-            currentIndex = (currentIndex + 1) % phrases.length;
-            element.textContent = phrases[currentIndex];
-            
-            // Fade in
-            element.classList.remove('fade-out');
-            
-            // Continue cycling
-            cycle();
-          }, fadeDuration);
-        }, pauseDuration);
-      }
-
-      cycle();
+            copyBtn.textContent = 'Copy to clipboard';
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy: ', err);
+        });
+      });
     })();
   </script>
 </body>
