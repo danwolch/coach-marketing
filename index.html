@@ -216,6 +216,23 @@ nav {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+.compare-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.compare-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.1vw, 34px);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.compare-head p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 auto;
+}
 .compare-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1365,8 +1382,8 @@ a:focus {
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>
-        <span class="line dim">You don't need another AI note taker</span>
-        <span class="line">Find out what's <em>holding</em> you back.</span>
+        <span class="line">An AI coach that finds out</span>
+        <span class="line">what's <em>holding</em> you back.</span>
       </h1>
       <p class="subtitle">The feedback nobody tells you.</p>
       <div class="cta-row">
@@ -1378,6 +1395,10 @@ a:focus {
 </section>
 
 <section class="compare-section">
+  <div class="compare-head">
+    <h2>It observes your meetings to help you get better</h2>
+    <p>Other tools transcribe. Work Coach listens for what you missed, where you hesitated, and how to improve next time.</p>
+  </div>
   <div class="compare-grid">
     <div>
       <div class="compare-label">Your note taker</div>
