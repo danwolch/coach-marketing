@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
   <title>Open in Coach</title>
   <style>
     :root {
@@ -86,24 +87,70 @@
       outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
       outline-offset: 2px;
     }
+    .manual-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="icon" aria-hidden="true"></div>
-    <h1>Open in Coach</h1>
-    <p>This link is meant to open in the Coach app. Download it to continue.</p>
-    <a href="https://work.coach/download/mac" class="button">
-      Download for Mac
-    </a>
+
+    <!-- Deep link redirect state (macapp paths) -->
+    <div id="opening" class="hidden">
+      <h1>Opening Work Coach...</h1>
+      <p>You should see the app open momentarily.</p>
+    </div>
+
+    <!-- Fallback after redirect timeout or non-macapp 404 -->
+    <div id="fallback">
+      <h1>Open in Coach</h1>
+      <p>This link is meant to open in the Coach app. Download it to continue.</p>
+      <a href="https://work.coach/" class="button">Download for Mac</a>
+      <br>
+      <a id="manual-open" class="manual-link hidden">Try opening again</a>
+    </div>
   </div>
+
   <script>
-    // If this is a conversation deep link, you could try to extract info
-    const path = window.location.pathname;
-    if (path.startsWith('/app/conversation/')) {
-      // Could customize message or store conversation ID for later
-      console.log('Deep link to conversation:', path.split('/').pop());
-    }
+    (function () {
+      var path = window.location.pathname;
+
+      // Handle /macapp/ deep links -> workcoach:// redirect
+      if (path.match(/^\/macapp(\/|$)/)) {
+        var route = path.replace(/^\/macapp\/?/, '') || 'home';
+        var search = window.location.search || '';
+        var deepLink = 'workcoach://' + route + search;
+
+        // Show the "opening" state
+        document.getElementById('opening').classList.remove('hidden');
+        document.getElementById('fallback').classList.add('hidden');
+
+        // Attempt redirect
+        window.location.href = deepLink;
+
+        // After 3s, show fallback if still on this page
+        setTimeout(function () {
+          document.getElementById('opening').classList.add('hidden');
+          var fb = document.getElementById('fallback');
+          fb.classList.remove('hidden');
+          fb.querySelector('h1').textContent = "Couldn't open Work Coach";
+          fb.querySelector('p').textContent = 'The app may not be installed, or it didn\'t respond to the link.';
+          var manual = document.getElementById('manual-open');
+          manual.classList.remove('hidden');
+          manual.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = deepLink;
+          });
+        }, 3000);
+      }
+    })();
   </script>
 </body>
 </html>
