@@ -132,6 +132,11 @@ nav {
 }
 .btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
 .btn-mobile { display: none; }
+.email-form { display: none; }
+.non-mac-only { display: none; }
+body.non-mac-desktop .btn-desktop { display: none; }
+body.non-mac-desktop .email-form { display: flex; }
+body.non-mac-desktop .non-mac-only { display: block; }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 10px 20px;
@@ -1320,6 +1325,62 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* EMAIL FORM */
+.email-form {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.email-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input[type="email"]:focus {
+  border-color: var(--accent);
+}
+.email-form input[type="email"]::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+.email-form button {
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.email-form button:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.email-form button:disabled { opacity: 0.6; cursor: default; }
+.email-form-success {
+  font-size: 16px;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+.email-form-context {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+
 /* MOBILE */
 @media (max-width: 768px) { .nav-links { display: none; } }
 @media (max-width: 920px) {
@@ -1334,7 +1395,9 @@ a:focus {
   .hero h1 { font-size: 34px; max-width: 100%; line-height: 1.15; }
   .hero .subtitle { font-size: 17px; max-width: 340px; }
   .btn-desktop { display: none; }
-  .btn-mobile { display: inline-flex; }
+  .btn-mobile { display: none; }
+  .email-form { display: flex; }
+  .non-mac-only { display: block; }
   .compare-grid { grid-template-columns: 1fr; }
   .how-section { padding: 84px 20px 70px; }
   .how-head { margin-bottom: 32px; }
@@ -1388,8 +1451,12 @@ a:focus {
       <p class="subtitle">Observing you in meetings to find what you can't see yourself</p>
       <div class="cta-row">
         <a href="https://work.coach/download/mac" class="btn-primary btn-lg btn-desktop"><svg class="apple-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.0035 7.15814C19.3171 7.5784 18.7485 8.16594 18.351 8.86579C17.9534 9.56563 17.74 10.3549 17.7305 11.1597C17.7332 12.0655 18.0016 12.9506 18.5024 13.7054C19.0032 14.4602 19.7144 15.0515 20.5479 15.4061C20.2193 16.4664 19.7329 17.4712 19.1051 18.3868C18.2069 19.6798 17.2677 20.9727 15.8387 20.9727C14.4096 20.9727 14.0421 20.1425 12.3952 20.1425C10.7892 20.1425 10.2175 21 8.91088 21C7.60426 21 6.69246 19.8022 5.6444 18.3323C4.25999 16.2732 3.49913 13.8583 3.45312 11.3774C3.45312 7.29427 6.10722 5.13028 8.72032 5.13028C10.1086 5.13028 11.2656 6.04208 12.1366 6.04208C12.9669 6.04208 14.2599 5.07572 15.8387 5.07572C16.6504 5.05478 17.4548 5.23375 18.1811 5.59689C18.9074 5.96003 19.5332 6.49619 20.0035 7.15814ZM15.0901 3.34726C15.7861 2.52858 16.18 1.49589 16.2062 0.421702C16.2074 0.280092 16.1937 0.13875 16.1654 0C14.9699 0.116777 13.8644 0.686551 13.0757 1.59245C12.3731 2.37851 11.9643 3.38362 11.9188 4.43697C11.9193 4.56507 11.933 4.69278 11.9597 4.81808C12.0539 4.8359 12.1496 4.84503 12.2455 4.84536C12.7964 4.80152 13.3327 4.64611 13.8217 4.38858C14.3108 4.13104 14.7423 3.77676 15.0901 3.34726Z" fill="currentColor"></path></svg>Download for Mac</a>
-        <a href="https://apps.apple.com/us/app/work-coach/id6749246024" class="btn-primary btn-lg btn-mobile">Download for iPhone</a>
+        <form class="email-form" onsubmit="submitEmailForm(event, this)">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Get the download link</button>
+        </form>
       </div>
+      <p class="email-form-context non-mac-only">Work Coach is a Mac app. We'll send you the link.</p>
     </div>
   </div>
 </section>
@@ -1818,11 +1885,19 @@ a:focus {
 </section>
 
 <section class="cta-section">
-  <h2>Start with your next meeting</h2>
-  <p>Download the Mac app. Record a meeting. See what you've been missing.</p>
-  <div class="cta-row">
+  <h2 class="btn-desktop">Start with your next meeting</h2>
+  <h2 class="non-mac-only">Get the download link</h2>
+  <p class="btn-desktop">Download the Mac app. Record a meeting. See what you've been missing.</p>
+  <p class="non-mac-only">Work Coach is a Mac app. Enter your email and we'll send you the link to download when you're at your desk.</p>
+  <div class="cta-row btn-desktop">
     <a href="https://work.coach/download/mac" class="btn-primary btn-lg"><svg class="apple-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.0035 7.15814C19.3171 7.5784 18.7485 8.16594 18.351 8.86579C17.9534 9.56563 17.74 10.3549 17.7305 11.1597C17.7332 12.0655 18.0016 12.9506 18.5024 13.7054C19.0032 14.4602 19.7144 15.0515 20.5479 15.4061C20.2193 16.4664 19.7329 17.4712 19.1051 18.3868C18.2069 19.6798 17.2677 20.9727 15.8387 20.9727C14.4096 20.9727 14.0421 20.1425 12.3952 20.1425C10.7892 20.1425 10.2175 21 8.91088 21C7.60426 21 6.69246 19.8022 5.6444 18.3323C4.25999 16.2732 3.49913 13.8583 3.45312 11.3774C3.45312 7.29427 6.10722 5.13028 8.72032 5.13028C10.1086 5.13028 11.2656 6.04208 12.1366 6.04208C12.9669 6.04208 14.2599 5.07572 15.8387 5.07572C16.6504 5.05478 17.4548 5.23375 18.1811 5.59689C18.9074 5.96003 19.5332 6.49619 20.0035 7.15814ZM15.0901 3.34726C15.7861 2.52858 16.18 1.49589 16.2062 0.421702C16.2074 0.280092 16.1937 0.13875 16.1654 0C14.9699 0.116777 13.8644 0.686551 13.0757 1.59245C12.3731 2.37851 11.9643 3.38362 11.9188 4.43697C11.9193 4.56507 11.933 4.69278 11.9597 4.81808C12.0539 4.8359 12.1496 4.84503 12.2455 4.84536C12.7964 4.80152 13.3327 4.64611 13.8217 4.38858C14.3108 4.13104 14.7423 3.77676 15.0901 3.34726Z" fill="currentColor"></path></svg>Download for Mac</a>
     <a href="360-feedback.html" class="btn-outline btn-lg">Learn about 360 feedback</a>
+  </div>
+  <div class="cta-row">
+    <form class="email-form" onsubmit="submitEmailForm(event, this)">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Get the download link</button>
+    </form>
   </div>
   <p class="fine-print">Free to start · No credit card · Your data stays yours</p>
 </section>
@@ -1839,5 +1914,47 @@ a:focus {
   </div>
 </footer>
 
+<script>
+(function() {
+  var ua = navigator.userAgent || '';
+  var platform = navigator.platform || '';
+  var isMac = /Mac/.test(platform);
+  var isMobile = /Android|iPhone|iPad|iPod/.test(ua) || (navigator.maxTouchPoints > 1 && !isMac);
+
+  if (isMobile || !isMac) {
+    document.body.classList.add('non-mac-desktop');
+  }
+})();
+
+function submitEmailForm(e, form) {
+  e.preventDefault();
+  var email = form.querySelector('input[type="email"]').value;
+  var btn = form.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  fetch('https://api.hsforms.com/submissions/v3/integration/submit/240379/4ec96784-2317-4971-8a75-ee368eca1a39', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: [{ name: 'email', value: email }],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    })
+  }).then(function(res) {
+    if (!res.ok) throw new Error('Submit failed');
+    form.innerHTML = '<span class="email-form-success">Check your inbox — we\'ll send the download link shortly.</span>';
+    if (window.posthog) {
+      posthog.capture('mobile_email_signup', { email: email });
+    }
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'Get the download link';
+    alert('Something went wrong. Please try again.');
+  });
+}
+</script>
 </body>
 </html>
