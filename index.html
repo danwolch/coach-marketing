@@ -1920,9 +1920,20 @@ a:focus {
   var platform = navigator.platform || '';
   var isMac = /Mac/.test(platform);
   var isMobile = /Android|iPhone|iPad|iPod/.test(ua) || (navigator.maxTouchPoints > 1 && !isMac);
+  var isWindows = /Win/.test(platform);
 
-  if (isMobile || !isMac) {
+  if (isMobile) {
     document.body.classList.add('non-mac-desktop');
+    window._hsFormId = '4ec96784-2317-4971-8a75-ee368eca1a39';
+    window._signupSource = 'mobile';
+  } else if (isWindows) {
+    document.body.classList.add('non-mac-desktop');
+    window._hsFormId = '7b9645bb-45eb-4417-9e1e-9ffb2780a505';
+    window._signupSource = 'windows';
+  } else if (!isMac) {
+    document.body.classList.add('non-mac-desktop');
+    window._hsFormId = '7b9645bb-45eb-4417-9e1e-9ffb2780a505';
+    window._signupSource = 'other_desktop';
   }
 })();
 
@@ -1930,10 +1941,11 @@ function submitEmailForm(e, form) {
   e.preventDefault();
   var email = form.querySelector('input[type="email"]').value;
   var btn = form.querySelector('button');
+  var formId = window._hsFormId;
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  fetch('https://api.hsforms.com/submissions/v3/integration/submit/240379/4ec96784-2317-4971-8a75-ee368eca1a39', {
+  fetch('https://api.hsforms.com/submissions/v3/integration/submit/240379/' + formId, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -1947,7 +1959,7 @@ function submitEmailForm(e, form) {
     if (!res.ok) throw new Error('Submit failed');
     form.innerHTML = '<span class="email-form-success">Check your inbox — we\'ll send the download link shortly.</span>';
     if (window.posthog) {
-      posthog.capture('mobile_email_signup', { email: email });
+      posthog.capture('email_signup', { email: email, source: window._signupSource });
     }
   }).catch(function() {
     btn.disabled = false;
