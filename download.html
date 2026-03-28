@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta name="color-scheme" content="light">
+<title>Download Work Coach</title>
+<link rel="canonical" href="https://work.coach/download">
+<link rel="icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://work.coach/download">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Download Work Coach">
+<meta property="og:description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Download Work Coach">
+<meta name="twitter:description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* MAIN CONTENT */
+.download-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.download-page h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.download-page h1 em { font-style: italic; color: var(--accent-2); }
+
+.download-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ─── MAC INSTALLATION ANIMATION ─── */
+.install-animation {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+/* Step indicators */
+.steps-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.3;
+  transition: opacity 0.4s;
+}
+.step-dot.active { opacity: 1; }
+.step-dot.done { opacity: 0.6; }
+.step-dot-circle {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.4s;
+}
+.step-dot.active .step-dot-circle { background: var(--accent); }
+.step-dot.done .step-dot-circle { background: var(--accent); }
+.step-dot-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Animation container */
+.anim-stage {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  height: 340px;
+}
+
+/* Shared scene styles */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+  padding: 24px;
+}
+.scene.active { opacity: 1; }
+
+/* ─── Scene 1: Open from Downloads (dock close-up) ─── */
+.dock-closeup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.dock-tooltip {
+  background: #f0ece3;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.dock-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px; height: 12px;
+  background: #f0ece3;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.dock-tray {
+  background: linear-gradient(180deg, #b8cc9e 0%, #8fb56e 100%);
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  position: relative;
+}
+.dock-tray-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+.dock-tray-item {
+  width: 64px; height: 64px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dock-tray-item.app-placeholder {
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.dock-tray-item.dmg-file {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  position: relative;
+  width: 56px; height: 68px;
+}
+.dock-tray-item.dmg-file::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 16px; height: 16px;
+  background: linear-gradient(135deg, #e8e3db 50%, white 50%);
+  border-bottom-left-radius: 4px;
+}
+.dmg-file-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding-top: 8px;
+}
+.dmg-file-inner .dmg-disk {
+  width: 28px; height: 28px;
+  background: linear-gradient(180deg, #c0bdb5 0%, #8a877f 100%);
+  border-radius: 4px;
+  border: 1px solid #a0a0a0;
+}
+.dmg-file-inner .dmg-ext {
+  font-size: 8px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+.dock-tray-item.trash {
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.dock-cursor {
+  position: absolute;
+  right: 60px;
+  bottom: 8px;
+  width: 28px; height: 34px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 10;
+}
+.dock-cursor.visible { opacity: 1; }
+
+.open-instruction {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 24px;
+  font-weight: 500;
+}
+
+/* ─── Scene 3: DMG installer — drag to Applications ─── */
+.scene-dmg .dmg-window {
+  background: linear-gradient(180deg, #f7f5f0 0%, #ede9e0 100%);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+}
+.dmg-titlebar {
+  background: linear-gradient(180deg, #e8e4dc 0%, #ddd8ce 100%);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid var(--border);
+}
+.dmg-titlebar span {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+}
+.dmg-titlebar span:nth-child(1) { background: #ec6a5e; }
+.dmg-titlebar span:nth-child(2) { background: #f4bf4f; }
+.dmg-titlebar span:nth-child(3) { background: #61c554; }
+.dmg-title {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.dmg-body {
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+}
+
+.dmg-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.dmg-app-icon {
+  width: 80px; height: 80px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+.dmg-app-icon img {
+  display: block;
+}
+.dmg-app-icon .app-name {
+  position: absolute;
+  bottom: -24px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.dmg-arrow {
+  font-size: 28px;
+  color: var(--muted);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.dmg-apps-folder {
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, #7ba4d4 0%, #4a7cc9 100%);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(74, 124, 201, 0.2);
+  position: relative;
+}
+.dmg-apps-folder svg {
+  width: 36px; height: 36px;
+  color: white;
+}
+.dmg-apps-folder .folder-name {
+  position: absolute;
+  bottom: -24px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Drag animation */
+.dmg-app-icon.dragging {
+  transform: translateX(128px) scale(0.85);
+  opacity: 0.8;
+}
+.drag-ghost {
+  position: absolute;
+  width: 80px; height: 80px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Success flash */
+.dmg-apps-folder.received {
+  animation: folder-flash 0.6s ease;
+}
+@keyframes folder-flash {
+  0%, 100% { box-shadow: 0 4px 16px rgba(74, 124, 201, 0.2); }
+  50% { box-shadow: 0 4px 24px rgba(49, 193, 120, 0.5); }
+}
+
+/* ─── Scene 4: Open Applications (Finder list view) ─── */
+.finder-window {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #c8c8c8;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+.finder-title {
+  padding: 16px 20px 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  border-bottom: 1px solid #e5e5e5;
+}
+.finder-list {
+  list-style: none;
+}
+.finder-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+.finder-list-item:last-child { border-bottom: none; }
+.finder-item-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.finder-item-icon img {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: block;
+}
+.finder-item-name {
+  font-size: 15px;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.finder-list-item.selected {
+  background: #0063e1;
+  border-bottom-color: #0063e1;
+}
+.finder-list-item.selected .finder-item-name {
+  color: #fff;
+  font-weight: 500;
+}
+.finder-cursor {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 28px; height: 34px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 10;
+}
+.finder-cursor.visible { opacity: 1; }
+.scene-apps .open-instruction {
+  margin-top: 16px;
+}
+
+/* Countdown & link */
+.redirect-notice {
+  text-align: center;
+  margin-top: 8px;
+}
+.redirect-notice p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.redirect-notice .countdown {
+  font-weight: 700;
+  color: var(--accent-2);
+}
+.manual-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--accent-2);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.manual-link:hover { color: var(--accent); }
+
+/* ─── WINDOWS / MOBILE VIEWS ─── */
+.alt-view {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.alt-view .platform-icon {
+  width: 64px; height: 64px;
+  background: var(--surface);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.alt-view .platform-icon svg {
+  width: 32px; height: 32px;
+  color: var(--muted);
+}
+.alt-view h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.alt-view p {
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.email-form {
+  display: flex;
+  gap: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.email-form input[type="email"] {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 15px;
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input[type="email"]:focus {
+  border-color: var(--accent);
+}
+.email-form input[type="email"]::placeholder {
+  color: color-mix(in oklab, var(--muted) 60%, transparent);
+}
+.email-form button {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Source Sans 3', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.email-form button:hover {
+  background: color-mix(in oklab, var(--accent) 85%, white);
+}
+
+.form-success {
+  display: none;
+  padding: 16px 24px;
+  background: rgba(49, 193, 120, 0.08);
+  border: 1px solid rgba(49, 193, 120, 0.2);
+  border-radius: 12px;
+  color: var(--accent-2);
+  font-weight: 500;
+  font-size: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form-success.visible { display: block; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link:hover { color: var(--text); }
+
+/* ─── Scene 6: Meeting notification ─── */
+.meeting-notif {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 340px;
+  overflow: hidden;
+  animation: notif-slide-in 0.4s ease both;
+}
+@keyframes notif-slide-in {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.notif-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px 0;
+}
+.notif-icon {
+  flex-shrink: 0;
+}
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.notif-app {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+.notif-time {
+  font-size: 11px;
+  color: var(--muted);
+}
+.notif-body {
+  padding: 6px 14px 12px;
+}
+.notif-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.notif-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.notif-actions {
+  display: flex;
+  border-top: 1px solid var(--border);
+}
+.notif-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Source Sans 3', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.notif-btn-secondary {
+  background: transparent;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+}
+.notif-btn-primary {
+  background: transparent;
+  color: var(--accent);
+}
+.notif-btn-primary.clicked {
+  background: rgba(49, 193, 120, 0.1);
+}
+.scene-notification .open-instruction {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  padding: 32px 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: auto;
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-dot" aria-hidden="true"></span>
+      <span>Work Coach</span>
+    </a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ─── MAC VIEW ─── -->
+  <div id="mac-view" class="download-page" style="display:none;">
+    <h1>Your download is <em>starting</em></h1>
+    <p class="download-subtitle">Here's how to get set up in under a minute</p>
+
+    <div class="install-animation">
+      <div class="steps-indicator">
+        <div class="step-dot active" data-step="1">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Open .dmg</div>
+        </div>
+        <div class="step-dot" data-step="2">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Drag to Apps</div>
+        </div>
+        <div class="step-dot" data-step="3">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Open Apps</div>
+        </div>
+        <div class="step-dot" data-step="4">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Record</div>
+        </div>
+      </div>
+
+      <div class="anim-stage">
+
+        <!-- Scene 1: Open from Downloads -->
+        <div class="scene scene-open active" data-scene="1">
+          <div class="dock-closeup" id="downloads-icon">
+            <div class="dock-tooltip">Downloads</div>
+            <div class="dock-tray">
+              <div class="dock-tray-item app-placeholder"></div>
+              <div class="dock-tray-divider"></div>
+              <div class="dock-tray-item dmg-file">
+                <div class="dmg-file-inner">
+                  <div class="dmg-disk"></div>
+                  <div class="dmg-ext">.dmg</div>
+                </div>
+              </div>
+              <div class="dock-tray-item trash">
+                <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><path d="M5 7h14M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M7 7l1 12a2 2 0 002 2h4a2 2 0 002-2l1-12" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>
+              </div>
+              <!-- Cursor SVG -->
+              <svg class="dock-cursor" id="dock-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <p class="open-instruction">Open <strong>WorkCoach.dmg</strong> from your Downloads</p>
+        </div>
+
+        <!-- Scene 2: DMG installer — drag to Applications -->
+        <div class="scene scene-dmg" data-scene="2">
+          <div class="dmg-window">
+            <div class="dmg-titlebar">
+              <span></span><span></span><span></span>
+              <div class="dmg-title">Work Coach</div>
+            </div>
+            <div class="dmg-body">
+              <div class="dmg-icon-wrapper">
+                <div class="dmg-app-icon" id="dmg-app-icon">
+                  <img src="img/app-icon/icon-128.png" alt="Work Coach" width="80" height="80" style="border-radius:18px;">
+                  <span class="app-name">Work Coach</span>
+                </div>
+              </div>
+              <div class="dmg-arrow">→</div>
+              <div class="dmg-icon-wrapper">
+                <div class="dmg-apps-folder" id="dmg-apps-folder">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z" fill="rgba(255,255,255,0.8)"/></svg>
+                  <span class="folder-name">Applications</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene 3: Open Applications folder (Finder list view) -->
+        <div class="scene scene-apps" data-scene="3">
+          <div class="finder-window">
+            <div class="finder-title">Applications</div>
+            <ul class="finder-list">
+              <li class="finder-list-item">
+                <div class="finder-item-icon" style="background:linear-gradient(135deg,#4285f4,#34a853);border-radius:8px;">
+                  <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" opacity="0.8"/></svg>
+                </div>
+                <span class="finder-item-name">Google Drive.app</span>
+              </li>
+              <li class="finder-list-item">
+                <div class="finder-item-icon" style="background:linear-gradient(135deg,#D4A574,#C4956A);border-radius:8px;">
+                  <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="12" cy="12" r="8" fill="rgba(255,255,255,0.85)"/><path d="M8 13c1-3 3-4 4-4s3 1 4 4" stroke="#C4956A" stroke-width="1.5" fill="none"/></svg>
+                </div>
+                <span class="finder-item-name">Claude.app</span>
+              </li>
+              <li class="finder-list-item selected" id="apps-wc-item">
+                <div class="finder-item-icon">
+                  <img src="img/app-icon/icon-128.png" alt="Work Coach" width="36" height="36" style="border-radius:8px;">
+                </div>
+                <span class="finder-item-name">Work Coach.app</span>
+                <!-- Cursor SVG -->
+                <svg class="finder-cursor" id="finder-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </li>
+              <li class="finder-list-item">
+                <div class="finder-item-icon" style="background:linear-gradient(135deg,#5ac8fa,#007aff);border-radius:8px;">
+                  <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.8"/></svg>
+                </div>
+                <span class="finder-item-name">Zoom.app</span>
+              </li>
+            </ul>
+          </div>
+          <p class="open-instruction">Open <strong>Applications</strong> and double-click <strong>Work Coach</strong></p>
+        </div>
+
+        <!-- Scene 4: Meeting notification -->
+        <div class="scene scene-notification" data-scene="4">
+          <div class="meeting-notif">
+            <div class="notif-bar">
+              <div class="notif-icon">
+                <img src="img/app-icon/icon-128.png" alt="Work Coach" width="24" height="24" style="border-radius:5px;">
+              </div>
+              <div class="notif-header">
+                <span class="notif-app">Work Coach</span>
+                <span class="notif-time">now</span>
+              </div>
+            </div>
+            <div class="notif-body">
+              <div class="notif-title">Meeting detected</div>
+              <div class="notif-text">"Product Review — Roadmap" is starting. Would you like Work Coach to observe?</div>
+            </div>
+            <div class="notif-actions">
+              <button class="notif-btn notif-btn-secondary">Not now</button>
+              <button class="notif-btn notif-btn-primary" id="notif-record-btn">Record</button>
+            </div>
+          </div>
+          <p class="open-instruction">When a meeting starts, Work Coach asks to record</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="redirect-notice">
+      <p>Your download will begin in <span class="countdown" id="countdown">3</span> seconds</p>
+      <a href="https://work.coach/download/mac" class="manual-link" id="manual-download">Download manually</a>
+    </div>
+  </div>
+
+  <!-- ─── WINDOWS VIEW ─── -->
+  <div id="windows-view" class="download-page" style="display:none;">
+    <div class="alt-view">
+      <div class="platform-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.548l7.206-0.994v6.958H3V5.548zm0 12.904l7.206 0.994v-6.934H3v5.94zm8.017 1.103L21 21v-8.488h-9.983v6.043zm0-14.11v6.067H21V3L11.017 5.445z"/></svg>
+      </div>
+      <h2>Mac only — for now</h2>
+      <p>Work Coach is currently available on macOS. Leave your email and we'll let you know when the Windows version is ready.</p>
+      <form class="email-form" id="windows-form" onsubmit="return false;">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit">Notify me</button>
+      </form>
+      <div class="form-success" id="windows-success">Thanks! We'll email you when it's ready for Windows.</div>
+      <a href="index.html" class="back-link">&larr; Back to Work Coach</a>
+    </div>
+  </div>
+
+  <!-- ─── MOBILE VIEW ─── -->
+  <div id="mobile-view" class="download-page" style="display:none;">
+    <div class="alt-view">
+      <div class="platform-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-width="3" stroke-linecap="round"/></svg>
+      </div>
+      <h2>Work Coach is a desktop app</h2>
+      <p>It runs on your Mac during meetings. Drop your email and we'll send you a download link for when you're back at your computer.</p>
+      <form class="email-form" id="mobile-form" onsubmit="return false;">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit">Send me the link</button>
+      </form>
+      <div class="form-success" id="mobile-success">Got it! Check your inbox next time you're at your Mac.</div>
+      <a href="index.html" class="back-link">&larr; Back to Work Coach</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // ─── Platform detection ───
+  var ua = navigator.userAgent;
+  var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  var isMac = /Macintosh|Mac OS X/i.test(ua);
+  var isWindows = /Windows/i.test(ua);
+
+  if (isMobile) {
+    document.getElementById('mobile-view').style.display = 'flex';
+    posthog.capture('download_page_viewed', { platform: 'mobile' });
+  } else if (isWindows) {
+    document.getElementById('windows-view').style.display = 'flex';
+    posthog.capture('download_page_viewed', { platform: 'windows' });
+  } else {
+    // Mac or unknown desktop — show Mac flow
+    document.getElementById('mac-view').style.display = 'flex';
+    posthog.capture('download_page_viewed', { platform: 'mac' });
+    startMacFlow();
+  }
+
+  // ─── Email forms ───
+  function setupForm(formId, successId, eventName) {
+    var form = document.getElementById(formId);
+    var success = document.getElementById(successId);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = form.querySelector('input[type="email"]').value;
+      if (!email) return;
+      posthog.capture(eventName, { email: email });
+      form.style.display = 'none';
+      success.classList.add('visible');
+    });
+  }
+  setupForm('windows-form', 'windows-success', 'windows_waitlist_signup');
+  setupForm('mobile-form', 'mobile-success', 'mobile_download_link_request');
+
+  // ─── Mac installation animation + redirect ───
+  function startMacFlow() {
+    var DOWNLOAD_URL = 'https://work.coach/download/mac';
+    var countdown = 3;
+    var countdownEl = document.getElementById('countdown');
+    var scenes = document.querySelectorAll('.scene');
+    var stepDots = document.querySelectorAll('.step-dot');
+
+    function showScene(n) {
+      scenes.forEach(function(s) {
+        s.classList.toggle('active', parseInt(s.dataset.scene) === n);
+      });
+      stepDots.forEach(function(d) {
+        var step = parseInt(d.dataset.step);
+        d.classList.toggle('active', step === n);
+        d.classList.toggle('done', step < n);
+      });
+    }
+
+    function resetAnimState() {
+      var dockCursor = document.getElementById('dock-cursor');
+      if (dockCursor) dockCursor.classList.remove('visible');
+
+      document.getElementById('dmg-app-icon').classList.remove('dragging');
+      document.getElementById('dmg-apps-folder').classList.remove('received');
+
+      var finderCursor = document.getElementById('finder-cursor');
+      if (finderCursor) finderCursor.classList.remove('visible');
+
+      var notif = document.querySelector('.meeting-notif');
+      if (notif) {
+        notif.style.animation = 'none';
+        notif.offsetHeight;
+        notif.style.animation = '';
+      }
+    }
+
+    function runCycle() {
+      resetAnimState();
+      showScene(1);
+
+      // Scene 1: Open from Downloads (show cursor on dmg)
+      setTimeout(function() {
+        var dockCursor = document.getElementById('dock-cursor');
+        if (dockCursor) dockCursor.classList.add('visible');
+      }, 400);
+
+      // Scene 2: DMG drag to Applications
+      setTimeout(function() {
+        showScene(2);
+        setTimeout(function() {
+          document.getElementById('dmg-app-icon').classList.add('dragging');
+          setTimeout(function() {
+            document.getElementById('dmg-apps-folder').classList.add('received');
+          }, 800);
+        }, 800);
+      }, 2500);
+
+      // Scene 3: Open Applications (show cursor on Work Coach row)
+      setTimeout(function() {
+        showScene(3);
+        setTimeout(function() {
+          var finderCursor = document.getElementById('finder-cursor');
+          if (finderCursor) finderCursor.classList.add('visible');
+        }, 400);
+      }, 5000);
+
+      // Scene 4: Meeting notification
+      setTimeout(function() {
+        showScene(4);
+        setTimeout(function() {
+          var btn = document.getElementById('notif-record-btn');
+          if (btn) btn.classList.add('clicked');
+        }, 1200);
+      }, 7500);
+
+      // Loop: restart after pause
+      setTimeout(function() {
+        var btn = document.getElementById('notif-record-btn');
+        if (btn) btn.classList.remove('clicked');
+        runCycle();
+      }, 10500);
+    }
+
+    runCycle();
+
+    // Countdown & redirect
+    var timer = setInterval(function() {
+      countdown--;
+      if (countdownEl) countdownEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(timer);
+        window.location.href = DOWNLOAD_URL;
+      }
+    }, 1000);
+
+    // Manual download link
+    document.getElementById('manual-download').addEventListener('click', function(e) {
+      clearInterval(timer);
+      posthog.capture('download_manual_click');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
