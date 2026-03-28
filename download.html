@@ -956,14 +956,20 @@ footer {
   var isMac = /Macintosh|Mac OS X/i.test(ua);
   var isWindows = /Windows/i.test(ua);
 
+  console.log('[WorkCoach] UA:', ua);
+  console.log('[WorkCoach] platform:', navigator.platform);
+  console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
+
   if (isMobile) {
+    console.log('[WorkCoach] Showing: mobile-view');
     document.getElementById('mobile-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mobile' });
   } else if (isWindows) {
+    console.log('[WorkCoach] Showing: windows-view');
     document.getElementById('windows-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'windows' });
   } else {
-    // Mac or unknown desktop — show Mac flow
+    console.log('[WorkCoach] Showing: mac-view');
     document.getElementById('mac-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mac' });
     startMacFlow();
