@@ -956,31 +956,62 @@ footer {
   var isMac = /Macintosh|Mac OS X/i.test(ua);
   var isWindows = /Windows/i.test(ua);
 
+  console.log('[WorkCoach] UA:', ua);
+  console.log('[WorkCoach] platform:', navigator.platform);
+  console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
+
   if (isMobile) {
+    console.log('[WorkCoach] Showing: mobile-view');
     document.getElementById('mobile-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mobile' });
   } else if (isWindows) {
+    console.log('[WorkCoach] Showing: windows-view');
     document.getElementById('windows-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'windows' });
   } else {
-    // Mac or unknown desktop — show Mac flow
+    console.log('[WorkCoach] Showing: mac-view');
     document.getElementById('mac-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mac' });
     startMacFlow();
   }
 
   // ─── Email forms ───
+  var HS_PORTAL = '240379';
+  var HS_FORMS = {
+    'mobile-form': '4ec96784-2317-4971-8a75-ee368eca1a39',
+    'windows-form': '7b9645bb-45eb-4417-9e1e-9ffb2780a505'
+  };
+
   function setupForm(formId, successId, eventName) {
     var form = document.getElementById(formId);
     var success = document.getElementById(successId);
     if (!form) return;
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var email = form.querySelector('input[type="email"]').value;
+      var input = form.querySelector('input[type="email"]');
+      var btn = form.querySelector('button');
+      var email = input.value;
       if (!email) return;
-      posthog.capture(eventName, { email: email });
-      form.style.display = 'none';
-      success.classList.add('visible');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORMS[formId], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: [{ name: 'email', value: email }],
+          context: { pageUri: window.location.href, pageName: document.title }
+        })
+      }).then(function(res) {
+        if (!res.ok) throw new Error('Submit failed');
+        posthog.capture(eventName, { email: email });
+        form.style.display = 'none';
+        success.classList.add('visible');
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = formId === 'mobile-form' ? 'Send me the link' : 'Notify me';
+        alert('Something went wrong. Please try again.');
+      });
     });
   }
   setupForm('windows-form', 'windows-success', 'windows_waitlist_signup');
