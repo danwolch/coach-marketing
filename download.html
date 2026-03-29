@@ -976,12 +976,6 @@ footer {
   }
 
   // ─── Email forms ───
-  var HS_PORTAL = '240379';
-  var HS_FORMS = {
-    'mobile-form': '4ec96784-2317-4971-8a75-ee368eca1a39',
-    'windows-form': '7b9645bb-45eb-4417-9e1e-9ffb2780a505'
-  };
-
   function setupForm(formId, successId, eventName) {
     var form = document.getElementById(formId);
     var success = document.getElementById(successId);
@@ -989,29 +983,11 @@ footer {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var input = form.querySelector('input[type="email"]');
-      var btn = form.querySelector('button');
       var email = input.value;
       if (!email) return;
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORMS[formId], {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fields: [{ name: 'email', value: email }],
-          context: { pageUri: window.location.href, pageName: document.title }
-        })
-      }).then(function(res) {
-        if (!res.ok) throw new Error('Submit failed');
-        posthog.capture(eventName, { email: email });
-        form.style.display = 'none';
-        success.classList.add('visible');
-      }).catch(function() {
-        btn.disabled = false;
-        btn.textContent = formId === 'mobile-form' ? 'Send me the link' : 'Notify me';
-        alert('Something went wrong. Please try again.');
-      });
+      posthog.capture(eventName, { email: email });
+      form.style.display = 'none';
+      success.classList.add('visible');
     });
   }
   setupForm('windows-form', 'windows-success', 'windows_waitlist_signup');
