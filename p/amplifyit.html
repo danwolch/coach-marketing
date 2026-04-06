@@ -32,7 +32,7 @@
   posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
 
   // Partner tracking — set PARTNER_NAME for each partner page
-  var PARTNER_NAME = 'acme';
+  var PARTNER_NAME = 'amplifyit';
   if (PARTNER_NAME) {
     posthog.register({ partner: PARTNER_NAME });
     try { localStorage.setItem('wc_partner', PARTNER_NAME); } catch(e) {}
