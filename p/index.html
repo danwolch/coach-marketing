@@ -1,0 +1,1850 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An AI coach that finds out what's holding you back. Work Coach observes your meetings and gives you the feedback nobody tells you — filler words, missed agendas, coaching insights, and trends over time.">
+<meta name="color-scheme" content="light">
+<title>Work Coach — An AI coach that finds out what's holding you back.</title>
+<link rel="canonical" href="https://work.coach/">
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://work.coach/">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Work Coach — An AI coach that finds out what's holding you back.">
+<meta property="og:description" content="The feedback nobody tells you. Work Coach observes your meetings and helps you improve over time.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Work Coach meeting analysis screen">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Work Coach — An AI coach that finds out what's holding you back.">
+<meta name="twitter:description" content="The feedback nobody tells you. Work Coach observes your meetings and helps you improve over time.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+
+  // Partner tracking — set PARTNER_NAME for each partner page
+  var PARTNER_NAME = '';
+  if (PARTNER_NAME) {
+    posthog.register({ partner: PARTNER_NAME });
+    try { localStorage.setItem('wc_partner', PARTNER_NAME); } catch(e) {}
+  }
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --amber: #c4891a;
+  --amber-soft: rgba(196, 137, 26, 0.1);
+  --red: #c94a4a;
+  --red-soft: rgba(201, 74, 74, 0.08);
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.apple-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-mobile { display: none; }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: border-color 0.2s;
+}
+.btn-outline:hover { border-color: color-mix(in oklab, var(--border) 50%, var(--accent) 50%); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+
+/* HERO */
+.hero {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+  position: relative;
+}
+.hero-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-copy {
+  text-align: center;
+  padding-top: 0;
+}
+.hero-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 0 auto 18px;
+}
+.hero h1 .line {
+  display: block;
+  white-space: nowrap;
+}
+.hero h1 .dim {
+  color: color-mix(in oklab, var(--muted) 80%, white 20%);
+}
+.hero h1 em { font-style: italic; color: var(--accent-2); }
+.hero .subtitle {
+  font-size: 22px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  max-width: 640px;
+  margin: 0 auto 34px;
+  line-height: 1.45;
+}
+.hero .cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.hero .btn-primary.btn-lg {
+  padding: 17px 32px;
+  font-size: 18px;
+  box-shadow: 0 10px 26px rgba(49, 193, 120, 0.28);
+}
+
+/* COMPARE */
+.compare-section {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+.compare-head {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.compare-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.compare-head p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* MOCK CARD */
+.compare-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  letter-spacing: 0.04em;
+}
+.compare-label .sparkle { color: var(--accent); }
+.compare-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.compare-card.right {
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 1px var(--accent-dark), 0 10px 40px rgba(0,0,0,.1);
+}
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 80%, var(--bg));
+}
+.window-dots { display: flex; gap: 5px; }
+.window-dots span { width: 10px; height: 10px; border-radius: 50%; }
+.compare-card.left .window-dots span { background: var(--border); }
+.compare-card.right .window-dots span:nth-child(1) { background: #e55a5a; }
+.compare-card.right .window-dots span:nth-child(2) { background: #e5a831; }
+.compare-card.right .window-dots span:nth-child(3) { background: var(--accent); }
+
+/* Left card */
+.notetaker-content { padding: 22px 24px 28px; }
+.notetaker-meeting-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.notetaker-meta { font-size: 12px; color: var(--muted); opacity: 0.7; margin-bottom: 20px; }
+.notetaker-section { margin-bottom: 16px; }
+.notetaker-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.notetaker-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.notetaker-bullets li {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.notetaker-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--border);
+}
+
+/* Right card */
+.wc-content { padding: 22px 24px 24px; }
+.wc-meeting-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.wc-meta { font-size: 12px; color: var(--muted); opacity: 0.7; margin-bottom: 16px; }
+.wc-scores { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.wc-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.wc-pill.good { background: var(--green-soft); color: var(--accent); }
+.wc-pill.warn { background: var(--amber-soft); color: var(--amber); }
+.wc-pill.bad { background: var(--red-soft); color: var(--red); }
+.wc-analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.wc-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+.wc-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.wc-stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.wc-stat-value .unit { font-size: 14px; font-weight: 400; color: var(--muted); }
+.wc-stat-detail { font-size: 11.5px; color: var(--muted); opacity: 0.7; }
+.wc-stat-bar { height: 4px; border-radius: 4px; background: var(--border); margin-top: 8px; overflow: hidden; }
+.wc-stat-bar-fill { height: 100%; border-radius: 4px; }
+.wc-stat-bar-fill.warn { background: var(--amber); width: 65%; }
+.wc-stat-bar-fill.good { background: var(--accent); width: 85%; }
+
+.wc-rec {
+  background: rgba(49, 193, 120, 0.08);
+  border: 1px solid var(--accent-dark);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+}
+.wc-rec-icon {
+  width: 26px; height: 26px;
+  background: var(--accent);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.wc-rec-icon svg {
+  width: 14px; height: 14px;
+  fill: none;
+  stroke: var(--bg);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.wc-rec-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.wc-rec-body { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+.wc-rec-link {
+  font-size: 12.5px;
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.wc-rec-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.wc-rec-play {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.2s, color 0.2s;
+}
+.wc-rec-play:hover {
+  border-color: var(--accent-dark);
+  color: var(--accent);
+}
+.wc-rec-secondary .wc-rec-play:hover {
+  border-color: rgba(229, 168, 49, 0.4);
+  color: var(--amber);
+}
+
+/* Collapsed summary row */
+.wc-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.wc-summary-row:hover {
+  border-color: var(--accent-dark);
+}
+.wc-summary-icon {
+  color: var(--accent);
+  font-size: 8px;
+  flex-shrink: 0;
+}
+.wc-summary-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wc-summary-chevron {
+  color: var(--muted);
+  font-size: 16px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+/* Compact stat pills */
+.wc-stats-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.wc-stat-pill {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.wc-stat-pill .sp-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.wc-stat-pill .sp-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+.wc-stat-pill .sp-value .unit {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.wc-stat-pill .sp-detail {
+  font-size: 10.5px;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* Second rec style */
+.wc-rec + .wc-rec {
+  margin-top: 8px;
+}
+.wc-rec-secondary {
+  background: rgba(229, 168, 49, 0.06);
+  border-color: rgba(229, 168, 49, 0.25);
+}
+.wc-rec-secondary .wc-rec-icon {
+  background: var(--amber);
+}
+.wc-rec-secondary .wc-rec-title {
+  color: var(--amber);
+}
+.wc-rec-secondary .wc-rec-link {
+  color: var(--amber);
+}
+
+/* HOW IT WORKS */
+.how-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 108px 20px 92px;
+}
+.section-label {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 12px;
+}
+.how-head {
+  max-width: 860px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.how-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.8vw, 40px);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.how-head p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.how-rail {
+  display: grid;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.how-step {
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  gap: 22px;
+  align-items: center;
+  padding: 24px 28px;
+  background: linear-gradient(130deg, rgba(235, 229, 218, 0.7), rgba(245, 240, 232, 0.5));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.how-step-index {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.45;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.how-step h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.how-step p {
+  font-size: 15.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.how-step-tag {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(49, 193, 120, 0.3);
+  border-radius: 999px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+/* FEATURES */
+.feature-section {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+.feature-row.reverse .feature-text { order: 2; }
+.feature-row.reverse .feature-visual { order: 1; }
+.feature-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.feature-text p {
+  font-size: 15.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.feature-visual {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Filler words */
+.filler-viz { padding: 20px 22px; }
+.filler-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.filler-header-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.filler-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+.filler-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.filler-stat-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.filler-stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.filler-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.filler-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  font-size: 13px;
+  color: var(--muted);
+}
+.filler-row:last-child { border-bottom: none; }
+.filler-row-play {
+  color: var(--muted);
+  opacity: 0.5;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.filler-row-time {
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+  width: 32px;
+  flex-shrink: 0;
+}
+.filler-row-word {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.filler-row-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Playback */
+.playback-viz { padding: 24px; }
+.playback-viz .mini-bar { display: flex; gap: 5px; margin-bottom: 18px; }
+.playback-viz .mini-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.waveform { display: flex; align-items: center; gap: 2px; height: 56px; margin-bottom: 10px; }
+.waveform .bar { flex: 1; min-width: 3px; border-radius: 2px; background: var(--border); }
+.waveform .bar.played { background: var(--accent); }
+.playback-controls { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.play-btn {
+  width: 32px; height: 32px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.play-btn svg { width: 12px; height: 12px; fill: var(--bg); margin-left: 2px; }
+.time-label { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.moment-card {
+  background: var(--amber-soft);
+  border: 1px solid rgba(229, 168, 49, 0.25);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.moment-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+  margin-bottom: 4px;
+}
+.moment-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Cross-meeting insight */
+.insight-viz { padding: 22px 24px; }
+.insight-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.insight-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.insight-tip {
+  background: var(--green-soft);
+  border: 1px solid var(--accent-dark);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.insight-tip-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.insight-tip-body {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+.insight-tip-cta {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1.5;
+}
+.insight-example {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.insight-example-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.insight-example-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.insight-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.insight-play-btn {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.insight-play-btn svg { width: 10px; height: 10px; fill: var(--bg); margin-left: 1px; }
+.insight-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.insight-time {
+  font-size: 11px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* TRANSITION */
+.transition-section {
+  text-align: center;
+  padding: 100px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.transition-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 580px;
+  margin: 0 auto 16px;
+}
+.transition-section p {
+  font-size: 16.5px;
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* COACHING */
+.coaching-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 100px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.coaching-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 36px);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.coaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.coaching-card {
+  padding: 40px 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.coaching-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.1);
+}
+.coaching-icon {
+  width: 48px; height: 48px;
+  background: var(--accent);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  color: var(--bg);
+  margin-bottom: 24px;
+}
+.coaching-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.coaching-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* COMPATIBILITY */
+.compat-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 56px 20px 60px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.compat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.compat-text .section-label { margin-bottom: 10px; }
+.compat-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.1vw, 34px);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.compat-text p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.compat-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 280px;
+}
+.compat-toast {
+  position: relative;
+  z-index: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 24px;
+  box-shadow: var(--shadow), 0 8px 32px rgba(0,0,0,.06);
+  max-width: 320px;
+  width: 100%;
+}
+.compat-toast-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.compat-toast-mic {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(229,90,90,.15);
+  display: grid;
+  place-items: center;
+  color: #e55a5a;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.compat-toast-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.compat-toast-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.compat-toast-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: default;
+}
+.compat-toast-btn.dismiss {
+  background: rgba(0,0,0,.04);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.compat-toast-btn.record {
+  background: var(--accent);
+  color: #fff;
+}
+.compat-logos-ring {
+  position: absolute;
+  inset: 0;
+}
+.compat-logo-float {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.compat-logo-float img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+.compat-logo-float:nth-child(1) { top: 8%; left: 6%; }
+.compat-logo-float:nth-child(2) { top: 4%; right: 12%; }
+.compat-logo-float:nth-child(3) { bottom: 6%; right: 4%; }
+.compat-logo-float:nth-child(4) { bottom: 10%; left: 10%; }
+.compat-logo-float:nth-child(5) { top: 50%; left: -2%; transform: translateY(-50%); }
+.compat-logo-float .inperson-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 120px 20px;
+  background: var(--surface);
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.cta-section p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 420px;
+  margin: 0 auto 40px;
+}
+.cta-section .cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cta-section .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero { animation: fadeUp 0.7s ease-out; }
+
+/* SOCIAL PROOF */
+.social-proof {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 72px 20px 74px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.social-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-style: italic;
+  line-height: 1.45;
+  max-width: 760px;
+  margin: 0 auto 16px;
+  color: var(--text);
+}
+.social-attr {
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+/* PULLQUOTE / POSITIONING */
+.pullquote-section {
+  padding: 100px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.pullquote-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.pullquote-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+.pullquote-inner p {
+  font-size: 16.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.pullquote-inner strong {
+  color: var(--text);
+}
+.pullquote-traits {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.pullquote-trait {
+  padding: 10px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.pullquote-trait .trait-accent {
+  color: var(--accent);
+}
+
+/* AGENDA MOCK */
+.agenda-viz { padding: 24px; }
+.agenda-viz .mini-bar { display: flex; gap: 5px; margin-bottom: 18px; }
+.agenda-viz .mini-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+.agenda-list { display: flex; flex-direction: column; gap: 10px; }
+.agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.agenda-check {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.agenda-check.yes { background: var(--green-soft); color: var(--accent); }
+.agenda-check.partial { background: var(--amber-soft); color: var(--amber); }
+.agenda-check.no { background: var(--red-soft); color: var(--red); }
+.agenda-item-text { flex: 1; }
+.agenda-item-text .a-label { font-size: 14px; font-weight: 600; color: var(--text); }
+.agenda-item-text .a-desc { font-size: 12px; color: var(--muted); opacity: 0.7; }
+.agenda-item-score {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.agenda-item-score.good { background: var(--green-soft); color: var(--accent); }
+.agenda-item-score.warn { background: var(--amber-soft); color: var(--amber); }
+.agenda-item-score.bad { background: var(--red-soft); color: var(--red); }
+.agenda-overall {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--green-soft);
+  border: 1px solid var(--accent-dark);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.agenda-overall .ao-label { font-size: 13px; font-weight: 600; color: var(--accent); }
+.agenda-overall .ao-score {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* FAQ */
+.faq-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 100px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.faq-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+details {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  background: var(--card);
+  margin-bottom: 16px;
+}
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::after {
+  content: "+";
+  font-size: 24px;
+  color: var(--accent);
+  font-weight: 400;
+}
+details[open] summary::after { content: "−"; }
+details p {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.sr-only:focus, .sr-only:active {
+  left: 16px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+  z-index: 1000;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+  outline-offset: 2px;
+  box-shadow: var(--shadow);
+}
+a:focus {
+  outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+  outline-offset: 2px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) { .nav-links { display: none; } }
+@media (max-width: 920px) {
+  .hero { padding: 94px 20px 78px; }
+  .hero-copy { padding-top: 0; }
+  .hero h1 { margin: 0 auto 14px; max-width: 760px; font-size: clamp(27px, 5.2vw, 38px); }
+  .hero h1 .line { white-space: normal; }
+  .hero .subtitle { margin: 0 auto 30px; font-size: 19px; }
+  .social-proof { padding: 58px 20px 62px; }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; max-width: 100%; line-height: 1.15; }
+  .hero .subtitle { font-size: 17px; max-width: 340px; }
+  .btn-desktop { display: none; }
+  .btn-mobile { display: inline-flex; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .how-section { padding: 84px 20px 70px; }
+  .how-head { margin-bottom: 32px; }
+  .how-head p { font-size: 15px; }
+  .how-step {
+    grid-template-columns: 56px 1fr;
+    align-items: start;
+    padding: 22px 18px;
+    gap: 14px;
+  }
+  .how-step h3 { font-size: 23px; }
+  .how-step p { font-size: 14.5px; }
+  .how-step-tag {
+    grid-column: 2 / -1;
+    justify-self: start;
+    margin-top: 4px;
+  }
+  .compat-grid { grid-template-columns: 1fr; gap: 32px; }
+  .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 32px; }
+  .feature-row.reverse .feature-text { order: 1; }
+  .feature-row.reverse .feature-visual { order: 2; }
+  .coaching-grid { grid-template-columns: 1fr; }
+  .hero .cta-row, .cta-section .cta-row { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="../360-feedback.html">360 Feedback</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="../download" class="btn-primary"><svg class="apple-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.0035 7.15814C19.3171 7.5784 18.7485 8.16594 18.351 8.86579C17.9534 9.56563 17.74 10.3549 17.7305 11.1597C17.7332 12.0655 18.0016 12.9506 18.5024 13.7054C19.0032 14.4602 19.7144 15.0515 20.5479 15.4061C20.2193 16.4664 19.7329 17.4712 19.1051 18.3868C18.2069 19.6798 17.2677 20.9727 15.8387 20.9727C14.4096 20.9727 14.0421 20.1425 12.3952 20.1425C10.7892 20.1425 10.2175 21 8.91088 21C7.60426 21 6.69246 19.8022 5.6444 18.3323C4.25999 16.2732 3.49913 13.8583 3.45312 11.3774C3.45312 7.29427 6.10722 5.13028 8.72032 5.13028C10.1086 5.13028 11.2656 6.04208 12.1366 6.04208C12.9669 6.04208 14.2599 5.07572 15.8387 5.07572C16.6504 5.05478 17.4548 5.23375 18.1811 5.59689C18.9074 5.96003 19.5332 6.49619 20.0035 7.15814ZM15.0901 3.34726C15.7861 2.52858 16.18 1.49589 16.2062 0.421702C16.2074 0.280092 16.1937 0.13875 16.1654 0C14.9699 0.116777 13.8644 0.686551 13.0757 1.59245C12.3731 2.37851 11.9643 3.38362 11.9188 4.43697C11.9193 4.56507 11.933 4.69278 11.9597 4.81808C12.0539 4.8359 12.1496 4.84503 12.2455 4.84536C12.7964 4.80152 13.3327 4.64611 13.8217 4.38858C14.3108 4.13104 14.7423 3.77676 15.0901 3.34726Z" fill="currentColor"></path></svg>Download for Mac</a>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>
+        <span class="line">An AI coach that finds out</span>
+        <span class="line">what's <em>holding</em> you back.</span>
+      </h1>
+      <p class="subtitle">Observing you in meetings to find what you can't see yourself</p>
+      <div class="cta-row">
+        <a href="../download" class="btn-primary btn-lg btn-desktop"><svg class="apple-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.0035 7.15814C19.3171 7.5784 18.7485 8.16594 18.351 8.86579C17.9534 9.56563 17.74 10.3549 17.7305 11.1597C17.7332 12.0655 18.0016 12.9506 18.5024 13.7054C19.0032 14.4602 19.7144 15.0515 20.5479 15.4061C20.2193 16.4664 19.7329 17.4712 19.1051 18.3868C18.2069 19.6798 17.2677 20.9727 15.8387 20.9727C14.4096 20.9727 14.0421 20.1425 12.3952 20.1425C10.7892 20.1425 10.2175 21 8.91088 21C7.60426 21 6.69246 19.8022 5.6444 18.3323C4.25999 16.2732 3.49913 13.8583 3.45312 11.3774C3.45312 7.29427 6.10722 5.13028 8.72032 5.13028C10.1086 5.13028 11.2656 6.04208 12.1366 6.04208C12.9669 6.04208 14.2599 5.07572 15.8387 5.07572C16.6504 5.05478 17.4548 5.23375 18.1811 5.59689C18.9074 5.96003 19.5332 6.49619 20.0035 7.15814ZM15.0901 3.34726C15.7861 2.52858 16.18 1.49589 16.2062 0.421702C16.2074 0.280092 16.1937 0.13875 16.1654 0C14.9699 0.116777 13.8644 0.686551 13.0757 1.59245C12.3731 2.37851 11.9643 3.38362 11.9188 4.43697C11.9193 4.56507 11.933 4.69278 11.9597 4.81808C12.0539 4.8359 12.1496 4.84503 12.2455 4.84536C12.7964 4.80152 13.3327 4.64611 13.8217 4.38858C14.3108 4.13104 14.7423 3.77676 15.0901 3.34726Z" fill="currentColor"></path></svg>Download for Mac</a>
+        <a href="../download" class="btn-primary btn-lg btn-mobile">Download</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare-section">
+  <div class="compare-grid">
+    <div>
+      <div class="compare-label">Your note taker</div>
+      <div class="compare-card left">
+        <div class="window-bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="notetaker-content">
+          <div class="notetaker-meeting-title">Product Review — Roadmap</div>
+          <div class="notetaker-meta">Today, 2:30 PM · 47 min · Sarah, Jake, Priya +2</div>
+          <div class="notetaker-section">
+            <div class="notetaker-section-title">Key Takeaways</div>
+            <ul class="notetaker-bullets">
+              <li>Team aligned on prioritizing the enterprise dashboard</li>
+              <li>Mobile app redesign pushed due to resource constraints</li>
+              <li>Sarah raised concerns about the analytics pipeline timeline</li>
+            </ul>
+          </div>
+          <div class="notetaker-section">
+            <div class="notetaker-section-title">Action Items</div>
+            <ul class="notetaker-bullets">
+              <li>Dan to share updated roadmap by Friday</li>
+              <li>Jake to schedule design review with eng</li>
+              <li>Priya to pull usage data for dashboard scoping</li>
+            </ul>
+          </div>
+          <div class="notetaker-section">
+            <div class="notetaker-section-title">Discussion Notes</div>
+            <ul class="notetaker-bullets">
+              <li>Budget approval still pending from finance</li>
+              <li>Discussed tradeoffs between speed and scope for enterprise launch</li>
+              <li>Agreed to revisit mobile timeline in August sync</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="compare-label"><span class="sparkle">✦</span> Work Coach</div>
+      <div class="compare-card right">
+        <div class="window-bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="wc-content">
+          <div>
+            <div class="wc-meeting-title">Product Review — Roadmap</div>
+            <div class="wc-meta">Today, 2:30 PM · 47 min · Sarah, Jake, Priya +2</div>
+          </div>
+          <div class="wc-summary-row">
+            <span class="wc-summary-icon">▶</span>
+            <span class="wc-summary-text">Summary · 3 takeaways · 3 action items</span>
+            <span class="wc-pill good" style="font-size:10px; padding:3px 8px;">Agenda ✓</span>
+            <span class="wc-summary-chevron">⌄</span>
+          </div>
+          <div class="wc-stats-row">
+            <div class="wc-stat-pill">
+              <div class="sp-label">Filler Words</div>
+              <div class="sp-value" style="color: var(--amber);">4.1<span class="unit">/min</span></div>
+              <div class="sp-detail">um · like · you know</div>
+            </div>
+            <div class="wc-stat-pill">
+              <div class="sp-label">Agenda</div>
+              <div class="sp-value" style="color: var(--accent);">Excellent</div>
+              <div class="sp-detail">Great kickoff outline</div>
+            </div>
+            <div class="wc-stat-pill">
+              <div class="sp-label">Action Items</div>
+              <div class="sp-value" style="color: var(--amber);">1/3 Assigned</div>
+              <div class="sp-detail">2 unowned</div>
+            </div>
+          </div>
+          <div class="wc-rec">
+            <div class="wc-rec-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="wc-rec-title">Coaching Insight</div>
+              <div class="wc-rec-body">You didn't answer finance's concern about budget. You missed an opportunity to bring them on board with your vision.</div>
+              <div class="wc-rec-actions">
+                <span class="wc-rec-play">▶ 14:32</span>
+                <span class="wc-rec-link">Role-play this →</span>
+              </div>
+            </div>
+          </div>
+          <div class="wc-rec wc-rec-secondary">
+            <div class="wc-rec-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="wc-rec-title">Strategic Pattern</div>
+              <div class="wc-rec-body">This is the 3rd meeting where Jake's team has raised resource concerns. Consider a 1:1 to address headcount before it becomes a blocker in the next planning cycle.</div>
+              <div class="wc-rec-actions">
+                <span class="wc-rec-play">▶ 22:17</span>
+                <span class="wc-rec-play">▶ 38:41</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="compare-head">
+    <h2>Other tools transcribe. Work Coach helps you see how you're showing up.</h2>
+  </div>
+</section>
+
+<section class="compat-section">
+  <div class="compat-grid">
+    <div class="compat-text">
+      <h2>No meeting bots. Works where you already meet.</h2>
+      <p>Zoom, Google Meet, Microsoft Teams, Slack huddles, or any other meetings app. Work Coach transcribes locally on your Mac — no bot joins the call.</p>
+    </div>
+    <div class="compat-visual">
+      <div class="compat-logos-ring">
+        <div class="compat-logo-float"><img src="../img/zoom.svg" alt="Zoom" loading="lazy"></div>
+        <div class="compat-logo-float"><img src="../img/google-meet.svg" alt="Google Meet" loading="lazy"></div>
+        <div class="compat-logo-float"><img src="../img/microsoft-teams.svg" alt="Teams" loading="lazy"></div>
+        <div class="compat-logo-float"><img src="../img/slack.svg" alt="Slack" loading="lazy"></div>
+        <div class="compat-logo-float"><span class="inperson-icon" aria-hidden="true">🎙</span></div>
+      </div>
+      <div class="compat-toast">
+        <div class="compat-toast-header">
+          <span class="compat-toast-mic">🎙</span>
+          <span class="compat-toast-title">Meeting detected (Zoom)</span>
+        </div>
+        <div class="compat-toast-actions">
+          <span class="compat-toast-btn dismiss">Dismiss</span>
+          <span class="compat-toast-btn record">Start Transcribing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="social-proof">
+  <p class="social-quote">"I didn't realize I was undercutting myself so frequently. I didn't sound confident and respond well to questions."</p>
+  <p class="social-attr">— Senior PM</p>
+</section>
+
+<section class="how-section" id="how">
+  <div class="how-head">
+    <div class="section-label">How it works</div>
+    <h2>From meeting to momentum in three steps.</h2>
+    <p>Start listening in seconds, get objective feedback from every conversation, then improve with recommendations tied to real moments from your calls.</p>
+  </div>
+  <div class="how-rail">
+    <div class="how-step">
+      <div class="how-step-index">01</div>
+      <div>
+        <h3>Record</h3>
+        <p>Press record or let Work Coach auto-detect meetings across Zoom, Meet, Teams, Slack huddles, and in-person conversations.</p>
+      </div>
+      <div class="how-step-tag">No bot joins</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-index">02</div>
+      <div>
+        <h3>Analyze</h3>
+        <p>Each meeting gets a clear breakdown of filler words, agenda clarity, and action-item ownership so you can spot where momentum dropped.</p>
+      </div>
+      <div class="how-step-tag">Per-meeting score</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-index">03</div>
+      <div>
+        <h3>Improve</h3>
+        <p>Replay key moments, practice better responses, and track trends across weeks so your presence improves in ways people can hear.</p>
+      </div>
+      <div class="how-step-tag">Longitudinal trends</div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-section" id="features">
+  <div class="feature-row">
+    <div class="feature-text">
+      <h3>"Um" is a habit. Now you can see it.</h3>
+      <p>Every meeting shows exactly how often you use filler words — and your trend over time. Most people have no idea until they see the chart. Track your progress as you get better.</p>
+    </div>
+    <div class="feature-visual">
+      <div class="filler-viz">
+        <div class="filler-header">
+          <span class="filler-header-title">Filler Words</span>
+          <span class="filler-badge">Moderate</span>
+        </div>
+        <div class="filler-stats">
+          <div>
+            <div class="filler-stat-val">18</div>
+            <div class="filler-stat-label">Total</div>
+          </div>
+          <div>
+            <div class="filler-stat-val">4.0</div>
+            <div class="filler-stat-label">Per Min</div>
+          </div>
+        </div>
+        <div class="filler-list">
+          <div class="filler-row">
+            <span class="filler-row-play">▶</span>
+            <span class="filler-row-time">0:10</span>
+            <span class="filler-row-word">um</span>
+            <span class="filler-row-text">Um, not really. I don't have like</span>
+          </div>
+          <div class="filler-row">
+            <span class="filler-row-play">▶</span>
+            <span class="filler-row-time">0:10</span>
+            <span class="filler-row-word">like</span>
+            <span class="filler-row-text">I don't have like a formal agenda</span>
+          </div>
+          <div class="filler-row">
+            <span class="filler-row-play">▶</span>
+            <span class="filler-row-time">0:24</span>
+            <span class="filler-row-word">kind of</span>
+            <span class="filler-row-text">migration project is kind of a mess</span>
+          </div>
+          <div class="filler-row">
+            <span class="filler-row-play">▶</span>
+            <span class="filler-row-time">0:44</span>
+            <span class="filler-row-word">um</span>
+            <span class="filler-row-text">Um, well, originally we said end of</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <h3>Hear how you actually sounded</h3>
+      <p>Reading a transcript is one thing. Hearing your voice trail off when you should have been direct is another. Key moments are flagged so you can jump right to them.</p>
+    </div>
+    <div class="feature-visual">
+      <div class="playback-viz">
+        <div class="mini-bar"><span></span><span></span><span></span></div>
+        <div class="waveform">
+          <div class="bar played" style="height: 12px;"></div>
+          <div class="bar played" style="height: 24px;"></div>
+          <div class="bar played" style="height: 18px;"></div>
+          <div class="bar played" style="height: 36px;"></div>
+          <div class="bar played" style="height: 28px;"></div>
+          <div class="bar played" style="height: 44px;"></div>
+          <div class="bar played" style="height: 32px;"></div>
+          <div class="bar played" style="height: 20px;"></div>
+          <div class="bar played" style="height: 40px;"></div>
+          <div class="bar played" style="height: 48px;"></div>
+          <div class="bar played" style="height: 36px;"></div>
+          <div class="bar played" style="height: 24px;"></div>
+          <div class="bar played" style="height: 16px;"></div>
+          <div class="bar played" style="height: 28px;"></div>
+          <div class="bar" style="height: 20px;"></div>
+          <div class="bar" style="height: 32px;"></div>
+          <div class="bar" style="height: 44px;"></div>
+          <div class="bar" style="height: 28px;"></div>
+          <div class="bar" style="height: 52px;"></div>
+          <div class="bar" style="height: 36px;"></div>
+          <div class="bar" style="height: 24px;"></div>
+          <div class="bar" style="height: 40px;"></div>
+          <div class="bar" style="height: 16px;"></div>
+          <div class="bar" style="height: 32px;"></div>
+          <div class="bar" style="height: 48px;"></div>
+          <div class="bar" style="height: 20px;"></div>
+          <div class="bar" style="height: 36px;"></div>
+          <div class="bar" style="height: 28px;"></div>
+          <div class="bar" style="height: 44px;"></div>
+          <div class="bar" style="height: 12px;"></div>
+        </div>
+        <div class="playback-controls">
+          <div class="time-label">14:32</div>
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div class="time-label">47:18</div>
+        </div>
+        <div class="moment-card">
+          <div class="moment-badge">⚡ Flagged moment · 14:32</div>
+          <div class="moment-text">You hedged your recommendation on the Q3 timeline. Listen to how you phrased it — "I think maybe we could consider…" vs. stating a clear position.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-row">
+    <div class="feature-text">
+      <h3>Did you set an agenda? Did you land the action items?</h3>
+      <p>The two things that separate productive meetings from wasted time: did everyone know why they were there, and did everyone leave knowing what to do? Work Coach checks both, every time.</p>
+    </div>
+    <div class="feature-visual">
+      <div class="agenda-viz">
+        <div class="mini-bar"><span></span><span></span><span></span></div>
+        <div class="agenda-list">
+          <div class="agenda-item">
+            <div class="agenda-check yes">✓</div>
+            <div class="agenda-item-text">
+              <div class="a-label">Agenda set</div>
+              <div class="a-desc">Clear objectives stated in first 2 minutes</div>
+            </div>
+            <div class="agenda-item-score good">Strong</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-check partial">!</div>
+            <div class="agenda-item-text">
+              <div class="a-label">Action items</div>
+              <div class="a-desc">3 discussed, only 1 assigned to a specific person</div>
+            </div>
+            <div class="agenda-item-score warn">Needs work</div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-check no">✗</div>
+            <div class="agenda-item-text">
+              <div class="a-label">Follow-ups from last meeting</div>
+              <div class="a-desc">2 of 4 items were never addressed</div>
+            </div>
+            <div class="agenda-item-score bad">Missed</div>
+          </div>
+        </div>
+        <div class="agenda-overall">
+          <div class="ao-label">Meeting Effectiveness</div>
+          <div class="ao-score">6.2 / 10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <h3>Patterns you can't see in a single meeting</h3>
+      <p>Work Coach connects the dots across your conversations — spotting habits, recurring gaps, and growth areas that only emerge over time. This is where the real coaching starts.</p>
+    </div>
+    <div class="feature-visual">
+      <div class="insight-viz">
+        <div class="insight-label">💡 Cross-Meeting Insight</div>
+        <div class="insight-title">You tend to skip agenda-setting</div>
+        <div class="insight-tip">
+          <div class="insight-tip-header">✦ Coaching Tip</div>
+          <div class="insight-tip-body">In 3 of your last 5 meetings, you jumped straight into discussion without setting an agenda. Research shows meetings with a clear agenda are 30% shorter and produce more actionable outcomes.</div>
+          <div class="insight-tip-cta">Try opening with: "Here's what I'd like us to cover today…" — even a 15-second agenda sets the tone.</div>
+        </div>
+        <div class="insight-example">
+          <div class="insight-example-header">🎧 Example from your meetings</div>
+          <div class="insight-example-body">Listen to the opening — notice how the discussion starts without context:</div>
+          <div class="insight-player">
+            <div class="insight-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+            <span class="insight-time">0:00</span>
+            <div class="insight-track"></div>
+            <span class="insight-time">-4:24</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="transition-section">
+  <h2>After a few weeks, your meetings tell a story</h2>
+  <p>Work Coach connects the dots — who you meet with, how your patterns shift across audiences, where you're growing and where you're stuck. That's when the real coaching starts.</p>
+</section>
+
+<section class="coaching-section">
+  <h2>Then it gets even better</h2>
+  <div class="coaching-grid">
+    <div class="coaching-card">
+      <div class="coaching-icon">🔄</div>
+      <h3>360 Feedback</h3>
+      <p>Your calendar knows who you work with. Work Coach suggests who to ask and runs structured feedback — leadership, peers, reports. Anonymous and actionable.</p>
+    </div>
+    <div class="coaching-card">
+      <div class="coaching-icon">🎭</div>
+      <h3>Role-Play Conversations</h3>
+      <p>Tough 1:1 coming up? A big interview? Rehearse with an AI that knows the context from your past meetings and plays the other side.</p>
+    </div>
+    <div class="coaching-card">
+      <div class="coaching-icon">🎙️</div>
+      <h3>Voice Coaching</h3>
+      <p>Walk and talk through your challenges with a coach that already knows your meetings, your feedback, and your goals. No catching up required.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pullquote-section">
+  <div class="pullquote-inner">
+    <h2>Executive coaching shouldn't cost $25,000</h2>
+    <p>The best leaders have always had someone in their corner — someone who challenges their thinking, watches their blind spots, and helps them navigate complexity.</p>
+    <p>That used to require a <strong>$25,000+ engagement</strong> and a C-suite title. Work Coach brings the same model to everyone: real feedback, real patterns, real coaching — starting with your next meeting or your next interview.</p>
+    <div class="pullquote-traits">
+      <div class="pullquote-trait"><span class="trait-accent">Voice-native</span> — walk and think</div>
+      <div class="pullquote-trait"><span class="trait-accent">Context-aware</span> — no catching up</div>
+      <div class="pullquote-trait"><span class="trait-accent">Private</span> — completely honest</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-grid">
+    <details>
+      <summary>What do I need to get started?</summary>
+      <p>Download the Mac app and record your first meeting. That's it. Work Coach builds your coaching profile over time as it learns your patterns, your goals, and how you show up.</p>
+    </details>
+    <details>
+      <summary>Does a bot join my calls?</summary>
+      <p>No. Work Coach captures audio locally on your Mac. No bot participant, no awkward notification. No one in your meeting will know it's there.</p>
+    </details>
+    <details>
+      <summary>Is this for job seekers?</summary>
+      <p>Absolutely — record practice interviews, catch filler words, role-play tough questions with your AI coach, and hear how you actually sound before the real thing. It's also great for people who want to level up in their current role.</p>
+    </details>
+    <details>
+      <summary>Will my employer care?</summary>
+      <p>Work Coach doesn't capture proprietary information — it analyzes you, not your company's secrets. Your recordings and transcripts are private and never shared.</p>
+    </details>
+    <details>
+      <summary>Do you share data with anyone?</summary>
+      <p>No. Not your employer. Not other users. Your recordings and transcripts are yours. Data isn't used to train shared models. You can delete everything anytime.</p>
+    </details>
+    <details>
+      <summary>Who is this for?</summary>
+      <p>Anyone who wants to be better in professional conversations — whether you're leading a team, collaborating with peers, or interviewing for your next role.</p>
+    </details>
+    <details>
+      <summary>What does it cost?</summary>
+      <p>Free to start. Pro plan coming soon.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Start with your next meeting</h2>
+  <p>Download the Mac app. Record a meeting. See what you've been missing.</p>
+  <div class="cta-row">
+    <a href="../download" class="btn-primary btn-lg"><svg class="apple-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.0035 7.15814C19.3171 7.5784 18.7485 8.16594 18.351 8.86579C17.9534 9.56563 17.74 10.3549 17.7305 11.1597C17.7332 12.0655 18.0016 12.9506 18.5024 13.7054C19.0032 14.4602 19.7144 15.0515 20.5479 15.4061C20.2193 16.4664 19.7329 17.4712 19.1051 18.3868C18.2069 19.6798 17.2677 20.9727 15.8387 20.9727C14.4096 20.9727 14.0421 20.1425 12.3952 20.1425C10.7892 20.1425 10.2175 21 8.91088 21C7.60426 21 6.69246 19.8022 5.6444 18.3323C4.25999 16.2732 3.49913 13.8583 3.45312 11.3774C3.45312 7.29427 6.10722 5.13028 8.72032 5.13028C10.1086 5.13028 11.2656 6.04208 12.1366 6.04208C12.9669 6.04208 14.2599 5.07572 15.8387 5.07572C16.6504 5.05478 17.4548 5.23375 18.1811 5.59689C18.9074 5.96003 19.5332 6.49619 20.0035 7.15814ZM15.0901 3.34726C15.7861 2.52858 16.18 1.49589 16.2062 0.421702C16.2074 0.280092 16.1937 0.13875 16.1654 0C14.9699 0.116777 13.8644 0.686551 13.0757 1.59245C12.3731 2.37851 11.9643 3.38362 11.9188 4.43697C11.9193 4.56507 11.933 4.69278 11.9597 4.81808C12.0539 4.8359 12.1496 4.84503 12.2455 4.84536C12.7964 4.80152 13.3327 4.64611 13.8217 4.38858C14.3108 4.13104 14.7423 3.77676 15.0901 3.34726Z" fill="currentColor"></path></svg>Download for Mac</a>
+    <a href="../360-feedback.html" class="btn-outline btn-lg">Learn about 360 feedback</a>
+  </div>
+  <p class="fine-print">Free to start · No credit card · Your data stays yours</p>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="../privacy.html">Privacy</a>
+      <a href="../support.html">Support</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
