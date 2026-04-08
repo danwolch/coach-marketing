@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Payment Successful — Work Coach</title>
+<link rel="icon" href="../../img/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --surface: #ebe5da;
+    --muted: #6b7a6e;
+    --text: #1a2e22;
+    --card: #fffdf8;
+    --border: #d6d0c4;
+    --accent: #31c178;
+    --accent-2: #1e6b42;
+    --shadow: 0 10px 30px rgba(0,0,0,.07);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 420px;
+  }
+  .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1.5rem;
+  }
+  .icon svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+  p {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Source Sans 3', sans-serif;
+    transition: transform 0.05s ease, background 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: color-mix(in oklab, var(--accent) 85%, white);
+  }
+  .btn-primary:active {
+    transform: translateY(1px);
+  }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+
+    <div id="opening">
+      <h1>Payment Successful</h1>
+      <p>Thank you! Your subscription is active. Opening Work Coach...</p>
+    </div>
+
+    <div id="fallback" class="hidden">
+      <h1>Payment Successful</h1>
+      <p>Thank you! Your subscription is active. Return to the app to get started.</p>
+      <a href="workcoach://main" class="btn-primary">Open Work Coach</a>
+      <br><br>
+      <a href="https://work.coach/download" style="color: var(--muted); font-size: 13px;">Don't have the app? Download it</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      setTimeout(function () { window.location.href = 'workcoach://main'; }, 500);
+
+      setTimeout(function () {
+        document.getElementById('opening').classList.add('hidden');
+        document.getElementById('fallback').classList.remove('hidden');
+      }, 3000);
+    })();
+  </script>
+</body>
+</html>
