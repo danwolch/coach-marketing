@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1021884186"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1021884186');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
@@ -968,6 +976,17 @@ footer {
   console.log('[WorkCoach] platform:', navigator.platform);
   console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
 
+  // ─── Google Ads conversion tracking ───
+  // Fires the conversion when a download is actually triggered (auto-redirect
+  // or manual link). Guarded so it never breaks the download if gtag is blocked.
+  function reportDownloadConversion() {
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', { 'send_to': 'AW-1021884186/zHfuCJ2g-rQcEJruoucD' });
+      }
+    } catch (e) {}
+  }
+
   if (isMobile) {
     console.log('[WorkCoach] Showing: mobile-view');
     document.getElementById('mobile-view').style.display = 'flex';
@@ -1093,6 +1112,7 @@ footer {
       if (countdownEl) countdownEl.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(timer);
+        reportDownloadConversion();
         window.location.href = DOWNLOAD_URL;
       }
     }, 1000);
@@ -1100,6 +1120,7 @@ footer {
     // Manual download link
     document.getElementById('manual-download').addEventListener('click', function(e) {
       clearInterval(timer);
+      reportDownloadConversion();
       posthog.capture('download_manual_click');
     });
   }
