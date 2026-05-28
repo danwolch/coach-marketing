@@ -977,14 +977,31 @@ footer {
   console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
 
   // ─── Google Ads conversion tracking ───
-  // Fires the conversion when a download is actually triggered (auto-redirect
-  // or manual link). Guarded so it never breaks the download if gtag is blocked.
-  function reportDownloadConversion() {
+  // Fires the Download conversion, then navigates to `url` once the conversion
+  // has registered (via event_callback) so the ping isn't lost to navigation.
+  // Guarded with a fallback so a blocked/slow gtag never strands the download.
+  function gtag_report_conversion(url) {
+    var navigated = false;
+    var go = function () {
+      if (navigated) return;
+      navigated = true;
+      if (typeof url !== 'undefined') window.location = url;
+    };
     try {
       if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { 'send_to': 'AW-1021884186/zHfuCJ2g-rQcEJruoucD' });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-1021884186/UYaXCOa_mbUcEJruoucD',
+          'event_callback': go
+        });
+        // Fallback in case the callback never fires (e.g. gtag blocked).
+        setTimeout(go, 1000);
+      } else {
+        go();
       }
-    } catch (e) {}
+    } catch (e) {
+      go();
+    }
+    return false;
   }
 
   if (isMobile) {
@@ -1112,16 +1129,16 @@ footer {
       if (countdownEl) countdownEl.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(timer);
-        reportDownloadConversion();
-        window.location.href = DOWNLOAD_URL;
+        gtag_report_conversion(DOWNLOAD_URL);
       }
     }, 1000);
 
     // Manual download link
     document.getElementById('manual-download').addEventListener('click', function(e) {
+      e.preventDefault();
       clearInterval(timer);
-      reportDownloadConversion();
       posthog.capture('download_manual_click');
+      gtag_report_conversion(this.href);
     });
   }
 })();
