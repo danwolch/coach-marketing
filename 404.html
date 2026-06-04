@@ -120,7 +120,7 @@
     <div id="fallback">
       <h1>Open in Coach</h1>
       <p>This link is meant to open in the Coach app. Download it to continue.</p>
-      <a href="https://work.coach/" class="button">Download for Mac</a>
+      <a href="https://work.coach/download" class="button">Download for Mac</a>
       <br>
       <a id="manual-open" class="manual-link hidden">Try opening again</a>
     </div>
@@ -148,8 +148,8 @@
           document.getElementById('opening').classList.add('hidden');
           var fb = document.getElementById('fallback');
           fb.classList.remove('hidden');
-          fb.querySelector('h1').textContent = "Couldn't open Work Coach";
-          fb.querySelector('p').textContent = 'The app may not be installed, or it didn\'t respond to the link.';
+          fb.querySelector('h1').textContent = "Tried to open Work Coach";
+          fb.querySelector('p').textContent = 'If it didn\'t open, update to the latest version';
           var manual = document.getElementById('manual-open');
           manual.classList.remove('hidden');
           manual.addEventListener('click', function (e) {
