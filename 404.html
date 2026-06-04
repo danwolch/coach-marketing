@@ -148,8 +148,8 @@
           document.getElementById('opening').classList.add('hidden');
           var fb = document.getElementById('fallback');
           fb.classList.remove('hidden');
-          fb.querySelector('h1').textContent = "Couldn't open Work Coach";
-          fb.querySelector('p').textContent = 'The app may not be installed, or it didn\'t respond to the link.';
+          fb.querySelector('h1').textContent = "Tried to open Work Coach";
+          fb.querySelector('p').textContent = 'If it didn\'t open, update to the latest version';
           var manual = document.getElementById('manual-open');
           manual.classList.remove('hidden');
           manual.addEventListener('click', function (e) {
