@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1021884186"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1021884186');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
@@ -980,6 +988,34 @@ footer {
   console.log('[WorkCoach] platform:', navigator.platform);
   console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
 
+  // ─── Google Ads conversion tracking ───
+  // Fires the Download conversion, then navigates to `url` once the conversion
+  // has registered (via event_callback) so the ping isn't lost to navigation.
+  // Guarded with a fallback so a blocked/slow gtag never strands the download.
+  function gtag_report_conversion(url) {
+    var navigated = false;
+    var go = function () {
+      if (navigated) return;
+      navigated = true;
+      if (typeof url !== 'undefined') window.location = url;
+    };
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-1021884186/UYaXCOa_mbUcEJruoucD',
+          'event_callback': go
+        });
+        // Fallback in case the callback never fires (e.g. gtag blocked).
+        setTimeout(go, 1000);
+      } else {
+        go();
+      }
+    } catch (e) {
+      go();
+    }
+    return false;
+  }
+
   if (isMobile) {
     console.log('[WorkCoach] Showing: mobile-view');
     document.getElementById('mobile-view').style.display = 'flex';
@@ -1105,14 +1141,16 @@ footer {
       if (countdownEl) countdownEl.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(timer);
-        window.location.href = DOWNLOAD_URL;
+        gtag_report_conversion(DOWNLOAD_URL);
       }
     }, 1000);
 
     // Manual download link
     document.getElementById('manual-download').addEventListener('click', function(e) {
+      e.preventDefault();
       clearInterval(timer);
       posthog.capture('download_manual_click');
+      gtag_report_conversion(this.href);
     });
   }
 })();
