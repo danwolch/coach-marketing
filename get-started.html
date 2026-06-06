@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1021884186"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1021884186');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Join the Work Coach waitlist. Tell us about yourself and what you want to get out of coaching.">
@@ -369,6 +377,11 @@ footer p { color: var(--muted); font-size: 14px; }
 
     if (window.posthog) {
       posthog.capture('waitlist_submitted');
+    }
+
+    // Google Ads conversion (same conversion used on /download)
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', { 'send_to': 'AW-1021884186/UYaXCOa_mbUcEJruoucD' });
     }
 
     var data = Object.fromEntries(new FormData(form));
