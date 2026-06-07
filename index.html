@@ -1191,6 +1191,9 @@ a:focus {
 }
 @media (max-width: 600px) {
   .hero h1 { font-size: 34px; max-width: 100%; line-height: 1.15; }
+  /* Reserve two lines so longer rotating phrases don't change the hero's
+     height as they cycle (prevents the page from jumping while scrolling). */
+  .rotator-line { min-height: 2.35em; }
   .hero .subtitle { font-size: 17px; max-width: 340px; }
   .how-section { padding: 84px 20px 70px; }
   .how-head { margin-bottom: 32px; }
