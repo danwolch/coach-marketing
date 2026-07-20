@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The rounds you'll get, how to prep each one, and the places experienced PM interviewers genuinely disagree about what a good answer sounds like.">
+<meta name="color-scheme" content="light">
+<title>Product Manager Interview Guide: Where Interviewers Disagree | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/product-manager-interview-guide">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Product Manager Interview Guide: Where Interviewers Disagree","description":"The rounds you'll get, how to prep each one, and the places experienced PM interviewers genuinely disagree about what a good answer sounds like.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/product-manager-interview-guide"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/product-manager-interview-guide">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Product Manager Interview Guide: Where Interviewers Disagree">
+<meta property="og:description" content="The rounds you'll get, how to prep each one, and the places experienced PM interviewers genuinely disagree about what a good answer sounds like.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Product Manager Interview Guide: Where Interviewers Disagree">
+<meta name="twitter:description" content="The rounds you'll get, how to prep each one, and the places experienced PM interviewers genuinely disagree about what a good answer sounds like.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Interview Prep</div>
+  <h1>Product manager interview preparation, including where interviewers disagree</h1>
+  <p class="post-sub">Most PM interview guides describe one right way to answer. The people who actually run these loops contradict each other on structure, preparation, and pedigree. Here's how to tell which one you're sitting across from.</p>
+  <div class="post-meta">20 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Most PM candidates prepare by collecting the one correct answer to each question shape. One framework for product sense, one story structure for the behavioral round. Then you get to the loop and the third interviewer cuts you off mid-framework, and the fourth one seems annoyed that you didn't have your framework ready.</p>
+
+<p>This article covers the rounds you'll typically see, how to prepare for each, what to ask them back, and the six things senior interviewers openly disagree about. Read the disagreements section first, because it changes what you do in the other rounds.</p>
+
+<p>The people quoted here are all on the record about how they personally interview: Nikhyl Singhal, who ran product groups at Meta and Google; Sarah Koo, senior director of product at Rippling; McKenzie Lock, a GM at Netflix; Sam Stone, VP of product at EvenUp; Bill Carr, who spent 15 years at Amazon and co-wrote <em>Working Backwards</em>; Karri Saarinen of Linear; Geoff Charles of Ramp; Katie Dill of Stripe; Jiaona Zhang of Webflow; Paul Adams of Intercom; Shishir Mehrotra of Coda; Keith Rabois of Khosla Ventures; Merci Grace, formerly of Slack; plus Lauren Rivera, who studies hiring at Northwestern, and Adam Grant on what the research says. Every video quote plays the exact moment it was said.</p>
+
+<h2 id="the-rounds-you-ll-probably-get">The rounds you'll probably get</h2>
+
+<p>Titles vary, but the loop at most product companies is some subset of these:</p>
+
+<div class="callout">
+  <h4>The rounds</h4>
+  <ul>
+    <li><strong>Recruiter screen (30 minutes).</strong> Level, comp range, timeline, and a quick pass on your background. This is also where you get to ask what the rest of the loop looks like, which almost nobody does.</li>
+    <li><strong>Hiring manager screen (45 to 60 minutes).</strong> Your background, why this role, and usually one product conversation. Sarah Koo describes this as the one part of Rippling's process you could reasonably call a vibe check.</li>
+    <li><strong>Product sense or product design (45 minutes).</strong> One ambiguous prompt, scored on how you narrow it. The <a href="/playbooks/product-sense-interview">product sense interview playbook</a> covers this round in full, so it isn't repeated here.</li>
+    <li><strong>Execution or analytical (45 minutes).</strong> Metrics, goal-setting, diagnosing a drop, deciding whether to ship.</li>
+    <li><strong>Behavioral (45 minutes).</strong> Past work, conflict, failure, influence. See the <a href="/playbooks/behavioral-interview-questions">behavioral interview questions playbook</a> for the question bank.</li>
+    <li><strong>Take-home case plus panel presentation.</strong> A prompt you get anywhere from 24 hours to two weeks in advance, presented to two or three people who then push on it.</li>
+    <li><strong>Cross-functional interviews.</strong> An engineer, a designer, sometimes sales. They're checking whether they'd want you in their planning meetings.</li>
+    <li><strong>Executive or bar-raiser round.</strong> Usually short, usually about judgment and how you handle being disagreed with. The <a href="/playbooks/prepare-for-final-round-interview">final round playbook</a> covers this stretch.</li>
+  </ul>
+</div>
+
+<p>The take-home has quietly become standard. Netflix, Rippling, and EvenUp all use one, and Netflix runs it for every product role from individual contributor up through senior director. If you've been told take-homes went out of fashion, that information is a few years old.</p>
+
+<h2 id="where-experienced-interviewers-disagree">Where experienced interviewers disagree</h2>
+
+<p>Here's the part generic guides skip. The people running these loops don't agree with each other, and the disagreements aren't small. If you prepare for one and walk into the other, you'll get a rejection you can't explain.</p>
+
+<h3>How much structure the interview itself has</h3>
+
+<p>The research here is pretty clear. Lauren Rivera, a sociologist at Northwestern's Kellogg School and one of the most cited researchers on hiring, spent an episode of Adam Grant's WorkLife taking apart the interview most companies still run.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>WorkLife with Adam Grant: reinventing the job interview.</strong> This one is audio only. Rivera's quote is at 10:06, Grant explains structured interviews starting at 12:06, the accuracy claim lands at 12:26, and the 90-second finding is at 14:27. The player starts from the top, or <a href="https://podcasts.apple.com/us/podcast/reinventing-the-job-interview/id1346314086?i=1000472139819&t=606">open it on Apple Podcasts cued to 10:06</a>.</p>
+  <blockquote>"In the United States, we love open-ended job interviews where people ask you about your hobbies... Why do you want to work here? And we know from research, those are some of the worst predictors of job performance you can have."</blockquote>
+  <div class="nugget-who"><strong>Lauren Rivera</strong>, Northwestern Kellogg · WorkLife with Adam Grant, "Reinventing the Job Interview" (10:06, audio)</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/reinventing-the-job-interview/id1346314086?i=1000472139819&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="WorkLife with Adam Grant: Reinventing the Job Interview - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>Grant lays out the fix in the same episode: decide which skills the job needs, build questions around them, ask every candidate the same ones, and score the answers. He says the evidence suggests accuracy will often double or triple. He also names the reason unstructured interviews fail, which is that interviewers decide within about 90 seconds, and what they're reacting to in those 90 seconds is your voice, your face, and how much you remind them of themselves.</p>
+
+<p>Some companies have gone all the way there. On a Skip panel of PM hiring leaders, Sarah Koo described Rippling's process, and it's the research recommendation taken literally.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The same prompt for everyone, including VPs.</strong> The player below is queued to 10:44, the exact moment Sarah Koo says it. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=644s">Watch on YouTube</a>.</p>
+  <blockquote>"We have an incredibly standardized interview process for PMs and it is the same across the board for every single PM role at every single level. So VP level candidates have to go through the exact same product discussion, case study with panelists. They get the exact same prompt."</blockquote>
+  <div class="nugget-who"><strong>Sarah Koo</strong>, senior director of product at Rippling · The Skip</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=644" title="Sarah Koo at 10:44" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Netflix does close to the opposite, on purpose. McKenzie Lock, a GM there, was answering the same question minutes earlier in the same conversation.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Every hiring manager designs their own loop.</strong> The player below is queued to 10:06, the exact moment McKenzie Lock says it. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=606s">Watch on YouTube</a>.</p>
+  <blockquote>"Netflix is one of our cultural values is responsibility and freedom... what that means is that we really put a lot of judgment or we trust hiring managers and trust their judgment in terms of how to design the process."</blockquote>
+  <div class="nugget-who"><strong>McKenzie Lock</strong>, GM at Netflix · The Skip</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=606" title="McKenzie Lock at 10:06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Sam Stone at EvenUp sits closer to Netflix, with different loops for different roles. So you have three companies with senior, experienced product leaders, and two incompatible philosophies about whether every candidate should get the same questions.</p>
+
+<p>Amazon sits at the far end of the structured side, and has since 1999. Bill Carr, who spent 15 years there and co-wrote <em>Working Backwards</em>, describes a role built specifically to stop the hiring manager from going with their gut.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The bar raiser, and why the role exists.</strong> The player below is queued to 1:16:45, the exact moment Bill Carr explains what a bar raiser does in the debrief. <a href="https://www.youtube.com/watch?v=S9WHQa_AJQo&t=4605s">Watch on YouTube</a>.</p>
+  <blockquote>"They are on the interview loop and they're a bar raiser, which means when we get to the debrief meeting they will run that meeting, not the hiring manager, not the recruiter... it also means that they technically have veto power over the hiring manager."</blockquote>
+  <div class="nugget-who"><strong>Bill Carr</strong>, co-author of Working Backwards, 15 years at Amazon · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/S9WHQa_AJQo?start=4605" title="Bill Carr at 1:16:45" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>At 1:17:54 he gives the reason: the bar raiser's job in the debrief is to hold everyone to the written criteria, so nobody gets rejected for something like "they don't seem to want to work here enough." If you're interviewing at Amazon, every answer you give is being mapped to a named leadership principle, and you should know which ones.</p>
+
+<p>What this means for you: in a standardized loop, the prompt is the same one they've given a hundred people, so your job is to be clearly better on the dimensions they score, and preparation pays off directly. In a loop the hiring manager designed, the interview follows your answers and the person may be scoring you against a picture in their head. There you need to stay flexible, and you need to give them a reason to like you, because a chunk of that decision is happening in their gut whether either of you likes it.</p>
+
+<h3>What your preparation signals to them</h3>
+
+<p>Follow the structured-interview argument to its end and you get a candidate who has practiced every likely question until the answers are smooth. Nikhyl Singhal, who spent years running product groups at Meta and Google, designed his favorite question specifically to break that.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Breaking the prepared script.</strong> The player below is queued to 16:53, the exact moment Nikhyl Singhal says it. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=1013s">Watch on YouTube</a>.</p>
+  <blockquote>"I'm always looking for people to break this sort of interview mindset. So everyone always prepares for interviews and then their entire conversation is predicting what you think you want me to say. And as a result you can have high quality people that you dismiss because they weren't genuine."</blockquote>
+  <div class="nugget-who"><strong>Nikhyl Singhal</strong>, former VP of product at Meta · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=1013" title="Nikhyl Singhal at 16:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>His question is "what's something that everyone takes for granted that you think is essentially hogwash or inaccurate?" He explains at 17:19 that there's no way to answer it without being genuinely opinionated, because you can't work out what he wants to hear. That's the point.</p>
+
+<p>Now hold that next to Rippling, where the case study prompt arrives 24 hours before the panel and the whole exercise measures what you did with those 24 hours. Both of these people are hiring good PMs, and they believe opposite things about what your preparation proves.</p>
+
+<p>The way through is that they're testing different things. Singhal wants to know whether you have opinions of your own. The structured camp wants to know whether you can do the work. Rehearsing your stories until they're clear helps with both of those. What fails Singhal's test is rehearsing a position so hard that you can only defend it. So prepare the material, and go into every round with at least three things you actually believe about the product, the market, or the craft, including one that plenty of people in the industry would argue with.</p>
+
+<h3>How long you get to stay in questions</h3>
+
+<p>Every guide tells you to ask clarifying questions before you answer. That's right, but interviewers draw the line in very different places on how many is too many.</p>
+
+<p>McKenzie Lock names the failure on one side. The candidates who trip up most, in her experience, are the ones who never ask whether it's the right problem at all and just start answering. At 31:32 she calls that a big red flag.</p>
+
+<p>Shishir Mehrotra, CEO of Coda, built a question that punishes the other side. He tells you a group of scientists have invented a teleportation device and hired you to bring it to market, then lets you ask as many questions as you want before cutting you off.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>You get two questions, then a plan.</strong> The player below is queued to 5:42, the exact moment Shishir Mehrotra springs the twist. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=342s">Watch on YouTube</a>.</p>
+  <blockquote>"At some point I'll say, okay, nice job reading all the questions. Turns out these scientists, they kind of hate talking to people and they're kind of annoyed by all your questions, and so they've decided that they will answer only two of your questions, and after that they expect a plan. What two questions do you ask?"</blockquote>
+  <div class="nugget-who"><strong>Shishir Mehrotra</strong>, CEO and co-founder of Coda · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=342" title="Shishir Mehrotra at 5:42" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He's watching which two you keep. His favorite answer was a PM who asked whether it's safe enough for humans and whether the cost is mostly capex or opex, then built a plan off that grid. Ask about the size of the device and he'll ask you what decision that would help you make.</p>
+
+<p>Lock also warns about candidates who ask so many questions that the panel ends up driving the conversation. So the same person wants you to question the problem and wants you to stop questioning it in time. That's a real skill, and it's the one to practice: ask the two or three questions that would change your answer, say why they'd change it, then commit.</p>
+
+<h3>Whether "what would you do at our company" is a good question at all</h3>
+
+<p>You will almost certainly be asked some version of "if you ran the company you're at now, what would you change?" or "what would you do about our product?" Two experienced interviewers have opposite views on whether that question is worth anything.</p>
+
+<p>Keith Rabois, who was COO of Square and an executive at PayPal and LinkedIn and now invests at Khosla, uses it as his main question for senior hires.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>If you were CEO, what would you have done differently.</strong> The player below is queued to 13:25, the exact moment Keith Rabois describes the question and its follow-up. <a href="https://www.youtube.com/watch?v=xCd9ykretlg&t=805s">Watch on YouTube</a>.</p>
+  <blockquote>"I always ask them, look at whatever company they're at and say, if you were CEO, what would you have done differently? And you get a feel for their strategic mindset of, can they drive value creation?... And then I'm going to follow up, which is usually gold, which is, well, why weren't you able to persuade Brian to do it?"</blockquote>
+  <div class="nugget-who"><strong>Keith Rabois</strong>, Khosla Ventures, former COO of Square · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/xCd9ykretlg?start=805" title="Keith Rabois at 13:25" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Shishir Mehrotra calls the same shape of question a bad way to judge people, for a specific reason: the interviewer has spent years on the problem and you've spent twenty minutes, so all you can really do is guess their answer.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why home court questions go wrong.</strong> The player below is queued to 1:22:09, the exact moment Shishir Mehrotra makes the argument. <a href="https://www.youtube.com/watch?v=7uSuMIJhONA&t=4929s">Watch on YouTube</a>.</p>
+  <blockquote>"A common mistake people make is they do all questions in home court. Hey, you're joining Airbnb, what would you do about X? And what is the candidate gonna say? They clearly can't be as thoughtful as you, they haven't thought about it nearly as much as you have. So really what you're testing is, did they come to the same answer that we did, which is a pretty crappy way to judge someone."</blockquote>
+  <div class="nugget-who"><strong>Shishir Mehrotra</strong>, CEO and co-founder of Coda · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/7uSuMIJhONA?start=4929" title="Shishir Mehrotra at 1:22:09" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>That's also why his teleportation question is about a product that doesn't exist. Nobody has a home court advantage on it.</p>
+
+<p>You don't get to pick which one you're facing, so prepare for the Rabois version, since it's the one that can go badly. Have a real answer for what you'd change at your current company, and have the follow-up ready too, which is why you didn't get it done. "I never raised it" is a bad answer. "I raised it, here's how, here's why it lost to the other priority, and here's what I'd try differently" is the answer he's fishing for.</p>
+
+<h3>Whether where you've worked counts</h3>
+
+<p>This one matters most if your resume doesn't have a famous logo on it. Sarah Koo weights past employers heavily, and she knows it's contested.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Have you seen what good looks like.</strong> The player below is queued to 18:56, the exact moment Sarah Koo says it. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=1136s">Watch on YouTube</a>.</p>
+  <blockquote>"Past experience that I do look for is actually pretty heavily weighted on whether I believe that they know what good looks like... There's a lot of shitty companies out there, honestly. Did they learn product management from somebody who actually knows product management? Or do they just know how to be a scrum master and groom a backlog?"</blockquote>
+  <div class="nugget-who"><strong>Sarah Koo</strong>, senior director of product at Rippling · The Skip</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=1136" title="Sarah Koo at 18:56" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Sixteen minutes later, McKenzie Lock was asked whether Netflix mostly hires out of Google, Meta, and Amazon, and gave a flat no.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Most of the team came from companies you haven't heard of.</strong> The player below is queued to 27:41, the exact moment McKenzie Lock answers. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=1661s">Watch on YouTube</a>.</p>
+  <blockquote>"There's a ton of people on my team and many other teams that have not come from any companies that you have heard of, that have been exceptionally high performers... that profile screen is actually set with the recruiter and the hiring manager at the start versus just click Amazon, click Google."</blockquote>
+  <div class="nugget-who"><strong>McKenzie Lock</strong>, GM at Netflix · The Skip</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=1661" title="McKenzie Lock at 27:41" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Koo hands you the workaround herself at 22:25: trajectory. Four promotions in six years at a slow company still stands out to her, because it shows you did well in a place where doing well wasn't automatic. If your logos are unknown, put the trajectory and the outcomes at the front of your story, and expect a back channel. The <a href="/playbooks/how-to-position-yourself-for-a-job">positioning playbook</a> covers how to build that framing before you apply.</p>
+
+<h3>Whether you should work for free to get the job</h3>
+
+<p>Take-homes and work trials are now common enough that you'll face this. Karri Saarinen, co-founder and CEO of Linear, ends every hiring process with a work trial, and Linear pays for it.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>A paid work trial as the last step.</strong> The player below is queued to 1:02:31, the exact moment Karri Saarinen describes how Linear runs it. <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM&t=3751s">Watch on YouTube</a>.</p>
+  <blockquote>"We do fairly standard interview loops where we have some hiring manager interviews and then skill interviews or tests, and then the last step of the process is the work trial... they basically come as a mini contractor to the company and we give them a fairly vague problem statement."</blockquote>
+  <div class="nugget-who"><strong>Karri Saarinen</strong>, co-founder and CEO of Linear · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4muxFVZ4XfM?start=3751" title="Karri Saarinen at 1:02:31" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Merci Grace, formerly head of growth at Slack, ran a project too, on the candidate's own time and unpaid, and she treats an objection to that as a signal in itself.</p>
+
+<div class="nugget">
+  <blockquote>"If you don't want to even do three hours of free work for a company, you probably don't want to work at that company. It's just weird. Like if you need to be paid for every second of effort that you're putting in, I mean, you probably shouldn't be near a startup."</blockquote>
+  <div class="nugget-who"><strong>Merci Grace</strong>, former head of growth at Slack · Lenny's Podcast (47:28, audio only)</div>
+</div>
+
+<p>So one founder treats the trial as contract work and pays for it, and one product leader reads your willingness to spend an unpaid evening as evidence you want the job. Practically: ask what the time budget is, ask whether the trial is paid, and decide how much unpaid work you'll do across your whole search rather than company by company. Linear's trial also runs both ways, and Saarinen says at 1:04:17 that it's genuinely hard to tell how a startup operates from interviews alone, which is worth remembering when you're the one deciding.</p>
+
+<h2 id="the-same-story-graded-on-different-things">The same story, graded on different things</h2>
+
+<p>Here's the practical consequence of all of the above. You'll tell the same career story four times in one loop and be graded on something different each time, because these people are listening for different signals. From one Lenny's Podcast compilation of interview questions from more than 100 guests:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What hard means to you.</strong> The player below is queued to 4:06, the exact moment Geoff Charles says it. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=246s">Watch on YouTube</a>.</p>
+  <blockquote>"I asked, what's the hardest thing you've ever done? And I asked that because working at Ramp is hard. I want to understand what hard means for them. I want to understand why it was hard, how they overcame that difficulty, how they worked with other people to overcome that difficulty, and how much agency they had in overcoming that."</blockquote>
+  <div class="nugget-who"><strong>Geoff Charles</strong>, VP of product at Ramp · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=246" title="Geoff Charles at 4:06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Taste and judgment.</strong> The player below is queued to 10:12, the exact moment Katie Dill says it. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=612s">Watch on YouTube</a>.</p>
+  <blockquote>"Tell me what work you are most proud of. And the reason I ask that is because, well, it helps me understand their taste and their judgment, what motivates them, what work they view as good and as a good outcome."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=612" title="Katie Dill at 10:12" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>A path through the ambiguity.</strong> The player below is queued to 11:53, the exact moment Jiaona Zhang says it. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=713s">Watch on YouTube</a>.</p>
+  <blockquote>"Good answers are people who put structure and a way forward through the ambiguity, like that's what you look for. You want your PM to not just be like, oh no, we're swimming in ambiguity, but actually put a path forward."</blockquote>
+  <div class="nugget-who"><strong>Jiaona Zhang</strong>, head of product at Webflow · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=713" title="Jiaona Zhang at 11:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Paul Adams saves his best question for your references, and it's phrased so they can't be vague.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The reference call question.</strong> The player below is queued to 20:11, the exact moment Paul Adams says it. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=1211s">Watch on YouTube</a>.</p>
+  <blockquote>"So this question is, what feedback will I be giving this person in their first performance review? And it's an amazing question because the person can't dodge it, you know?"</blockquote>
+  <div class="nugget-who"><strong>Paul Adams</strong>, chief product officer at Intercom · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=1211" title="Paul Adams at 20:11" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>One story, told well, can cover Charles's agency question, Dill's taste question, and Zhang's ambiguity question, but only if you built it to. Pick two or three projects and write each one out so it carries all three: what made it hard, what you chose and why you thought that choice was good, and how you moved from confusion to a plan. Then answer whichever version of the question you get. Adams's reference question is a reminder to name your real weakness before someone else does, and to know which former manager will pick up the phone.</p>
+
+<div class="cta-band">
+  <h3>Tell the story four ways</h3>
+  <p>Work Coach runs your loop as a scored case panel and as an open hiring-manager conversation. It flags where you committed to an answer too early, then hands you the same prompt again.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="what-startups-screen-for-that-big-companies-don-t">What startups screen for that big companies don't</h2>
+
+<p>The stage of the company changes the weighting more than any framework does. Lenny asked Geoff Charles what Ramp looks for that other companies undervalue.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Hunger and depth over experience.</strong> The player below is queued to 1:06:02, the exact moment Geoff Charles answers. <a href="https://www.youtube.com/watch?v=aNJDZ_RzTVk&t=3962s">Watch on YouTube</a>.</p>
+  <blockquote>"We look for people who have a very strong desire to have impact, and the best way to assess that is the impact that they've had or the reason why they are switching jobs... I look for people who can think deeply. So I'll go super deep into a decision, a trade-off that they had to make, and I'll really just scratch at that until I get to a deep understanding of how they make decisions."</blockquote>
+  <div class="nugget-who"><strong>Geoff Charles</strong>, VP of product at Ramp · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/aNJDZ_RzTVk?start=3962" title="Geoff Charles at 1:06:02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He says outright that Ramp overweights those two things relative to experience, because experience matters a lot less at a business shaped like theirs. He also treats your reason for leaving as a signal, and the one he likes is a candidate saying things got too slow and too bureaucratic. That's close to the opposite of the answer a big-company interviewer wants, where the safe framing is that you'd grown as far as the scope allowed.</p>
+
+<p>Sam Stone's version of this at EvenUp is that they look for people who have worked somewhere with a similar stage, growth rate, and culture, and that they've been burned hiring people from the same vertical who arrive convinced they already know how it's done. So domain expertise carries less weight than you'd think, and having survived a comparable pace carries more.</p>
+
+<p>A few practical differences that follow from stage:</p>
+
+<div class="callout">
+  <h4>Big company loops</h4>
+  <ul>
+    <li>More rounds, more standardization, more likely to score you against a written rubric.</li>
+    <li>Product sense and execution rounds carry heavy weight, often more than your resume.</li>
+    <li>They'll ask about scale, cross-team influence, and how you work through other groups.</li>
+    <li>The loop sets your level and comp, so a strong performance can move you up a level.</li>
+  </ul>
+  <h4>Startup loops</h4>
+  <ul>
+    <li>Fewer, longer conversations, often with founders, and a take-home or trial project.</li>
+    <li>They screen hard for pace, ownership, and whether you know what you're signing up for.</li>
+    <li>Expect them to pick one decision you made and dig into it for twenty minutes.</li>
+    <li>The bar is partly "would we ship faster with this person here," which is judged in conversation.</li>
+  </ul>
+</div>
+
+<h2 id="how-to-work-out-which-kind-of-interview-you-re-in">How to work out which kind of interview you're in</h2>
+
+<p>You can find out before you walk in, and you should. Most of it comes from the recruiter, who will tell you if you ask.</p>
+
+<div class="callout">
+  <h4>Ask the recruiter</h4>
+  <ul>
+    <li>"What are the rounds, and what is each one evaluating?"</li>
+    <li>"Is there a take-home or a panel presentation, and how much notice do I get?"</li>
+    <li>"Do interviewers use a shared scorecard, or does each one run their own format?"</li>
+    <li>"Who will I meet, and what are their roles?" Then read what those people have said publicly about hiring.</li>
+  </ul>
+  <h4>Read it in the first five minutes</h4>
+  <ul>
+    <li>They open with a written prompt and start taking notes on a form. That's a scored loop, so use structure and hit the dimensions.</li>
+    <li>They open with "so, tell me about yourself" and no notes. That's a conversation, so bring opinions and be interesting.</li>
+    <li>They interrupt your framework. Drop it, answer the question they asked, and offer to come back to the rest.</li>
+    <li>They ask a question with no correct answer. Say what you actually think and explain why.</li>
+  </ul>
+</div>
+
+<p>If a company won't tell you its format, treat that as information about the company.</p>
+
+<h2 id="how-to-prepare-for-each-round">How to prepare for each round</h2>
+
+<div class="callout">
+  <h4>Three weeks out</h4>
+  <ul>
+    <li>Write out three projects in full: the problem, what made it hard, the options you rejected, what you chose, what happened, what you'd change. These become every behavioral answer you'll give.</li>
+    <li>Do five product sense reps out loud and timed. Structure matters more than ideas here, and the <a href="/playbooks/product-sense-interview">product sense playbook</a> has the flow to drill.</li>
+    <li>Write down three opinions about the industry you'd defend against pushback, plus why a reasonable person disagrees.</li>
+    <li>Use the company's product for a week and take notes on what's confusing.</li>
+  </ul>
+  <h4>One week out</h4>
+  <ul>
+    <li>Rehearse your opening until it's 90 seconds. The <a href="/playbooks/tell-me-about-yourself-interview-answer">tell me about yourself playbook</a> covers the structure.</li>
+    <li>Practice metrics questions: what you'd measure, what would make you kill a feature, how you'd diagnose a 15% drop.</li>
+    <li>Line up your references and tell each one what the role is. Ask what they'd say your development area is, so Paul Adams's question doesn't surprise either of you.</li>
+    <li>Do one full timed mock with someone who will interrupt you.</li>
+  </ul>
+  <h4>Take-home specifics</h4>
+  <ul>
+    <li>Do actual user research. Both Koo and Stone said the thing that stands out most is any real insight about their users, and almost nobody brings one.</li>
+    <li>Show alternatives you considered and why you rejected them. A single path with no reasoning is the most common miss.</li>
+    <li>If you use AI to build the deck or prototype, go through every element and be ready to explain it. Stone described candidates abandoning their own written structure the moment they got questioned on it, which tells him they didn't write it.</li>
+    <li>Point out the weak spots in your own work before the panel does. Koo says she doesn't ding candidates for a flaw they flag themselves, and does mind finding it first.</li>
+  </ul>
+</div>
+
+<h2 id="what-to-ask-them">What to ask them</h2>
+
+<p>The questions you ask get scored, and they're also the only way you find out whether you want the job. Phyl Terry, who wrote <em>Never Search Alone</em>, has candidates draft their own version of the job description before they interview.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Draft the job yourself, then check it with them.</strong> The player below is queued to 51:25, the exact moment Phyl Terry explains what the draft does for you. <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA&t=3085s">Watch on YouTube</a>.</p>
+  <blockquote>"Drafting it will help you understand and develop great interview questions to ask them to clarify what is this job, and they'll be impressed by that... I want you to pull the hiring manager aside and say, hey, I've thought about what the role is, I want to make sure I'm understanding it correctly, can I share something with you?"</blockquote>
+  <div class="nugget-who"><strong>Phyl Terry</strong>, author of Never Search Alone · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/OH3nzRdwYPA?start=3085" title="Phyl Terry at 51:25" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Beyond that, a few that consistently earn a real answer:</p>
+
+<div class="callout">
+  <h4>For the hiring manager</h4>
+  <ul>
+    <li>"What would you want this person to have done by the end of their first six months?"</li>
+    <li>"What's the hardest thing about this role that isn't in the job description?"</li>
+    <li>"Which decisions does this PM make alone, and which go to you?"</li>
+  </ul>
+  <h4>For the engineers and designers</h4>
+  <ul>
+    <li>"How do things get decided when the PM and the tech lead disagree?"</li>
+    <li>"What did the last PM on this team do well, and what did the team wish they'd done differently?"</li>
+    <li>"How long from idea to something in front of a user?"</li>
+  </ul>
+  <h4>For an executive</h4>
+  <ul>
+    <li>"What has to be true in two years for this bet to have worked?"</li>
+    <li>"What's the thing you've changed your mind about most recently?"</li>
+  </ul>
+</div>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How long should I prepare for a PM loop?</h3>
+<p>Three to four weeks if you're currently working, and most of that on stories and product sense reps out loud. If your onsite is tomorrow, the <a href="/playbooks/prepare-for-interview-in-24-hours">24-hour prep playbook</a> covers what to cut.</p>
+
+<h3>Should I use a named framework like CIRCLES or STAR?</h3>
+<p>Use a structure, and don't announce its name. Interviewers at large companies have heard every acronym hundreds of times, and naming one earns you nothing. The bigger risk is that a framework makes you rigid, which is exactly what gets punished in a loop where the interviewer follows your answers rather than a script.</p>
+
+<h3>What if I get rejected without feedback?</h3>
+<p>Given how differently these companies run their processes, a rejection often says more about fit with one interviewer's model than about your ability. Ask anyway, since some recruiters share notes. The <a href="/playbooks/stay-confident-after-job-rejection">post-rejection playbook</a> covers what to do with the answer.</p>
+
+<h3>Do I need a well-known company on my resume?</h3>
+<p>It helps with Koo and it doesn't decide anything with Lock, who says most of her hires came from companies you haven't heard of. Charles weights hunger and depth of thinking above experience entirely. So the answer varies by who's reading, and the thing that travels everywhere is evidence you've done the work, which is easier to show than a logo is to acquire.</p>
+
+<h3>How much do metrics in my answers matter?</h3>
+<p>Numbers make a story credible, so bring them. Then expect the follow-ups to be about why you made the call, because that's where every interviewer quoted here spends their time. If you can only recite the result, you'll get found out in the second question.</p>
+
+<h3>Are take-homes worth the time?</h3>
+<p>They're now most of the signal at several companies, so you rarely have a choice. Ask how much time they expect. EvenUp tells candidates not to spend more than four hours and says the correlation between hours spent and how well people do has been getting weaker.</p>
+
+<h2 id="your-pm-interview-prep-checklist">Your PM interview prep checklist</h2>
+
+<div class="callout">
+  <h4>Before the loop starts</h4>
+  <ul>
+    <li>Ask the recruiter what the rounds are and whether interviewers use a shared scorecard.</li>
+    <li>Look up who you'll meet and what they've said publicly about how they hire.</li>
+    <li>Write three project stories that each cover difficulty, judgment, and how you moved through ambiguity.</li>
+    <li>Write three opinions you'd defend, plus the strongest case against each.</li>
+    <li>Brief your references and ask what they'd name as your development area.</li>
+  </ul>
+  <h4>In each round</h4>
+  <ul>
+    <li>Ask the two or three questions that would change your answer, say why, then commit.</li>
+    <li>Say your reasoning out loud, including the options you rejected.</li>
+    <li>If they interrupt, follow them. Don't finish the framework.</li>
+    <li>When there's no right answer, give them your real one.</li>
+    <li>Name the weak point in your own work before they find it.</li>
+  </ul>
+  <h4>On the take-home</h4>
+  <ul>
+    <li>Do real user research and bring one insight they didn't hand you.</li>
+    <li>Show the alternatives and why you dropped them.</li>
+    <li>Understand every element of anything AI helped you produce.</li>
+    <li>Ask the hiring manager if you think the scope is bigger than the time budget.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>The Skip: <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I">What PM hiring managers actually screen for, with McKenzie Lock, Sarah Koo, and Sam Stone</a> (Apr 2026)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=UhASMW6X4AY">My favorite interview questions from 100+ guests</a> (Nov 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=aNJDZ_RzTVk">Velocity over everything: how Ramp became the fastest-growing SaaS startup of all time, with Geoff Charles</a> (Aug 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA">Land your dream job in today's market, with Phyl Terry</a> (Sep 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=S9WHQa_AJQo">Unpacking Amazon's unique ways of working, with Bill Carr</a> (Nov 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=xCd9ykretlg">Hard truths about building in the AI era, with Keith Rabois</a> (Apr 2026)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=7uSuMIJhONA">The rituals of great teams, with Shishir Mehrotra</a> (Aug 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM">Inside Linear: building with taste, craft, and focus, with Karri Saarinen</a> (Oct 2023)</li>
+    <li>Lenny's Podcast: Merci Grace on PLG, interviewing, storytelling, and hiring (Jul 2022, audio)</li>
+    <li>WorkLife with Adam Grant: Reinventing the Job Interview (Apr 2020, audio)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#the-rounds-you-ll-probably-get">The rounds you'll probably get</a>
+  <a href="#where-experienced-interviewers-disagree">Where experienced interviewers disagree</a>
+  <a href="#the-same-story-graded-on-different-things">The same story, graded on different things</a>
+  <a href="#what-startups-screen-for-that-big-companies-don-t">What startups screen for that big companies don't</a>
+  <a href="#how-to-work-out-which-kind-of-interview-you-re-in">How to work out which kind of interview you're in</a>
+  <a href="#how-to-prepare-for-each-round">How to prepare for each round</a>
+  <a href="#what-to-ask-them">What to ask them</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#your-pm-interview-prep-checklist">Your PM interview prep checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How to give constructive feedback to employees: name the specific action, deliver it fast, use proven templates, and diagnose why repeated feedback isn't working.">
+<meta name="color-scheme" content="light">
+<title>How to Give Constructive Feedback to Employees That Actually Lands | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/give-feedback-that-lands">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Give Constructive Feedback to Employees That Actually Lands","description":"How to give constructive feedback to employees: name the specific action, deliver it fast, use proven templates, and diagnose why repeated feedback isn't working.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/give-feedback-that-lands"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/give-feedback-that-lands">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Give Constructive Feedback to Employees That Actually Lands">
+<meta property="og:description" content="How to give constructive feedback to employees: name the specific action, deliver it fast, use proven templates, and diagnose why repeated feedback isn't working.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Give Constructive Feedback to Employees That Actually Lands">
+<meta name="twitter:description" content="How to give constructive feedback to employees: name the specific action, deliver it fast, use proven templates, and diagnose why repeated feedback isn't working.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">For Managers</div>
+  <h1>How to give feedback that actually changes something</h1>
+  <p class="post-sub">Name the specific action, say it close to when it happened, and know what to do when the same feedback isn't working for the third time.</p>
+  <div class="post-meta">14 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You've said the thing three times now. You softened it a little more each time, and the behavior hasn't moved. Or you haven't said it at all, because the last time you tried, the conversation went sideways and you spent the rest of the week managing the fallout.</p>
+
+<p>This article covers why most feedback fails, and the exact language that makes it easier to hear. It also covers when to deliver it, the templates to use, and a diagnostic for when repeated feedback isn't changing anything. Read the first half before your next 1:1, and come back to the diagnostic section when someone on your team has heard the same feedback more than twice.</p>
+
+<p>The advice comes from Kim Scott, who led teams at Google and wrote <em>Radical Candor</em>; Alisa Cohn, an executive coach who has worked with founders and senior leaders for more than 20 years; Mellody Hobson, co-CEO of Ariel Investments; and the Mochary Method curriculum, the coaching material Matt Mochary developed with startup CEOs and now publishes for free.</p>
+
+<h2 id="why-most-feedback-fails">Why most feedback fails</h2>
+
+<p>Most feedback fails for one of four reasons, and all four are fixable.</p>
+
+<div class="callout">
+  <h4>The four common failures</h4>
+  <ul>
+    <li><strong>It describes a trait instead of an action.</strong> "You're not detail-oriented" gives someone nothing to do differently tomorrow.</li>
+    <li><strong>It arrives weeks late.</strong> By the time you say it at the review, the person has been doing the thing for a month and now feels ambushed.</li>
+    <li><strong>You softened it until it disappeared.</strong> You said "maybe think about tightening that up a bit" and they heard "that was fine."</li>
+    <li><strong>You never said why it mattered.</strong> You explained what to change without the consequence, so it sounds like a preference.</li>
+  </ul>
+</div>
+
+<p>Kim Scott's frame is worth having in your head before every one of these conversations. She defines the target as caring about the person and telling them the truth at the same time, and most of us miss on one axis or the other.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The two things that have to happen together.</strong> The player below is queued to 4:03, the exact moment Kim Scott defines radical candor. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=243s">Watch on YouTube</a>.</p>
+  <blockquote>"Radical candor is just what happens when you care personally and challenge directly at the same time. And I think it's probably best understood by what it's not, because we all fail on one of those two dimensions, or both of them, multiple times a day."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> and former Google leader · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=243" title="Kim Scott at 4:03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Scott calls the common failure ruinous empathy: you remember that you care about the person, you worry about hurting them, and you leave out the part they needed to hear. Most managers who think they have a directness problem actually have this problem.</p>
+
+<h2 id="point-at-a-specific-action-they-took">Point at a specific action they took</h2>
+
+<p>This one change does more than anything else here. Every piece of feedback should point at something a video camera could have recorded.</p>
+
+<p>The Mochary Method curriculum uses that test explicitly. "Please be more punctual" is not something a camera can capture. "Please text me if you're going to be more than a minute late to our meetings" is. If your feedback can't pass the camera test, you're asking the person to read your mind about what "better" means.</p>
+
+<div class="callout">
+  <h4>Rewrite the trait as an action</h4>
+  <ul>
+    <li>"You're too negative in meetings" becomes "In the roadmap review, you gave three reasons the plan wouldn't work and no alternative. I'd like you to bring one option you'd support."</li>
+    <li>"You need to be more strategic" becomes "Your last two docs started with the implementation. Start with the customer problem and the tradeoff you chose."</li>
+    <li>"You're not a strong communicator" becomes "You sent the outage update four hours after we knew. Send the first update within 30 minutes, even if you don't have the cause yet."</li>
+    <li>"You're not owning enough" becomes "When the vendor missed the date, you waited for me to escalate. I'd like you to call them directly and tell me what you did."</li>
+  </ul>
+</div>
+
+<p>Alisa Cohn works with her clients on exactly this before the conversation happens. She has them find the evidence first, and the preparation makes the conversation easier on both sides.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Find the evidence before you open your mouth.</strong> The player below is queued to 20:04, the exact moment Alisa Cohn describes the preparation. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=1204s">Watch on YouTube</a>.</p>
+  <blockquote>"If you do the work to really think about what is the observable data, what's my evidence that this is happening, and you have to spend some time thinking about it, but it's really worth it, because it makes the feedback easier for you to give and easier for them to hear."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach and author of <em>From Start-up to Grown-up</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=1204" title="Alisa Cohn at 20:04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Cohn also states the standard alongside the gap. She'll say the writing needs to be at a certain level, here are the specific reasons it isn't there, and here's why that standard matters for how the team executes. Now the person knows what to aim at.</p>
+
+<p>One more rule from the Mochary curriculum's <a href="https://docs.google.com/document/d/1lA4Bigmee4b_P7GjiXJzN0oZ4pzz536LHNqaqNZaYcU/edit">note on giving feedback badly</a>: say what you want them to do, not what to stop. "Marty, your zipper is down" is only half the message. The full version says what to do about it and why it matters for the work.</p>
+
+<h2 id="say-it-close-to-when-it-happened">Say it close to when it happened</h2>
+
+<p>The most common structural mistake is saving feedback for a scheduled slot. Kim Scott is direct about this.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Don't bank it for the review.</strong> The player below is queued to 39:52, the exact moment Kim Scott says where feedback should and shouldn't go. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=2392s">Watch on YouTube</a>.</p>
+  <blockquote>"Don't, by the way, save up when you have to give feedback. Don't save it up for your 1:1, and definitely don't save it up for a performance review. You want to give that in the moment."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> and former Google leader · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2392" title="Kim Scott at 39:52" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Scott describes these as two-minute impromptu conversations that happen between meetings. Her own example is a boss who gave her feedback while they walked to the next meeting together, which cost neither of them any extra time. If you're booked back to back all day, those two minutes never appear, and everything gets deferred to a formal slot where it lands ten times harder.</p>
+
+<p>Two practical constraints from the Mochary <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">feedback doc</a>. First, use a medium where you can see the reaction. In person is best, video is fine, audio is worse. Never give critical feedback by email, text, or Slack, because you can't see the person get angry and you can't reassure them. Second, write the feedback down for yourself before you deliver it. In the moment your brain will push you to soften it, and the note keeps you honest.</p>
+
+<h2 id="the-like-and-wish-that-template">The Like and Wish That template</h2>
+
+<p>For ordinary week-to-week feedback, the Mochary curriculum uses a two-line structure that takes about fifteen seconds:</p>
+
+<div class="callout">
+  <h4>Relative feedback in two sentences</h4>
+  <ul>
+    <li><strong>"I like that you did..."</strong> Name a specific action that happened. "You caught the pricing error before it went to the customer." Not "you're thorough."</li>
+    <li><strong>"I wish that you would..."</strong> Name a specific action you want next time, phrased positively. "Flag anything that touches billing in the channel before it ships." Not "don't be careless."</li>
+  </ul>
+</div>
+
+<p>Both halves have to be concrete. The affirming half does real work here: it tells the person which behavior to keep, and it makes the second half survivable. The Mochary doc is emphatic that you affirm the relationship every single time you give feedback, not occasionally.</p>
+
+<p>Reed Hastings' version, which the Mochary material calls the current best practice, adds one more beat: explain why the change helps the company and helps the person. So the full shape is what you liked, what you want instead, and what it makes possible.</p>
+
+<h2 id="tell-people-where-they-stand">Tell people where they stand</h2>
+
+<p>Relative feedback tells someone whether a specific thing went well, which still leaves the bigger question open: am I doing a good job here? Most people carry constant low-grade anxiety about that, and the annual review is far too late to answer it.</p>
+
+<p>The Mochary <a href="https://docs.google.com/document/d/1Lr0sZSVS2eGq9UC7-twTXsmqczZCXf4PV21kCqoh2n4/edit">absolute feedback template</a> is a monthly 1:1 ritual that takes three minutes:</p>
+
+<div class="callout">
+  <h4>Absolute feedback, monthly</h4>
+  <ul>
+    <li><strong>The rating.</strong> "Your current rating for your job function, on a 1 to 5 scale, is a 3." Where 3 is meeting expectations, 4 is exceeding, 5 is couldn't be better, 2 means a written 30-day improvement plan starts today, and 1 means you're letting them go.</li>
+    <li><strong>What you liked.</strong> The specific things they did that earned the rating.</li>
+    <li><strong>What gets them to the next level.</strong> The specific actions that move a 3 to a 4.</li>
+  </ul>
+</div>
+
+<p>The number feels blunt the first time you say it out loud, and that bluntness is why it works. A 3 with a clear path to a 4 removes more anxiety than a vague "you're doing great," and nobody who hears a 3 every month is shocked when a 2 arrives. As the Mochary material puts it, bad news is less anxiety-inducing than no news.</p>
+
+<p>If you're on the receiving end of this and want to prepare for it, the <a href="/playbooks/one-on-one-with-your-manager">1:1 playbook</a> covers how to run the conversation from the other side.</p>
+
+<div class="cta-band">
+  <h3>Find the sentence where you softened it</h3>
+  <p>Work Coach records the 1:1 and marks the moment your feedback turned into a compliment with a caveat. Rehearse the version that says the thing, against a report who reacts badly.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="when-you-ve-given-the-same-feedback-three-times">When you've given the same feedback three times</h2>
+
+<p>This is the situation that sends managers to a coach. You've been clear, or you think you have, and nothing has changed. Celine Teoh, a CEO coach who writes for the Mochary curriculum, uses a three-way diagnostic before you conclude the person is the problem. Ask which of these three is actually broken, because each one has a different fix.</p>
+
+<h3>Clarity: are you asking them to read your mind?</h3>
+
+<p>Teoh's example is a CEO telling an SVP to "increase visibility in the sales CRM." Visibility means something precise in the CEO's head and nothing at all in the SVP's. The rewrite is "update deal blockers daily in the CRM before our sales meetings, so I can help you unblock them."</p>
+
+<p>Run the camera test again, and then run a second one: if they did exactly what you asked, word for word, would you be satisfied? If the answer is "well, that's not quite what I meant," your feedback was never clear enough to act on. Read the <a href="https://docs.google.com/document/d/1tsqGVufCXilMKmL6uaZLyvzirhj0Tmb_PfNc_OWWPb8/edit">full clarity and capability note</a> for the longer version.</p>
+
+<h3>Capability: can they actually do it yet?</h3>
+
+<p>Teoh calls this the "why can't my five-year-old drive" problem. The five-year-old isn't being defiant. He lacks the training, the coordination, and the height. If you've asked a two-years-into-the-job manager to run a program a seasoned VP would find hard, no amount of feedback closes that gap.</p>
+
+<div class="callout">
+  <h4>Questions to ask when it's capability</h4>
+  <ul>
+    <li>What training or coaching would help here? Ask them, don't guess.</li>
+    <li>Can this be broken into steps small enough that they can succeed at the first one?</li>
+    <li>Do they need something from you: budget, time, air cover, an introduction?</li>
+    <li>Who has done this well that they could watch?</li>
+  </ul>
+</div>
+
+<p>Teoh recommends the "I intend to" exercise, borrowed from David Marquet's submarine command. Before acting, the person sends you a short "I intend to do X because Y." You review the intention rather than the outcome, which lets you correct the thinking cheaply and lets them keep the decision. Over a few weeks they get better at the thinking, and you stop having to make the call for them.</p>
+
+<h3>Caring: do they have a reason to change?</h3>
+
+<p>If it isn't clarity and it isn't capability, you're looking at motivation. Teoh's <a href="https://docs.google.com/document/d/13cLE5EH8IpkgdB8fsDDQBZLC0SuDq7J-epeNTeL60zg/edit">note on motivation</a> gives two causes worth checking.</p>
+
+<p>The first is that you're paying in the wrong currency. Borrowing from Allan Cohen and David Bradford, she points out that people are driven by different things: vision and excellence, learning and new resources, recognition and visibility, inclusion and personal support, gratitude and ownership. You might care about efficiency while the person in front of you is motivated by getting to learn something new. An emerging leader might resist changing course because they need to be seen as steady, not because they disagree with you. Watch what they get excited about and what they say when they push back, then build the request around that.</p>
+
+<p>The second is that your feedback feels like a threat. Teoh uses David Rock's SCARF model: status ("do my colleagues still respect me?"), certainty ("does this mean I'm not right for this company?"), autonomy ("they're trying to control how I work"), relatedness ("I thought we were a team"), and fairness ("this is undeserved"). Guess which one is firing and address it out loud. For autonomy, that sounds like "I value your approach here. This isn't me controlling how you work, it's me wanting to talk through alternatives. How would you want to implement this?"</p>
+
+<p>Teoh's last suggestion is the one most managers skip. For a few days, give no constructive feedback at all and notice every small step in the right direction out loud. She compares it to cheering a toddler learning to walk, where nobody chastises the falling down. It's harder than it sounds, because most of us are wired to spot the gap.</p>
+
+<h2 id="scripts-for-the-hard-ones">Scripts for the hard ones</h2>
+
+<h3>When they get defensive</h3>
+
+<p>Alisa Cohn has a rehearsed script for this, and her point is that the value comes from having prepared one at all.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Pausing when someone gets defensive.</strong> The player below is queued to 20:45, the exact moment Alisa Cohn walks through her script. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=1245s">Watch on YouTube</a>.</p>
+  <blockquote>"Well, let's pause for a second. First of all, I want you to know that I'm telling you this actually just to make you better, because I know how important your career is to you, I know how important the success is to you, and it's important to me too as your leader. The second thing is, my observation is that you're getting a little bit emotional. I want to know if we can continue having this conversation now, or we need to kind of pause it. At the end of the day we really have to have this conversation and I really want to see you make changes, but I understand you might need a few moments to digest it."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach and author of <em>From Start-up to Grown-up</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=1245" title="Alisa Cohn at 20:45" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Cohn notes that "you're getting emotional" makes some people angrier, so pick your words for the person: "I can see this is upsetting you," or "the temperature between us just changed." The structure underneath stays the same. Name your positive intent, name what you're seeing, and offer to continue now or later while making clear the conversation is happening either way.</p>
+
+<h3>When they cry</h3>
+
+<p>The Mochary guidance here is short and useful. Crying is how some people release emotion, and it rarely lasts more than a minute or two. Don't talk them out of it, don't put a hand on their shoulder, don't start backpedaling on the feedback. Breathe and let it finish. Then keep going. If you treat crying as unacceptable, the emotion doesn't go anywhere. It turns into a bad mood you'll be managing for a week.</p>
+
+<h3>When it's a repeated pattern</h3>
+
+<p>Faith Meyer's <a href="https://docs.google.com/document/d/1Z-PGn0NBJVw0gJRWPakTdSFHqt0AveN8t5BzufveQNE/edit">three strikes process</a> in the Mochary curriculum gives conflict-avoidant managers a structure so the escalation doesn't come out of nowhere.</p>
+
+<div class="callout">
+  <h4>Three strikes</h4>
+  <ul>
+    <li><strong>First time.</strong> Name the specific example, then get curious: "Can you help me understand what happened here?" Once you understand, restate the expectation, ask what they intend to do differently, and make a plan together. Then check whether they did it.</li>
+    <li><strong>Second time.</strong> "This is happening again, and we've talked about it before. Can you help me understand why it's still occurring?" Make a plan, and add an explicit warning: this is becoming a pattern, it needs to change, please take it seriously.</li>
+    <li><strong>Third time.</strong> Same acknowledgment, plus the consequence stated plainly: "If this doesn't change, your job is at risk." Make a plan. Hold them to it.</li>
+  </ul>
+</div>
+
+<p>Alisa Cohn's version of the third conversation is similar and worth saying out loud in advance: "This is going to be a difficult conversation. I've seen this multiple times, we've talked about it multiple times, and it's still not fixed." She points out the upside of doing this properly, which is that you often don't have to fire the person, and if you do, the conversation is straightforward because nothing about it is a surprise.</p>
+
+<h3>When you're worried they'll quit</h3>
+
+<p>The Mochary doc names the excuse managers use most: this person isn't performing, nobody else can do their job, and if I tell them the truth they'll leave and I'll be stuck. The response is that withholding feedback guarantees the failure you're afraid of. Give it well and one of two things happens. They improve, or they admit the job isn't right and help you find their replacement. Both are better than another two quarters of you quietly resenting them.</p>
+
+<h2 id="take-feedback-so-people-keep-giving-it">Take feedback so people keep giving it</h2>
+
+<p>Your team decides whether to tell you the truth based on what happened the last time someone tried. From their side, it's a bad bet: if you take it well they get a small improvement, and if you take it badly you might become vindictive. Most people won't make that wager until you prove it's safe.</p>
+
+<p>Asking generically doesn't work. Kim Scott is blunt about the default question.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question that gets a real answer.</strong> The player below is queued to 38:18, the exact moment Kim Scott gives her go-to question and the warning that goes with it. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=2298s">Watch on YouTube</a>.</p>
+  <blockquote>"The question that I like to ask is: what could I do or stop doing that would make it easier to work with me? But do not write down my question, because if you sound like Kim Scott and not like yourself, then other people are not going to believe you want the answer. It needs to sound authentic to you."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> and former Google leader · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2298" title="Kim Scott at 38:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Scott recommends soliciting feedback from every direct report weekly, with five minutes reserved at the end of the 1:1, and varying the wording so it doesn't sound like a script you stopped meaning. Christa Quarles, then CEO of OpenTable, told Scott she could never say those words and asked "tell me why I'm wrong" instead. That works because it demands an answer.</p>
+
+<p>The Mochary curriculum's <a href="https://docs.google.com/document/d/1zsVOnpNayriDpzgjJUDO2n47YxO9EAXbVH2uC_Zpnms/edit">five A's</a> are what you do with the answer once you get it:</p>
+
+<div class="callout">
+  <h4>The five A's of receiving feedback</h4>
+  <ul>
+    <li><strong>Ask.</strong> Carve out the time yourself, in the last five minutes of meetings, rather than saying "give me feedback anytime." Lachy Groom's version: "Don't say it, just think it. What's the thought you're afraid to tell me because you think it'll hurt my feelings? Do you have it? Okay, now please say it."</li>
+    <li><strong>Acknowledge.</strong> "I think I heard you say..." Summarize it back, then ask "is that right?" If they say not quite, ask again until you can say it correctly. Then ask "is there more?"</li>
+    <li><strong>Appreciate.</strong> Say thank you. No excuses, no counterargument, no context you need them to understand first.</li>
+    <li><strong>Accept, or don't.</strong> You don't have to agree. You do have to say which. If you're not taking it, explain why so they understand the reasoning.</li>
+    <li><strong>Act.</strong> Co-create an action item with a due date, do it, and tell them you did. That closes the loop and is the only proof that giving you feedback was worth the risk.</li>
+  </ul>
+</div>
+
+<p>Acknowledging is the step most managers skip, and Mochary argues it matters more than acting on the feedback. People need to hear their own words come back at them. You can check whether you did it by asking "do you feel heard?"</p>
+
+<p>Mellody Hobson, co-CEO of Ariel Investments, learned the receiving side from a coach and from being on the wrong end of it.</p>
+
+<div class="nugget">
+  <blockquote>"One of the things that he told me was that feedback was not a right. You're not entitled to it. So whenever you get it, it's a gift and you had to treat it that way."</blockquote>
+  <div class="nugget-who"><strong>Mellody Hobson</strong>, co-CEO of Ariel Investments · WorkLife with Adam Grant (6:36, audio)</div>
+</div>
+
+<p>Her story about receiving it is the more useful part. Senator Bill Bradley told her she could be a ball hog. She sat there telling herself not to cry, and her reasoning was practical.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>WorkLife with Adam Grant: Mellody Hobson on Taking Tough Feedback.</strong> This one is audio only. The quotes are at 6:36 and 7:56; the player starts from the top, or <a href="https://podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675&t=396">open it on Apple Podcasts cued to 6:36</a>.</p>
+  <blockquote>"If I cry, he won't ever give me feedback again. Because who wants to sit and have to put someone back together after they've given them feedback and then want to do it again?"</blockquote>
+  <div class="nugget-who"><strong>Mellody Hobson</strong>, co-CEO of Ariel Investments · WorkLife with Adam Grant (7:56, audio)</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="WorkLife with Adam Grant: Mellody Hobson on Taking Tough Feedback - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>Hobson also has a rule for sorting signal from noise: the first time someone calls you a horse's ass you can dismiss it, the second time you think about it, and by the third time you buy a saddle. When several people tell you the same thing, stop debating whether each of them is right. And when you're the one giving it, she quotes Dick Parsons on the difference between honest and brutal: "I'll be honest, but I don't need to be brutal."</p>
+
+<p>If your own manager is the one who won't hear feedback, the <a href="/playbooks/disagree-with-boss-respectfully">respectful disagreement playbook</a> covers how to raise it without the conversation becoming about your tone.</p>
+
+<h2 id="when-nothing-changes-anyway">When nothing changes anyway</h2>
+
+<p>You've been specific, you've been fast, you've checked clarity, capability, and motivation, and you've run three strikes. At that point the feedback isn't the problem, and the honest move is to change the situation rather than repeat yourself.</p>
+
+<div class="callout">
+  <h4>What's left</h4>
+  <ul>
+    <li><strong>Change the job.</strong> Sometimes the person is capable and motivated in a different role. Moving someone into work they can be excellent at is a real answer, and you should treat it as one.</li>
+    <li><strong>Put it in writing.</strong> A written improvement plan with dates makes the standard unambiguous and gives them a fair shot at meeting it. Loop in HR before you write it.</li>
+    <li><strong>Check what you're modeling.</strong> If you asked for feedback and reacted badly once, that's the version of you they're managing around. Ask what you did to help create the situation.</li>
+    <li><strong>Make the decision.</strong> If the standard matters and it still isn't being met after a fair process, let the person go. Delaying it costs the rest of your team, who can see the gap as clearly as you can.</li>
+  </ul>
+</div>
+
+<p>Before you deliver news like this, the <a href="/playbooks/tell-leadership-project-is-delayed">bad news playbook</a> has a structure for saying the hard thing early and clearly. If the conversation is about a promotion that isn't happening, the <a href="/playbooks/promotion-denied-questions">promotion denial playbook</a> covers what the person will want to ask you.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Should I use the feedback sandwich?</h3>
+<p>No. Mellody Hobson calls it a sandwich that never tastes as good as it sounds on the menu, and the reason is that people learn to wait for the middle and discount the praise. Give specific praise on its own schedule, and give critical feedback with its own reason attached. Affirming the relationship before critical feedback is different from burying the point between two compliments.</p>
+
+<h3>How much feedback is too much?</h3>
+<p>Kim Scott recommends soliciting feedback weekly and giving it in the moment, which sounds like a lot until you notice it replaces the long, tense quarterly conversation. If someone is hearing only criticism from you, add praise rather than cutting back on the criticism. Celine Teoh's suggestion of a few days of nothing but noticing the good is a good reset.</p>
+
+<h3>What if I manage someone remotely?</h3>
+<p>Use video, not Slack or email. The whole reason to avoid one-way channels is that you can't see the person get defensive, so you can't reassure them, and unaddressed anger turns into resentment. A five-minute video call the same day beats a carefully worded message.</p>
+
+<h3>What if the feedback is about something I can't describe as an action?</h3>
+<p>Feelings-based feedback is genuinely harder, and Alisa Cohn acknowledges it. Do the work anyway. Ask yourself what your evidence is that this is happening, and you'll usually find you're reacting to two or three specific moments. Name those moments and say what you thought when they happened, rather than diagnosing the person's character.</p>
+
+<h3>Can I give feedback to someone more senior than me?</h3>
+<p>Yes, and Scott's order of operations applies the same way in every direction: solicit first, then give praise, then give criticism. Ask permission before the critical piece and keep it to something specific you observed.</p>
+
+<h2 id="the-feedback-checklist">The feedback checklist</h2>
+
+<div class="callout">
+  <h4>Before you say anything</h4>
+  <ul>
+    <li>Write down the feedback for yourself first.</li>
+    <li>Check that a camera could have recorded the behavior you're describing.</li>
+    <li>Decide what you want them to do instead, in positive terms.</li>
+    <li>Know why it matters for the work and for them.</li>
+  </ul>
+  <h4>In the conversation</h4>
+  <ul>
+    <li>Affirm the relationship and say what you liked, specifically.</li>
+    <li>Give the specific action and the request.</li>
+    <li>Watch their face. If they tense up, pause and state your intent.</li>
+    <li>Ask what they intend to do differently, and agree on a check-in.</li>
+  </ul>
+  <h4>Every month</h4>
+  <ul>
+    <li>Give each report an absolute rating, what earned it, and what moves it up.</li>
+    <li>Reserve five minutes of each 1:1 to ask for feedback on yourself.</li>
+    <li>Close the loop on feedback you accepted and tell the person you did it.</li>
+  </ul>
+  <h4>When nothing has changed</h4>
+  <ul>
+    <li>Test clarity: would you be satisfied if they did exactly what you asked?</li>
+    <li>Test capability: what training, time, or support is missing?</li>
+    <li>Test motivation: what do they care about, and what threat is your feedback triggering?</li>
+    <li>Move to the three strikes process and say the consequence out loud.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From Theory to Practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI">Scripts for Difficult Conversations, with Alisa Cohn</a> (Jan 2025)</li>
+    <li>WorkLife with Adam Grant: Mellody Hobson on Taking Tough Feedback (Jun 2021, audio)</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">Feedback</a>, by Matt Mochary and Misha Talavera</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1Lr0sZSVS2eGq9UC7-twTXsmqczZCXf4PV21kCqoh2n4/edit">Feedback: Absolute: Template</a></li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1zsVOnpNayriDpzgjJUDO2n47YxO9EAXbVH2uC_Zpnms/edit">Feedback: Receiving: the 5 A's</a></li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1lA4Bigmee4b_P7GjiXJzN0oZ4pzz536LHNqaqNZaYcU/edit">How to GIVE Feedback like an Obnoxious Jerk</a>, by Alexis d'Amecourt</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1tsqGVufCXilMKmL6uaZLyvzirhj0Tmb_PfNc_OWWPb8/edit">What to do when feedback isn't landing due to Clarity and Capability</a>, by Celine Teoh</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/13cLE5EH8IpkgdB8fsDDQBZLC0SuDq7J-epeNTeL60zg/edit">When feedback isn't landing due to Motivation</a>, by Celine Teoh</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1Z-PGn0NBJVw0gJRWPakTdSFHqt0AveN8t5BzufveQNE/edit">Manager's "Three Strikes" Escalation Process</a>, by Faith Meyer</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#why-most-feedback-fails">Why most feedback fails</a>
+  <a href="#point-at-a-specific-action-they-took">Point at a specific action they took</a>
+  <a href="#say-it-close-to-when-it-happened">Say it close to when it happened</a>
+  <a href="#the-like-and-wish-that-template">The Like and Wish That template</a>
+  <a href="#tell-people-where-they-stand">Tell people where they stand</a>
+  <a href="#when-you-ve-given-the-same-feedback-three-times">When you've given the same feedback three times</a>
+  <a href="#scripts-for-the-hard-ones">Scripts for the hard ones</a>
+  <a href="#take-feedback-so-people-keep-giving-it">Take feedback so people keep giving it</a>
+  <a href="#when-nothing-changes-anyway">When nothing changes anyway</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-feedback-checklist">The feedback checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

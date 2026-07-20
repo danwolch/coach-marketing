@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Design leaders disagree about what they're evaluating. Here's how to spot which kind of team you're facing, and how to run the portfolio review, critique round, and outcome questions.">
+<meta name="color-scheme" content="light">
+<title>Product Design Interview Preparation: The Complete Guide | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/design-interview-guide">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Product Design Interview Preparation: The Complete Guide","description":"Design leaders disagree about what they're evaluating. Here's how to spot which kind of team you're facing, and how to run the portfolio review, critique round, and outcome questions.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/design-interview-guide"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/design-interview-guide">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Product Design Interview Preparation: The Complete Guide">
+<meta property="og:description" content="Design leaders disagree about what they're evaluating. Here's how to spot which kind of team you're facing, and how to run the portfolio review, critique round, and outcome questions.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Product Design Interview Preparation: The Complete Guide">
+<meta name="twitter:description" content="Design leaders disagree about what they're evaluating. Here's how to spot which kind of team you're facing, and how to run the portfolio review, critique round, and outcome questions.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Interview Prep</div>
+  <h1>How to prepare for a product design interview</h1>
+  <p class="post-sub">The people interviewing you do not agree on what makes a designer good. Figuring out which camp your interviewer is in changes how you should present the same work.</p>
+  <div class="post-meta">15 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Every design interview guide tells you the same thing: polish the portfolio and rehearse the case studies so you can show your process. Then you sit down with a head of design who doesn't care about your process at all, wants to know whether the button you shipped moved anything, and spends twenty minutes on one screenshot asking why you made a specific choice. It's the same portfolio, presented the wrong way, and nobody tells you that's what happened.</p>
+
+<p>This article covers what different design leaders are evaluating and where they genuinely disagree, and how to structure a portfolio case. It also covers the whiteboard and app-critique rounds, how to talk about outcomes when you didn't own the metric, and what to ask them back. Read the disagreements section first, because everything else depends on which kind of team you're talking to.</p>
+
+<p>The material comes from Julie Zhuo, who joined Facebook as an intern designer and became its VP of product design over 14 years; Katie Dill, head of design at Stripe and previously head of experience design at Airbnb and head of design at Lyft; Karri Saarinen, co-founder and CEO of Linear and before that a principal designer at Airbnb and the founding designer at Coinbase; Jenny Wen, who leads design for Claude at Anthropic and was director of design at Figma; and Dylan Field, Figma's co-founder and CEO. Every quote below plays the exact moment it was said.</p>
+
+<h2 id="where-design-leaders-disagree-about-what-they-re-evaluating">Where design leaders disagree about what they're evaluating</h2>
+
+<p>Generic guides flatten all of this into "show your process and prove impact." The people doing the hiring are not that aligned. Some of them are primarily testing your taste and judgment. Some want to see that your work moved the business. At least one thinks the design process you were taught is finished. These lead to different presentations of the same portfolio, so it's worth knowing which one you're walking into.</p>
+
+<h3>The one question almost all of them ask</h3>
+
+<p>Start with the agreement, because it's unusually strong. When Lenny Rachitsky compiled the favorite interview questions of more than 100 guests, three separate product and design leaders named the same one, independently: what work are you most proud of.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question three design and product leaders picked independently.</strong> The player below is queued to 10:08, the exact moment Katie Dill and Karri Saarinen both give the same answer and explain what it tells them. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=608s">Watch on YouTube</a>.</p>
+  <blockquote>"Tell me what work you are most proud of. And the reason I ask that is because it helps me understand their taste and their judgment, what motivates them, what work they view as good and as a good outcome."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=608" title="Katie Dill at 10:08" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Karri Saarinen answers the same question the same way and says it "gives you a little bit of indication of what the person values and how they think about things." So the piece of work you lead with is doing double duty. It shows what you can build, and it tells them what you think good looks like. Pick the project you're proud of for reasons you can defend, and not the one with the biggest logo attached.</p>
+
+<h3>How they probe for taste and judgment</h3>
+
+<p>Katie Dill puts taste above almost everything else she could screen for, including experience.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What can't be taught later.</strong> The player below is queued to 1:11:20, the exact moment Katie Dill answers what a non-designer should look for when hiring a designer. <a href="https://www.youtube.com/watch?v=gfEEcssu304&t=4280s">Watch on YouTube</a>.</p>
+  <blockquote>"It's easier to teach tools and process than it is taste and character. So I would certainly pay a lot of attention to that, their hit rate for great judgment and great taste and how they've honed that, even if they're not very experienced."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe, formerly Airbnb and Lyft · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/gfEEcssu304?start=4280" title="Katie Dill at 1:11:20" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>She also names two things alongside it: humility, because it makes you pay attention to what users are telling you, and the nerve to say a design isn't good enough and it should be done again. If you have a story where you threw out your own work and restarted, that's the round to tell it in.</p>
+
+<p>Karri Saarinen probes the same quality through a specific interview move. He asks about a project on your resume, then keeps going deeper on one decision until he finds out whether there's reasoning underneath it.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The difference between an opinion and a reason.</strong> The player below is queued to 1:07:25, the exact moment Karri Saarinen describes what separates a good answer from a weak one when he digs into a candidate's past decisions. <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM&t=4045s">Watch on YouTube</a>.</p>
+  <blockquote>"Some people might be like, yeah, I just didn't like it. Which, I don't like. Yeah, it's an opinion, but it's not based on anything. You should be able to expand on it, saying, well, I don't like it because in this case it would not work well for this kind of users, or in this kind of context, or for this kind of purposes."</blockquote>
+  <div class="nugget-who"><strong>Karri Saarinen</strong>, co-founder and CEO of Linear, formerly principal designer at Airbnb · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4muxFVZ4XfM?start=4045" title="Karri Saarinen at 1:07:25" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The questions he uses are worth writing down, because they're the ones candidates freeze on: why was this decision made, do you think it was the right decision, and what would you have done differently. Notice that the second and third ones invite you to disagree with your own shipped work. Saarinen says the strongest candidates "can just talk about it forever and they can go deeper and deeper." So prepare depth on a small number of decisions rather than a tour of everything you've made.</p>
+
+<p>Dylan Field describes taste as something you build by running a loop: notice whether you like something, ask why, then learn the context and the history that produced it and work out where you agree or disagree with it. That's a useful frame for the interview, because it means you can demonstrate taste live by reasoning out loud about a product, even when your portfolio is thin.</p>
+
+<h3>Whether your work has to point at a number</h3>
+
+<p>Here's the disagreement that will most change how you present. Katie Dill, running design at Stripe, thinks designers should be able to show how quality work moved the business, and treats the belief that it can't be measured as actively dangerous.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Quality does move metrics.</strong> The player below is queued to 48:40, the exact moment Katie Dill pushes back on the idea that quality work sits outside the numbers, and gives a Stripe example. <a href="https://www.youtube.com/watch?v=gfEEcssu304&t=2920s">Watch on YouTube</a>.</p>
+  <blockquote>"Part of it though is showing how it moves metrics, because I think that is a dangerous belief that is absolutely out there, but that actual quality improvements do increase growth. They do improve the bottom line."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/gfEEcssu304?start=2920" title="Katie Dill at 48:40" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her example is small and specific, which is why it works: support contacts were coming in because a button looked nice but wasn't clear, they fixed the clarity, and the contact volume dropped. She also warns that some quality work pays off over quarters or years, and that a team's rubric should say what impact means so that long-horizon work still counts.</p>
+
+<p>Karri Saarinen runs Linear the opposite way, and he is explicit about it.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>No metric goals on features.</strong> The player below is queued to 43:45, the exact moment Karri Saarinen confirms Linear doesn't set number goals for features and explains what they use instead. <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM&t=2625s">Watch on YouTube</a>.</p>
+  <blockquote>"In terms of specific features, we don't have goals for those... It's more like we want to solve this problem, and ideally the success looks like customers agree that the problem is solved, or they enjoy the solution. And it's not that the metrics went up."</blockquote>
+  <div class="nugget-who"><strong>Karri Saarinen</strong>, co-founder and CEO of Linear · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4muxFVZ4XfM?start=2625" title="Karri Saarinen at 43:45" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Linear has a company-level metric like weekly active users, but no per-feature targets, no experiments, and one product leader. Saarinen calls the mix "magic and science," where the science is everyone in the company talking to customers constantly, and the magic is trusting informed intuition instead of backing every decision with data.</p>
+
+<p>Both of these people hire designers, and neither of them is wrong about their own company. What changes is what a strong answer sounds like in their interview:</p>
+
+<div class="callout">
+  <h4>If they sound like Katie Dill</h4>
+  <ul>
+    <li>Lead the case with the business situation and close it with what changed. Support volume, conversion, completion rate, time to first success, churn on a segment.</li>
+    <li>Bring one long-horizon project too, and say plainly which quarter the payoff showed up in.</li>
+    <li>If a number isn't available, say what you would have measured and why you couldn't.</li>
+  </ul>
+  <h4>If they sound like Karri Saarinen</h4>
+  <ul>
+    <li>Lead with the problem, who had it, and how you knew. Customer conversations and support threads count as evidence here.</li>
+    <li>Define success the way they do: customers agreeing the problem is gone, and using the thing without complaint.</li>
+    <li>Opening with "we lifted activation 12%" can come across as ducking the question here, so keep the number as supporting detail instead of the headline.</li>
+  </ul>
+</div>
+
+<h3>Whether the classic design process is still the story</h3>
+
+<p>The advice to "show your process" usually means the process every design program teaches: research and discovery, then diverge, converge, diverge, converge, then mocks, then iterate. Jenny Wen, who leads design for Claude at Anthropic and was a director of design at Figma, gave a talk in Berlin arguing that process is finished.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>"That's basically dead."</strong> The player below is queued to 5:45, the moment Jenny Wen explains why she titled a conference talk "Don't trust the design process." <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo&t=345s">Watch on YouTube</a>.</p>
+  <blockquote>"This design process that designers have been taught, where you go off and you do a bunch of research and discovery, and then you diverge, you converge, diverge, converge, and it's this process that we sort of treated as gospel and tried so hard to preserve, and we were like, trust the process. That's basically dead."</blockquote>
+  <div class="nugget-who"><strong>Jenny Wen</strong>, head of design for Claude at Anthropic, formerly director of design at Figma · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/eh8bcBIAAFo?start=345" title="Jenny Wen at 5:45" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her argument is that engineering changed first and design got pulled along. When an engineer can spin up a working version of an idea in an afternoon, a designer no longer has time to produce beautiful mocks and hand them over. She splits the job into two kinds of work now: supporting implementation, which often means doing the last-mile detail directly in code alongside engineers, and setting direction, which has shrunk from a five-year vision deck to something closer to a three-to-six-month prototype that points people somewhere.</p>
+
+<p>Be careful about what this does and doesn't mean for your interview. Wen is describing how the work gets done day to day. Saarinen and Dill are describing what they listen for in an interview, which is the reasoning behind decisions. Those aren't in conflict. What is genuinely at risk is the portfolio case built as a ritual walk through the phases, with a research slide and a diverge slide and a personas slide, ending in a hero shot. That structure is what Wen is calling dead, and it also happens to be the structure that buries the judgment Dill and Saarinen are looking for. Nobody in this group is asking you to prove you followed the steps.</p>
+
+<h3>How to tell which kind of team you're interviewing with</h3>
+
+<p>You can usually work this out before the onsite, and the recruiter will tell you if you ask.</p>
+
+<div class="callout">
+  <h4>What to look at</h4>
+  <ul>
+    <li><strong>Ask the recruiter what the design panel consists of.</strong> A round named "impact" or "cross-functional partnership" points one way. A round named "craft" or "critique" points the other.</li>
+    <li><strong>Read the job description for its nouns.</strong> Words like experimentation, funnel, activation, and A/B testing signal an outcomes team. Words like craft, quality bar, taste, and polish signal the other kind.</li>
+    <li><strong>Look at who the design leader is and what they've published.</strong> Design leaders write and speak a lot, and they usually say plainly which they care about.</li>
+    <li><strong>Look at the product itself.</strong> A dense power tool with a devoted user base was usually built by people who talk about craft, while a high-volume consumer funnel usually wasn't.</li>
+    <li><strong>Ask directly in the first call.</strong> "How does the team decide a design is good enough to ship?" The answer tells you almost everything, and it's a normal question to ask.</li>
+  </ul>
+</div>
+
+<p>Then present accordingly. You're not changing your story, because you did what you did. You're choosing which parts get the airtime, and if you guess wrong you'll spend the round answering a question they weren't asking. If you want a broader version of this, the <a href="/playbooks/how-to-position-yourself-for-a-job">positioning playbook</a> covers how to shape your pitch to a specific team.</p>
+
+<h2 id="the-portfolio-review-and-how-to-build-one-case">The portfolio review and how to build one case</h2>
+
+<p>Most portfolio reviews give you 45 to 60 minutes, and most candidates try to cover four projects in it. Two or three is plenty, and one of them should go deep enough that the interviewer runs out of follow-up questions before you run out of answers. Remember what Saarinen said about the strongest candidates going deeper and deeper on a single decision.</p>
+
+<p>A structure that holds up with both kinds of interviewer:</p>
+
+<div class="callout">
+  <h4>1. Situation, in about a minute</h4>
+  <ul>
+    <li>What the company was trying to do, what state the product was in, and why this work got picked up.</li>
+    <li>Your role, the team shape, and the constraints you were handed. Say the timeline and the headcount.</li>
+  </ul>
+  <h4>2. The problem and how you knew it was real</h4>
+  <ul>
+    <li>Name the user and the specific moment it went wrong for them.</li>
+    <li>Give your evidence: interviews, session recordings, support tickets, drop-off in a funnel. Say how much of it you gathered yourself.</li>
+  </ul>
+  <h4>3. Two or three decisions, with the reasoning</h4>
+  <ul>
+    <li>Show the alternative you rejected and say why. This is the part interviewers are waiting for.</li>
+    <li>Include at least one decision you got wrong and corrected, with what the correction cost.</li>
+    <li>Bring the messy artifacts. Rejected directions and marked-up screenshots are more convincing than the polished final.</li>
+  </ul>
+  <h4>4. What shipped and what happened after</h4>
+  <ul>
+    <li>Say what actually launched, including the parts that got cut and why.</li>
+    <li>Give the result in whichever currency the team runs on, then offer the other one if they push.</li>
+  </ul>
+  <h4>5. What you'd do differently now</h4>
+  <ul>
+    <li>One honest thing, briefly. Not a humble brag about caring too much.</li>
+  </ul>
+</div>
+
+<p>Two practical notes. Keep the walkthrough conversational and let them interrupt, because their interruptions tell you what they're evaluating. And rehearse the version that fits in half the time, since panels run late constantly and being cut short is normal.</p>
+
+<p>Most portfolio reviews open with some version of "tell me about yourself" before you share your screen. Keep it to about ninety seconds and use it to set up the work you're about to show, and the <a href="/playbooks/tell-me-about-yourself-interview-answer">playbook on that answer</a> has a structure for it.</p>
+
+<div class="cta-band">
+  <h3>Run your portfolio walkthrough out loud first</h3>
+  <p>Work Coach records the walkthrough and flags every decision you narrated without giving a reason. A simulated interviewer asks why, over and over, until you can answer without stalling.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="the-whiteboard-round-and-the-app-critique">The whiteboard round and the app critique</h2>
+
+<p>These two rounds test the same thing from opposite directions. The whiteboard asks you to design something new under time pressure. The critique hands you an existing product and asks what's wrong with it. Both are watching how you think when you can't polish anything.</p>
+
+<p>For the critique, Julie Zhuo's advice about giving feedback inside a design critique is the best available guide to sounding senior, and it works because it's what good designers do with each other every week.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Name the problem before you name a fix.</strong> The player below is queued to 1:02:37, the exact moment Julie Zhuo explains what the most useful critique feedback does. <a href="https://www.youtube.com/watch?v=YLsxHa1dhSw&t=3757s">Watch on YouTube</a>.</p>
+  <blockquote>"The most important feedback I would say is focus on identifying a problem and making it really clear for the other person, the person you're giving feedback to: what is the problem. And the reason I always give that is because we're all solvers and builders, and so you often can very much get into, wait a second, I see the problem, but instead of talking about the problem I'm just going to give you a solution."</blockquote>
+  <div class="nugget-who"><strong>Julie Zhuo</strong>, co-founder of Sundial, former VP of product design at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/YLsxHa1dhSw?start=3757" title="Julie Zhuo at 1:02:37" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her example of the failure is "why don't we make the logo purple," which skips straight past the reason. In a critique round, "I'd move this button up" tells the interviewer nothing. "A first-time user can't tell which of these three actions is the main one, because they're weighted identically, and here's why that matters for someone in a hurry" tells them how you look at a screen. Zhuo's point is that jumping to a solution takes power away from whoever owns the problem, so it also signals how you'd behave with the designers already on the team.</p>
+
+<p>A workable order for a 30-minute critique:</p>
+
+<ul>
+  <li><strong>Say who the product is for and what job it's doing</strong> before you say anything about the interface. Two sentences.</li>
+  <li><strong>Pick one flow and walk it</strong> as that user would, out loud, calling out the moment things get confusing and why.</li>
+  <li><strong>Separate severity from taste.</strong> Say which issues block someone from finishing and which are polish, because running them together is the most common way to sound junior.</li>
+  <li><strong>Name what's working and why.</strong> Interviewers notice candidates who only find faults, and it makes them wonder about your taste rather than your rigor.</li>
+  <li><strong>Offer fixes at the end,</strong> tied back to the specific problems you named, with a rough sense of what each would cost.</li>
+</ul>
+
+<p>For the whiteboard round, the mechanics overlap heavily with the PM version of this exercise: narrow the prompt, pick a user, find a real problem before proposing anything, sketch, then critique your own sketch. The <a href="/playbooks/product-sense-interview">product sense interview playbook</a> has a full structure with timings you can borrow, and the main difference for designers is that you'll be expected to actually draw and to talk about layout, hierarchy, and states while you do.</p>
+
+<h2 id="how-to-talk-about-outcomes-when-you-weren-t-the-pm">How to talk about outcomes when you weren't the PM</h2>
+
+<p>The trap in outcome questions is real, and it goes both ways. Claim the metric and a sharp interviewer will ask what you personally decided, then watch you flounder. Refuse to discuss numbers at all and an outcomes-oriented interviewer writes you off as someone who doesn't know what the business does.</p>
+
+<p>The way through is to be specific about the boundary. Say what the team achieved, then say which part of it you owned, at its real size.</p>
+
+<div class="callout">
+  <h4>Language that holds up</h4>
+  <ul>
+    <li>"The team took checkout completion from 61% to 74% over two quarters. The piece I owned was the error and recovery states, which is where about half the drop-off was."</li>
+    <li>"Our PM set the goal. What I brought was the finding that people were abandoning at the address step, from six user sessions I ran, and that changed what we scoped."</li>
+    <li>"I can't share the exact number, but the support tickets on that flow dropped enough that we stopped staffing a rotation for it."</li>
+    <li>"That project didn't move the metric we hoped. What we learned was that the problem was pricing, not the flow, and I'd argue the research was the valuable part."</li>
+  </ul>
+  <h4>Things to avoid saying</h4>
+  <ul>
+    <li>"We increased revenue by 30%" with no account of what you did.</li>
+    <li>"I'm a designer, so I don't really look at metrics." An outcomes-oriented interviewer will stop listening after this.</li>
+    <li>Percentages with no baseline. A 40% lift on 200 weekly users invites a question you should have answered yourself.</li>
+  </ul>
+</div>
+
+<p>If the number genuinely doesn't exist, which happens often at a company that works the way Linear does, use the evidence they'd use: what customers said afterward, what stopped showing up in support, whether the team kept building on it.</p>
+
+<h2 id="what-they-ask-about-working-with-engineers-and-pms">What they ask about working with engineers and PMs</h2>
+
+<p>Expect at least one round on collaboration, usually run by an engineer or PM rather than a designer. What's changed is that the answer "I hand off high-fidelity mocks and then review the build" now sounds dated at a lot of companies.</p>
+
+<p>Jenny Wen's description of her own week is a useful model for what a strong answer sounds like. When she works with engineers, she explains the thinking behind her feedback so they can extract the principle and apply it without her next time, rather than issuing verdicts on individual screens. She points them at the design system and at code they can reuse. And she does a lot of last-mile implementation herself, putting in the colors and details and prototyping in real code instead of asking an engineer to build the prototype.</p>
+
+<p>Wen also named the three kinds of designer she finds most interesting to hire right now, which is worth knowing because it tells you which story to lead with. Strong generalists who are genuinely good at several things rather than passable at many. Deep specialists whose one skill goes further down than almost anyone's, whether that's engineering depth or visual work or something as narrow as icons. And what she calls the craft new grad: someone early in their career who learns fast and doesn't have a decade of baked-in process to unlearn. Her point about the third one is that most companies only hire senior people, so that candidate is the one being overlooked.</p>
+
+<p>Katie Dill frames the junior-versus-senior question differently, from the hiring side. She thinks an early-stage team probably does need a doer, but also needs someone senior enough to build a user-focused way of working, so pairing a full-time executor with a more senior design advisor can work. If you're early in your career interviewing at a small company, that's the concern to address head on: show you can execute quickly, and separately show you have a point of view about how the team should work.</p>
+
+<p>For the collaboration round itself, come with two stories ready: a time you disagreed with a PM or engineer and how it got resolved, and a time you changed your design because of something an engineer told you about cost or constraints. The <a href="/playbooks/behavioral-interview-questions">behavioral interview playbook</a> covers how to structure those so they don't wander.</p>
+
+<h2 id="what-to-ask-them-back">What to ask them back</h2>
+
+<p>Julie Zhuo tells founders how to make themselves attractive to designers, which is the same list you should be checking them against.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What designers are really screening for in an employer.</strong> The player below is queued to 1:10:18, the exact moment Julie Zhuo tells founders how to make themselves attractive to designers. <a href="https://www.youtube.com/watch?v=YLsxHa1dhSw&t=4218s">Watch on YouTube</a>.</p>
+  <blockquote>"The first thing is that designers want to work with people who care about design. They don't want to be like, hey, you're going to toss me some spec and then I have to come up with the thing and then I toss it over the engineer. So the first thing you could do is demonstrate a commitment to design."</blockquote>
+  <div class="nugget-who"><strong>Julie Zhuo</strong>, co-founder of Sundial, former VP of product design at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/YLsxHa1dhSw?start=4218" title="Julie Zhuo at 1:10:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The evidence Zhuo tells founders to produce is the evidence you should go looking for: whether they've invested in design before hiring you, whether the leadership can talk about design in specific terms, and whether the existing product and marketing site suggest anyone cared. Questions that get at it:</p>
+
+<div class="callout">
+  <h4>Questions worth asking</h4>
+  <ul>
+    <li>"How does the team decide a design is good enough to ship?" The single most informative question you can ask.</li>
+    <li>"Walk me through the last time design changed the direction of a project." If nobody can come up with an example, you've learned what you needed to know.</li>
+    <li>"Who has the final call on quality, and what happens when engineering says there's no time?"</li>
+    <li>"How do you evaluate designers at review time? What does impact mean here?" Katie Dill's teams write this down, so a good answer exists at good companies.</li>
+    <li>"Do designers here work in code at all, and is that expected or optional?"</li>
+    <li>"What's the ratio of design to engineering, and how are designers assigned to teams?"</li>
+    <li>"What work has the design team done that you're most proud of?" Turning their own question around gets you a genuine read on their taste.</li>
+  </ul>
+</div>
+
+<p>If this is your final round, the <a href="/playbooks/prepare-for-final-round-interview">final-round playbook</a> covers preparing for the rest of the panel around the design-specific interviews.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How many projects should my portfolio presentation cover?</h3>
+<p>Two or three, with one taken deep. The failure mode is a tour of six projects at a level of detail that never reaches a decision, which leaves the interviewer with nothing to probe. Pick projects that show range across problem type, not across visual style.</p>
+
+<h3>Should I show unpolished work?</h3>
+<p>Yes, and it's often the strongest part. Rejected directions, early sketches, and screenshots you marked up are the evidence that you considered alternatives. Until you show the discards, an interviewer has no way to tell a portfolio of considered choices from a portfolio of first attempts that happened to look good.</p>
+
+<h3>What if my last team never measured anything?</h3>
+<p>Say so plainly and give the evidence you did have, like what customers said, what support saw, and whether the team kept investing in it. Then say what you would measure if you ran it again, which shows you know the gap exists. Karri Saarinen runs a well-loved product without per-feature metric goals, so plenty of interviewers won't blink at this. The ones who do will still respect a candidate who knows what was missing.</p>
+
+<h3>How do I prepare for a take-home design exercise?</h3>
+<p>Timebox it to what they said, and spend a real portion of that time on the writeup rather than the pixels. State your assumptions, show one direction you rejected, and be explicit about what you'd validate next. If the brief is vague, ask a clarifying question by email before you start, because asking is itself a signal.</p>
+
+<h3>Is a paid work trial normal?</h3>
+<p>It's rare but growing. Linear does one with every hire, where candidates work alongside the team for a number of days, join meetings, and get access to Slack and Notion. Saarinen says candidates come out of it with a much better sense of the company, and that they'll schedule around your current job. If you're offered one, treat it as your best chance to evaluate them, because working with a team for a week tells you more than any number of interviews.</p>
+
+<h3>Does AI experience matter in design interviews now?</h3>
+<p>At AI companies and a growing set of others, yes. Jenny Wen looks for resilience and willingness to try new tools, and describes designers prototyping in real code rather than waiting on engineers. Dylan Field's view is that craft is becoming the differentiator precisely because building has gotten easy. Being able to say what you've built with these tools, and what you concluded, is now a reasonable thing to bring up unprompted.</p>
+
+<h2 id="the-design-interview-on-one-page">The design interview on one page</h2>
+
+<div class="callout">
+  <h4>Before the loop starts</h4>
+  <ul>
+    <li>Find out which rounds you're getting and what each one is called.</li>
+    <li>Work out whether this team talks about outcomes or about craft, and plan which one leads.</li>
+    <li>Pick the one project you're most proud of and be ready to say why in terms of judgment.</li>
+    <li>Prepare depth on two or three decisions, including one you'd make differently now.</li>
+    <li>Gather the discarded work, the early sketches, and the marked-up screens.</li>
+  </ul>
+  <h4>In the portfolio review</h4>
+  <ul>
+    <li>Set up the situation and your actual role in about a minute, then get to the problem.</li>
+    <li>For every decision, say what you rejected and why.</li>
+    <li>Give the outcome in their currency, and be exact about which part you owned.</li>
+    <li>Let them interrupt, and use what they ask about to steer the rest.</li>
+    <li>Have a half-length version ready for when the panel runs late.</li>
+  </ul>
+  <h4>In the critique or whiteboard round</h4>
+  <ul>
+    <li>Say who the user is and what they're trying to do before touching the interface.</li>
+    <li>Name the problem and the reason before proposing any fix.</li>
+    <li>Separate what blocks someone from finishing from what's polish.</li>
+    <li>Say what's working, not only what's broken.</li>
+    <li>Think out loud, because how you reason is what's being scored.</li>
+  </ul>
+  <h4>Questions to bring with you</h4>
+  <ul>
+    <li>How does the team decide a design is good enough to ship?</li>
+    <li>When did design last change the direction of a project?</li>
+    <li>What does impact mean at review time for a designer here?</li>
+    <li>What design work is the team most proud of?</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=eh8bcBIAAFo">The design process is dead. Here's what's replacing it, with Jenny Wen</a> (Mar 2026)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=gfEEcssu304">Building beautiful products with Stripe's Head of Design, with Katie Dill</a> (Oct 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM">Inside Linear: Building with taste, craft, and focus, with Karri Saarinen</a> (Oct 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=YLsxHa1dhSw">Overcome imposter syndrome and accelerate your career, with Julie Zhuo</a> (Jun 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=UhASMW6X4AY">My favorite interview questions from 100+ guests</a> (Nov 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=WyJV6VwEGA8">Why AI makes design, craft, and quality the new moat for startups, with Dylan Field</a> (Oct 2025)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#where-design-leaders-disagree-about-what-they-re-evaluating">Where design leaders disagree about what they're evaluating</a>
+  <a href="#the-portfolio-review-and-how-to-build-one-case">The portfolio review and how to build one case</a>
+  <a href="#the-whiteboard-round-and-the-app-critique">The whiteboard round and the app critique</a>
+  <a href="#how-to-talk-about-outcomes-when-you-weren-t-the-pm">How to talk about outcomes when you weren't the PM</a>
+  <a href="#what-they-ask-about-working-with-engineers-and-pms">What they ask about working with engineers and PMs</a>
+  <a href="#what-to-ask-them-back">What to ask them back</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-design-interview-on-one-page">The design interview on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

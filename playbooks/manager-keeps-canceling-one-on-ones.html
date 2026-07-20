@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Why managers cancel 1:1s, a low-drama script for raising it, the async fallback when live time is scarce, and how to tell when it's about your standing.">
+<meta name="color-scheme" content="light">
+<title>My Manager Keeps Canceling Our 1:1: What It Means and What to Do | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/manager-keeps-canceling-one-on-ones">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"My Manager Keeps Canceling Our 1:1: What It Means and What to Do","description":"Why managers cancel 1:1s, a low-drama script for raising it, the async fallback when live time is scarce, and how to tell when it's about your standing.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/manager-keeps-canceling-one-on-ones"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/manager-keeps-canceling-one-on-ones">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="My Manager Keeps Canceling Our 1:1: What It Means and What to Do">
+<meta property="og:description" content="Why managers cancel 1:1s, a low-drama script for raising it, the async fallback when live time is scarce, and how to tell when it's about your standing.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My Manager Keeps Canceling Our 1:1: What It Means and What to Do">
+<meta name="twitter:description" content="Why managers cancel 1:1s, a low-drama script for raising it, the async fallback when live time is scarce, and how to tell when it's about your standing.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Manager 1:1s</div>
+  <h1>Your manager keeps canceling your 1:1</h1>
+  <p class="post-sub">What the cancellations usually mean, how to check instead of guessing, and how to get value out of the time you do get.</p>
+  <div class="post-meta">12 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Your 1:1 has been moved twice and canceled once this month, and you've started taking it personally. Most people do one of two things at this point: say nothing and quietly resent it, or bring it up in a way that sounds like a complaint about calendar etiquette.</p>
+<p>This article covers what a canceled 1:1 usually means, how to check rather than assume, and the exact words for raising it. It also covers what to do when live time genuinely isn't available, and how to tell a busy manager from a real signal about your standing. Work out which situation you're in before you write anything, because the response is different for each one.</p>
+<p>The sources are Camille Fournier, author of <em>The Manager's Path</em> and former CTO of Rent the Runway; Farhan Thawar, VP and head of engineering at Shopify; Rachel Wolan, Chief Product Officer at Webflow; Kim Scott, author of <em>Radical Candor</em>; executive coach Alisa Cohn, who works with founders at companies like Etsy and Venmo; and the published curriculum of Matt Mochary, who coaches CEOs at Coinbase and OpenAI. Every video below plays the exact moment the quote was said.</p>
+
+<h2 id="what-a-canceled-1-1-usually-means">What a canceled 1:1 usually means</h2>
+<p>The most common reason your manager dropped the meeting is that they're carrying more recurring meetings than a week holds. Camille Fournier has watched this get worse across a lot of companies, and she counts up the meetings, and it explains why your slot is the one that moves.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why the calendar runs out.</strong> The player below is queued to 41:23, the exact moment Camille Fournier describes the pattern. <a href="https://www.youtube.com/watch?v=hZSh0rs20uI&amp;t=2483s">Watch on YouTube</a>.</p>
+  <blockquote>"Everybody is doing one-on-ones with everyone else. So the manager is doing one-on-ones with their team, they're also doing one-on-ones with all of their peers, they're doing one-on-ones with all of their stakeholders, they're doing one-on-ones with product and design. And I think that this is just not a scalable approach."</blockquote>
+  <div class="nugget-who"><strong>Camille Fournier</strong>, author of <em>The Manager's Path</em>, former CTO of Rent the Runway · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/hZSh0rs20uI?start=2483" title="Camille Fournier at 41:23" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>A manager with seven reports, a peer group, two stakeholder relationships and a boss can be sitting in fifteen recurring meetings before any real work starts. When something urgent comes up, your manager drops the meetings with no outsider in them and no hard deadline. Yours qualifies. That tells you how your manager triages a bad week, and it's rarely a judgment about you.</p>
+<p>Rachel Wolan, Chief Product Officer at Webflow, describes what that week feels like from the other side.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>A week with no gaps in it.</strong> The player below is queued to 9:24, the exact moment Rachel Wolan describes her calendar. <a href="https://www.youtube.com/watch?v=BTcG59ZR9sg&amp;t=564s">Watch on YouTube</a>.</p>
+  <blockquote>"I am a just in time executive, which means like the two seconds before I'm walking into a meeting, that's the time I have to prep for that meeting, with very rare exceptions, because you are just back to back to back to back things."</blockquote>
+  <div class="nugget-who"><strong>Rachel Wolan</strong>, Chief Product Officer at Webflow · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/BTcG59ZR9sg?start=564" title="Rachel Wolan at 9:24" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>That's a fairly normal week for someone at her level, and she's describing it as a fact of the job. It's a useful picture to hold on to when your invite moves for the third time.</p>
+<p>The trouble is that you can't tell the difference from inside your own calendar. A cancellation looks the same whether your manager is drowning, whether they've decided the meeting has no content in it, or whether they've stopped investing in you. So it's worth spending ten minutes checking before you decide which one you're dealing with.</p>
+<div class="callout">
+  <h4>Three things to look at before you say anything</h4>
+  <ul>
+    <li><strong>Is it only you?</strong> Ask a peer on your team whether their 1:1 is still happening. If your manager canceled everyone's, it's a calendar problem. If yours is the only one, that's worth knowing before you open your mouth.</li>
+    <li><strong>What replaced it?</strong> A 1:1 dropped for a customer escalation is a different fact from one dropped for a meeting your manager chose to add.</li>
+    <li><strong>What happened to your asks?</strong> Write down what you've been waiting on. Two decisions, a piece of feedback, a scope question. This list is the thing you'll actually raise, and it's more useful than a count of canceled invites.</li>
+  </ul>
+</div>
+
+<h2 id="check-whether-the-meeting-was-dropped-or-deliberately-retire">Check whether the meeting was dropped or deliberately retired</h2>
+<p>There's a version of this where your manager isn't overwhelmed at all. Some leaders run their teams without scheduled 1:1s on purpose. Farhan Thawar did it at a company he led before Shopify, with roughly 120 direct reports.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The model without a standing meeting.</strong> The player below is queued to 77:19, the exact moment Farhan Thawar describes it. <a href="https://www.youtube.com/watch?v=C_lhMOjG7PE&amp;t=4639s">Watch on YouTube</a>.</p>
+  <blockquote>"I did two things famously. One, I had a lot of direct reports, and two, I did not do any scheduled one-on-ones, because you can't have 120 direct reports and do scheduled one-on-ones, because you're never doing anything but one-on-ones. So I said, I'm going to be around a lot because I don't have a lot of one-on-ones. So we can do unscheduled one-on-ones."</blockquote>
+  <div class="nugget-who"><strong>Farhan Thawar</strong>, VP and head of engineering at Shopify · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/C_lhMOjG7PE?start=4639" title="Farhan Thawar at 77:19" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>The Mochary Method has a document called <a href="https://docs.google.com/document/d/1QJqfjpwqmd5Epq1yug3ZUFXvucIaak3Zef9mBmHV7Ws/edit">How to quit 1:1s</a> that goes the same direction, replacing the private meeting with a group session where all the direct reports raise issues together and feedback rotates on a published schedule. So this is a real school of thought, and your manager might belong to it. We laid out both sides of the argument in <a href="/playbooks/should-you-cancel-your-one-on-ones">should you cancel your 1:1s</a>.</p>
+<p>This matters because the response is different. If your manager has deliberately moved to an open-door model, asking them to protect the standing meeting will land as if you missed the memo. Use the door instead: walk over, send the message, book fifteen minutes the day the problem shows up. Thawar's whole point is that the unscheduled conversation was the useful one, because it happened when someone was actually blocked.</p>
+<p>You can tell which one you've got by what happens when you interrupt them. If your manager answers within a few hours and treats the interruption as normal, the open door is real. If they cancel and then go quiet for four days, they're just behind.</p>
+
+<h2 id="the-low-drama-way-to-raise-it">The low-drama way to raise it</h2>
+<p>Most people wait until the fourth cancellation and then send something with an edge on it. That forces your manager to defend themselves, and you end up negotiating about whether they're a good manager instead of about your two stuck decisions. Lead with what's waiting rather than what's been canceled. The count of missed meetings is your evidence, but it shouldn't be your opening.</p>
+<div class="callout">
+  <h4>What to send</h4>
+  <p>"We've missed the last three, which I know is just how the last month has gone. There are two things sitting in my queue that need you: the pricing decision for the September launch, and whether I own the migration or Priya does. Can we do 20 minutes this week for those two? And I'm happy to move our slot to whatever day is least likely to get eaten."</p>
+</div>
+<p>That does four things. You've given them an easy explanation so they don't have to invent one. You've named specific items, so they can see the cost of the missed meetings without you asserting it. You've asked for less time than the original meeting, which is much harder to decline. And you've offered to make their calendar easier, which signals you're solving a problem with them.</p>
+<p>Read it out loud before you send it and cut anything that sounds like you're keeping score. You may well have a fair reason to be annoyed, but the annoyance won't get your pricing decision made any faster.</p>
+
+<h2 id="make-the-meeting-worth-protecting">Make the meeting worth protecting</h2>
+<p>Managers hold on to meetings that produce something. If your 1:1 has been fifteen minutes of you narrating your week, it's an easy thing to cut, and you can change that before you ask for anything.</p>
+<p>Kim Scott is direct that the meeting belongs to the report rather than the manager.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Whose meeting it is.</strong> The player below is queued to 39:43, the exact moment Kim Scott says it. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&amp;t=2383s">Watch on YouTube</a>.</p>
+  <blockquote>"Mostly a one-on-one should be your employee's setting the agenda and your employee's time."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2383" title="Kim Scott at 39:43" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>The practical version is a shared doc your manager can see, with the agenda in it by the day before. Your manager then arrives knowing there's something they need to be present for, which makes the meeting harder to drop, and if they do drop it the doc is still sitting there with your asks in it.</p>
+<div class="callout">
+  <h4>What to put in the doc</h4>
+  <ul>
+    <li><strong>Decisions I need from you.</strong> Two or three, each phrased so your manager can answer yes, no, or here's a third option. This is the section that keeps the meeting on the calendar.</li>
+    <li><strong>Issues.</strong> Mochary's <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">Issue / Proposed Solution</a> format has three parts: the issue, what I did to help create this situation, and my proposed solution. He's explicit that you write what you'd do if you had to decide alone rather than a menu of options for your manager to pick from.</li>
+    <li><strong>Status.</strong> Written, and never read out loud. If you catch yourself narrating it, stop.</li>
+    <li><strong>Things I need you to know.</strong> Anything you'd want your manager to be able to repeat when you're not there.</li>
+  </ul>
+</div>
+<p>Our <a href="/playbooks/one-on-one-with-your-manager">1:1 operating manual</a> goes deeper on running the meeting well, and if the honest problem is that you arrive with nothing, <a href="/playbooks/one-on-one-nothing-to-discuss">what to talk about when you have nothing to discuss</a> is the one to read first. A meeting with nothing in it deserves to be canceled, and fixing that is more within your control than fixing your manager's calendar.</p>
+
+<div class="cta-band">
+  <h3>Make the twenty minutes worth keeping</h3>
+  <p>Work Coach records the 1:1s you do get and shows you which asks keep falling off the end. Rehearse the twenty-minute version against a stand-in before Tuesday.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="the-async-fallback-when-live-time-really-is-scarce">The async fallback when live time really is scarce</h2>
+<p>Sometimes your manager genuinely doesn't have the time, and no amount of good framing conjures it. In that case, stop trying to buy the meeting back and change what goes into it.</p>
+<p>The Mochary Method's answer is to write the thing up and record yourself walking through it. The template asks for a Loom or an audio clip attached to the written issue, and the reasoning is worth borrowing.</p>
+<div class="callout">
+  <h4>Why write it and record it</h4>
+  <p>Mochary's instruction: "Now that you have written the issue/proposed solution, please record a video (i.e., Loom) or audio of you describing each of the steps above and paste the video link here." His reason is that the writing clarifies your thinking and is fast for a manager to read, while the recording carries the tone and the nuance that writing loses. He also notes what you give up in a live meeting: the manager has to respond in real time and can't be as thoughtful.</p>
+</div>
+<p>That last part is the useful bit. A five-minute Loom your manager watches on Thursday night can get you a better answer than eight rushed minutes on Tuesday. Send it with a deadline attached, something like "I need a call on this by Friday or I'll go with option B," so it doesn't sit unwatched.</p>
+<p>Feedback is the thing that quietly disappears when 1:1s stop, so ask for it in writing on one specific piece of work. "Can you give me two lines on how the exec review deck went?" usually gets a reply, where a general request for feedback usually doesn't.</p>
+
+<h2 id="shorter-and-more-often-or-longer-and-rarer">Shorter and more often, or longer and rarer</h2>
+<p>If the weekly thirty minutes keeps losing, propose a different shape rather than defending the current one. Two directions work, and they suit different problems.</p>
+<div class="callout">
+  <h4>Go shorter and more often</h4>
+  <ul>
+    <li>Fifteen minutes twice a week, or a standing ten minutes after an existing meeting you both already attend.</li>
+    <li>Good when your problem is decision latency and you're waiting days for small answers.</li>
+    <li>Short slots survive because they're easy to say yes to and easy to fit in a gap.</li>
+  </ul>
+  <h4>Go longer and less often</h4>
+  <ul>
+    <li>Forty-five minutes every other week instead of thirty every week.</li>
+    <li>Good when your problem is that nothing beyond project mechanics ever gets discussed.</li>
+    <li>It costs your manager less total time, which makes it an easier ask than more time.</li>
+  </ul>
+</div>
+<p>Fournier's test for whether a recurring meeting deserves to exist is worth applying to your own request, because it's the test your manager is running whether they say so or not.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>What a recurring meeting costs.</strong> The player below is queued to 44:03, the exact moment Camille Fournier explains how she decides. <a href="https://www.youtube.com/watch?v=hZSh0rs20uI&amp;t=2643s">Watch on YouTube</a>.</p>
+  <blockquote>"Don't just load yourself up with meetings because you're a manager and that's your job. Do you really have something to talk to a person about? When you have a one-on-one meeting with someone you are asking for their time."</blockquote>
+  <div class="nugget-who"><strong>Camille Fournier</strong>, author of <em>The Manager's Path</em>, former CTO of Rent the Runway · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/hZSh0rs20uI?start=2643" title="Camille Fournier at 44:03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>She's talking to managers, but the same thing is true in your direction. You're asking for your manager's time, and the more clearly you can say what it's for, the more likely you are to get it. Fournier also holds one line worth quoting back if you need it: she says you should have 1:1s with your direct reports and your manager and hold those sacred, and it's everything else on the calendar she'd cut first.</p>
+
+<h2 id="end-every-one-you-do-get-with-three-questions">End every one you do get with three questions</h2>
+<p>When you're down to twenty minutes every other week, the biggest waste is leaving without a shared record of what was decided. Alisa Cohn's three closing questions take about ninety seconds and solve most of it.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The three closing questions.</strong> The player below is queued to 50:31, the exact moment Alisa Cohn lists them. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&amp;t=3031s">Watch on YouTube</a>.</p>
+  <blockquote>"My three questions to end the meeting are: what did we decide here, who needs to do what by when, and who else needs to know. And if you can capture those, articulate those as deliverables, I promise you you're going to have better meetings."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=3031" title="Alisa Cohn at 50:31" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Cohn's point is that without this, people come back and re-decide the same thing, which is expensive when the meeting is already unreliable. Ask the three questions, put the answers in the shared doc while you're still on the call, and your next meeting starts where the last one ended. The third one is the one people skip and the one that helps you most, because "who else needs to know" is how a decision made privately with your manager turns into something other people act on.</p>
+
+<h2 id="when-it-s-been-going-on-for-months">When it's been going on for months</h2>
+<p>Two or three cancellations is a bad month. Once it's been going on for half a year, that's how your job works now, and you should plan around it.</p>
+<p>Stop trying to restore the meeting and build around its absence. Move decisions to written asks with dates on them. Get feedback from the people you work with directly, because your manager isn't your only source. Start keeping your own record of what you delivered, because a manager who hasn't sat with you in half a year won't remember your quarter at review time, and no one else is going to reconstruct it for you. Our guide to <a href="/playbooks/take-ownership-of-your-career">taking ownership of your career</a> covers what that record should contain.</p>
+<p>Then have one conversation that names the pattern rather than the latest instance. Make it a short, calm statement of what you need and what you'll cover yourself if it doesn't change, rather than another reschedule request.</p>
+<div class="callout">
+  <h4>The conversation at month six</h4>
+  <p>"I want to name something. We've had four 1:1s since March, and I don't think either of us wants it that way. I've been handling most of it async and I can keep doing that. What I can't do async is get a read on how you think I'm doing, and I'd rather hear it from you than guess. Can we book 45 minutes in the next two weeks just for that? After that I'm fine with monthly, if that's more realistic than weekly."</p>
+</div>
+<p>You've given them a smaller ask than weekly, and you've said what you'll cover yourself. Most managers who've been canceling out of overload will take that deal, partly because it lets them stop feeling guilty about the invite they keep moving.</p>
+
+<h2 id="going-to-a-skip-level-without-it-looking-like-an-end-run">Going to a skip-level without it looking like an end-run</h2>
+<p>If you need information your manager isn't giving you, a skip-level is a reasonable move. It goes badly when it looks like you went around your manager to complain about them.</p>
+<div class="callout">
+  <h4>How to do it cleanly</h4>
+  <ul>
+    <li><strong>Tell your manager first.</strong> "Priya asked if I wanted to grab 30 minutes, I said yes, wanted you to know" removes almost all the risk. Doing it without telling them is what creates the problem.</li>
+    <li><strong>Have a subject that isn't your manager.</strong> Ask about strategy, where the org is heading, what the skip-level thinks good looks like at your level. Those are legitimate reasons for the meeting and they get you the thing you were missing anyway.</li>
+    <li><strong>Don't use it to report the cancellations.</strong> If you name it at all, name it as a fact you're working around, not a grievance. "We've had trouble finding time lately so I've been leaning on written updates" is enough. A skip-level who's paying attention will hear that.</li>
+    <li><strong>Ask for the thing you actually lost.</strong> Usually that's context and a read on your standing, both of which a skip-level can give you.</li>
+  </ul>
+</div>
+<p>Our <a href="/playbooks/skip-level-meeting-with-bosses-boss">skip-level playbook</a> has the full set of questions and the wording for setting it up.</p>
+
+<h2 id="when-the-cancellations-are-actually-about-you">When the cancellations are actually about you</h2>
+<p>Most of the time this is calendar pressure, but not always, and you should be able to tell which one you're in.</p>
+<div class="callout">
+  <h4>Signs it's the calendar</h4>
+  <ul>
+    <li>Your peers' 1:1s are getting canceled too.</li>
+    <li>Your manager still answers you quickly in writing.</li>
+    <li>They reschedule rather than delete, even if the new slot also slips.</li>
+    <li>You're still getting decisions, scope, and information, just through other channels.</li>
+  </ul>
+  <h4>Signs it's about your standing</h4>
+  <ul>
+    <li>Yours is the only 1:1 that keeps moving.</li>
+    <li>Your messages go unanswered for days while others get same-day replies.</li>
+    <li>Your manager is making decisions without you that used to involve you.</li>
+    <li>Your scope has quietly shrunk, or work you'd expect to get is going elsewhere.</li>
+    <li>You asked directly how you're doing and got a vague answer.</li>
+  </ul>
+</div>
+<p>If you're seeing the second list, the cancellations aren't the problem to solve. Ask the direct question instead: "I want to check I'm reading things right. Am I meeting the bar you have for this role, and if not, where's the gap?" A manager who's disengaged will still usually answer that when it's put plainly. If the answer is vague twice, you've learned something, and it's better to learn it now than at your review.</p>
+<p>One more thing worth saying. A manager who cancels 1:1s to make room for other things is telling you where the meeting sits in their priorities, whether or not they mean to. That's information about their week and their judgment. It doesn't have to be information about your worth, and reading it that way for six months will cost you more than the missed meetings do.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3>My manager keeps canceling our 1:1. Should I say something?</h3>
+<p>Yes, after the third one, and lead with what's waiting rather than the count. Name two specific things that need your manager, ask for a shorter slot than the original, and offer to move the meeting to a day that's less likely to get eaten. That's much easier to say yes to than a request to respect the calendar.</p>
+<h3>Does my boss canceling one on ones mean I'm in trouble?</h3>
+<p>Usually not. Check whether your peers' 1:1s are getting canceled too, whether your manager still answers you quickly elsewhere, and whether decisions are still coming your way. If yours is the only one that moves and your messages sit unanswered while others get same-day replies, ask directly whether you're meeting the bar for your role.</p>
+<h3>What if my manager says they have no time for me?</h3>
+<p>Take them at their word and change the format. Move decisions to written asks with a deadline attached, record a short Loom for anything that needs tone as well as facts, and ask for feedback on one specific piece of work. Then ask for one longer meeting a month instead of a weekly one, which is a smaller total ask and usually gets accepted.</p>
+<h3>How do I get time with my manager when their calendar is full?</h3>
+<p>Ask for less of it and be clear about what it's for. Fifteen minutes with two named decisions in the invite beats a vague half hour, and grabbing ten minutes after a meeting you're both already in often works better than finding a new slot. Put your agenda somewhere they can see it beforehand so they know what they'd be missing.</p>
+<h3>Should I just let the 1:1 go?</h3>
+<p>Only if you replace what it was doing. You need somewhere decisions get made, somewhere you hear how you're doing, and a record of what you delivered. If all three have a home, a lighter cadence is fine. If none of them do, letting the meeting go means you'll find out how your year went during your review.</p>
+
+<h2 id="what-to-do-next">What to do next</h2>
+<div class="callout">
+  <h4>Before you raise it</h4>
+  <ul>
+    <li>Write down what's been waiting on your manager: decisions, feedback, scope questions.</li>
+    <li>Ask a peer whether their 1:1 is still happening.</li>
+    <li>Work out whether your manager is overloaded or running an open-door model on purpose.</li>
+  </ul>
+  <h4>The ask</h4>
+  <ul>
+    <li>Lead with the two things that need them rather than the count of cancellations.</li>
+    <li>Ask for a shorter slot than the one you lost.</li>
+    <li>Offer to move the meeting to an easier day.</li>
+  </ul>
+  <h4>Make it hard to cancel</h4>
+  <ul>
+    <li>Put the agenda in a shared doc by the day before.</li>
+    <li>Lead with decisions you need, and write issues in the format of issue, my contribution, proposed solution.</li>
+    <li>Keep status in writing and never read it out loud.</li>
+    <li>End with what did we decide, who does what by when, and who else needs to know.</li>
+  </ul>
+  <h4>If it doesn't change</h4>
+  <ul>
+    <li>Move decisions to written asks with dates on them.</li>
+    <li>Record a Loom for anything that needs your tone as well as the facts.</li>
+    <li>Keep your own record of what you delivered this quarter.</li>
+    <li>Set up a skip-level, and tell your manager before you do.</li>
+    <li>Ask directly whether you're meeting the bar for your role.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=hZSh0rs20uI">The things engineers are desperate for PMs to understand, with Camille Fournier</a> (Sep 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=C_lhMOjG7PE">How Shopify builds a high-intensity culture, with Farhan Thawar</a> (Dec 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From theory to practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI">Scripts for difficult conversations, with Alisa Cohn</a> (Jan 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=BTcG59ZR9sg">How Webflow's CPO built an AI chief of staff to manage her calendar, with Rachel Wolan</a> (Dec 2025)</li>
+    <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/1j7ZNWTh9ClS0PZHrpZXGk879pv9LXDWt6sjaq1uA-zA/edit">1-1 Template and Instructions</a>, <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">Issue / Proposed Solution template</a>, and <a href="https://docs.google.com/document/d/1QJqfjpwqmd5Epq1yug3ZUFXvucIaak3Zef9mBmHV7Ws/edit">How to quit 1:1s</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#what-a-canceled-1-1-usually-means">What a canceled 1:1 usually means</a>
+  <a href="#check-whether-the-meeting-was-dropped-or-deliberately-retire">Check whether the meeting was dropped or deliberately retired</a>
+  <a href="#the-low-drama-way-to-raise-it">The low-drama way to raise it</a>
+  <a href="#make-the-meeting-worth-protecting">Make the meeting worth protecting</a>
+  <a href="#the-async-fallback-when-live-time-really-is-scarce">The async fallback when live time really is scarce</a>
+  <a href="#shorter-and-more-often-or-longer-and-rarer">Shorter and more often, or longer and rarer</a>
+  <a href="#end-every-one-you-do-get-with-three-questions">End every one you do get with three questions</a>
+  <a href="#when-it-s-been-going-on-for-months">When it's been going on for months</a>
+  <a href="#going-to-a-skip-level-without-it-looking-like-an-end-run">Going to a skip-level without it looking like an end-run</a>
+  <a href="#when-the-cancellations-are-actually-about-you">When the cancellations are actually about you</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#what-to-do-next">What to do next</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

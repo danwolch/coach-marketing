@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="What to say when a project slips: when to escalate, how to explain the cause, and how to give leadership the options and a recommendation.">
+<meta name="color-scheme" content="light">
+<title>How to Tell Leadership a Project Is Delayed | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/tell-leadership-project-is-delayed">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Tell Leadership a Project Is Delayed","description":"What to say when a project slips: when to escalate, how to explain the cause, and how to give leadership the options and a recommendation.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/tell-leadership-project-is-delayed"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/tell-leadership-project-is-delayed">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Tell Leadership a Project Is Delayed">
+<meta property="og:description" content="What to say when a project slips: when to escalate, how to explain the cause, and how to give leadership the options and a recommendation.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Tell Leadership a Project Is Delayed">
+<meta name="twitter:description" content="What to say when a project slips: when to escalate, how to explain the cause, and how to give leadership the options and a recommendation.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Project Communication</div>
+  <h1>How to tell leadership a project is delayed</h1>
+  <p class="post-sub">You don't have to wait until you're certain. Explain what caused the slip and bring options for getting back on track.</p>
+  <div class="post-meta">12 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You know the date is unlikely to hold, but the team still has one more fix to try. Waiting feels responsible, since you might still recover. The problem is that leadership then hears about the delay after customers, sales, or another team has already planned around the old date.</p>
+
+<p>This article covers when to escalate, how to check your facts, how to present the delay, and how to keep people updated until the work is back on track. Use the five-part message as soon as the change is big enough that someone else would decide differently.</p>
+
+<p>The advice comes from Wes Kao, who teaches managing up and persuasive communication; Shreyas Doshi, former product leader at Stripe, Twitter, and Google; and Molly Graham, who led teams at Facebook, Quip, and the Chan Zuckerberg Initiative.</p>
+
+<h2 id="speak-up-when-the-risk-affects-other-people-s-plans">Speak up when the risk affects other people's plans</h2>
+
+<p>You don't need to wait until a delay is certain. Escalate when the odds or the impact have changed enough that leadership might adjust scope, staffing, what you tell customers, or another commitment.</p>
+
+<div class="callout">
+  <h4>Signs it's time to speak up</h4>
+  <ul>
+    <li>The critical path has no remaining buffer.</li>
+    <li>A dependency missed the date required for your plan.</li>
+    <li>A new defect, legal issue, or customer condition changes the launch criteria.</li>
+    <li>The team can hold the date only by dropping an agreed requirement or accepting a new risk.</li>
+    <li>Another group is about to make an irreversible commitment based on the old date.</li>
+  </ul>
+</div>
+
+<p>Use probability language if the result is still uncertain: "The September 4 date is now at high risk. We'll know by Thursday whether the fix restores it." That's more useful than keeping the status green until the last attempt fails.</p>
+
+<h2 id="don-t-let-the-first-message-be-a-surprise">Don't let the first message be a surprise</h2>
+
+<p>On his podcast with Wes Kao, Lenny Rachitsky describes a weekly update he used to send with his priorities, the blockers he needed help with, and whatever else was on his mind. Kao agrees with the idea behind it: your manager shouldn't find out about a real problem at the last possible moment.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Send a regular update so problems show up early.</strong> The player below is queued to 34:48, the exact moment they talk about avoiding surprises. <a href="https://www.youtube.com/watch?v=4jtGsyz4jLs&t=2088s">Watch on YouTube</a>.</p>
+  <blockquote>"Keep people in the loop on what you're doing, make sure you're aligned on priorities, make sure things are getting unblocked, and also just avoid surprises as much as possible."</blockquote>
+  <div class="nugget-who"><strong>Lenny Rachitsky</strong>, product advisor and host · Lenny's Podcast with Wes Kao</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4jtGsyz4jLs?start=2088" title="Lenny Rachitsky and Wes Kao at 34:48" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>A regular written update gives leadership a record of the risk over time. When the status changes, you can point back to what you already told them instead of reconstructing weeks of warning signs in an emergency meeting.</p>
+
+<h2 id="confirm-five-facts-before-the-conversation">Confirm five facts before the conversation</h2>
+
+<ol>
+  <li><strong>The old commitment:</strong> date, scope, customer, and owner.</li>
+  <li><strong>The current state:</strong> what's done and what's blocked.</li>
+  <li><strong>The cause:</strong> what's actually causing the delay, and the evidence for it.</li>
+  <li><strong>The consequence:</strong> who or what is affected by each option.</li>
+  <li><strong>The next decision:</strong> scope, date, staffing, or risk acceptance.</li>
+</ol>
+
+<p>Keep the cause separate from blame. "Security review started two weeks late because the design changed after approval" tells people what happened. "Security always blocks us" hides the decision that actually went wrong.</p>
+
+<h2 id="use-status-cause-consequence-options-and-recommendation">Use status, cause, consequence, options, and recommendation</h2>
+
+<div class="callout">
+  <h4>The five-part delay message</h4>
+  <ul>
+    <li><strong>Status:</strong> "The September 4 launch will move unless we change scope."</li>
+    <li><strong>Cause:</strong> "The new logging requirement adds four days of engineering and two days of validation."</li>
+    <li><strong>Consequence:</strong> "Holding scope moves the date to September 12 and affects two customer commitments."</li>
+    <li><strong>Options:</strong> "We can move the date, remove audit export from the first release, or accept a reduced validation window."</li>
+    <li><strong>Recommendation:</strong> "I recommend moving audit export and holding the date. I need Security and Sales approval today."</li>
+  </ul>
+</div>
+
+<p>Put the status in your first sentence. Nobody should have to guess whether you're flagging a risk or telling them the date has actually moved.</p>
+
+<div class="cta-band">
+  <h3>Practice the delay conversation before you escalate</h3>
+  <p>Work Coach plays your exec as a practice partner, so you can deliver the five parts before the real meeting. It flags where you buried the status or softened what you're asking for.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="talk-about-what-could-go-wrong-before-the-project-starts">Talk about what could go wrong before the project starts</h2>
+
+<p>Shreyas Doshi uses pre-mortems to give people permission to discuss what could go wrong. Teams often sit on their concerns because they don't want to sound negative. Putting the conversation on the calendar takes that pressure off.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Give people permission to say what could go wrong.</strong> The player below is queued to 30:46, the exact moment Shreyas Doshi explains why the exercise works. <a href="https://www.youtube.com/watch?v=YP_QghPLG-8&t=1846s">Watch on YouTube</a>.</p>
+  <blockquote>"A premortem setting gives everybody the license to actually think about what can go wrong. So that psychological safety is a big, big factor in why a premortem works."</blockquote>
+  <div class="nugget-who"><strong>Shreyas Doshi</strong>, former product leader at Stripe, Twitter, and Google · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/YP_QghPLG-8?start=1846" title="Shreyas Doshi at 30:46" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Before a major commitment, ask everyone to imagine the launch failed and write down why. Give each likely reason an owner, an early warning sign to watch, and a point at which someone escalates. Then you're having the hard conversation months earlier, when it still costs you very little.</p>
+
+<h2 id="escalate-what-you-can-t-decide-on-your-own">Escalate what you can't decide on your own</h2>
+
+<p>Molly Graham says to escalate when your team doesn't have the context or the authority to settle a decision. She points out that people often treat escalating as proof they failed, then waste a week arguing about something management could sort out in ten minutes.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Escalation is a management tool.</strong> The player below is queued to 1:17:00, the exact moment Molly Graham explains when to use it. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=4620s">Watch on YouTube</a>.</p>
+  <blockquote>"As soon as you are stuck, escalate. Go together. Go make your case to whoever it is... I think so many people think of escalation as bad, like a failure. Like, I failed, so I had to escalate. No, it's a tool. It's what management is for."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Facebook and Quip, founder of Glue Club · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=4620" title="Molly Graham at 1:17:00" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>When two teams disagree, go up together. Write down the facts you both agree on, each option, the tradeoff, and who owns the decision. Going up together shows leadership the choice that's actually stuck, instead of asking an executive to rule on which team behaved better.</p>
+
+<h2 id="own-what-you-could-have-done-earlier">Own what you could have done earlier</h2>
+
+<p>Leadership will want to know why the delay wasn't visible sooner. Answer directly:</p>
+
+<div class="callout">
+  <h4>What owning it sounds like</h4>
+  <p>"I should have changed the status to yellow when security review moved by a week. I treated the remaining buffer as recovery time, but two dependencies were using the same buffer. I've added a trigger that changes the status when any critical-path item loses more than half its buffer."</p>
+</div>
+
+<p>Name the signal you missed and what you're changing. Don't spend so long apologizing that there's no time left to talk about the fix, and don't promise a complicated project will never slip again.</p>
+
+<h2 id="tell-each-group-what-it-means-for-them">Tell each group what it means for them</h2>
+
+<ul>
+  <li><strong>Executive sponsor:</strong> outcome, customer or financial consequence, options, recommendation.</li>
+  <li><strong>Sales or customer success:</strong> affected commitments, approved customer message, next update time.</li>
+  <li><strong>Engineering or delivery:</strong> changed scope, technical cause, owner, validation criteria.</li>
+  <li><strong>Customer:</strong> what changes for them, revised expectation, mitigation, and contact.</li>
+</ul>
+
+<p>Keep the facts the same for everyone. Change the level of detail and the wording to match the decisions each group has to make.</p>
+
+<h2 id="keep-people-updated-until-it-s-fixed">Keep people updated until it's fixed</h2>
+
+<div class="callout">
+  <h4>What every update needs</h4>
+  <ul>
+    <li>Current forecast and confidence.</li>
+    <li>What changed since the prior update.</li>
+    <li>Open risk and its owner.</li>
+    <li>Decision or help needed before the next update.</li>
+    <li>Next update time, even if nothing changes.</li>
+  </ul>
+</div>
+
+<p>Say so clearly when the work is back on plan, or when the new date is the one everyone is working to. Write down what the team learned after you've shipped, once the emergency is over.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Should I tell leadership before I have a new date?</h3>
+<p>Yes, once the existing date is seriously at risk. Share your current range, what will settle it, and when you'll have a firmer answer.</p>
+
+<h3>Should I tell my manager privately before a larger meeting?</h3>
+<p>Give the leader who owns it an early heads-up when you can, then make sure everyone who's deciding hears the same facts. Don't treat a private warning as a reason to leave the wider status green.</p>
+
+<h3>What if another team caused the delay?</h3>
+<p>Explain the dependency and what happened when. Your update still needs to cover the overall impact, the options, and the decision. Sort out who's accountable separately from deciding how to recover.</p>
+
+<h3>How do I answer, "Why didn't we know sooner?"</h3>
+<p>Name the earliest signal, how you read it at the time, and what will trigger an earlier warning next time. If you were missing information from another team, say how you'll change the way you check in with them.</p>
+
+<h2 id="the-delay-conversation-checklist">The delay-conversation checklist</h2>
+
+<div class="callout">
+  <h4>Confirm</h4>
+  <ul>
+    <li>Old commitment, current state, cause, consequence, and decision.</li>
+    <li>Which parts you know for a fact and which are still estimates.</li>
+  </ul>
+  <h4>Communicate</h4>
+  <ul>
+    <li>Put the changed status in your first sentence.</li>
+    <li>Give each option with its date, scope, cost, and risk.</li>
+    <li>Recommend one option and say when you need the decision.</li>
+    <li>Own the signal you should have caught earlier.</li>
+  </ul>
+  <h4>Recover</h4>
+  <ul>
+    <li>Give every fix and open risk an owner.</li>
+    <li>Set the next update time and keep it.</li>
+    <li>Say when it's resolved, and run a learning review after you ship.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=4jtGsyz4jLs">Persuasive Communication and Managing Up, with Wes Kao</a> (Aug 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=YP_QghPLG-8">The Art of Product Management, with Shreyas Doshi</a> (Jun 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=twzLDx9iers">Molly Graham's Frameworks for Rapid Career Growth</a> (Jan 2026)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#speak-up-when-the-risk-affects-other-people-s-plans">Speak up when the risk affects other people's plans</a>
+  <a href="#don-t-let-the-first-message-be-a-surprise">Don't let the first message be a surprise</a>
+  <a href="#confirm-five-facts-before-the-conversation">Confirm five facts before the conversation</a>
+  <a href="#use-status-cause-consequence-options-and-recommendation">Use status, cause, consequence, options, and recommendation</a>
+  <a href="#talk-about-what-could-go-wrong-before-the-project-starts">Talk about what could go wrong before the project starts</a>
+  <a href="#escalate-what-you-can-t-decide-on-your-own">Escalate what you can't decide on your own</a>
+  <a href="#own-what-you-could-have-done-earlier">Own what you could have done earlier</a>
+  <a href="#tell-each-group-what-it-means-for-them">Tell each group what it means for them</a>
+  <a href="#keep-people-updated-until-it-s-fixed">Keep people updated until it's fixed</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-delay-conversation-checklist">The delay-conversation checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

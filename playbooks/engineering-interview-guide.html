@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Senior engineering leaders run fundamentally different interview processes. Here is how to tell which one you're in, and how to prepare for it.">
+<meta name="color-scheme" content="light">
+<title>The Engineering Interview Guide: Where Hiring Leaders Disagree | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/engineering-interview-guide">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Engineering Interview Guide: Where Hiring Leaders Disagree","description":"Senior engineering leaders run fundamentally different interview processes. Here is how to tell which one you're in, and how to prepare for it.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/engineering-interview-guide"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/engineering-interview-guide">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="The Engineering Interview Guide: Where Hiring Leaders Disagree">
+<meta property="og:description" content="Senior engineering leaders run fundamentally different interview processes. Here is how to tell which one you're in, and how to prepare for it.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Engineering Interview Guide: Where Hiring Leaders Disagree">
+<meta name="twitter:description" content="Senior engineering leaders run fundamentally different interview processes. Here is how to tell which one you're in, and how to prepare for it.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Interview Prep</div>
+  <h1>How to prepare for a software engineering interview when nobody agrees what one should be</h1>
+  <p class="post-sub">Some companies still run the algorithms-plus-system-design loop, and others think that loop tells them almost nothing. Your prep should depend on which one you're walking into.</p>
+  <div class="post-meta">18 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You're probably preparing for one interview: a coding screen, a system design round, a behavioral conversation, and a hiring manager chat. That's a reasonable guess, and at plenty of companies it's exactly right. It's also the reason a lot of strong engineers get blindsided, because the people running these processes do not agree with each other about what an interview is for, and some of them think the standard loop barely works.</p>
+
+<p>This article covers the disagreements that are on the record from senior engineering leaders, and how to figure out which kind of process you're in. It also covers what each round is really testing, and how your preparation changes if you're interviewing as an IC versus as an engineering manager. Read the first two sections before you build a study plan, because the plan changes a lot depending on the answer.</p>
+
+<p>The people quoted here run or ran engineering at scale. Farhan Thawar is VP and head of engineering at Shopify, where he hired around a thousand interns in a single year. David Singleton was CTO of Stripe. Will Larson has been CTO or an engineering leader at Carta, Calm, and Digg, and ran engineering teams at Stripe and Uber. Camille Fournier wrote <em>The Manager's Path</em> and was CTO of Rent the Runway. Dhanji R. Prasanna is CTO of Block. Ronny Kohavi ran experimentation at Microsoft, Amazon, and Airbnb. Karri Saarinen co-founded Linear. Brendan Foody runs Mercor. Geoff Charles was VP of product at Ramp, and Nikhyl Singhal was VP of product at Meta and Google. Every quote plays the exact moment it was said.</p>
+
+<h2 id="the-disagreement-most-guides-skip">The disagreement most guides skip</h2>
+
+<p>Generic interview guides assume one universal loop and treat it as a fixed thing you study for. That assumption breaks down fast once you listen to people who run hiring for large engineering organizations, because they openly contradict each other on the most basic question: can a few hours of interviews tell you whether someone will be good at the job?</p>
+
+<h3>One side: interviews barely predict anything, so make the interview into the work</h3>
+
+<p>Farhan Thawar runs engineering at Shopify and is blunt about it. He calls the weak link between interview performance and job performance a dirty little secret that everyone already knows and mostly ignores.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The case against the standard loop.</strong> The player below is queued to 63:30, the exact moment Farhan Thawar says it. <a href="https://www.youtube.com/watch?v=C_lhMOjG7PE&t=3810s">Watch on YouTube</a>.</p>
+  <blockquote>"There's a dirty little secret, right? Interviews are not a good predictor of performance. We know this. We know this from studies. Everyone at their company knows this, where somebody interviewed well, wasn't as good in the job, or the opposite, didn't interview well and then came in and was phenomenal."</blockquote>
+  <div class="nugget-who"><strong>Farhan Thawar</strong>, VP and head of engineering at Shopify · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/C_lhMOjG7PE?start=3810" title="Farhan Thawar at 63:30" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>His answer is to move the evaluation as close to real work as he can get it. He tells a story about hiring two machine learning candidates at his startup: one was a PhD who taught at a university and came with an employee referral, the other was a guy he met at a coffee shop who had never held a software job. He deliberately didn't let the resumes bias him. He brought both in to pair program. Within a few weeks it was clear the PhD wasn't going to work out, and the coffee shop guy is still there years later at Shopify. Thawar's framing for why he does it this way:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The race car analogy.</strong> The player below is queued to 65:06, the exact moment Farhan Thawar explains why he prefers job trials. <a href="https://www.youtube.com/watch?v=C_lhMOjG7PE&t=3906s">Watch on YouTube</a>.</p>
+  <blockquote>"So what I really like to do is use this race car analogy. If I told you, hey, I want to go hire the best race car driver, there's not really that many questions you could ask them, except for put them in the car."</blockquote>
+  <div class="nugget-who"><strong>Farhan Thawar</strong>, VP and head of engineering at Shopify · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/C_lhMOjG7PE?start=3906" title="Farhan Thawar at 65:06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>In practice that means pair programming as an evaluation, internships and co-op programs treated as the real hiring funnel, and a serious 30, 60, and 90 day period after you start. He's explicit about the tradeoff, and it's a rough one for candidates to hear: at his previous company roughly 20% of hires left inside 90 days, and under 1% left after that. He argues that's better for everyone because a bad fit gets discovered in weeks instead of years. Whether you find that reassuring or alarming, it's worth knowing before you accept an offer from a company that hires this way.</p>
+
+<h3>The other side: a conversation can tell you plenty, if you dig hard enough</h3>
+
+<p>Geoff Charles, who was VP of product at Ramp during its fastest growth, describes something close to the opposite belief. He thinks a well-run interview conversation does reveal how someone thinks, as long as the interviewer refuses to stay at the surface.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Digging until you hit the reasoning.</strong> The player below is queued to 66:02, the exact moment Geoff Charles describes what Ramp screens for. <a href="https://www.youtube.com/watch?v=aNJDZ_RzTVk&t=3962s">Watch on YouTube</a>.</p>
+  <blockquote>"We look for people who have a very strong desire to have impact. And the best way to assess that is the impact that they've had or the reason why they are switching jobs... I look for people who can think deeply. So I'll go super deep into a decision, a trade-off that they had to make. And I'll really just scratch at that until I get to a deep understanding of how they make decisions and how deep they think about things."</blockquote>
+  <div class="nugget-who"><strong>Geoff Charles</strong>, VP of product at Ramp · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/aNJDZ_RzTVk?start=3962" title="Geoff Charles at 66:02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Notice what he's doing. He picks one decision from your past and keeps asking about it until he either finds real reasoning underneath or finds nothing. That's a different test from watching you write code, and the people it screens out are different too. Someone who can implement anything but can't reconstruct why they chose an approach two years ago will do fine on a coding screen and have a hard time in this round.</p>
+
+<p>The two camps do agree on one thing, which is that the years listed on your resume are worth less than most candidates assume. Charles says Ramp deliberately overweights hunger and depth of thinking "rather than necessarily experience." Thawar has an interview step called the life story, built around a line he heard from someone else: a resume tells you what you did, but it doesn't tell you why you did those things. He wants to know why you moved between companies and whether the pattern shows curiosity and range. So if your prep plan is a list of the systems you've shipped, you have half of what either of them wants.</p>
+
+<h2 id="whether-you-re-allowed-to-look-things-up">Whether you're allowed to look things up</h2>
+
+<p>Here's a second disagreement, and it's the one most likely to catch you off guard during the interview itself. Some interviewers consider a question that hinges on recall to be a legitimate filter, and others consider it a defect in the process. David Singleton, then CTO of Stripe, is firmly in the second camp.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>No trick questions, and Google is fine.</strong> The player below is queued to 15:07, the exact moment David Singleton describes Stripe's engineering loop. <a href="https://www.youtube.com/watch?v=F0_IKKY3HCk&t=907s">Watch on YouTube</a>.</p>
+  <blockquote>"The other thing that these loops have in common is nothing is a trick question. We try to put people into an environment which is as close to doing the actual work together as you possibly can. So for engineers for instance, we've got several different coding exercises that they do. They share their screen with the interviewer. It's actually kind of pair programming. You're welcome to use Google, to search Stack Overflow for answers. We don't care. We just want to see the outcome."</blockquote>
+  <div class="nugget-who"><strong>David Singleton</strong>, CTO of Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/F0_IKKY3HCk?start=907" title="David Singleton at 15:07" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He adds that candidates are welcome to ask their interviewer questions as they work, and that the exercises are built to resemble problems Stripe genuinely has to solve. So in that loop, looking something up costs you nothing and asking a question may actively help you.</p>
+
+<p>Now the other camp. Ronny Kohavi, who ran experimentation at Microsoft, Amazon, and Airbnb, describes a favorite technical question that works precisely because most people fail it.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>A recall question used as a filter.</strong> The player below is queued to 76:56, the exact moment Ronny Kohavi describes the question he likes. <a href="https://www.youtube.com/watch?v=hEzpiDuYFoE&t=4616s">Watch on YouTube</a>.</p>
+  <blockquote>"When I do a technical interview, which I do less of, one question that I love that is amazing how many people it throws away for languages like C++ is tell me what the static qualifier does. And for multiple, you know, you could do it for a variable, you can do it for a function. And it is just amazing that I would say more than 50 percent of people that interview for engineering job cannot get this and get it awfully wrong."</blockquote>
+  <div class="nugget-who"><strong>Ronny Kohavi</strong>, former experimentation leader at Microsoft, Amazon, and Airbnb · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/hEzpiDuYFoE?start=4616" title="Ronny Kohavi at 76:56" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>You can hold whatever opinion you like about which of these is a better way to hire. As a candidate what matters is that both interviewers exist and you can't tell them apart from the job posting. The practical response is to brush up on the language-level details of whatever stack the role names, spend an hour on the parts you'd normally look up, and then in the interview itself ask early whether you can use a search engine or documentation. That one question tells you which kind of interviewer you have, and nobody gets penalized for asking it.</p>
+
+<h2 id="how-to-tell-which-process-you-re-in">How to tell which process you're in</h2>
+
+<p>You can usually find out in one email, and asking costs you nothing. Recruiters answer this question happily, because a prepared candidate makes their job easier.</p>
+
+<div class="callout">
+  <h4>Send this to your recruiter after the first call</h4>
+  <ul>
+    <li>"Can you walk me through the full loop, round by round, and roughly how long each one runs?"</li>
+    <li>"Is the technical portion live coding, system design, a take-home, or pairing with someone on the team?"</li>
+    <li>"Who is in each round, and what is each interviewer weighing most?"</li>
+    <li>"Is there a work trial or a paid project at any stage?"</li>
+    <li>"What does the first 90 days look like for this role, and how is someone in it evaluated?"</li>
+  </ul>
+</div>
+
+<p>That last question does more work than it looks like it does. A company that runs the Thawar model will tell you about a structured 30, 60, and 90 day evaluation, sometimes with real consequences attached. A company that puts its weight on the interview itself tends to describe onboarding instead. Once you know which one you're facing, you can split your prep.</p>
+
+<div class="callout">
+  <h4>If the weight is on the interview</h4>
+  <ul>
+    <li>Rehearse explaining old technical decisions out loud, including the option you rejected and why.</li>
+    <li>Pick four or five projects and be able to go three questions deep on each one without running out of detail.</li>
+    <li>Practice coding and system design under a clock, because timed performance is genuinely part of the test.</li>
+  </ul>
+  <h4>If the weight is on real work</h4>
+  <ul>
+    <li>Practice thinking out loud while you code, because in a pairing round your narration is most of the signal.</li>
+    <li>Get comfortable saying "I don't know this API, let me look it up," which is normal in pairing. It only hurts you if you say it apologetically.</li>
+    <li>Ask what happens if the trial goes badly, and get the answer before you resign from anything.</li>
+  </ul>
+</div>
+
+<h2 id="the-rounds-you-ll-typically-see">The rounds you'll typically see</h2>
+
+<p>Most loops draw from the same set of rounds, mixed in different proportions. What follows is what each one is actually testing, which is often not what the name suggests.</p>
+
+<h3>The coding screen</h3>
+
+<p>Usually 45 to 60 minutes, one or two problems, live with an interviewer or on a timed platform. Companies that use it are testing whether you can produce working code under mild pressure while explaining yourself. The most common way to fail it is to stay quiet while you work. If you solve it perfectly without narrating, the interviewer has no evidence about how you got there, and the write-up afterward will be thin. Say what you're considering before you type it.</p>
+
+<h3>System design</h3>
+
+<p>Typically 45 to 60 minutes on an open-ended prompt like designing a rate limiter or a notification service. The prompt is deliberately too big for the time available, which means the round is really about how you scope. Start by asking about scale, read and write patterns, and consistency requirements, then say which constraint you're optimizing for and why. Most candidates who struggle here are drawing boxes before they've decided what problem they're solving.</p>
+
+<h3>The pairing round</h3>
+
+<p>You work on a real or realistic problem alongside an engineer for an hour or more. This is Thawar's preferred format for a reason. It shows whether you're pleasant to solve problems with, whether you can accept a suggestion without arguing about it for ten minutes, and whether you can take the lead when the other person goes quiet. Treat your partner as a colleague rather than a judge, because that's what they're checking.</p>
+
+<h3>The take-home or work trial</h3>
+
+<p>Anything from a four-hour project to a paid week on the team's actual codebase. Two things matter. Scope the work to the time given and say what you cut, because a sprawling unfinished submission counts against you more than a small complete one with a note explaining the tradeoffs. And write the README as if a reviewer has fifteen minutes, since one usually does.</p>
+
+<p>Linear runs the most demanding version of this, and Karri Saarinen's description of it tells you what the scoping actually counts for.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What a paid work trial looks like from the inside.</strong> The player below is queued to 62:26, the exact moment Karri Saarinen walks through Linear's process. <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM&t=3746s">Watch on YouTube</a>.</p>
+  <blockquote>"We do fairly standard interview loops where we have some hiring manager interviews and then skill interviews or tests, and then the last step of the process is the work trial... we give them a usually fairly vague problem statement, like if you're an engineer, hey, there's this feature that needs to be built, how would you build it, and go build it. So they need to first understand the problem, then they need to scope it down to something that they can do in the time frame that they have."</blockquote>
+  <div class="nugget-who"><strong>Karri Saarinen</strong>, co-founder and CEO of Linear · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4muxFVZ4XfM?start=3746" title="Karri Saarinen at 62:26" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Note that Linear keeps a conventional interview loop and puts the trial at the end, which is a middle position between the two camps above. Saarinen also says almost nobody has declined the trial, and that they'll schedule it around a weekend or a holiday if you're employed. If you're offered one, negotiating the timing is normal, and so is asking to be paid for it.
+
+<h3>Behavioral and hiring manager rounds</h3>
+
+<p>This is where Charles-style digging happens, and it's the round engineers most often underprepare. You need a handful of stories with real technical detail in them, and you need to be able to answer follow-ups about the decisions inside the story. The <a href="/playbooks/behavioral-interview-questions">behavioral interview questions playbook</a> covers the structure for those answers, and the <a href="/playbooks/organize-thoughts-before-speaking">organizing your thoughts before speaking playbook</a> helps if you know the material but lose the thread when you say it out loud.</p>
+
+<div class="cta-band">
+  <h3>Find where your explanation goes vague</h3>
+  <p>Work Coach records your mock round and marks the second your reasoning about a technical decision stops making sense to a listener. The follow-up you fumbled comes back around until it doesn't.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="what-ai-changed-and-what-it-didn-t">What AI changed, and what it didn't</h2>
+
+<p>This is the newest disagreement and the one most likely to affect your next loop. The question is whether an engineering interview should let you use AI tools, and whether being good with them is evidence that you're good at the job.</p>
+
+<p>Brendan Foody runs Mercor, which builds talent assessments, and he takes the permissive position as far as it goes.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Let candidates use the tools and see what they build.</strong> The player below is queued to 21:28, the exact moment Brendan Foody describes it. <a href="https://www.youtube.com/watch?v=ja6fWTDPQl4&t=1288s">Watch on YouTube</a>.</p>
+  <blockquote>"What we realized is that you don't want to fight against them using the models. It's sort of similar to when the calculator came out. You don't want to give people all this arithmetic homework of how do you get them to do it and not use the calculator. You want to tell them, use the tools and let's see what you can do. And so we'll give people interviews where we say use ChatGPT and Codex, use Claude Code, use whatever tools are available to build a website, and let's see what product you're able to build in an hour."</blockquote>
+  <div class="nugget-who"><strong>Brendan Foody</strong>, CEO of Mercor · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ja6fWTDPQl4?start=1288" title="Brendan Foody at 21:28" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Dhanji R. Prasanna, CTO of Block, is experimenting with the same thing and is openly unconvinced that it measures what people hope it measures.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Tool fluency and whether it tells you anything.</strong> The player below is queued to 48:00, the exact moment Dhanji Prasanna gives his verdict. <a href="https://www.youtube.com/watch?v=JMeXWVw0r3E&t=2880s">Watch on YouTube</a>.</p>
+  <blockquote>"It's early days yet. I would say that it's not clear to me that necessarily how someone knows how to use, you know, be it Goose or Cursor or any of these other tools matters that much to whether they're a good engineer. I still think the things that we interviewed for in the past, a critical mindset, the ability to really understand deeply the technical nature of a problem, is still much more important than whether you're a fully AI-native programmer or not."</blockquote>
+  <div class="nugget-who"><strong>Dhanji R. Prasanna</strong>, CTO of Block · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/JMeXWVw0r3E?start=2880" title="Dhanji Prasanna at 48:00" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Elsewhere in that conversation Prasanna says Block does look for people who are embracing these tools, so he isn't arguing you should avoid them. His point is narrower and more useful to you: he treats AI fluency as a signal about your attitude and not as evidence of engineering judgment. That gives you a decent working rule for any AI-permitted round. Use the tools freely, and make sure a listener can hear you deciding things the tool didn't decide for you. Say why you accepted one suggestion and rejected another, what you checked before you trusted the output, and where you'd expect the generated approach to break. That's the part both camps agree they're buying.</p>
+
+<p>One practical warning: ask whether AI use is allowed instead of assuming. Companies are still arguing about this. Some rounds are explicitly AI-permitted, and others still treat it as cheating.</p>
+
+<h2 id="preparing-as-an-ic-versus-as-an-engineering-manager">Preparing as an IC versus as an engineering manager</h2>
+
+<p>Interviewers judge the two tracks on almost nothing in common, and the manager side has shifted more in the last few years than most candidates realize.</p>
+
+<h3>The engineering manager story that used to win</h3>
+
+<p>Will Larson has run engineering at Carta, Calm, and Digg, and led teams at Stripe and Uber. He describes how fast the ground moved under engineering managers when hiring slowed down.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What engineering leaders get judged on now.</strong> The player below is queued to 5:18, the exact moment Will Larson describes the shift. <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE&t=318s">Watch on YouTube</a>.</p>
+  <blockquote>"A lot of engineering managers were spending half their time or more hiring like 18 months ago, and now they're doing two interviews a month or less, maybe zero interviews a month... a really great engineering director might have just been spending their time hiring really well, and that could be a top performer. Now that person can't actually demonstrate what they're great at, and so that person might be perceived as a low performer if they're not also figuring out how to lead the team, getting deeper into the details."</blockquote>
+  <div class="nugget-who"><strong>Will Larson</strong>, engineering leader at Carta, Stripe, Uber, Calm, and Digg · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Z9ftpRhRiJE?start=318" title="Will Larson at 5:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>If your EM pitch is built on the size of the team you grew and how many engineers you hired, you are telling a story from the previous era. Larson names what replaced it: leading the team, getting deeper into technical details, and working out the right size and shape for a team, including the times you consolidated a team or cut one. Prepare examples for all of that. He also describes the failure mode he sees inside hiring pipelines, where candidates pile up at the offer stage because hiring managers can't get to confidence on anyone. If a process goes quiet on you after a strong final round, that's often what's happening, and it's rarely about a single answer you gave.</p>
+
+<h3>The IC track is a real answer now, with a condition</h3>
+
+<p>For years the assumption was that advancing meant managing. Nikhyl Singhal, who was VP of product at Meta and Google, argues that assumption has quietly reversed, and he describes it in the exact terms of two candidates walking into an interview.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Two candidates, two career shapes.</strong> The player below is queued to 41:40, the exact moment Nikhyl Singhal compares an early-promoted manager with a long-time IC. <a href="https://www.youtube.com/watch?v=U_WQuUIYnJg&t=2500s">Watch on YouTube</a>.</p>
+  <blockquote>"The next person walks in, it's like, I've been an IC for that whole time, and during that time I went from learning something to demonstrating it to really being able to take it forward... My hard part is actually cracking the code on this complex market or this very complicated organization where we have two teams that have different goals. You're the type of person I want."</blockquote>
+  <div class="nugget-who"><strong>Nikhyl Singhal</strong>, former VP of product at Meta and Google · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/U_WQuUIYnJg?start=2500" title="Nikhyl Singhal at 41:40" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He's hard on the other candidate in that comparison, the one who managed two people early and can't say much about what got built. His diagnosis is that the industry promoted a lot of promising ICs into management before teaching them the job, and now their story doesn't hold up in an interview. Camille Fournier, who wrote the book most engineers read before making this decision, reaches the same conclusion from a different direction.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>When to take the manager job.</strong> The player below is queued to 32:14, the exact moment Camille Fournier says it. <a href="https://www.youtube.com/watch?v=hZSh0rs20uI&t=1934s">Watch on YouTube</a>.</p>
+  <blockquote>"If you are technical now and you want to maintain that tech savvy, don't just become a manager the first time somebody offers it to you. Make sure you've really spent your good time writing code."</blockquote>
+  <div class="nugget-who"><strong>Camille Fournier</strong>, author of The Manager's Path, former CTO of Rent the Runway · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/hZSh0rs20uI?start=1934" title="Camille Fournier at 32:14" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Asked for a number, Fournier puts real mastery somewhere around ten years of a career spent substantially writing code, counting an undergraduate and graduate degree in her own case. She also warns that when a big company praises your communication skills and suggests management, they're often steering you toward project management, which she considers a poor route to real leadership. And on the job itself: you don't own your time as a manager, and you own less of it the more senior you get. She describes management as a service job rather than a role where you make all the decisions.</p>
+
+<p>These three agree more than they disagree, so it would be dishonest to stage a fight here. The genuine caveat comes from Larson, who points out that the senior IC track only works when a company is willing to hold engineers accountable the way it holds managers accountable.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The condition on the staff engineer track.</strong> The player below is queued to 8:07, the exact moment Will Larson explains what has to be true for senior IC roles to exist. <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE&t=487s">Watch on YouTube</a>.</p>
+  <blockquote>"I wrote my last book, Staff Engineer, about what is the career path for senior engineers. One of the challenges is if we aren't comfortable holding engineers accountable because we just want to retain all the engineers, we can't put them in senior roles."</blockquote>
+  <div class="nugget-who"><strong>Will Larson</strong>, author of Staff Engineer, engineering leader at Carta, Stripe, Uber, Calm, and Digg · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Z9ftpRhRiJE?start=487" title="Will Larson at 8:07" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>That gives you something concrete to ask about. If a company offers a staff or principal track, ask how many people are currently at that level, what the most recent promotion into it looked like, and who owns the hardest technical problem in the organization right now. Vague answers tell you the track exists on a slide and not much else.</p>
+
+<h2 id="what-to-ask-them-back">What to ask them back</h2>
+
+<p>Your questions are part of the evaluation, and at senior levels they can carry as much weight as your answers. Larson has stopped using his interview time to sort candidates and started using it to help them decide.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question a hiring leader asks senior candidates.</strong> The player below is queued to 73:00, the exact moment Will Larson describes his favorite question. <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE&t=4380s">Watch on YouTube</a>.</p>
+  <blockquote>"My favorite question I ask now is like, hey, we've really loved you. You're going to come through. I think you're going to get a lot of offers from other companies too... How are you going to figure out really specifically which of those options are right for you? I think it forces people to tell you what they want, and then you tell them why you have that more than anyone else."</blockquote>
+  <div class="nugget-who"><strong>Will Larson</strong>, engineering leader at Carta, Stripe, Uber, Calm, and Digg · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Z9ftpRhRiJE?start=4380" title="Will Larson at 73:00" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Have a real answer ready, because "I'm looking for the best opportunity" wastes the moment. Naming two or three things you're optimizing for lets a good interviewer tell you honestly whether they have them. Here are questions that get you information rather than a rehearsed pitch:</p>
+
+<div class="callout">
+  <h4>About the work</h4>
+  <ul>
+    <li>"What's the hardest technical problem this team is working on this quarter?"</li>
+    <li>"How does a change get from someone's laptop to production, and how long does that usually take?"</li>
+    <li>"What's the oldest system the team maintains, and who understands it?"</li>
+  </ul>
+  <h4>About how decisions get made</h4>
+  <ul>
+    <li>"Walk me through a recent technical decision the team disagreed about. How did it get settled?"</li>
+    <li>"When engineering and product disagree on scope, what happens?"</li>
+  </ul>
+  <h4>About the role and the track</h4>
+  <ul>
+    <li>"How is someone in this role evaluated in the first 90 days?"</li>
+    <li>"Who was promoted to the next level most recently, and what did they do?"</li>
+    <li>"If I wanted to stay an IC for the next five years, what would that look like here?"</li>
+  </ul>
+</div>
+
+<p>One more question worth borrowing from the other side of the table. Geoff Charles asks candidates what the hardest thing they've ever done was, and his reasoning tells you exactly what he does with the answer.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why interviewers ask about the hardest thing you've done.</strong> The player below is queued to 71:48, the exact moment Geoff Charles explains it. <a href="https://www.youtube.com/watch?v=aNJDZ_RzTVk&t=4308s">Watch on YouTube</a>.</p>
+  <blockquote>"I ask what's the hardest thing you've ever done. And I ask that because working at Ramp is hard. I want to understand what hard means for them. I want to understand why it was hard. I want to understand how they overcame that difficulty, how they worked with other people to overcome that difficulty, and how much agency they had in overcoming that."</blockquote>
+  <div class="nugget-who"><strong>Geoff Charles</strong>, VP of product at Ramp · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/aNJDZ_RzTVk?start=4308" title="Geoff Charles at 71:48" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Charles scores four things in that answer: what counts as hard for you, why it was hard, how you worked with other people through it, and how much of it you drove yourself. A story where the difficulty was mostly other people's fault answers one of those four. Pick a story where you had real agency, and say what you personally decided.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Should I still grind algorithm problems?</h3>
+<p>If the recruiter tells you there's a live coding screen, yes, enough to be fluent with the common patterns and comfortable talking while you solve. If the loop is pairing, a take-home, and conversations, that time is better spent rehearsing explanations of your past technical decisions. This is the whole reason to ask about the format first.</p>
+
+<h3>Is a take-home assignment a red flag?</h3>
+<p>Not on its own, though an unpaid multi-day project for a first-round screen is worth pushing back on. Ask how long they expect it to take and whether they'll pay for the time. A company that treats the take-home as a serious sample of your work usually respects the hours, and one that shrugs at the question is telling you something.</p>
+
+<h3>How do I prepare for a pairing interview?</h3>
+<p>Practice narrating while you code, with a friend or out loud alone. Get used to reading unfamiliar code and asking questions about it rather than guessing. And practice being interrupted mid-thought, because your pair will do it, and your pair will do it too, and they're watching how smoothly you recover.</p>
+
+<h3>Should I take a manager role to advance?</h3>
+<p>Fournier's advice is to wait until you've done enough hands-on work to have real mastery, and Singhal argues the senior IC path now interviews well on its own. Neither of them says management is a bad job. They both say taking it early, before you're technically deep and before anyone teaches you the role, produces a career story that falls apart under questioning a few years later.</p>
+
+<h3>Can I use AI tools during a technical interview?</h3>
+<p>Ask, because the answer genuinely varies right now. Some companies build the round around it and want to see what you produce in an hour with whatever tools you like. Others still treat the round as a test of unassisted reasoning. Where it's allowed, narrate the judgment calls you're making about the output, because that's what the interviewer is listening for.</p>
+
+<h3>What if I bombed one round?</h3>
+<p>Loops are usually scored as a set, and one weak round rarely decides it by itself. What does sink candidates is a weak round plus no recovery, so if you realize mid-interview that you went down the wrong path, say so and correct it out loud. That behavior is itself a positive signal. The <a href="/playbooks/prepare-for-final-round-interview">final round playbook</a> covers preparing for the panel as a whole.</p>
+
+<h3>How much does the company's brand matter on my side?</h3>
+<p>Less than the match between what you want and what the team has. That's Larson's point about asking candidates to name what they're optimizing for. If you can't say what you want out of the next role, you'll evaluate offers on compensation and logo, and those are the easiest two things to be wrong about. The <a href="/playbooks/how-to-position-yourself-for-a-job">positioning playbook</a> helps you work out what you're actually selling and looking for.</p>
+
+<h2 id="the-engineering-interview-checklist">The engineering interview checklist</h2>
+
+<div class="callout">
+  <h4>Before you build a study plan</h4>
+  <ul>
+    <li>Ask the recruiter for the round-by-round format and who is in each one.</li>
+    <li>Ask whether the technical portion is live coding, system design, pairing, or a take-home.</li>
+    <li>Ask how someone in this role is evaluated in the first 90 days.</li>
+    <li>Decide which camp the process belongs to, and split your prep time accordingly.</li>
+  </ul>
+  <h4>While you prepare</h4>
+  <ul>
+    <li>Pick four or five projects and go three follow-up questions deep on each, out loud.</li>
+    <li>For every project, know the option you rejected and why you rejected it.</li>
+    <li>Write down why you left each job, since interviewers weigh that answer more heavily than you'd expect.</li>
+    <li>Practice narrating your thinking while coding, not after.</li>
+    <li>Prepare one story where the work was genuinely hard and you had real agency in it.</li>
+    <li>Write down two or three things you're optimizing for in your next role.</li>
+    <li>Spend an hour on the language-level details of your stack that you'd normally look up.</li>
+    <li>Ask whether you can use documentation, a search engine, or AI tools during the technical rounds.</li>
+  </ul>
+  <h4>If you're interviewing as an engineering manager</h4>
+  <ul>
+    <li>Open with what your team shipped and how you led it, because headcount growth is a weaker story now.</li>
+    <li>Have an example of getting deep into technical details recently.</li>
+    <li>Have an example of resizing, consolidating, or winding down a team.</li>
+    <li>Be ready to explain how you'd evaluate someone on your team.</li>
+  </ul>
+  <h4>If you're interviewing on the IC track</h4>
+  <ul>
+    <li>Show the progression Singhal describes: you learned it, you demonstrated it, then you carried something forward on your own.</li>
+    <li>Name a domain or a class of ambiguous problem you're genuinely expert in.</li>
+    <li>Ask how many people are at staff level and what the last promotion into it looked like.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=C_lhMOjG7PE">How Shopify builds a high-intensity culture, with Farhan Thawar</a> (Dec 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE">The engineering mindset, with Will Larson</a> (Jan 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=hZSh0rs20uI">The things engineers are desperate for PMs to understand, with Camille Fournier</a> (Sep 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=aNJDZ_RzTVk">Velocity over everything: how Ramp became the fastest-growing SaaS startup of all time, with Geoff Charles</a> (Aug 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=U_WQuUIYnJg">Building a long and meaningful career, with Nikhyl Singhal</a> (Jun 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=F0_IKKY3HCk">Building a culture of excellence, with David Singleton</a> (May 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=hEzpiDuYFoE">The ultimate guide to A/B testing, with Ronny Kohavi</a> (Jul 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=4muxFVZ4XfM">Inside Linear: building with taste, craft, and focus, with Karri Saarinen</a> (Oct 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=ja6fWTDPQl4">Why experts writing AI evals is creating the fastest-growing companies in history, with Brendan Foody</a> (Sep 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=JMeXWVw0r3E">How Block is becoming the most AI-native enterprise in the world, with Dhanji R. Prasanna</a> (Oct 2025)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#the-disagreement-most-guides-skip">The disagreement most guides skip</a>
+  <a href="#whether-you-re-allowed-to-look-things-up">Whether you're allowed to look things up</a>
+  <a href="#how-to-tell-which-process-you-re-in">How to tell which process you're in</a>
+  <a href="#the-rounds-you-ll-typically-see">The rounds you'll typically see</a>
+  <a href="#what-ai-changed-and-what-it-didn-t">What AI changed, and what it didn't</a>
+  <a href="#preparing-as-an-ic-versus-as-an-engineering-manager">Preparing as an IC versus as an engineering manager</a>
+  <a href="#what-to-ask-them-back">What to ask them back</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-engineering-interview-checklist">The engineering interview checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
