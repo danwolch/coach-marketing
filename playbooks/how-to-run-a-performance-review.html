@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How to write, calibrate, and deliver a performance review your report can act on, plus the honest case for scrapping the whole exercise.">
+<meta name="color-scheme" content="light">
+<title>How to Run a Performance Review: A Guide for Managers | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/how-to-run-a-performance-review">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Run a Performance Review: A Guide for Managers","description":"How to write, calibrate, and deliver a performance review your report can act on, plus the honest case for scrapping the whole exercise.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/how-to-run-a-performance-review"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/how-to-run-a-performance-review">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Run a Performance Review: A Guide for Managers">
+<meta property="og:description" content="How to write, calibrate, and deliver a performance review your report can act on, plus the honest case for scrapping the whole exercise.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Run a Performance Review: A Guide for Managers">
+<meta name="twitter:description" content="How to write, calibrate, and deliver a performance review your report can act on, plus the honest case for scrapping the whole exercise.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">For Managers</div>
+  <h1>How to run a performance review</h1>
+  <p class="post-sub">What the review is actually for, how to write one from evidence instead of memory, and what to do when you disagree with the rating you have to give.</p>
+  <div class="post-meta">14 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You have four or five reviews to write, a form somebody else designed, and at least one rating you're not sure you agree with. Most managers open that form the week it's due and try to reconstruct nine months from memory, which is how a report who carried the team through a bad quarter in March ends up with a review that's mostly about April.</p>
+<p>This article covers what the review is actually being used for, how to write one from evidence, and how to deliver it. It also covers what happens in calibration that your report never sees, and what to do when you have to give a rating you disagree with. Read the section on the argument against reviews before you write your next one, because the CTO of Netflix will tell you her company doesn't run them at all, and her reasoning changes how you should think about everything after it.</p>
+<p>The sources are Elizabeth Stone, CTO of Netflix, a company that has no performance reviews at all; Kim Scott, who managed teams at Google and Apple and wrote <em>Radical Candor</em>; Deb Liu, CEO of Ancestry and previously a VP at Facebook, PayPal, and eBay; Shishir Mehrotra, CEO of Coda and formerly VP of Product at YouTube; Jules Walter, a former PM at Slack and YouTube; and the Mochary Method curriculum, the operating manual executive coach Matt Mochary uses with startup founders.</p>
+
+<h2 id="what-the-review-is-actually-being-used-for">What the review is actually being used for</h2>
+<p>Companies pile several unrelated jobs onto the performance review, and most of the frustration you feel writing one comes from trying to do all of them in the same paragraph:</p>
+<div class="callout">
+  <h4>What the form is being asked to do</h4>
+  <ul>
+    <li><strong>Development.</strong> Tell someone honestly where they're weak so they can get better. This works best when the stakes are low and the person isn't defending anything.</li>
+    <li><strong>Pay.</strong> Justify a number. The moment money is attached, your report has a rational reason to argue with every weakness you named.</li>
+    <li><strong>Promotion evidence.</strong> Convince people who don't work with your report that they're operating at the next level. That audience needs scope and results, not growth areas.</li>
+    <li><strong>Documentation.</strong> Create a record HR can rely on if things go badly later. That job wants cautious, defensible language, which is the opposite of useful coaching.</li>
+  </ul>
+</div>
+<p>You can't remove those jobs, but you can stop letting them collide. If your company lets you, deliver the rating and the pay decision in one conversation and the development conversation in another, a week apart. People can't absorb coaching while they're doing math about their mortgage.</p>
+
+<h2 id="the-argument-that-reviews-shouldn-t-exist">The argument that reviews shouldn't exist</h2>
+<p>This isn't a fringe position. Netflix, a company with thousands of employees, doesn't run performance reviews, and Elizabeth Stone said so on the record while she was CTO.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>No reviews at Netflix.</strong> The player below is queued to 34:26, the exact moment Elizabeth Stone says it. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=2066s">Watch on YouTube</a>.</p>
+  <blockquote>"I'll just clarify, we don't have performance reviews... we don't have a practice that a lot of other companies do where we would think about reflecting on like a rating of how things are going. We do have an annual cycle of 360 feedback where you request and receive feedback from a lot of people, but it's not an input to some output, it's just for the value of the feedback."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, CTO of Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=2066" title="Elizabeth Stone at 34:26" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Notice what's still there. Netflix keeps an annual 360 feedback cycle and an annual compensation cycle. What it removed is the rating itself, and any link between the feedback you give and a score. Stone's point is that once you delete the process, performance has to live in the daily operating rhythm, because nothing else will bring it to the surface.</p>
+<p>Before you take this to your leadership team, hear the caveat Stone gives later in the same conversation. Netflix ran this way partly because it had no leveling system for individual contributors at all until about 2022, so promotions barely existed as a thing to argue about.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why the model held.</strong> The player below is queued to 49:53, the exact moment Elizabeth Stone explains that Netflix had no IC levels and no promotion process. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=2993s">Watch on YouTube</a>.</p>
+  <blockquote>"A lot of people came to Netflix because we didn't have it. We didn't have process around promotions. This is probably part of why we never had performance reviews, because promotions really weren't at play, and it gave people a sense of freedom of not having to worry about that type of structure. But when you get to a scale of an organization, we needed some type of scaffolding."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, CTO of Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=2993" title="Elizabeth Stone at 49:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>So the honest version of the anti-review argument is narrower than the slogan. Reviews are load-bearing when people compete for a limited number of promotions and a fixed pay budget, and when the manager making the case wasn't present for most of the work being judged. If your company has no levels and no promotion queue, you can drop the review too. Most of us don't work somewhere like that.</p>
+<p>Kim Scott makes the softer version of the same point, and it applies whether or not your company has reviews. Feedback you saved for a scheduled meeting is already months old by the time you give it.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Don't save it up.</strong> The player below is queued to 39:52, the exact moment Kim Scott says it. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=2392s">Watch on YouTube</a>.</p>
+  <blockquote>"Don't, by the way, save up when you have to give feedback. Don't save it up for your one-on-one, and definitely don't save it up for a performance review. You want to give that in the moment."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2392" title="Kim Scott at 39:52" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>That gives you the standard to hold yourself to for the rest of this article. If the review is the first time your report hears something, that's a mistake you made months earlier, and writing the review is how you notice.</p>
+
+<h2 id="nothing-in-the-review-should-be-new-information">Nothing in the review should be new information</h2>
+<p>The no-surprises rule gets repeated so often that it sounds like a platitude, so it's worth hearing why it exists from someone who applies it to the hardest conversation there is. At Netflix, the toughest version is telling someone they're not the right fit, and Stone's argument is that you only earn the right to have that conversation by having smaller ones for months beforehand.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why surprises break the conversation.</strong> The player below is queued to 32:38, the exact moment Elizabeth Stone says it. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=1958s">Watch on YouTube</a>.</p>
+  <blockquote>"We also then want to get to a place where when you're having that tough conversation, people aren't surprised by it. That is easier said than done, but you can only get to that conversation around 'I don't think Netflix and you are the right fit for one another' if you've been giving feedback along the way."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, CTO of Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=1958" title="Elizabeth Stone at 32:38" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>The practical test: before you submit anything, read your draft and mark every criticism your report has never heard from you. If there are any, you have two obligations. Write them anyway, because hiding a real problem to avoid an awkward hour is worse. And say out loud in the meeting that you should have raised it earlier, name roughly when you first noticed, and don't let the rating carry weight it hasn't earned.</p>
+<p>The way to stop the problem recurring is a monthly rating in your one-on-ones. The Mochary Method calls this absolute feedback: tell each report where they stand on a 1 to 5 scale, what you liked, and what would move them up a level. Mochary's line is that bad news is less anxiety-inducing than no news, and that people carry constant low-grade worry when they don't know where they stand.</p>
+<div class="callout">
+  <h4>The monthly absolute-feedback script</h4>
+  <ul>
+    <li>"Your current rating for your job function, on a 1 to 5 scale, is a 3." (3 is meeting expectations, 4 is exceeding, 5 is as good as it could possibly be, 2 means a written improvement plan starts today, 1 means the job is ending.)</li>
+    <li>"What you did that I liked is..." with a specific action, not a character trait.</li>
+    <li>"What you need to do to get to the next level is..."</li>
+  </ul>
+</div>
+<p>Do that ten times a year and the annual review turns into a summary of conversations you've already had. If your reports want the other side of this, send them <a href="/playbooks/one-on-one-with-your-manager">how to run a one-on-one with your manager</a>.</p>
+
+<h2 id="how-to-write-one-your-report-can-act-on">How to write one your report can act on</h2>
+<p>The Mochary Method teaches a review structure modeled on how Bill Campbell, the coach who worked with Steve Jobs and the founders of Google, ran them. It's worth copying because it spends most of its questions on results and forward motion rather than personality.</p>
+<div class="callout">
+  <h4>Results</h4>
+  <ul>
+    <li>What were your goals for this period?</li>
+    <li>How did you perform against them? Use metrics.</li>
+    <li>What successes and challenges did you have?</li>
+    <li>What can you do so those challenges don't happen again?</li>
+    <li>What are your new goals?</li>
+  </ul>
+  <h4>Management, if they manage people</h4>
+  <ul>
+    <li>How many reports do you have?</li>
+    <li>How often do you hold team meetings, and what's the agenda and length?</li>
+    <li>How often do you hold one-on-ones, and what's the agenda and length?</li>
+    <li>Are you getting negative feedback from every individual and addressing it quickly?</li>
+  </ul>
+  <h4>Innovation</h4>
+  <ul>
+    <li>What have you done to make your role, or the company's operations, easier in the future?</li>
+  </ul>
+  <h4>Working with peers</h4>
+  <ul>
+    <li>What's hard about communicating with, supporting, or getting what you need from other teams?</li>
+  </ul>
+</div>
+<p>Mochary adds a step most managers skip: ask the same management questions of that person's reports. If a manager says they hold weekly one-on-ones and their reports describe something different, you've found the gap before it becomes an attrition problem.</p>
+<h3>Put evidence under every claim</h3>
+<p>Every claim in the review needs something underneath it. The pattern that works is: what happened, when, what effect it had, and what it tells you about their level.</p>
+<div class="callout">
+  <h4>Too vague to act on</h4>
+  <ul>
+    <li>"Needs to be more strategic."</li>
+    <li>"Great collaborator."</li>
+    <li>"Sometimes struggles with ambiguity."</li>
+  </ul>
+  <h4>Specific enough to argue with</h4>
+  <ul>
+    <li>"In the March pricing review you presented three options without a recommendation, and the decision slipped two weeks. At your level I'd expect you to pick one and defend it."</li>
+    <li>"When the data pipeline broke in June you pulled in two people from the platform team yourself, wrote the postmortem the same week, and the fix has held since."</li>
+    <li>"On the onboarding project the requirements changed twice and you waited for someone to tell you what to do. I'd like you to come to me with a proposal instead."</li>
+  </ul>
+</div>
+<p>Three or four examples like that are worth more than a page of adjectives. If you can't produce a single specific example for a rating you're about to give, that rating is an impression, and your report will be able to tell.</p>
+<h3>Make the goals section usable</h3>
+<p>The last section of the review is the only part your report will reread in August. Give them two or three goals, each one written so both of you could tell in six months whether it happened. "Improve stakeholder communication" fails that test. "Run the monthly business review yourself for the next two quarters, with me in the audience for the first one" passes it.</p>
+
+<div class="cta-band">
+  <h3>Stop writing reviews from memory</h3>
+  <p>Work Coach keeps a running record of what each report actually did, week by week, so review season isn't a memory test. It also flags the feedback you gave too vaguely to count, with the date.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="how-to-deliver-it">How to deliver it</h2>
+<p>Most delivery problems come from the same source: the manager is trying to soften a number, and the report is trying to figure out what the number is. Get the number out of the way first and you can actually talk.</p>
+<div class="callout">
+  <h4>Before the meeting</h4>
+  <ul>
+    <li>Send the written review a day ahead. People need to have their first reaction in private.</li>
+    <li>Book 45 minutes rather than 25. If you rush the meeting, people assume you rushed the judgment too.</li>
+    <li>Write down the two sentences you're most afraid to say, and say them close to how you wrote them.</li>
+  </ul>
+  <h4>In the meeting</h4>
+  <ul>
+    <li>Say the rating in the first minute. Don't build up to it.</li>
+    <li>Give the reason for the rating before the examples, then the examples.</li>
+    <li>Stop and ask what they think. If they're upset, say so out loud and let the silence sit.</li>
+    <li>Don't negotiate the rating on the spot. Offer a second conversation for that.</li>
+    <li>End on the goals, and get their agreement that the goals are achievable.</li>
+  </ul>
+  <h4>After the meeting</h4>
+  <ul>
+    <li>Send a short note with what you agreed, including anything you promised to do.</li>
+    <li>Put the first goal check-in on the calendar before you close your laptop.</li>
+  </ul>
+</div>
+<p>If the hard part is the part you keep softening, <a href="/playbooks/give-feedback-that-lands">how to give feedback that lands</a> goes deeper on the wording. Two rules from the Mochary Method's feedback curriculum apply here. Deliver it in person or on video, never by written message alone, so you can see when someone gets defensive and address it instead of letting it turn into resentment. And say why you value the person before you say the hard part, every time, even when it feels formulaic. It feels formulaic to you because you already know that you value them, and your report doesn't.</p>
+
+<h2 id="calibration-and-what-your-report-can-t-see">Calibration, and what your report can't see</h2>
+<p>At most companies your rating isn't final when you write it. Other managers compare their people against yours in a calibration meeting, and most of them have never watched your report work, so all they have is what you wrote.</p>
+<p>This is where the case for formal reviews is strongest, and Shishir Mehrotra makes it from experience. He ran product at YouTube and now runs Coda, and at Google he was elected by the other product leaders to lead the effort to keep the product management job description consistent across the company, because otherwise every team's definition of a good PM would drift apart until the title meant nothing.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why a committee decides instead of your boss.</strong> The player below is queued to 1:06:25, the exact moment Shishir Mehrotra explains how Google calibrates. <a href="https://www.youtube.com/watch?v=7uSuMIJhONA&t=3985s">Watch on YouTube</a>.</p>
+  <blockquote>"Google does calibration a little bit different, or promotion a little bit different, than most companies. Most companies, your boss decides if you get promoted or not. At Google there's a committee that decides. It's supposed to be a committee that doesn't actually work directly with the person, so they can be a little unbiased."</blockquote>
+  <div class="nugget-who"><strong>Shishir Mehrotra</strong>, CEO of Coda and former VP of Product at YouTube · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/7uSuMIJhONA?start=3985" title="Shishir Mehrotra at 1:06:25" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>That's the honest defense of the whole apparatus. One manager rating one person is a rating of that manager's standards as much as the person's, and a committee of people with no stake in the outcome is the cheapest correction anyone has found. Mehrotra is not sentimental about how well it works, though. He printed Google's PM level guide, cut it into slices with the level numbers removed, handed the slices to eight product leaders and asked them to say which level each one described, and nobody could do it. So the committee is a real check, and the rubric it applies is often much vaguer than the people being rated imagine.</p>
+<p>Deb Liu ran this exact process as a VP at Facebook, and she tells a story about a product manager on her team whose work she could see every day and nobody else could.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>What calibration actually rewards.</strong> The player below is queued to 34:37, the exact moment Deb Liu tells the story. <a href="https://www.youtube.com/watch?v=MajB5CQUKDA&t=2077s">Watch on YouTube</a>.</p>
+  <blockquote>"I tell the story of somebody on my team who's just an amazing product manager, and yet every time she came up for promotion or calibration, people were like, 'oh, what did she do?' And it was because she was not good at broadcasting or explaining what she does... your peers also have influence over people's ratings, their promotions, and I was constantly just trying to figure out how to get them to see her brilliance."</blockquote>
+  <div class="nugget-who"><strong>Deb Liu</strong>, CEO of Ancestry and former VP at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/MajB5CQUKDA?start=2077" title="Deb Liu at 34:37" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Her story is the part of the argument that matters most to you as the person writing the document, and it cuts against the Netflix model. When a group of peers decides ratings and promotions, quiet people get penalized for being quiet unless something written speaks for them. The document is how you argue for someone who won't argue for themselves. So write the review knowing that a manager three teams away will read it cold, and put the scope, the numbers, and the hardest problem your report handled near the top.</p>
+<p>Liu also has the reframe worth passing on to reports who won't write a real self-review because it feels like bragging.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The self-review reframe.</strong> The player below is queued to 39:44, the exact moment Deb Liu answers someone who said they're bad at self-promotion. <a href="https://www.youtube.com/watch?v=MajB5CQUKDA&t=2384s">Watch on YouTube</a>.</p>
+  <blockquote>"If you think your self-review is self-promotion, you're just not going to do a great job at it. What if I called it educating your manager about all the great work your team has been doing? What if I called it helping people see why your team should get more resources? Suddenly you're changing the question."</blockquote>
+  <div class="nugget-who"><strong>Deb Liu</strong>, CEO of Ancestry and former VP at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/MajB5CQUKDA?start=2384" title="Deb Liu at 39:44" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Calibration is where you do that on your report's behalf, in a room of managers who have never seen their work. Have this written down before you walk in:</p>
+
+<div class="callout">
+  <h4>What to bring to calibration</h4>
+  <ul>
+    <li>The two or three pieces of work a stranger would find most impressive, with the numbers attached.</li>
+    <li>The hardest problem your report handled and what would have happened without them.</li>
+    <li>One sentence on scope: how many people, how much revenue, how many teams depended on it.</li>
+    <li>A comparison you're prepared to defend, because someone will make one whether you do or not.</li>
+    <li>Names of people outside your team who saw the work, so you're not the only voice.</li>
+  </ul>
+</div>
+<p>There's one thing you owe your report that this process makes easy to skip. Jules Walter, who was a PM at Slack and YouTube, points out that the feedback most likely to cap someone's career is also the feedback managers are least willing to say to their face.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The feedback that stays in the meeting.</strong> The player below is queued to 47:54, the exact moment Jules Walter names the problem. <a href="https://www.youtube.com/watch?v=zn2JNbZwf00&t=2874s">Watch on YouTube</a>.</p>
+  <blockquote>"It's harder to get feedback on the EQ stuff, and that's also why it's harder to develop, and why a lot of people reach terminal levels in product. Because people are like, 'oh, they lack emotional intelligence,' and they say that in calibration rooms but not in your face."</blockquote>
+  <div class="nugget-who"><strong>Jules Walter</strong>, former PM at Slack and YouTube · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/zn2JNbZwf00?start=2874" title="Jules Walter at 47:54" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>So after calibration, write down every objection raised about your report that you haven't already told them, and then go tell them. If someone said your report is hard to work with and you deliver a review about missed deadlines, you've protected yourself and left them stuck at their current level with no idea why.</p>
+<p>Tell your report the calibration exists too. Most people find out that other managers shaped their rating only after a decision goes against them, and by then it looks like something was hidden from them. If they've just been turned down for a promotion, <a href="/playbooks/promotion-denied-questions">the questions to ask after a promotion denial</a> is a useful thing to send.</p>
+
+<h2 id="when-you-disagree-with-the-rating-you-have-to-give">When you disagree with the rating you have to give</h2>
+<p>It happens to every manager eventually. You wrote a 4, calibration made it a 3, and now you have to deliver a number you argued against.</p>
+<p>Fight it while the number can still change. Bring the specific evidence to calibration and ask what would have to be true for the higher rating, then write that answer down, because it's the roadmap for next cycle. Once the number is final, there are two temptations worth avoiding.</p>
+<div class="callout">
+  <h4>What not to do</h4>
+  <ul>
+    <li><strong>Don't defend a number you don't believe.</strong> Your report will hear the hedging, and you'll lose credibility on everything else you said.</li>
+    <li><strong>Don't blame an unnamed group.</strong> "I fought for you but they overruled me" buys you a few minutes of goodwill and tells your report that you have no influence over their career.</li>
+  </ul>
+  <h4>What to do instead</h4>
+  <ul>
+    <li>Say the rating and say plainly that you advocated for a higher one.</li>
+    <li>Explain the standard the group applied and where your report fell short of it, even if you'd have weighted things differently.</li>
+    <li>Name the specific evidence that would have changed the outcome, and say what you're going to do to make that evidence exist next cycle.</li>
+    <li>Own the part that's yours. If the group didn't know about work you failed to write up, say that.</li>
+  </ul>
+</div>
+<p>If the rating carries a pay or promotion consequence your report thinks is unfair, they may come back asking about compensation. That's a separate conversation and it deserves a real answer rather than a deflection; <a href="/playbooks/ask-for-raise-after-more-responsibility">asking for a raise after taking on more responsibility</a> covers the version they'll be reading.</p>
+
+<h2 id="running-the-continuous-version-instead">Running the continuous version instead</h2>
+<p>You probably can't delete your company's review process. You can make it almost irrelevant by the time it arrives, which is what the Netflix model actually amounts to in practice.</p>
+<div class="callout">
+  <h4>What replaces the annual review</h4>
+  <ul>
+    <li><strong>A monthly rating in the one-on-one.</strong> The Mochary 1 to 5 script above, said out loud, every month. Nobody should be able to guess wrong about where they stand.</li>
+    <li><strong>Feedback within a day.</strong> Kim Scott's rule. If you're saving something for later, ask yourself what later gives you besides time to soften it.</li>
+    <li><strong>A running document per report.</strong> The Mochary Method's update format works well here: whether the actions they committed to last time actually happened, where each priority stands, and what they're committing to next. Two minutes a week, and you'll have the notes when review season comes.</li>
+    <li><strong>360 feedback with no rating attached.</strong> What Netflix kept. Collect it for its own sake, in a different month from any pay decision, so people answer honestly.</li>
+    <li><strong>A written summary you send first.</strong> Then the review meeting is a conversation about the goals rather than a reveal.</li>
+  </ul>
+</div>
+<p>The failure mode of continuous feedback is that it quietly becomes no feedback. Scheduled reviews are bad at a lot of things, and they're excellent at forcing an uncomfortable conversation onto a calendar. If you drop the ceremony, you have to replace it with a discipline you'll actually keep.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3>Do performance reviews actually work?</h3>
+<p>They work for the jobs that need a written record: calibration across managers who don't know each other's people, promotion cases, and pay decisions that have to survive scrutiny. They're poor at development, because feedback arrives months late attached to money. Netflix removed them entirely and replaced them with continuous candor, which worked partly because it also had no levels and no promotion queue. Most companies have both, so the review is doing real work even when it feels like theater.</p>
+<h3>How long should a performance review be?</h3>
+<p>Long enough to hold three or four specific examples and two or three goals. That's usually one page. Length is not the signal people think it is; a two-page review of adjectives helps nobody, and a report can tell when you padded it.</p>
+<h3>What if I inherited the person halfway through the cycle?</h3>
+<p>Say so in the first line of the review, then write only what you observed and clearly label what came from their previous manager or their peers. Don't pass secondhand impressions off as your own observations. Ask the previous manager for specifics rather than a rating.</p>
+<h3>Should the self-review change my rating?</h3>
+<p>It should change your rating when it contains work you didn't know about, which happens more often than managers expect. Confident writing on its own shouldn't move it. Read every self-review looking for facts you're missing, then set the tone aside.</p>
+<h3>What do I do about someone who's performing well but in a role that's shrinking?</h3>
+<p>Rate the performance honestly and have the scope conversation separately and early. Merge them and you hand someone a review that feels like a punishment for something they didn't do, and they'll spend the next quarter fixing the wrong problem.</p>
+
+<h2 id="the-performance-review-on-one-page">The performance review on one page</h2>
+<div class="callout">
+  <h4>All year</h4>
+  <ul>
+    <li>Give the 1 to 5 rating out loud in the one-on-one every month.</li>
+    <li>Give feedback within a day of the thing happening.</li>
+    <li>Keep a one-page running document per report.</li>
+  </ul>
+  <h4>Writing it</h4>
+  <ul>
+    <li>Start from the running document rather than from memory.</li>
+    <li>Use the goals, results, management, innovation, and peers structure.</li>
+    <li>Attach a specific example with a date to every claim.</li>
+    <li>Mark anything your report has never heard before, and plan to own the delay.</li>
+    <li>Write two or three goals you could both verify in six months.</li>
+  </ul>
+  <h4>Calibration</h4>
+  <ul>
+    <li>Bring numbers, scope, and the hardest problem your report handled.</li>
+    <li>Write down every objection raised, and tell your report about all of it.</li>
+    <li>Name people outside your team who saw the work.</li>
+    <li>If you lose, write down exactly what would have changed the outcome.</li>
+  </ul>
+  <h4>Delivering it</h4>
+  <ul>
+    <li>Send the written review a day ahead.</li>
+    <li>Say the rating in the first minute, then the reason, then the examples.</li>
+    <li>Say why you value the person before the hard part.</li>
+    <li>Don't renegotiate on the spot; offer a second conversation.</li>
+    <li>Send a summary and book the first goal check-in.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=2XgU6T4DalY">How Netflix builds a culture of excellence, with Elizabeth Stone (CTO)</a> (Feb 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From theory to practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=MajB5CQUKDA">Succeeding as an introvert, building zero-to-one, and PM'ing your career like a product, with Deb Liu</a> (Aug 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=7uSuMIJhONA">The rituals of great teams, with Shishir Mehrotra</a> (Aug 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=zn2JNbZwf00">Leveraging mentors to uplevel your career, with Jules Walter</a> (Jan 2023)</li>
+    <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/1XRkUp1-tz-O4wn-GLZUzmvfHtRN_HT5ADWGmdKBScrg/edit">Performance Review (Bill Campbell-style)</a></li>
+    <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">Feedback</a></li>
+    <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/17cKOTgo3ZHjieLw2U67n30fQVAY0U5jmuh6tg_5FdM0/edit">Update: how to write it</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#what-the-review-is-actually-being-used-for">What the review is actually being used for</a>
+  <a href="#the-argument-that-reviews-shouldn-t-exist">The argument that reviews shouldn't exist</a>
+  <a href="#nothing-in-the-review-should-be-new-information">Nothing in the review should be new information</a>
+  <a href="#how-to-write-one-your-report-can-act-on">How to write one your report can act on</a>
+  <a href="#how-to-deliver-it">How to deliver it</a>
+  <a href="#calibration-and-what-your-report-can-t-see">Calibration, and what your report can't see</a>
+  <a href="#when-you-disagree-with-the-rating-you-have-to-give">When you disagree with the rating you have to give</a>
+  <a href="#running-the-continuous-version-instead">Running the continuous version instead</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-performance-review-on-one-page">The performance review on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

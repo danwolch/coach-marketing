@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Why nobody gives you honest feedback at work, how to use AI to get more of it, where AI feedback goes wrong, and what you still need people for.">
+<meta name="color-scheme" content="light">
+<title>How to Get Honest Feedback at Work When Nobody Will Give It to You | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/getting-honest-feedback-at-work">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Get Honest Feedback at Work When Nobody Will Give It to You","description":"Why nobody gives you honest feedback at work, how to use AI to get more of it, where AI feedback goes wrong, and what you still need people for.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/getting-honest-feedback-at-work"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/getting-honest-feedback-at-work">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Get Honest Feedback at Work When Nobody Will Give It to You">
+<meta property="og:description" content="Why nobody gives you honest feedback at work, how to use AI to get more of it, where AI feedback goes wrong, and what you still need people for.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Get Honest Feedback at Work When Nobody Will Give It to You">
+<meta name="twitter:description" content="Why nobody gives you honest feedback at work, how to use AI to get more of it, where AI feedback goes wrong, and what you still need people for.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Career Growth</div>
+  <h1>How to get honest feedback</h1>
+  <p class="post-sub">Most people won't tell you what they really think of your work. Here's how to get an honest read anyway, including from AI and where AI falls short.</p>
+  <div class="post-meta">15 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You've asked how you're doing and been told you're doing great. You've come out of a performance review with nothing you could actually act on. Then a promotion goes sideways, or someone quietly moves a project off your plate. You find out that several people had the same opinion about you, and not one of them told you.</p>
+
+<p>This article covers why honest feedback rarely reaches you, and how to get more of it out of an AI. It also goes into where AI gets it wrong and what you still need people for. Read the first half if you want to understand why it's happening, and skip to the prompting section if you have something to rehearse tonight.</p>
+
+<p>The sources are people who have sat on both sides of this: Kim Scott, who led teams at Google and Apple and wrote <em>Radical Candor</em>; Jules Walter, a product leader at YouTube and Slack; Deb Liu, CEO of Ancestry and previously a VP at Facebook; Alisa Cohn, an executive coach of more than 20 years; Mellody Hobson, co-CEO of Ariel Investments; Carla Harris, vice chairman at Morgan Stanley; plus Hilary Gridley of Whoop, investor Tomasz Tunguz, and Zapier's Reid Robinson on what AI does and doesn't do well here.</p>
+
+<h2 id="nobody-told-you-because-it-would-have-cost-them">Nobody told you because it would have cost them</h2>
+
+<p>If something were really holding you back, wouldn't someone have told you by now? Usually several people can already see it. They talk about it when you're not there, and saying it to your face is awkward enough that nobody quite gets around to it.</p>
+
+<p>Jules Walter spent years at YouTube and Slack watching careers stall for reasons the person never heard.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>They say it in calibration instead of to you.</strong> The player below is queued to 48:06, the moment Jules Walter explains where people actually say what they think of you. <a href="https://www.youtube.com/watch?v=zn2JNbZwf00&t=2886s">Watch on YouTube</a>.</p>
+  <blockquote>"A lot of people reach terminal levels in product because people are like, oh, they lack emotional intelligence. And they say that in calibration rooms but not in your face. So that's also what you want when you hear feedback. You don't want just a piece of feedback that I can prove. You also want the part that is like, here's how you make me feel or how you come across."</blockquote>
+  <div class="nugget-who"><strong>Jules Walter</strong>, product leader at YouTube and Slack · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/zn2JNbZwf00?start=2886" title="Jules Walter at 48:06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The gap between what people say about you and what they say to you is the whole problem. Deb Liu watched it happen to someone she managed and rated highly.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>"Oh, what did she do?"</strong> The player below is queued to 34:41, where Deb Liu describes a PM whose work never reached the people rating her. <a href="https://www.youtube.com/watch?v=MajB5CQUKDA&t=2081s">Watch on YouTube</a>.</p>
+  <blockquote>"I tell the story of somebody on my team who's just an amazing product manager, and yet every time she came up for promotion or calibration, people were like, oh, what did she do? And it was because she was not good at broadcasting or explaining what she does."</blockquote>
+  <div class="nugget-who"><strong>Deb Liu</strong>, CEO of Ancestry, previously VP at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/MajB5CQUKDA?start=2081" title="Deb Liu at 34:41" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Kim Scott tells a version of this that tends to stick with people. She had an employee, Bob, whose work wasn't good enough, and she said nothing for almost a year because she liked him and didn't want to upset him. When she finally had to let him go, he said something she's been repeating ever since.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What he said when it was already too late.</strong> The player below is queued to 25:19, the moment Kim Scott repeats what Bob said to her. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=1519s">Watch on YouTube</a>.</p>
+  <blockquote>"He looked at me again and he said, why didn't anyone tell me? I thought you all cared about me. And now I realized that by not telling Bob, thinking I was being so nice, I'm having to fire him as a result. Not so nice after all."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em>, former Google and Apple leader · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=1519" title="Kim Scott at 25:19" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Nobody in that story was being malicious. Scott stayed quiet precisely because she cared about Bob, which is what makes this so hard to fix.</p>
+
+<h3>What it costs the person who tells you</h3>
+
+<p>Giving you real feedback is genuinely hard work for the other person. They have to plan it, pick their words, watch your face while you hear it, and then deal with whatever happens next. Jules Walter describes that trade-off plainly.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why people stay quiet.</strong> The player below is queued to 46:03, where Jules Walter describes the risk a person takes by telling you the truth. <a href="https://www.youtube.com/watch?v=zn2JNbZwf00&t=2763s">Watch on YouTube</a>.</p>
+  <blockquote>"What I realized is if people don't feel comfortable with you, they won't give you feedback, because it's just they're taking on a risk, right? Especially if it's constructive feedback."</blockquote>
+  <div class="nugget-who"><strong>Jules Walter</strong>, product leader at YouTube and Slack · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/zn2JNbZwf00?start=2763" title="Jules Walter at 46:03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Mellody Hobson understood this from the receiving end early on. Senator Bill Bradley once told her she could be a ball hog, and while she sat there she was working out exactly what her own reaction would cost her.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>WorkLife with Adam Grant: Mellody Hobson on Taking Tough Feedback.</strong> This episode is audio only. The quote is at 7:56; the player starts from the top, or <a href="https://podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675&t=476">open it on Apple Podcasts cued to 7:56</a>.</p>
+  <blockquote>"If I cry, he won't ever give me feedback again. Because who wants to sit and have to put someone back together after they've given them feedback and then want to do it again?"</blockquote>
+  <div class="nugget-who"><strong>Mellody Hobson</strong>, co-CEO of Ariel Investments · WorkLife with Adam Grant (7:56, audio)</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="WorkLife with Adam Grant: Mellody Hobson on Taking Tough Feedback - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>She's right, and it compounds. React badly once and you can pick up a reputation as someone who can't take feedback, and that reputation travels ahead of you. People start deciding in advance which subjects are safe to raise with you, so you don't only lose feedback from the person who was there that day. You lose whole categories of it, and nobody tells you which ones got moved off the list.</p>
+
+<p>You can also tell how hard this is by how much coaching exists to help people do it. Alisa Cohn coaches executives through it, and she has them dig up specific evidence before they open their mouths, because if they skip that preparation they usually avoid the conversation entirely.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The preparation that makes people willing.</strong> The player below is queued to 20:04, where Alisa Cohn describes the work she makes clients do first. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=1204s">Watch on YouTube</a>.</p>
+  <blockquote>"If you do the work to really think about what is the observable data, what's my evidence that this is happening, and you have to spend some time thinking about it, but it's really worth it, because it makes the feedback easier for you to give and easier for them to hear."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach and author of <em>From Start-up to Grown-up</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=1204" title="Alisa Cohn at 20:04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Cohn also keeps a rehearsed script for the moment someone gets defensive. Matt Mochary developed his curriculum with startup CEOs and publishes it free. It goes further and builds a whole ritual around this: a <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">feedback protocol</a>, a <a href="https://docs.google.com/document/d/1zsVOnpNayriDpzgjJUDO2n47YxO9EAXbVH2uC_Zpnms/edit">five-step method for receiving it</a>, and a prompt you're supposed to say out loud to get anything real: please share the thought you think will be most painful for me to hear. You only write that down as a procedure because people default to silence. If you're on the other side of this and have to deliver the hard message yourself, the <a href="/playbooks/give-feedback-that-lands">giving feedback playbook</a> covers the delivery.</p>
+
+<h2 id="why-people-soften-what-they-tell-you">Why people soften what they tell you</h2>
+
+<p>Even when someone does tell you something, they're telling you a version shaped by their relationship to you. Each of these people softens what they tell you for a different reason, and each one needs a different workaround.</p>
+
+<p>Your manager matters most here, because that's the relationship most people are asking about. Alisa Cohn describes what actually happens inside a manager who has decided that keeping you happy is part of the job.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Hoping it works itself out.</strong> The player below is queued to 40:18, where Alisa Cohn describes a leader avoiding the conversation. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=2418s">Watch on YouTube</a>.</p>
+  <blockquote>"You don't want to push them because you don't want to upset them, you don't want to give them difficult feedback, so you're just going to keep hoping it works out... You're dancing around hoping and praying they're going to get there, and they don't really know there's a problem."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach and author of <em>From Start-up to Grown-up</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=2418" title="Alisa Cohn at 40:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>"They don't really know there's a problem" is the part to notice. From your side, a manager doing this looks exactly like a manager who thinks you're fine.</p>
+
+<p>Your manager is only one source. Everyone else who could tell you has their own reason to soften it, and knowing which reason you're dealing with tells you how much to trust what you hear from them.</p>
+
+<div class="callout">
+  <h4>Your manager</h4>
+  <ul>
+    <li>Telling someone they aren't doing something well is uncomfortable, and your manager has to work with you again the next morning.</li>
+    <li>They're managing your morale as well as your performance. If they think the honest version will make you disengage or quit, they'll soften it, and often they'll soften it every time until it stops meaning anything.</li>
+    <li>They usually get one formal moment a year to say it, and by then it feels like an ambush, so they skip it.</li>
+  </ul>
+  <h4>Your friends</h4>
+  <ul>
+    <li>Being unkind to a friend who is already stressed about work feels wrong, so they reassure you instead. That's a reasonable thing for a friend to do.</li>
+    <li>Everything they know about your work came from you, usually while you were venting about it.</li>
+  </ul>
+  <h4>Your partner</h4>
+  <ul>
+    <li>Their job in the relationship is to be on your side, and you want them to be. Venting to them works well. Asking whether you're actually wrong about something works badly, because being neutral about it isn't what they're there for.</li>
+    <li>They usually don't work in your field or at your company. Even when they want to help, they don't have what they'd need to judge whether your plan is any good or how your work compares to anyone else's.</li>
+  </ul>
+  <h4>Your peers</h4>
+  <ul>
+    <li>Nobody appointed your peer to evaluate you, so saying what they think can come across as overstepping. Close friends at work hit this too, which is why most of them stay out of it and talk about everything except your work.</li>
+    <li>You can genuinely like each other and still be up for the same promotion, the same headcount, or the same visible project.</li>
+    <li>Peers often weigh in on your rating, formally or informally. Deb Liu describes exactly that in the clip above. Someone whose opinion affects your promotion has a reason to save it for that discussion instead of saying it to you.</li>
+  </ul>
+  <h4>Your mentors</h4>
+  <ul>
+    <li>Mentors aren't the problem you'd expect them to be. Jules Walter's experience is that they're usually glad to be asked, and that people badly overestimate how reluctant they are.</li>
+    <li>The real limit is time. You get maybe 30 minutes a quarter, so you compress your situation to fit, and they end up advising on a simplified version of it.</li>
+    <li>They also have no stake in your day-to-day and no obligation to be harsh with you, and most people would rather be encouraging to someone who came to them for help.</li>
+  </ul>
+</div>
+
+<p>None of these people are behaving badly. Each one is responding sensibly to their own position. The result is that you hear plenty of opinions and almost none of them tell you where you actually stand.</p>
+
+<h3>The interviewer</h3>
+
+<p>The purest version of this is the person who just interviewed you. They have the most rigorous read on you that anyone has taken in years: several people, a defined bar, notes written down within the hour. Then you get a template email. Once they've decided to pass on you, there's nothing in it for them. They're under no obligation to tell you anything, writing it up takes time they don't have, and saying anything specific only creates risk they don't need.</p>
+
+<p>You can sometimes get a little of it by asking before the interview ends rather than after the rejection, which our <a href="/playbooks/ask-for-feedback-after-interview">playbook on asking for feedback after an interview</a> covers. Mostly, though, this is the gap you have to fill yourself, and it's the clearest case for rehearsing with something that will tell you what it sees.</p>
+
+<div class="cta-band">
+  <h3>Nobody has to volunteer anything</h3>
+  <p>Work Coach listens to the meetings you're already in. It will tell you that at 2:24 you opened your idea with "this might be kind of dumb," which everyone heard and nobody was going to mention.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="what-an-ai-can-do-here-that-a-person-can-t">What an AI can do here that a person can't</h2>
+
+<p>AI is genuinely useful here, and not because it's smarter than the people around you.</p>
+
+<h3>It's available at 11pm the night before</h3>
+
+<p>The moment you most need a read on your promotion doc or your talk track is usually the night before, and that's precisely when you can't ask anyone. You can ask a mentor once a quarter, and your manager in the 1:1 slot. An AI has no schedule, so you get the feedback while you can still change the work.</p>
+
+<h3>It can take a perspective nobody in your network has</h3>
+
+<p>People underrate this one. Your question is usually very specific: how a staff engineer promo packet reads at a company of this size, what a Series B head of sales actually gets judged on, how a skeptical VP of finance will react to this framing. The person who has done exactly that, at your level, in your industry, is probably not someone you know.</p>
+
+<p>Even a strong network doesn't solve this. A great network gets you 20 or 30 people who will take your call, and they cluster around the companies you've worked at and the level you're currently near. You can't assemble a panel with the right expert for every question you'll have over a career. An AI has read an enormous amount of what those people have written and said, and it will answer as one of them if you ask it to. It won't match the real expert, and for most of your questions the real expert was never going to be free on a Tuesday night anyway.</p>
+
+<h3>You can do it twenty times</h3>
+
+<p>Getting better at any kind of conversation takes reps, and people will only give you so many. Nobody is going to sit through your difficult conversation with your director eight times while you try different openings. An AI will, and the eighth attempt is usually much better than the first. If the thing you're rehearsing is a promotion ask, the <a href="/playbooks/how-to-ask-for-a-promotion">promotion playbook</a> gives you the structure to practice against.</p>
+
+<h3>You can give it the whole context</h3>
+
+<p>Explaining your full situation to a person is slow and socially awkward. You can't spend fifteen minutes of a mentor's half hour on the history of your relationship with your skip-level, so you compress it, and they advise on the compressed version. With an AI you can paste the whole thing: the doc, the org chart as you understand it, what your manager said in March, what you're worried about. The advice gets better in direct proportion to how much you tell it, and there's no social cost to telling it everything.</p>
+
+<p>Reid Robinson at Zapier did a version of this for his wife's job search, feeding an AI the careers page, the job description and the competitive landscape before each interview.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>He fed it everything before each interview.</strong> The player below is queued to 37:53, where Reid Robinson describes how he prepared his wife for interviews. <a href="https://www.youtube.com/watch?v=B5yDJAkz0rw&t=2273s">Watch on YouTube</a>.</p>
+  <blockquote>"I had a prompt I used for the audio overview that was like, you are preparing Anna for this interview, make sure it's specific to Anna. And she listened to all of these before, and she constantly got feedback throughout the process that she was the most informed applicant."</blockquote>
+  <div class="nugget-who"><strong>Reid Robinson</strong>, product lead at Zapier · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/B5yDJAkz0rw?start=2273" title="Reid Robinson at 37:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The <a href="/playbooks/using-ai-in-your-job-search">AI job search playbook</a> goes deeper on that kind of preparation if you're interviewing right now.</p>
+
+<h3>Hearing it is much easier</h3>
+
+<p>Hard feedback is difficult to take mostly because of the person delivering it. You're managing your face, worrying what they now think of you, and deciding whether to defend yourself, all while trying to absorb the content. None of that applies to a machine. There's nobody to disappoint, no relationship to repair afterwards, and you can dismiss the whole thing with no consequences. That last part sounds like a weakness and it's actually why it works. Because walking away costs you nothing, you'll ask for the harsh version far more often than you ever would from a person, and you end up hearing a lot more.</p>
+
+<p>If you're going into a review where you expect to hear something hard, the <a href="/playbooks/promotion-denied-questions">promotion denial playbook</a> has the questions to ask in the moment.</p>
+
+<h2 id="where-ai-feedback-goes-wrong">Where AI feedback goes wrong</h2>
+
+<p>An off-the-shelf assistant will tell you your work is good. It will do this almost regardless of whether your work is good. If you take that at face value, you'll walk into the meeting confidently wrong, which is worse than walking in unsure.</p>
+
+<p>Hilary Gridley, Head of Core Product at Whoop, has run into this enough that she changed how she asks.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Never ask whether it's good.</strong> The player below is queued to 25:24, where Hilary Gridley explains the question she asks instead. <a href="https://www.youtube.com/watch?v=xDMkkOC-EhI&t=1524s">Watch on YouTube</a>.</p>
+  <blockquote>"Instead of asking it, am I making sense? Is this good? I will ask it, can you succinctly express my thesis back to me, and my main supporting points... The reason I do this is because if I just ask AI like, do you think I'm doing a good job with this? it always tells me yes, which I find very vexing. But if I ask it, can you restate what I'm saying back to me? then I can tell, am I expressing myself clearly or not?"</blockquote>
+  <div class="nugget-who"><strong>Hilary Gridley</strong>, Head of Core Product at Whoop · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/xDMkkOC-EhI?start=1524" title="Hilary Gridley at 25:24" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Make that swap your default. Asking "is this good?" invites agreement, and you get agreement. Asking it to restate your argument back to you produces something you can check against what you meant. If the restatement is fuzzy in the same place your draft is fuzzy, you've found your problem without anyone having to be critical of you.</p>
+
+<p>AI also smooths things out instead of pushing back on them. Tomasz Tunguz noticed it in his own writing.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>It polishes instead of arguing.</strong> The player below is queued to 21:28, where Tomasz Tunguz describes what AI does to his sentences. <a href="https://www.youtube.com/watch?v=8P7v1lgl-1s&t=1288s">Watch on YouTube</a>.</p>
+  <blockquote>"I like starting certain sentences with, or having little incomplete clauses, because I think they keep the reader moving. But an AI won't do that. An AI will only deliver you a grammatically perfect specimen."</blockquote>
+  <div class="nugget-who"><strong>Tomasz Tunguz</strong>, founder of Theory Ventures · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/8P7v1lgl-1s?start=1288" title="Tomasz Tunguz at 21:28" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>It does the same thing to your thinking. Give it a mediocre plan and it will hand you back a tidier mediocre plan. It won't tell you the plan is the problem unless you make it.</p>
+
+<h2 id="how-to-ask-so-you-get-something-useful">How to ask so you get something useful</h2>
+
+<p>Every fix here comes down to taking away the option to agree with you. Never ask a yes or no question about quality, because "yes" is always available and always cheap.</p>
+
+<div class="callout">
+  <h4>Prompts that get real answers</h4>
+  <ul>
+    <li><strong>"Restate my argument and my three main supporting points."</strong> Gridley's technique. Compare it to what you meant to say.</li>
+    <li><strong>"What's the weakest part of this?"</strong> This assumes a weakest part exists, so it has to name one. "Is this strong?" lets it off the hook.</li>
+    <li><strong>"Argue the opposite position as convincingly as you can."</strong> Then see how much of your case survives.</li>
+    <li><strong>"You're a skeptical VP of finance in this meeting. What's your first objection?"</strong> Give it a role that has its own reason to push back on you.</li>
+    <li><strong>"Rank these four framings from strongest to weakest and say why the bottom one is bottom."</strong> Ranking works better than rating because it can't put everything at the top.</li>
+    <li><strong>"What would have to be true for this to be a bad idea?"</strong> Now it's hunting for ways this fails instead of reasons to agree with you.</li>
+  </ul>
+  <h4>Things to stop asking</h4>
+  <ul>
+    <li>"Is this good?" and "Does this make sense?" It says yes to both by default.</li>
+    <li>"Can you improve this?" It'll rewrite it in a flatter voice and leave the underlying problem alone.</li>
+    <li>"Am I right to be annoyed about this?" It'll tell you that you are.</li>
+  </ul>
+</div>
+
+<h3>The same question, asked two ways</h3>
+
+<p>Say you're up for a promotion and you've written the self-assessment. Here's how the two versions play out.</p>
+
+<div class="callout">
+  <h4>The vague version</h4>
+  <ul>
+    <li><strong>You:</strong> "Here's my promo self-assessment. Is it good?"</li>
+    <li><strong>What comes back:</strong> "This is a strong self-assessment. You've clearly articulated your impact and the examples are compelling. A few small suggestions: you might quantify the second bullet, and consider tightening the third paragraph."</li>
+    <li><strong>What you learned:</strong> that it's fine. You now believe that, and nobody on the promotion committee has agreed to it.</li>
+  </ul>
+  <h4>The loaded version</h4>
+  <ul>
+    <li><strong>You:</strong> "Here's my promo self-assessment for senior to staff PM at a 2,000-person company. First, restate the case I'm making in three sentences. Then take the position of a director in calibration who has to cut one candidate from this round, and tell me which of my claims you'd attack and why. Then rank my five examples weakest to strongest and explain what makes the bottom two weak."</li>
+    <li><strong>What comes back:</strong> a restatement that reveals you've actually made two different arguments, an attack on the fact that your biggest example was a team effort you led for six weeks, and a ranking that puts two of your favorite bullets at the bottom because neither has a number in it.</li>
+    <li><strong>What you learned:</strong> what to rewrite, before anyone at work sees it.</li>
+  </ul>
+</div>
+
+<p>The second prompt works because it gives the model a job it can't do by agreeing with you.</p>
+
+<div class="cta-band">
+  <h3>Your transcript is missing the important part</h3>
+  <p>Work Coach hears the meeting, not just the words. It catches the point where your voice dropped, and it isn't trying to make you feel good about the answer.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="how-to-get-more-out-of-the-humans-too">How to get more out of the humans too</h2>
+
+<p>None of the above replaces people, because an AI only knows what you've told it. It doesn't know who actually decides your promotion, what your skip-level says about you when you're not there, or that the reorg in six weeks makes your project irrelevant. If your read on the situation is wrong, everything it tells you is built on that wrong read and it will sound just as sure of itself.</p>
+
+<p>The bigger gap is that it can't do anything on your behalf. It can't put your name forward in the meeting you're not in, introduce you to the hiring manager, or spend its own credibility backing you. Carla Harris spent decades at Morgan Stanley on the deciding side of those meetings.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>WorkLife with Adam Grant: mentors and sponsors with Carla Harris.</strong> This one is audio only. The quote is at 6:46, or <a href="https://podcasts.apple.com/us/podcast/finding-and-becoming-great-mentors-and-sponsors/id1346314086?i=1000593260919&t=406">open it on Apple Podcasts cued to 6:46</a>.</p>
+  <blockquote>"Somebody has to be in the room carrying your paper, because all of the important decisions about your career are made in a room where you're not present... So somebody has to carry your paper and use their currency on your behalf."</blockquote>
+  <div class="nugget-who"><strong>Carla Harris</strong>, vice chairman at Morgan Stanley · WorkLife with Adam Grant (6:46, audio)</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/finding-and-becoming-great-mentors-and-sponsors/id1346314086?i=1000593260919&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="Finding and becoming great mentors and sponsors with Carla Harris - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>So you still need people, and your job is to make it cheaper for them to tell you things. Vague requests do the opposite, because "any feedback for me?" makes the other person choose the topic, the severity and the wording, all on the spot.</p>
+
+<div class="callout">
+  <h4>Questions that work</h4>
+  <ul>
+    <li><strong>Kim Scott's go-to question:</strong> "What could I do or stop doing that would make it easier to work with me?" Change the wording so it sounds like you, or nobody will believe you mean it. Her longer version is in the <a href="/playbooks/one-on-one-with-your-manager">1:1 playbook</a>.</li>
+    <li><strong>Name one narrow thing.</strong> Jules Walter's approach: "I'm working on executive presence. In that presentation, to what extent did you see it?" A narrow question is much easier to answer honestly than a broad one.</li>
+    <li><strong>Ask for the painful one directly.</strong> The Mochary phrasing: "Please share the thought you think will be most painful for me to hear." It gives explicit permission, which is what most people are waiting for.</li>
+    <li><strong>Go first.</strong> Say the critical thing about yourself before they do, then ask whether they agree. Agreeing with you is much easier than bringing it up cold.</li>
+  </ul>
+  <h4>Who to ask for what</h4>
+  <ul>
+    <li><strong>Your manager:</strong> what would move your rating, and who else weighs in on it.</li>
+    <li><strong>Your skip-level:</strong> how your work looks from two levels up, where the priorities are shifting.</li>
+    <li><strong>Peers who see you daily:</strong> how you come across in meetings and how you handle disagreement.</li>
+    <li><strong>Someone who left the company:</strong> often the most honest read you'll ever get, because none of the incentives apply anymore.</li>
+    <li><strong>Interviewers, after a rejection:</strong> it costs them almost nothing and it tells you a lot. The <a href="/playbooks/ask-for-feedback-after-interview">post-interview feedback playbook</a> has the exact wording.</li>
+  </ul>
+</div>
+
+<p>Then make sure they don't regret having told you. Mochary's five A's cover this: acknowledge what you heard by saying it back, say thank you without arguing, say plainly whether you're acting on it, and then tell the person later what you did. Whether someone gives you real feedback a second time depends almost entirely on how the first time went.</p>
+
+<h2 id="how-to-take-it-so-people-keep-telling-you">How to take it so people keep telling you</h2>
+
+<p>Asking well gets you one round. What you do in the ninety seconds after someone answers decides whether you ever get a second one. Mochary's <a href="https://docs.google.com/document/d/1zsVOnpNayriDpzgjJUDO2n47YxO9EAXbVH2uC_Zpnms/edit">five A's</a> give you a method for that, and they're also how you avoid getting branded as someone who can't take feedback.</p>
+
+<div class="callout">
+  <h4>The five A's</h4>
+  <ol>
+    <li><strong>Ask.</strong> Say out loud that negative feedback won't be punished, then carve out the time yourself. He's blunt that post-meeting surveys are close to useless, because nobody believes anyone reads them.</li>
+    <li><strong>Acknowledge.</strong> Say it back before you respond to it: "I think I heard you say..." then "Is that right?" then "There's more, tell me more." Keep going until they say that's everything. Mochary argues this step builds more trust than actually acting on the feedback does, because people mainly need to know they were heard.</li>
+    <li><strong>Appreciate.</strong> Say thank you. No explaining, no context-setting, no correcting the record.</li>
+    <li><strong>Accept, or don't.</strong> You're allowed to disagree, as long as you say so and explain why. If you had to accept everything, the loudest person would run your career.</li>
+    <li><strong>Act.</strong> Pick one action, put a date on it, do it, and go back and tell them you did. That last part is what earns you the next round.</li>
+  </ol>
+</div>
+
+<p>One tactic from that doc is worth stealing on its own. When someone is clearly holding something back, Mochary borrows a move from Lachy Groom and asks them not to say it yet: what's the thought you're afraid to tell me because you think it'll hurt my feelings? Don't say it, just think it. Do you have it? Now say it. Naming the fear first makes the sentence much easier to get out.</p>
+
+<h2 id="sorting-the-signal-from-the-noise">Sorting the signal from the noise</h2>
+
+<p>More feedback means more contradictions, and some of the advice will cancel out. Here are a few rules that hold up.</p>
+
+<div class="callout">
+  <h4>What to act on</h4>
+  <ul>
+    <li><strong>Count the sources.</strong> Mellody Hobson's rule: the first time someone calls you a horse's ass you can dismiss it, the second time you think about it, and by the third time you buy a saddle. If three independent people say the same thing, stop debating whether each of them is right.</li>
+    <li><strong>Weight the people who see the behavior.</strong> Feedback on your meeting presence from someone who's been in four meetings with you beats a strong opinion from someone who's read your doc.</li>
+    <li><strong>Prefer what a camera could have recorded.</strong> Alisa Cohn's observable-data test works on the feedback you receive too. "You seem disengaged" is unusable. "You didn't speak for the first 20 minutes" is something you can change on Thursday.</li>
+    <li><strong>Discount advice that's really autobiography.</strong> A lot of what you'll hear is what worked for that person in a different company at a different time.</li>
+    <li><strong>Watch for the thing you keep explaining away.</strong> If you've built a counterargument for the same criticism three times, that's the one to look at.</li>
+  </ul>
+</div>
+
+<p>If the feedback you keep getting is about how you show up rather than what you produce, the <a href="/playbooks/how-to-be-more-confident-in-meetings">meetings playbook</a> covers that ground specifically.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Why doesn't my manager give me feedback?</h3>
+<p>Usually a mix of three things. They're worried the honest version will demoralize you or provoke a reaction they'll spend the next month managing. They've been trained to save it for the review cycle, which means you hear it once a year and it feels like an ambush. And they may believe they've already told you, in language so softened that you heard it as a suggestion. Ask them directly what would move your rating, and ask what you'd need to stop doing.</p>
+
+<h3>Is it a bad sign that I get no critical feedback?</h3>
+<p>It isn't proof of anything on its own, but silence tells you nothing about how you're doing. Kim Scott's Bob had no idea, and everyone around him did. If you've had no critical feedback in six months, treat that as a gap in your information rather than a good report.</p>
+
+<h3>Can I really use AI as a career coach?</h3>
+<p>For rehearsal, structure, perspective and reps, yes, and it beats the alternative, which is practicing on the real meeting. For anything that requires knowing your organization, no. The thing to watch is that a general-purpose assistant defaults to agreeing with you, so if you ask it whether your plan is good you'll hear yes and learn nothing.</p>
+
+<h3>How do I stop AI from just agreeing with me?</h3>
+<p>Change the shape of the question. Ask it to restate your argument rather than rate it, ask for the weakest part rather than whether it's strong, ask it to argue against you, and give it a role that has a reason to object. Also tell it explicitly not to compliment the work and to skip the summary of what you did well.</p>
+
+<h3>Isn't an AI coaching company always going to say AI is the answer?</h3>
+<p>Fair question, so here's our actual position. A general-purpose assistant is a reasonable first step and it will flatter you, which is a real problem when the whole point is to hear something you don't want to hear. A tool built for this specific job does better. It can hold its own view of what good looks like instead of adopting yours, and you can set how direct you want it to be. Neither one knows your organization's politics or can advocate for you. Both of those stay human.</p>
+
+<h3>What if I ask for feedback and get nothing useful?</h3>
+<p>Narrow the question and shorten the time gap. "How am I doing?" is nearly unanswerable. "In yesterday's review, what would you have changed about how I opened?" gets a real answer, because it's about one moment and the person doesn't have to render a verdict on you.</p>
+
+<h2 id="the-checklist">The checklist</h2>
+
+<div class="callout">
+  <h4>Before you ask anyone</h4>
+  <ul>
+    <li>Pick one specific thing you want a read on rather than your performance in general.</li>
+    <li>Decide who actually sees that behavior, and ask them rather than whoever is nearest.</li>
+  </ul>
+  <h4>When you use AI for it</h4>
+  <ul>
+    <li>Paste in the full context, including the parts you'd be embarrassed to explain to a person.</li>
+    <li>Ask it to restate your argument back before you ask it anything else.</li>
+    <li>Ask for the weakest part, the strongest counterargument, and a forced ranking.</li>
+    <li>Never ask whether it's good.</li>
+  </ul>
+  <h4>When you ask a person</h4>
+  <ul>
+    <li>Ask about one recent moment, close to when it happened.</li>
+    <li>Give explicit permission for the painful version.</li>
+    <li>Say the criticism about yourself first and ask if they agree.</li>
+    <li>Say thank you, and tell them later what you changed.</li>
+  </ul>
+  <h4>Once you have it</h4>
+  <ul>
+    <li>Look for the same point from three independent people.</li>
+    <li>Keep the parts a camera could have recorded and set the rest aside.</li>
+    <li>Notice which criticism you keep arguing with, and start there.</li>
+    <li>Take the things that need advocacy or inside knowledge back to a person.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <div class="cta-band">
+  <h3>Find out whether any of it sticks</h3>
+  <p>Work Coach follows the same habits week to week, so it can tell you that today's hedge is the same one from Tuesday's all-hands. If you want a person in the loop too, you can add a human coach.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=zn2JNbZwf00">Leveraging mentors to uplevel your career, with Jules Walter</a> (Jan 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From Theory to Practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=MajB5CQUKDA">Succeeding as an Introvert and PM'ing Your Career, with Deb Liu</a> (Aug 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI">Scripts for Difficult Conversations, with Alisa Cohn</a> (Jan 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=xDMkkOC-EhI">How Custom GPTs Can Make You a Better Manager, with Hilary Gridley</a> (May 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=8P7v1lgl-1s">How to Digest 36 Weekly Podcasts Without Spending 36 Hours Listening, with Tomasz Tunguz</a> (Aug 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=B5yDJAkz0rw">How This PM Uses MCPs to Automate Meeting Prep and Customer Feedback Synthesis, with Reid Robinson</a> (Feb 2026)</li>
+    <li>WorkLife with Adam Grant: <a href="https://podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675">Mellody Hobson on Taking Tough Feedback</a> (Jun 2021, audio)</li>
+    <li>WorkLife with Adam Grant: <a href="https://podcasts.apple.com/us/podcast/finding-and-becoming-great-mentors-and-sponsors/id1346314086?i=1000593260919">Finding, and Becoming, Great Mentors and Sponsors, with Carla Harris</a> (Jan 2023, audio)</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">Feedback</a>, by Matt Mochary and Misha Talavera</li>
+    <li>Mochary Method Curriculum: <a href="https://docs.google.com/document/d/1zsVOnpNayriDpzgjJUDO2n47YxO9EAXbVH2uC_Zpnms/edit">Feedback: Receiving: the 5 A's</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#nobody-told-you-because-it-would-have-cost-them">Nobody told you because it would have cost them</a>
+  <a href="#why-people-soften-what-they-tell-you">Why people soften what they tell you</a>
+  <a href="#what-an-ai-can-do-here-that-a-person-can-t">What an AI can do here that a person can't</a>
+  <a href="#where-ai-feedback-goes-wrong">Where AI feedback goes wrong</a>
+  <a href="#how-to-ask-so-you-get-something-useful">How to ask so you get something useful</a>
+  <a href="#how-to-get-more-out-of-the-humans-too">How to get more out of the humans too</a>
+  <a href="#how-to-take-it-so-people-keep-telling-you">How to take it so people keep telling you</a>
+  <a href="#sorting-the-signal-from-the-noise">Sorting the signal from the noise</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-checklist">The checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

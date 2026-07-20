@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Some companies now expect AI in technical interviews. Others disqualify you for it. Here is how to tell which one you're in, and how to use AI everywhere else.">
+<meta name="color-scheme" content="light">
+<title>How to Use AI in Your Job Search Without Getting Disqualified | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/using-ai-in-your-job-search">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use AI in Your Job Search Without Getting Disqualified","description":"Some companies now expect AI in technical interviews. Others disqualify you for it. Here is how to tell which one you're in, and how to use AI everywhere else.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/using-ai-in-your-job-search"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/using-ai-in-your-job-search">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Use AI in Your Job Search Without Getting Disqualified">
+<meta property="og:description" content="Some companies now expect AI in technical interviews. Others disqualify you for it. Here is how to tell which one you're in, and how to use AI everywhere else.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Use AI in Your Job Search Without Getting Disqualified">
+<meta name="twitter:description" content="Some companies now expect AI in technical interviews. Others disqualify you for it. Here is how to tell which one you're in, and how to use AI everywhere else.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Job Search</div>
+  <h1>How to use AI across a tech job search</h1>
+  <p class="post-sub">Company policies on AI in interviews now contradict each other, so you have to check per company and per round. Policies verified July 2026.</p>
+  <div class="post-meta">26 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You've probably already used AI somewhere in your search, and you've probably also had a moment of doubt about whether you were allowed to. That doubt is reasonable, and the reason it's hard to resolve is that there's no longer one answer. Meta tells candidates it expects them to use an AI assistant in certain coding interviews. Amazon tells candidates not to use one at all. Anthropic asks you to use Claude on your application and then bans it in the take-home. All three are true at the same time, in the same month.</p>
+
+<p>This article covers what actually changed, and where the ethical and practical line sits. It then walks through eight phases of a search with specific ways to use AI in each one, plus a copy-pasteable prompt at the end of most phases. Read the first two sections before anything else, because everything after them depends on knowing which kind of process you're in.</p>
+
+<p>The people quoted here run hiring at companies you're probably applying to. Brendan Foody is CEO of Mercor, which builds AI-based candidate assessments. Tomer Cohen is CPO of LinkedIn. Dhanji R. Prasanna is CTO of Block. Marty Cagan of the Silicon Valley Product Group has trained product leaders for two decades. Sam Stone is VP of product at EvenUp and Sarah Koo is a senior director of product at Rippling, and both screen PM candidates weekly. Nikhyl Singhal was VP of product at Meta and Google. Dana Ingraham runs agent products at Harvey. Every quote plays the exact moment it was said, and the company policies below are quoted from the companies' own pages, verified in July 2026.</p>
+
+<h2 id="what-changed-in-the-last-year">What changed in the last year</h2>
+
+<p>Two things happened at once, and they pull in opposite directions.</p>
+
+<p>The first is that applying got almost free. Brendan Foody, whose company builds assessments for exactly this problem, describes the loop plainly.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Volume on both sides.</strong> The player below is queued to 27:34, the exact moment Brendan Foody describes it. <a href="https://www.youtube.com/watch?v=ja6fWTDPQl4&t=1654s">Watch on YouTube</a>.</p>
+  <blockquote>"It's so much easier to apply for companies that everyone's just applying now to hundreds of companies. AI is just making it easy to adjust their resumes and cover letters... And then on the flip side, hiring managers are getting flooded with applications. And so now they need AI to filter. So even if we didn't want to get to this place, we're almost being pushed into this direction of so much volume on both sides."</blockquote>
+  <div class="nugget-who"><strong>Brendan Foody</strong>, CEO of Mercor · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ja6fWTDPQl4?start=1654" title="Brendan Foody at 27:34" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The employer side of that is measurable. HR Dive reported in January 2026, citing LinkedIn research, that 93% of recruiters said they planned to grow their AI use in 2026. SHRM's 2025 Talent Trends survey of 2,040 organizations found 43% now use AI somewhere in HR, up from 26% in 2024, with 51% using it to support recruiting.</p>
+
+<p>The second change is that AI ability became a thing companies interview for. Tomer Cohen, who runs product at LinkedIn, put it in the context of rebuilding how his organization hires and evaluates people.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>AI fluency as a hiring criterion.</strong> The player below is queued to 41:18, the exact moment Tomer Cohen says it. <a href="https://www.youtube.com/watch?v=R-zCfLQD_84&t=2478s">Watch on YouTube</a>.</p>
+  <blockquote>"So, everything from how you hire to, you know, calibration and evaluation. And one thing I want to see there early is this kind of AI agency and fluency. Like I mentioned, the tools are there. The question is, would you use them?"</blockquote>
+  <div class="nugget-who"><strong>Tomer Cohen</strong>, CPO of LinkedIn · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/R-zCfLQD_84?start=2478" title="Tomer Cohen at 41:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Foody's framing for how assessment should respond has become the standard argument on the permissive side.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The calculator argument.</strong> The player below is queued to 21:29, where Brendan Foody explains how Mercor runs assessments. <a href="https://www.youtube.com/watch?v=ja6fWTDPQl4&t=1289s">Watch on YouTube</a>.</p>
+  <blockquote>"What we realized is that you don't want to fight against them using the models. It's sort of similar to like when the calculator came out — you don't want to give people all this arithmetic homework of how do you get them to do it and not use the calculator. You want to tell them, use the tools and let's see what you can do. And so we'll give people interviews where we say use ChatGPT and Codex, use Claude Code, use whatever tool — Cursor and whatever tools are available — to build a website. And let's see what product you're able to build in an hour."</blockquote>
+  <div class="nugget-who"><strong>Brendan Foody</strong>, CEO of Mercor · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ja6fWTDPQl4?start=1289" title="Brendan Foody at 21:29" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Not everyone agrees this predicts much. Dhanji R. Prasanna, CTO of Block, runs the new format and is openly unsure it measures the right thing, which is worth holding onto if you're about to spend a month learning Cursor instead of practicing how you explain a system.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The counterweight.</strong> The player below is queued to 47:33, where Dhanji R. Prasanna is asked whether Block encourages AI tools in interviews. <a href="https://www.youtube.com/watch?v=JMeXWVw0r3E&t=2853s">Watch on YouTube</a>.</p>
+  <blockquote>"Traditionally we would just use CoderPad or something like that to whiteboard through a problem, or even program it in pseudo-code. But now we're looking at: can you use vibe code to build something? How comfortable are you with these tools? ... But it's early days yet. It's not clear to me that how someone knows how to use, be it Goose or Cursor or any of these other tools, matters that much to whether they're a good engineer. I still think the things that we interviewed for in the past — a critical mindset, the ability to really understand deeply the technical nature of a problem — is still much more important than whether you're a fully AI-native programmer."</blockquote>
+  <div class="nugget-who"><strong>Dhanji R. Prasanna</strong>, CTO of Block · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/JMeXWVw0r3E?start=2853" title="Dhanji R. Prasanna at 47:33" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<h2 id="the-policies-contradict-each-other-so-check-every-time">The policies contradict each other, so check every time</h2>
+
+<p>Here's the part that most articles get wrong by picking a side. As of July 2026, major employers have published policies that flatly disagree, and several of them differ round by round inside the same company.</p>
+
+<p><strong>Meta expects it on select rounds.</strong> The Meta careers hiring process page says "Select roles now include an authorized AI assistant within CoderPad during technical interviews" and that "Candidates are expected to use this AI assistant as part of the interview." It also spells out what's in the box: "Candidates use the built-in AI assistant in CoderPad, which includes Claude, ChatGPT, Gemini, and Meta's models." Supported languages include Java, C++, C#, Python, Kotlin, and TypeScript. Meta engineers told CoderPad's blog in October 2025 that "AI has fundamentally changed the way software is developed... Our modernized AI-enabled interview is a better representation of our work and of our mission." One caution: Interviewing.io reports that Meta's own candidate prep materials describe AI use as optional while the careers page says "expected." Don't try to resolve that yourself. Ask your recruiter.</p>
+
+<p><strong>Canva expects it too</strong>, and published the clearest engineering-side explanation of why. Simon Newton wrote on the Canva engineering blog in June 2025 that "we now expect Backend, Machine Learning and Frontend engineering candidates to use AI tools like Copilot, Cursor, and Claude during our technical interviews," and that the problems were redesigned for it: "These problems can't be solved with a single prompt; they require iterative thinking, requirement clarification, and good decision-making."</p>
+
+<p><strong>Cognition encourages it.</strong> Emily Cohen, Cognition's leader of people and operations, told Business Insider: "I guess this is like asking a kid to take a math test without a calculator." She was specific about scope: "For the bulk of building something similar to what you would do on the role, you can and should use AI tools."</p>
+
+<p><strong>Amazon bans it.</strong> Amazon's candidate guidance, reported by IT Pro in March 2025, reads: "To ensure a fair and transparent recruitment process, please do not use GenAI tools during your interview unless explicitly permitted." Non-compliance "may result in disqualification from the recruitment process."</p>
+
+<p><strong>Anthropic does both, in the same process.</strong> Its candidate AI guidance page, updated July 2025, encourages AI at the application stage: "Please create your first draft yourself, then use Claude to refine it." Then it closes the door for take-homes: "Complete these without Claude unless we indicate otherwise. We'd like to assess your unique skills and strengths. We'll be clear when AI is allowed (example: 'You may use Claude for this coding challenge')." And for live interviews: "This is all you–no AI assistance unless we indicate otherwise." A company that sells the model bans the model in its own live interviews. If you take one fact from this article, take that one.</p>
+
+<p><strong>Google is piloting, and hadn't started as of publication.</strong> Brian Ong, Google's VP of recruiting, said in an emailed statement reported by Entrepreneur in May 2026: "We're always evolving our interview processes to ensure we're recruiting and hiring the best talent. As a part of that, we're rolling out a pilot for software engineering interviews to be more reflective of how our teams are operating in the AI era." The pilot is scoped to select junior and mid-level software engineering roles in the US, on a code-comprehension round, using Gemini, in the second half of 2026. Google hasn't published a candidate-facing page about it.</p>
+
+<p><strong>Shopify is permissive, on thinner evidence.</strong> There's no published Shopify candidate policy. What exists is Farhan Thawar, its VP of engineering, in The Pragmatic Engineer: "You let them use whatever they want... If they don't use a copilot, they usually get creamed by someone who does." He also said, "I love seeing the generated code because I want to ask them, what do you think? Is this good code?" Treat that as one leader's description of how he runs it rather than as a company rule.</p>
+
+<h3>Ask your recruiter in writing, and treat the answer as binding</h3>
+
+<p>Do this before every round, even when you think you already know the answer. Before every technical round, take-home, and case, send your recruiter a short message asking what's allowed. Get it in email or in the ATS message thread, not on a phone call, so there's a record. Then do exactly what they said, including when what they said is more restrictive than what the company's public page implies.</p>
+
+<div class="callout">
+  <h4>The message to send</h4>
+  <ul>
+    <li>"Quick process question before Thursday: for the coding round, am I allowed to use an AI assistant, and if so which ones and inside which tool? Also, is the take-home meant to be done with or without AI? Happy either way, I just want to follow your process exactly."</li>
+  </ul>
+  <h4>What to do with the answer</h4>
+  <ul>
+    <li>If they say yes, ask whether they want you to narrate your prompting, since several companies grade that.</li>
+    <li>If they say no, that binds you even if the company's blog says otherwise. The recruiter owns your loop.</li>
+    <li>If they don't answer before the interview, ask the interviewer in the first minute and say you asked in advance.</li>
+    <li>Save the reply. If a question comes up later, you have the record.</li>
+  </ul>
+</div>
+
+<h2 id="where-the-line-is">Where the line is</h2>
+
+<p>Strip away the moralizing and the line is simple. Use AI freely for research, tailoring, drafting, and rehearsal. Use it openly wherever you've been invited to. Don't run a covert real-time assistant during a live interview.</p>
+
+<p>The reason to stay behind that line has nothing to do with ethics, which is worth saying plainly, because the ethical case doesn't persuade anyone who's already decided. The practical case is that a covert overlay doesn't work on the interviews you actually want to pass.</p>
+
+<p>Interviewing.io ran a study on this, published in 2024, in which candidates used ChatGPT during technical interviews. Pass rates were 53% for the control group with no AI, 73% on verbatim LeetCode questions, 67% on modified versions of them, and 25% on custom company-specific questions. Read that last number again. On the questions a real company writes for itself, AI-assisted candidates did worse than half the control rate. The sample was 32 interviews in total, which is small, so the exact percentages are rough, though the direction is clear enough to act on. The study also noted something that cuts the other way: "not a single interviewer mentioned concerns about any of the candidates cheating."</p>
+
+<p>The reason the 25% matters more each quarter is that companies are moving toward exactly those custom questions. CoderPad's Amanda Richardson, speaking to Interviewing.io in October 2025, described the shift: "We're seeing the very fast death of the algorithmic take-home. That's over. But I think what we are seeing is people replacing that with more of a project-based take-home if you will." The same piece put 20 to 30% of CoderPad's customers as now using AI inside interviews.</p>
+
+<p>Then there's disqualification. Amazon's language is explicit that using a tool without permission can end your candidacy. Greenhouse launched a product called Real Talent in June 2025, broadly available February 2026, that includes identity verification through a partnership with CLEAR. Vendors are selling detection too: Fabric publishes its own detection rates for AI-assisted interviews, though it sells detection software, gives no denominator or false-positive rate, and hasn't had those numbers audited externally. Treat the specific figures as marketing and the trend as real.</p>
+
+<p>Boyden, an executive search firm, argued that covert assistance defeats the point of the conversation: "Recruiters and hiring managers depend on interviews to evaluate not just what candidates say, but how they think, react under pressure, and communicate. Cluely's invisible assistance can mask weaknesses and inflate competence, undermining the entire vetting process." That's a search firm defending interviews, so weigh it accordingly, though it describes the same thing the Interviewing.io numbers show.</p>
+
+<p>The tools themselves have a short and messy history. Cluely was founded in April 2025 and raised a $5.3M seed the next day, co-led by Abstract Ventures and Susa Ventures. Its founder publicly claimed $7M in ARR and then retracted it: "is the only blatantly dishonest thing i've said publicly online, so this is my formal retraction." TechCrunch reported the actual figure at around $5.2M in March 2026. He also said of the launch, "I can't say if it's a mistake, but maybe we launched too early." That's the company you'd be trusting to sit inside a live interview with you.</p>
+
+<h3>Detection tools get it wrong, and that can hurt you unfairly</h3>
+
+<p>If you're a non-native English speaker, AI-detection tools are a risk to you even when you write everything yourself. Liang and colleagues, in a peer-reviewed paper in Patterns, tested detectors on TOEFL essays written by humans. The detectors "misclassified over half of the TOEFL essays as 'AI-generated' (average false positive rate: 61.22%)," against 5.19% for essays by native writers, and 97.8% of the TOEFL essays were flagged by at least one detector. The samples were small, 91 TOEFL essays and 88 native-writer essays, and the native comparison set was US eighth-graders, so it isn't a clean apples-to-apples test. It's still the best-evidenced finding in this whole area, and it's the reason to keep your own voice and your own irregularities in anything you write. More on that below.</p>
+
+<h2 id="phase-1-strategy-and-positioning">Phase 1: strategy and positioning</h2>
+
+<p>Before you tailor anything, decide what you're tailoring toward. AI is bad at this part and good at everything downstream of it, so doing it yourself first pays for itself repeatedly.</p>
+
+<p>Pick one archetype and write it in a sentence: the level, the function, the company stage, and the problem you want to be handed. Then pull three real job descriptions for that archetype and read them for the strategic problem the role exists to solve, which is usually one layer under the responsibilities list. Only then use AI, and use it to check whether your positioning already matches or doesn't. Our <a href="/playbooks/how-to-position-yourself-for-a-job">guide to positioning yourself for a job</a> covers the archetype work in detail.</p>
+
+<p>Volume discipline belongs here rather than later, because it's a strategy decision. Nikhyl Singhal, who was VP of product at Meta and Google, makes the case that low-volume, high-effort applying is the version that compounds.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why 100 applications teach you nothing.</strong> The player below is queued to 36:56, where Nikhyl Singhal compares ten deep applications with a hundred shallow ones. <a href="https://www.youtube.com/watch?v=VPw6H4sStzQ&t=2216s">Watch on YouTube</a>.</p>
+  <blockquote>"The fact is that if you've tried doing something for 10 different companies, even if you don't work for that, you're learning. You were not learning at all sending out essentially 100 resumes. You're not getting better at building. You're not building an opinion. You're not researching the actual product. All you're trying to do is game the system. And I think that what's changed is that the system is not as gameable because there's just not as many jobs, and there's far more applicants."</blockquote>
+  <div class="nugget-who"><strong>Nikhyl Singhal</strong>, former VP of product at Meta and Google · The Skip Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/VPw6H4sStzQ?start=2216" title="Nikhyl Singhal at 36:56" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Thirty applications you actually researched will outperform three hundred you didn't, and the thirty leave you with an opinion about the market that you can use in interviews.</p>
+
+<div class="callout">
+  <h4>Prompt: pressure-test your positioning</h4>
+  <ul>
+    <li>"Here are three job descriptions I'm targeting, and here's my resume. For each JD, tell me the strategic problem you think this role exists to solve, based only on the text. Then tell me which parts of my background speak to that problem and which parts are irrelevant to it. Don't rewrite anything yet. Be blunt about the gaps, and don't reassure me."</li>
+  </ul>
+</div>
+
+<h2 id="phase-2-company-and-role-research">Phase 2: company and role research</h2>
+
+<p>Build a dossier per target company, and let AI do the gathering while you do the judging. A useful dossier has the last ninety days of company news, whatever you can infer about the roadmap from public releases and job postings, the funding stage or the business unit's position, two or three named people you'd work with or near, and one paragraph on the strategic problem the role exists to solve.</p>
+
+<p>Use a tool with live web access for this. A model answering from training data alone will confidently describe a funding round from two years ago as though it happened last week, and repeating that in an interview is expensive.</p>
+
+<p>It also helps to know what the filter looks like from the other side. Michal Peled, a technical operations engineer at HoneyBook, built an agent to do first-pass sourcing and read the actual screening rubric into it out loud.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>A real screening rubric, read aloud.</strong> The player below is queued to 7:16, where Michal Peled lists the constraints she gave her sourcing agent. <a href="https://www.youtube.com/watch?v=-lMItuklFco&t=436s">Watch on YouTube</a>.</p>
+  <blockquote>"So candidates must be from Israel... and they must be active in LinkedIn within the last 3 months, because that's something that our hiring team is looking for. And the current job role must be close enough to the open role in title and seniority. And also something that is special — the candidates must either work in their current workspace more than a year, or they can be unemployed but no more than a year, and have worked in their last workplace for over a year. These are all things that I didn't invent them. They were taken specifically from our hiring process."</blockquote>
+  <div class="nugget-who"><strong>Michal Peled</strong>, technical operations engineer at HoneyBook · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/-lMItuklFco?start=436" title="Michal Peled at 7:16" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Every one of those filters is about location, recency of activity, title adjacency, or tenure, and none of them is about how your resume is formatted. That's a fairly typical shape for a screening rubric, and it tells you where your effort is worth spending.</p>
+
+<div class="callout">
+  <h4>Prompt: build the dossier</h4>
+  <ul>
+    <li>"Search the web for [Company]. Build me a one-page dossier: what they shipped in the last 90 days, what their job postings suggest they're building next, their funding or business-unit situation, and 2-3 named people in or near [team]. Then write one paragraph on the strategic problem you think [role title] exists to solve. Cite a source URL for every factual claim, and mark anything you couldn't verify as unverified."</li>
+  </ul>
+</div>
+
+<h2 id="phase-3-application-materials">Phase 3: application materials</h2>
+
+<p>Tailor every resume against a specific job description. That's the highest-return use of AI in the entire search, and it's also the one most likely to produce something that reads like it came from a machine, so both halves matter. Our <a href="/playbooks/how-to-tailor-your-resume">resume tailoring guide</a> covers the mechanics.</p>
+
+<p>On what the ATS actually does, the honest answer is less dramatic than the folklore. Enhancv, which sells resume products, surveyed 25 recruiters across Workday, iCIMS, Lever, Greenhouse, Teamtailor, Bullhorn, Phenom, Beeline, and LinkedIn Recruiter in September and October 2025. It found that 23 of 25, or 92%, said rejections are manual or triggered only by eligibility filters, never by formatting or missing keywords, with content-based auto-rejection at 8%, plus or minus 6 points at 90% confidence. That's a vendor survey with 25 respondents, so it's a signal rather than a settled fact, and it points away from the idea that a formatting quirk silently kills you.</p>
+
+<p>What does happen is grading. Workday's own responsible-AI page describes HiredScore as using "an A, B, C, D grading system where A indicates the closest match," while explicitly disclaiming that it's an automated decision tool. So software grades your resume before any human opens it, and the grade shapes what a human sees first. Relevant keywords earn you a better grade, though they won't rescue a resume with nothing behind them.</p>
+
+<p>Then there's the writing itself. Tomasz Tunguz has the line that should govern every AI-assisted draft you send.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Keeping the things that are wrong.</strong> The player below is queued to 21:02, where Tomasz Tunguz describes editing AI drafts. <a href="https://www.youtube.com/watch?v=8P7v1lgl-1s&t=1262s">Watch on YouTube</a>.</p>
+  <blockquote>"You really need to add your own voice, and then you need to tell the AI to keep the things that are wrong... the way that you punctuate — I really like ampersands. And I like adding spaces before colons. And I like starting certain sentences with, or having little incomplete clauses, because I think they keep the reader moving. But an AI won't do that. An AI will only deliver you a grammatically perfect specimen."</blockquote>
+  <div class="nugget-who"><strong>Tomasz Tunguz</strong>, Theory Ventures · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/8P7v1lgl-1s?start=1262" title="Tomasz Tunguz at 21:02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>A grammatically perfect specimen is what a recruiter has already read many times that morning. Write the first draft yourself, badly if necessary, then use AI to tighten it, then put your own irregularities back in. Anthropic's own candidate guidance describes the same order of operations: first draft yourself, then refine.</p>
+
+<p>Cover letters are worth writing only when the application asks for one, and then only if you have something specific. Take-home instructions are binding, including the ones about AI and the ones about time limits, and interviewers do notice when you ignore them.</p>
+
+<div class="callout">
+  <h4>Prompt: tailor without flattening</h4>
+  <ul>
+    <li>"Here's my resume and here's the JD. First, list the terms and concepts in the JD that my resume doesn't currently use anywhere. For each one, tell me whether I have real evidence for it in my history, and say so if I don't. Then rewrite only the bullets where I have real evidence, keeping my sentence rhythm and my word choices. Don't add adjectives. Don't make anything sound more senior than it is. Show me the before and after side by side."</li>
+  </ul>
+</div>
+
+<h2 id="phase-4-outreach-and-networking">Phase 4: outreach and networking</h2>
+
+<p>Pick twenty to forty people rather than four hundred, and write to them individually. AI drafts, you edit, and you never let a tool send on your behalf. LinkedIn's own data, published with no methodology, says its AI-assisted messages "see an overall 44% higher acceptance rate and are accepted over 11% faster" than messages drafted without AI. That's the platform reporting on its own feature, so read it as a directional claim about personalization rather than a measured effect.</p>
+
+<p>What's changed more is what a good outreach message contains. Dana Ingraham, who runs agent products at Harvey after a stretch at Airbnb, described what actually gets a reply from her.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>What actually gets a reply.</strong> The player below is queued to 40:18, where Dana Ingraham describes the inbound she responds to. <a href="https://www.youtube.com/watch?v=ARaYPnTTYuQ&t=2418s">Watch on YouTube</a>.</p>
+  <blockquote>"I get a lot of inbound people who are interested in working and the ones that I click on are people who are like, 'I was thinking about this problem and I prototyped a solution' — and will actually give me the prototype. That's the kind of person that I would take a call with... Some literally send me an HTML file to download, open up in my browser, and it's a clickable prototype about a specific problem that they think they identified in our product. And that is just way more compelling to me than... a couple of sentences about 'I hear you're at — congrats on the new role.'"</blockquote>
+  <div class="nugget-who"><strong>Dana Ingraham</strong>, head of agent products at Harvey · The Skip Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ARaYPnTTYuQ?start=2418" title="Dana Ingraham at 40:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Lazar Jovanovic at Lovable says the same thing from the hiring side, and adds that the format itself gets attention.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Hires who sent an app instead of a resume.</strong> The player below is queued to 91:44, where Lazar Jovanovic describes how some Lovable hires got noticed. <a href="https://www.youtube.com/watch?v=0XNkUdzxiZI&t=5504s">Watch on YouTube</a>.</p>
+  <blockquote>"I'm going to give people a secret away. A couple of hires stood out by not sending resumes, but sending Lovable apps. They built Lovable apps to show why they're a good fit for a role. And we as Lovable employees will always open an app that uses a lovable.app domain. Always. If you send me a DM, send me a Lovable app. Don't send me anything long. Send me an app that tells me what you want from me or how you see us collaborating."</blockquote>
+  <div class="nugget-who"><strong>Lazar Jovanovic</strong>, Lovable · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/0XNkUdzxiZI?start=5504" title="Lazar Jovanovic at 91:44" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Take that with the obvious caveat that a Lovable employee likes Lovable apps. The general version holds anywhere, which is that an artifact showing you engaged with their actual product will get further than a paragraph about how much you admire it. See <a href="/playbooks/get-foot-in-door-at-company">getting your foot in the door at a company</a> for the fuller version.</p>
+
+<p>Referrals are worth the effort. Referred candidates are roughly 7% of applicants and account for 30 to 50% of hires, which tells you the channel is dense rather than telling you your personal odds.</p>
+
+<div class="callout">
+  <h4>Prompt: draft outreach you'd actually send</h4>
+  <ul>
+    <li>"I want to message [Name], who is [role] at [company]. Here's what I know about their work and here's my background. Draft three versions under 120 words. Each must open with something specific about their work that I could only know by having looked at it, and end with a request small enough to say yes to in one line. No compliments about the company. No 'I hope this finds you well.' No em dashes. Write like a person typing quickly."</li>
+  </ul>
+</div>
+
+<div class="cta-band">
+  <h3>The part no tool can do for you</h3>
+  <p>Nothing you run during a live interview is going to help you. Work Coach records your mock instead and flags the second you hedged, then asks that question again until the answer is clean.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="phase-5-interview-preparation">Phase 5: interview preparation</h2>
+
+<p>This is where AI earns the most, and where almost nobody uses it hard enough. Do it in three layers: content, then mock interviews, then delivery. Most candidates do the content layer and skip delivery, then lose on a communication rating they never get to see.</p>
+
+<p>For content, generate a company-specific briefing rather than reading generic question lists. Reid Robinson, a PM at Zapier, described building these for his wife's search.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Becoming the most informed applicant.</strong> The player below is queued to 37:35, where Reid Robinson describes the prep he built. <a href="https://www.youtube.com/watch?v=B5yDJAkz0rw&t=2255s">Watch on YouTube</a>.</p>
+  <blockquote>"She was recently like job searching. And what I did for her on all of them was, when she got the interview, I would take their careers page, I would take the job thing, I would find like more information. And I had like a prompt I used for the audio overview that was like, 'You are preparing Anna for this interview. Like make sure it's specific to Anna.' And she listened to all of these before, and she constantly got feedback throughout the process that she was like the most informed applicant. She clearly understood the space."</blockquote>
+  <div class="nugget-who"><strong>Reid Robinson</strong>, PM for AI at Zapier · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/B5yDJAkz0rw?start=2255" title="Reid Robinson at 37:35" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>For behavioral rounds, write your stories yourself and then have AI interrogate them. Our <a href="/playbooks/behavioral-interview-questions">behavioral interview guide</a> has the question set. What matters is asking for the right kind of feedback, and Hilary Gridley of Whoop has the best version of that.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>A better question to ask the model.</strong> The player below is queued to 25:26, where Hilary Gridley explains the prompt she uses instead of asking whether her work is good. <a href="https://www.youtube.com/watch?v=xDMkkOC-EhI&t=1526s">Watch on YouTube</a>.</p>
+  <blockquote>"Instead of asking it, 'Am I making sense? Is this good?' I will ask it, 'Can you succinctly express my thesis back to me, and my main supporting points?'... The reason I do this is because if I just ask AI like, 'Do you think I'm doing a good job with this?' it always tells me yes, which I find very vexing. But if I ask it, 'Can you restate what I'm saying back to me?' then I can tell, am I expressing myself clearly or not?"</blockquote>
+  <div class="nugget-who"><strong>Hilary Gridley</strong>, head of core product at Whoop · How I AI</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/xDMkkOC-EhI?start=1526" title="Hilary Gridley at 25:26" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Apply that to every story you plan to tell. Paste it in, ask the model to restate your point and your evidence, and see whether what comes back is what you meant. If it isn't, your story is the thing that needs fixing.</p>
+
+<h3>Take-homes and prototypes</h3>
+
+<p>If the take-home allows AI, the failure mode has shifted from not finishing to not owning what you submitted. Sam Stone, VP of product at EvenUp, watches candidates fall through the structure they didn't write.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Structure that collapses under questions.</strong> The player below is queued to 33:14, where Sam Stone describes what separates a good take-home presentation from a bad one. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=1994s">Watch on YouTube</a>.</p>
+  <blockquote>"The brevity. It is trivial now to generate a super well-structured, detailed 30-page write-up because just ask, you know, Claude Code to write you 30 pages and keep it super structured. It is amazing how fast in Q&A, when you start to ask people questions that require structure in their answer, they will abandon the structure in their writing, which is like, okay, you ask Claude Code to do this. You didn't internalize it. This isn't your structure. You're not going to actually use it in the real world."</blockquote>
+  <div class="nugget-who"><strong>Sam Stone</strong>, VP of product at EvenUp · The Skip Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=1994" title="Sam Stone at 33:14" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Sarah Koo at Rippling sees the same thing in prototypes, and her example is the one to rehearse against.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Candidates who don't test their own prototype.</strong> The player below is queued to 41:33, where Sarah Koo describes what happens when candidates submit AI-generated prototypes. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=2493s">Watch on YouTube</a>.</p>
+  <blockquote>"A big thing that we started to see when we first said like you're welcome to use AI-generated prototypes is that people basically enter the prompt we give them in a prototyping solution, and then they don't really thoroughly test it against the use cases that maybe they should have researched... they don't really think critically about everything that AI has put on the page. AI is always going to put more things on the page than you maybe wanted to. And so we might ask them like, 'Hey, there's two ways to do this thing on the page. Can you explain how a user might use both of those?' And they kind of sit back and realize like, 'Oh, shoot. I didn't actually mean to do that. I don't know why I did that.'"</blockquote>
+  <div class="nugget-who"><strong>Sarah Koo</strong>, senior director of product at Rippling · The Skip Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=2493" title="Sarah Koo at 41:33" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>So before you submit anything AI helped you build, walk every screen and be ready to say why each element is there, or delete it. Stone also points out that the hours you put in have stopped predicting the result.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Hours spent stopped predicting quality.</strong> The player below is queued to 36:46, where Sam Stone describes what now correlates with take-home performance. <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I&t=2206s">Watch on YouTube</a>.</p>
+  <blockquote>"And I think we are seeing less and less of a correlation... between time spent and performance. The correlation is really how well do people know how to use the new tools... These things can be really really fast. And I think that's what we're seeing is some people come in, they know to do these things, it doesn't take them much time, and then other people they just don't think to do them at all."</blockquote>
+  <div class="nugget-who"><strong>Sam Stone</strong>, VP of product at EvenUp · The Skip Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/QS9Kn4MZU9I?start=2206" title="Sam Stone at 36:46" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Delivery is the layer to protect. Record yourself answering, then watch it. AI can transcribe and count your filler words, and a person or a tool built for rehearsal can tell you whether you sounded like you believed what you were saying. If you're short on time, our <a href="/playbooks/prepare-for-interview-in-24-hours">24-hour interview prep plan</a> sequences this properly.</p>
+
+<div class="callout">
+  <h4>Prompt: make it interrogate you</h4>
+  <ul>
+    <li>"You're interviewing me for [role] at [company]. Here's the JD and here's my story about [project]. First, restate my thesis and my main supporting points back to me. Then ask me the five hardest follow-up questions a skeptical hiring manager would ask, one at a time, waiting for my answer each time. Push on anything where I claim credit without saying what I personally did. Don't tell me I did well."</li>
+  </ul>
+</div>
+
+<h2 id="phase-6-during-the-live-interview">Phase 6: during the live interview</h2>
+
+<p>The rule here is that you use almost nothing in real time unless you were invited to.</p>
+
+<p>Some things are perfectly fine. Keep a one-page card of your own notes in front of you, the same way you'd bring notes to any meeting. Ask your interviewer clarifying questions. Record or transcribe if you ask first and they agree, which they often won't for confidentiality reasons, and no is a complete answer.</p>
+
+<p>An overlay listening to your interviewer and feeding you answers, a second person or device off-screen, or any tool you didn't disclose will end the process if it's noticed, and the 25% figure above is the reason it probably wouldn't have helped you anyway.</p>
+
+<p>Where a company invites you to use AI, the interviewer is usually grading how you work with it. Meta's format grades problem solving, code development, verification and debugging, and communication, which means narrating what you asked the model and why you accepted or rejected what it gave you is part of the performance. Canva's stated point is that its problems "require iterative thinking, requirement clarification, and good decision-making," so treat the assistant as a colleague whose output you're responsible for checking. Say out loud when you don't trust an answer, and then verify it.</p>
+
+<h2 id="phase-7-after-the-interview">Phase 7: after the interview</h2>
+
+<p>Send a thank-you note within 24 hours, under 150 words, referencing one specific thing from the conversation. AI can tighten it for you, though it can't supply the specific detail, so take two minutes of notes right after the call while you still remember what was said.</p>
+
+<p>Then debrief yourself honestly, which is the step almost everyone skips. Write down each question you were asked, what you actually said, and where you felt yourself losing the thread. Feed that to a model and ask what a hiring manager would have concluded, rather than asking whether you did well. If you're waiting and hearing nothing, we have a separate piece on <a href="/playbooks/ask-for-feedback-after-interview">asking for feedback after an interview</a>.</p>
+
+<div class="callout">
+  <h4>Prompt: the honest debrief</h4>
+  <ul>
+    <li>"Here are the questions I was asked and roughly what I said. For each answer, tell me what a hiring manager would most likely have written in their feedback, including the unflattering version. Then rank my answers worst to best and tell me which single one to rebuild before my next round. Do not tell me the answers were good."</li>
+  </ul>
+</div>
+
+<h2 id="phase-8-the-offer-and-the-negotiation">Phase 8: the offer and the negotiation</h2>
+
+<p>Get the offer in writing before you discuss it. Then benchmark it against more than one source, because any single source is one company's sample.</p>
+
+<p>Most people leave money on the table by not asking. A Resume Genius survey of 1,000 US full-time workers, run through Pollfish, found that 55% accepted their initial offer without question, and that 78% of those who did negotiate say they ended up with a better offer. That's a resume vendor's survey, with the methodology disclosed, so treat it as an indication rather than a measurement.</p>
+
+<p>Pew Research gives a more careful picture of what negotiating actually gets you. In a February 2023 survey of 5,188 employed US adults, about two-thirds of those who negotiated got more than the initial offer, but only 28% got the full amount they asked for, and 35% ended up with only what was first offered. Just 30% asked at all. So the realistic expectation is a partial win, and the thing that most affects your outcome is whether you ask at all.</p>
+
+<p>AI is genuinely useful in three places here: assembling the benchmark data, drafting the ask so it's one number with a reason attached, and rehearsing the conversation including the pushback. It's useless at deciding your walk-away number, which you should write down before the call and not revise during it. Our <a href="/playbooks/salary-negotiation-scripts">salary negotiation scripts</a> and the guide to <a href="/playbooks/negotiate-equity-in-job-offer">negotiating equity in a job offer</a> cover the specific language.</p>
+
+<div class="callout">
+  <h4>Prompt: rehearse the negotiation</h4>
+  <ul>
+    <li>"You're the recruiter who made me this offer: [details]. I'm going to ask for [number] because [reason]. Play the conversation. Push back the way a recruiter actually would, including telling me the band is fixed and asking whether I have a competing offer. Don't cave quickly. After four exchanges, stop and tell me which of my sentences weakened my position and what to say instead."</li>
+  </ul>
+</div>
+
+<h2 id="eight-things-not-to-do-with-ai">Eight things not to do with AI</h2>
+
+<div class="callout">
+  <h4>The list</h4>
+  <ul>
+    <li><strong>Don't send one generic AI-written resume to every job.</strong> It's the same effort as sending one generic human-written resume, and it performs the same way.</li>
+    <li><strong>Don't run a real-time interview overlay.</strong> It fails on custom questions, it can disqualify you, and the products in this category have a poor track record.</li>
+    <li><strong>Don't auto-apply at volume.</strong> Tools that fire off hundreds of applications produce hundreds of applications you learned nothing from.</li>
+    <li><strong>Don't let AI write your story.</strong> Someone who's heard the polished version a hundred times will ask you follow-up questions about it.</li>
+    <li><strong>Don't skip human review.</strong> Read every word before it leaves your hands, including the ones you didn't write.</li>
+    <li><strong>Don't use AI for the parts that are about being known.</strong> Referrals, conversations, and follow-ups with people who might vouch for you are the parts where being a person is the whole point.</li>
+    <li><strong>Don't assume the model knows what's current.</strong> Company news, comp data, and interview formats all move faster than training data. Make it search, and make it cite.</li>
+    <li><strong>Don't skip the take-home instructions.</strong> That includes the time limit and the AI policy, and both of them are being graded.</li>
+  </ul>
+</div>
+
+<h2 id="how-this-changes-by-role">How this changes by role</h2>
+
+<h3>Product management</h3>
+
+<p>The PM loop changed more than any other, and Marty Cagan describes what replaced the old case question.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>How the PM interview changed.</strong> The player below is queued to 54:17, where Marty Cagan describes what top companies now ask PM candidates. <a href="https://www.youtube.com/watch?v=ZoQIHhP7xfo&t=3257s">Watch on YouTube</a>.</p>
+  <blockquote>"You may have heard that in a lot of the top companies today, if you interview for a product manager, the interview now is: what's your favorite prototyping tool? Here's the problem to solve. I want you to prototype a solution and then show me how you're going to test it. How will you know if their chief compliance officer is okay with this? How will you know if sales will be able to sell it? How will you know if customers will truly buy it? This is the question that good companies are asking their candidates."</blockquote>
+  <div class="nugget-who"><strong>Marty Cagan</strong>, Silicon Valley Product Group · Product Therapy</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ZoQIHhP7xfo?start=3257" title="Marty Cagan at 54:17" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>So learn one prototyping tool well enough to build under time pressure, and prepare answers to Cagan's four questions about compliance, sales, and customer demand, because those are where the round is actually won. Combine that with the Koo warning above and you have the whole brief: build it, then test it, then be able to defend every element on the page. Our <a href="/playbooks/product-sense-interview">product sense interview guide</a> covers the reasoning half.</p>
+
+<h3>Engineering</h3>
+
+<p>Engineering is where the bifurcation is sharpest, and where asking in writing matters most, because a Meta round and an Amazon round call for opposite behavior. Prepare both ways: keep your fundamentals sharp enough to work without assistance, and get fluent enough with an assistant that you can narrate your prompting and catch its mistakes out loud. The Prasanna quote above is your reassurance that the fundamentals still carry most of the weight. Our <a href="/playbooks/engineering-interview-guide">engineering interview guide</a> goes deeper on the formats.</p>
+
+<h3>Design</h3>
+
+<p>Hiring managers now read your portfolio partly for whether you can work with these tools, so show at least one piece where AI was in your process and say what you did with the output rather than what the tool produced. Keep the reasoning visible. The failure mode is a portfolio full of generated visuals with no evidence of decisions behind them.</p>
+
+<h3>Marketing and data</h3>
+
+<p>Visible AI fluency is close to table stakes in both. The strongest version is a specific workflow story: a process you rebuilt, what it used to cost you, what it costs now, and what broke along the way. That's a better signal than a list of tools, because it survives follow-up questions.</p>
+
+<h2 id="tools-and-what-each-one-is-for">Tools, and what each one is for</h2>
+
+<p>Prices move constantly and none of the pricing claims in circulation held up to checking, so this is a list of purposes rather than a buying guide. Verify current pricing yourself before you commit to anything.</p>
+
+<div class="callout">
+  <h4>General assistants and research</h4>
+  <ul>
+    <li>Claude and ChatGPT for drafting, interrogation, and rehearsal. Perplexity when you want sourced answers with live search.</li>
+  </ul>
+  <h4>Resume and application</h4>
+  <ul>
+    <li>Jobscan, Teal, Rezi, and Kickresume for tailoring and keyword checking. Careerflow for profile work. Huntr and Simplify for tracking applications.</li>
+  </ul>
+  <h4>Finding roles and people</h4>
+  <ul>
+    <li>Welcome to the Jungle, Wellfound, and Jobright for sourcing roles. Refer Me for referral paths. Crystal Knows for reading communication styles before a call.</li>
+  </ul>
+  <h4>Interview preparation</h4>
+  <ul>
+    <li>Yoodli for delivery and filler words. Exponent, Hello Interview, ByteByteGo, AlgoExpert, LeetCode, and Codemia for content and problem practice.</li>
+  </ul>
+  <h4>Prototyping</h4>
+  <ul>
+    <li>Cursor and Claude Code for building. Figma Make, v0, Lovable, and Magic Patterns for fast clickable prototypes. Dovetail for research synthesis.</li>
+  </ul>
+  <h4>Compensation</h4>
+  <ul>
+    <li>Levels.fyi, Pave, Ravio, Carta Total Comp, Glassdoor, and LinkedIn Salary. Use at least three, since each has a different sample.</li>
+  </ul>
+  <h4>Don't use</h4>
+  <ul>
+    <li>Auto-apply tools that submit applications on your behalf.</li>
+    <li>LinkedIn automation tools that send connections and messages in bulk. They violate LinkedIn's terms and they read as automated.</li>
+    <li>The covert real-time interview overlay category, in all its branded forms.</li>
+  </ul>
+</div>
+
+<h2 id="what-might-already-be-out-of-date">What might already be out of date</h2>
+
+<p>Everything above was verified in July 2026, and a few parts of it will move before the end of the year.</p>
+
+<p>Company policies change quarterly, and they're the load-bearing part of this article. Google's pilot had not started as of publication, so Google's software engineering interviews may already work differently than described here. Meta's careers page says candidates are "expected" to use the AI assistant while Interviewing.io reports Meta's own prep materials call it optional, and that tension was unresolved at publication. Anthropic's guidance page was last updated in July 2025, and Amazon's language dates from March 2025. None of that replaces asking your recruiter, which is why that instruction sits where it does in this article.</p>
+
+<p>Tool pricing drifts and the vendor landscape churns, so treat the tool list as categories rather than recommendations. Many "best AI job search tools" roundups are published by the vendors themselves or by their affiliates, which is worth remembering when one of them reads unusually enthusiastic.</p>
+
+<p>Detection technology moves in both directions, so whatever is undetectable this quarter is a research problem next quarter. The numbers throughout this article come from mixed-quality sources and are labeled in the text where they appear: a 32-interview study from 2024, a 25-recruiter survey by a resume vendor, engagement figures published by LinkedIn about LinkedIn's own product with no methodology, and detection rates published by a company that sells detection. Where a widely repeated statistic couldn't be traced to a real source, it isn't here at all, which is why a few numbers you may have seen elsewhere are missing.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Is it cheating to use AI on my resume?</h3>
+
+<p>No, and several companies now tell you to. Anthropic's candidate guidance asks you to write the first draft yourself and then use Claude to refine it, which is a good default everywhere. What gets you in trouble is claiming experience you don't have, and that's a lie whether a model wrote it or you did.</p>
+
+<h3>Can I use AI during a job interview?</h3>
+
+<p>Only if that specific company has invited you to for that specific round, and you should get the answer in writing from your recruiter. Meta expects it on select technical rounds, Canva expects it for backend, ML, and frontend engineering candidates, and Cognition encourages it. Amazon prohibits it and says non-compliance may result in disqualification. Anthropic bans it in take-homes and live interviews while encouraging it on your application. There's no safe general answer, which is the whole point of this article.</p>
+
+<h3>Will an AI-detection tool flag my resume unfairly?</h3>
+
+<p>It might, particularly if English isn't your first language. The peer-reviewed study by Liang and colleagues found detectors misclassified over half of human-written TOEFL essays as AI-generated, at an average false positive rate of 61.22%, against 5.19% for native-writer essays. The samples were small. The practical response is to write in your own voice, keep your own quirks, and use AI to tighten rather than to generate.</p>
+
+<h3>Do applicant tracking systems automatically reject my resume?</h3>
+
+<p>Much less than the folklore suggests, on the evidence available. Enhancv's survey of 25 recruiters found 92% said rejections are manual or triggered only by eligibility filters. Grading before a human looks is real, though, so relevant keywords help your position in the queue, and eligibility questions about work authorization and location genuinely can knock you out.</p>
+
+<h3>How many applications should I be sending?</h3>
+
+<p>Fewer than you probably think, with much more work in each one. Singhal's argument is that ten researched applications teach you something you can use on the eleventh, while a hundred untailored ones teach you nothing.</p>
+
+<h3>My interviewer used AI to write the job description. Doesn't that make this even?</h3>
+
+<p>Probably, and it isn't a defense if you break a stated rule. Both sides are using these tools heavily, which is what Foody describes above. The asymmetry that matters is that the employer sets the rules for their own process, and you agreed to them when you accepted the interview.</p>
+
+<h3>Should I tell them I used AI?</h3>
+
+<p>Volunteer it when you were invited to use it, since narrating your process is often part of the grade. You don't need to announce that you used a spell-checker on your cover letter. If you're ever asked directly, answer honestly, because getting caught in a lie afterwards can cost you the job itself.</p>
+
+<h2 id="the-whole-search-on-one-page">The whole search on one page</h2>
+
+<div class="callout">
+  <h4>Before you apply anywhere</h4>
+  <ul>
+    <li>Write your target in one sentence: level, function, company stage, and the problem you want handed to you.</li>
+    <li>Read three real job descriptions for that target and name the strategic problem each role exists to solve.</li>
+    <li>Decide your volume, and aim for thirty researched applications rather than three hundred quick ones.</li>
+  </ul>
+  <h4>For each company</h4>
+  <ul>
+    <li>Build a dossier with live web search, and make the model cite every factual claim.</li>
+    <li>Tailor the resume against that JD, then put your own voice back into whatever AI touched.</li>
+    <li>Write to two or three real people, and send an artifact rather than a compliment.</li>
+  </ul>
+  <h4>Before every technical round</h4>
+  <ul>
+    <li>Ask the recruiter in writing what's allowed, and save the reply.</li>
+    <li>Do what they said, even when it's stricter than the company's public page.</li>
+    <li>If AI is invited, practice narrating your prompting and catching bad output out loud.</li>
+  </ul>
+  <h4>Preparing</h4>
+  <ul>
+    <li>Generate a company-specific briefing rather than reading generic question lists.</li>
+    <li>Write your stories yourself, then ask a model to restate your thesis back to you.</li>
+    <li>Record yourself answering out loud, and watch it once.</li>
+    <li>For any take-home or prototype, walk every screen and be able to defend each element, or delete it.</li>
+  </ul>
+  <h4>After</h4>
+  <ul>
+    <li>Thank-you note within 24 hours, under 150 words, with one specific detail from the conversation.</li>
+    <li>Write an honest debrief the same day, while you still remember what you said.</li>
+    <li>Get the offer in writing, benchmark against three sources, and set your walk-away number before the call.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=ja6fWTDPQl4">Why experts writing AI evals is creating the fastest-growing companies in history, with Brendan Foody</a> (Sep 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=R-zCfLQD_84">Why LinkedIn is turning PMs into AI-powered full stack builders, with Tomer Cohen</a> (Dec 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=JMeXWVw0r3E">How Block is becoming the most AI-native enterprise in the world, with Dhanji R. Prasanna</a> (Oct 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=0XNkUdzxiZI">The rise of the professional vibe coder, with Lazar Jovanovic</a> (Feb 2026)</li>
+    <li>The Skip Podcast: <a href="https://www.youtube.com/watch?v=QS9Kn4MZU9I">What PM hiring managers actually screen for, with Sam Stone and Sarah Koo</a> (Apr 2026)</li>
+    <li>The Skip Podcast: <a href="https://www.youtube.com/watch?v=ARaYPnTTYuQ">10 job-search rules that just broke, with Dana Ingraham</a> (May 2026)</li>
+    <li>The Skip Podcast: <a href="https://www.youtube.com/watch?v=VPw6H4sStzQ">Graduating into uncertainty: how to actually land your first tech job, with Nikhyl Singhal</a> (Jul 2025)</li>
+    <li>Product Therapy: <a href="https://www.youtube.com/watch?v=ZoQIHhP7xfo">Coaching in the age of AI, with Marty Cagan</a> (Apr 2026)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=-lMItuklFco">ChatGPT agent mode: the little helper that transformed recruiting, with Michal Peled</a> (Dec 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=B5yDJAkz0rw">How this PM uses MCPs to automate his meeting prep, with Reid Robinson</a> (Feb 2026)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=8P7v1lgl-1s">How to digest 36 weekly podcasts without spending 36 hours listening, with Tomasz Tunguz</a> (Aug 2025)</li>
+    <li>How I AI: <a href="https://www.youtube.com/watch?v=xDMkkOC-EhI">How custom GPTs can make you a better manager, with Hilary Gridley</a> (May 2025)</li>
+    <li>Anthropic: <a href="https://www.anthropic.com/candidate-ai-guidance">Candidate AI guidance</a> (updated Jul 2025)</li>
+    <li>Meta: <a href="https://www.metacareers.com/hiring-process/">Hiring process</a> (accessed Jul 2026)</li>
+    <li>Canva Engineering Blog: <a href="https://www.canva.dev/blog/engineering/yes-you-can-use-ai-in-our-interviews/">Yes, you can use AI in our interviews, by Simon Newton</a> (Jun 2025)</li>
+    <li>CoderPad: <a href="https://coderpad.io/blog/hiring-developers/ai-in-the-interview-is-not-cheating-it-is-the-job-according-to-meta/">AI in the interview, according to Meta</a> (Oct 2025)</li>
+    <li>IT Pro: <a href="https://www.itpro.com/business/careers-and-training/amazon-bans-ai-tools-during-job-interviews">Amazon bans AI tools during job interviews</a> (Mar 2025)</li>
+    <li>Entrepreneur: <a href="https://www.entrepreneur.com/business-news/google-is-testing-a-new-rule-transform-job-interviews">Google is testing a new rule for job interviews</a> (May 2026)</li>
+    <li>Interviewing.io: <a href="https://interviewing.io/blog/how-hard-is-it-to-cheat-with-chatgpt-in-technical-interviews">How hard is it to cheat with ChatGPT in technical interviews?</a> (2024 study)</li>
+    <li>Liang et al.: <a href="https://arxiv.org/abs/2304.02819">GPT detectors are biased against non-native English writers</a>, Patterns (Cell Press)</li>
+    <li>Enhancv: <a href="https://enhancv.com/blog/does-ats-reject-resumes/">Does an ATS reject resumes?</a> (Sep-Oct 2025 survey of 25 recruiters)</li>
+    <li>Workday: <a href="https://www.workday.com/en-us/legal/responsible-ai-and-bias-mitigation.html">Responsible AI and bias mitigation</a></li>
+    <li>Greenhouse: <a href="https://www.greenhouse.com/blog/introducing-greenhouse-real-talent">Introducing Greenhouse Real Talent</a> (Jun 2025)</li>
+    <li>HR Dive: <a href="https://www.hrdive.com/news/recruiters-increasing-their-ai-usage-as-pressure-to-hire-intensifies/809051/">Recruiters increasing their AI usage as pressure to hire intensifies</a> (Jan 2026)</li>
+    <li>SHRM: 2025 Talent Trends (n=2,040)</li>
+    <li>Pew Research Center: Salary negotiation survey (Feb 2023, n=5,188)</li>
+    <li>Resume Genius: Salary negotiation survey (1,000 US full-time workers, Pollfish)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#what-changed-in-the-last-year">What changed in the last year</a>
+  <a href="#the-policies-contradict-each-other-so-check-every-time">The policies contradict each other, so check every time</a>
+  <a href="#where-the-line-is">Where the line is</a>
+  <a href="#phase-1-strategy-and-positioning">Phase 1: strategy and positioning</a>
+  <a href="#phase-2-company-and-role-research">Phase 2: company and role research</a>
+  <a href="#phase-3-application-materials">Phase 3: application materials</a>
+  <a href="#phase-4-outreach-and-networking">Phase 4: outreach and networking</a>
+  <a href="#phase-5-interview-preparation">Phase 5: interview preparation</a>
+  <a href="#phase-6-during-the-live-interview">Phase 6: during the live interview</a>
+  <a href="#phase-7-after-the-interview">Phase 7: after the interview</a>
+  <a href="#phase-8-the-offer-and-the-negotiation">Phase 8: the offer and the negotiation</a>
+  <a href="#eight-things-not-to-do-with-ai">Eight things not to do with AI</a>
+  <a href="#how-this-changes-by-role">How this changes by role</a>
+  <a href="#tools-and-what-each-one-is-for">Tools, and what each one is for</a>
+  <a href="#what-might-already-be-out-of-date">What might already be out of date</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-whole-search-on-one-page">The whole search on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

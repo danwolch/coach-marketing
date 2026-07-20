@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Stripe's own CTO, COO, and head of design describe the bar they hire against. Here's how to prepare stories, questions, and a friction log that hit it.">
+<meta name="color-scheme" content="light">
+<title>Stripe Interview Preparation: What Stripe's Leaders Say They Look For | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/stripe-interview-preparation">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Stripe Interview Preparation: What Stripe's Leaders Say They Look For","description":"Stripe's own CTO, COO, and head of design describe the bar they hire against. Here's how to prepare stories, questions, and a friction log that hit it.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/stripe-interview-preparation"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/stripe-interview-preparation">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Stripe Interview Preparation: What Stripe's Leaders Say They Look For">
+<meta property="og:description" content="Stripe's own CTO, COO, and head of design describe the bar they hire against. Here's how to prepare stories, questions, and a friction log that hit it.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stripe Interview Preparation: What Stripe's Leaders Say They Look For">
+<meta name="twitter:description" content="Stripe's own CTO, COO, and head of design describe the bar they hire against. Here's how to prepare stories, questions, and a friction log that hit it.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Interview Prep</div>
+  <h1>Stripe interview preparation: what their leaders say they look for</h1>
+  <p class="post-sub">Round counts and formats change, and we won't guess at yours. This is the bar Stripe's own executives have described on the record, and how to prepare for it.</p>
+  <div class="post-meta">16 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Search for the Stripe loop and you'll find plenty: how many rounds, what happens in each one, what the take-home looks like. All of it changes constantly, and the people who can tell you are candidates who interviewed there last month. This playbook does something different, and honestly more useful over a two-week prep window: it tells you what Stripe's own leaders have said, on the record and on camera, about the bar they hire and operate against.</p>
+
+<p>This article starts with what we can't tell you and where to go for it, then covers what Stripe's executives say they value, how those values show up in the questions they ask, the stories to build before you interview, a prep exercise taken from the CTO's own monthly routine, and questions to ask them back. Read the values section first, then spend your prep time building three stories, because that's where most candidates are thinner than they realize.</p>
+
+<p>The sources are David Singleton, Stripe's CTO when he described their hiring process in May 2023; Claire Hughes Johnson, who was Stripe's COO from about 160 employees to over 7,000 and wrote <em>Scaling People</em>; Katie Dill, Stripe's head of design, previously at Airbnb and Lyft; and Will Larson, CTO at Carta and formerly an engineering leader at Stripe, Uber, and Digg. Every quote below plays the exact moment it was said.</p>
+
+<h2 id="what-this-playbook-will-not-tell-you">What this playbook will not tell you</h2>
+
+<p>We don't have reliable information about Stripe's current interview loop. How many rounds you'll get, which order they come in, whether there's a take-home, how long the onsite runs, and what the current rubric names are all things that change from year to year, team to team, and level to level. Anyone writing a confident "the Stripe loop in 2026" post without recent first-hand data is guessing, and a wrong guess will waste your prep.</p>
+
+<p>So go get the schedule from people who have it:</p>
+
+<div class="callout">
+  <h4>Where to get current loop specifics</h4>
+  <ul>
+    <li><strong>Your recruiter.</strong> Ask directly: how many rounds, what each one covers, who's on the panel, and whether anything is take-home. Recruiters answer this happily and it costs you nothing.</li>
+    <li><strong>Blind, Levels.fyi, and Glassdoor.</strong> Filter to posts from the last few months and to your role and level. Older posts describe a process that has probably moved.</li>
+    <li><strong>People who work there now.</strong> A referral or a warm intro gets you a much better description than any article. The <a href="/playbooks/ask-for-job-referral">referral playbook</a> covers how to ask.</li>
+  </ul>
+</div>
+
+<p>The rest of this article covers the part that doesn't change much. The values Stripe hires against have been stated publicly by three different executives across three years, and they line up.</p>
+
+<h2 id="what-stripe-s-leaders-say-they-value">What Stripe's leaders say they value</h2>
+
+<p>Stripe runs on what it calls operating principles rather than values. David Singleton, then CTO, described them as behaviors distilled from the most effective people at the company (23:04 in his episode), and said they get used constantly: people cite them when celebrating each other's work, and feedback processes are framed around them. Two come up over and over from different leaders.</p>
+
+<p><strong>Users first.</strong> Singleton names it as the very first operating principle at 23:26. In practice it works as the tiebreaker for where effort goes.</p>
+
+<p><strong>Be meticulous in your craft.</strong> Katie Dill, Stripe's head of design, says this one is expected of everybody, not just designers.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Meticulous craft applies to every job.</strong> The player below is queued to 52:33, the exact moment Katie Dill explains how the principle shows up in roles that have nothing to do with design. <a href="https://www.youtube.com/watch?v=gfEEcssu304&t=3153s">Watch on YouTube</a>.</p>
+  <blockquote>"Our operating principles include meticulous craft. And it is one of the things that is really important to us as an organization, is just like having that meticulous care for all that you do, like whether it's you're designing the space that we work within, or that you're creating the API, or that you're building the interface, or that you're talking to people on support calls. The meticulous craft is something that is actually expected of everybody."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/gfEEcssu304?start=3153" title="Katie Dill at 52:33" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Dill also gives you the vocabulary to talk about quality precisely, which matters because "I care about quality" on its own tells an interviewer nothing. She describes levels: does the thing work at all, does it work well and error-free, and does it exceed what the user was even looking for. If you can place your own past work on that scale and explain why you stopped where you stopped, you're already talking the way her team talks.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The levels of quality.</strong> The player below is queued to 11:52, the exact moment Katie Dill lays out the scale from baseline to exceeding expectations. <a href="https://www.youtube.com/watch?v=gfEEcssu304&t=712s">Watch on YouTube</a>.</p>
+  <blockquote>"There are levels of quality. There is the, does the thing work, does it provide some sort of value proposition, does it execute on its job? That's baseline quality. Next is, does it do it exceedingly well, is it error free? And then beyond that, like level three, level four, level five, does it exceed expectations and do something that you weren't even seeking for as a user?"</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/gfEEcssu304?start=712" title="Katie Dill at 11:52" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>If you are interviewing for a design role specifically, our <a href="/playbooks/design-interview-guide">design interview playbook</a> covers how Dill and other design leaders disagree about whether your portfolio case needs to point at a metric.</p>
+
+<p>Singleton's favorite example of the craft principle is small and specific, which tells you something about what "meticulous" means there. At 25:04 he describes joining Stripe and hitting an error from their API, then finding that the error message linked straight to the docs page explaining the fix. His comment: "Like the error messages on your API, who's ever going to look at them? Well, turns out developers, while they're building and if they're running into problems, they will look at them. It's actually a really high-stakes moment."</p>
+
+<p>Will Larson, who was an engineering leader at Stripe before becoming CTO at Calm and then Carta, adds one more that's worth knowing about. He mentions "optimize globally" as a Stripe value, though he notes he believes it's no longer one, and explains it as choosing what's better for the whole organization even when something else would be better for your own team. If you have a story where you gave up a local win for a company-level one, that's the shape of story that lands at a company with this instinct.</p>
+
+<h2 id="what-the-cto-said-about-how-stripe-interviews">What the CTO said about how Stripe interviews</h2>
+
+<p>In May 2023, Singleton described the design philosophy behind their loops. Formats will have moved since, but the philosophy is the kind of thing that persists, and it changes how you should prepare.</p>
+
+<p>He said Stripe uses structured loops so every candidate for a role goes through a consistent process, which lets interviewers calibrate what a strong answer even looks like. Then he said the thing that should change your prep:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Nothing is a trick question.</strong> The player below is queued to 15:08, the exact moment David Singleton describes what Stripe's interview exercises are designed to be. <a href="https://www.youtube.com/watch?v=F0_IKKY3HCk&t=908s">Watch on YouTube</a>.</p>
+  <blockquote>"The other thing that these loops have in common is nothing is a trick question. Like we try to put people into an environment which is as close to doing the actual work together as you possibly can. So for engineers for instance, we've got several different coding exercises that they do. They share their screen with the interviewer. It's actually kind of pair programming. You're welcome to use Google, to search Stack Overflow."</blockquote>
+  <div class="nugget-who"><strong>David Singleton</strong>, CTO of Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/F0_IKKY3HCk?start=908" title="David Singleton at 15:08" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He goes on at 15:48 to say the PM side had a written exercise drawn from real problems, done in your own time with a suggested time limit, and that what they were watching for was whether you attack the problem in a way that's curious, digs into the details, and stays collaborative with your interviewer.</p>
+
+<p>Two practical things follow from that, if the philosophy still holds when you interview. First, treat every exercise as collaboration, because he says out loud that asking your interviewer questions is welcome. Second, don't grind trick puzzles. Practice narrating your reasoning while you work, because a screen-shared pairing session scores how you think out loud at least as much as what you produce.</p>
+
+<h2 id="the-question-three-stripe-leaders-say-they-ask">The question three Stripe leaders say they ask</h2>
+
+<p>When Lenny's Podcast compiled favorite interview questions from more than 100 guests, Katie Dill, Karri Saarinen of Linear, and Camille Hurst all named the same one: tell me what work you're most proud of. Dill explains what she's listening for, and it's the clearest statement of the Stripe bar you'll find in a single sentence.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Taste and judgment, from one question.</strong> The player below is queued to 10:10, the exact moment Katie Dill explains why she asks candidates what work they're most proud of. <a href="https://www.youtube.com/watch?v=UhASMW6X4AY&t=610s">Watch on YouTube</a>.</p>
+  <blockquote>"Tell me what work you are most proud of. And the reason I ask that is because it helps me understand their taste and their judgment, what motivates them, what work they view as good and as a good outcome. It also helps me understand a little bit about what they like to do, and where their kind of gravity pulls them."</blockquote>
+  <div class="nugget-who"><strong>Katie Dill</strong>, head of design at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/UhASMW6X4AY?start=610" title="Katie Dill at 10:10" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Read that list again, because it's close to a scoring rubric. She's checking what you consider good, which is a question about your standards, and where your energy naturally goes, which is a question about fit. Whether the project was impressive matters far less. A candidate who answers with the biggest number on their resume tells her almost nothing about either.</p>
+
+<h2 id="build-three-stories-that-show-craft-and-judgment">Build three stories that show craft and judgment</h2>
+
+<p>Most people prepare stories about outcomes. At a company that talks like this, spend your prep on the decisions inside those stories. Pick three pieces of work and rebuild each one around the choices you made rather than the result you got.</p>
+
+<div class="callout">
+  <h4>Story one: the quality call</h4>
+  <ul>
+    <li>A time you spent more effort on something than anyone asked for, and could explain why that specific detail mattered to a specific user.</li>
+    <li>Say where the work landed on Dill's scale, and where you chose to stop. "We got it to error-free and deliberately didn't go past that, because the deadline mattered more to this customer than polish did" is a strong answer.</li>
+    <li>Have the counter-story ready too: a time you shipped something rougher on purpose. If every story you tell is about polish, an interviewer starts to wonder whether you can prioritize.</li>
+  </ul>
+  <h4>Story two: the details nobody else went into</h4>
+  <ul>
+    <li>Singleton's example of great work is a PM who kept asking whether a painful government process really had to work that way, and eventually got the IRS to change how a number gets issued (13:32). That's the kind of story: curiosity that didn't stop at the first "that's just how it is."</li>
+    <li>Find your version. Where did you dig two levels below where your job required, and what did you find?</li>
+  </ul>
+  <h4>Story three: the global call over the local one</h4>
+  <ul>
+    <li>A time you chose the option that was worse for your team and better for the company, and can name what it cost you.</li>
+    <li>Name who you had to convince and how. This is where interviewers hear whether you can influence without authority.</li>
+  </ul>
+  <h4>For all three</h4>
+  <ul>
+    <li>Say what you'd do differently. A story with no revision in it sounds rehearsed.</li>
+    <li>Keep the setup under 30 seconds. Interviewers want the decision more than the org chart.</li>
+    <li>Name real tradeoffs with real losses. Nobody believes "we got everything we wanted."</li>
+  </ul>
+</div>
+
+<p>The <a href="/playbooks/behavioral-interview-questions">behavioral interview questions playbook</a> covers the general mechanics of structuring these answers, and <a href="/playbooks/how-to-position-yourself-for-a-job">how to position yourself for a job</a> covers choosing which stories to lead with for a particular role.</p>
+
+<h2 id="how-stripe-s-former-coo-reads-people">How Stripe's former COO reads people</h2>
+
+<p>Claire Hughes Johnson ran Stripe's operations from roughly 160 people to over 7,000, and she wrote the book on how she did it. Her first operating principle is about self-awareness, and it's directly relevant to how you'll come across in an interview.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Build self-awareness to build mutual awareness.</strong> The player below is queued to 33:20, the exact moment Claire Hughes Johnson names her operating principles and explains the one about strengths. <a href="https://www.youtube.com/watch?v=Mv0o9o4MRh0&t=2000s">Watch on YouTube</a>.</p>
+  <blockquote>"My operating principles in the book, one is build self-awareness to build mutual awareness. Another one is say the thing you think you cannot say. I've come to believe that often your biggest strength is also your weakness, but two, it's something that you don't know is a big strength, because it's almost like breathing."</blockquote>
+  <div class="nugget-who"><strong>Claire Hughes Johnson</strong>, former COO of Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Mv0o9o4MRh0?start=2000" title="Claire Hughes Johnson at 33:20" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her method for getting there, described from about 30:34 onward, is to write down your top few values, then the story behind each one, then what she calls your work style tendencies: whether you run introverted or extroverted, and whether you lean task-oriented or people-oriented. Doing that exercise before you interview gives you something most candidates don't have, which is a real answer to "what are you like to work with" that isn't a repackaged strength.</p>
+
+<p>Her second principle is worth practicing out loud, because interviews are full of moments where the honest thing feels risky. At 35:32 she gives two tactics: ask a question instead of making a statement, and own the observation as yours rather than passing judgment. Compare "I wonder if I'm missing something about how these two teams overlap" with "that team was misaligned." Only the first one gets you a conversation. In an interview, that's how you disagree with a premise without sounding difficult.</p>
+
+<div class="cta-band">
+  <h3>Say the craft part out loud</h3>
+  <p>Work Coach records you telling a story and marks where you jumped to the result and skipped the decision. It drills the same story with follow-ups until the judgment comes out.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="write-a-friction-log-before-you-interview">Write a friction log before you interview</h2>
+
+<p>This is the most useful Stripe-specific prep you can do, and it comes from the CTO describing his own routine. Stripe uses a practice called friction logging: you pick a specific user, walk their end-to-end path through the product, and take detailed notes on every place it gets hard.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The CTO does this once a month.</strong> The player below is queued to 33:20, the exact moment David Singleton describes his own friction log habit. <a href="https://www.youtube.com/watch?v=F0_IKKY3HCk&t=2000s">Watch on YouTube</a>.</p>
+  <blockquote>"For years and years, I have gone through the process of onboarding as a user to Stripe once a month, writing a friction log, and then tagging in the right people across the company that might need to take action on some of the things that we're observing."</blockquote>
+  <div class="nugget-who"><strong>David Singleton</strong>, CTO of Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/F0_IKKY3HCk?start=2000" title="David Singleton at 33:20" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He explains the method itself at 25:48. The important part is picking a specific person first. "A developer" is too vague. Pick an engineer at a particular kind of company doing a particular integration. Then you go through it for real, in the dashboard and the docs and the code, writing stream-of-consciousness notes and flagging every point of friction that person would hit.</p>
+
+<div class="callout">
+  <h4>Your pre-interview friction log</h4>
+  <ul>
+    <li>Pick one user and write them down in a sentence. A solo founder taking their first payment, a developer adding a subscription tier, a finance person reconciling payouts.</li>
+    <li>Do the flow yourself. Sign up, read the docs, write the integration if you can. Test mode is free.</li>
+    <li>Note friction as you hit it, not afterward. Timestamps, the exact wording that confused you, the moment you had to open a second tab.</li>
+    <li>For your top three points of friction, write what you'd change and why that specific user cares.</li>
+    <li>Bring two of them into the conversation, and open with something like "I ran a friction log on your onboarding flow and got stuck here."</li>
+  </ul>
+</div>
+
+<p>Do this for whichever surface matches the job. Design candidates should log a visual and flow-level pass, PM candidates should log the end-to-end job, and engineers should actually build the integration.</p>
+
+<h2 id="why-good-candidates-still-get-turned-down">Why good candidates still get turned down</h2>
+
+<p>Will Larson, now CTO at Carta and formerly an engineering leader at Stripe and Uber, models hiring as a pipeline. When he walks through where pipelines break, the most common failure has nothing to do with candidate quality. He's describing hiring pipelines generally rather than Stripe's specifically, but it's a useful reframe for anyone interviewing at a high-bar company.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The bottleneck is usually conviction.</strong> The player below is queued to 14:32, the exact moment Will Larson describes the most common place hiring pipelines stall. <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE&t=872s">Watch on YouTube</a>.</p>
+  <blockquote>"For a lot of pipelines, the biggest issue is hiring managers don't want to extend any offers because the hiring managers can't get to confidence on any candidate. And you'll see a ton of candidates getting to offer stage but almost none of them converting."</blockquote>
+  <div class="nugget-who"><strong>Will Larson</strong>, CTO at Carta, formerly Stripe and Uber · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Z9ftpRhRiJE?start=872" title="Will Larson at 14:32" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Your job in the loop is to make conviction easy to reach. That means being specific enough that an interviewer can repeat your story accurately to someone who wasn't there, and consistent enough across rounds that four people come away with the same picture of you. Answers that sound strong but stay vague are the ones that fall apart in the debrief.</p>
+
+<p>The other half of conviction happens after your last round. At 1:10:55, Singleton says Stripe pays a lot of attention to references, and gives the reason: an interview loop gets you maybe eight hours with someone, while people who've worked with them are drawing on thousands of hours. So line your references up early. Tell them which role it is, which stories you told, and what you'd like them to be able to speak to. That isn't coaching them to lie. It just means the person who saw your best work is the one who picks up the phone.</p>
+
+<p>If you're heading into a full onsite, the <a href="/playbooks/prepare-for-final-round-interview">final-round playbook</a> covers how to prepare for a whole panel in sequence, and <a href="/playbooks/prepare-for-interview-in-24-hours">preparing in 24 hours</a> covers what to cut if the loop is tomorrow.</p>
+
+<h2 id="questions-to-ask-them-back">Questions to ask them back</h2>
+
+<p>Every question below comes out of something a Stripe leader has said publicly, which means you're asking about things the company actually talks about internally rather than fishing for a compliment.</p>
+
+<div class="callout">
+  <h4>About craft and quality</h4>
+  <ul>
+    <li>"Where does this team choose to be meticulous, and where do you deliberately accept rough edges?"</li>
+    <li>"What's a recent example of quality work on this team that wouldn't show up in any metric?"</li>
+    <li>"Who does the friction logging here, and what happens to what they find?"</li>
+  </ul>
+  <h4>About the work itself</h4>
+  <ul>
+    <li>"What's the hardest decision this team made in the last six months?"</li>
+    <li>"Which users do you have the clearest picture of, and which ones do you wish you understood better?"</li>
+    <li>"What would I be expected to have shipped or figured out by month three?"</li>
+  </ul>
+  <h4>About how you'd work together</h4>
+  <ul>
+    <li>"How do you like to give feedback, and how quickly?"</li>
+    <li>"What's something people find hard about working with you?" Claire Hughes Johnson's whole self-awareness argument says a good manager has an answer ready.</li>
+    <li>"What made the last person in this role successful, or not?"</li>
+  </ul>
+</div>
+
+<p>Ask two or three, not the whole list. And write down what they say, because the answers are your best material for the follow-up email and for deciding whether you want the job.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How hard is it to get hired at Stripe?</h3>
+<p>It's hard, and it's slow on purpose. Singleton described being patient on hiring, especially for leadership roles, and said they're happy to meet tens or hundreds of people for a role and to keep building a relationship with someone who isn't ready to move yet (10:05). Plan for a longer process than you'd expect, and don't read silence as rejection.</p>
+
+<h3>What is Stripe's culture actually like?</h3>
+<p>The consistent picture from three executives: mission-driven and unusually explicit about it, heavy on writing, high on autonomy, and detail-obsessed in a way that shows up in small things like API error messages. Singleton says they don't hide any of that during hiring (9:46), because caring about the mission is close to a requirement. He also describes an environment where lots of people end up doing a different job than the one they were hired for, which is a real perk and also a warning if you want a narrow, stable role.</p>
+
+<h3>Should I mention that I used the product?</h3>
+<p>Only with specifics. Saying you love Stripe's docs gets you nothing. Saying you built a test integration for subscriptions, got stuck at a particular step, and here's what you'd change gets you a real conversation. That's the whole point of the friction log above.</p>
+
+<h3>Is Stripe's interview process the same for engineers, PMs, and designers?</h3>
+<p>Singleton said in 2023 that the structure was consistent across roles, with exercises tailored to each: pair-programming-style coding for engineers, a written exercise for PMs. What each of those looks like now, and what design gets, is exactly the kind of specific your recruiter should confirm.</p>
+
+<h3>What if I'm not a payments person?</h3>
+<p>Singleton says the space rewards people who want to learn a lot of detail about systems that aren't well understood outside the industry (11:58). Nobody expects you to arrive fluent in interchange fees. They do want evidence that you go deep on unglamorous things, so lead with a story where you learned a boring domain thoroughly because the work required it.</p>
+
+<h2 id="your-stripe-prep-on-one-page">Your Stripe prep on one page</h2>
+
+<div class="callout">
+  <h4>First, get the facts we can't give you</h4>
+  <ul>
+    <li>Ask your recruiter for the exact loop: rounds, formats, panel, take-home.</li>
+    <li>Read recent first-hand accounts filtered to your role and the last few months.</li>
+    <li>Find someone who works there now and ask what the team is actually working on.</li>
+  </ul>
+  <h4>Then build the material</h4>
+  <ul>
+    <li>Three stories: a quality call, a time you dug two levels deeper than required, and a choice that was better for the company than for your team.</li>
+    <li>One counter-story where you shipped something rough on purpose.</li>
+    <li>Your answer to "what work are you most proud of," rebuilt around what you consider good rather than what looked biggest.</li>
+    <li>Your values and work style tendencies written down, so "what are you like to work with" has a real answer.</li>
+  </ul>
+  <h4>Then do the work they do</h4>
+  <ul>
+    <li>Run a friction log on the surface closest to the job. Pick one specific user first.</li>
+    <li>Write down your top three friction points and what you'd change.</li>
+    <li>Practice narrating your reasoning while you work, since exercises may be collaborative and screen-shared.</li>
+  </ul>
+  <h4>Before and after the loop</h4>
+  <ul>
+    <li>Line up references early and tell them which stories you told.</li>
+    <li>Pick two or three questions to ask back, and write down the answers.</li>
+    <li>Keep your story consistent across every interviewer, because the debrief is where conviction gets built.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=F0_IKKY3HCk">Building a culture of excellence, with David Singleton, CTO of Stripe</a> (May 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=Mv0o9o4MRh0">Lessons from scaling Stripe, with Claire Hughes Johnson, former COO of Stripe</a> (Mar 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=gfEEcssu304">Building beautiful products with Stripe's head of design, Katie Dill</a> (Oct 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=UhASMW6X4AY">My favorite interview questions from 100+ guests</a> (Nov 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=Z9ftpRhRiJE">The engineering mindset, with Will Larson, CTO of Carta</a> (Jan 2024)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#what-this-playbook-will-not-tell-you">What this playbook will not tell you</a>
+  <a href="#what-stripe-s-leaders-say-they-value">What Stripe's leaders say they value</a>
+  <a href="#what-the-cto-said-about-how-stripe-interviews">What the CTO said about how Stripe interviews</a>
+  <a href="#the-question-three-stripe-leaders-say-they-ask">The question three Stripe leaders say they ask</a>
+  <a href="#build-three-stories-that-show-craft-and-judgment">Build three stories that show craft and judgment</a>
+  <a href="#how-stripe-s-former-coo-reads-people">How Stripe's former COO reads people</a>
+  <a href="#write-a-friction-log-before-you-interview">Write a friction log before you interview</a>
+  <a href="#why-good-candidates-still-get-turned-down">Why good candidates still get turned down</a>
+  <a href="#questions-to-ask-them-back">Questions to ask them back</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#your-stripe-prep-on-one-page">Your Stripe prep on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

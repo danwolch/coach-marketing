@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A humane playbook for managers: diagnose the real problem, give a genuine chance to recover, and if it still ends, end it without surprises.">
+<meta name="color-scheme" content="light">
+<title>When Someone on Your Team Isn't Working Out | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/when-someone-on-your-team-isnt-working-out">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When Someone on Your Team Isn't Working Out","description":"A humane playbook for managers: diagnose the real problem, give a genuine chance to recover, and if it still ends, end it without surprises.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/when-someone-on-your-team-isnt-working-out"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/when-someone-on-your-team-isnt-working-out">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="When Someone on Your Team Isn't Working Out">
+<meta property="og:description" content="A humane playbook for managers: diagnose the real problem, give a genuine chance to recover, and if it still ends, end it without surprises.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When Someone on Your Team Isn't Working Out">
+<meta name="twitter:description" content="A humane playbook for managers: diagnose the real problem, give a genuine chance to recover, and if it still ends, end it without surprises.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">For Managers</div>
+  <h1>When someone on your team isn't working out</h1>
+  <p class="post-sub">How to name the problem early, give a real chance to fix it, and handle the ending with dignity if it comes to that.</p>
+  <div class="post-meta">18 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You've been noticing it for a while. Work comes back late, or thin, or you find yourself quietly redoing pieces of it. You keep telling yourself the next project will be different, and you keep not saying anything, because saying something would make it real and you don't want to knock someone's confidence over a rough quarter.</p>
+
+<p>This article covers how to name the problem early, and how to work out what's actually causing it. It also covers what a genuine improvement plan looks like, and how to run the conversation if it ends anyway. Read the diagnostic section before you decide anything, because a lot of what gets called underperformance turns out to be a manager who never said clearly what good looked like.</p>
+
+<p>The management thinking here comes from Matt Mochary, the CEO coach behind the Mochary Method curriculum, who works with founders at Coinbase, OpenAI, and Reddit; Kim Scott, who managed teams at Google and Apple and wrote <em>Radical Candor</em>; Alisa Cohn, an executive coach who works with founders on exactly these conversations; Elizabeth Stone, chief technology officer at Netflix; Rachel Lockett, an executive coach who was previously at Stripe; and Molly Graham, who led teams at Facebook, Google, Quip, and the Chan Zuckerberg Initiative.</p>
+
+<div class="callout">
+  <h4>What this article does not cover</h4>
+  <p>Employment law varies by country, by state, and by company, and the rules about warnings, documentation, protected categories, notice, and severance are genuinely different depending on where you and the person sit. Nothing here is legal advice. Bring your HR partner and, where your company has one, your employment counsel into this early, and follow their process rather than a generic one you read online. Alisa Cohn says the same thing when Lenny asks her to script the termination itself: "please everybody talk to your HR professional, talk to your lawyer, okay, I'm not a lawyer" (35:04). What this article covers is the management judgment and the conversations, which is the part no process document will do for you.</p>
+</div>
+
+<h2 id="say-something-the-first-week-you-notice">Say something the first week you notice</h2>
+
+<p>Most of the damage happens in the months between noticing a problem and saying anything about it. Kim Scott tells a story about a direct report she calls Bob, who she liked, and whose work wasn't good enough for months while she said nothing about it. She eventually realized her best people were going to leave because they were spending their time fixing his output. By the time she sat down with him, it was ten months too late.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The sentence you don't want to hear.</strong> The player below is queued to 25:04, the exact moment Kim Scott describes how that conversation ended. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=1504s">Watch on YouTube</a>.</p>
+  <blockquote>"He kind of pushed his chair back from the table, he looked me right in the eye and he said, why didn't you tell me. And as that question was going around in my head with no good answer, he looked at me again and he said, why didn't anyone tell me? I thought you all cared about me."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em>, former manager at Google and Apple · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=1504" title="Kim Scott at 25:04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Scott has a name for the thing that kept her quiet. She calls it ruinous empathy, which is caring about someone and letting that stop you from telling them something they'd be better off knowing (6:25). She thinks 90% of managers make 90% of their mistakes there.</p>
+
+<p>So the first move is one specific sentence in your next one-on-one, about one specific thing you saw. "The spec you sent Tuesday didn't have the migration risk in it, and I had to add it before I could send it on. That's the third time this quarter I've done that." Say the observation without attaching a verdict about the person, ask them what happened, and then stay quiet long enough for them to actually answer. If you want the wording for that, the <a href="/playbooks/give-feedback-that-lands">feedback playbook</a> covers how to say it so it gets heard.</p>
+
+<h2 id="work-out-whether-it-s-clarity-capability-or-motivation">Work out whether it's clarity, capability, or motivation</h2>
+
+<p>The Mochary Method curriculum has a diagnostic for feedback that isn't changing anything, written by CEO coach Celine Teoh. She splits the cause into three, and each one has a completely different response. Getting this wrong is expensive. Coaching someone who's confused won't help them, and neither will training someone who's simply lost interest.</p>
+
+<div class="callout">
+  <h4>The three causes, from the Mochary Method curriculum</h4>
+  <ul>
+    <li><strong>Clarity.</strong> Is your request specific, behavioral, and unambiguous? See <a href="https://docs.google.com/document/d/1tsqGVufCXilMKmL6uaZLyvzirhj0Tmb_PfNc_OWWPb8/edit">the note on clarity and capability</a>.</li>
+    <li><strong>Capability.</strong> Do they have the skills, training, time, and support to do it?</li>
+    <li><strong>Caring.</strong> Do they have the motivation to follow through? See <a href="https://docs.google.com/document/d/13cLE5EH8IpkgdB8fsDDQBZLC0SuDq7J-epeNTeL60zg/edit">the note on motivation</a>.</li>
+  </ul>
+</div>
+
+<p>Start with clarity, because it's the most common and the one you control. The curriculum gives a test worth memorizing: a video camera should be able to capture the behavior you're asking for. "Please be more punctual" fails the test. "Please text me if you're going to be more than a minute late to our meetings" passes it. If what you've been asking for is "more ownership" or "better judgment" or "more visibility," you've been asking someone to read your mind and then marking them down for guessing wrong.</p>
+
+<p>Molly Graham puts the same point in numbers from her own experience running teams through fast growth.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Where to start with a performance problem.</strong> The player below is queued to 43:53, the exact moment Molly Graham says what she checks first. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=2633s">Watch on YouTube</a>.</p>
+  <blockquote>"I would say 80% of problems that I see, performance issues, I always start with: does this person actually know what you expect of them? If not, go back to step one. Do you know what I mean? Clarify expectations."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Facebook, Google, Quip, and the Chan Zuckerberg Initiative · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=2633" title="Molly Graham at 43:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>She describes the check as two-sided. You say what you're seeing, and then you ask them what they think their job is and what number they were hired to move. When those two answers don't match, you've found something you can fix without anyone's job being at stake.</p>
+
+<p>If clarity is fine and it's capability, the questions are practical. Do they need training. Can the work be broken into smaller steps they can succeed at. Do they need money, time, or your political cover to get it done. The curriculum suggests an exercise borrowed from submarine captain David Marquet: ask the person to send you an "I intend to..." note before they act, so you can see their thinking and correct it cheaply before they've spent two weeks going the wrong way.</p>
+
+<p>Motivation is the hardest to read and the one people jump to first, usually wrongly. The curriculum's advice is to stop treating a lack of change as resistance and go find out what the person actually cares about, using the idea of currencies from Allan Cohen and David Bradford: some people are moved by learning, some by recognition, some by autonomy, some by being trusted with something important. It also flags that feedback itself can feel like a threat, using David Rock's SCARF model, and that someone who's worried their status or their standing on the team is gone will spend their energy defending themselves instead of improving.</p>
+
+<div class="callout">
+  <h4>Questions that tell you which one it is</h4>
+  <ul>
+    <li>"If I asked you to describe what a great quarter looks like in your role, what would you say?" Answers that don't match yours point at clarity.</li>
+    <li>"Which part of this is hardest for you?" Specific, technical answers point at capability.</li>
+    <li>"Is there anything getting in the way of this that I don't know about?" Leave a long silence after it.</li>
+    <li>"When have you been most excited about work here?" Their answer tells you which currency they run on.</li>
+    <li>"What do you think I want from you right now?" The gap between their answer and the truth is yours to close.</li>
+  </ul>
+</div>
+
+<h2 id="check-whether-the-role-is-the-problem">Check whether the role is the problem</h2>
+
+<p>Plenty of people who are failing in one job are excellent in a slightly different one. The role changed under them after a reorg. They were promoted into managing when they were brilliant at building. The company grew and the job they were hired to do stopped existing. None of that is a character problem, and treating it as one wastes someone who could still do good work for you.</p>
+
+<p>Molly Graham is blunt about how often hiring simply misses.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>How often a hire doesn't work out.</strong> The player below is queued to 64:15, the exact moment Molly Graham explains why letting people go is a core management skill. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=3855s">Watch on YouTube</a>.</p>
+  <blockquote>"The best people in the world at hiring will tell you they have about a 50% average in terms of being right. That means half the hires don't work out. That means half the time you're going to need to fire the person. So it is such an important skill to get good at, particularly when you're going through a lot of change."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Facebook, Google, Quip, and the Chan Zuckerberg Initiative · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=3855" title="Molly Graham at 64:15" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>If half of all hiring decisions are wrong, then someone struggling in front of you is often a sign that the match was bad from the start. That's worth holding onto before you decide anything about the person. The Mochary Method's <a href="https://docs.google.com/document/d/1J3c8lGMzPJXMMSWNIh7UCsv-_4qKYZkrkwloIbu3BW8/edit">note on firing well</a> makes the manager own that directly: either you didn't evaluate well during recruiting, or you didn't onboard and train well, and either way part of this is yours.</p>
+
+<div class="callout">
+  <h4>Things to check before you conclude it's the person</h4>
+  <ul>
+    <li>Has the role changed materially since they were hired into it, and did anyone tell them?</li>
+    <li>Are they strong at a part of this job that isn't currently the part you need?</li>
+    <li>Is there an open role on another team where their actual strengths are the job?</li>
+    <li>Did something change in their life? You don't need the details, but you should know a hard year when you see one.</li>
+    <li>Would a different manager, with a different working style, get more out of them?</li>
+  </ul>
+</div>
+
+<p>If an internal move is realistic, raise it as a genuine option rather than a soft exit. Say what they're good at, say what this particular job needs, and let them decide whether the other role interests them.</p>
+
+<p>Rachel Lockett coaches leaders through exactly this call, and brings a question from her time at Stripe that cuts through a lot of circling.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question that gives you an honest answer.</strong> The player below is queued to 87:30, the exact moment Rachel Lockett gives the question she uses with leaders who are stuck. <a href="https://www.youtube.com/watch?v=1GDVum5IarI&t=5250s">Watch on YouTube</a>.</p>
+  <blockquote>"Would you enthusiastically rehire this person for the same role? Which is the question we always asked at Stripe. And when the answer is no to that, no matter how many difficult conversations you have, this is not going to work. So then you have to take action."</blockquote>
+  <div class="nugget-who"><strong>Rachel Lockett</strong>, executive coach, formerly at Stripe · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/1GDVum5IarI?start=5250" title="Rachel Lockett at 87:30" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>The follow-up in that exchange matters as much as the question. A no doesn't mean you fire them, it means you have to do something, and Lockett lists the options: talk to them about it, put them on a performance plan, or move them into a different role (88:33). She gives an example she sees often, where a company builds a leadership team and a year later the job has changed under someone, so a finance leader who was right at the earlier stage now belongs in a narrower role rather than out of the building.</p>
+
+<h2 id="write-an-improvement-plan-the-person-could-actually-pass">Write an improvement plan the person could actually pass</h2>
+
+<p>A formal plan usually has a name at your company, and HR will own the template. What HR can't write for you is whether the plan is winnable. That's the test to apply to your own draft: if this person did every single thing on this list, would you genuinely be glad to keep them? If the honest answer is no, you're not running an improvement plan, and you should stop and have a different conversation instead.</p>
+
+<div class="callout">
+  <h4>What belongs in the plan</h4>
+  <ul>
+    <li><strong>Specific behaviors, not qualities.</strong> Apply the video camera test to every line. "Post the sprint update by Monday noon" works. "Show more ownership" doesn't.</li>
+    <li><strong>A small number of things.</strong> Two or three. A list of nine says you've given up and want it on paper.</li>
+    <li><strong>A real timeframe.</strong> Long enough that the work can actually turn around. Alisa Cohn's warning script uses 30 days for a coordination problem, and complex or seasonal work needs longer.</li>
+    <li><strong>Support attached to each item.</strong> Training, a mentor, a smaller scope, more of your time, a blocker you'll clear. If nothing changes on your side, you're asking them to solve on their own the thing they've already failed to solve on their own.</li>
+    <li><strong>How you'll both know it worked.</strong> Written down, in their words and yours, so there's no argument at the end about what counted.</li>
+    <li><strong>A weekly check-in.</strong> Short, honest, and two-way. Managers skip this one constantly, and it usually decides how the whole thing goes.</li>
+    <li><strong>What happens if it doesn't change.</strong> Said out loud, once, plainly, at the start.</li>
+  </ul>
+</div>
+
+<p>The Mochary Method curriculum's note on motivation adds something counterintuitive that's worth doing during the plan. Celine Teoh calls it cheering for learning to walk: notice every small step in the right direction and say so, and hold off on new constructive feedback for a few days. Most managers running a plan do the opposite and pile on corrections, which teaches the person that nothing they do will register.</p>
+
+<h2 id="escalate-in-steps-so-the-stakes-are-clear-each-time">Escalate in steps, so the stakes are clear each time</h2>
+
+<p>Faith Meyer's <a href="https://docs.google.com/document/d/1Z-PGn0NBJVw0gJRWPakTdSFHqt0AveN8t5BzufveQNE/edit">three strikes process</a> in the Mochary Method curriculum is the simplest structure for the months before any of this becomes formal. It exists to get conflict-averse managers out of their own heads and saying things at the moment they happen.</p>
+
+<div class="callout">
+  <h4>First time it happens</h4>
+  <ul>
+    <li>Name the specific example. "The client email went out without the pricing change in it."</li>
+    <li>Get curious before you get anything else. "Can you help me understand what happened here?"</li>
+    <li>Once you understand, say what you'd like instead.</li>
+    <li>Ask what they intend to do differently, and make the plan together.</li>
+    <li>Follow up later and ask whether they did it.</li>
+  </ul>
+  <h4>Second time</h4>
+  <ul>
+    <li>Name that it's happening again, and that you've discussed it before.</li>
+    <li>Ask them to help you understand why it's still occurring.</li>
+    <li>Give a clear warning: this is becoming a pattern, and it matters for their success here.</li>
+    <li>Make a new plan together, and check it.</li>
+  </ul>
+  <h4>Third time</h4>
+  <ul>
+    <li>Say the consequence in words that can't be misread. "If this doesn't change, your job is at risk."</li>
+    <li>Make a plan together one more time.</li>
+    <li>Hold to what you said.</li>
+  </ul>
+</div>
+
+<p>Each step exists to give the person new information they can act on. By the third one, nobody is guessing about where they stand, and that's the whole purpose of doing it in stages.</p>
+
+<div class="cta-band">
+  <h3>Say the hard sentence once before you mean it</h3>
+  <p>Work Coach records the warning conversation and marks where "your job is at risk" turned into something vaguer. Say it to a stand-in first, so the real one isn't your opening attempt.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="nobody-should-be-surprised">Nobody should be surprised</h2>
+
+<p>Everything above is in service of this. If the person is shocked when you tell them their job is at risk, you've managed them badly, whatever the paperwork says. Alisa Cohn puts the responsibility squarely on the manager.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Surprise means the manager missed something.</strong> The player below is queued to 31:26, the exact moment Alisa Cohn explains what has to be true before a firing conversation. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=1886s">Watch on YouTube</a>.</p>
+  <blockquote>"You want to create a culture where people are not surprised by being fired. That's not even true for this one person you're dealing with, that's true for the entire company. So just kind of getting in the mindset of recognizing that if you shied away from those conversations, kind of like you're the problem here, and you kind of have some catch-up to do."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach to founders and CEOs · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=1886" title="Alisa Cohn at 31:26" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>She goes on to describe what she hears when she asks clients whether they've been crystal clear about what they need (32:03). They make a wobbling hand motion, which means no. Ask yourself the same question before you decide someone has failed to respond to feedback they may never have received.</p>
+
+<p>Cohn scripts the conversation that has to happen before any termination conversation, and the wording is worth stealing almost word for word.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The warning conversation, scripted.</strong> The player below is queued to 32:18, the exact moment Alisa Cohn plays out the conversation she thinks matters more than the firing itself. <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI&t=1938s">Watch on YouTube</a>.</p>
+  <blockquote>"Listen, Matilda, we have to have a conversation right now. I've talked to you multiple times about coordinating with your peers... after six months of these conversations I want you to know that the peers continue to feel like you're operating on your own without coordinating with them... I need you to fix this within the next 30 days, otherwise I'm sorry to say we're going to have to part ways, because I can't keep this going with you. I know you have it in you to change. I value all you bring to the table. But if you don't fix these things, we're not going to have a future together."</blockquote>
+  <div class="nugget-who"><strong>Alisa Cohn</strong>, executive coach to founders and CEOs · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bvF0ZM8DjuI?start=1938" title="Alisa Cohn at 32:18" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Look at what that script actually contains. The specific behavior, the fact that it's been raised before, how long it's been going on, a deadline, the consequence, and then two sentences of genuine belief in the person. Cohn's view is that this conversation is more valuable than the firing conversation, because it might mean you never need the second one (34:33).</p>
+
+<h3>Netflix runs a different model, and it's worth knowing about</h3>
+
+<p>Most companies handle this through an annual review cycle and a formal plan. Netflix deliberately doesn't, and their version is worth understanding properly, because people who've only heard the phrase repeat it badly. Elizabeth Stone, their chief technology officer, describes the question managers ask themselves.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The keeper test, defined by the CTO.</strong> The player below is queued to 31:45, the exact moment Elizabeth Stone explains it. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=1905s">Watch on YouTube</a>.</p>
+  <blockquote>"That's where we refer to the keeper test, which is really just a mental framing to make sure we hold ourselves accountable for this. Where if I'm asking myself the question, if this person on my team came to me and said, I'm leaving today, I have a different opportunity and I would like to take it, would I do everything I could to keep them at Netflix? If not, then I should be having that tough conversation about should you really be here."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, chief technology officer at Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=1905" title="Elizabeth Stone at 31:45" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>People repeating this model miss two things. It's a question managers ask themselves, with no ranking or quota behind it. And employees ask it back: Stone says people regularly ask her "am I passing your keeper test?", which she treats as another way of asking how they're doing (33:43). If you'd like a low-drama way to have that exchange in a one-on-one, that phrasing is a good import even if the rest of the model isn't.</p>
+
+<p>Stone is also clear that the test only works because of what comes before it.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why the conversation can only be unsurprising.</strong> The player below is queued to 32:38, the exact moment Elizabeth Stone says what has to already be true. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=1958s">Watch on YouTube</a>.</p>
+  <blockquote>"We also then want to get to a place where when you're having that tough conversation people aren't surprised by it. That is easier said than done, but you can only get to that conversation around I don't think Netflix and you are the right fit for one another if you've been giving feedback along the way. And so in its most ideal state it's a mutual observation. In practice it's not always that smooth, obviously, we are humans."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, chief technology officer at Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=1958" title="Elizabeth Stone at 32:38" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Even at a company built around it, she says the ideal is a mutual observation and admits it often isn't. That's a fair standard to hold yourself to: by the end, the two of you should broadly agree about what happened, even if only one of you wanted this outcome.</p>
+
+<h2 id="running-the-conversation-when-the-answer-is-no">Running the conversation when the answer is no</h2>
+
+<p>Your HR partner will own the logistics, the timing, and the paperwork, and you should follow their instructions on all of it. What follows is the shape of what you say. The Mochary Method's note on firing well lays out the sequence, and the ordering matters more than the wording.</p>
+
+<div class="callout">
+  <h4>The sequence, adapted from the Mochary Method's note on firing well</h4>
+  <ul>
+    <li>Say up front that this will be a hard conversation.</li>
+    <li>Say the decision plainly in the first minute. "I'm letting you go." Don't bury it after five minutes of preamble.</li>
+    <li>Say that the decision isn't changeable, so they're not spending the next ten minutes arguing a case that can't win.</li>
+    <li>Say why, briefly and factually, referring to things you've already discussed.</li>
+    <li>Say what you did to create this situation. This is not a formality, and the curriculum is explicit that recruiting, onboarding, and management all contributed.</li>
+    <li>Say exactly how you'll help: severance, timing, references, introductions, and how you'll act as their agent in finding the next role.</li>
+    <li>Cover the practical steps, including handover and their last day.</li>
+    <li>Then stop talking. "I imagine you're feeling anger, fear, and sadness. Would you be willing to share your thoughts with me?" Repeat back what they say so they know it landed.</li>
+  </ul>
+</div>
+
+<p>Managers skip that last step because they want the meeting over, and it does more than anything else to shape how the person remembers the whole thing. You don't have to fix their feelings or agree with their version of events. Listen properly, and show them you heard it.</p>
+
+<p>Matt Mochary describes what the offer of help sounds like when he does it himself.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Becoming the person's agent.</strong> The player below is queued to 20:19, the exact moment Matt Mochary explains how he handles letting someone go. <a href="https://www.youtube.com/watch?v=bCel0X2Ta7U&t=1219s">Watch on YouTube</a>.</p>
+  <blockquote>"I try to do it with a massive amount of compassion, because I know it's brutal. I mean, losing your spouse, your home, and your job, these are the three most traumatic things that can happen to you... I want to be there and help them through that process and actively help them find their dream job, because there is a place that absolutely needs them. And so what I do is I become their agent."</blockquote>
+  <div class="nugget-who"><strong>Matt Mochary</strong>, CEO coach to founders at Coinbase, OpenAI, and Reddit · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/bCel0X2Ta7U?start=1219" title="Matt Mochary at 20:19" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>He gives himself a test for whether it worked, which is that he's stayed friends with everyone he's let go (21:04). Whether or not you'd want that, it's a useful thing to picture before you plan the conversation.</p>
+
+<p>On the help you offer, the curriculum goes further than most companies do. It suggests severance of two months at an absolute minimum and realistically three or more, and that you actively work your network on the person's behalf: write a description of their strengths, post it with your endorsement if they're comfortable with that, and offer to send a recommendation to anyone who gets them past a first round. It also predicts the feeling that gets in the way, which is anger, and the urge to not give this person another penny. Its advice is to feel it and let it pass before you decide anything.</p>
+
+<h2 id="what-to-say-to-the-team-afterward">What to say to the team afterward</h2>
+
+<p>Your team will read how you treat someone on their way out as information about how you'd treat them. That's the real audience for the announcement, and the Mochary Method note is direct about how to handle it: announce the departure, and do not blame or criticize the person. Praise what they contributed, and take ownership yourself for not having matched their skills to what the company needed.</p>
+
+<div class="callout">
+  <h4>Handling the announcement</h4>
+  <ul>
+    <li>Tell the team quickly, in a group setting, before it travels as a rumor.</li>
+    <li>Say that the person has left, thank them for specific contributions, and stop there. Don't make a case against them.</li>
+    <li>Let the person write their own message if they want to.</li>
+    <li>Say what happens to their work: who's covering it, what's paused, when you'll decide on backfill.</li>
+    <li>Follow up in one-on-ones and ask each person directly whether they're feeling fear or anger about it. Let them say the whole thing without defending yourself.</li>
+    <li>Say what you're changing so it doesn't happen the same way again.</li>
+  </ul>
+</div>
+
+<p>Expect the question "should I be worried?" from at least one person. Answer it honestly. If they're doing well, say so plainly and give an example. If someone else on the team is also struggling, they should already know that from you, which brings you back to the no-surprises rule.</p>
+
+<p>Keep confidences you agreed to keep. People will ask for details, and the details belong to the person who left.</p>
+
+<h2 id="looking-after-yourself-through-it">Looking after yourself through it</h2>
+
+<p>This is one of the harder things you do as a manager, and it's normal to sleep badly, to draft the conversation twenty times, and to feel guilty for months. Molly Graham describes a test she learned from her own manager for when she's stuck on a decision like this.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Separating the decision from the delivery.</strong> The player below is queued to 66:06, the exact moment Molly Graham describes the test she uses on hard people decisions. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=3966s">Watch on YouTube</a>.</p>
+  <blockquote>"If there were no emotions involved, if this person had no negative reaction to this, what would I do? And then that's the thing you should do, and then you just do it. And then the question is, how do I communicate this to them where their pain is lowest... in the kindest way possible."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Facebook, Google, Quip, and the Chan Zuckerberg Initiative · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=3966" title="Molly Graham at 66:06" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her point is that the decision and the delivery are two separate problems, and mixing them is what keeps managers stuck for months. Work out what's right when you take the emotion out, then put all your care into how you deliver it.</p>
+
+<div class="callout">
+  <h4>Things that help</h4>
+  <ul>
+    <li>Talk to your own manager early, before you've decided anything. Use your <a href="/playbooks/one-on-one-with-your-manager">one-on-one</a> for it rather than dropping it on them in a crisis.</li>
+    <li>Find one peer manager who's done this and ask them how theirs went, including the parts that went badly.</li>
+    <li>Write the conversation out and say it out loud to someone before the day.</li>
+    <li>Don't schedule anything heavy for the rest of that day. You'll be useless, and that's fine.</li>
+    <li>Afterward, write down what you'd do differently in hiring, onboarding, or your own management. That's the part that stops it repeating.</li>
+    <li>Ask yourself whether you're avoiding this because it's hard or because it's wrong. Those are difficult to tell apart on your own, which is why the previous two items matter.</li>
+  </ul>
+</div>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How long should I give someone before deciding?</h3>
+<p>Long enough for the change you're asking for to be visible in real work, which for most roles means a quarter rather than a month. Kim Scott's regret was ten months of silence. The fix for that is to name the problem earlier, and then still give a fair amount of time once you have.</p>
+
+<h3>Should I tell someone their job is at risk?</h3>
+<p>Yes, once the situation has genuinely reached that point, and check with HR on how your company words it. Someone who doesn't know the stakes can't make an informed choice about how hard to work at this or whether to start looking elsewhere. Faith Meyer's escalation process puts that sentence at the third step for exactly this reason.</p>
+
+<h3>What if the problem is that I don't enjoy working with them?</h3>
+<p>Separate the two. Write down the specific work outcomes that aren't happening. If you can't fill that list, the problem is a working relationship, and that's a different conversation, often about how you two communicate. If you can fill it, work the outcomes and leave your personal feelings out of the wording.</p>
+
+<h3>They've improved, but only a little. What now?</h3>
+<p>Go back to your own test: if they held this new level, would you be glad to have them? If yes, say so and close out the plan. If no, say that plainly now rather than extending quietly, because an extension you never explain tells them the bar wasn't real.</p>
+
+<h3>What if my own manager is pushing me to move faster than I think is fair?</h3>
+<p>Ask what's driving the timeline, since it's often budget or a reorg they haven't told you about. Then say what you need: the person hasn't had a clear ask yet, or hasn't had the support attached, and you want a specific amount of time. Bring a plan and a date rather than a request to wait.</p>
+
+<h3>Should I write everything down?</h3>
+<p>Keep notes of what you agreed in each conversation and share them with the person, so you both have the same version. Do that because shared notes make the next conversation honest, and because someone can't act on feedback they've misremembered. Your HR partner will tell you what your company additionally requires.</p>
+
+<h2 id="the-checklist">The checklist</h2>
+
+<div class="callout">
+  <h4>Before you conclude anything</h4>
+  <ul>
+    <li>Name one specific thing you saw, in the next one-on-one, without a verdict attached.</li>
+    <li>Run the clarity, capability, and caring diagnostic before you decide what to do.</li>
+    <li>Check every ask you've made against the video camera test.</li>
+    <li>Ask whether the role changed under them, and whether their strengths fit a different job.</li>
+    <li>Bring in HR early and follow your company's process.</li>
+  </ul>
+  <h4>While you're giving them a real chance</h4>
+  <ul>
+    <li>Two or three specific behaviors, a real timeframe, and support attached to each one.</li>
+    <li>Ask yourself honestly whether you'd be glad to keep them if they passed.</li>
+    <li>Escalate in clear steps, and say the stakes out loud at the third one.</li>
+    <li>Check in weekly and name the small improvements when you see them.</li>
+  </ul>
+  <h4>If it still ends</h4>
+  <ul>
+    <li>Say the decision in the first minute, and say it isn't changeable.</li>
+    <li>Own your part in how this happened.</li>
+    <li>Be specific about severance, references, and the help you'll give.</li>
+    <li>Stop talking and let them respond, then repeat back what you heard.</li>
+    <li>Tell the team quickly, praise the person, take the responsibility yourself.</li>
+    <li>Ask each remaining person how they're feeling about it, in private.</li>
+    <li>Write down what you'll change in hiring, onboarding, or your management.</li>
+  </ul>
+</div>
+
+<p>If you're heading into a review cycle with someone whose performance is the open question, the <a href="/playbooks/how-to-run-a-performance-review">performance review playbook</a> covers the meeting itself. And if part of what you're dreading is telling your own leadership that a team commitment is going to slip because of this, <a href="/playbooks/tell-leadership-project-is-delayed">the playbook on delivering that news</a> has the structure.</p>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=bCel0X2Ta7U">How to Work Through Fear, Give Hard Feedback, and Do Layoffs with Grace, with Matt Mochary</a> (Nov 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From Theory to Practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=2XgU6T4DalY">How Netflix Builds a Culture of Excellence, with Elizabeth Stone (CTO)</a> (Feb 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=bvF0ZM8DjuI">Scripts for Difficult Conversations, with Alisa Cohn</a> (Jan 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=1GDVum5IarI">A Guide to Difficult Conversations and Building High-Trust Teams, with Rachel Lockett</a> (Nov 2025)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=twzLDx9iers">Molly Graham's Frameworks for Leading Through Chaos, Change and Scale</a> (Jan 2026)</li>
+    <li>Mochary Method: <a href="https://docs.google.com/document/d/1J3c8lGMzPJXMMSWNIh7UCsv-_4qKYZkrkwloIbu3BW8/edit">Firing Well</a></li>
+    <li>Mochary Method: <a href="https://docs.google.com/document/d/1tsqGVufCXilMKmL6uaZLyvzirhj0Tmb_PfNc_OWWPb8/edit">What to Do When Feedback Isn't Landing Due to Clarity and Capability</a>, by Celine Teoh</li>
+    <li>Mochary Method: <a href="https://docs.google.com/document/d/13cLE5EH8IpkgdB8fsDDQBZLC0SuDq7J-epeNTeL60zg/edit">When Feedback Isn't Landing Due to Motivation</a>, by Celine Teoh</li>
+    <li>Mochary Method: <a href="https://docs.google.com/document/d/1Z-PGn0NBJVw0gJRWPakTdSFHqt0AveN8t5BzufveQNE/edit">Manager's "Three Strikes" Escalation Process</a>, by Faith Meyer</li>
+    <li>Mochary Method: <a href="https://docs.google.com/document/d/1wi714sobuQP72sKXw6J_gkwkhtVh1t6--op_Pk0YPxA/edit">Feedback</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#say-something-the-first-week-you-notice">Say something the first week you notice</a>
+  <a href="#work-out-whether-it-s-clarity-capability-or-motivation">Work out whether it's clarity, capability, or motivation</a>
+  <a href="#check-whether-the-role-is-the-problem">Check whether the role is the problem</a>
+  <a href="#write-an-improvement-plan-the-person-could-actually-pass">Write an improvement plan the person could actually pass</a>
+  <a href="#escalate-in-steps-so-the-stakes-are-clear-each-time">Escalate in steps, so the stakes are clear each time</a>
+  <a href="#nobody-should-be-surprised">Nobody should be surprised</a>
+  <a href="#running-the-conversation-when-the-answer-is-no">Running the conversation when the answer is no</a>
+  <a href="#what-to-say-to-the-team-afterward">What to say to the team afterward</a>
+  <a href="#looking-after-yourself-through-it">Looking after yourself through it</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-checklist">The checklist</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Why managers hover, how to tell anxiety from distrust, the update cadence that gets you left alone, and what to do when it doesn't improve.">
+<meta name="color-scheme" content="light">
+<title>How to Work With a Micromanager | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/work-with-a-micromanager">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Work With a Micromanager","description":"Why managers hover, how to tell anxiety from distrust, the update cadence that gets you left alone, and what to do when it doesn't improve.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/work-with-a-micromanager"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/work-with-a-micromanager">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Work With a Micromanager">
+<meta property="og:description" content="Why managers hover, how to tell anxiety from distrust, the update cadence that gets you left alone, and what to do when it doesn't improve.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Work With a Micromanager">
+<meta name="twitter:description" content="Why managers hover, how to tell anxiety from distrust, the update cadence that gets you left alone, and what to do when it doesn't improve.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Manager 1:1s</div>
+  <h1>How to work with a micromanager</h1>
+  <p class="post-sub">What's actually driving the check-ins, the conversation that finds out, and the updates that make your manager stop asking.</p>
+  <div class="post-meta">14 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Your manager wants to see the deck before you send it, asks how it's going the same afternoon you started, and rewrites your email to a customer you've been talking to for a year. You've started routing around them, which they can tell, so now they check more.</p>
+<p>This article covers what's usually driving the behavior, and how to tell an anxious manager from one who has a real concern about your work. It also covers the updates that pre-empt the check-ins, and how to agree on what needs approval and what doesn't. Read the section on diagnosing it first, because the fix for a nervous manager and the fix for one who has been told to watch you are completely different.</p>
+<p>The advice here comes from Molly Graham, who led teams at Google, Facebook, and Quip and now coaches leaders through fast growth; Wes Kao, co-founder of Maven and the altMBA, whose most-shared writing is about managing up; Claire Hughes Johnson, chief operating officer at Stripe from about 160 people to several thousand; Kim Scott, author of <em>Radical Candor</em>; Ravi Mehta, former chief product officer at Tinder; Ethan Evans, who spent over fifteen years at Amazon and retired as a vice president; and the Mochary Method, the coaching curriculum Matt Mochary uses with startup CEOs. We've also written the manager's side of this, in our guide to <a href="/playbooks/how-to-delegate-as-a-manager">delegating without micromanaging</a>, and a lot of what follows comes from knowing what your manager is being told to do.</p>
+
+<h2 id="why-your-manager-keeps-checking-on-you">Why your manager keeps checking on you</h2>
+<p>Almost nobody sets out to micromanage. What happens is that a manager hands over work they used to do themselves, and handing it over feels like a loss.</p>
+<p>Molly Graham has the phrase most managers now use for this. She describes joining a fast-growing company as being handed a giant pile of Legos and told to build something. You build a house, you get good at building houses, and then someone tells you it's actually a neighborhood, hands your half-built house to a new hire, and asks you to go build dog parks.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>What the handoff feels like from the other side.</strong> The player below is queued to 13:10, the exact moment Molly Graham describes it. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=790s">Watch on YouTube</a>.</p>
+  <blockquote>"What happens when someone does that to you is you're like, wait a minute. First of all, I'm not done with this house, and I'm worried that this person's going to screw it up. I'm also worried that building houses is actually the most fun thing, and that I'm going to give the Legos to that person, and they're going to have all the fun work, and I'm going to hate building dog parks."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Google, Facebook, and Quip · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=790" title="Molly Graham at 13:10" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Graham has been doing this for close to twenty years and says the feelings still hit her. When your manager is standing over your work, you're the new hire who just got handed the half-built house. Most of the time the hovering is about what they gave up rather than about what they think of you.</p>
+<p>The second driver is that they're accountable for something they can no longer see. Your manager has a number they have to answer for, and once you own the work that moves it, their only view of it is whatever you tell them. If you tell them very little, they'll go looking. Most of what people call micromanagement is a manager filling an information gap in the most annoying way available.</p>
+<p>None of this makes it fine. It just means the lever you have is bigger than it looks, because a lot of the behavior responds to information rather than to argument.</p>
+
+<h2 id="work-out-which-kind-you-re-dealing-with">Work out which kind you're dealing with</h2>
+<p>There are roughly three reasons a manager checks on you constantly, and they need different responses. Guessing wrong wastes months.</p>
+<div class="callout">
+  <h4>They're anxious</h4>
+  <ul>
+    <li>They check on everyone, not just you, and they check hardest on whatever is closest to a deadline.</li>
+    <li>The questions are about status rather than quality. "Where is this?" more than "why did you do it that way?"</li>
+    <li>They calm down noticeably when you tell them something before they ask.</li>
+    <li>They're new to the role, or newly responsible for an area they used to do themselves.</li>
+  </ul>
+  <h4>They don't trust your work yet</h4>
+  <ul>
+    <li>The checking is concentrated on one kind of task or one kind of decision.</li>
+    <li>They edit rather than ask. You get the deck back marked up instead of a question about it.</li>
+    <li>It got worse after a specific incident you can probably name.</li>
+    <li>They're fine with your peers doing the same thing unsupervised.</li>
+  </ul>
+  <h4>They've been told to watch you</h4>
+  <ul>
+    <li>It started suddenly, without anything changing in your work.</li>
+    <li>They ask for things in writing that used to be fine verbally.</li>
+    <li>They start mentioning their boss, or a customer, or legal, in the requests.</li>
+    <li>Your last review was more equivocal than you expected, or there wasn't one.</li>
+  </ul>
+</div>
+<p>The third one is the one people miss. A manager's own boss tells them to watch a team more closely after a customer complains, after an audit, or once HR starts documenting a performance concern. Your manager may not be allowed to tell you which of those it is, but they can usually tell you that something changed if you ask them directly.</p>
+<p>There's a fourth possibility worth knowing about, because your manager may have been taught it deliberately. Ravi Mehta, who was chief product officer at Tinder and a product director at Facebook, coaches leaders to get temporarily hands-on when they don't like the direction a team is heading.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Hovering on purpose, for a while.</strong> The player below is queued to 68:22, the exact moment Ravi Mehta describes the approach. <a href="https://www.youtube.com/watch?v=tncs0m5pmQg&t=4102s">Watch on YouTube</a>.</p>
+  <blockquote>"There's another really effective way of leading, which is selective micromanagement. If you don't feel confident in the direction that your team is moving, the right answer is not to be hands off and to let them go in that wrong direction. The right answer is to micromanage, but do it in a very tactical, in a very temporary way, so that you can help them understand what is the right direction moving forward, so that you can then pull back."</blockquote>
+  <div class="nugget-who"><strong>Ravi Mehta</strong>, former CPO of Tinder, former product director at Facebook · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/tncs0m5pmQg?start=4102" title="Ravi Mehta at 68:22" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Mehta's test for whether it's working is that the close supervision gets replaced by a shared way of making the decision, so the manager can back off. That gives you a question to ask: what would you need to see before you stop reviewing these? Someone doing this deliberately will have an answer ready, and someone who's just anxious usually won't, which tells you something either way.</p>
+<p>Before you go and ask, do a pass on your own part in it. Claire Hughes Johnson puts self-knowledge at the front of everything else in management, and it applies just as much from below.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Knowing yourself first.</strong> The player below is queued to 27:53, the exact moment Claire Hughes Johnson explains why she starts there. <a href="https://www.youtube.com/watch?v=Mv0o9o4MRh0&t=1673s">Watch on YouTube</a>.</p>
+  <blockquote>"Self-awareness to build mutual awareness is actually the most fundamental thing you need to crack if you're going to succeed at company building or management, in my opinion. The more that you can seek feedback, seek to understand your motivators, your strengths, your blind spots, your tendencies, and take that on board and expose it to others, you're going to be a much more effective company builder and manager."</blockquote>
+  <div class="nugget-who"><strong>Claire Hughes Johnson</strong>, former COO of Stripe, author of <em>Scaling People</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Mv0o9o4MRh0?start=1673" title="Claire Hughes Johnson at 27:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>The honest questions are: how often do they hear from me without asking, do they find out about problems from me or from someone else, and have I missed a date recently without flagging it early. If any of those is bad, some of the checking is a response to how you've been communicating, and that part is yours to fix.</p>
+
+<h2 id="ask-your-manager-what-they-re-worried-about">Ask your manager what they're worried about</h2>
+<p>The conversation most people have goes badly because it's an accusation with a question mark on the end. "Do you not trust me?" gives your manager exactly one safe answer, and it isn't a useful one.</p>
+<p>Ask about the risk instead. Managers can talk about risk all day, and the answer tells you which of the three situations you're in.</p>
+<div class="callout">
+  <h4>Openings that get you a real answer</h4>
+  <ul>
+    <li>"I want to make sure you're comfortable with how the migration is going. What's the part you'd most want to catch early if it went wrong?"</li>
+    <li>"You've been reviewing every customer email before it goes. What's the risk you're protecting against? I'd like to take that off your plate if I can."</li>
+    <li>"Has something changed in how this team is being watched? I'd rather know than guess."</li>
+    <li>"If you had to name one thing I do that makes you want to check in, what would it be?"</li>
+  </ul>
+  <h4>Bring one specific example rather than a general pattern</h4>
+  <ul>
+    <li>"On Tuesday you asked for the deck at four and again at six. I want to understand what was driving that so it doesn't happen next time."</li>
+  </ul>
+</div>
+<p>The Mochary Method has a format for raising something like this in a 1:1 that keeps it from turning into a complaint. You write down the issue, then <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">what you did to help create the situation</a>, then a proposed solution with specific actions and dates. The middle section is the one that does the work. If you can name your own contribution, you usually find a fix that doesn't depend on your manager changing first. Send it a day ahead so they can think about it rather than react in the meeting.</p>
+<p>Then be ready for the answer to be about expectations rather than about trust. Molly Graham's rule for diagnosing anything on a team is to check the boring structural stuff before you conclude anything about the people.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Where performance problems usually start.</strong> The player below is queued to 43:53, the exact moment Molly Graham gives the first question to ask. <a href="https://www.youtube.com/watch?v=twzLDx9iers&t=2633s">Watch on YouTube</a>.</p>
+  <blockquote>"That equation again, I would say 80% of problems that I see, performance issues, like I always start with, does this person actually know what you expect of them? If not, go back to step one. Do you know what I mean? Clarify expectations. So the waterline model is just helpful for reminding us, like, start at the top."</blockquote>
+  <div class="nugget-who"><strong>Molly Graham</strong>, former leader at Google, Facebook, and Quip · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/twzLDx9iers?start=2633" title="Molly Graham at 43:53" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Graham says she's taken over a lot of teams, and almost every time she arrives, nobody knows what their job is and nobody knows what success looks like. She runs the conversation from both sides: here's what I'm seeing, now tell me what you think your job is and what number you were hired to move. Run it from your side too. Say what you believe you own and what you think success looks like, and watch whether your manager's version matches. A lot of hovering turns out to be two people with different pictures of the same job.</p>
+
+<h2 id="send-the-update-before-they-ask-for-it">Send the update before they ask for it</h2>
+<p>This changes more than anything else on the list, and people skip it because it feels like extra work for a problem someone else created.</p>
+<p>Wes Kao's argument is that the people who are best at this are the senior ones, which is part of how they got senior.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Why senior people get asked fewer questions.</strong> The player below is queued to 32:25, the exact moment Wes Kao explains it. <a href="https://www.youtube.com/watch?v=4jtGsyz4jLs&t=1945s">Watch on YouTube</a>.</p>
+  <blockquote>"They're great at keeping their bosses in the loop on what's happening, so their bosses aren't constantly having to ask and, you know, pepper them with questions every day on 'hey, how's this going' or 'what's the status of this' or 'do we take care of this thing'. They're proactive in communicating so their boss knows that certain things are taken care of."</blockquote>
+  <div class="nugget-who"><strong>Wes Kao</strong>, co-founder of Maven and the altMBA · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4jtGsyz4jLs?start=1945" title="Wes Kao at 32:25" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Kao also says most people assume their boss is supposed to manage them, and resent having to manage in the other direction. You can keep thinking that and your career will probably be fine. But if you manage up, you get more trust and more opportunities, and in this specific case you get left alone.</p>
+<p>In the same conversation, Lenny Rachitsky describes what he sent his own manager every week: an email titled "the state of Lenny", with three sections. His current priorities, the blockers he needed help with, and whatever was on his mind that week. He put the blockers near the top so they'd actually get read.</p>
+<p>Propose the cadence yourself rather than waiting to be handed one. A schedule you suggested is much harder for your manager to add to, and much easier for you to point back to when they ask for something outside it.</p>
+<div class="callout">
+  <h4>The weekly update, four lines</h4>
+  <ul>
+    <li><strong>Shipped.</strong> What moved since the last one, with the number if there is one.</li>
+    <li><strong>Next.</strong> The two or three things you're on this week and the dates you're holding.</li>
+    <li><strong>Blocked or at risk.</strong> What's slipping and what you're doing about it. Never let this section be empty when it shouldn't be.</li>
+    <li><strong>Need from you.</strong> The specific decisions or introductions you want, with a by-when.</li>
+  </ul>
+  <h4>How to propose it</h4>
+  <ul>
+    <li>"I'd like to send you a written update every Friday morning covering what shipped, what's at risk, and what I need from you. Would that let you hold questions until our 1:1 on Monday?"</li>
+    <li>"Tell me the two or three things you most want visibility on and I'll make sure those are always in it."</li>
+    <li>"If something is going to slip by more than a few days, I'll tell you the day I know, not on Friday."</li>
+  </ul>
+</div>
+<p>Two rules make this work. Send it on the same day every week without fail, because a cadence that's sometimes there is worse than no cadence. And put the bad news in it. An update that's only good news trains your manager to go looking for the rest, which is the exact behavior you're trying to stop. Our guide to <a href="/playbooks/concise-status-update-to-leadership">writing a concise status update</a> covers the format in more depth.</p>
+
+<div class="cta-band">
+  <h3>Count the questions you could have pre-empted</h3>
+  <p>Work Coach records your 1:1s and shows you every status question you answered that an update would have covered. Propose the new cadence out loud to a stand-in first.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="agree-on-what-needs-approval-and-what-doesn-t">Agree on what needs approval and what doesn't</h2>
+<p>Updates close the information gap, but they leave the permission problem alone, so you're still waiting on your manager to sign off on things you could decide yourself. That needs an explicit agreement, and the useful way to sort decisions is by how expensive they are to undo.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Sorting decisions by how reversible they are.</strong> The player below is queued to 33:33, the exact moment Wes Kao describes the judgment call. <a href="https://www.youtube.com/watch?v=4jtGsyz4jLs&t=2013s">Watch on YouTube</a>.</p>
+  <blockquote>"Is this a reversible decision, or is this one that is irreversible or difficult to reverse or expensive to reverse? Kind of using your sense of judgment so that you're not necessarily going to your boss for everything and telling them everything, like that's overwhelming for your manager who has a lot going on."</blockquote>
+  <div class="nugget-who"><strong>Wes Kao</strong>, co-founder of Maven and the altMBA · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/4jtGsyz4jLs?start=2013" title="Wes Kao at 33:33" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Write the three buckets down and take them to your manager. Most managers have never articulated this and will agree to more than you expect once they see it on paper.</p>
+<div class="callout">
+  <h4>The three buckets</h4>
+  <ul>
+    <li><strong>I decide and don't mention it.</strong> Reversible, low cost, inside my area. Copy changes, meeting agendas, which of two equivalent vendors, how I sequence my own week.</li>
+    <li><strong>I decide and tell you after.</strong> Reversible but you'd want to know. A scope trade-off inside an agreed deadline, a customer commitment under a set amount, a change to how the team runs a recurring meeting.</li>
+    <li><strong>I check with you first.</strong> Hard or expensive to undo. Anything touching pricing, anything a customer sees for the first time, headcount, public commitments, anything that pulls another team's time.</li>
+  </ul>
+  <h4>How to raise it</h4>
+  <ul>
+    <li>"I've written down what I think I decide alone and what should come to you. Can we go through it and see where we differ?"</li>
+    <li>"That third list has nine things on it. Which two could move up a bucket if the next month goes well?"</li>
+  </ul>
+</div>
+<p>Keep the third list short and be honest about it. If everything is on it, you haven't agreed to anything.</p>
+<p>The structural version of this is what the Mochary Method calls <a href="https://docs.google.com/document/d/1v72Mozz6Zr-3Knzcd9yNcs1E8-QKk5NkTVmR6pIQj98/edit">Areas of Responsibility</a>: every function in the company written down with exactly one name next to it. If your company has one, find out what it says about your area, because it's a lot easier to point at a document than to explain why you feel overmanaged. If it doesn't, Molly Graham's rule is worth quoting to your manager directly. She says two people owning a goal is nobody owning a goal, and that the work of putting one name next to each number is painful but it's the job. Our <a href="/playbooks/how-to-delegate-as-a-manager">guide for managers</a> walks through the same handoff from their side, and it's a reasonable thing to send your manager if the relationship can take it.</p>
+
+<h2 id="pick-one-small-thing-and-build-a-record-on-it">Pick one small thing and build a record on it</h2>
+<p>Conversations rarely rebuild trust on their own. What does it is a handful of things going well without your manager's involvement, and you can set those up on purpose rather than waiting for one to come along.</p>
+<p>Pick something with three properties: it's genuinely yours, it's small enough that a mistake wouldn't be expensive, and it produces a visible result within a few weeks. Then negotiate a clean run at it.</p>
+<div class="callout">
+  <h4>How to set it up</h4>
+  <ul>
+    <li>Name it. "I'd like to run the onboarding emails end to end for the next six weeks with no review step."</li>
+    <li>Agree what good looks like before you start, in a number if there is one. Agree it in writing.</li>
+    <li>Name the conditions where you'd bring them in early. "I'll come to you the same day if open rates drop below where they are now."</li>
+    <li>Set the review date at the start, and say what happens if it goes well. "If this lands, I'd like to do the same on the lifecycle campaigns."</li>
+    <li>Report the result whether it went well or not. The reporting is most of the point.</li>
+  </ul>
+</div>
+<p>Six weeks of something working, reported by you before anyone asked, is worth more than any amount of explaining that you're capable. Then ask for the next thing while the evidence is fresh. Managers loosen up in increments, and the increment is easiest to get right after a win.</p>
+<p>Mochary's <a href="https://docs.google.com/document/d/1a5s0RKKOgAY_JjTP40gwFfazjWVrfzfWz2-LFZQjB60/edit">format for reviewing actions</a> is a useful shape for these check-ins. For each thing you said you'd do, you write whether it's done. If it is, the learnings or next steps. If it isn't, three things: what blocked you, whether you still want to do it and by when, and what you'll change so you don't get blocked the same way again. Running your own review that way, before your manager runs it for you, changes what the meeting is about.</p>
+
+<h2 id="when-the-problem-is-actually-your-work">When the problem is actually your work</h2>
+<p>Sometimes the honest answer is that the checking is a reasonable response to something real. Work has come back rough, a date got missed, or a customer heard something they shouldn't have. Managers rarely say this clearly, partly because it's uncomfortable and partly because in some companies they're not supposed to until it's documented.</p>
+<p>So go and find out. Kim Scott's approach is to have one question you always ask, refine it until it works, and use it often enough that people believe you want the answer.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question that gets you a straight answer.</strong> The player below is queued to 40:32, the exact moment Kim Scott gives her versions of it. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=2432s">Watch on YouTube</a>.</p>
+  <blockquote>"Two versions of this question are 'what am I doing wrong', or 'what could I do or stop doing that would make it easier to work with me', or 'what should I stop doing, what should I start doing, what should I continue doing'. Those are some common ones."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of <em>Radical Candor</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2432" title="Kim Scott at 40:32" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Scott's advice is to save five minutes at the end of your 1:1 for it, ask your manager and your closest cross-functional colleagues, and vary the wording so it doesn't sound rehearsed. She also says to expect the first answer to be "no, everything's fine", and to keep going. If someone clearly hates being put on the spot, tell them you'll ask again next time and you want them to have noticed something.</p>
+<p>Two follow-ups are worth having ready. Ask "is there a version of my work you'd stop reviewing if it looked different?", which turns a vague concern into a specific standard. And ask "are we in a place where this needs to be written down?", which is a direct way to find out whether a performance process has started without you being told. If the answer to that is yes, our guide to <a href="/playbooks/promotion-denied-questions">the questions to ask when you didn't get what you expected</a> covers how to get a specific bar out of a manager who's being careful.</p>
+<p>If it turns out the concern is real, that's actually the most fixable version of this problem. Once you have a named gap with a date on it, you can go and close it, which is more than you can do with a manager who's uneasy about you for reasons nobody will say out loud.</p>
+
+<h2 id="when-none-of-this-is-working">When none of this is working</h2>
+<p>Give it a quarter. That's long enough for a cadence to hold, one small thing to go well, and a decision agreement to get tested. If you've done all of that and you're still being asked for status every day, more patience isn't going to fix it.</p>
+<div class="callout">
+  <h4>Before you conclude it won't change</h4>
+  <ul>
+    <li>Did you actually keep the cadence, every week, including the weeks it went badly?</li>
+    <li>Did you say out loud what you wanted, or only hint at it? "I'd like to send this without a review step" is a request. Being annoyed is not.</li>
+    <li>Did you give them anything to say yes to, or only things to stop doing?</li>
+    <li>Has your manager's own situation changed? Someone whose boss is on their back cannot give you room they don't have.</li>
+  </ul>
+  <h4>What to try next</h4>
+  <ul>
+    <li>Name it once, plainly and calmly, with two examples and the cost. "I've sent a weekly update for eight weeks and I'm still being asked for status daily. It's costing me about half a day a week. What would need to be true for that to change?"</li>
+    <li>Use your skip-level meeting to ask about norms rather than to complain. "How much autonomy would you expect someone at my level to have on this kind of project?" gives you a benchmark without naming your manager.</li>
+    <li>Ask for a defined scope where the answer is already agreed, even if it's small. Some room is worth more than an argument about all of it.</li>
+    <li>If your manager's behavior crosses into something worse, keep dated notes and go to HR with specifics rather than a characterization.</li>
+  </ul>
+</div>
+<p>On raising it directly, our guide to <a href="/playbooks/disagree-with-boss-respectfully">disagreeing with your boss</a> covers how to say a hard thing without your manager hearing it as an attack, and our guide to <a href="/playbooks/one-on-one-with-your-manager">running a useful 1:1</a> covers where in the meeting to put it.</p>
+<p>And it is sometimes right to leave. Ethan Evans spent over fifteen years at Amazon, most of it as a vice president, and someone whose new leader had taken away their independence asked him this exact question.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>What to try, and when to stop trying.</strong> The player below is queued to 71:24, the exact moment Ethan Evans answers a question about a new leader forcing a culture of micromanagement. <a href="https://www.youtube.com/watch?v=Ya-XheBvZ9I&t=4284s">Watch on YouTube</a>.</p>
+  <blockquote>"My usual answers are: try to earn trust, try to talk to them where they're not humiliated, in private, ask them what would allow them to give you more flexibility, and then if none of that works, change teams. Your life is too short to be wasted working for a bad manager. If you try to do the right things and your manager won't change, get the hell out."</blockquote>
+  <div class="nugget-who"><strong>Ethan Evans</strong>, retired Amazon vice president · Level Up</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Ya-XheBvZ9I?start=4284" title="Ethan Evans at 71:24" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Note the order he puts it in. Earning trust, raising it privately, and asking what would change their mind all come before changing teams, and most people skip straight past them to being frustrated. But he doesn't pretend the last step isn't real.</p>
+<p>The cost of staying isn't only the annoyance. It's that you stop making decisions, and a couple of years of not making decisions shows up in your next interview, where you'll be asked what you owned. If you're at that point, start looking while you're still employed and treat the job you have as practice for the conversations. There's no prize for outlasting it.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3>What are the signs of a micromanager?</h3>
+<p>They want to approve work you were hired to do, they ask for status more often than the work changes, they rewrite rather than give feedback, they want to be copied on everything, and decisions stall while they're busy. The strongest signal is that your peers at the same level make calls you have to ask permission for.</p>
+<h3>How do I get my manager to trust me?</h3>
+<p>Pick something small that's genuinely yours, agree in advance what a good result looks like, run it without a review step for a set period, and report the outcome yourself before anyone asks. Do that two or three times. Trust is built from a record of specific things going well without them, and you can arrange those on purpose.</p>
+<h3>Should I tell my boss they're micromanaging me?</h3>
+<p>Not in those words. The label puts them on the defensive and gives you nothing to do next. Describe the specific behavior, the cost, and what you'd like instead: "I'm asked for status on this most days, it's about half a day a week, and I'd like to try a Friday written update instead."</p>
+<h3>Is it micromanagement if I'm new?</h3>
+<p>Usually not. Close supervision in your first few months is a manager doing their job, and it should get lighter as they see your work. Ask at the start what would need to be true for the check-ins to reduce, and by when. If nothing has changed by month four, that's worth raising.</p>
+<h3>What if my manager was told to watch me?</h3>
+<p>Ask directly whether something changed and whether anything needs to be written down. Managers can often confirm that a concern exists even when they can't say where it came from. If a performance process has started, get the specific bar and the date in writing, because that's the version of this you can actually close out.</p>
+<h3>Can I go over my manager's head?</h3>
+<p>Use a skip-level to ask what normal looks like at your level rather than to report your manager. Going over their head to complain almost always gets back to them and makes the next six months worse. Save the escalation for behavior that's genuinely out of bounds, and bring dates and examples when you do.</p>
+
+<h2 id="the-whole-thing-on-one-page">The whole thing on one page</h2>
+<div class="callout">
+  <h4>Diagnose it</h4>
+  <ul>
+    <li>Work out whether it's anxiety, a specific concern about your work, or an instruction from above.</li>
+    <li>Check your own part first: how often they hear from you, and whether bad news reaches them from you.</li>
+    <li>Ask what risk they're protecting against, with one specific example, not a pattern.</li>
+    <li>Say what you think you own and what success looks like, and see if their version matches.</li>
+  </ul>
+  <h4>Change the inputs</h4>
+  <ul>
+    <li>Propose a weekly written update: shipped, next, at risk, need from you.</li>
+    <li>Send it the same day every week, and put the bad news in it.</li>
+    <li>Write down the three decision buckets and agree them out loud.</li>
+    <li>Keep the check-with-me list short and ask what would move two items off it.</li>
+  </ul>
+  <h4>Build the record</h4>
+  <ul>
+    <li>Take one small thing with no review step for a fixed period.</li>
+    <li>Agree the standard and the review date before you start.</li>
+    <li>Report the result yourself, good or bad, and ask for the next thing straight after.</li>
+    <li>Ask what you should start, stop, and continue, and keep asking until you get a real answer.</li>
+  </ul>
+  <h4>If it doesn't move</h4>
+  <ul>
+    <li>Give it a quarter of holding the cadence before you conclude anything.</li>
+    <li>Name it once, calmly, with two examples and the cost in hours.</li>
+    <li>Use a skip-level to ask about norms rather than to complain.</li>
+    <li>If nothing shifts, start looking, and count the decisions you're no longer making as part of the cost.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=twzLDx9iers">Molly Graham's Frameworks for Rapid Career Growth</a> (Jan 2026)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=4jtGsyz4jLs">Persuasive Communication and Managing Up, with Wes Kao</a> (Aug 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=Mv0o9o4MRh0">Lessons from Scaling Stripe, with Claire Hughes Johnson</a> (Mar 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From Theory to Practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=tncs0m5pmQg">How to Build Your Product Strategy Stack, with Ravi Mehta</a> (Jan 2023)</li>
+    <li>Level Up with Ethan Evans: <a href="https://www.youtube.com/watch?v=Ya-XheBvZ9I">COVID-19: The Ultimate Leadership Test</a> (Aug 2020)</li>
+    <li>Mochary Method curriculum: <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">Issue / Proposed Solution template (1-1)</a>, <a href="https://docs.google.com/document/d/1v72Mozz6Zr-3Knzcd9yNcs1E8-QKk5NkTVmR6pIQj98/edit">Areas of Responsibility (AORs)</a>, and <a href="https://docs.google.com/document/d/1a5s0RKKOgAY_JjTP40gwFfazjWVrfzfWz2-LFZQjB60/edit">Actions: how to review</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#why-your-manager-keeps-checking-on-you">Why your manager keeps checking on you</a>
+  <a href="#work-out-which-kind-you-re-dealing-with">Work out which kind you're dealing with</a>
+  <a href="#ask-your-manager-what-they-re-worried-about">Ask your manager what they're worried about</a>
+  <a href="#send-the-update-before-they-ask-for-it">Send the update before they ask for it</a>
+  <a href="#agree-on-what-needs-approval-and-what-doesn-t">Agree on what needs approval and what doesn't</a>
+  <a href="#pick-one-small-thing-and-build-a-record-on-it">Pick one small thing and build a record on it</a>
+  <a href="#when-the-problem-is-actually-your-work">When the problem is actually your work</a>
+  <a href="#when-none-of-this-is-working">When none of this is working</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-whole-thing-on-one-page">The whole thing on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

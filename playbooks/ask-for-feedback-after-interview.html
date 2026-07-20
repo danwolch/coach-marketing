@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Email scripts for requesting interview feedback, a same-day debrief method, and a plan for turning every interview into a better next one.">
+<meta name="color-scheme" content="light">
+<title>How to Ask for Feedback After a Job Interview (With Scripts) | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/ask-for-feedback-after-interview">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Ask for Feedback After a Job Interview (With Scripts)","description":"Email scripts for requesting interview feedback, a same-day debrief method, and a plan for turning every interview into a better next one.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/ask-for-feedback-after-interview"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/ask-for-feedback-after-interview">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Ask for Feedback After a Job Interview (With Scripts)">
+<meta property="og:description" content="Email scripts for requesting interview feedback, a same-day debrief method, and a plan for turning every interview into a better next one.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Ask for Feedback After a Job Interview (With Scripts)">
+<meta name="twitter:description" content="Email scripts for requesting interview feedback, a same-day debrief method, and a plan for turning every interview into a better next one.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Interview Prep</div>
+  <h1>How to ask for feedback after a job interview</h1>
+  <p class="post-sub">Most companies won't tell you why you were rejected. Here's how to ask in a way that gets answered, and what to do when nobody answers at all.</p>
+  <div class="post-meta">8 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>Most candidates do the same thing after a rejection: read the template email again, guess what went wrong, and carry that guess into the next interview.</p>
+
+<p>This article covers how to ask for feedback in a way people can actually answer, and how to debrief an interview while you still remember what happened. It also covers turning whatever you learn into one change you can practice. Ask once, write your notes the same day, and plan to rely on them, because most companies will tell you very little.</p>
+
+<p>The advice comes from Phyl Terry, whose book Never Search Alone has put thousands of candidates through job search councils; Lauren Ipsen, who recruits senior executives at Daversa Partners; and Matt Abrahams, who lectures on strategic communication at Stanford Graduate School of Business.</p>
+
+<h2 id="ask-for-a-signal-before-the-interview-ends">Ask for a signal before the interview ends</h2>
+
+<p>The best time to find out about a concern is while you can still do something about it. Near the end of the conversation, ask one question that invites the interviewer to bring up any concern they still have.</p>
+
+<div class="callout">
+  <h4>Pick one closing question</h4>
+  <ul>
+    <li>"Is there any part of my background you'd like me to clarify before we finish?"</li>
+    <li>"Based on our conversation, is there a capability you'd want more evidence of?"</li>
+    <li>"What would you need to learn in the next round to feel confident about this hire?"</li>
+  </ul>
+</div>
+
+<p>If they name a gap and there's time, give one concise example that speaks to it. If the gap is real, say so and explain how you'd close it. Either way, listen without arguing. You're there to gather information about the decision, and pushing back turns a useful answer into a debate.</p>
+
+<h2 id="after-a-rejection-make-the-request-easy-to-answer">After a rejection, make the request easy to answer</h2>
+
+<p>Reply within one business day, while the interviews are still fresh for everyone. Keep the note to four parts: thanks, something you genuinely liked about the process, one narrow question, and explicit permission to decline. "Can you give me any feedback?" asks a busy recruiter to write a performance review. A recruiter can answer a narrow question in one sentence from their phone.</p>
+
+<ul>
+  <li>"Was there one experience the selected candidate demonstrated more clearly?"</li>
+  <li>"Was my main gap role fit, interview communication, or depth in a particular area?"</li>
+  <li>"Which answer would you recommend I strengthen for future interviews?"</li>
+</ul>
+
+<p>Ask once. Many companies bar interviewers from giving detailed feedback, and many recruiters skip it because they're busy or worried about legal exposure. If the answer is no, thank them and let it go. Pressing again costs you the relationship and almost never gets you the feedback.</p>
+
+<h2 id="debrief-the-interview-the-same-day">Debrief the interview the same day</h2>
+
+<p>Phyl Terry, who has coached thousands of job seekers through the job search councils in Never Search Alone, tells candidates to debrief with someone else right after the interview, because your first emotional read of an interview is often wrong. One director of product texted him after an interview convinced she'd blown it. The company was already moving her to the next round. He told her the story she was telling herself came from her inner critic, and that the inner critic was lying to her.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Talk it through with someone else.</strong> The player below is queued to 1:07:08, the exact moment Phyl Terry says it. <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA&t=4028s">Watch on YouTube</a>.</p>
+  <blockquote>"You've got to go do a debrief right afterwards, Lenny, because we all have these cockamamy ideas about what happened. We think we did terribly when we did well... and we need to talk it through with someone else who can help us, like, parse exactly what happened and really where we're at."</blockquote>
+  <div class="nugget-who"><strong>Phyl Terry</strong>, author of Never Search Alone · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/OH3nzRdwYPA?start=4028" title="Phyl Terry at 1:07:08" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Before you compare notes with anyone, write your own account. Capture every question you remember, the example you used for each, the follow-up questions, the moments the interviewer leaned in, and the moments you lost them. Do it within an hour if you can. The details fade fast, and by the next day you'll mostly remember how you felt.</p>
+
+<div class="callout">
+  <h4>Separate observations from conclusions</h4>
+  <p><strong>Observation:</strong> The interviewer asked twice how I measured adoption.</p>
+  <p><strong>Conclusion:</strong> They thought my result was weak.</p>
+  <p><strong>Next test:</strong> Prepare an example with a baseline, a measurement window, and a business result.</p>
+</div>
+
+<div class="cta-band">
+  <h3>Get the feedback the company won't send</h3>
+  <p>Work Coach runs the same interview again and scores the answer you actually gave, including how long you took to reach the point. You get the specifics no recruiter will put in writing.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="look-for-patterns-across-interviews">Look for patterns across interviews</h2>
+
+<p>One interviewer's reaction is just a data point, but a signal that repeats across interviews is worth acting on. Keep a simple log for every interview: the role, the stage you reached, the questions, your answers, any outside feedback, the outcome, and the one change you'll make next time.</p>
+
+<p>Lauren Ipsen recruits senior executives at Daversa Partners, and she's watched candidates spend most of a search learning to tell their own story.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The tenth-interview problem.</strong> The player below is queued to 54:16, the exact moment Lauren Ipsen says it. <a href="https://www.youtube.com/watch?v=v3pofqabzhs&t=3256s">Watch on YouTube</a>.</p>
+  <blockquote>"Being able to tell your story, like practice telling your story. So often people don't do that, especially when they're not looking for jobs. And then it's not until their tenth interview that they know how to tell their story and what they did and what they impacted and why they were someone to be missed when they moved on."</blockquote>
+  <div class="nugget-who"><strong>Lauren Ipsen</strong>, executive recruiter at Daversa Partners · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/v3pofqabzhs?start=3256" title="Lauren Ipsen at 54:16" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Review the log after every third interview. If different interviewers keep probing the same result, transition, or skill, strengthen that part of your story first. The <a href="/playbooks/behavioral-interview-questions">behavioral interview questions guide</a> covers what hiring leaders listen for in those answers. And if your processes keep ending at the same stage, prepare for the decision that stage exists to make, whether that's the recruiter checking fit and clarity or a final round testing judgment.</p>
+
+<h2 id="turn-feedback-into-one-visible-change">Turn feedback into one visible change</h2>
+
+<p>Feedback like "be more concise" is too vague to practice. Convert it into behavior you can observe: answer the question in your first sentence, use one example instead of three, and say why it matters for this role.</p>
+
+<p>Matt Abrahams teaches strategic communication at Stanford Graduate School of Business, and he has a structure for exactly this. He calls it ADD: answer, detailed example, describe the relevance. It gives an on-the-spot answer a clear start, one piece of proof, and a clean ending.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The ADD structure.</strong> The player below is queued to 1:04:16, the exact moment Matt Abrahams explains it. <a href="https://www.youtube.com/watch?v=LpbBzmXrzEY&t=3856s">Watch on YouTube</a>.</p>
+  <blockquote>"It's called ADD, for adding value. You answer the question cleanly and concisely, you then give an example to reinforce the answer, and then you explain the relevance or significance of the answer."</blockquote>
+  <div class="nugget-who"><strong>Matt Abrahams</strong>, lecturer at Stanford Graduate School of Business · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/LpbBzmXrzEY?start=3856" title="Matt Abrahams at 1:04:16" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Practice the changed answer out loud three times, then stop. You want to remember the structure and the evidence while the wording stays flexible. If your answers tend to bury the point, the <a href="/playbooks/stop-rambling-in-meetings">stop rambling guide</a> shows you how to shorten the opening, pick one example, and finish cleanly.</p>
+
+<h2 id="feedback-email-scripts-for-common-situations">Feedback email scripts for common situations</h2>
+
+<p>Adjust the details and keep the shape: thanks, one narrow question, permission to decline.</p>
+
+<div class="callout">
+  <h4>After a rejection from the recruiter</h4>
+  <p>"Thanks for letting me know, Maya. I enjoyed meeting the team and I'm still impressed by the work. If you can share one skill or example I could demonstrate more clearly in future interviews, I'd be grateful. I understand if you're not able to give individual feedback."</p>
+  <h4>After an internal interview</h4>
+  <p>"Thank you for the conversation today. I want to keep growing toward roles like this one. Could we spend 15 minutes next week on one strength I should keep using and one gap I should close? Specific examples would help me build a practical plan."</p>
+  <h4>When the process ends after a final round</h4>
+  <p>"I appreciate the time everyone put into the process. Since I reached the final stage, one observation about what separated the selected candidate would be especially useful. Even a high-level answer would help me focus my development."</p>
+  <h4>When the feedback is vague</h4>
+  <p>"Thank you. When you say the team needed more strategic depth, could you share one example of where my answer stayed too tactical? No problem if you can't share more detail."</p>
+</div>
+
+<p>If nobody replies, don't send a second request. Keep the relationship intact and work from your own notes instead.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>Is it okay to ask for feedback after an interview?</h3>
+<p>Yes. A short request that shows you want to improve is professional. Make it easy to decline, because some companies restrict what interviewers can share.</p>
+
+<h3>Should I ask why I didn't get the job?</h3>
+<p>Ask for one forward-looking observation instead of an explanation of the decision. "What could I demonstrate more clearly next time?" is easier to answer than "why didn't I get it?", and the answer is more useful to you.</p>
+
+<h3>What if I disagree with the feedback?</h3>
+<p>Thank the person and write it down anyway. You don't have to accept every interpretation. Look for the same signal in other interviews before you change anything major.</p>
+
+<h3>Can I ask for feedback after every round?</h3>
+<p>During the process, ask what the next round needs to establish. Save the direct feedback request for a rejection or a scheduled debrief, unless the recruiter invites ongoing questions.</p>
+
+<h2 id="the-post-interview-learning-loop-on-one-page">The post-interview learning loop on one page</h2>
+
+<div class="callout">
+  <h4>In the interview</h4>
+  <ul>
+    <li>Ask one closing question about anything you can still clarify.</li>
+  </ul>
+  <h4>Same day</h4>
+  <ul>
+    <li>Within an hour, write down the questions, your answers, the follow-ups, and the reactions you observed.</li>
+    <li>Debrief with one trusted person the same day.</li>
+  </ul>
+  <h4>After a rejection</h4>
+  <ul>
+    <li>Reply within one business day with one narrow, forward-looking question and permission to decline.</li>
+    <li>Ask once, then stop.</li>
+  </ul>
+  <h4>Across interviews</h4>
+  <ul>
+    <li>Log every interview and review the log after every third one.</li>
+    <li>Act on repeated questions, repeated gaps, and the stage where processes keep ending.</li>
+  </ul>
+  <h4>Before the next interview</h4>
+  <ul>
+    <li>Change one answer or behavior and practice it out loud three times.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA">Land your dream job in today's market, with Phyl Terry</a> (Sep 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=v3pofqabzhs">Lessons from one of the world's top executive recruiters, with Lauren Ipsen</a> (Nov 2022)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=LpbBzmXrzEY">How to speak more confidently and persuasively, with Matt Abrahams</a> (Mar 2024)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#ask-for-a-signal-before-the-interview-ends">Ask for a signal before the interview ends</a>
+  <a href="#after-a-rejection-make-the-request-easy-to-answer">After a rejection, make the request easy to answer</a>
+  <a href="#debrief-the-interview-the-same-day">Debrief the interview the same day</a>
+  <a href="#look-for-patterns-across-interviews">Look for patterns across interviews</a>
+  <a href="#turn-feedback-into-one-visible-change">Turn feedback into one visible change</a>
+  <a href="#feedback-email-scripts-for-common-situations">Feedback email scripts for common situations</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-post-interview-learning-loop-on-one-page">The post-interview learning loop on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

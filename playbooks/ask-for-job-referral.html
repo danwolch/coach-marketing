@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How to ask for a job referral: scripts for close coworkers, weak ties, and new contacts, plus a forwardable packet your referrer can use in two minutes.">
+<meta name="color-scheme" content="light">
+<title>How to Ask for a Job Referral Without Making It Transactional | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/ask-for-job-referral">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Ask for a Job Referral Without Making It Transactional","description":"How to ask for a job referral: scripts for close coworkers, weak ties, and new contacts, plus a forwardable packet your referrer can use in two minutes.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/ask-for-job-referral"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/ask-for-job-referral">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Ask for a Job Referral Without Making It Transactional">
+<meta property="og:description" content="How to ask for a job referral: scripts for close coworkers, weak ties, and new contacts, plus a forwardable packet your referrer can use in two minutes.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Ask for a Job Referral Without Making It Transactional">
+<meta name="twitter:description" content="How to ask for a job referral: scripts for close coworkers, weak ties, and new contacts, plus a forwardable packet your referrer can use in two minutes.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Job Search</div>
+  <h1>How to ask for a job referral without making it feel transactional</h1>
+  <p class="post-sub">Give the person enough context to make an honest choice and enough material to help you in two minutes.</p>
+  <div class="post-meta">9 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>You found a role you want, you know someone at the company, and the message has been sitting in drafts for days because "Can you refer me?" feels like using them. So you either don't send it, or you send something so hedged that the person can't tell what you're asking for.</p>
+
+<p>This article covers how to decide whether you want a referral, an introduction, or advice, and how to build context with people who barely know your work. It also covers what goes in the packet you send, and the exact messages for four kinds of relationships. Write the packet before you send any request, because it does most of the work.</p>
+
+<p>The advice comes from Phyl Terry, author of <em>Never Search Alone</em>, who has run free job search councils for thousands of job seekers; Lauren Ipsen, an executive recruiter who has hired leadership teams for venture-backed startups at Daversa Partners; and Matt Mochary, the CEO coach whose curriculum includes the double-opt-in rule for introductions.</p>
+
+<div class="callout">
+<h4>The basic referral request</h4>
+<p>"I'm applying for the Senior Product Operations role on your marketplace team. Would you feel comfortable referring me? We worked together on the Atlas launch, so you saw my cross-functional planning and rollout work. I've included the posting, my resume, and three relevant results below. Please feel free to say no if you don't have enough context or would rather not."</p>
+</div>
+
+<h2 id="decide-what-you-re-actually-asking-for">Decide what you're actually asking for</h2>
+<p>A referral, an introduction, and advice ask different things of the other person:</p>
+<ul>
+<li><strong>Referral:</strong> they submit or endorse your candidacy through their company's process, with their name on it.</li>
+<li><strong>Introduction:</strong> they connect you with a recruiter, hiring manager, or teammate, and vouch that the conversation is worth having.</li>
+<li><strong>Advice:</strong> they help you understand the role, the team, or the best route in, with no endorsement attached.</li>
+</ul>
+<p>Ask for a referral when the person knows your work well enough to endorse it. Ask for an introduction when they know the right people but haven't seen you work. Ask for advice when the fit is still unclear, to them or to you. Most awkward referral requests are really introduction or advice requests with the wrong label on them, and the person can tell.</p>
+
+<h2 id="build-context-before-you-ask-for-the-endorsement">Build context before you ask for the endorsement</h2>
+<p>For someone who barely knows your work, don't open with the referral. Open with a short conversation about the role or the team, and use what Phyl Terry calls the golden question: "If you were in my shoes, how would you approach this?" It asks for their judgment without asking them to decide, on the spot, whether to endorse you.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>The golden question.</strong> The player below is queued to 25:12, the exact moment Phyl Terry explains the question he gives job seekers on a listening tour. <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA&t=1512s">Watch on YouTube</a>.</p>
+  <blockquote>"I asked them to ask a golden question: if you were in my shoes, how would you approach this? I call that the golden question. It's such a creative question. It really opens the conversation."</blockquote>
+  <div class="nugget-who"><strong>Phyl Terry</strong>, author of <em>Never Search Alone</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/OH3nzRdwYPA?start=1512" title="Phyl Terry at 25:12" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>Terry adds, about a minute later in the same answer, that when you ask for help this way and you've clearly done your homework, people want to help you even more and "become invested in you." That's the opposite of what most people fear the ask will do to the relationship.</p>
+<p>After the conversation, you can ask directly: "Do you feel you have enough context on my background to recommend a next step, or refer me?" If they hesitate, take the signal. They may offer a different role, another contact, or a way to strengthen your application, and any of those is worth more than a lukewarm referral.</p>
+
+<h2 id="use-double-opt-in-for-introductions">Use double opt-in for introductions</h2>
+<p>Matt Mochary's rule for introductions: the connector first forwards your request privately and asks the recipient one question, "Interested?" The two of you get connected only after the recipient says yes. Nobody ends up trapped in a thread they didn't agree to join.</p>
+<p>Your job is to make that private forward effortless. Write the note the connector will pass along: who you are, what you want to discuss, and how much time you're asking for.</p>
+<div class="callout">
+<h4>A double-opt-in request</h4>
+<p>"Would you be open to asking Daniel whether he'd like an introduction? I'm considering the customer strategy role on his team and would value 15 minutes to understand the first-year priorities. I've included a three-sentence note below that you can forward as is. No problem at all if the timing or fit is off."</p>
+</div>
+
+<h2 id="send-a-packet-the-referrer-can-use-in-two-minutes">Send a packet the referrer can use in two minutes</h2>
+<p>Do the administrative work yourself. Put all of this in one message:</p>
+<ul>
+<li>the exact job title, link, and requisition number;</li>
+<li>a two-sentence explanation of your fit;</li>
+<li>two or three results that match the role;</li>
+<li>your current resume as a PDF;</li>
+<li>the application deadline or timing, if one exists;</li>
+<li>a forwardable paragraph written in the third person.</li>
+</ul>
+<p>The forwardable paragraph is the piece most people skip, and it's the one the referrer will actually use:</p>
+<div class="callout">
+<h4>Forwardable paragraph</h4>
+<p>"I worked with Jordan for three years at Northstar. Jordan led the operations redesign for our enterprise onboarding program, cutting median launch time by 18 days and improving handoff quality across sales, security, and implementation. The Senior Product Operations role looks closely aligned with that work, and I recommend a conversation."</p>
+</div>
+<p>Keep every claim accurate, and tell the referrer they should edit the language so it only says what they personally know. A referral in their own words is worth more than your best draft anyway.</p>
+
+<div class="cta-band">
+  <h3>Hear how it sounds out loud</h3>
+  <p>Work Coach listens to you make the request and flags every apology and hedge in it. You can say it to a stand-in first, so the real conversation isn't your opening attempt.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="keep-the-relationship-alive-outside-the-ask">Keep the relationship alive outside the ask</h2>
+<p>Lauren Ipsen's advice on this is aimed at founders who want to hire someone eventually: keep in touch with people you respect, ask them what good looks like, find real excuses to check in, show up where they'll be. The same thing applies when you're the one who'll be reaching out about a job someday.</p>
+<div class="nugget">
+  <p class="nugget-lead"><strong>Staying known and relevant.</strong> The player below is queued to 26:43, the exact moment Lauren Ipsen says why the groundwork changes how the eventual ask feels. <a href="https://www.youtube.com/watch?v=v3pofqabzhs&t=1603s">Watch on YouTube</a>.</p>
+  <blockquote>"Just make yourself known and relevant. And then when you reach out and timing is right, it won't feel so obscure or so transactional."</blockquote>
+  <div class="nugget-who"><strong>Lauren Ipsen</strong>, executive recruiter, Daversa Partners · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/v3pofqabzhs?start=1603" title="Lauren Ipsen at 26:43" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<p>If someone does refer you, keep them informed: when the company responds, before a big interview, and when the process ends either way. Thank them for the action they took regardless of the outcome. And months later, when you have something genuinely useful to share, share it. Don't disappear the day you sign an offer.</p>
+
+<h2 id="the-messages-word-for-word">The messages, word for word</h2>
+<p>Adjust the details, but keep the shape: name the role, say why they specifically can speak to your work, and make declining easy.</p>
+<div class="callout">
+<h4>A close former coworker</h4>
+<p>"I saw the Design Lead opening at Acme and plan to apply this week. Would you feel comfortable referring me? You worked closely with me on the mobile redesign and can speak to the research and cross-functional parts of the role. I've put the posting, resume, and relevant results below."</p>
+<h4>A former manager</h4>
+<p>"I'm applying for a Director of Operations role at Acme. Since you managed me during the fulfillment expansion, would you be comfortable referring me or introducing me to the recruiter? The role emphasizes multi-site planning and team development, both central to our work together. I've included a forwardable summary."</p>
+<h4>An alumni or community connection</h4>
+<p>"We met through the Product Leaders group last month. I'm exploring the Growth PM role at Acme and saw that you work with the team. Before I apply, would you have 15 minutes to share how the team defines strong growth judgment? If the fit still looks real after we talk, I'd also value your advice on the best route into the process."</p>
+<h4>Someone you haven't spoken with in a while</h4>
+<p>"It's been a while since the Meridian launch. I still use the stakeholder map you taught our team. I'm reaching out because I'm applying for an operations role at Acme that closely matches the launch work we did together. Would you be comfortable referring me? I'm also glad to catch up separately, no job-search agenda."</p>
+<h4>When they say no, or don't know your work well enough</h4>
+<p>"Thanks for being direct. I understand. If there's someone closer to the team you think I should learn from, I'd appreciate the suggestion. Either way, I'm glad we reconnected."</p>
+</div>
+
+<h2 id="follow-up-once-then-apply-anyway">Follow up once, then apply anyway</h2>
+<p>If the deadline is approaching, send one reminder after three to five business days. Include the original details and a sentence that makes declining easy.</p>
+<div class="callout">
+<h4>Referral follow-up</h4>
+<p>"Quick follow-up because the posting may close Friday. If you're comfortable referring me, everything you need is below. If time is tight or you'd rather not, I completely understand and will apply directly today."</p>
+</div>
+<p>Apply on time even if the referral is pending. The contact isn't responsible for managing your application, and a referral can usually be attached after you apply. Once the recruiter calls, switch to interview mode: the <a href="/playbooks/prepare-for-interview-in-24-hours">24-hour interview prep plan</a> and the <a href="/playbooks/behavioral-interview-questions">behavioral question guide</a> cover what comes next.</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3>Can I ask for a referral before applying?</h3>
+<p>Yes. Many employee-referral systems work best before an application is submitted. Ask early enough for the person to respond, and confirm how their company's process works.</p>
+<h3>Should I offer to return the favor?</h3>
+<p>Express appreciation and be helpful over time. A direct trade can make the request feel like an exchange, which is exactly the feeling you're trying to avoid. Offer relevant help when you can genuinely provide it.</p>
+<h3>What if the person refers me but I hear nothing?</h3>
+<p>Thank the referrer and follow up through the normal recruiting channel. You can ask whether they know how referrals get processed, but don't ask them to chase the recruiter for you.</p>
+<h3>Do I need a different resume for the referral?</h3>
+<p>Send the version tailored to the target role. The referrer should be able to see the same fit you described in your message.</p>
+
+<h2 id="the-referral-request-on-one-page">The referral request on one page</h2>
+<div class="callout">
+<h4>Before you ask</h4>
+<ul>
+<li>Decide whether you want a referral, an introduction, or advice, based on how well the person knows your work.</li>
+<li>For weak ties, have a short conversation first and use the golden question: "If you were in my shoes, how would you approach this?"</li>
+<li>Build the packet: role link, fit summary, two or three results, resume PDF, deadline, forwardable paragraph.</li>
+</ul>
+<h4>The ask</h4>
+<ul>
+<li>Name the exact role and why your experience fits.</li>
+<li>Ask whether they'd feel comfortable helping, and say plainly that no is fine.</li>
+<li>For introductions, use double opt-in: they check with the other person privately before connecting you.</li>
+</ul>
+<h4>After the answer</h4>
+<ul>
+<li>Follow up once if a deadline is near, then apply on time either way.</li>
+<li>Tell the referrer what happened at each stage, and thank them whatever the outcome.</li>
+<li>Stay in touch when you have something real to share, not just the next request.</li>
+</ul>
+</div>
+
+<div class="sources">
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA">Land your dream job in today's market, with Phyl Terry</a> (Sep 2024)</li>
+<li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=v3pofqabzhs">Lessons from one of the world's top executive recruiters, with Lauren Ipsen</a> (Nov 2022)</li>
+<li>Mochary Method curriculum: <a href="https://docs.google.com/document/d/19FWxzeYzjqW-6l-5GsTAB5QgD2ITuW0XWeQxh_7sptg/edit">Introductions: the Double Opt-In</a></li>
+</ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#decide-what-you-re-actually-asking-for">Decide what you're actually asking for</a>
+  <a href="#build-context-before-you-ask-for-the-endorsement">Build context before you ask for the endorsement</a>
+  <a href="#use-double-opt-in-for-introductions">Use double opt-in for introductions</a>
+  <a href="#send-a-packet-the-referrer-can-use-in-two-minutes">Send a packet the referrer can use in two minutes</a>
+  <a href="#keep-the-relationship-alive-outside-the-ask">Keep the relationship alive outside the ask</a>
+  <a href="#the-messages-word-for-word">The messages, word for word</a>
+  <a href="#follow-up-once-then-apply-anyway">Follow up once, then apply anyway</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-referral-request-on-one-page">The referral request on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

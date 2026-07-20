@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="When to follow up after an interview, what to say when the recruiter goes quiet, when to email the hiring manager, and when to move on.">
+<meta name="color-scheme" content="light">
+<title>Recruiter Ghosting After an Interview: When and How to Follow Up | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/recruiter-ghosting-after-interview">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Recruiter Ghosting After an Interview: When and How to Follow Up","description":"When to follow up after an interview, what to say when the recruiter goes quiet, when to email the hiring manager, and when to move on.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/recruiter-ghosting-after-interview"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/recruiter-ghosting-after-interview">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Recruiter Ghosting After an Interview: When and How to Follow Up">
+<meta property="og:description" content="When to follow up after an interview, what to say when the recruiter goes quiet, when to email the hiring manager, and when to move on.">
+<meta property="og:image" content="https://work.coach/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Recruiter Ghosting After an Interview: When and How to Follow Up">
+<meta name="twitter:description" content="When to follow up after an interview, what to say when the recruiter goes quiet, when to email the hiring manager, and when to move on.">
+<meta name="twitter:image" content="https://work.coach/img/og-image.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Job Search</div>
+  <h1>Recruiter ghosting after an interview: when and how to follow up</h1>
+  <p class="post-sub">The recruiter went quiet after your interview. Here is the follow-up timeline, the exact messages to send, and the point where you stop chasing.</p>
+  <div class="post-meta">10 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>The recruiter said you'd hear back by Friday. It's Tuesday, you've checked your inbox more times than you want to admit, and you're rereading your interview answers for clues about what went wrong.</p>
+
+<p>This article gives you a follow-up timeline for each interview stage, the exact messages to send, and a rule for when to write to the hiring manager instead. Use the timeline as written, and keep the rest of your search moving while you wait.</p>
+
+<p>The advice comes from Phyl Terry, whose book Never Search Alone has put thousands of candidates through job search councils, and Lauren Ipsen, an executive recruiter at Daversa Partners who places senior leaders at venture-backed companies.</p>
+
+<h2 id="wait-until-the-promised-date-passes">Wait until the promised date passes</h2>
+
+<p>Silence after an interview usually has a boring explanation. An approval stalls, an interviewer goes on vacation, another candidate reschedules, or finance takes a second look at the budget. None of that shows up in your inbox, so it's easy to read a scheduling delay as a no.</p>
+
+<p>A short follow-up can get you the current timeline and remind them you're interested. A pile of messages can't speed up a decision, and it makes you harder to deal with in a queue that's already overloaded. So the plan is a small number of useful messages on a fixed schedule, while your other applications keep moving.</p>
+
+<p>If the recruiter gave you a date, wait until the next business day after it passes. If they didn't, follow up five business days after the interview.</p>
+
+<div class="callout">
+  <h4>The follow-up cadence</h4>
+  <ul>
+    <li><strong>Within 24 hours:</strong> send a thank-you note to the people you interviewed with.</li>
+    <li><strong>The business day after the promised date:</strong> ask the recruiter for the current timeline.</li>
+    <li><strong>If no date was given:</strong> follow up five business days after the interview.</li>
+    <li><strong>About a week later:</strong> send one final, short note to the recruiter.</li>
+    <li><strong>After two unanswered notes:</strong> write to the hiring manager once, only if you interviewed with them.</li>
+    <li><strong>Then:</strong> leave the door open and stop chasing.</li>
+  </ul>
+</div>
+
+<h2 id="make-the-first-follow-up-easy-to-answer">Make the first follow-up easy to answer</h2>
+
+<p>Reply on the existing email thread instead of starting a new one. Name the role and the interview date, say you're still interested, and ask one question about timing. If something real happened since the interview that strengthens your case, add one sentence about it.</p>
+
+<div class="callout">
+  <h4>After the promised date passes</h4>
+  <p>"Hi Elena, I'm following up on the Product Operations role after our conversation last Tuesday. I'm still very interested, especially after learning about the onboarding redesign. You mentioned the team expected to decide on next steps by Friday. Has the timeline changed? Happy to send anything else that would help."</p>
+</div>
+
+<p>Resist the urge to dress up the same status request as three different questions. One clean note gives the recruiter something they can answer the moment they know anything.</p>
+
+<h2 id="make-the-second-note-a-graceful-final-check">Make the second note a graceful final check</h2>
+
+<p>If another week passes with no answer, send one more message and make it your last one to the recruiter. Acknowledge that priorities shift, and say how to reach you if the process picks back up. Asking directly whether the team has moved on gives them an easy way to close the loop, and many recruiters will take it.</p>
+
+<div class="callout">
+  <h4>Final recruiter follow-up</h4>
+  <p>"Hi Elena, one final check on the Product Operations search. I understand hiring plans and timelines can shift. I'm still interested and would welcome an update whenever there is one. If the role is paused or the team has moved ahead with other candidates, I'd appreciate knowing that too."</p>
+</div>
+
+<h2 id="contact-the-hiring-manager-once-carefully">Contact the hiring manager once, carefully</h2>
+
+<p>After two unanswered recruiter notes, one message to the hiring manager is reasonable, with two conditions: you interviewed with them, and you have their contact information because they gave it to you. Don't frame the recruiter as the problem. Ask whether the timeline or the role itself has changed.</p>
+
+<div class="callout">
+  <h4>Hiring manager check-in</h4>
+  <p>"Hi Marcus, thanks again for last month's conversation about the analytics lead role. I've checked in with recruiting and know the team may still be working through timing. I'm still interested in the forecasting and planning work we discussed. Has the role's timeline or priority changed? Glad to stay in touch if the search is paused."</p>
+</div>
+
+<p>Stop at one message. Writing to several people on the team with the same question creates pressure without giving anyone new information.</p>
+
+<div class="cta-band">
+  <h3>Read the note back before you send it</h3>
+  <p>Work Coach reads your follow-up and flags the apologies and hedges you didn't notice writing. It also plays the recruiter, in case they do call and you get thirty seconds.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="ask-recruiters-about-fit-and-about-the-opening">Ask recruiters about fit, and about the opening</h2>
+
+<p>Phyl Terry has watched thousands of candidates work with recruiters, and he's blunt about what works: recruiters get flooded with requests for a job, and they're far more open to being asked what you'd be a fit for. He recommends building those relationships while you're still employed, including taking the call when a recruiter phones about a role you don't want.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Ask about fit, not "get me a job."</strong> The player below is queued to 27:42, the exact moment Phyl Terry says it. <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA&t=1662s">Watch on YouTube</a>.</p>
+  <blockquote>"Recruiters don't like being barraged with 'get me a job.' They do like someone saying, 'What do you think I'm a fit for?' Asking their advice. And this is especially true if you've pre-built a relationship with a recruiter. So anyone listening to your podcast right now, if you're in a job, I have a really important message for you: when that recruiter calls, pick up the phone."</blockquote>
+  <div class="nugget-who"><strong>Phyl Terry</strong>, author of <em>Never Search Alone</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/OH3nzRdwYPA?start=1662" title="Phyl Terry at 27:42" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>You can use the same move when a process goes quiet for good. Thank the recruiter, then ask which roles your experience is strongest for. That question costs them little to answer, and it can restart the relationship months later when they pick up a search that actually fits you.</p>
+
+<h2 id="don-t-let-anxiety-invent-the-decision">Don't let anxiety invent the decision</h2>
+
+<p>Terry also recommends debriefing the interview with someone you trust before you decide what the silence means. Candidates regularly believe they bombed and still advance, and plenty walk out confident having missed a real concern. Reconstruct the questions and your answers with another person, then decide what you actually know.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Debrief before you decide what the silence means.</strong> The player below is queued to 1:07:10, the exact moment Phyl Terry explains it. <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA&t=4030s">Watch on YouTube</a>.</p>
+  <blockquote>"You've got to go do a debrief right afterwards, because we all have these cockamamie ideas about what happened. We think we did terribly when we did well. And we need to talk it through with someone else who can help us parse exactly what happened and really where we're at."</blockquote>
+  <div class="nugget-who"><strong>Phyl Terry</strong>, author of <em>Never Search Alone</em> · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/OH3nzRdwYPA?start=4030" title="Phyl Terry at 1:07:10" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Right after that clip, Terry tells the story of a product director who texted him that she'd blown a VP interview, in the same message where she mentioned the company was advancing her to the next round. Her read of the interview and the company's read had nothing to do with each other, and yours might not either.</p>
+
+<h2 id="keep-the-search-moving-in-parallel">Keep the search moving in parallel</h2>
+
+<p>Treat every active process as uncertain until you have a written offer. Keep networking, applying, and interviewing. Other live conversations protect your leverage, and they make one silent inbox much easier to ignore. If the wait has you sitting on your hands, put the time into the next conversation instead; the <a href="/playbooks/prepare-for-interview-in-24-hours">24-hour interview prep plan</a> gives you a full day's agenda.</p>
+
+<p>Lauren Ipsen spends her days on the other side of these relationships. Her advice is to stay in touch with the people who matter to your career before you need anything from them, so that reaching out when it counts doesn't feel transactional.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Stay known before the timing is urgent.</strong> The player below is queued to 26:15, the exact moment Lauren Ipsen says it. <a href="https://www.youtube.com/watch?v=v3pofqabzhs&t=1575s">Watch on YouTube</a>.</p>
+  <blockquote>"Put yourself in the room with great people. If you have a tremendous amount of respect for someone, continue to harvest that relationship and ask what good looks like. Find excuses to continue to touch base with people that are important in your network... Just make yourself known and relevant, and then when you reach out and timing is right, it won't feel so obscure or so transactional."</blockquote>
+  <div class="nugget-who"><strong>Lauren Ipsen</strong>, executive recruiter and partner at Daversa Partners · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/v3pofqabzhs?start=1575" title="Lauren Ipsen at 26:15" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>She's advising founders on hiring, but the advice runs both ways. Recruiters remember the candidates who stayed in contact between searches, and those candidates get the first call when a search opens.</p>
+
+<h2 id="scripts-for-specific-stages">Scripts for specific stages</h2>
+
+<h3>After a recruiter screen</h3>
+
+<p>"Thank you for the introduction to the role today. The team's need for [specific outcome] fits my experience with [brief evidence]. You mentioned next steps may be set this week. I'm still interested and available if the hiring manager would like more context."</p>
+
+<h3>After a final round</h3>
+
+<p>"Thank you for coordinating Monday's conversations. Meeting the full group strengthened my interest, particularly the discussion about [specific priority]. You expected to have an update by Thursday. Has the decision timeline changed?"</p>
+
+<h3>When you have another offer</h3>
+
+<p>"I want to share a timing update. I've received another offer with a response deadline of Tuesday at 5 p.m. I'm still seriously interested in your role because of [specific reason]. Is the team able to clarify my status before then? I understand if your process can't move on that schedule."</p>
+
+<p>A competing offer is real information, so send this note as soon as you have the deadline. And if the offer turns into a negotiation, the <a href="/playbooks/salary-negotiation-scripts">salary negotiation scripts</a> cover that conversation.</p>
+
+<h3>When the recruiter comes back after weeks of silence</h3>
+
+<p>"Thanks for reconnecting. I'm still open to hearing where the search stands. Since we last spoke, has the role's scope, timeline, or interview process changed?"</p>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How many times should I follow up?</h3>
+
+<p>Two recruiter follow-ups after the interview are usually enough: one after the promised date or five business days, and one final note about a week later.</p>
+
+<h3>Should I call the recruiter?</h3>
+
+<p>Use the channel the recruiter has used with you. A call can be appropriate if they routinely call or invited phone contact. Avoid switching channels repeatedly to force a reply.</p>
+
+<h3>Can a company come back after ghosting?</h3>
+
+<p>Yes. Searches pause and restart all the time. Reply professionally, ask what changed, and weigh the opportunity based on the new information and on how the company handled the silence.</p>
+
+<h3>When should I assume the process is over?</h3>
+
+<p>After two unanswered follow-ups and one optional hiring-manager note, stop giving the role active attention. You can stay open to a later reply while you move forward elsewhere.</p>
+
+<h2 id="the-plan-on-one-page">The plan on one page</h2>
+
+<div class="callout">
+  <h4>Right after the interview</h4>
+  <ul>
+    <li>Send a specific thank-you within 24 hours.</li>
+    <li>Write down the date the recruiter said you'd hear back.</li>
+    <li>Debrief the interview with someone you trust before you interpret anything.</li>
+  </ul>
+  <h4>When the silence starts</h4>
+  <ul>
+    <li>Follow up the business day after the promised date, or after five business days.</li>
+    <li>Send one final recruiter note about a week later.</li>
+    <li>After two unanswered notes, write to the hiring manager once, only if you interviewed with them.</li>
+  </ul>
+  <h4>While you wait</h4>
+  <ul>
+    <li>Keep applying, networking, and interviewing until you have a written offer.</li>
+    <li>When a process closes, thank the recruiter and ask what you're the strongest fit for.</li>
+    <li>Pick up the phone when recruiters call, even about roles you don't want.</li>
+  </ul>
+</div>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=OH3nzRdwYPA">Land your dream job in today's market, with Phyl Terry</a> (Sep 2024)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=v3pofqabzhs">Lessons from one of the world's top executive recruiters, with Lauren Ipsen</a> (Nov 2022)</li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#wait-until-the-promised-date-passes">Wait until the promised date passes</a>
+  <a href="#make-the-first-follow-up-easy-to-answer">Make the first follow-up easy to answer</a>
+  <a href="#make-the-second-note-a-graceful-final-check">Make the second note a graceful final check</a>
+  <a href="#contact-the-hiring-manager-once-carefully">Contact the hiring manager once, carefully</a>
+  <a href="#ask-recruiters-about-fit-and-about-the-opening">Ask recruiters about fit, and about the opening</a>
+  <a href="#don-t-let-anxiety-invent-the-decision">Don't let anxiety invent the decision</a>
+  <a href="#keep-the-search-moving-in-parallel">Keep the search moving in parallel</a>
+  <a href="#scripts-for-specific-stages">Scripts for specific stages</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#the-plan-on-one-page">The plan on one page</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
