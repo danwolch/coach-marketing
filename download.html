@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta name="description" content="Download Work Coach for Mac or Windows. An AI coach that finds out what's holding you back.">
 <meta name="color-scheme" content="light">
 <title>Download Work Coach</title>
 <link rel="canonical" href="https://work.coach/download">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://work.coach/download">
 <meta property="og:site_name" content="Work Coach">
 <meta property="og:title" content="Download Work Coach">
-<meta property="og:description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta property="og:description" content="Download Work Coach for Mac or Windows. An AI coach that finds out what's holding you back.">
 <meta property="og:image" content="https://work.coach/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Download Work Coach">
-<meta name="twitter:description" content="Download Work Coach for Mac. An AI coach that finds out what's holding you back.">
+<meta name="twitter:description" content="Download Work Coach for Mac or Windows. An AI coach that finds out what's holding you back.">
 <meta name="twitter:image" content="https://work.coach/img/og-image.png">
 
 <script>
@@ -730,6 +730,230 @@ nav {
   margin-top: 20px;
 }
 
+/* ─── WINDOWS INSTALLATION ANIMATION ─── */
+
+/* Scene 1: Browser download bar */
+.win-download-bar {
+  background: #ffffff;
+  border: 1px solid #d6d0c4;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 440px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+.win-dl-icon {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #eef2f7 0%, #dbe3ec 100%);
+  border: 1px solid #cdd6e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.win-dl-icon .win-gear {
+  width: 26px; height: 26px;
+  color: #4a7cc9;
+}
+.win-dl-meta { flex: 1; min-width: 0; }
+.win-dl-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.win-dl-sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+.win-dl-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #e5e5e5;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.win-dl-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+.win-dl-open {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 8px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.win-cursor {
+  position: absolute;
+  width: 28px; height: 34px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 10;
+}
+.win-cursor.visible { opacity: 1; }
+.win-scene-open .win-cursor {
+  right: 34px;
+  bottom: 6px;
+}
+
+/* Scene 2: Setup wizard */
+.win-setup-window {
+  background: #f7f5f0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+.win-titlebar {
+  background: linear-gradient(180deg, #eef1f5 0%, #e3e7ec 100%);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.win-titlebar .win-title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.win-titlebar .win-controls {
+  display: flex;
+  gap: 14px;
+  color: #8a877f;
+  font-size: 12px;
+}
+.win-setup-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.win-setup-icon {
+  width: 72px; height: 72px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 16px;
+}
+.win-setup-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.win-setup-status {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.win-setup-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e5e5;
+  overflow: hidden;
+}
+.win-setup-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  border-radius: 999px;
+  transition: width 1.6s linear;
+}
+.win-scene-setup.active .win-setup-fill { width: 100%; }
+
+/* Scene 3: Launch from taskbar */
+.win-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.win-app-tile {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s;
+}
+.win-app-tile.launching {
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(49,193,120,0.3);
+}
+.win-app-tile img {
+  border-radius: 14px;
+}
+.win-app-tile .win-app-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+.win-taskbar {
+  background: rgba(240, 236, 227, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  position: relative;
+}
+.win-taskbar-item {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.win-taskbar-item.wc {
+  position: relative;
+}
+.win-taskbar-item.wc::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.win-taskbar-item.wc.running::after { opacity: 1; }
+.win-taskbar-item img { border-radius: 8px; }
+.win-scene-launch .win-cursor {
+  left: 50%;
+  bottom: 44px;
+  transform: translateX(-50%);
+}
+
 /* FOOTER */
 footer {
   padding: 32px 20px;
@@ -777,7 +1001,7 @@ footer {
   <!-- ─── MAC VIEW ─── -->
   <div id="mac-view" class="download-page" style="display:none;">
     <h1>Your download is <em>starting</em></h1>
-    <p class="download-subtitle">Here's how to get set up in under a minute</p>
+    <p class="download-subtitle">It observes you in any meeting without joining the call. Setup in a minute.</p>
 
     <div class="install-animation">
       <div class="steps-indicator">
@@ -924,18 +1148,124 @@ footer {
 
   <!-- ─── WINDOWS VIEW ─── -->
   <div id="windows-view" class="download-page" style="display:none;">
-    <div class="alt-view">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.548l7.206-0.994v6.958H3V5.548zm0 12.904l7.206 0.994v-6.934H3v5.94zm8.017 1.103L21 21v-8.488h-9.983v6.043zm0-14.11v6.067H21V3L11.017 5.445z"/></svg>
+    <h1>Your download is <em>starting</em></h1>
+    <p class="download-subtitle">It observes you in any meeting without joining the call. Setup in a minute.</p>
+
+    <div class="install-animation">
+      <div class="steps-indicator">
+        <div class="step-dot active" data-win-step="1">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Open installer</div>
+        </div>
+        <div class="step-dot" data-win-step="2">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Install</div>
+        </div>
+        <div class="step-dot" data-win-step="3">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Launch</div>
+        </div>
+        <div class="step-dot" data-win-step="4">
+          <div class="step-dot-circle"></div>
+          <div class="step-dot-label">Record</div>
+        </div>
       </div>
-      <h2>Mac only — for now</h2>
-      <p>Work Coach is currently available on macOS. Leave your email and we'll let you know when the Windows version is ready.</p>
-      <form class="email-form" id="windows-form" onsubmit="return false;">
-        <input type="email" placeholder="you@example.com" required>
-        <button type="submit">Notify me</button>
-      </form>
-      <div class="form-success" id="windows-success">Thanks! We'll email you when it's ready for Windows.</div>
-      <a href="/" class="back-link">&larr; Back to Work Coach</a>
+
+      <div class="anim-stage">
+
+        <!-- Scene 1: Open installer from browser download bar -->
+        <div class="scene win-scene-open active" data-win-scene="1">
+          <div class="win-download-bar">
+            <div class="win-dl-icon">
+              <svg class="win-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+            <div class="win-dl-meta">
+              <div class="win-dl-name">WorkCoach-win-Setup.exe</div>
+              <div class="win-dl-sub">Download complete</div>
+              <div class="win-dl-progress"><div class="win-dl-progress-bar"></div></div>
+            </div>
+            <div class="win-dl-open">Open</div>
+            <!-- Cursor SVG -->
+            <svg class="win-cursor" id="win-open-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="open-instruction">Open <strong>WorkCoach-win-Setup.exe</strong> from your downloads</p>
+        </div>
+
+        <!-- Scene 2: Setup wizard installing -->
+        <div class="scene win-scene-setup" data-win-scene="2">
+          <div class="win-setup-window">
+            <div class="win-titlebar">
+              <span class="win-title">Work Coach Setup</span>
+              <span class="win-controls"><span>&#8211;</span><span>&#9633;</span><span>&#10005;</span></span>
+            </div>
+            <div class="win-setup-body">
+              <img class="win-setup-icon" src="img/app-icon/icon-128.png" alt="Work Coach" width="72" height="72">
+              <div class="win-setup-title">Installing Work Coach</div>
+              <div class="win-setup-status">Setting things up — this only takes a moment</div>
+              <div class="win-setup-track"><div class="win-setup-fill" id="win-setup-fill"></div></div>
+            </div>
+          </div>
+          <p class="open-instruction">Click through the installer to set up <strong>Work Coach</strong></p>
+        </div>
+
+        <!-- Scene 3: Launch from taskbar -->
+        <div class="scene win-scene-launch" data-win-scene="3">
+          <div class="win-desktop">
+            <div class="win-app-tile" id="win-app-tile">
+              <img src="img/app-icon/icon-128.png" alt="Work Coach" width="56" height="56">
+              <span class="win-app-label">Work Coach</span>
+            </div>
+            <div class="win-taskbar">
+              <div class="win-taskbar-item" style="background:linear-gradient(135deg,#5ac8fa,#007aff);">
+                <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><circle cx="12" cy="12" r="9" opacity="0.85"/></svg>
+              </div>
+              <div class="win-taskbar-item wc" id="win-taskbar-wc">
+                <img src="img/app-icon/icon-128.png" alt="Work Coach" width="30" height="30">
+              </div>
+              <div class="win-taskbar-item" style="background:linear-gradient(135deg,#D4A574,#C4956A);">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><circle cx="12" cy="12" r="8" fill="rgba(255,255,255,0.9)"/><path d="M8 13c1-3 3-4 4-4s3 1 4 4" stroke="#C4956A" stroke-width="1.5" fill="none"/></svg>
+              </div>
+              <!-- Cursor SVG -->
+              <svg class="win-cursor" id="win-launch-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <p class="open-instruction">Launch <strong>Work Coach</strong> from your Start menu or taskbar</p>
+        </div>
+
+        <!-- Scene 4: Meeting notification -->
+        <div class="scene win-scene-notification" data-win-scene="4">
+          <div class="meeting-notif">
+            <div class="notif-bar">
+              <div class="notif-icon">
+                <img src="img/app-icon/icon-128.png" alt="Work Coach" width="24" height="24" style="border-radius:5px;">
+              </div>
+              <div class="notif-header">
+                <span class="notif-app">Work Coach</span>
+                <span class="notif-time">now</span>
+              </div>
+            </div>
+            <div class="notif-body">
+              <div class="notif-title">Meeting detected</div>
+              <div class="notif-text">"Product Review — Roadmap" is starting. Would you like Work Coach to observe?</div>
+            </div>
+            <div class="notif-actions">
+              <button class="notif-btn notif-btn-secondary">Not now</button>
+              <button class="notif-btn notif-btn-primary" id="win-notif-record-btn">Record</button>
+            </div>
+          </div>
+          <p class="open-instruction">When a meeting starts, Work Coach asks to record</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="redirect-notice">
+      <p>Your download will begin in <span class="countdown" id="win-countdown">3</span> seconds</p>
+      <a href="https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe" class="manual-link" id="win-manual-download">Download manually</a>
     </div>
   </div>
 
@@ -994,6 +1324,7 @@ footer {
     console.log('[WorkCoach] Showing: windows-view');
     document.getElementById('windows-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'windows' });
+    startWindowsFlow();
   } else {
     console.log('[WorkCoach] Showing: mac-view');
     document.getElementById('mac-view').style.display = 'flex';
@@ -1016,7 +1347,6 @@ footer {
       success.classList.add('visible');
     });
   }
-  setupForm('windows-form', 'windows-success', 'windows_waitlist_signup');
   setupForm('mobile-form', 'mobile-success', 'mobile_download_link_request');
 
   // ─── Mac installation animation + redirect ───
@@ -1120,6 +1450,114 @@ footer {
       e.preventDefault();
       clearInterval(timer);
       posthog.capture('download_manual_click');
+      goToDownload(this.href);
+    });
+  }
+
+  // ─── Windows installation animation + download ───
+  function startWindowsFlow() {
+    var DOWNLOAD_URL = 'https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe';
+    var countdown = 3;
+    var countdownEl = document.getElementById('win-countdown');
+    var scenes = document.querySelectorAll('#windows-view .scene');
+    var stepDots = document.querySelectorAll('#windows-view .step-dot');
+
+    function showScene(n) {
+      scenes.forEach(function(s) {
+        s.classList.toggle('active', parseInt(s.dataset.winScene) === n);
+      });
+      stepDots.forEach(function(d) {
+        var step = parseInt(d.dataset.winStep);
+        d.classList.toggle('active', step === n);
+        d.classList.toggle('done', step < n);
+      });
+    }
+
+    function resetAnimState() {
+      var openCursor = document.getElementById('win-open-cursor');
+      if (openCursor) openCursor.classList.remove('visible');
+
+      var tile = document.getElementById('win-app-tile');
+      if (tile) tile.classList.remove('launching');
+
+      var taskbarWc = document.getElementById('win-taskbar-wc');
+      if (taskbarWc) taskbarWc.classList.remove('running');
+
+      var launchCursor = document.getElementById('win-launch-cursor');
+      if (launchCursor) launchCursor.classList.remove('visible');
+
+      var notif = document.querySelector('#windows-view .meeting-notif');
+      if (notif) {
+        notif.style.animation = 'none';
+        notif.offsetHeight;
+        notif.style.animation = '';
+      }
+    }
+
+    function runCycle() {
+      resetAnimState();
+      showScene(1);
+
+      // Scene 1: Open installer (show cursor on Open button)
+      setTimeout(function() {
+        var openCursor = document.getElementById('win-open-cursor');
+        if (openCursor) openCursor.classList.add('visible');
+      }, 400);
+
+      // Scene 2: Setup wizard installing (progress bar fills via CSS)
+      setTimeout(function() {
+        showScene(2);
+      }, 2500);
+
+      // Scene 3: Launch from taskbar
+      setTimeout(function() {
+        showScene(3);
+        setTimeout(function() {
+          var launchCursor = document.getElementById('win-launch-cursor');
+          if (launchCursor) launchCursor.classList.add('visible');
+        }, 400);
+        setTimeout(function() {
+          var tile = document.getElementById('win-app-tile');
+          if (tile) tile.classList.add('launching');
+          var taskbarWc = document.getElementById('win-taskbar-wc');
+          if (taskbarWc) taskbarWc.classList.add('running');
+        }, 1000);
+      }, 5000);
+
+      // Scene 4: Meeting notification
+      setTimeout(function() {
+        showScene(4);
+        setTimeout(function() {
+          var btn = document.getElementById('win-notif-record-btn');
+          if (btn) btn.classList.add('clicked');
+        }, 1200);
+      }, 7500);
+
+      // Loop: restart after pause
+      setTimeout(function() {
+        var btn = document.getElementById('win-notif-record-btn');
+        if (btn) btn.classList.remove('clicked');
+        runCycle();
+      }, 10500);
+    }
+
+    runCycle();
+
+    // Countdown & download
+    var timer = setInterval(function() {
+      countdown--;
+      if (countdownEl) countdownEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(timer);
+        goToDownload(DOWNLOAD_URL);
+      }
+    }, 1000);
+
+    // Manual download link
+    document.getElementById('win-manual-download').addEventListener('click', function(e) {
+      e.preventDefault();
+      clearInterval(timer);
+      posthog.capture('download_manual_click', { platform: 'windows' });
       goToDownload(this.href);
     });
   }
