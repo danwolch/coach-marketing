@@ -353,6 +353,30 @@ article strong { font-weight: 700; }
 .sources h2 { margin-top: 0; }
 .sources li { font-size: 15.5px; color: var(--muted); }
 
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 footer {
   padding: 32px 0;
@@ -670,6 +694,27 @@ footer p { color: var(--muted); font-size: 14px; }
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=v3pofqabzhs">Lessons from one of the world's top executive recruiters, with Lauren Ipsen</a> (Nov 2022)</li>
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=MajB5CQUKDA">Succeeding as an introvert and PM'ing your career like a product, with Deb Liu</a> (Aug 2024)</li>
     <li>Working It (Financial Times): The unintended consequences of mass layoffs (Mar 2023, audio)</li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/job-search">Interview Prep</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/behavioral-interview-questions">Behavioral interview questions</a></li>
+    <li><a href="/playbooks/tell-me-about-yourself-interview-answer">“Tell me about yourself”</a></li>
+    <li><a href="/playbooks/prepare-for-interview-in-24-hours">Prepare for an interview in 24 hours</a></li>
+    <li><a href="/playbooks/prepare-for-final-round-interview">Prepare for a final-round interview</a></li>
+    <li><a href="/playbooks/ask-for-feedback-after-interview">Ask for feedback after an interview</a></li>
+    <li><a href="/playbooks/engineering-interview-guide">Software engineering interviews</a></li>
+    <li><a href="/playbooks/product-manager-interview-guide">Product manager interviews</a></li>
+    <li><a href="/playbooks/product-sense-interview">Product sense interviews</a></li>
+    <li><a href="/playbooks/design-interview-guide">Product design interviews</a></li>
+    <li><a href="/playbooks/sales-and-growth-interview-guide">Sales & growth interviews</a></li>
+    <li><a href="/playbooks/amazon-leadership-principles-interview">Amazon Leadership Principles interviews</a></li>
+    <li><a href="/playbooks/netflix-interview-preparation">Netflix interview preparation</a></li>
+    <li><a href="/playbooks/stripe-interview-preparation">Stripe interview preparation</a></li>
+    <li><a href="/playbooks/shopify-interview-preparation">Shopify interview preparation</a></li>
   </ul>
 </div>
 </article>

@@ -353,6 +353,30 @@ article strong { font-weight: 700; }
 .sources h2 { margin-top: 0; }
 .sources li { font-size: 15.5px; color: var(--muted); }
 
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 footer {
   padding: 32px 0;
@@ -736,6 +760,18 @@ footer p { color: var(--muted); font-size: 14px; }
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=U_WQuUIYnJg">Building a long and meaningful career, with Nikhyl Singhal</a> (Jun 2023)</li>
     <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/1-_LkABTtV1bmZ287NtinvFhr74Yl3DXzDYdG_zff2qc/edit">Manager: How to be a great one!</a>, <a href="https://docs.google.com/document/d/1j7ZNWTh9ClS0PZHrpZXGk879pv9LXDWt6sjaq1uA-zA/edit">1-1 Template and Instructions</a>, <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">Issue / Proposed Solution template</a>, <a href="https://docs.google.com/document/d/1SLHeBWEXHk9SEvUKUU1hMsxl-U-IRaeZqA-wpx02lb4/edit">Magic Questions</a>, <a href="https://docs.google.com/document/d/1v72Mozz6Zr-3Knzcd9yNcs1E8-QKk5NkTVmR6pIQj98/edit">Areas of Responsibility (AORs)</a>, and <a href="https://docs.google.com/document/d/1AhbvqdpfyUqqkSUalRwRhsJnIZx2BXIHH3v2bt0QAw4/edit">Manager Training Basics</a></li>
       <li>Mochary Method: <a href="https://www.youtube.com/watch?v=bdYwS8naVE8">Onboarding by Shadowing, with ClassDojo CEO Sam Chaudhary</a> (Apr 2025)</li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/for-managers">For Managers</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/give-feedback-that-lands">Give feedback that lands</a></li>
+    <li><a href="/playbooks/how-to-delegate-as-a-manager">How to delegate as a manager</a></li>
+    <li><a href="/playbooks/how-to-run-a-performance-review">Run a performance review</a></li>
+    <li><a href="/playbooks/should-you-cancel-your-one-on-ones">Should you cancel your 1:1s?</a></li>
+    <li><a href="/playbooks/when-someone-on-your-team-isnt-working-out">When someone isn't working out</a></li>
   </ul>
 </div>
 </article>
