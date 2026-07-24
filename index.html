@@ -1305,6 +1305,724 @@ a:focus {
 }
 .trend-delta.up { background: var(--green-soft); color: var(--accent); }
 
+/* PRODUCT DEMO ANIMATION */
+.demo-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 92px 20px 60px;
+}
+.demo-head { text-align: center; margin-bottom: 28px; }
+.demo-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.demo-stage-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  container-type: inline-size;
+}
+.demo-stage {
+  position: relative;
+  aspect-ratio: 640 / 420;
+  font-size: 13.5px;
+  font-size: clamp(6.4px, 1.95cqw, 14px);
+  line-height: 1.4;
+  user-select: none;
+}
+.demo-caption {
+  text-align: center;
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 20px auto 0;
+}
+.demo-toggle {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1000px;
+  margin: 0 auto 18px;
+}
+.demo-toggle-label {
+  width: 100%;
+  text-align: center;
+  font-size: 12px; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.demo-tab {
+  font-family: inherit;
+  font-size: 13px; font-weight: 700;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.demo-tab:hover { border-color: color-mix(in oklab, var(--border) 40%, var(--accent-2) 60%); color: var(--text); }
+.demo-tab.is-on { background: var(--accent-2); border-color: var(--accent-2); color: #fff; }
+.demo-progress { margin-top: 12px; }
+.demo-progress-bars { display: flex; gap: 8px; }
+.demo-seg { flex: 1; background: transparent; border: none; padding: 7px 0; cursor: pointer; }
+.demo-seg span {
+  display: block; position: relative;
+  height: 4px; border-radius: 999px;
+  background: color-mix(in oklab, var(--border) 85%, transparent);
+  overflow: hidden;
+  transition: background .2s ease;
+}
+.demo-seg:hover span { background: color-mix(in oklab, var(--border) 55%, var(--accent-2) 45%); }
+.demo-seg:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 1px; border-radius: 999px; }
+.demo-seg i {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 0;
+  background: var(--accent-2);
+  border-radius: 999px;
+}
+.demo-seg.done i { width: 100%; }
+.demo-progress-meta {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+.demo-phase-label { font-size: 13.5px; font-weight: 700; color: var(--text); }
+.demo-progress-tag { font-size: 13px; color: var(--muted); }
+@media (max-width: 600px) { .demo-progress-tag { display: none; } }
+
+/* centered window titles (mac traffic lights sit to the left) */
+.dm-title {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .82em; font-weight: 600;
+  white-space: nowrap;
+}
+
+/* cursor */
+.dm-cursor {
+  position: absolute; left: 56%; top: 62%;
+  width: 1.5em; height: 1.5em;
+  z-index: 30;
+  transition: left .85s cubic-bezier(.3,.7,.2,1), top .85s cubic-bezier(.3,.7,.2,1);
+  filter: drop-shadow(0 .18em .35em rgba(0,0,0,.45));
+  pointer-events: none;
+}
+.dm-cursor svg { display: block; width: 100%; height: 100%; transition: transform .12s ease; }
+.dm-cursor.is-down svg { transform: scale(.8); }
+.dm-ripple {
+  position: absolute; width: 2.6em; height: 2.6em;
+  border: .18em solid color-mix(in oklab, var(--accent-2) 85%, transparent);
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(.25);
+  opacity: .9;
+  z-index: 29;
+  pointer-events: none;
+  animation: dmRipple .55s ease-out forwards;
+  filter: drop-shadow(0 0 .3em rgba(0,0,0,.25));
+}
+@keyframes dmRipple { to { transform: translate(-50%,-50%) scale(1.3); opacity: 0; } }
+.dm-pressable { transition: transform .15s ease, filter .15s ease; }
+.dm-pressable.is-pressed { transform: scale(.93); filter: brightness(.9); }
+
+/* background video call (scenes 1–2) */
+.dm-call {
+  position: absolute; left: 50%; top: 54%;
+  width: 74%; height: 80%;
+  transform: translate(-50%,-49%) scale(.985);
+  background: #1e2329;
+  border: 1px solid rgba(26, 46, 34, .18);
+  border-radius: .9em;
+  box-shadow: 0 1.6em 4em rgba(18, 41, 29, .28), 0 .3em .9em rgba(18, 41, 29, .12);
+  display: flex; flex-direction: column;
+  opacity: 0;
+  transition: opacity .5s ease, transform .5s ease;
+  z-index: 3;
+  overflow: hidden;
+}
+.demo-stage[data-scene="notify"] .dm-call,
+.demo-stage[data-scene="record"] .dm-call {
+  opacity: 1;
+  transform: translate(-50%,-49%) scale(1);
+}
+.dm-call-bar {
+  display: flex; align-items: center;
+  position: relative;
+  padding: .5em .8em;
+  background: #262c34;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  flex-shrink: 0;
+}
+.dm-call-bar .dm-title { color: rgba(255, 255, 255, .55); font-size: .8em; }
+.dm-calldots { display: flex; gap: .4em; }
+.dm-calldots i { width: .68em; height: .68em; border-radius: 50%; }
+.dm-calldots i:nth-child(1) { background: #e0574f; }
+.dm-calldots i:nth-child(2) { background: #e5a935; }
+.dm-calldots i:nth-child(3) { background: #58b84d; }
+.dm-call-body {
+  flex: 1; min-height: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .55em;
+  padding: .6em;
+}
+.dm-tile {
+  position: relative;
+  background: linear-gradient(165deg, #2c333d, #232931);
+  border-radius: .6em;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .05);
+}
+.dm-tile.is-speaking { border-color: rgba(110, 220, 160, .65); box-shadow: 0 0 0 .09em rgba(110, 220, 160, .35); }
+.dm-tile-avatar {
+  width: 2.9em; height: 2.9em;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 1em; font-weight: 800; color: rgba(255, 255, 255, .92);
+}
+.dm-tile-avatar.av-s { background: linear-gradient(145deg, #6ba583, #3d7a5a); }
+.dm-tile-avatar.av-y { background: linear-gradient(145deg, #c9a15e, #a37f3d); }
+.dm-tile-name {
+  position: absolute; left: .55em; bottom: .5em;
+  font-size: .72em; font-weight: 600;
+  color: rgba(255, 255, 255, .75);
+  background: rgba(0, 0, 0, .4);
+  border-radius: .35em;
+  padding: .1em .55em;
+}
+.dm-call-controls {
+  display: flex; align-items: center; justify-content: center; gap: .7em;
+  padding: .5em 0 .65em;
+  flex-shrink: 0;
+}
+.dm-call-controls i {
+  width: 1.9em; height: 1.9em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  position: relative;
+}
+.dm-call-controls i::after {
+  content: '';
+  position: absolute; inset: 30%;
+  border-radius: .2em;
+  background: rgba(255, 255, 255, .55);
+}
+.dm-call-controls i.c-mic::after { border-radius: 99px 99px .12em .12em; inset: 26% 38%; }
+.dm-call-controls .c-leave {
+  font-size: .78em; font-weight: 700; color: #fff;
+  background: #d4574e;
+  border-radius: 999px;
+  padding: .45em 1.2em;
+}
+
+/* scene 1: meeting-detected notification */
+.dm-notify {
+  position: absolute; top: .4em; right: .4em;
+  width: 25em;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.05em;
+  padding: 1em 1.05em 1.1em;
+  box-shadow: 0 .9em 2.4em rgba(18, 41, 29, .16), 0 .2em .6em rgba(18, 41, 29, .08);
+  opacity: 0;
+  transform: translateY(-14%) scale(.97);
+  transition: transform .5s cubic-bezier(.22,.9,.3,1), opacity .4s ease;
+  z-index: 10;
+  overflow: hidden;
+}
+.demo-stage[data-scene="notify"] .dm-notify { opacity: 1; transform: none; }
+.dm-notify-row { display: flex; align-items: center; gap: .8em; margin-bottom: .9em; }
+.dm-appicon {
+  width: 2.6em; height: 2.6em; flex-shrink: 0;
+  border-radius: .62em;
+  background: linear-gradient(150deg, var(--accent), var(--accent-2));
+  display: flex; align-items: center; justify-content: center; gap: .24em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 .18em .5em rgba(30, 107, 66, .35);
+}
+.dm-appicon i { width: .28em; border-radius: 99px; background: rgba(255, 255, 255, .95); }
+.dm-appicon i:nth-child(1) { height: .7em; }
+.dm-appicon i:nth-child(2) { height: 1.2em; }
+.dm-appicon i:nth-child(3) { height: .85em; }
+.dm-notify-title { font-size: 1.05em; font-weight: 700; color: var(--text); line-height: 1.3; }
+.dm-notify-sub { font-size: .9em; color: var(--muted); line-height: 1.35; }
+.dm-notify-actions { display: flex; justify-content: flex-end; gap: .6em; }
+.dm-btn {
+  font-size: .92em; font-weight: 700;
+  padding: .48em 1.1em;
+  border-radius: .6em;
+  white-space: nowrap;
+}
+.dm-btn.secondary { background: rgba(26, 46, 34, .08); color: var(--muted); }
+.dm-btn.primary {
+  background: var(--accent-2); color: #fff;
+  box-shadow: 0 .25em .7em rgba(30, 107, 66, .35);
+}
+.dm-countdown {
+  position: absolute; left: 0; bottom: 0;
+  height: .26em; width: 100%;
+  background: rgba(26, 46, 34, .18);
+  transform-origin: left;
+}
+.demo-stage[data-scene="notify"] .dm-countdown { animation: dmShrink 7s linear forwards; }
+@keyframes dmShrink { from { transform: scaleX(.92); } to { transform: scaleX(.3); } }
+
+/* scene 2: observing HUD */
+.dm-hud {
+  position: absolute; top: .5em; left: 50%;
+  display: flex; align-items: center; gap: .9em;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .55em .6em .55em 1.15em;
+  box-shadow: 0 .9em 2.4em rgba(18, 41, 29, .16), 0 .2em .6em rgba(18, 41, 29, .08);
+  opacity: 0;
+  transform: translate(-50%,-45%) scale(.97);
+  transition: transform .5s cubic-bezier(.22,.9,.3,1), opacity .35s ease;
+  z-index: 10;
+}
+.demo-stage[data-scene="record"] .dm-hud { opacity: 1; transform: translate(-50%,0); }
+.dm-wavebars { display: flex; align-items: center; gap: .3em; height: 1.5em; }
+.dm-wavebars i { width: .32em; height: .5em; border-radius: 99px; background: var(--accent-2); }
+.demo-stage[data-scene="record"] .dm-wavebars i { animation: dmBar .8s ease-in-out infinite alternate; }
+.dm-wavebars i:nth-child(2) { animation-delay: .18s; }
+.dm-wavebars i:nth-child(3) { animation-delay: .34s; }
+@keyframes dmBar { from { height: .4em; } to { height: 1.35em; } }
+.dm-hud-label { display: flex; align-items: center; gap: .5em; font-size: .95em; font-weight: 700; color: var(--text); }
+.dm-hud-dot { width: .55em; height: .55em; border-radius: 50%; background: var(--red); animation: pulse 1.3s ease-in-out infinite; }
+.dm-hud-time { font-size: .95em; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 3.2em; }
+.dm-hud-stop {
+  display: flex; align-items: center; gap: .45em;
+  font-size: .9em; font-weight: 700; color: #fff;
+  background: var(--red);
+  border-radius: 999px;
+  padding: .42em 1em;
+  box-shadow: 0 .2em .6em rgba(201, 74, 74, .4);
+}
+.dm-hud-stop::before { content: ''; width: .6em; height: .6em; background: #fff; border-radius: .14em; }
+
+/* app window (scenes 3–6) */
+.dm-window {
+  position: absolute; left: 50%; top: 51.5%;
+  width: 82%; height: 96%;
+  transform: translate(-50%,-48.5%) scale(.97);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: .95em;
+  box-shadow: 0 1.8em 4.5em rgba(18, 41, 29, .18), 0 .3em .9em rgba(18, 41, 29, .08);
+  opacity: 0;
+  transition: opacity .5s ease, transform .55s cubic-bezier(.22,.9,.3,1);
+  display: flex; flex-direction: column;
+  z-index: 5;
+  overflow: hidden;
+}
+.demo-stage[data-scene="analyze"] .dm-window,
+.demo-stage[data-scene="results"] .dm-window,
+.demo-stage[data-scene="audio"] .dm-window,
+.demo-stage[data-scene="practice"] .dm-window {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+.dm-titlebar {
+  display: flex; align-items: center;
+  position: relative;
+  padding: .52em .9em;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.dm-titlebar .dm-title { color: var(--muted); }
+.dm-dots { display: flex; gap: .42em; }
+.dm-dots i { width: .72em; height: .72em; border-radius: 50%; }
+.dm-dots i:nth-child(1) { background: #e0574f; }
+.dm-dots i:nth-child(2) { background: #e5a935; }
+.dm-dots i:nth-child(3) { background: #58b84d; }
+/* views */
+.dm-body { position: relative; flex: 1; min-height: 0; }
+.dm-view {
+  position: absolute; inset: 0;
+  padding: 1em 1.25em;
+  opacity: 0;
+  transition: opacity .4s ease;
+  overflow: hidden;
+  pointer-events: none;
+}
+.demo-stage[data-scene="analyze"] .dm-view-analyzing,
+.demo-stage[data-scene="results"] .dm-view-results,
+.demo-stage[data-scene="audio"] .dm-view-audio,
+.demo-stage[data-scene="practice"] .dm-view-practice { opacity: 1; }
+
+/* scene 3: analyzing */
+.dm-view-analyzing {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .8em;
+}
+.dm-spinner {
+  width: 2.4em; height: 2.4em;
+  border: .3em solid var(--surface);
+  border-top-color: var(--accent-2);
+  border-radius: 50%;
+  animation: dmSpin .9s linear infinite;
+}
+@keyframes dmSpin { to { transform: rotate(360deg); } }
+.dm-analyzing-t { font-size: 1.08em; font-weight: 700; color: var(--text); }
+.dm-an-steps { display: flex; flex-direction: column; gap: .5em; margin-top: .2em; }
+.dm-an-step {
+  display: flex; align-items: center; gap: .55em;
+  font-size: .88em; font-weight: 600; color: var(--muted);
+  opacity: 0;
+  transform: translateY(.5em);
+  transition: opacity .4s ease, transform .4s cubic-bezier(.22,.9,.3,1);
+}
+.demo-stage[data-scene="analyze"] .dm-an-step:nth-child(1) { transition-delay: .35s; opacity: 1; transform: none; }
+.demo-stage[data-scene="analyze"] .dm-an-step:nth-child(2) { transition-delay: 1.25s; opacity: 1; transform: none; }
+.demo-stage[data-scene="analyze"] .dm-an-step:nth-child(3) { transition-delay: 2.1s; opacity: 1; transform: none; }
+.dm-an-step i {
+  width: 1.2em; height: 1.2em; flex-shrink: 0;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.dm-an-step.done i { background: var(--accent-2); }
+.dm-an-step.done i::after {
+  content: '';
+  width: .55em; height: .3em;
+  border-left: .14em solid #fff;
+  border-bottom: .14em solid #fff;
+  transform: rotate(-45deg) translate(.04em, -.06em);
+}
+.dm-an-step.run i {
+  border: .16em solid var(--surface);
+  border-top-color: var(--accent-2);
+  animation: dmSpin .9s linear infinite;
+}
+
+/* scene 4: coaching results */
+.dm-meet-title { font-size: 1.18em; font-weight: 800; color: var(--text); }
+.dm-meta-row { display: flex; align-items: center; gap: .8em; margin: .25em 0 .7em; }
+.dm-badge-type {
+  display: inline-flex; align-items: center; gap: .4em;
+  font-size: .8em; font-weight: 700;
+  color: var(--accent-2);
+  background: var(--green-soft);
+  border: 1px solid color-mix(in oklab, var(--accent-2) 35%, transparent);
+  border-radius: 999px;
+  padding: .22em .8em;
+  transform: scale(.5); opacity: 0;
+  transition: transform .5s cubic-bezier(.34,1.56,.64,1) .3s, opacity .3s ease .3s;
+}
+.demo-stage[data-scene="results"] .dm-badge-type { transform: scale(1); opacity: 1; }
+.dm-meta { font-size: .84em; color: var(--muted); font-weight: 600; }
+.dm-stats { display: flex; gap: .55em; margin-bottom: .75em; }
+.dm-stat {
+  flex: 1;
+  background: color-mix(in oklab, var(--surface) 45%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: .6em;
+  padding: .45em .7em .5em;
+  opacity: 0;
+  transform: translateY(.8em);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.9,.3,1);
+}
+.demo-stage[data-scene="results"] .dm-stat { opacity: 1; transform: none; }
+.demo-stage[data-scene="results"] .dm-stat:nth-child(1) { transition-delay: .35s; }
+.demo-stage[data-scene="results"] .dm-stat:nth-child(2) { transition-delay: .5s; }
+.demo-stage[data-scene="results"] .dm-stat:nth-child(3) { transition-delay: .65s; }
+.dm-stat b { display: block; font-size: 1.12em; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; }
+.dm-stat em {
+  font-style: normal;
+  font-size: .66em; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--muted);
+}
+.dm-sec-label {
+  font-size: .78em; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: .5em;
+}
+.dm-rec {
+  position: relative;
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  border-left: .3em solid var(--amber);
+  border-radius: .6em;
+  padding: .5em .8em .55em;
+  margin-bottom: .5em;
+  box-shadow: 0 .2em .55em rgba(26, 46, 34, .05);
+  opacity: 0;
+  transform: translateY(1.2em);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.9,.3,1);
+}
+.dm-rec.good { border-left-color: var(--accent); }
+.demo-stage[data-scene="results"] .dm-rec { opacity: 1; transform: none; }
+.demo-stage[data-scene="results"] .dm-rec:nth-last-of-type(3) { transition-delay: 1.05s; }
+.demo-stage[data-scene="results"] .dm-rec:nth-last-of-type(2) { transition-delay: 1.8s; }
+.demo-stage[data-scene="results"] .dm-rec:nth-last-of-type(1) { transition-delay: 2.55s; }
+.dm-rec.pattern {
+  border-left-color: var(--accent-2);
+  background: linear-gradient(0deg, rgba(49, 193, 120, .06), rgba(49, 193, 120, .06)), var(--card);
+}
+.dm-rec-eyebrow {
+  display: flex; align-items: center; gap: .55em;
+  font-size: .66em; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: .3em;
+}
+.dm-meet-dots { display: inline-flex; gap: .3em; }
+.dm-meet-dots i { width: .62em; height: .62em; border-radius: 50%; background: var(--amber); }
+.dm-meet-dots i.ok { background: color-mix(in oklab, var(--muted) 30%, transparent); }
+.dm-rec-head { display: flex; align-items: center; justify-content: space-between; gap: .7em; }
+.dm-rec-head b { font-size: .94em; color: var(--text); }
+.dm-tag {
+  font-size: .7em; font-weight: 800;
+  border-radius: 999px;
+  padding: .18em .8em;
+  white-space: nowrap;
+}
+.dm-tag.warn { color: var(--amber); background: var(--amber-soft); }
+.dm-tag.good { color: var(--accent-2); background: var(--green-soft); }
+.dm-rec p { font-size: .84em; color: var(--muted); line-height: 1.42; margin-top: .1em; }
+.dm-rec p em { font-style: italic; }
+
+/* scene 5: audio analysis */
+.dm-score-row { display: flex; align-items: baseline; gap: .5em; margin-bottom: .55em; }
+.dm-score { font-size: 1.9em; font-weight: 800; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1; }
+.dm-score-cap { font-size: .85em; font-weight: 600; color: var(--muted); }
+.dm-player {
+  display: flex; align-items: center; gap: .85em;
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: .75em;
+  padding: .7em .9em;
+  box-shadow: 0 .2em .55em rgba(26, 46, 34, .05);
+}
+.dm-play {
+  width: 2.3em; height: 2.3em; flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-2);
+  color: #fff;
+  display: grid; place-items: center;
+  border: none; font-size: 1em;
+  box-shadow: 0 .25em .7em rgba(30, 107, 66, .35);
+}
+.dm-play svg { width: 1em; height: 1em; display: block; }
+.dm-play .dm-ic-pause { display: none; }
+.dm-play.is-playing .dm-ic-play { display: none; }
+.dm-play.is-playing .dm-ic-pause { display: block; }
+.dm-ptime {
+  font-size: .88em; font-weight: 700; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.9em;
+}
+.dm-wave { position: relative; flex: 1; height: 2.8em; }
+.dm-wave-layer {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; gap: .16em;
+}
+.dm-wave-layer i { flex: 1; border-radius: 99px; background: color-mix(in oklab, var(--muted) 32%, transparent); }
+.dm-wave-layer.fill i { background: var(--accent-2); }
+.dm-wave-layer.fill i.z { background: var(--amber); }
+.dm-wave-layer.fill { clip-path: inset(0 100% 0 0); }
+.dm-callout {
+  position: absolute;
+  bottom: calc(100% + .55em);
+  left: 50%;
+  transform: translate(-50%, .5em) scale(.85);
+  background: var(--text);
+  color: #fdfbf6;
+  font-size: .72em; font-weight: 700;
+  white-space: nowrap;
+  border-radius: .5em;
+  padding: .32em .75em;
+  opacity: 0;
+  transition: opacity .3s ease, transform .35s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+  z-index: 3;
+}
+.dm-callout::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: .35em solid transparent;
+  border-top-color: var(--text);
+  border-bottom: 0;
+}
+.dm-callout.is-on { opacity: 1; transform: translate(-50%, 0) scale(1); }
+.dm-playhead {
+  position: absolute; top: -10%; bottom: -10%; left: 0;
+  width: .18em; border-radius: 99px;
+  background: var(--accent-2);
+  opacity: 0;
+}
+.dm-playhead::after {
+  content: '';
+  position: absolute; top: -.28em; left: 50%;
+  width: .6em; height: .6em;
+  border-radius: 50%;
+  background: var(--accent-2);
+  transform: translateX(-50%);
+}
+.dm-quote {
+  font-size: .88em; font-style: italic; color: var(--muted);
+  margin: .55em 0 .5em;
+}
+.dm-quote .qf1 { opacity: .55; }
+.dm-quote .qf2 { opacity: .32; }
+.dm-quote .qf3 { opacity: .16; }
+.dm-quote .qhedge {
+  font-weight: 700;
+  color: var(--amber);
+  background: var(--amber-soft);
+  border-radius: .3em;
+  padding: 0 .25em;
+}
+.dm-quote .qrush { letter-spacing: -.02em; word-spacing: -.05em; }
+.dm-suggest {
+  display: flex; align-items: flex-start; gap: .5em;
+  font-size: .84em; font-weight: 600; color: var(--text);
+  background: var(--amber-soft);
+  border: 1px solid color-mix(in oklab, var(--amber) 28%, transparent);
+  border-radius: .55em;
+  padding: .45em .75em;
+  margin-bottom: .65em;
+  line-height: 1.4;
+}
+.dm-suggest b { color: var(--amber); font-weight: 800; white-space: nowrap; }
+.dm-moments { margin-bottom: .8em; }
+.dm-moment {
+  display: flex; align-items: center; gap: .6em;
+  border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  border-radius: .6em;
+  padding: .42em .65em;
+  margin-bottom: .4em;
+  font-size: .85em;
+  opacity: 0;
+  transform: translateY(.8em);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.9,.3,1);
+}
+.demo-stage[data-scene="audio"] .dm-moment { opacity: 1; transform: none; }
+.demo-stage[data-scene="audio"] .dm-moment:nth-child(1) { transition-delay: .45s; }
+.demo-stage[data-scene="audio"] .dm-moment:nth-child(2) { transition-delay: .7s; }
+.dm-moment i {
+  width: 1.35em; height: 1.35em; flex-shrink: 0;
+  border-radius: 50%;
+  border: .13em solid var(--accent-2);
+  position: relative;
+}
+.dm-moment i::after {
+  content: '';
+  position: absolute; left: 36%; top: 26%;
+  border-left: .42em solid var(--accent-2);
+  border-top: .28em solid transparent;
+  border-bottom: .28em solid transparent;
+}
+.dm-moment .t { font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dm-moment .d { flex: 1; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-m-tag {
+  font-size: .78em; font-weight: 800;
+  border-radius: 999px;
+  padding: .15em .7em;
+  white-space: nowrap;
+}
+.dm-m-tag.warn { color: var(--amber); background: var(--amber-soft); }
+.dm-m-tag.good { color: var(--accent-2); background: var(--green-soft); }
+.dm-practice-cta {
+  display: inline-flex; align-items: center; gap: .5em;
+  font-size: .95em; font-weight: 700;
+  color: #fff; background: var(--accent-2);
+  border: none; border-radius: 999px;
+  padding: .55em 1.35em;
+  box-shadow: 0 .3em .9em rgba(30, 107, 66, .3);
+  opacity: 0;
+  transform: translateY(1.2em);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.9,.3,1);
+}
+.demo-stage[data-scene="audio"] .dm-practice-cta { opacity: 1; transform: none; transition-delay: 5.4s; }
+.dm-view-audio .dm-sec-label { margin-bottom: .35em; }
+
+/* scene 6: practice call */
+.dm-view-practice {
+  display: flex; flex-direction: column;
+  align-items: center;
+  padding-top: .8em;
+}
+.dm-prac-top {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dm-rec-pill {
+  display: inline-flex; align-items: center; gap: .4em;
+  font-size: .76em; font-weight: 800; letter-spacing: .06em;
+  color: var(--red);
+  background: var(--red-soft);
+  border-radius: 999px;
+  padding: .25em .8em;
+}
+.dm-rec-pill::before { content: ''; width: .55em; height: .55em; border-radius: 50%; background: var(--red); animation: pulse 1.3s ease-in-out infinite; }
+.dm-prac-time {
+  font-size: .84em; font-weight: 700; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  background: var(--surface);
+  border-radius: 999px;
+  padding: .25em .8em;
+}
+.dm-avatar { position: relative; width: 8em; height: 8em; margin: .35em 0 .4em; display: grid; place-items: center; }
+.dm-ring {
+  position: absolute; inset: 0;
+  border: .16em solid color-mix(in oklab, var(--accent) 55%, transparent);
+  border-radius: 50%;
+}
+.demo-stage[data-scene="practice"] .dm-ring { animation: dmRing 2.2s ease-out infinite; }
+.demo-stage[data-scene="practice"] .dm-ring:nth-child(2) { animation-delay: 1.1s; }
+@keyframes dmRing {
+  0% { transform: scale(.72); opacity: 0; }
+  30% { opacity: .85; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+.dm-avatar-core {
+  width: 5.4em; height: 5.4em;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--accent), var(--accent-2));
+  display: flex; align-items: center; justify-content: center; gap: .34em;
+  box-shadow: 0 .6em 1.8em rgba(30, 107, 66, .4), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+.dm-avatar-core i { width: .4em; height: 1.1em; border-radius: 99px; background: rgba(255, 255, 255, .92); }
+.demo-stage[data-scene="practice"] .dm-avatar-core i { animation: dmBar .7s ease-in-out infinite alternate; }
+.demo-stage[data-scene="practice"] .dm-avatar-core i:nth-child(2) { animation-delay: .16s; }
+.demo-stage[data-scene="practice"] .dm-avatar-core i:nth-child(3) { animation-delay: .32s; }
+.dm-prac-role { font-size: 1.04em; font-weight: 800; color: var(--text); }
+.dm-prac-status { font-size: .88em; font-weight: 600; color: var(--accent-2); margin-bottom: .45em; }
+.dm-scenario-chip {
+  font-size: .78em; font-weight: 600; color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .3em 1em;
+  margin-bottom: .7em;
+}
+.dm-end-call {
+  display: inline-flex; align-items: center; gap: .5em;
+  font-size: .9em; font-weight: 700; color: #fff;
+  background: var(--red);
+  border-radius: 999px;
+  padding: .5em 1.35em;
+  box-shadow: 0 .25em .8em rgba(201, 74, 74, .35);
+}
+
+/* static fallback (reduced motion) */
+.demo-stage.is-static .dm-cursor { display: none; }
+.demo-stage.is-static .dm-window { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.demo-stage.is-static .dm-view-results { opacity: 1; }
+.demo-stage.is-static .dm-rec,
+.demo-stage.is-static .dm-stat,
+.demo-stage.is-static .dm-badge-type { opacity: 1; transform: none; transition: none; }
+
 /* MOBILE */
 @media (max-width: 768px) { .nav-links { display: none; } }
 @media (max-width: 920px) {
@@ -1315,6 +2033,12 @@ a:focus {
   .hero .subtitle { margin: 0 auto 30px; font-size: 19px; }
 }
 @media (max-width: 600px) {
+  .demo-section { padding: 60px 14px 28px; }
+  .demo-head { margin-bottom: 20px; }
+  .demo-stage { aspect-ratio: 640 / 540; font-size: clamp(6.9px, 2.5cqw, 13.8px); }
+  .dm-window { width: 96%; height: 92%; }
+  .dm-call { width: 88%; }
+  .demo-tab { font-size: 12.5px; padding: 6px 12px; }
   .hero h1 { font-size: 34px; max-width: 100%; line-height: 1.15; }
   /* Reserve two lines so longer rotating phrases don't change the hero's
      height as they cycle (prevents the page from jumping while scrolling). */
@@ -1393,6 +2117,177 @@ a:focus {
       <p class="subtitle">Empowering you to accomplish your work goals</p>
       <div class="cta-row">
         <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" aria-label="Work Coach demo">
+  <div class="demo-head">
+    <div class="section-label">Interactive demo</div>
+    <h2>Watch your coach work a real meeting</h2>
+  </div>
+  <div class="demo-toggle" role="group" aria-label="Choose a demo scenario">
+    <button type="button" class="demo-tab is-on" data-demo-pack="interview">Job Interview</button>
+    <button type="button" class="demo-tab" data-demo-pack="manager">Manager 1:1</button>
+    <button type="button" class="demo-tab" data-demo-pack="presentation">Leadership Presentation</button>
+    <button type="button" class="demo-tab" data-demo-pack="promotion">Promotion Conversation</button>
+    <button type="button" class="demo-tab" data-demo-pack="difficult">Difficult Conversation</button>
+    <button type="button" class="demo-tab" data-demo-pack="pay">Pay Negotiation</button>
+  </div>
+  <div class="demo-stage-wrap">
+    <div class="demo-stage" data-demo-stage data-scene="" aria-hidden="true">
+
+      <!-- the meeting happening in the background (scenes 1–2) -->
+      <div class="dm-call">
+        <div class="dm-call-bar">
+          <span class="dm-calldots"><i></i><i></i><i></i></span>
+          <span class="dm-title" data-df="call">Weekly 1:1 &mdash; Zoom</span>
+        </div>
+        <div class="dm-call-body">
+          <div class="dm-tile is-speaking">
+            <span class="dm-tile-avatar av-s" data-df="pinit">S</span>
+            <span class="dm-tile-name" data-df="pname">Sarah</span>
+          </div>
+          <div class="dm-tile">
+            <span class="dm-tile-avatar av-y">Y</span>
+            <span class="dm-tile-name">You</span>
+          </div>
+        </div>
+        <div class="dm-call-controls"><i class="c-mic"></i><i class="c-cam"></i><span class="c-leave">Leave</span></div>
+      </div>
+
+      <!-- scene 1: meeting detected -->
+      <div class="dm-notify">
+        <div class="dm-notify-row">
+          <span class="dm-appicon"><i></i><i></i><i></i></span>
+          <div>
+            <div class="dm-notify-title">Meeting detected</div>
+            <div class="dm-notify-sub">Zoom is using your microphone</div>
+          </div>
+        </div>
+        <div class="dm-notify-actions">
+          <span class="dm-btn secondary">Not now</span>
+          <span class="dm-btn primary dm-pressable" data-t-observe>Start observing</span>
+        </div>
+        <div class="dm-countdown"></div>
+      </div>
+
+      <!-- scene 2: observing HUD -->
+      <div class="dm-hud">
+        <span class="dm-wavebars"><i></i><i></i><i></i></span>
+        <span class="dm-hud-label"><span class="dm-hud-dot"></span>Observing</span>
+        <span class="dm-hud-time" data-rec-time>0:00</span>
+        <span class="dm-hud-stop dm-pressable" data-t-stop>End meeting</span>
+      </div>
+
+      <!-- scenes 3–6: the app -->
+      <div class="dm-window">
+        <div class="dm-titlebar">
+          <span class="dm-dots"><i></i><i></i><i></i></span>
+          <span class="dm-title">Work Coach</span>
+        </div>
+        <div class="dm-body">
+
+          <div class="dm-view dm-view-analyzing">
+            <div class="dm-spinner"></div>
+            <div class="dm-analyzing-t">Analyzing your meeting&hellip;</div>
+            <div class="dm-an-steps">
+              <div class="dm-an-step done"><i></i>Transcribing audio</div>
+              <div class="dm-an-step done"><i></i>Detecting meeting type</div>
+              <div class="dm-an-step run"><i></i>Writing coaching notes</div>
+            </div>
+          </div>
+
+          <div class="dm-view dm-view-results">
+            <div class="dm-meet-title" data-df="title">1:1 with Sarah &mdash; Q3 Planning</div>
+            <div class="dm-meta-row">
+              <span class="dm-badge-type" data-df="badge">&#10003; Detected: Manager 1:1</span>
+              <span class="dm-meta" data-df="meta">32 min &middot; Zoom</span>
+            </div>
+            <div class="dm-stats">
+              <div class="dm-stat" data-df="stat1"><b>38%</b><em>Talk time</em></div>
+              <div class="dm-stat" data-df="stat2"><b>12</b><em>Filler words</em></div>
+              <div class="dm-stat" data-df="stat3"><b>6</b><em>Questions asked</em></div>
+            </div>
+            <div class="dm-sec-label">Coaching insights</div>
+            <div class="dm-rec" data-df="rec1">
+              <div class="dm-rec-head"><b>Stop undermining your own ideas</b><span class="dm-tag warn">Needs work</span></div>
+              <p>At 2:24 you opened with <em>&ldquo;this might be kind of dumb&hellip;&rdquo;</em> Lead with the idea directly.</p>
+            </div>
+            <div class="dm-rec good" data-df="rec2">
+              <div class="dm-rec-head"><b>Great receptivity when challenged</b><span class="dm-tag good">Strong</span></div>
+              <p>You stayed curious when Sarah pushed back on the timeline.</p>
+            </div>
+            <div class="dm-rec pattern" data-df="rec3">
+              <div class="dm-rec-eyebrow"></div>
+              <div class="dm-rec-head"><b>You keep underselling strong wins</b></div>
+              <p>Today&rsquo;s hedge follows Tuesday&rsquo;s all-hands, where a 3&times; engagement win got a <em>&ldquo;so that&rsquo;s cool.&rdquo;</em> Own the wins you report.</p>
+            </div>
+          </div>
+
+          <div class="dm-view dm-view-audio">
+            <div class="dm-sec-label">Voice delivery</div>
+            <div class="dm-score-row"><span class="dm-score" data-df="score">74</span><span class="dm-score-cap">/ 100 in the moments where your delivery mattered most</span></div>
+            <div class="dm-player">
+              <button class="dm-play dm-pressable" data-t-play type="button" tabindex="-1">
+                <svg class="dm-ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+                <svg class="dm-ic-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.4z"/></svg>
+              </button>
+              <span class="dm-ptime" data-ptime>2:24</span>
+              <div class="dm-wave">
+                <div class="dm-wave-layer" data-wave-base></div>
+                <div class="dm-wave-layer fill" data-wave-fill></div>
+                <i class="dm-playhead" data-playhead></i>
+                <span class="dm-callout" data-callout></span>
+              </div>
+            </div>
+            <p class="dm-quote" data-df="quote">&ldquo;&hellip;your volume dropped and your voice trailed off at the very end of your point.&rdquo;</p>
+            <div class="dm-suggest"><b>Try:</b><span data-df="try">Keep your volume steady through the final word &mdash; it makes the same sentence sound like a decision.</span></div>
+            <div class="dm-moments">
+              <div class="dm-moment" data-df="m1"><i></i><span class="t">2:24</span><span class="d">Hedged your opening idea</span><span class="dm-m-tag warn">Volume</span></div>
+              <div class="dm-moment" data-df="m2"><i></i><span class="t">45:19</span><span class="d">Calm, deliberate pace on your risk question</span><span class="dm-m-tag good">Pace</span></div>
+            </div>
+            <button class="dm-practice-cta dm-pressable" data-t-practice type="button" tabindex="-1">&#8635;&nbsp; Practice this scenario again</button>
+          </div>
+
+          <div class="dm-view dm-view-practice">
+            <div class="dm-prac-top">
+              <span class="dm-rec-pill">REC</span>
+              <span class="dm-prac-time" data-prac-time>0:00</span>
+            </div>
+            <div class="dm-avatar">
+              <i class="dm-ring"></i>
+              <i class="dm-ring"></i>
+              <span class="dm-avatar-core"><i></i><i></i><i></i></span>
+            </div>
+            <div class="dm-prac-role" data-df="prole">Sarah &middot; your manager</div>
+            <div class="dm-prac-status">Listening&hellip;</div>
+            <div class="dm-scenario-chip" data-df="pscen">Scenario: pitch your idea with confidence</div>
+            <span class="dm-end-call">&#9742; End Roleplay</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- animated cursor -->
+      <div class="dm-cursor" data-cursor>
+        <svg viewBox="0 0 24 24"><path d="M5.5 3l13 8-5.7 1.3 3.3 5.9-2.8 1.6-3.3-5.9L5.5 18z" fill="#fff" stroke="#1a2e22" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+
+    </div>
+    <div class="demo-progress">
+      <div class="demo-progress-bars">
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 1: a meeting is detected"><span><i></i></span></button>
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 2: your coach observes"><span><i></i></span></button>
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 3: the call is analyzed"><span><i></i></span></button>
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 4: coaching insights"><span><i></i></span></button>
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 5: voice delivery"><span><i></i></span></button>
+        <button type="button" class="demo-seg" data-seg aria-label="Phase 6: practice the scenario"><span><i></i></span></button>
+      </div>
+      <div class="demo-progress-meta">
+        <span class="demo-phase-label" data-demo-label>A meeting starts &mdash; your coach notices</span>
+        <span class="demo-progress-tag">Work Coach finds your blind spots and helps you practice.</span>
       </div>
     </div>
   </div>
@@ -2133,6 +3028,469 @@ a:focus {
     });
   }, { threshold: 0.4 });
   io.observe(list);
+})();
+
+/* Product demo animation */
+(function() {
+  var stage = document.querySelector('[data-demo-stage]');
+  if (!stage) return;
+
+  var cursor = stage.querySelector('[data-cursor]');
+  var recTimeEl = stage.querySelector('[data-rec-time]');
+  var pracTimeEl = stage.querySelector('[data-prac-time]');
+  var ptimeEl = stage.querySelector('[data-ptime]');
+  var playBtn = stage.querySelector('[data-t-play]');
+  var waveFill = stage.querySelector('[data-wave-fill]');
+  var playhead = stage.querySelector('[data-playhead]');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var waveBase = stage.querySelector('[data-wave-base]');
+  var callout = stage.querySelector('[data-callout]');
+
+  // waveform bars are shaped per pack so the vocal flaw is visible:
+  // trailoff = bars shrink at the end, choppy = stuttery gaps, rush = dense tall cluster
+  function barHeight(i, n, w) {
+    var f = i / (n - 1);
+    var h = 0.28 + 0.65 * Math.abs(Math.sin(i * 1.7) + 0.35 * Math.sin(i * 0.9)) / 1.35;
+    var inZone = f >= w.zone[0] && f <= w.zone[1];
+    if (w.shape === 'trailoff' && f >= w.zone[0]) {
+      h *= 1 - 0.85 * ((f - w.zone[0]) / (1 - w.zone[0]));
+    } else if (w.shape === 'choppy' && inZone) {
+      h = i % 2 ? Math.min(1, h * 1.25) : 0.1;
+    } else if (w.shape === 'rush' && inZone) {
+      h = 0.82 + 0.15 * Math.abs(Math.sin(i * 2.3));
+    }
+    return { h: Math.min(1, h), z: inZone };
+  }
+  function buildWave(p) {
+    [waveBase, waveFill].forEach(function(layer) {
+      layer.innerHTML = '';
+      for (var i = 0; i < 42; i++) {
+        var bar = document.createElement('i');
+        var b = barHeight(i, 42, p.wave);
+        bar.style.height = b.h * 100 + '%';
+        if (b.z) bar.className = 'z';
+        layer.appendChild(bar);
+      }
+    });
+    callout.textContent = p.wave.callout;
+    callout.style.left = p.wave.at * 100 + '%';
+  }
+
+  /* ---- use-case content packs ---- */
+  function dots(total, quiet) {
+    var out = '<span class="dm-meet-dots">';
+    for (var i = 0; i < total; i++) out += i === quiet ? '<i class="ok"></i>' : '<i></i>';
+    return out + '</span>';
+  }
+  var PACKS = {
+    manager: {
+      call: 'Weekly 1:1 — Zoom', pinit: 'S', pname: 'Sarah',
+      title: '1:1 with Sarah — Q3 Planning',
+      badge: '✓ Detected: Manager 1:1', meta: '32 min · Zoom',
+      stats: [['38%', 'Talk time'], ['12', 'Filler words'], ['6', 'Questions asked']],
+      rec1: { t: 'Stop undermining your own ideas', tag: 'Needs work',
+        b: 'At 2:24 you opened with <em>“this might be kind of dumb…”</em> Lead with the idea directly.' },
+      rec2: { t: 'Great receptivity when challenged', tag: 'Strong',
+        b: 'You stayed curious when Sarah pushed back on the timeline.' },
+      rec3: { eyebrow: 'Pattern · across your last 5 meetings ' + dots(5, 2),
+        t: 'You keep underselling strong wins',
+        b: 'Today’s hedge follows Tuesday’s all-hands, where a 3× engagement win got a <em>“so that’s cool.”</em> Own the wins you report.' },
+      score: '74', pstart: 144,
+      wave: { shape: 'trailoff', zone: [0.74, 1], callout: 'Volume drops — voice trails off', at: 0.72 },
+      quote: '“…but that’s not the same as <span class="qf1">how corporate</span> <span class="qf2">policy keeps</span> <span class="qf3">you safe.”</span>',
+      trytip: 'Keep your volume steady through the final word — it makes the same sentence sound like a decision.',
+      m1: ['2:24', 'Hedged your opening idea', 'Volume', 'warn'],
+      m2: ['45:19', 'Calm, deliberate pace on your risk question', 'Pace', 'good'],
+      prole: 'Sarah · your manager', pscen: 'Scenario: pitch your idea with confidence',
+      recTarget: 1924
+    },
+    interview: {
+      call: 'Interview — Zoom', pinit: 'P', pname: 'Priya',
+      title: 'Interview with Priya — Senior PM',
+      badge: '✓ Detected: Job interview', meta: '45 min · Zoom',
+      stats: [['52%', 'Talk time'], ['9', 'Filler words'], ['3', 'Questions asked']],
+      rec1: { t: 'Land the result first', tag: 'Needs work',
+        b: 'Your project stories averaged 3 minutes before the payoff. Lead with the outcome, then offer the detail.' },
+      rec2: { t: 'Strong closing questions', tag: 'Strong',
+        b: 'Asking how success is measured in the first 90 days signaled real ownership.' },
+      rec3: { eyebrow: 'Pattern · across your last 3 interviews ' + dots(3, -1),
+        t: 'You bury your best material',
+        b: 'In all three onsites this month, your strongest example came last. Open with it while attention is highest.' },
+      score: '68', pstart: 760,
+      wave: { shape: 'choppy', zone: [0.14, 0.46], callout: 'Pitch wavers on the hedges', at: 0.3 },
+      quote: '“…I <span class="qhedge">guess</span> my biggest strength is, <span class="qhedge">um</span>, <span class="qhedge">probably</span> that I…”',
+      trytip: 'Cut the qualifiers — “my biggest strength is” only lands if it sounds like you believe it.',
+      m1: ['12:40', 'Hedged your strengths answer', 'Confidence', 'warn'],
+      m2: ['38:05', 'Specific, metric-backed impact story', 'Clarity', 'good'],
+      prole: 'Priya · interviewer', pscen: 'Scenario: “tell me about yourself” in 90 seconds',
+      recTarget: 2712
+    },
+    presentation: {
+      call: 'Team All-Hands — Zoom', pinit: 'M', pname: 'Marcus',
+      title: 'Team All-Hands — Platform Update',
+      badge: '✓ Detected: Presentation', meta: '18 min · Zoom',
+      stats: [['86%', 'Talk time'], ['8', 'Filler words'], ['2', 'Questions taken']],
+      rec1: { t: 'The close trailed off', tag: 'Needs work',
+        b: '<em>“So yeah, that’s what we’ve been up to”</em> undersells the work. Recap your three headline numbers, then make one clear ask.' },
+      rec2: { t: 'Exceptional data storytelling', tag: 'Strong',
+        b: '12,000 tickets down to 7,500 — numbers with a story attached are the ones the room remembers.' },
+      rec3: { eyebrow: 'Pattern · across your last 4 presentations ' + dots(4, -1),
+        t: 'Hedges creep into your roadmap',
+        b: '<em>“We’re hoping to have a prototype by March”</em> — swap “hoping” for “targeting.” You’ve softened every roadmap slide this month.' },
+      score: '81', pstart: 208,
+      wave: { shape: 'rush', zone: [0.44, 0.72], callout: 'Pace spikes to 192 wpm', at: 0.58 },
+      quote: '“…and support tickets dropped <span class="qrush">40% so that’s cool anyway moving on</span>…”',
+      trytip: 'Pause after a big number. Let it land before you move on.',
+      m1: ['3:28', 'Rushed past your best metric', 'Pace', 'warn'],
+      m2: ['0:06', 'Confident, energetic open', 'Energy', 'good'],
+      prole: 'Jordan · VP of Product', pscen: 'Scenario: deliver the close with confidence',
+      recTarget: 1102
+    },
+    promotion: {
+      call: 'Career check-in — Zoom', pinit: 'S', pname: 'Sarah',
+      title: 'Career conversation with Sarah',
+      badge: '✓ Detected: Promotion conversation', meta: '28 min · Zoom',
+      stats: [['44%', 'Talk time'], ['7', 'Filler words'], ['4', 'Asks made']],
+      rec1: { t: 'You listed tasks, not outcomes', tag: 'Needs work',
+        b: 'Ten minutes of activity, no business impact. Frame each project as: what changed because you led it.' },
+      rec2: { t: 'Clear ask, clear timeline', tag: 'Strong',
+        b: 'You named the level and the review cycle you’re targeting — that gives Sarah something to act on.' },
+      rec3: { eyebrow: 'Pattern · across your last 4 manager 1:1s ' + dots(4, -1),
+        t: 'You wait to be asked',
+        b: 'In all four 1:1s this quarter, your promotion case only came up when Sarah raised it. Open with it.' },
+      score: '71', pstart: 492,
+      wave: { shape: 'trailoff', zone: [0.7, 1], callout: 'Volume fades on the ask', at: 0.68 },
+      quote: '“…so I was hoping we could maybe talk about <span class="qf1">the senior</span> <span class="qf2">role at</span> <span class="qf3">some point…”</span>',
+      trytip: 'Make the ask at full volume — “I’m ready for senior, and here’s the case.”',
+      m1: ['8:12', 'Softened your promotion ask', 'Volume', 'warn'],
+      m2: ['21:44', 'Strong evidence on the migration win', 'Clarity', 'good'],
+      prole: 'Sarah · your manager', pscen: 'Scenario: make the promotion ask directly',
+      recTarget: 1680
+    },
+    difficult: {
+      call: '1:1 with Alex — Zoom', pinit: 'A', pname: 'Alex',
+      title: 'Feedback conversation with Alex',
+      badge: '✓ Detected: Difficult conversation', meta: '22 min · Zoom',
+      stats: [['61%', 'Talk time'], ['14', 'Filler words'], ['3', 'Questions asked']],
+      rec1: { t: 'The message got softened away', tag: 'Needs work',
+        b: 'By the third caveat (<em>“it’s honestly not a big deal”</em>), the feedback disappeared. Say the hard part once, plainly.' },
+      rec2: { t: 'You stayed calm under defensiveness', tag: 'Strong',
+        b: 'When Alex pushed back, your tone stayed level and curious instead of escalating.' },
+      rec3: { eyebrow: 'Pattern · across your last 3 hard conversations ' + dots(3, -1),
+        t: 'You cushion until the point is gone',
+        b: 'Same shape each time: praise, caveat, retreat. The kind thing is clarity.' },
+      score: '66', pstart: 337,
+      wave: { shape: 'choppy', zone: [0.2, 0.5], callout: 'Pitch rises — sounds like a question', at: 0.35 },
+      quote: '“…I <span class="qhedge">kind of</span> think the deadline slipped <span class="qhedge">maybe</span> because of the handoffs?…”',
+      trytip: 'End statements with a falling tone — “The deadline slipped because of the handoffs.”',
+      m1: ['5:37', 'Feedback delivered as a question', 'Pitch', 'warn'],
+      m2: ['16:20', 'Level, steady tone under pushback', 'Tone', 'good'],
+      prole: 'Alex · direct report', pscen: 'Scenario: deliver the hard feedback plainly',
+      recTarget: 1320
+    },
+    pay: {
+      call: 'Offer discussion — Zoom', pinit: 'J', pname: 'Jordan',
+      title: 'Offer call with Jordan',
+      badge: '✓ Detected: Pay negotiation', meta: '25 min · Zoom',
+      stats: [['35%', 'Talk time'], ['6', 'Filler words'], ['2', 'Counters made']],
+      rec1: { t: 'You accepted the anchor', tag: 'Needs work',
+        b: 'You responded to the first number in 4 seconds. Pause, restate the range you researched, and let silence work.' },
+      rec2: { t: 'Great use of market data', tag: 'Strong',
+        b: 'Citing two comparable offers moved the conversation from opinion to evidence.' },
+      rec3: { eyebrow: 'Pattern · across your recent negotiations ' + dots(3, -1),
+        t: 'You fill the silence first',
+        b: 'Every time the recruiter paused, you conceded something. The pause is theirs to fill.' },
+      score: '72', pstart: 542,
+      wave: { shape: 'rush', zone: [0.4, 0.68], callout: 'Pace jumps after the number', at: 0.54 },
+      quote: '“…the base feels a little low <span class="qrush">but I mean it’s fine I get it there’s a band</span>…”',
+      trytip: 'Say the counter, then stop talking. Silence is leverage.',
+      m1: ['9:02', 'Rushed to soften your counter', 'Pace', 'warn'],
+      m2: ['14:48', 'Confident delivery of market data', 'Calm', 'good'],
+      prole: 'Jordan · recruiter', pscen: 'Scenario: hold your counter without flinching',
+      recTarget: 1500
+    }
+  };
+
+  var packMatch = (location.search.match(/[?&]pack=(\w+)/) || [])[1];
+  var packId = PACKS[packMatch] ? packMatch : 'interview';
+  var pack = PACKS[packId];
+
+  function df(name) { return stage.querySelector('[data-df="' + name + '"]'); }
+  function fmt(s) { return Math.floor(s / 60) + ':' + ('0' + Math.floor(s % 60)).slice(-2); }
+
+  function applyPack(p) {
+    pack = p;
+    df('call').textContent = p.call;
+    df('pinit').textContent = p.pinit;
+    df('pname').textContent = p.pname;
+    df('title').textContent = p.title;
+    df('badge').textContent = p.badge;
+    df('meta').textContent = p.meta;
+    p.stats.forEach(function(s, i) {
+      var el = df('stat' + (i + 1));
+      el.querySelector('b').textContent = s[0];
+      el.querySelector('em').textContent = s[1];
+    });
+    ['rec1', 'rec2'].forEach(function(key) {
+      var el = df(key), r = p[key];
+      el.querySelector('b').textContent = r.t;
+      el.querySelector('.dm-tag').textContent = r.tag;
+      el.querySelector('p').innerHTML = r.b;
+    });
+    var r3 = df('rec3');
+    r3.querySelector('.dm-rec-eyebrow').innerHTML = p.rec3.eyebrow;
+    r3.querySelector('b').textContent = p.rec3.t;
+    r3.querySelector('p').innerHTML = p.rec3.b;
+    df('score').textContent = p.score;
+    df('quote').innerHTML = p.quote;
+    df('try').textContent = p.trytip;
+    buildWave(p);
+    ['m1', 'm2'].forEach(function(key) {
+      var el = df(key), m = p[key];
+      el.querySelector('.t').textContent = m[0];
+      el.querySelector('.d').textContent = m[1];
+      var tag = el.querySelector('.dm-m-tag');
+      tag.textContent = m[2];
+      tag.className = 'dm-m-tag ' + m[3];
+    });
+    df('prole').textContent = p.prole;
+    df('pscen').textContent = p.pscen;
+    ptimeEl.textContent = fmt(p.pstart);
+  }
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-demo-pack]'));
+  function selectTab(id) {
+    tabs.forEach(function(t) { t.classList.toggle('is-on', t.dataset.demoPack === id); });
+  }
+  selectTab(packId);
+  applyPack(pack);
+
+  /* ---- phase timeline + progress segments ---- */
+  var PHASES = [
+    { key: 'notify',   label: 'A meeting starts — your coach notices',     start: 0,     dur: 2900 },
+    { key: 'record',   label: 'It observes quietly — no bot joins',        start: 2900,  dur: 4250 },
+    { key: 'analyze',  label: 'The call is analyzed',                      start: 7150,  dur: 3450 },
+    { key: 'results',  label: 'Coaching, grounded in what happened',       start: 10600, dur: 5400 },
+    { key: 'audio',    label: 'How you sounded — not just what you said',  start: 16000, dur: 8000 },
+    { key: 'practice', label: 'Practice the moment again',                 start: 24000, dur: 5600 }
+  ];
+  var segs = Array.prototype.slice.call(document.querySelectorAll('[data-seg]'));
+  var phaseLabel = document.querySelector('[data-demo-label]');
+
+  function setProgress(active, animateDur) {
+    segs.forEach(function(seg, i) {
+      var fill = seg.querySelector('i');
+      seg.classList.toggle('done', i < active);
+      fill.style.transition = 'none';
+      fill.style.width = i < active ? '' : '0';
+      if (i === active && animateDur) {
+        void fill.offsetWidth;
+        fill.style.transition = 'width ' + animateDur + 'ms linear';
+        fill.style.width = '100%';
+      }
+    });
+    if (active >= 0) phaseLabel.textContent = PHASES[active].label;
+  }
+
+  if (reduce) {
+    stage.classList.add('is-static');
+    stage.dataset.scene = 'results';
+    setProgress(3, 0);
+    segs.forEach(function(seg, i) {
+      seg.addEventListener('click', function() {
+        stage.dataset.scene = PHASES[i].key;
+        setProgress(i, 0);
+      });
+    });
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        selectTab(tab.dataset.demoPack);
+        applyPack(PACKS[tab.dataset.demoPack]);
+      });
+    });
+    return;
+  }
+
+  var timeouts = [], intervals = [], running = false, inView = false, tlFrom = 0;
+
+  // schedule at an absolute point on the demo timeline; skipped if the loop
+  // started past it (jumping to a phase via the progress segments)
+  function at(t, fn) {
+    if (t < tlFrom) return;
+    timeouts.push(setTimeout(fn, t - tlFrom));
+  }
+  // schedule relative to now (sub-animations like audio playback)
+  function after(t, fn) { timeouts.push(setTimeout(fn, t)); }
+  function every(ms, fn) { var id = setInterval(fn, ms); intervals.push(id); return id; }
+
+  function moveTo(el) {
+    var s = stage.getBoundingClientRect();
+    var r = el.getBoundingClientRect();
+    cursor.style.left = (r.left + r.width / 2 - s.left) + 'px';
+    cursor.style.top = (r.top + r.height / 2 - s.top) + 'px';
+  }
+  function moveToPoint(xPct, yPct) {
+    cursor.style.left = xPct + '%';
+    cursor.style.top = yPct + '%';
+  }
+  function clickOn(el) {
+    cursor.classList.add('is-down');
+    el.classList.add('is-pressed');
+    var ripple = document.createElement('span');
+    ripple.className = 'dm-ripple';
+    ripple.style.left = cursor.style.left;
+    ripple.style.top = cursor.style.top;
+    stage.appendChild(ripple);
+    setTimeout(function() {
+      cursor.classList.remove('is-down');
+      el.classList.remove('is-pressed');
+      if (ripple.parentNode) ripple.parentNode.removeChild(ripple);
+    }, 480);
+  }
+  function setScene(name) { stage.dataset.scene = name; }
+
+  function resetPlayback() {
+    playBtn.classList.remove('is-playing');
+    callout.classList.remove('is-on');
+    waveFill.style.transition = 'none';
+    waveFill.style.clipPath = 'inset(0 100% 0 0)';
+    playhead.style.transition = 'none';
+    playhead.style.left = '0';
+    playhead.style.opacity = '0';
+    ptimeEl.textContent = fmt(pack.pstart);
+  }
+  function startPlayback(dur) {
+    playBtn.classList.add('is-playing');
+    // force the reset styles to apply before transitioning
+    void waveFill.offsetWidth;
+    waveFill.style.transition = 'clip-path ' + dur + 'ms linear';
+    waveFill.style.clipPath = 'inset(0 0% 0 0)';
+    playhead.style.opacity = '1';
+    playhead.style.transition = 'left ' + dur + 'ms linear';
+    playhead.style.left = 'calc(100% - 0.18em)';
+    var t = pack.pstart;
+    var tick = every(dur / 14, function() {
+      t++;
+      ptimeEl.textContent = fmt(t);
+    });
+    // the callout pops the moment the playhead enters the flagged zone
+    after(Math.max(120, dur * pack.wave.zone[0]), function() {
+      callout.classList.add('is-on');
+    });
+    after(dur, function() {
+      clearInterval(tick);
+      playBtn.classList.remove('is-playing');
+    });
+  }
+
+  function stopAll() {
+    running = false;
+    timeouts.forEach(clearTimeout);
+    intervals.forEach(clearInterval);
+    timeouts = [];
+    intervals = [];
+  }
+
+  function resetState() {
+    setScene('');
+    recTimeEl.textContent = '0:00';
+    pracTimeEl.textContent = '0:00';
+    resetPlayback();
+  }
+
+  function runLoop(from) {
+    stopAll();
+    running = true;
+    tlFrom = from || 0;
+    resetState();
+    setProgress(-1, 0);
+
+    // progress segments track each phase
+    PHASES.forEach(function(p, i) {
+      at(p.start, function() { setProgress(i, p.dur); });
+    });
+
+    // scene 1: the meeting is happening; notification slides in
+    at(250, function() { setScene('notify'); moveToPoint(58, 66); });
+    at(1300, function() { moveTo(stage.querySelector('[data-t-observe]')); });
+    at(2350, function() { clickOn(stage.querySelector('[data-t-observe]')); });
+
+    // scene 2: observing HUD, meeting time flies by, then the user ends it
+    at(2900, function() {
+      setScene('record');
+      var secs = 0;
+      var step = Math.ceil(pack.recTarget / 40);
+      var id = every(75, function() {
+        secs += step;
+        if (secs >= pack.recTarget) { secs = pack.recTarget; clearInterval(id); }
+        recTimeEl.textContent = fmt(secs);
+      });
+    });
+    at(3400, function() { moveToPoint(50, 54); });
+    at(5600, function() { moveTo(stage.querySelector('[data-t-stop]')); });
+    at(6600, function() { clickOn(stage.querySelector('[data-t-stop]')); });
+
+    // scene 3: analyzing (steps tick in via CSS)
+    at(7150, function() { setScene('analyze'); moveToPoint(78, 78); });
+
+    // scene 4: detected type, stats, and coaching insights fly in
+    at(10600, function() { setScene('results'); });
+
+    // scene 5: voice delivery — click play, waveform fills
+    at(16000, function() { setScene('audio'); });
+    at(16800, function() { moveTo(stage.querySelector('[data-t-play]')); });
+    at(17800, function() {
+      clickOn(playBtn);
+      startPlayback(4200);
+    });
+    // practice CTA appears via CSS delay; cursor heads over and clicks
+    at(22400, function() { moveTo(stage.querySelector('[data-t-practice]')); });
+    at(23450, function() { clickOn(stage.querySelector('[data-t-practice]')); });
+
+    // scene 6: practice call
+    at(24000, function() {
+      setScene('practice');
+      moveToPoint(72, 82);
+      var secs = 0;
+      every(1000, function() {
+        secs++;
+        pracTimeEl.textContent = fmt(secs);
+      });
+    });
+
+    // fade out, loop
+    at(29600, function() { setScene(''); });
+    at(30500, function() { runLoop(0); });
+  }
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      selectTab(tab.dataset.demoPack);
+      stopAll();
+      resetState();
+      applyPack(PACKS[tab.dataset.demoPack]);
+      if (inView) runLoop(0);
+    });
+  });
+
+  segs.forEach(function(seg, i) {
+    seg.addEventListener('click', function() { runLoop(PHASES[i].start); });
+  });
+
+  var io2 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      inView = entry.isIntersecting;
+      if (entry.isIntersecting) {
+        if (!running) runLoop(0);
+      } else {
+        stopAll();
+        resetState();
+        setProgress(-1, 0);
+      }
+    });
+  }, { threshold: 0.35 });
+  io2.observe(stage);
 })();
 </script>
 
