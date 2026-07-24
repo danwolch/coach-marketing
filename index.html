@@ -195,6 +195,11 @@ nav {
   font-size: 18px;
   box-shadow: 0 10px 26px rgba(49, 193, 120, 0.28);
 }
+.hero .platform-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
 
 /* Right card */
 .wc-content { padding: 22px 24px 24px; }
@@ -369,13 +374,6 @@ nav {
   color: var(--amber);
 }
 
-/* HOW IT WORKS */
-.how-section {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 108px 20px 92px;
-  border-bottom: 1px solid var(--border);
-}
 .section-label {
   font-size: 13px;
   letter-spacing: 0.2em;
@@ -383,70 +381,6 @@ nav {
   color: var(--accent);
   text-align: center;
   margin-bottom: 12px;
-}
-.how-head {
-  max-width: 860px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-.how-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(30px, 3.8vw, 40px);
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 12px;
-}
-.how-head p {
-  font-size: 17px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-.how-rail {
-  display: grid;
-  gap: 14px;
-  max-width: 980px;
-  margin: 0 auto;
-}
-.how-step {
-  display: grid;
-  grid-template-columns: 74px 1fr auto;
-  gap: 22px;
-  align-items: center;
-  padding: 24px 28px;
-  background: linear-gradient(130deg, rgba(235, 229, 218, 0.7), rgba(245, 240, 232, 0.5));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.how-step-index {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  font-weight: 600;
-  color: var(--accent);
-  opacity: 0.45;
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-.how-step h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  font-weight: 400;
-  margin-bottom: 6px;
-}
-.how-step p {
-  font-size: 15.5px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.how-step-tag {
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid rgba(49, 193, 120, 0.3);
-  border-radius: 999px;
-  padding: 8px 12px;
-  white-space: nowrap;
 }
 
 /* FEATURES */
@@ -500,6 +434,56 @@ nav {
   color: var(--muted);
   line-height: 1.7;
 }
+/* FEEDBACK GAP */
+.feedback-gap-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 84px 20px 88px;
+}
+.feedback-gap-inner { max-width: 1000px; margin: 0 auto; }
+.feedback-gap-head { text-align: center; max-width: 780px; margin: 0 auto 40px; }
+.feedback-gap-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+.feedback-gap-head p { font-size: 17px; color: var(--muted); line-height: 1.65; }
+.no-orphan { white-space: nowrap; }
+.feedback-gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.feedback-gap-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.feedback-gap-who {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 8px;
+}
+.feedback-gap-card p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+.feedback-gap-turn {
+  margin-top: 24px;
+  padding: 24px 28px;
+  border-radius: var(--radius);
+  background: var(--green-soft);
+  border: 1px solid rgba(49, 193, 120, 0.35);
+}
+.feedback-gap-turn p { font-size: 16.5px; line-height: 1.6; color: var(--text); }
+.feedback-gap-turn strong { color: var(--accent-2); }
+@media (max-width: 760px) {
+  .feedback-gap-section { padding: 64px 16px 68px; }
+  .feedback-gap-grid { grid-template-columns: 1fr; gap: 12px; }
+  .feedback-gap-head p { font-size: 15px; }
+  .feedback-gap-turn { padding: 20px; }
+}
+
 .feature-text .usecase-cta { margin-top: 16px; }
 .feature-visual {
   background: var(--card);
@@ -512,7 +496,7 @@ nav {
 /* COMPATIBILITY */
 .compat-section {
   padding: 56px 20px 60px;
-  background: var(--surface);
+  background: #fffdf9;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -621,6 +605,8 @@ nav {
 .cta-section {
   text-align: center;
   padding: 120px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
 }
 .cta-section h2 {
   font-family: 'Playfair Display', serif;
@@ -816,140 +802,6 @@ a:focus {
 }
 
 /* USE CASES */
-.usecases-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 72px 20px 88px;
-}
-.usecases-inner {
-  max-width: var(--maxw);
-  margin: 0 auto;
-}
-.usecases-head {
-  text-align: center;
-  margin-bottom: 32px;
-}
-.usecases-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 3.5vw, 38px);
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-.usecases-sub {
-  font-size: 16.5px;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 620px;
-  margin: 0 auto;
-}
-.usecases-layout {
-  display: grid;
-  grid-template-columns: 234px minmax(0, 560px);
-  gap: 48px;
-  justify-content: center;
-  align-items: stretch;
-}
-.rail-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--muted);
-  margin-bottom: 12px;
-  padding-left: 2px;
-}
-.usecases-tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.usecase-tab {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: inherit;
-  text-align: left;
-  color: var(--muted);
-  width: 100%;
-  transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-.usecase-tab:hover {
-  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
-  color: var(--text);
-}
-.usecase-tab[aria-selected="true"] {
-  border-color: var(--accent-dark);
-  background: var(--card);
-  color: var(--text);
-  box-shadow: 0 0 0 1px var(--accent-dark), 0 6px 18px rgba(0,0,0,0.06);
-}
-.usecase-tab[aria-selected="true"] .usecase-icon {
-  background: var(--accent);
-  color: #fff;
-}
-.usecase-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  background: var(--green-soft);
-  color: var(--accent-2);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  transition: background 0.2s, color 0.2s;
-}
-.usecase-icon svg { width: 16px; height: 16px; }
-.usecase-tab-title {
-  font-size: 13.5px;
-  font-weight: 600;
-  line-height: 1.25;
-  color: inherit;
-}
-.usecase-panels {
-  position: relative;
-  min-height: 300px;
-  height: 100%;
-}
-.usecase-panel {
-  display: none;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 36px;
-}
-.usecase-panel.is-active {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  animation: ucFade 0.35s ease-out;
-}
-@keyframes ucFade {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .usecase-panel.is-active { animation: none; }
-}
-.usecase-panel h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(22px, 2.6vw, 28px);
-  font-weight: 400;
-  line-height: 1.25;
-  margin-bottom: 14px;
-}
-.usecase-panel p {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.65;
-  margin-bottom: 20px;
-}
 .usecase-cta {
   display: inline-flex;
   align-items: center;
@@ -1315,49 +1167,22 @@ a:focus {
   .hero .subtitle { margin: 0 auto 30px; font-size: 19px; }
 }
 @media (max-width: 600px) {
-  .hero h1 { font-size: 34px; max-width: 100%; line-height: 1.15; }
-  /* Reserve two lines so longer rotating phrases don't change the hero's
-     height as they cycle (prevents the page from jumping while scrolling). */
-  .rotator-line { min-height: 2.35em; }
+  .hero h1 { font-size: 30px; max-width: 100%; line-height: 1.15; }
+  /* All rotating phrases fit one line at this size; reserve exactly one
+     line so the hero's height never changes as they cycle. */
+  .rotator-line { min-height: 1.2em; }
   .hero .subtitle { font-size: 17px; max-width: 340px; }
-  .how-section { padding: 84px 20px 70px; }
-  .how-head { margin-bottom: 32px; }
-  .how-head p { font-size: 15px; }
-  .how-step {
-    grid-template-columns: 56px 1fr;
-    align-items: start;
-    padding: 22px 18px;
-    gap: 14px;
-  }
-  .how-step h3 { font-size: 23px; }
-  .how-step p { font-size: 14.5px; }
-  .how-step-tag {
-    grid-column: 2 / -1;
-    justify-self: start;
-    margin-top: 4px;
-  }
   .compat-grid { grid-template-columns: 1fr; gap: 32px; }
   .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 32px; }
   .feature-row.reverse .feature-text { order: 1; }
   .feature-row.reverse .feature-visual { order: 2; }
   .coaching-grid { grid-template-columns: 1fr; }
   .hero .cta-row, .cta-section .cta-row { flex-direction: column; gap: 10px; }
-  .usecases-section { padding: 70px 16px; }
-  .usecases-layout { grid-template-columns: 1fr; gap: 28px; }
   .rail-label { display: none; }
-  .usecases-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .usecase-tab { padding: 10px; }
-  .usecase-tab-title { font-size: 12.5px; }
-  .usecase-icon { width: 28px; height: 28px; }
-  .usecase-panels { min-height: 0; }
-  .usecase-panel { padding: 24px 20px; }
   .coach-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 920px) and (min-width: 601px) {
-  .usecases-layout { grid-template-columns: 1fr; gap: 32px; }
   .rail-label { display: none; }
-  .usecases-tabs { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .usecase-panels { min-height: 0; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
 }
 @media (max-width: 600px) {
@@ -1365,11 +1190,196 @@ a:focus {
   .pricing-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
+/* FOR YOU */
+.foryou-section { padding: 96px 20px 100px; background: var(--bg); }
+.foryou-inner { max-width: 1000px; margin: 0 auto; }
+.foryou-head { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+.foryou-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+.foryou-head p { font-size: 17px; color: var(--muted); line-height: 1.65; }
+.foryou-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+.foryou-card {
+  padding: 30px 30px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.45);
+}
+.foryou-card.is-you {
+  background: var(--card);
+  border-color: rgba(49,193,120,.45);
+  box-shadow: 0 18px 44px rgba(33,50,39,.1);
+}
+.foryou-card-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.foryou-card.is-you .foryou-card-label { color: var(--accent-2); }
+.foryou-card ul { list-style: none; display: grid; gap: 13px; }
+.foryou-card li { position: relative; padding-left: 28px; font-size: 15.5px; line-height: 1.5; color: var(--muted); }
+.foryou-card.is-them li::before { content: '✕'; position: absolute; left: 2px; top: 1px; color: #b0a99a; font-size: 13px; font-weight: 700; }
+.foryou-card.is-you li { color: var(--text); }
+.foryou-card.is-you li::before { content: '✓'; position: absolute; left: 0; top: 1px; color: var(--accent); font-size: 14px; font-weight: 800; }
+.foryou-note {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--accent-2);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+@media (max-width: 760px) {
+  .foryou-section { padding: 68px 16px 72px; }
+  .foryou-grid { grid-template-columns: 1fr; }
+  .foryou-head p { font-size: 15px; }
+}
+
+
+/* LOGO STRIP */
+.logo-strip { padding: 30px 0 36px; background: #fffdf9; border-top: 1px solid var(--border); text-align: center; }
+.logo-strip-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 22px; }
+.logo-marquee { position: relative; overflow: hidden; }
+.logo-marquee::before,
+.logo-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+.logo-marquee::before { left: 0; background: linear-gradient(90deg, #fffdf9, rgba(255,253,249,0)); }
+.logo-marquee::after { right: 0; background: linear-gradient(270deg, #fffdf9, rgba(255,253,249,0)); }
+.logo-marquee-track { display: flex; width: max-content; animation: logoScroll 90s linear infinite; }
+.logo-marquee-group { display: flex; align-items: center; gap: 58px; padding-right: 58px; }
+.logo-marquee-group img { height: 26px; width: auto; filter: grayscale(1); opacity: .55; transition: opacity .2s, filter .2s; }
+.logo-marquee-group img:hover { filter: none; opacity: 1; }
+.logo-marquee-group img.logo-sm { height: 22px; }
+.logo-marquee-group img.logo-md { height: 34px; }
+.logo-marquee-group img.logo-xs { height: 16px; }
+.logo-marquee-group img.logo-lg { height: 44px; }
+@keyframes logoScroll { to { transform: translateX(-50%); } }
+@media (max-width: 760px) {
+  .logo-strip { padding: 24px 0 28px; }
+  .logo-marquee-group { gap: 34px; padding-right: 34px; }
+  .logo-marquee-group img { height: 20px; }
+  .logo-marquee-group img.logo-sm { height: 17px; }
+  .logo-marquee-group img.logo-md { height: 26px; }
+  .logo-marquee-group img.logo-xs { height: 13px; }
+  .logo-marquee-group img.logo-lg { height: 33px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track { animation: none; width: 100%; flex-wrap: wrap; justify-content: center; }
+  .logo-marquee-group { flex-wrap: wrap; justify-content: center; padding-right: 0; }
+  .logo-marquee-group + .logo-marquee-group { display: none; }
+}
+
+/* FOUNDER */
+.founder-section {
+  position: relative;
+  padding: 88px 20px 96px;
+  background: #faf7f1;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.founder-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+}
+.founder-copy { max-width: 620px; }
+.founder-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 14px;
+}
+.founder-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.founder-copy > p {
+  color: var(--muted);
+  font-size: 16.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.founder-logos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-top: 26px;
+}
+.founder-logos img { height: 20px; width: auto; filter: grayscale(1); opacity: .5; transition: opacity .2s, filter .2s; }
+.founder-logos img[alt="PwC"] { height: 32px; }
+.founder-logos img:hover { filter: none; opacity: 1; }
+.founder-portrait {
+  position: relative;
+  width: 100%;
+}
+.founder-portrait video {
+  display: block;
+  width: calc(100% + 56px);
+  margin-left: -56px;
+  height: auto;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+  mask-image: linear-gradient(to bottom, #000 82%, transparent);
+}
+.founder-portrait-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255,253,248,.92);
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.founder-portrait-badge i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  font-style: normal;
+}
+@media (max-width: 900px) {
+  .founder-inner { grid-template-columns: 1fr; }
+  .founder-copy { max-width: 100%; }
+  .founder-portrait video { width: 100%; margin-left: 0; }
+  .founder-portrait { width: min(320px, 80vw); margin: 8px auto 0; }
+}
+
 /* PRODUCT STORY */
 .product-story {
-  padding: 76px 20px 104px;
+  padding: 60px 20px 72px;
   overflow: hidden;
-  background: #faf7f1;
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -1391,37 +1401,12 @@ a:focus {
   font-size: 16px;
   line-height: 1.5;
 }
-.story-demo-meta {
-  max-width: 880px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 32px;
-  margin: 22px auto 10px;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-.story-replay {
-  appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(255,255,255,.48);
-  color: var(--text);
-  padding: 9px 14px;
-  font: 700 12px/1 'Source Sans 3', sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.story-replay:hover { border-color: var(--accent); }
 .story-frame {
   position: relative;
   width: 100%;
   max-width: 880px;
-  height: 520px;
-  margin: 0 auto;
+  height: 430px;
+  margin: 28px auto 0;
   touch-action: pan-y;
   background: transparent;
   isolation: isolate;
@@ -1451,14 +1436,15 @@ a:focus {
   inset: 0;
   display: grid;
   place-items: start center;
-  padding-top: 76px;
+  padding-top: 22px;
   background: transparent;
-  opacity: 0;
-  transition: opacity .35s ease;
+  opacity: 1;
+  transition: opacity .35s ease, filter .35s ease;
   pointer-events: none;
 }
-[data-story-state="prompt"] .story-video-layer,
-[data-story-state="recording"] .story-video-layer { opacity: 1; }
+[data-story-state="analyzed"] .story-video-layer,
+[data-story-state="coaching"] .story-video-layer,
+[data-story-state="practice"] .story-video-layer { opacity: .4; filter: saturate(.6) blur(1px); }
 .story-video-call {
   width: min(650px, calc(100% - 86px));
   height: 390px;
@@ -1498,9 +1484,9 @@ a:focus {
 .meeting-prompt {
   position: absolute;
   z-index: 9;
-  width: min(500px, calc(100% - 28px));
+  width: min(560px, calc(100% - 28px));
   left: 50%;
-  top: 28px;
+  top: 12px;
   padding: 17px 18px;
   background: rgba(255,255,255,.99);
   border: 1px solid #cfe1d6;
@@ -1514,15 +1500,15 @@ a:focus {
 .prompt-top { display: flex; gap: 12px; align-items: flex-start; }
 .prompt-icon { width: 42px; height: 42px; border-radius: 11px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 6px 14px rgba(20,64,36,.24); }
 .prompt-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.prompt-brand { color: #187344; font-size: 9px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+.prompt-brand { color: #187344; font-size: 10.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
 .prompt-copy { min-width: 0; }
-.prompt-copy strong { display: block; color: #233a2c; font-size: 15px; line-height: 1.2; }
-.prompt-copy span { display: block; color: #758179; font-size: 11px; line-height: 1.35; }
+.prompt-copy strong { display: block; color: #233a2c; font-size: 17.5px; line-height: 1.2; }
+.prompt-copy span { display: block; color: #758179; font-size: 13px; line-height: 1.4; }
 .prompt-copy b { color: #536158; font-weight: 650; }
 .prompt-explainer { margin-top: 4px; }
 .prompt-meeting-info { margin-top: 7px; padding-top: 7px; border-top: 1px solid #e5ebe6; }
 .prompt-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
-.story-button { border: 0; border-radius: 8px; padding: 8px 13px; font: 700 11px/1 'Source Sans 3', sans-serif; cursor: pointer; }
+.story-button { border: 0; border-radius: 9px; padding: 10px 16px; font: 700 13px/1 'Source Sans 3', sans-serif; cursor: pointer; }
 .story-button-muted { background: #f0f2ef; color: #5f6c63; }
 .story-button-green { background: #31c178; color: white; }
 .recording-scene { padding: 0; }
@@ -1531,7 +1517,7 @@ a:focus {
 .coach-observe-bar {
   position: absolute;
   z-index: 8;
-  top: 54px;
+  top: 34px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1549,113 +1535,52 @@ a:focus {
 .coach-observe-icon { width: 44px; height: 44px; border-radius: 12px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 7px 16px rgba(20,64,36,.24); }
 .coach-observe-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .coach-observe-copy { min-width: 0; flex: 1; }
-.coach-observe-copy strong { display: flex; align-items: center; gap: 7px; font-size: 13.5px; line-height: 1.15; }
-.coach-observe-copy small { display: block; color: #718078; font-size: 10px; line-height: 1.25; margin-top: 4px; }
+.coach-observe-copy strong { display: flex; align-items: center; gap: 7px; font-size: 15.5px; line-height: 1.15; }
+.coach-observe-copy small { display: block; color: #718078; font-size: 12px; line-height: 1.3; margin-top: 4px; }
 .coach-observe-copy .recording-dot { background: #31c178; flex: 0 0 auto; }
-.coach-observe-time { color: #59685f; font: 750 11px/1 ui-monospace, monospace; }
+.coach-observe-time { color: #59685f; font: 750 12.5px/1 ui-monospace, monospace; }
 .end-meeting { background: #eaf7f0; color: #187344; padding: 10px 14px; border: 1px solid #cce8d8; border-radius: 10px; white-space: nowrap; }
-.analyzing-scene,
-.results-scene,
-.call-scene,
-.practice-analysis-scene {
-  inset: 20px 30px;
-  border: 1px solid #dce2dc;
-  border-radius: 16px;
-  background: #fbfcfa;
-  box-shadow: 0 22px 55px rgba(33,50,39,.15);
-  overflow: hidden;
+.notify-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 14px 20px 0;
 }
-.analyzing-scene { display: grid; place-items: center; text-align: center; }
-.analysis-orbit { width: 88px; height: 88px; position: relative; margin: 0 auto 22px; }
-.analysis-orbit::before, .analysis-orbit::after { content: ''; position: absolute; border-radius: 50%; inset: 0; border: 2px solid #d8e7dd; }
-.analysis-orbit::after { border-color: #31c178 transparent transparent; animation: storySpin 1.15s linear infinite; }
-.analysis-orbit span { position: absolute; inset: 20px; border-radius: 50%; display: grid; place-items: center; background: #e1f7eb; color: #23955a; font-size: 22px; }
-@keyframes storySpin { to { transform: rotate(360deg); } }
-.analysis-steps { display: flex; gap: 6px; justify-content: center; margin-top: 22px; }
-.analysis-steps i { width: 38px; height: 4px; border-radius: 4px; background: #dce3dd; animation: analysisStep 1.8s ease infinite; }
-.analysis-steps i:nth-child(2) { animation-delay: .35s; }
-.analysis-steps i:nth-child(3) { animation-delay: .7s; }
-@keyframes analysisStep { 40% { background: #31c178; } }
-.results-scene { overflow: hidden; }
-.result-head { display: flex; align-items: start; justify-content: space-between; gap: 14px; }
-.meeting-type { display: inline-flex; gap: 6px; align-items: center; padding: 7px 10px; border-radius: 999px; background: #e2f6ea; color: #187344; font-size: 10px; font-weight: 800; white-space: nowrap; }
-.result-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px; margin-top: 20px; }
-.coach-point { padding: 16px 17px; opacity: 0; transform: translateY(16px); }
-.coach-point + .coach-point { margin-top: 10px; }
-[data-story-state="insight"] .coach-point, [data-story-state="audio"] .coach-point, [data-story-state="practice"] .coach-point { animation: pointIn .45s ease forwards; }
-[data-story-state="insight"] .coach-point:nth-child(2), [data-story-state="audio"] .coach-point:nth-child(2), [data-story-state="practice"] .coach-point:nth-child(2) { animation-delay: .22s; }
-@keyframes pointIn { to { opacity: 1; transform: none; } }
-.coach-point-label { color: #23935a; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.coach-point strong { display: block; font-size: 13px; margin: 4px 0; }
-.coach-point p { color: #68766d; font-size: 11px; line-height: 1.45; }
-.voice-card { padding: 17px; }
-.voice-card-title { font-size: 11px; font-weight: 800; }
-.voice-card p { color: #718078; font-size: 10px; margin-top: 3px; }
-.audio-moment { display: flex; align-items: center; gap: 10px; padding: 12px; margin-top: 13px; border-radius: 10px; background: #f2f5f2; border: 1px solid #e3e8e3; }
-.audio-play { width: 30px; height: 30px; border-radius: 50%; border: 0; background: #31c178; color: white; display: grid; place-items: center; cursor: pointer; font-size: 10px; flex: 0 0 auto; }
-.mini-wave { height: 26px; display: flex; flex: 1; align-items: center; gap: 2px; overflow: hidden; }
-.mini-wave i { width: 3px; height: var(--h); min-height: 3px; border-radius: 3px; background: #9eb0a4; }
-[data-story-state="audio"] .mini-wave i { background: #31c178; animation: momentWave .65s ease-in-out infinite alternate; animation-delay: calc(var(--n) * -45ms); }
-@keyframes momentWave { to { transform: scaleY(.42); opacity: .55; } }
-.audio-time { color: #6c7971; font: 700 9px/1 ui-monospace, monospace; }
-.practice-button { width: 100%; margin-top: 13px; padding: 11px 12px; border: 1px solid #35ad6d; border-radius: 9px; background: #f5fff9; color: #187344; font: 800 10px/1 'Source Sans 3', sans-serif; cursor: pointer; }
-.call-scene { display: grid; place-items: center; text-align: center; background: radial-gradient(circle at center, #f0fbf5 0, #fbfcfa 55%); }
-.call-top { position: absolute; inset: 18px 22px auto; display: flex; justify-content: space-between; align-items: center; }
-.roleplay-session-pill { display: flex; align-items: center; gap: 6px; border-radius: 999px; background: #e3f7eb; color: #187344; padding: 6px 9px; font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
-.roleplay-session-pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #31c178; }
-.call-timer { font: 700 10px/1 ui-monospace, monospace; color: #617067; background: white; border: 1px solid #e0e5df; border-radius: 999px; padding: 7px 10px; }
-.call-avatar-wrap { position: relative; width: 146px; height: 146px; display: grid; place-items: center; margin: 0 auto 14px; }
-.call-ring { position: absolute; border: 1px solid rgba(49,193,120,.25); border-radius: 50%; animation: callPulse 2s ease-in-out infinite; }
-.call-ring.one { inset: 12px; }
-.call-ring.two { inset: 0; animation-delay: -.7s; }
-@keyframes callPulse { 50% { transform: scale(.92); opacity: .35; } }
-.call-avatar { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; background: #dff6e9; border: 1px solid #bce7cf; color: #21945a; font-size: 28px; box-shadow: 0 12px 30px rgba(49,193,120,.15); }
-.roleplay-brand { display: inline-flex; align-items: center; gap: 7px; color: #187344; font-size: 10px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 2px; }
-.roleplay-brand-mark { width: 24px; height: 24px; overflow: hidden; border-radius: 7px; box-shadow: 0 4px 10px rgba(20,64,36,.18); }
-.roleplay-brand-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.call-scene h3 { font-size: 23px; margin-top: -2px; }
-.roleplay-explainer { color: #68766d; font-size: 11px; margin-top: 4px; }
-.roleplay-partner { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; padding: 7px 10px; border: 1px solid #dce8e0; border-radius: 999px; background: rgba(255,255,255,.8); color: #526159; font-size: 10px; }
-.roleplay-partner strong { color: #283c30; }
-.roleplay-listening { display: inline-flex; align-items: center; gap: 4px; color: #23955a; }
-.roleplay-listening::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #31c178; animation: storyBlink 1.2s ease infinite; }
-.call-prompt { max-width: 360px; color: #68766d; font-size: 12px; line-height: 1.45; margin: 14px auto 0; padding: 11px 16px; background: rgba(255,255,255,.75); border: 1px solid #e1e7e1; border-radius: 10px; }
-.call-prompt::before { content: 'Your practice prompt'; display: block; color: #23955a; font-size: 8px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px; }
-.practice-analysis-scene { background: #fbfcfa; }
-.practice-analysis-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
-.practice-analysis-kicker { display: flex; align-items: center; gap: 7px; color: #187344; font-size: 9px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
-.practice-analysis-kicker img { width: 24px; height: 24px; border-radius: 7px; box-shadow: 0 4px 10px rgba(20,64,36,.18); }
-.practice-analysis-head h3 { margin-top: 7px; }
-.practice-analysis-head .story-sub { max-width: 500px; }
-.practice-improvement { flex: 0 0 auto; min-width: 104px; padding: 11px 13px; border: 1px solid #c8e5d3; border-radius: 11px; background: #e5f7ec; color: #187344; text-align: center; }
-.practice-improvement strong { display: block; font-size: 21px; font-weight: 650; line-height: 1; }
-.practice-improvement span { display: block; margin-top: 4px; font-size: 8px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
-.practice-history { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-top: 22px; }
-.practice-session { position: relative; overflow: hidden; padding: 13px 14px 14px; opacity: 0; transform: translateY(14px); }
-[data-story-state="practice-analysis"] .practice-session { animation: practiceSessionIn .42s ease forwards; }
-[data-story-state="practice-analysis"] .practice-session:nth-child(2) { animation-delay: .24s; }
-[data-story-state="practice-analysis"] .practice-session:nth-child(3) { animation-delay: .48s; }
-@keyframes practiceSessionIn { to { opacity: 1; transform: none; } }
-.practice-session.is-best { border-color: #9fd1b3; background: #f1fbf5; box-shadow: 0 8px 20px rgba(49,193,120,.1); }
-.practice-session-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.practice-session-label { color: #718078; font-size: 8px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-.practice-session-score { color: #526159; font-size: 17px; font-weight: 650; }
-.practice-session.is-best .practice-session-score { color: #187344; }
-.practice-session-score small { font-size: 8px; font-weight: 750; }
-.practice-score-rail { height: 5px; overflow: hidden; margin: 10px 0 9px; border-radius: 999px; background: #e2e7e2; }
-.practice-score-rail i { display: block; width: var(--score); height: 100%; border-radius: inherit; background: #9bb8a5; transform-origin: left; }
-[data-story-state="practice-analysis"] .practice-score-rail i { animation: practiceScoreGrow .7s .2s ease both; }
-.practice-session:nth-child(2) .practice-score-rail i { background: #61b984; animation-delay: .42s; }
-.practice-session:nth-child(3) .practice-score-rail i { background: #31c178; animation-delay: .66s; }
-@keyframes practiceScoreGrow { from { transform: scaleX(0); } }
-.practice-session strong { display: block; color: #2c4235; font-size: 11px; line-height: 1.25; }
-.practice-session p { margin-top: 4px; color: #718078; font-size: 9px; line-height: 1.35; }
-.practice-session.is-best::after { content: 'Best'; position: absolute; right: 0; bottom: 0; padding: 4px 7px; border-radius: 7px 0 0; background: #d8f1e2; color: #187344; font-size: 7px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
-.practice-takeaway { display: grid; grid-template-columns: 32px minmax(0,1fr) auto; align-items: center; gap: 11px; margin-top: 12px; padding: 12px 13px; border: 1px solid #cce5d5; border-radius: 11px; background: #eaf8f0; }
-.practice-takeaway-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; background: #1e8a50; color: white; font-size: 13px; }
-.practice-takeaway small { display: block; color: #187344; font-size: 7.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-.practice-takeaway strong { display: block; margin-top: 3px; color: #2c4235; font-size: 10.5px; line-height: 1.3; }
-.practice-takeaway span:last-child { color: #187344; font-size: 9px; font-weight: 850; white-space: nowrap; }
+.story-notification {
+  width: min(600px, 100%);
+  padding: 19px 22px;
+  background: rgba(255,255,255,.99);
+  border: 1px solid #cfe1d6;
+  border-radius: 15px;
+  box-shadow: 0 18px 48px rgba(20,35,27,.2);
+  opacity: 0;
+  transform: translateY(-14px);
+}
+.story-scene.is-visible .story-notification { animation: notifyIn .5s cubic-bezier(.2,.8,.2,1) forwards; }
+.story-scene.is-visible .story-notification:nth-child(2) { animation-delay: .55s; }
+.story-scene.is-visible .story-notification:nth-child(3) { animation-delay: 1.1s; }
+@keyframes notifyIn { to { opacity: 1; transform: none; } }
+.notify-head { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.notify-app-icon { width: 24px; height: 24px; border-radius: 6px; overflow: hidden; flex: 0 0 auto; box-shadow: 0 3px 8px rgba(20,64,36,.2); }
+.notify-app-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.notify-app-name { color: #187344; font-size: 10.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.notify-time { margin-left: auto; color: #9aa79e; font-size: 10.5px; font-weight: 650; }
+.story-notification strong { display: block; color: #233a2c; font-size: 21px; line-height: 1.25; }
+.story-notification p { color: #68766d; font-size: 15px; line-height: 1.5; margin-top: 5px; }
+.notify-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+.notify-chips i { font-style: normal; padding: 7px 13px; border-radius: 999px; background: #e2f6ea; color: #187344; font-size: 12.5px; font-weight: 800; }
+.notify-label { color: #23935a; font-size: 11.5px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
+.notify-label.is-warm { color: #b07f1c; }
+.practice-scores { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.practice-scores i { font-style: normal; flex: 0 0 auto; min-width: 78px; padding: 11px 0 12px; text-align: center; border: 1px solid #e0e5df; border-radius: 12px; background: #f5f7f4; color: #526159; font-size: 25px; font-weight: 700; line-height: 1; }
+.practice-scores i small { display: block; margin-top: 5px; color: #93a198; font-size: 8.5px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.practice-scores i.is-best { background: #e5f7ec; border-color: #b7e3c8; color: #187344; }
+.practice-scores i.is-best small { color: #2f9c62; }
+.practice-scores > span { color: #9ab0a0; font-size: 12px; }
+.notify-footnote { display: flex; align-items: center; gap: 7px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5ebe6; color: #187344; font-size: 13px; font-weight: 750; }
+.notify-footnote::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #31c178; }
 .story-cursor {
   --cx: 70%; --cy: 30%;
   position: absolute;
@@ -1672,17 +1597,9 @@ a:focus {
 .story-cursor::after { content: ''; position: absolute; width: 12px; height: 12px; left: -5px; top: -5px; border: 2px solid #31c178; border-radius: 50%; opacity: 0; animation: cursorClick 3.2s ease-out infinite; }
 @keyframes cursorClick { 72% { opacity: 0; transform: scale(.4); } 78% { opacity: .85; } 93% { opacity: 0; transform: scale(2.6); } }
 [data-story-state="recording"] .story-cursor { --cx: 77%; --cy: 19%; }
-[data-story-state="analyzing"] .story-cursor { --cx: 77%; --cy: 19%; }
-[data-story-state="insight"] .story-cursor { --cx: 60%; --cy: 36%; }
-[data-story-state="audio"] .story-cursor { --cx: 76%; --cy: 46%; }
-[data-story-state="practice"] .story-cursor { --cx: 76%; --cy: 47%; }
-[data-story-state="call"] .story-cursor, [data-story-state="practice-analysis"] .story-cursor { opacity: 0; }
-.story-progress { max-width: 880px; display: flex; gap: 6px; margin: 16px auto 0; }
-.story-progress button { appearance: none; border: 0; height: 4px; flex: 1; border-radius: 999px; background: #d9ded9; cursor: pointer; overflow: hidden; }
-.story-progress button.is-past { background: #88cba7; }
-.story-progress button.is-current { background: #31c178; }
-.story-caption { max-width: 880px; display: flex; justify-content: space-between; gap: 16px; color: #718078; font-size: 12px; margin: 9px auto 0; }
-.story-caption strong { color: #344b3d; }
+[data-story-state="analyzed"] .story-cursor,
+[data-story-state="coaching"] .story-cursor,
+[data-story-state="practice"] .story-cursor { opacity: 0; }
 
 /* CLICKABLE APP PLAYGROUND */
 .app-playground {
@@ -2152,40 +2069,36 @@ a:focus {
 }
 
 @media (max-width: 760px) {
-  .product-story { padding: 56px 12px 78px; }
+  .product-story { padding: 44px 12px 56px; }
   .product-story-head h2 { font-size: 29px; }
   .product-story-head p { font-size: 14px; }
-  .story-frame { height: 560px; }
+  .story-frame { height: 470px; }
   .story-scene { padding: 26px 22px; }
   .home-scene { padding: 0; }
-  .analyzing-scene, .results-scene, .call-scene, .practice-analysis-scene { inset: 10px 4px; }
-  .story-video-layer { padding-top: 76px; }
+  .notify-scene { padding: 20px 10px 0; }
+  .story-video-layer { padding-top: 20px; }
   .story-video-call { width: calc(100% - 28px); height: 400px; }
-  .result-grid { grid-template-columns: 1fr; }
-  .coach-points { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .coach-point + .coach-point { margin-top: 0; }
-  .meeting-prompt { top: 24px; }
+  .meeting-prompt { top: 10px; }
   [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 30%; }
   [data-story-state="recording"] .story-cursor { --cx: 79%; --cy: 18%; }
-  [data-story-state="analyzing"] .story-cursor { --cx: 79%; --cy: 18%; }
-  [data-story-state="insight"] .story-cursor { --cx: 10%; --cy: 49%; }
-  [data-story-state="audio"] .story-cursor { --cx: 50%; --cy: 61%; }
-  [data-story-state="practice"] .story-cursor { --cx: 50%; --cy: 61%; }
 }
 @media (max-width: 470px) {
   .product-story-head h2 { font-size: 25px; }
-  .story-replay { padding: 8px 10px; font-size: 11px; }
-  .story-demo-meta { margin-top: 22px; }
-  .story-frame { height: 535px; }
+      .story-frame { height: 430px; }
   .story-scene { padding: 22px 16px; }
   .home-scene, .recording-scene { padding: 0; }
-  .story-video-layer { padding-top: 104px; }
+  .notify-scene { padding: 16px 6px 0; gap: 8px; }
+  .story-notification { padding: 14px 15px; }
+  .story-notification strong { font-size: 16px; }
+  .story-notification p { font-size: 12.5px; }
+  .practice-scores i { min-width: 56px; font-size: 17px; }
+  .story-video-layer { padding-top: 18px; }
   .story-video-call { height: 360px; }
   .story-video-avatar { width: 42px; height: 42px; font-size: 12px; }
-  .meeting-prompt { top: 18px; padding: 14px; }
+  .meeting-prompt { top: 8px; padding: 14px; }
   .prompt-top { gap: 10px; }
   .prompt-actions { margin-top: 10px; }
-  .coach-observe-bar { top: 88px; width: calc(100% - 18px); gap: 8px; padding: 10px; border-radius: 14px; }
+  .coach-observe-bar { top: 30px; width: calc(100% - 18px); gap: 8px; padding: 10px; border-radius: 14px; }
   .coach-observe-icon { width: 38px; height: 38px; border-radius: 10px; }
   .coach-observe-copy strong { gap: 5px; font-size: 11.5px; }
   .coach-observe-copy small { display: none; }
@@ -2193,41 +2106,13 @@ a:focus {
   .end-meeting { padding: 8px 9px; font-size: 10px; }
   [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 31%; }
   [data-story-state="recording"] .story-cursor { --cx: 79%; --cy: 23%; }
-  [data-story-state="analyzing"] .story-cursor { --cx: 79%; --cy: 23%; }
   .story-scene h3 { font-size: 23px; }
-  .coach-points { grid-template-columns: 1fr; }
-  .coach-point:nth-child(2) { display: none; }
-  .voice-card { padding: 14px; }
-  .story-caption span:last-child { display: none; }
-  .call-avatar-wrap { width: 122px; height: 122px; margin-bottom: 8px; }
-  .roleplay-partner { margin-top: 9px; }
-  .call-prompt { max-width: 280px; }
-  .practice-analysis-scene { padding: 20px 12px; }
-  .practice-analysis-head { gap: 8px; }
-  .practice-analysis-kicker { font-size: 8px; }
-  .practice-analysis-kicker img { width: 21px; height: 21px; }
-  .practice-analysis-head h3 { margin-top: 5px; font-size: 20px; }
-  .practice-analysis-head .story-sub { display: none; }
-  .practice-improvement { min-width: 80px; padding: 9px 8px; }
-  .practice-improvement strong { font-size: 18px; }
-  .practice-improvement span { font-size: 7px; }
-  .practice-history { gap: 5px; margin-top: 16px; }
-  .practice-session { padding: 9px 8px 11px; }
-  .practice-session-label { font-size: 6.5px; }
-  .practice-session-score { font-size: 14px; }
-  .practice-session strong { font-size: 9px; }
-  .practice-session p { display: none; }
-  .practice-score-rail { margin: 8px 0 7px; }
-  .practice-takeaway { grid-template-columns: 28px minmax(0,1fr); gap: 8px; padding: 10px; }
-  .practice-takeaway-icon { width: 28px; height: 28px; }
-  .practice-takeaway strong { font-size: 9.5px; }
-  .practice-takeaway span:last-child { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .story-scene, .story-cursor { transition: none; }
   .meeting-prompt { animation: none !important; opacity: 1; transform: translate(-50%, 0); }
-  .coach-point, .practice-session { animation: none !important; opacity: 1; transform: none; }
-  .mini-wave i, .analysis-orbit::after, .analysis-steps i, .call-ring, .recording-dot, .story-cursor::after, .practice-score-rail i { animation: none !important; }
+  .story-notification { animation: none !important; opacity: 1; transform: none; }
+  .recording-dot, .story-cursor::after { animation: none !important; }
 }
 </style>
 </head>
@@ -2238,13 +2123,12 @@ a:focus {
   <div class="nav-inner">
     <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
     <div class="nav-links">
-      <a href="#how">How it works</a>
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="/playbooks/">Playbooks</a>
     </div>
-    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+    <a href="/download" class="btn-primary" data-app-cta>Start for Free</a>
   </div>
 </nav>
 
@@ -2253,12 +2137,73 @@ a:focus {
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>
-        <span class="line">Coaching to help you</span>
+        <span class="line">Feedback to help you</span>
         <span class="line rotator-line"><em class="rotator" data-rotator>get your next job</em></span>
       </h1>
       <p class="subtitle">Empowering you to accomplish your work goals</p>
       <div class="cta-row">
-        <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+        <a href="/download" class="btn-primary btn-lg" data-app-cta>Download Now</a>
+      </div>
+      <p class="platform-note">Available for Windows and Mac</p>
+    </div>
+  </div>
+</section>
+
+<section class="logo-strip" aria-label="Companies where Work Coach users work">
+  <p class="logo-strip-label">Used by people from</p>
+  <div class="logo-marquee">
+    <div class="logo-marquee-track">
+      <div class="logo-marquee-group">
+      <img src="img/logos/amazon.svg" alt="Amazon">
+      <img src="img/logos/microsoft.svg" alt="Microsoft">
+      <img src="img/logos/instagram.svg" alt="Instagram">
+      <img src="img/logos/nvidia.svg" alt="Nvidia" class="logo-xs">
+      <img src="img/logos/tesla.svg" alt="Tesla" class="logo-xs">
+      <img src="img/logos/salesforce.svg" alt="Salesforce" class="logo-lg">
+      <img src="img/logos/canva.svg" alt="Canva" class="logo-lg">
+      <img src="img/logos/hubspot.svg" alt="HubSpot">
+      <img src="img/logos/spotify.svg" alt="Spotify">
+      <img src="img/logos/cisco.svg" alt="Cisco">
+      <img src="img/logos/workday.svg" alt="Workday">
+      <img src="img/logos/autodesk.svg" alt="Autodesk">
+      <img src="img/logos/amplitude.svg?v=2" alt="Amplitude" class="logo-md">
+      <img src="img/logos/rakuten.svg" alt="Rakuten">
+      <img src="img/logos/opendoor.svg" alt="Opendoor">
+      <img src="img/logos/jetbrains.svg" alt="JetBrains">
+      <img src="img/logos/ro.svg" alt="Ro" class="logo-sm">
+      <img src="img/logos/pagerduty.svg" alt="PagerDuty" class="logo-lg">
+      <img src="img/logos/wistia.svg" alt="Wistia">
+      <img src="img/logos/reforge.svg" alt="Reforge" class="logo-sm">
+      <img src="img/logos/yale.svg" alt="Yale">
+      <img src="img/logos/harvard.svg" alt="Harvard" class="logo-lg">
+      <img src="img/logos/kellogg.svg" alt="Kellogg School of Management" class="logo-lg">
+      <img src="img/logos/mit.svg" alt="MIT" class="logo-sm">
+      </div>
+      <div class="logo-marquee-group" aria-hidden="true">
+      <img src="img/logos/amazon.svg" alt="Amazon">
+      <img src="img/logos/microsoft.svg" alt="Microsoft">
+      <img src="img/logos/instagram.svg" alt="Instagram">
+      <img src="img/logos/nvidia.svg" alt="Nvidia" class="logo-xs">
+      <img src="img/logos/tesla.svg" alt="Tesla" class="logo-xs">
+      <img src="img/logos/salesforce.svg" alt="Salesforce" class="logo-lg">
+      <img src="img/logos/canva.svg" alt="Canva" class="logo-lg">
+      <img src="img/logos/hubspot.svg" alt="HubSpot">
+      <img src="img/logos/spotify.svg" alt="Spotify">
+      <img src="img/logos/cisco.svg" alt="Cisco">
+      <img src="img/logos/workday.svg" alt="Workday">
+      <img src="img/logos/autodesk.svg" alt="Autodesk">
+      <img src="img/logos/amplitude.svg?v=2" alt="Amplitude" class="logo-md">
+      <img src="img/logos/rakuten.svg" alt="Rakuten">
+      <img src="img/logos/opendoor.svg" alt="Opendoor">
+      <img src="img/logos/jetbrains.svg" alt="JetBrains">
+      <img src="img/logos/ro.svg" alt="Ro" class="logo-sm">
+      <img src="img/logos/pagerduty.svg" alt="PagerDuty" class="logo-lg">
+      <img src="img/logos/wistia.svg" alt="Wistia">
+      <img src="img/logos/reforge.svg" alt="Reforge" class="logo-sm">
+      <img src="img/logos/yale.svg" alt="Yale">
+      <img src="img/logos/harvard.svg" alt="Harvard" class="logo-lg">
+      <img src="img/logos/kellogg.svg" alt="Kellogg School of Management" class="logo-lg">
+      <img src="img/logos/mit.svg" alt="MIT" class="logo-sm">
       </div>
     </div>
   </div>
@@ -2267,11 +2212,8 @@ a:focus {
 <section class="product-story" aria-labelledby="product-story-title">
   <div class="product-story-inner">
     <div class="product-story-head">
-      <h2 id="product-story-title">See your coach in action.</h2>
-      <p>See how Work Coach observes a real conversation, finds the moment that matters, and helps you practice it.</p>
+      <h2 id="product-story-title">Coaches you without joining the meeting</h2>
     </div>
-
-    <div class="story-demo-meta"><span>Interactive demo</span><button class="story-replay" type="button" data-story-replay aria-label="Replay product walkthrough">↻ Replay</button></div>
 
     <div class="story-frame" data-product-story data-story-state="prompt" aria-label="Animated walkthrough of Work Coach observing, coaching, and helping you practice">
       <div class="story-body">
@@ -2280,13 +2222,13 @@ a:focus {
             <div class="story-video-call">
               <div class="story-video-titlebar">
                 <div class="story-video-lights"><i></i><i></i><i></i></div>
-                <span class="story-video-title"><span data-story-field="meetingName">Product strategy 1:1</span> · Zoom</span>
+                <span class="story-video-title"><span data-story-field="meetingName">Final-round interview</span> · Zoom</span>
                 <span class="story-video-clock" data-meeting-clock>00:00</span>
               </div>
               <div class="story-video-tiles">
                 <div class="story-video-tile is-speaking">
-                  <div class="story-video-avatar" data-story-field="otherInitial">J</div>
-                  <span class="story-video-name" data-story-field="otherName">Jordan</span>
+                  <div class="story-video-avatar" data-story-field="otherInitial">A</div>
+                  <span class="story-video-name" data-story-field="otherName">Alex</span>
                 </div>
                 <div class="story-video-tile">
                   <div class="story-video-avatar">M</div>
@@ -2305,7 +2247,7 @@ a:focus {
                   <div class="prompt-brand">Work Coach</div>
                   <strong>Observe this meeting?</strong>
                   <span class="prompt-explainer">Work Coach listens privately and coaches you afterward. No bot joins the call.</span>
-                  <span class="prompt-meeting-info"><b data-story-field="meetingName">Product strategy 1:1</b> · <b data-story-field="promptMeta">10:00–10:30 AM · with Jordan Lee</b></span>
+                  <span class="prompt-meeting-info"><b data-story-field="meetingName">Final-round interview</b> · <b data-story-field="promptMeta">10:00–10:45 AM · with Alex Morgan</b></span>
                 </div>
               </div>
               <div class="prompt-actions">
@@ -2324,110 +2266,52 @@ a:focus {
             </div>
           </div>
 
-          <div class="story-scene analyzing-scene" data-story-scene="analyzing">
-            <div>
-              <div class="analysis-orbit"><span>✦</span></div>
-              <h3>Analyzing your call…</h3>
-              <p class="story-sub">Finding the moments that will make your next conversation stronger.</p>
-              <div class="analysis-steps" aria-hidden="true"><i></i><i></i><i></i></div>
-            </div>
-          </div>
-
-          <div class="story-scene results-scene" data-story-scene="results">
-            <div class="result-head">
-              <div><h3 data-story-field="meetingName">Product strategy 1:1</h3><p class="story-sub" data-story-field="resultMeta">Today · 27 min · Maya + Jordan</p></div>
-              <div class="meeting-type">✓ Detected: <span data-story-field="meetingType">Manager 1:1</span></div>
-            </div>
-            <div class="result-grid">
-              <div class="coach-points">
-                <div class="story-card coach-point">
-                  <div class="coach-point-label">Coaching point</div>
-                  <strong data-story-field="pointOneTitle">Lead with the recommendation</strong>
-                  <p data-story-field="pointOneBody">You spent 48 seconds on context before sharing your point. Start with the answer, then add the evidence.</p>
-                </div>
-                <div class="story-card coach-point">
-                  <div class="coach-point-label">What worked</div>
-                  <strong data-story-field="pointTwoTitle">You made space for pushback</strong>
-                  <p data-story-field="pointTwoBody">Your “What am I missing?” unlocked the most useful part of the conversation.</p>
-                </div>
+          <div class="story-scene notify-scene" data-story-scene="analyzed">
+            <div class="story-notification">
+              <div class="notify-head">
+                <span class="notify-app-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span>
+                <span class="notify-app-name">Work Coach</span>
+                <span class="notify-time">now</span>
               </div>
-              <div class="story-card voice-card">
-                <div class="voice-card-title">Hear the moment</div>
-                <p data-story-field="voiceMoment">Your recommendation landed after a long wind-up.</p>
-                <div class="audio-moment">
-                  <button class="audio-play" type="button" data-tour-next aria-label="Play coaching moment">▶</button>
-                  <div class="mini-wave" aria-hidden="true">
-                    <i style="--h:22%;--n:1"></i><i style="--h:48%;--n:2"></i><i style="--h:75%;--n:3"></i><i style="--h:35%;--n:4"></i><i style="--h:92%;--n:5"></i><i style="--h:55%;--n:6"></i><i style="--h:28%;--n:7"></i><i style="--h:68%;--n:8"></i><i style="--h:85%;--n:9"></i><i style="--h:40%;--n:10"></i><i style="--h:63%;--n:11"></i><i style="--h:31%;--n:12"></i><i style="--h:76%;--n:13"></i><i style="--h:46%;--n:14"></i><i style="--h:88%;--n:15"></i><i style="--h:25%;--n:16"></i>
-                  </div>
-                  <span class="audio-time" data-story-field="audioTime">08:42</span>
-                </div>
-                <button class="practice-button" type="button" data-tour-next>Practice this scenario again →</button>
+              <strong>Your coaching is ready</strong>
+              <div class="notify-chips"><i>✓ Job interview detected</i><i>2 coaching points</i><i>1 practice rep</i></div>
+              <div class="prompt-actions">
+                <button class="story-button story-button-green" type="button" data-tour-next>See coaching</button>
               </div>
             </div>
           </div>
 
-          <div class="story-scene call-scene" data-story-scene="call">
-            <div class="call-top"><div class="roleplay-session-pill">Practice Session</div><div class="call-timer">00:18</div></div>
-            <div>
-              <div class="roleplay-brand"><span class="roleplay-brand-mark" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span> Work Coach Roleplay</div>
-              <div class="call-avatar-wrap"><span class="call-ring one"></span><span class="call-ring two"></span><div class="call-avatar">≋</div></div>
-              <h3>Practice: <span data-story-field="meetingType">Manager 1:1</span></h3>
-              <p class="roleplay-explainer">Rehearse this conversation with an AI counterpart.</p>
-              <div class="roleplay-partner"><strong data-story-field="callName">Jordan · Your manager</strong><span class="roleplay-listening">AI partner listening</span></div>
-              <div class="call-prompt" data-story-field="callPrompt">“Give me your recommendation first. I’ll ask for the context I need.”</div>
+          <div class="story-scene notify-scene" data-story-scene="coaching">
+            <div class="story-notification">
+              <div class="notify-label">Coaching point</div>
+              <strong>Tighten your “tell me about yourself”</strong>
+              <p>Your opener ran three minutes. Keep it to 90 seconds: current role, your best win, why this job.</p>
+            </div>
+            <div class="story-notification">
+              <div class="notify-label">What worked</div>
+              <strong>Your numbers did the selling</strong>
+              <p>“We cut churn 22%” was the line Alex wrote down. That’s what gets repeated to the hiring committee.</p>
+              <div class="prompt-actions">
+                <button class="story-button story-button-green" type="button" data-tour-next>Practice this →</button>
+              </div>
             </div>
           </div>
 
-          <div class="story-scene practice-analysis-scene" data-story-scene="practice-analysis">
-            <div class="practice-analysis-head">
-              <div>
-                <div class="practice-analysis-kicker"><img src="img/app-icon/icon-128.png" alt="" aria-hidden="true">Roleplay analysis</div>
-                <h3>Practice is working.</h3>
-                <p class="story-sub">Three reps on <strong data-story-field="pointOneTitle">Lead with the recommendation</strong></p>
+          <div class="story-scene notify-scene" data-story-scene="practice">
+            <div class="story-notification">
+              <div class="notify-label">Roleplay practice</div>
+              <strong>Practice until it sticks</strong>
+              <p>Three reps of “tell me about yourself” with an AI interviewer.</p>
+              <div class="practice-scores" aria-label="Practice scores across three reps">
+                <i>58<small>Rep 1</small></i><span>→</span><i>72<small>Rep 2</small></i><span>→</span><i class="is-best">86<small>Rep 3</small></i>
               </div>
-              <div class="practice-improvement"><strong>+28</strong><span>points over 3 reps</span></div>
-            </div>
-
-            <div class="practice-history" aria-label="Three roleplay practice session scores">
-              <div class="story-card practice-session">
-                <div class="practice-session-top"><span class="practice-session-label">Practice 1</span><span class="practice-session-score">58<small>/100</small></span></div>
-                <div class="practice-score-rail" aria-hidden="true"><i style="--score:58%"></i></div>
-                <strong data-story-field="practiceOne">48-second wind-up</strong><p>You found the point, but the opening still buried it.</p>
-              </div>
-              <div class="story-card practice-session">
-                <div class="practice-session-top"><span class="practice-session-label">Practice 2</span><span class="practice-session-score">72<small>/100</small></span></div>
-                <div class="practice-score-rail" aria-hidden="true"><i style="--score:72%"></i></div>
-                <strong data-story-field="practiceTwo">Answer came first</strong><p>The structure improved; your delivery still softened.</p>
-              </div>
-              <div class="story-card practice-session is-best">
-                <div class="practice-session-top"><span class="practice-session-label">Practice 3</span><span class="practice-session-score">86<small>/100</small></span></div>
-                <div class="practice-score-rail" aria-hidden="true"><i style="--score:86%"></i></div>
-                <strong data-story-field="practiceThree">Tradeoff stayed clear</strong><p>Direct, concise, and steady under pushback.</p>
-              </div>
-            </div>
-
-            <div class="practice-takeaway">
-              <span class="practice-takeaway-icon" aria-hidden="true">↗</span>
-              <span><small>Coach takeaway</small><strong data-story-field="practiceResult">You now lead with the recommendation in 7 seconds, down from 48.</strong></span>
-              <span>Ready for the real conversation</span>
+              <div class="notify-footnote">Ready for the real interview</div>
             </div>
           </div>
         </div>
         <div class="story-cursor" aria-hidden="true"></div>
       </div>
     </div>
-
-    <div class="story-progress" data-story-progress aria-label="Walkthrough progress">
-      <button type="button" data-story-step="0" aria-label="Meeting detected"></button>
-      <button type="button" data-story-step="1" aria-label="Observe meeting"></button>
-      <button type="button" data-story-step="2" aria-label="Analyze meeting"></button>
-      <button type="button" data-story-step="3" aria-label="Coaching points"></button>
-      <button type="button" data-story-step="4" aria-label="Play audio moment"></button>
-      <button type="button" data-story-step="5" aria-label="Start practice"></button>
-      <button type="button" data-story-step="6" aria-label="Practice call"></button>
-      <button type="button" data-story-step="7" aria-label="Roleplay analysis"></button>
-    </div>
-    <div class="story-caption" aria-live="polite"><strong data-story-caption>Meeting detected</strong><span>Work Coach helps you find your blind spots and practice to get better.</span></div>
   </div>
 </section>
 
@@ -2435,7 +2319,7 @@ a:focus {
   <div class="app-playground-inner">
     <div class="app-playground-head">
       <div class="app-playground-kicker">Try it yourself</div>
-      <h2 id="app-playground-title">Click around Work Coach.</h2>
+      <h2 id="app-playground-title">Click around Work Coach</h2>
       <p>This is a simplified, interactive version of the app. Explore a real meeting, hear the moment behind the feedback, ask your coach a question, or practice the conversation again.</p>
       <div class="app-playground-guide">Not sure where to start? <button type="button" data-wcx-open-meeting data-wcx-meeting-id="oneOnOne">Open the 1:1 with Sarah</button></div>
     </div>
@@ -2452,7 +2336,7 @@ a:focus {
           <button class="wcx-nav-button" type="button" aria-current="page" data-wcx-nav="home"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg></span>Home</button>
           <button class="wcx-nav-button" type="button" data-wcx-nav="meetings"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></span>Meetings</button>
           <button class="wcx-nav-button" type="button" data-wcx-nav="chat"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path><path d="M8 8h8M8 13h5"></path></svg></span>Coach chat</button>
-          <button class="wcx-nav-button" type="button" data-wcx-nav="roleplay"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 8 3-3 3 3"></path><path d="M6 5v10a4 4 0 0 0 4 4h3"></path><path d="m21 16-3 3-3-3"></path><path d="M18 19V9a4 4 0 0 0-4-4h-3"></path></svg></span>Roleplay</button>
+          <button class="wcx-nav-button" type="button" data-wcx-nav="roleplay"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l1.768-1.768a2 2 0 1 1 2.828 2.828z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg></span>Practice</button>
           <button class="wcx-nav-button" type="button" data-wcx-nav="people"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>People</button>
           <button class="wcx-nav-button" type="button" data-wcx-nav="jobs"><span class="wcx-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"></path></svg></span>Jobs</button>
         </nav>
@@ -2581,7 +2465,7 @@ a:focus {
                   <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">◇</span><span class="wcx-detail-section-title">Practice Scenarios<small>Turn the feedback into a live rep</small></span><span class="wcx-detail-status">1 ready</span>
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="practice" hidden>
-                  <div class="wcx-practice-strip"><span><strong data-wcx-practice-title>Stop Undermining Your Own Ideas</strong><small data-wcx-practice-copy>Rehearse proposing the Friday demo change without undermining it.</small></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Stop Undermining Your Own Ideas" data-roleplay-person="Sarah · Your manager">Start roleplay</button></div>
+                  <div class="wcx-practice-strip"><span><strong data-wcx-practice-title>Stop Undermining Your Own Ideas</strong><small data-wcx-practice-copy>Rehearse proposing the Friday demo change without undermining it.</small></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Stop Undermining Your Own Ideas" data-roleplay-person="Sarah · Your manager">Start practice</button></div>
                 </div>
               </section>
 
@@ -2609,9 +2493,9 @@ a:focus {
             </div>
           </section>
 
-          <section class="wcx-view" data-wcx-view="roleplay" aria-label="Roleplay practice" hidden>
+          <section class="wcx-view" data-wcx-view="roleplay" aria-label="Practice" hidden>
             <div class="wcx-roleplay-list" data-wcx-roleplay-stage="list">
-              <div class="wcx-title-row"><div><h3>Roleplay Practice</h3><p class="wcx-subtitle">Practice conversations based on what came up in your meetings.</p></div></div>
+              <div class="wcx-title-row"><div><h3>Practice</h3><p class="wcx-subtitle">Practice conversations based on what came up in your meetings.</p></div></div>
               <div class="wcx-section-label">Your scenarios</div>
               <div class="wcx-scenario-list">
                 <div class="wcx-card wcx-scenario"><span class="wcx-scenario-icon">↗</span><span><strong>Stop undermining your ideas</strong><span>Sarah · Your manager</span><span class="wcx-score-chip">From the Q3 planning 1:1</span></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Stop Undermining Your Own Ideas" data-roleplay-person="Sarah · Your manager">Practice</button></div>
@@ -2622,11 +2506,11 @@ a:focus {
 
             <div class="wcx-roleplay-call" data-wcx-roleplay-stage="call" hidden>
               <div class="wcx-card wcx-call-card">
-                <div class="wcx-call-label">Work Coach roleplay</div>
+                <div class="wcx-call-label">Work Coach practice</div>
                 <div class="wcx-call-avatar">≋</div>
                 <h4 data-wcx-call-title>Lead with the recommendation</h4>
                 <p class="wcx-call-prompt">“Give me your recommendation first. I’ll ask for whatever context I need.”</p>
-                <div class="wcx-call-state" data-wcx-call-state><span data-wcx-call-person>Jordan · Your manager</span> is listening</div>
+                <div class="wcx-call-state" data-wcx-call-state>An AI is playing <span data-wcx-call-person>Sarah · Your manager</span></div>
                 <div class="wcx-call-timer" data-wcx-call-timer>00:00</div>
                 <div class="wcx-call-controls"><button class="wcx-call-control is-live" type="button" data-wcx-mic>● Your mic is on</button><button class="wcx-call-control is-end" type="button" data-wcx-end-roleplay>End practice</button></div>
               </div>
@@ -2707,126 +2591,79 @@ a:focus {
   </div>
 </section>
 
-<section class="usecases-section" id="use-cases">
-  <div class="usecases-inner">
-    <div class="usecases-head">
-      <h2>You're already paying for the coach you don't have</h2>
-      <p class="usecases-sub">Executives know how valuable coaches are: they're paying $5,000 a month. Work Coach does more for a fraction of the cost, with the option to add a real human coach.</p>
+<section class="foryou-section" aria-labelledby="foryou-title">
+  <div class="foryou-inner">
+    <div class="foryou-head">
+      <div class="section-label">Built for you, not your company</div>
+      <h2 id="foryou-title">The only meeting tool on your side</h2>
+      <p>Every other AI note-taker is sold to your company. They want to enable more work, not help you do it better. Work Coach works for you: private feedback so every interview, 1:1, and presentation makes you better.</p>
     </div>
-
-    <div class="usecases-layout">
-    <div class="usecases-rail">
-      <div class="rail-label">I want to…</div>
-    <div class="usecases-tabs" role="tablist" aria-label="Coaching goals" aria-orientation="vertical">
-      <button type="button" class="usecase-tab" role="tab" aria-selected="true" aria-controls="uc-panel-job" id="uc-tab-job" data-target="job">
-        <span class="usecase-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        </span>
-        <span class="usecase-tab-title">Land your dream job</span>
-      </button>
-      <button type="button" class="usecase-tab" role="tab" aria-selected="false" aria-controls="uc-panel-promotion" id="uc-tab-promotion" data-target="promotion" tabindex="-1">
-        <span class="usecase-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </span>
-        <span class="usecase-tab-title">Get promoted</span>
-      </button>
-      <button type="button" class="usecase-tab" role="tab" aria-selected="false" aria-controls="uc-panel-team" id="uc-tab-team" data-target="team" tabindex="-1">
-        <span class="usecase-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </span>
-        <span class="usecase-tab-title">Become a better manager</span>
-      </button>
-      <button type="button" class="usecase-tab" role="tab" aria-selected="false" aria-controls="uc-panel-advocacy" id="uc-tab-advocacy" data-target="advocacy" tabindex="-1">
-        <span class="usecase-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-        </span>
-        <span class="usecase-tab-title">Get credit for your work</span>
-      </button>
-      <button type="button" class="usecase-tab" role="tab" aria-selected="false" aria-controls="uc-panel-confidence" id="uc-tab-confidence" data-target="confidence" tabindex="-1">
-        <span class="usecase-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </span>
-        <span class="usecase-tab-title">Build real confidence</span>
-      </button>
-    </div>
-    </div>
-
-    <div class="usecase-panels">
-      <div class="usecase-panel is-active" role="tabpanel" id="uc-panel-job" aria-labelledby="uc-tab-job" data-panel="job">
-        <h3>Get your dream job.</h3>
-        <p>From the first application to the signed offer, your AI&nbsp;+&nbsp;human coach runs the whole search alongside you and keeps you moving when momentum dips.</p>
-        <ul class="coach-list">
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Track your whole search</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Sharpen your résumé</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Prep every interview</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Review your real interviews</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Negotiate the offer</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Keep you on plan</span></li>
+    <div class="foryou-grid">
+      <div class="foryou-card is-them">
+        <div class="foryou-card-label">Other AI meeting tools</div>
+        <ul>
+          <li>Sold to your company, not you</li>
+          <li>Flood the CRM and inbox with auto-summaries</li>
+          <li>Create more docs and more busywork</li>
+          <li>Never make you better at your job</li>
         </ul>
-        <a href="job-search" class="usecase-cta">See how the job search works →</a>
       </div>
-
-      <div class="usecase-panel" role="tabpanel" id="uc-panel-promotion" aria-labelledby="uc-tab-promotion" data-panel="promotion" hidden>
-        <h3>Build the case before the room decides.</h3>
-        <p>Promotions are earned in the months before review season. Your AI&nbsp;+&nbsp;human coach helps you close the gap to the next level and walk in with proof.</p>
-        <ul class="coach-list">
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Benchmark you against your level</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Review your manager 1:1s</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Build your promotion plan</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Practice the conversation</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Keep you on plan</span></li>
+      <div class="foryou-card is-you">
+        <div class="foryou-card-label">Work Coach</div>
+        <ul>
+          <li>Feedback on how you came across in the interview</li>
+          <li>Coaching for the 1:1s with your manager</li>
+          <li>Practice reps before the big presentation</li>
+          <li>Built to make you better</li>
         </ul>
-        <a href="get-promoted" class="usecase-cta">See how getting promoted works →</a>
-      </div>
-
-      <div class="usecase-panel" role="tabpanel" id="uc-panel-team" aria-labelledby="uc-tab-team" data-panel="team" hidden>
-        <h3>Lead each person the way they need.</h3>
-        <p>Great managers adapt to who's in front of them. Your AI&nbsp;+&nbsp;human coach helps you understand your team and bring out their best work.</p>
-        <ul class="coach-list">
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Decode personalities and styles</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Measure how you support them</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Spot where to push them</span></li>
-        </ul>
-        <a href="for-managers" class="usecase-cta">See how coaching for managers works →</a>
-      </div>
-
-      <div class="usecase-panel" role="tabpanel" id="uc-panel-advocacy" aria-labelledby="uc-tab-advocacy" data-panel="advocacy" hidden>
-        <h3>Make sure your work gets seen.</h3>
-        <p>Doing great work isn't enough if no one notices. Your AI&nbsp;+&nbsp;human coach helps you speak up for yourself in the moments that count.</p>
-        <ul class="coach-list">
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Clarify what you want</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Evaluate your meetings</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Sharpen your communication</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Read the room right</span></li>
-        </ul>
-        <a href="#pricing" class="usecase-cta">See coaching plans →</a>
-      </div>
-
-      <div class="usecase-panel" role="tabpanel" id="uc-panel-confidence" aria-labelledby="uc-tab-confidence" data-panel="confidence" hidden>
-        <h3>Show up like you belong in the room.</h3>
-        <p>Confidence is a skill you can build. Your AI&nbsp;+&nbsp;human coach gives you targets, feedback, and reps until showing up strong feels natural.</p>
-        <ul class="coach-list">
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Set accountability targets</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Analyze how you show up</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Frame arguments clearly</span></li>
-            <li class="coach-item"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Build speaking confidence</span></li>
-        </ul>
-        <a href="#pricing" class="usecase-cta">See coaching plans →</a>
+        <div class="foryou-note">Private to you. Never shared with your company.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="feedback-gap-section" id="use-cases">
+  <div class="feedback-gap-inner">
+    <div class="feedback-gap-head">
+      <div class="section-label">The feedback gap</div>
+      <h2>Everyone sees how you could grow. <span class="no-orphan">Nobody tells you</span></h2>
+      <p>Nobody's out to get you. Telling you the hard stuff is awkward and risky, so most people just don't. The feedback that could change your career is sitting in other people's heads. You just never hear it.</p>
+    </div>
+    <div class="feedback-gap-grid">
+      <div class="feedback-gap-card">
+        <div class="feedback-gap-who">The recruiter</div>
+        <p>Knows exactly why you didn't get the offer. Telling you carries risk and zero upside, so all you hear is "we went in another direction."</p>
+      </div>
+      <div class="feedback-gap-card">
+        <div class="feedback-gap-who">Your peers</div>
+        <p>See your blind spots every day. They also like you, and honesty feels like hurting a friend, so they keep it to themselves.</p>
+      </div>
+      <div class="feedback-gap-card">
+        <div class="feedback-gap-who">Your manager</div>
+        <p>Walks a tightrope between honest and encouraging. Real talk about what's between you and the promotion is uncomfortable, so it waits for review season, softened.</p>
+      </div>
+      <div class="feedback-gap-card">
+        <div class="feedback-gap-who">Your team</div>
+        <p>If you're the manager, nobody tells the boss the hard truth. Feedback almost never flows up.</p>
+      </div>
+    </div>
+    <div class="feedback-gap-turn">
+      <p><strong>None of them are wrong. You're just not getting the information you need to succeed.</strong> Work Coach fills the gap with honest, private feedback from your real meetings, so you can become the person they already see you could be.</p>
     </div>
   </div>
 </section>
 
 <section class="pullquote-section">
   <div class="pullquote-inner">
-    <h2>Coaching shouldn't cost $5,000 a month</h2>
-    <p>The best leaders have always had someone in their corner who challenges their thinking, watches their blind spots, and helps them navigate complexity.</p>
-    <p>That used to require a <strong>$5,000-a-month engagement</strong> and a C-suite title. Work Coach brings the same model to everyone: real feedback, real patterns, real coaching, starting with your next meeting or your next interview.</p>
+    <h2>Executives already know coaching works</h2>
+    <p>The best leaders have always had someone in their corner who challenges their thinking, watches their blind spots, and helps them navigate complexity. That's why they pay <strong>$5,000 a month</strong> for it.</p>
+    <p>Now there's something for everyone who wants to improve. Work Coach gives you the same advantage: real feedback, real patterns, real coaching, starting with your next meeting or your next interview.</p>
     <div class="pullquote-traits">
-      <div class="pullquote-trait"><span class="trait-accent">Voice-native</span>: walk and think</div>
-      <div class="pullquote-trait"><span class="trait-accent">Context-aware</span>: no catching up</div>
-      <div class="pullquote-trait"><span class="trait-accent">Private</span>: completely honest</div>
+      <div class="pullquote-trait"><span class="trait-accent">Observes</span>: sees you in your real meetings</div>
+      <div class="pullquote-trait"><span class="trait-accent">Conversational</span>: talk through anything, anytime</div>
+      <div class="pullquote-trait"><span class="trait-accent">Practice</span>: rehearse before it counts</div>
+      <div class="pullquote-trait"><span class="trait-accent">Knows you</span>: your role, industry, and goals</div>
+      <div class="pullquote-trait"><span class="trait-accent">Private</span>: honest in a way you can't be with your manager</div>
     </div>
   </div>
 </section>
@@ -2836,7 +2673,7 @@ a:focus {
   <div class="compat-grid">
     <div class="compat-text">
       <div class="section-label">A coach that has the full context of your work</div>
-      <h2>Focus on your next step.</h2>
+      <h2>Focus on your next step</h2>
       <p>A human coach can't sit in your meetings, and doesn't have time to read your transcripts, so every session starts with you explaining what happened. Work Coach already knows. It sees your meetings through its own recorder, or reads the transcripts you already keep in Granola, so you skip the recap and go straight to your reaction, and what you want to do about it.</p>
     </div>
     <div class="compat-visual">
@@ -2880,66 +2717,17 @@ a:focus {
   </div>
 </section>
 
-<section class="how-section" id="how">
-  <div class="how-head">
-    <div class="section-label">How it works</div>
-    <h2>How your coach actually gets to know you.</h2>
-    <p>A great coach does the homework before you even meet, then keeps working as it sees you in action. Here's how Work Coach gets to know you and helps you grow.</p>
-  </div>
-  <div class="how-rail">
-    <div class="how-step">
-      <div class="how-step-index">01</div>
-      <div>
-        <h3>It does its homework</h3>
-        <p>Before your first session, your coach researches your background and where you're trying to go. It shows up to that first meeting having already formed a real point of view.</p>
-      </div>
-      <div class="how-step-tag">Before you meet</div>
-    </div>
-    <div class="how-step">
-      <div class="how-step-index">02</div>
-      <div>
-        <h3>You set it straight</h3>
-        <p>You confirm or correct its read on your real goals and what actually motivates you, so everything that follows is built around what you care about.</p>
-      </div>
-      <div class="how-step-tag">Your goals, your way</div>
-    </div>
-    <div class="how-step">
-      <div class="how-step-index">03</div>
-      <div>
-        <h3>It goes to work</h3>
-        <p>By observing how you actually show up at work, your coach helps you navigate the goal: landing a job and running the whole process, managing your team, or gaining influence.</p>
-      </div>
-      <div class="how-step-tag">No bot joins</div>
-    </div>
-    <div class="how-step">
-      <div class="how-step-index">04</div>
-      <div>
-        <h3>You work on your blind spots</h3>
-        <p>It pinpoints where you can improve and what to practice, then works with you to face your blind spots and turn your weak areas into strengths.</p>
-      </div>
-      <div class="how-step-tag">Practice &amp; improve</div>
-    </div>
-    <div class="how-step">
-      <div class="how-step-index">05</div>
-      <div>
-        <h3>It keeps you on track</h3>
-        <p>Your coach holds you accountable to the plan: checking in, keeping you honest about your progress, and helping you actually realize the goal you set out to reach.</p>
-      </div>
-      <div class="how-step-tag">Accountability</div>
-    </div>
-  </div>
-</section>
 
 <section class="feature-section" id="features">
   <div class="feature-head">
     <div class="section-label">What your coach sees</div>
-    <h2>Every goal, powered by what happens in your meetings.</h2>
+    <h2>Every goal, powered by what happens in your meetings</h2>
     <p>Generic advice is easy to ignore. Because your coach learns from your real conversations, every recommendation is tied to a goal you're working on and a moment you can replay.</p>
   </div>
   <div class="feature-row">
     <div class="feature-text">
       <div class="feature-eyebrow">Get a job</div>
-      <h3>Land the right role. The whole search, handled.</h3>
+      <h3>Land the right role. The whole search, handled</h3>
       <p>From a sharper résumé to a strong first 90 days, your coach runs the entire process with you: the plan, the applications, interview prep, the negotiation, and a fast start. Nothing slips, and you always know the next move.</p>
       <a href="job-search" class="usecase-cta">See how the job search works →</a>
     </div>
@@ -3021,7 +2809,7 @@ a:focus {
   <div class="feature-row reverse">
     <div class="feature-text">
       <div class="feature-eyebrow">Be more confident at work</div>
-      <h3>Confidence is leverage. Build it on purpose.</h3>
+      <h3>Confidence is leverage. Build it on purpose</h3>
       <p>Whether people defer to you or talk over you is decided in seconds: by the hedges, the trailing sentences, the strong opinion you softened into a question. Your coach finds exactly where you give away authority and trains it out of you, week over week, until being the most credible voice in the room is simply how you show up.</p>
     </div>
     <div class="feature-visual" aria-hidden="true">
@@ -3064,7 +2852,7 @@ a:focus {
   <div class="feature-row">
     <div class="feature-text">
       <div class="feature-eyebrow">Advocate for yourself</div>
-      <h3>Make sure the room remembers it was yours.</h3>
+      <h3>Make sure the room remembers it was yours</h3>
       <p>Great work goes unrewarded when you let someone else reframe it, restate it, or run with it. Your coach catches the moments you undersold a win or let your point get buried, then helps you rehearse the version where you take the credit and hold the floor, so your impact is impossible to overlook when it counts.</p>
     </div>
     <div class="feature-visual" aria-hidden="true">
@@ -3108,7 +2896,7 @@ a:focus {
   <div class="feature-row reverse">
     <div class="feature-text">
       <div class="feature-eyebrow">Get the most from your team</div>
-      <h3>Become the manager people do their best work for.</h3>
+      <h3>Become the manager people do their best work for</h3>
       <p>Your team is always telling you what they need: in what gets raised, what gets dropped, and what goes unsaid. Your coach connects those signals across every 1:1 and team meeting so you can lead each person deliberately, catch the small problems before they grow, and build a team people don't want to leave.</p>
     </div>
     <div class="feature-visual" aria-hidden="true">
@@ -3160,7 +2948,7 @@ a:focus {
   <div class="feature-row">
     <div class="feature-text">
       <div class="feature-eyebrow">Get a promotion</div>
-      <h3>No one is coming to promote you. Captain it yourself.</h3>
+      <h3>No one is coming to promote you. Captain it yourself</h3>
       <p>The people who get promoted drive the process instead of waiting to be noticed. Your coach helps you own it: build a plan, score yourself honestly against the rubric, and name your gaps and exactly what you're doing about them. Then it preps you to ask your manager for guidance on that plan, and to relentlessly communicate every win along the way, so your manager has everything they need to champion your case for you.</p>
     </div>
     <div class="feature-visual" aria-hidden="true">
@@ -3217,7 +3005,7 @@ a:focus {
 
 <section class="pricing-section" id="pricing">
   <div class="pricing-head">
-    <h2>Coaching that fits your budget.</h2>
+    <h2>Coaching that fits your budget</h2>
     <p class="pricing-sub">Start with an AI coach that learns from your real meetings. Add a human coach whenever you want more. Cancel anytime.</p>
   </div>
   <div class="pricing-grid">
@@ -3233,7 +3021,7 @@ a:focus {
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Unlimited voice coaching, 24/7</span></li>
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Check-ins that keep you on track toward your goal</span></li>
       </ul>
-      <a href="https://my.work.coach" class="btn-outline btn-lg">Start Free Trial</a>
+      <a href="/download" class="btn-outline btn-lg" data-app-cta>Start for Free</a>
     </div>
 
     <div class="price-card featured">
@@ -3248,7 +3036,7 @@ a:focus {
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Catches what AI can't: tone, politics, blind spots</span></li>
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Everything in Coach</span></li>
       </ul>
-      <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+      <a href="/download" class="btn-primary btn-lg" data-app-cta>Start for Free</a>
     </div>
 
     <div class="price-card">
@@ -3262,7 +3050,7 @@ a:focus {
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Priority access when something urgent hits: a surprise offer, a conflict, a reorg</span></li>
         <li class="price-feature"><span class="coach-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Everything in Coach + Review</span></li>
       </ul>
-      <a href="https://my.work.coach" class="btn-outline btn-lg">Start Free Trial</a>
+      <a href="/download" class="btn-outline btn-lg" data-app-cta>Start for Free</a>
     </div>
   </div>
   <p class="pricing-note">Every plan is built on an AI coach that learns from your real meetings. For comparison, a traditional executive coach runs $5,000 a month. Higher tiers layer in a real, live human coach.</p>
@@ -3306,11 +3094,36 @@ a:focus {
   </div>
 </section>
 
+<section class="founder-section" aria-labelledby="founder-title">
+  <div class="founder-inner">
+    <div class="founder-copy">
+      <div class="founder-eyebrow">From the founder</div>
+      <h2 id="founder-title">Hi, I'm Dan. I've spent 20 years learning what makes careers work</h2>
+      <p>I started in management consulting and at Microsoft, earned my MBA at Yale, then founded a company that HubSpot acquired. At HubSpot I helped launch product-led growth and stand up a brand-new line of business: Sales Hub, now a $1B ARR product.</p>
+      <p>Then I spent seven years at Reforge, helping grow the team from 5 to 200 people and revenue from $2M to $30M in ARR, and raising $90M from A16Z and others along the way. Work Coach is everything I've learned about getting better at work, distilled into a coach that's in your corner every day.</p>
+      <div class="founder-logos" aria-label="PwC, Microsoft, Yale, HubSpot, and Reforge">
+        <img src="img/logos/pwc.svg" alt="PwC">
+        <img src="img/logos/microsoft.svg" alt="Microsoft">
+        <img src="img/logos/yale.svg" alt="Yale">
+        <img src="img/logos/hubspot.svg" alt="HubSpot">
+        <img src="img/logos/reforge.svg" alt="Reforge">
+      </div>
+    </div>
+    <div class="founder-portrait" aria-hidden="true">
+      <video autoplay muted loop playsinline data-founder-video>
+        <source src="img/founder-wave.mov?v=2" type="video/quicktime">
+        <source src="img/founder-wave.webm?v=2" type="video/webm">
+      </video>
+      <span class="founder-portrait-badge"><i></i>Dan · Founder</span>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
-  <h2>Your coach is ready when you are.</h2>
-  <p>Pick the goal you're working toward and let your coach take it from there.</p>
+  <h2>Find out what everyone else already sees</h2>
+  <p>Download Work Coach and get honest feedback from your very next meeting.</p>
   <div class="cta-row">
-    <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+    <a href="/download" class="btn-primary btn-lg" data-app-cta>Start for Free</a>
   </div>
   <p class="fine-print">2-week free trial · No credit card · Your data stays yours</p>
 </section>
@@ -3334,10 +3147,10 @@ a:focus {
   var phrases = [
     'get your next job',
     'get a promotion',
-    'get the most from your team',
+    'get more from your team',
     'ace your next interview',
     'advocate for yourself',
-    'be more confident at work'
+    'be confident at work'
   ];
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var i = 0;
@@ -3353,41 +3166,6 @@ a:focus {
       el.style.opacity = '1';
     }, 220);
   }, 2600);
-})();
-
-(function() {
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.usecase-tab'));
-  var panels = Array.prototype.slice.call(document.querySelectorAll('.usecase-panel'));
-  if (!tabs.length) return;
-
-  function activate(key, focusTab) {
-    tabs.forEach(function(t) {
-      var on = t.dataset.target === key;
-      t.setAttribute('aria-selected', on ? 'true' : 'false');
-      t.tabIndex = on ? 0 : -1;
-      if (on && focusTab) t.focus();
-    });
-    panels.forEach(function(p) {
-      var on = p.dataset.panel === key;
-      p.classList.toggle('is-active', on);
-      if (on) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
-    });
-  }
-
-  tabs.forEach(function(tab, idx) {
-    tab.addEventListener('click', function() { activate(tab.dataset.target); });
-    tab.addEventListener('keydown', function(e) {
-      var next = null;
-      if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
-      else if (e.key === 'ArrowLeft') next = tabs[(idx - 1 + tabs.length) % tabs.length];
-      else if (e.key === 'Home') next = tabs[0];
-      else if (e.key === 'End') next = tabs[tabs.length - 1];
-      if (next) {
-        e.preventDefault();
-        activate(next.dataset.target, true);
-      }
-    });
-  });
 })();
 
 (function() {
@@ -3448,24 +3226,10 @@ a:focus {
   var story = document.querySelector('[data-product-story]');
   if (!story) return;
 
-  var states = ['prompt', 'recording', 'analyzing', 'insight', 'audio', 'practice', 'call', 'practice-analysis'];
-  var captions = [
-    'Meeting detected',
-    'Observing — no bot joins the call',
-    'Analyzing the conversation',
-    'Meeting type and coaching points detected',
-    'Playing the exact moment',
-    'Turning feedback into a practice rep',
-    'Work Coach roleplay: practice the scenario',
-    'Roleplay analysis across three practice sessions'
-  ];
-  var durations = [3200, 3500, 2800, 4200, 4000, 2100, 4600, 5200];
+  var states = ['prompt', 'recording', 'analyzed', 'coaching', 'practice'];
+  var durations = [3200, 3200, 3000, 4200, 4200];
   var scenes = Array.prototype.slice.call(story.querySelectorAll('[data-story-scene]'));
-  var dots = Array.prototype.slice.call(document.querySelectorAll('[data-story-step]'));
   var nextButtons = Array.prototype.slice.call(story.querySelectorAll('[data-tour-next]'));
-  var caption = document.querySelector('[data-story-caption]');
-  var replay = document.querySelector('[data-story-replay]');
-  var playButton = story.querySelector('.audio-play');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var timer = null;
   var meetingClockTimer = null;
@@ -3496,15 +3260,6 @@ a:focus {
     }, 60);
   }
 
-  function sceneFor(state) {
-    if (state === 'prompt') return 'prompt';
-    if (state === 'recording') return 'recording';
-    if (state === 'analyzing') return 'analyzing';
-    if (state === 'call') return 'call';
-    if (state === 'practice-analysis') return 'practice-analysis';
-    return 'results';
-  }
-
   function render(index) {
     var previousState = story.getAttribute('data-story-state');
     current = Math.max(0, Math.min(index, states.length - 1));
@@ -3512,18 +3267,8 @@ a:focus {
     if (state === 'prompt' && previousState !== 'prompt') resetMeetingClock();
     story.setAttribute('data-story-state', state);
     scenes.forEach(function(scene) {
-      scene.classList.toggle('is-visible', scene.dataset.storyScene === sceneFor(state));
+      scene.classList.toggle('is-visible', scene.dataset.storyScene === state);
     });
-    dots.forEach(function(dot, i) {
-      dot.classList.toggle('is-current', i === current);
-      dot.classList.toggle('is-past', i < current);
-      dot.setAttribute('aria-current', i === current ? 'step' : 'false');
-    });
-    if (caption) caption.textContent = captions[current];
-    if (playButton) {
-      playButton.textContent = state === 'audio' ? 'Ⅱ' : '▶';
-      playButton.setAttribute('aria-label', state === 'audio' ? 'Pause coaching moment' : 'Play coaching moment');
-    }
     syncMeetingClock();
   }
 
@@ -3543,27 +3288,9 @@ a:focus {
 
   nextButtons.forEach(function(button) {
     button.addEventListener('click', function() {
-      if (button.classList.contains('audio-play')) {
-        go(states[current] === 'audio' ? 3 : 4);
-        return;
-      }
-      if (button.classList.contains('practice-button')) {
-        go(6);
-        return;
-      }
       go(current + 1);
     });
   });
-
-  dots.forEach(function(dot) {
-    dot.addEventListener('click', function() {
-      var step = Number(dot.dataset.storyStep);
-      if (step === 0) resetMeetingClock();
-      go(step);
-    });
-  });
-
-  if (replay) replay.addEventListener('click', function() { resetMeetingClock(); go(0); });
 
   render(reduce ? 3 : 0);
 
@@ -3590,7 +3317,7 @@ a:focus {
   var views = Array.prototype.slice.call(app.querySelectorAll('[data-wcx-view]'));
   var navButtons = Array.prototype.slice.call(app.querySelectorAll('[data-wcx-nav]'));
   var toolbarTitle = app.querySelector('[data-wcx-toolbar-title]');
-  var viewNames = { home: 'Home', meetings: 'Meetings', meeting: 'Meeting', chat: 'Coach chat', roleplay: 'Roleplay Practice', people: 'People', jobs: 'Jobs', job: 'Job prep' };
+  var viewNames = { home: 'Home', meetings: 'Meetings', meeting: 'Meeting', chat: 'Coach chat', roleplay: 'Practice', people: 'People', jobs: 'Jobs', job: 'Job prep' };
   var meetingData = {
     oneOnOne: {
       title: 'Example: 1:1 with Sarah — Q3 Planning', type: 'Manager 1:1', meta: 'Today · 4:25 · Zoom',
@@ -4074,7 +3801,7 @@ a:focus {
   var micButton = app.querySelector('[data-wcx-mic]');
   var roleplayTimer = null;
   var roleplaySeconds = 0;
-  var currentRoleplay = { title: 'Lead with the recommendation', person: 'Jordan · Your manager' };
+  var currentRoleplay = { title: 'Lead with the recommendation', person: 'Sarah · Your manager' };
   function showRoleplayStage(stage) {
     roleplayStages.forEach(function(panel) { panel.hidden = panel.dataset.wcxRoleplayStage !== stage; });
     if (stage !== 'call') clearInterval(roleplayTimer);
@@ -4086,7 +3813,10 @@ a:focus {
     if (callTimerEl) callTimerEl.textContent = '00:00';
     if (callTitle) callTitle.textContent = currentRoleplay.title;
     if (callPerson) callPerson.textContent = currentRoleplay.person;
-    if (callState) callState.innerHTML = '<span data-wcx-call-person>' + currentRoleplay.person + '</span> is listening';
+    if (callState) {
+      callState.innerHTML = 'An AI is playing <span data-wcx-call-person></span>';
+      callState.querySelector('[data-wcx-call-person]').textContent = currentRoleplay.person;
+    }
     if (micButton) { micButton.classList.add('is-live'); micButton.textContent = '● Your mic is on'; }
     clearInterval(roleplayTimer);
     roleplayTimer = setInterval(function() {
@@ -4118,7 +3848,7 @@ a:focus {
   if (micButton) micButton.addEventListener('click', function() {
     var live = micButton.classList.toggle('is-live');
     micButton.textContent = live ? '● Your mic is on' : 'Mic muted';
-    if (callState) callState.textContent = live ? currentRoleplay.person + ' is listening' : 'Practice paused';
+    if (callState) callState.textContent = live ? 'An AI is playing ' + currentRoleplay.person : 'Practice paused';
   });
   var endRoleplay = app.querySelector('[data-wcx-end-roleplay]');
   if (endRoleplay) endRoleplay.addEventListener('click', function() { showRoleplayStage('result'); });
@@ -4166,6 +3896,25 @@ a:focus {
   renderMeeting('oneOnOne', false);
   renderJob('openai', false);
   navigate('home');
+})();
+
+(function() {
+  if (!/iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return;
+  Array.prototype.slice.call(document.querySelectorAll('a[data-app-cta]')).forEach(function(link) {
+    link.href = 'https://my.work.coach';
+    if (link.textContent.trim() === 'Download Now') link.textContent = 'Start for Free';
+  });
+  var platformNote = document.querySelector('.platform-note');
+  if (platformNote) platformNote.remove();
+})();
+
+(function() {
+  var video = document.querySelector('[data-founder-video]');
+  if (!video) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+  }
 })();
 </script>
 
