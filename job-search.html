@@ -738,6 +738,59 @@ a:focus {
   .fit-cols { grid-template-columns: 1fr; }
   .hero .cta-row, .cta-section .cta-row { flex-direction: column; gap: 10px; }
 }
+
+/* PLAYBOOKS */
+.playbook-section {
+  background: var(--surface);
+  padding: 80px 20px 88px;
+}
+.playbook-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.playbook-group-title {
+  max-width: var(--maxw);
+  margin: 44px auto 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+.playbook-grid + .playbook-group-title { margin-top: 44px; }
+.playbook-head + .playbook-group-title, .journey-head + .playbook-group-title { margin-top: 0; }
+.playbook-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.playbook-card:hover {
+  border-color: var(--accent-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.playbook-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+.playbook-card .playbook-go {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+@media (max-width: 900px) { .playbook-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .playbook-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -751,6 +804,7 @@ a:focus {
       <a href="#features">What you get</a>
       <a href="/#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
+      <a href="/playbooks/">Playbooks</a>
     </div>
     <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
   </div>
@@ -1058,6 +1112,136 @@ a:focus {
       <summary>What does it cost?</summary>
       <p>Plans start at $100/month for the AI coach, $250/month to add human review, and $500/month for live coaching sessions. For comparison, a single session with a traditional interview coach often costs more than a month of Work Coach. Every plan starts with a 2-week free trial. <a href="/#pricing" style="color: var(--accent);">See pricing</a>.</p>
     </details>
+  </div>
+</section>
+
+<section class="playbook-section" id="playbooks">
+  <div class="journey-head">
+    <div class="section-label">Free playbooks</div>
+    <h2>The job search playbooks, free to read.</h2>
+    <p>From positioning and resumes to final rounds and the offer itself — scripts and advice from hiring managers and recruiters. No signup, no paywall.</p>
+  </div>
+  <h3 class="playbook-group-title">Land the interview</h3>
+  <div class="playbook-grid">
+    <a class="playbook-card" href="/playbooks/how-to-position-yourself-for-a-job">
+      <h3>Position yourself for a job</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/how-to-tailor-your-resume">
+      <h3>Tailor your resume</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/resume-bullets-that-show-impact">
+      <h3>Resume bullets that show impact</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/resume-for-career-change">
+      <h3>A resume for a career change</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/resume-with-no-experience">
+      <h3>A resume with no experience</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/apply-without-all-requirements">
+      <h3>Apply without all the requirements</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/ask-for-job-referral">
+      <h3>Ask for a job referral</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/get-foot-in-door-at-company">
+      <h3>Get your foot in the door at a company</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/job-search-while-employed">
+      <h3>Job search while employed</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/using-ai-in-your-job-search">
+      <h3>Using AI in your job search</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/recruiter-ghosting-after-interview">
+      <h3>When recruiters ghost you</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/stay-confident-after-job-rejection">
+      <h3>Stay confident through rejection</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/salary-negotiation-scripts">
+      <h3>Salary negotiation scripts</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/negotiate-equity-in-job-offer">
+      <h3>Negotiate equity in a job offer</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+  </div>
+  <h3 class="playbook-group-title">Win the interview</h3>
+  <div class="playbook-grid">
+    <a class="playbook-card" href="/playbooks/behavioral-interview-questions">
+      <h3>Behavioral interview questions</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/tell-me-about-yourself-interview-answer">
+      <h3>“Tell me about yourself”</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/prepare-for-interview-in-24-hours">
+      <h3>Prepare for an interview in 24 hours</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/prepare-for-final-round-interview">
+      <h3>Prepare for a final-round interview</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/explain-career-gap-in-interview">
+      <h3>Explain a career gap in an interview</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/ask-for-feedback-after-interview">
+      <h3>Ask for feedback after an interview</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/engineering-interview-guide">
+      <h3>Software engineering interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/product-manager-interview-guide">
+      <h3>Product manager interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/product-sense-interview">
+      <h3>Product sense interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/design-interview-guide">
+      <h3>Product design interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/sales-and-growth-interview-guide">
+      <h3>Sales & growth interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/amazon-leadership-principles-interview">
+      <h3>Amazon Leadership Principles interviews</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/netflix-interview-preparation">
+      <h3>Netflix interview preparation</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/stripe-interview-preparation">
+      <h3>Stripe interview preparation</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
+    <a class="playbook-card" href="/playbooks/shopify-interview-preparation">
+      <h3>Shopify interview preparation</h3>
+      <span class="playbook-go">Read the playbook →</span>
+    </a>
   </div>
 </section>
 

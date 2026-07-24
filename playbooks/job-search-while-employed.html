@@ -353,6 +353,30 @@ article strong { font-weight: 700; }
 .sources h2 { margin-top: 0; }
 .sources li { font-size: 15.5px; color: var(--muted); }
 
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 footer {
   padding: 32px 0;
@@ -385,6 +409,7 @@ footer p { color: var(--muted); font-size: 14px; }
       <a href="/#features">What you get</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#faq">FAQ</a>
+      <a href="/playbooks/">Playbooks</a>
     </div>
     <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
   </div>
@@ -712,6 +737,26 @@ footer p { color: var(--muted); font-size: 14px; }
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=v3pofqabzhs">Lessons from one of the world's top executive recruiters, with Lauren Ipsen</a> (Nov 2022)</li>
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=pEis2CBomVA">The tactical playbook for getting 20-40% more comp, with Jacob Warwick</a> (Mar 2026)</li>
     <li>WorkLife with Adam Grant: The Not-So-Great Resignation, with Anthony Klotz (Apr 2022, audio)</li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/job-search">Job Search & Resume</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/how-to-position-yourself-for-a-job">Position yourself for a job</a></li>
+    <li><a href="/playbooks/how-to-tailor-your-resume">Tailor your resume</a></li>
+    <li><a href="/playbooks/resume-bullets-that-show-impact">Resume bullets that show impact</a></li>
+    <li><a href="/playbooks/resume-for-career-change">A resume for a career change</a></li>
+    <li><a href="/playbooks/resume-with-no-experience">A resume with no experience</a></li>
+    <li><a href="/playbooks/apply-without-all-requirements">Apply without all the requirements</a></li>
+    <li><a href="/playbooks/ask-for-job-referral">Ask for a job referral</a></li>
+    <li><a href="/playbooks/get-foot-in-door-at-company">Get your foot in the door at a company</a></li>
+    <li><a href="/playbooks/using-ai-in-your-job-search">Using AI in your job search</a></li>
+    <li><a href="/playbooks/recruiter-ghosting-after-interview">When recruiters ghost you</a></li>
+    <li><a href="/playbooks/stay-confident-after-job-rejection">Stay confident through rejection</a></li>
+    <li><a href="/playbooks/salary-negotiation-scripts">Salary negotiation scripts</a></li>
+    <li><a href="/playbooks/negotiate-equity-in-job-offer">Negotiate equity in a job offer</a></li>
   </ul>
 </div>
 </article>
