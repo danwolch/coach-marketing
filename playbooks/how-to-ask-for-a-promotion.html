@@ -353,6 +353,30 @@ article strong { font-weight: 700; }
 .sources h2 { margin-top: 0; }
 .sources li { font-size: 15.5px; color: var(--muted); }
 
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 footer {
   padding: 32px 0;
@@ -385,6 +409,7 @@ footer p { color: var(--muted); font-size: 14px; }
       <a href="/#features">What you get</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#faq">FAQ</a>
+      <a href="/playbooks/">Playbooks</a>
     </div>
     <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
   </div>
@@ -693,6 +718,19 @@ footer p { color: var(--muted); font-size: 14px; }
     <li>Level Up with Ethan Evans: Amazon, Lessons From My 15 Year Career (Oct 2020, audio)</li>
     <li>The Skip Podcast: <a href="https://www.youtube.com/watch?v=38FFgtSXMew">The Promotion Mistakes That Derail PM Careers</a> (Feb 2026)</li>
     <li>The Mochary Method curriculum: <a href="https://docs.google.com/document/d/1EnMXBO0uum5E5x6QlMcbcdOIRightwdy73DzRerKTdI/edit">compensation and market-rate anchoring</a></li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/get-promoted">Get Promoted</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/promotion-denied-questions">Promotion denied? 9 questions to ask</a></li>
+    <li><a href="/playbooks/ask-for-raise-after-more-responsibility">Ask for a raise after taking on more</a></li>
+    <li><a href="/playbooks/take-ownership-of-your-career">Take ownership of your career</a></li>
+    <li><a href="/playbooks/getting-honest-feedback-at-work">Get honest feedback at work</a></li>
+    <li><a href="/playbooks/respond-to-performance-improvement-plan">Respond to a performance improvement plan</a></li>
+    <li><a href="/playbooks/skip-level-meeting-with-bosses-boss">Skip-level meetings with your boss's boss</a></li>
   </ul>
 </div>
 </article>

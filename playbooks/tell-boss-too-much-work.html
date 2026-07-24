@@ -353,6 +353,30 @@ article strong { font-weight: 700; }
 .sources h2 { margin-top: 0; }
 .sources li { font-size: 15.5px; color: var(--muted); }
 
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
 /* FOOTER */
 footer {
   padding: 32px 0;
@@ -385,6 +409,7 @@ footer p { color: var(--muted); font-size: 14px; }
       <a href="/#features">What you get</a>
       <a href="/#pricing">Pricing</a>
       <a href="/#faq">FAQ</a>
+      <a href="/playbooks/">Playbooks</a>
     </div>
     <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
   </div>
@@ -584,6 +609,19 @@ footer p { color: var(--muted); font-size: 14px; }
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=WSscIIY609c">Strategies for becoming less distractible and improving focus, with Nir Eyal</a> (Dec 2023)</li>
     <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=cuce7zvOFHY">Making time for what matters, with Jake Knapp and John Zeratsky</a> (Feb 2024)</li>
     <li>Mochary Method curriculum: <a href="https://docs.google.com/document/d/1Hn_E1UFYruM1sXATsSwIydIJ4EsxMvxlnyoypOVRb_M/edit">Issue and Proposed Solution</a>; <a href="https://docs.google.com/document/d/15ZlMMBfauLT-gbgKjzOvzZQEzQdrBP_qKkXV2dfEN50/edit">No: How to Say It and Do It</a></li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/new-role">Working With Your Manager</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/first-one-on-one-with-new-manager">Your first 1:1 with a new manager</a></li>
+    <li><a href="/playbooks/one-on-one-with-your-manager">Run a 1:1 with your manager</a></li>
+    <li><a href="/playbooks/one-on-one-nothing-to-discuss">A 1:1 with nothing to discuss</a></li>
+    <li><a href="/playbooks/manager-keeps-canceling-one-on-ones">Manager keeps canceling your 1:1s</a></li>
+    <li><a href="/playbooks/work-with-a-micromanager">Work with a micromanager</a></li>
+    <li><a href="/playbooks/disagree-with-boss-respectfully">Disagree with your boss respectfully</a></li>
   </ul>
 </div>
 </article>
