@@ -605,13 +605,12 @@ nav {
 .cta-section {
   text-align: center;
   padding: 120px 20px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
 }
 .cta-section h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 400;
+  line-height: 1.12;
   margin-bottom: 16px;
 }
 .cta-section p {
@@ -792,14 +791,7 @@ a:focus {
   display: block;
   min-height: 1.18em;
 }
-.rotator {
-  display: inline-block;
-  transition: opacity 0.22s ease;
-  will-change: opacity;
-}
-@media (prefers-reduced-motion: reduce) {
-  .rotator { transition: none; }
-}
+.rotator { display: inline-block; }
 
 /* USE CASES */
 .usecase-cta {
@@ -1023,6 +1015,25 @@ a:focus {
 .jd-q-text { color: var(--text); font-weight: 600; font-style: italic; flex: 1; }
 .jd-q-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--accent-2); }
 
+.jd-questions { display: grid; gap: 10px; margin-bottom: 14px; }
+.fchat { display: grid; gap: 10px; }
+.fchat-msg {
+  max-width: 90%;
+  padding: 11px 14px;
+  border-radius: 13px 13px 13px 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.fchat-msg.is-you {
+  justify-self: end;
+  border-radius: 13px 13px 4px 13px;
+  background: var(--green-soft);
+  border-color: rgba(49, 193, 120, 0.3);
+}
+
 /* PRICING */
 .pricing-section {
   max-width: var(--maxw);
@@ -1177,7 +1188,8 @@ a:focus {
   .feature-row.reverse .feature-text { order: 1; }
   .feature-row.reverse .feature-visual { order: 2; }
   .coaching-grid { grid-template-columns: 1fr; }
-  .hero .cta-row, .cta-section .cta-row { flex-direction: column; gap: 10px; }
+  .hero .cta-row, .cta-section .cta-row { flex-direction: column; align-items: center; gap: 10px; }
+  .cta-section { padding: 72px 20px 80px; }
   .rail-label { display: none; }
   .coach-list { grid-template-columns: 1fr; }
 }
@@ -1287,8 +1299,9 @@ a:focus {
 .founder-section {
   position: relative;
   padding: 88px 20px 96px;
-  background: #faf7f1;
+  background: var(--surface);
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
 .founder-inner {
@@ -1329,7 +1342,6 @@ a:focus {
   margin-top: 26px;
 }
 .founder-logos img { height: 20px; width: auto; filter: grayscale(1); opacity: .5; transition: opacity .2s, filter .2s; }
-.founder-logos img[alt="PwC"] { height: 32px; }
 .founder-logos img:hover { filter: none; opacity: 1; }
 .founder-portrait {
   position: relative;
@@ -1369,10 +1381,12 @@ a:focus {
   font-style: normal;
 }
 @media (max-width: 900px) {
-  .founder-inner { grid-template-columns: 1fr; }
+  .founder-inner { grid-template-columns: 1fr; gap: 10px; }
   .founder-copy { max-width: 100%; }
   .founder-portrait video { width: 100%; margin-left: 0; }
-  .founder-portrait { width: min(320px, 80vw); margin: 8px auto 0; }
+  .founder-logos { gap: 12px 16px; }
+  .founder-logos img { height: 15px; }
+  .founder-portrait { width: min(320px, 80vw); margin: 0 auto; }
 }
 
 /* PRODUCT STORY */
@@ -1500,15 +1514,15 @@ a:focus {
 .prompt-top { display: flex; gap: 12px; align-items: flex-start; }
 .prompt-icon { width: 42px; height: 42px; border-radius: 11px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 6px 14px rgba(20,64,36,.24); }
 .prompt-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.prompt-brand { color: #187344; font-size: 10.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+.prompt-brand { color: #187344; font-size: 11.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
 .prompt-copy { min-width: 0; }
-.prompt-copy strong { display: block; color: #233a2c; font-size: 17.5px; line-height: 1.2; }
-.prompt-copy span { display: block; color: #758179; font-size: 13px; line-height: 1.4; }
+.prompt-copy strong { display: block; color: #233a2c; font-size: 22px; line-height: 1.2; }
+.prompt-copy span { display: block; color: #758179; font-size: 15px; line-height: 1.4; }
 .prompt-copy b { color: #536158; font-weight: 650; }
 .prompt-explainer { margin-top: 4px; }
 .prompt-meeting-info { margin-top: 7px; padding-top: 7px; border-top: 1px solid #e5ebe6; }
 .prompt-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
-.story-button { border: 0; border-radius: 9px; padding: 10px 16px; font: 700 13px/1 'Source Sans 3', sans-serif; cursor: pointer; }
+.story-button { border: 0; border-radius: 10px; padding: 11px 18px; font: 700 14.5px/1 'Source Sans 3', sans-serif; cursor: pointer; }
 .story-button-muted { background: #f0f2ef; color: #5f6c63; }
 .story-button-green { background: #31c178; color: white; }
 .recording-scene { padding: 0; }
@@ -1535,10 +1549,9 @@ a:focus {
 .coach-observe-icon { width: 44px; height: 44px; border-radius: 12px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 7px 16px rgba(20,64,36,.24); }
 .coach-observe-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .coach-observe-copy { min-width: 0; flex: 1; }
-.coach-observe-copy strong { display: flex; align-items: center; gap: 7px; font-size: 15.5px; line-height: 1.15; }
-.coach-observe-copy small { display: block; color: #718078; font-size: 12px; line-height: 1.3; margin-top: 4px; }
+.coach-observe-copy strong { display: flex; align-items: center; gap: 9px; font-size: 18px; line-height: 1.15; }
 .coach-observe-copy .recording-dot { background: #31c178; flex: 0 0 auto; }
-.coach-observe-time { color: #59685f; font: 750 12.5px/1 ui-monospace, monospace; }
+.coach-observe-time { color: #59685f; font: 750 14px/1 ui-monospace, monospace; }
 .end-meeting { background: #eaf7f0; color: #187344; padding: 10px 14px; border: 1px solid #cce8d8; border-radius: 10px; white-space: nowrap; }
 .notify-scene {
   display: flex;
@@ -1803,7 +1816,8 @@ a:focus {
 .wcx-speaker { color: #1e6b42; font-size: 8px; font-weight: 850; }
 .wcx-transcript-line p { color: #4a5e52; font-size: 9.5px; line-height: 1.4; }
 .wcx-chat-layout { height: 530px; display: flex; flex-direction: column; max-width: 690px; margin: 0 auto; }
-.wcx-chat-messages { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; }
+.wcx-chat-messages { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-right: 4px; }
+.wcx-chat-messages > :first-child { margin-top: auto; }
 .wcx-chat-message { max-width: 78%; padding: 10px 12px; border-radius: 12px 12px 12px 3px; background: rgba(255,255,255,.55); color: #415348; font-size: 10px; line-height: 1.45; }
 .wcx-chat-message.is-user { align-self: flex-end; border-radius: 12px 12px 3px 12px; background: #dcefe3; color: #264b35; }
 .wcx-chat-message strong { display: block; color: #1e6b42; font-size: 8px; margin-bottom: 3px; text-transform: uppercase; letter-spacing: .06em; }
@@ -2101,7 +2115,6 @@ a:focus {
   .coach-observe-bar { top: 30px; width: calc(100% - 18px); gap: 8px; padding: 10px; border-radius: 14px; }
   .coach-observe-icon { width: 38px; height: 38px; border-radius: 10px; }
   .coach-observe-copy strong { gap: 5px; font-size: 11.5px; }
-  .coach-observe-copy small { display: none; }
   .coach-observe-time { font-size: 9px; }
   .end-meeting { padding: 8px 9px; font-size: 10px; }
   [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 31%; }
@@ -2140,7 +2153,7 @@ a:focus {
         <span class="line">Feedback to help you</span>
         <span class="line rotator-line"><em class="rotator" data-rotator>get your next job</em></span>
       </h1>
-      <p class="subtitle">Empowering you to accomplish your work goals</p>
+      <p class="subtitle">Shine a light on your blind spots</p>
       <div class="cta-row">
         <a href="/download" class="btn-primary btn-lg" data-app-cta>Download Now</a>
       </div>
@@ -2222,7 +2235,7 @@ a:focus {
             <div class="story-video-call">
               <div class="story-video-titlebar">
                 <div class="story-video-lights"><i></i><i></i><i></i></div>
-                <span class="story-video-title"><span data-story-field="meetingName">Final-round interview</span> · Zoom</span>
+                <span class="story-video-title"><span data-story-field="meetingName">Final interview</span> · Zoom</span>
                 <span class="story-video-clock" data-meeting-clock>00:00</span>
               </div>
               <div class="story-video-tiles">
@@ -2245,9 +2258,9 @@ a:focus {
                 <div class="prompt-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></div>
                 <div class="prompt-copy">
                   <div class="prompt-brand">Work Coach</div>
-                  <strong>Observe this meeting?</strong>
-                  <span class="prompt-explainer">Work Coach listens privately and coaches you afterward. No bot joins the call.</span>
-                  <span class="prompt-meeting-info"><b data-story-field="meetingName">Final-round interview</b> · <b data-story-field="promptMeta">10:00–10:45 AM · with Alex Morgan</b></span>
+                  <strong>Observe this interview?</strong>
+                  <span class="prompt-explainer">Private coaching. No bot joins.</span>
+                  <span class="prompt-meeting-info"><b data-story-field="meetingName">Final interview</b> · <b data-story-field="promptMeta">10:00 AM · Alex Morgan</b></span>
                 </div>
               </div>
               <div class="prompt-actions">
@@ -2260,7 +2273,7 @@ a:focus {
           <div class="story-scene recording-scene" data-story-scene="recording">
             <div class="coach-observe-bar">
               <span class="coach-observe-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span>
-              <span class="coach-observe-copy"><strong><span class="recording-dot"></span>Work Coach is observing</strong><small>Listening privately · no bot joins</small></span>
+              <span class="coach-observe-copy"><strong><span class="recording-dot"></span>Work Coach is observing</strong></span>
               <span class="coach-observe-time" data-meeting-clock>00:00</span>
               <button class="story-button end-meeting" type="button" data-tour-next>End meeting</button>
             </div>
@@ -2384,6 +2397,9 @@ a:focus {
             <div class="wcx-recent">
               <div class="wcx-section-label"><span>Recent meetings</span><button class="wcx-link-button" type="button" data-wcx-go="meetings">View all</button></div>
               <div class="wcx-card">
+                <button class="wcx-meeting-row" type="button" data-wcx-open-meeting data-wcx-meeting-id="finalInterview">
+                  <span class="wcx-meeting-avatar">AM</span><span class="wcx-meeting-main"><strong>Example: Final Interview — Horizon Labs</strong><span>Alex Morgan · Final Interview</span></span><span class="wcx-meeting-meta">Thursday · 4:12</span><span class="wcx-chevron">›</span>
+                </button>
                 <button class="wcx-meeting-row" type="button" data-wcx-open-meeting data-wcx-meeting-id="oneOnOne">
                   <span class="wcx-meeting-avatar">SC</span><span class="wcx-meeting-main"><strong>Example: 1:1 with Sarah — Q3 Planning</strong><span>Sarah Chen · Manager 1:1</span></span><span class="wcx-meeting-meta">Today · 4:25</span><span class="wcx-chevron">›</span>
                 </button>
@@ -2406,6 +2422,12 @@ a:focus {
               </button>
               <button class="wcx-meeting-row" type="button" data-wcx-open-meeting data-wcx-meeting-id="presentation" data-search="example team all hands platform update engineering presentation">
                 <span class="wcx-meeting-avatar">AH</span><span class="wcx-meeting-main"><strong>Example: Team All-Hands — Platform Update</strong><span>Engineering Team · 4 coaching recommendations</span></span><span class="wcx-meeting-meta">Yesterday · 4:32</span><span class="wcx-chevron">›</span>
+              </button>
+              <button class="wcx-meeting-row" type="button" data-wcx-open-meeting data-wcx-meeting-id="finalInterview" data-search="example final interview horizon labs alex hiring manager job">
+                <span class="wcx-meeting-avatar">AM</span><span class="wcx-meeting-main"><strong>Example: Final Interview — Horizon Labs</strong><span>Alex Morgan · 2 coaching insights</span></span><span class="wcx-meeting-meta">Thursday · 4:12</span><span class="wcx-chevron">›</span>
+              </button>
+              <button class="wcx-meeting-row" type="button" data-wcx-open-meeting data-wcx-meeting-id="recruiterScreen" data-search="example recruiter screen horizon labs priya interview job">
+                <span class="wcx-meeting-avatar">PS</span><span class="wcx-meeting-main"><strong>Example: Recruiter Screen — Horizon Labs</strong><span>Priya Shah · 2 coaching insights</span></span><span class="wcx-meeting-meta">Monday · 3:48</span><span class="wcx-chevron">›</span>
               </button>
               <div class="wcx-empty-search" data-wcx-empty-search>No meetings match that search.</div>
             </div>
@@ -2498,6 +2520,7 @@ a:focus {
               <div class="wcx-title-row"><div><h3>Practice</h3><p class="wcx-subtitle">Practice conversations based on what came up in your meetings.</p></div></div>
               <div class="wcx-section-label">Your scenarios</div>
               <div class="wcx-scenario-list">
+                <div class="wcx-card wcx-scenario"><span class="wcx-scenario-icon">◔</span><span><strong>90-second tell me about yourself</strong><span>Priya · Recruiter</span><span class="wcx-score-chip">From the recruiter screen</span></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="90-Second Tell Me About Yourself" data-roleplay-person="Priya · Recruiter">Practice</button></div>
                 <div class="wcx-card wcx-scenario"><span class="wcx-scenario-icon">↗</span><span><strong>Stop undermining your ideas</strong><span>Sarah · Your manager</span><span class="wcx-score-chip">From the Q3 planning 1:1</span></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Stop Undermining Your Own Ideas" data-roleplay-person="Sarah · Your manager">Practice</button></div>
                 <div class="wcx-card wcx-scenario"><span class="wcx-scenario-icon">◫</span><span><strong>Close with confident metrics</strong><span>Engineering all-hands</span></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Close with confident metrics" data-roleplay-person="Engineering team">Practice</button></div>
                 <div class="wcx-card wcx-scenario"><span class="wcx-scenario-icon">!</span><span><strong>Pair a problem with a proposal</strong><span>Sarah · Your manager</span><span class="wcx-score-chip">From the Q3 planning 1:1</span></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Pair Every Problem With a Proposal" data-roleplay-person="Sarah · Your manager">Practice</button></div>
@@ -2596,7 +2619,7 @@ a:focus {
     <div class="foryou-head">
       <div class="section-label">Built for you, not your company</div>
       <h2 id="foryou-title">The only meeting tool on your side</h2>
-      <p>Every other AI note-taker is sold to your company. They want to enable more work, not help you do it better. Work Coach works for you: private feedback so every interview, 1:1, and presentation makes you better.</p>
+      <p>Every other AI note-taker is sold to your company. They want more docs, more slides, more status updates. They don't focus on helping you improve. Work Coach works for you: private feedback so every interview, 1:1, and presentation makes you better.</p>
     </div>
     <div class="foryou-grid">
       <div class="foryou-card is-them">
@@ -2668,11 +2691,36 @@ a:focus {
   </div>
 </section>
 
+<section class="founder-section" aria-labelledby="founder-title">
+  <div class="founder-inner">
+    <div class="founder-copy">
+      <div class="founder-eyebrow">From the founder</div>
+      <h2 id="founder-title">Hi, I'm Dan. I've spent 20 years learning what makes careers work</h2>
+      <p>I started in management consulting and at Microsoft, earned my MBA at Yale, then founded a company that HubSpot acquired. At HubSpot I helped launch product-led growth and stand up a brand-new line of business: Sales Hub, now a $1B ARR product.</p>
+      <p>Then I spent seven years at Reforge, helping grow the team from 5 to 200 people and revenue from $2M to $30M in ARR, and raising $90M from A16Z and others along the way. Work Coach is everything I've learned about getting better at work, distilled into a coach that's in your corner every day.</p>
+      <div class="founder-logos" aria-label="PwC, Microsoft, Yale, HubSpot, and Reforge">
+        <img src="img/logos/pwc.svg?v=2" alt="PwC">
+        <img src="img/logos/microsoft.svg" alt="Microsoft">
+        <img src="img/logos/yale.svg" alt="Yale">
+        <img src="img/logos/hubspot.svg" alt="HubSpot">
+        <img src="img/logos/reforge.svg" alt="Reforge">
+      </div>
+    </div>
+    <div class="founder-portrait" aria-hidden="true">
+      <video autoplay muted loop playsinline data-founder-video>
+        <source src="img/founder-wave.mov?v=3" type="video/quicktime">
+        <source src="img/founder-wave.webm?v=3" type="video/webm">
+      </video>
+      <span class="founder-portrait-badge"><i></i>Dan · Founder</span>
+    </div>
+  </div>
+</section>
+
 
 <section class="compat-section">
   <div class="compat-grid">
     <div class="compat-text">
-      <div class="section-label">A coach that has the full context of your work</div>
+      <div class="section-label">A coach with full context</div>
       <h2>Focus on your next step</h2>
       <p>A human coach can't sit in your meetings, and doesn't have time to read your transcripts, so every session starts with you explaining what happened. Work Coach already knows. It sees your meetings through its own recorder, or reads the transcripts you already keep in Granola, so you skip the recap and go straight to your reaction, and what you want to do about it.</p>
     </div>
@@ -2720,268 +2768,127 @@ a:focus {
 
 <section class="feature-section" id="features">
   <div class="feature-head">
-    <div class="section-label">What your coach sees</div>
+    <div class="section-label">Inside the app</div>
     <h2>Every goal, powered by what happens in your meetings</h2>
-    <p>Generic advice is easy to ignore. Because your coach learns from your real conversations, every recommendation is tied to a goal you're working on and a moment you can replay.</p>
+    <p>Generic advice is easy to ignore. Every feature in Work Coach works off your real conversations, so the feedback is about you, and the practice is for the moment you're about to walk into.</p>
   </div>
+
   <div class="feature-row">
     <div class="feature-text">
-      <div class="feature-eyebrow">Get a job</div>
-      <h3>Land the right role. The whole search, handled</h3>
-      <p>From a sharper résumé to a strong first 90 days, your coach runs the entire process with you: the plan, the applications, interview prep, the negotiation, and a fast start. Nothing slips, and you always know the next move.</p>
-      <a href="job-search" class="usecase-cta">See how the job search works →</a>
+      <div class="feature-eyebrow">Interview feedback</div>
+      <h3>What recruiters don't tell you</h3>
+      <p>Rejections come with silence. "We went in another direction" teaches you nothing. Work Coach analyzes every interview you do: where you rambled, which answers landed, and how you sounded under pressure, so you know exactly what to fix before the next round.</p>
+      <a href="job-search" class="usecase-cta">See the whole job search flow →</a>
     </div>
     <div class="feature-visual" aria-hidden="true">
       <div class="wc-content">
-        <div class="wc-meeting-title">Your job search, end to end</div>
-        <div class="wc-meta">Coach read · every step covered</div>
-        <div class="job-progress">
-          <div class="job-progress-track"><div class="job-progress-fill" data-job-fill></div></div>
-          <span class="job-progress-label" data-job-label>Step 1 of 6</span>
-        </div>
-        <ol class="job-list" data-job-anim>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">1</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Sharpen your résumé</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-row"><span class="jd-label">Impact statements</span><span class="jd-val">4/5</span></div>
-                <div class="jd-bar"><i style="--w:80%"></i></div>
-              </div>
-            </div></div>
-          </li>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">2</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Build your search plan</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-row"><span class="jd-label">Target list</span><span class="jd-val">12 roles</span></div>
-                <div class="jd-chips"><span>Product</span><span>Growth</span><span>Platform</span></div>
-              </div>
-            </div></div>
-          </li>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">3</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Apply with intent</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-job"><span class="jd-avatar">AC</span><span class="jd-job-t">Senior PM · Acme</span><span class="jd-badge">Ready</span></div>
-              </div>
-            </div></div>
-          </li>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">4</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Nail the interview</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">&ldquo;Walk me through a launch that slipped.&rdquo;</span><span class="jd-q-tag">High</span></div>
-              </div>
-            </div></div>
-          </li>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">5</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Negotiate the offer</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-row"><span class="jd-label">Base salary</span><span class="jd-val up">$148k &rarr; $163k</span></div>
-              </div>
-            </div></div>
-          </li>
-          <li class="job-list-item">
-            <span class="job-step-n"><span class="job-step-num">6</span><svg class="job-step-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <span class="job-step-t">Start strong</span>
-            <span class="job-step-chip">In progress</span>
-            <div class="job-step-detail"><div class="job-step-detail-inner">
-              <div class="job-step-card">
-                <div class="jd-row"><span class="jd-label">30-60-90 plan</span><span class="jd-val">Week 1 mapped</span></div>
-              </div>
-            </div></div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Be more confident at work</div>
-      <h3>Confidence is leverage. Build it on purpose</h3>
-      <p>Whether people defer to you or talk over you is decided in seconds: by the hedges, the trailing sentences, the strong opinion you softened into a question. Your coach finds exactly where you give away authority and trains it out of you, week over week, until being the most credible voice in the room is simply how you show up.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Authority in the room</div>
-        <div class="auth-window">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          Across your last 6 meetings
-        </div>
-        <div class="auth-metrics">
-          <div class="auth-metric">
-            <span class="am-label">Commanding presence</span>
-            <span class="am-value up">Rising · +22%</span>
-          </div>
-          <div class="auth-metric">
-            <span class="am-label">Hedged before key points</span>
-            <span class="am-value">5 <span class="auth-dim">(was 11)</span></span>
-          </div>
-          <div class="auth-metric">
-            <span class="am-label">Held under pushback</span>
-            <span class="am-value">3/4</span>
-          </div>
-        </div>
+        <div class="wc-meeting-title">Final interview</div>
+        <div class="wc-meta">Analyzed · job interview detected · 2 coaching points</div>
         <div class="wc-rec">
           <div class="wc-rec-icon">
             <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
           <div>
-            <div class="wc-rec-title">Stop softening your strongest ideas</div>
-            <div class="wc-rec-body">You hedge your best recommendations with "this might be off, but…" Say them plainly.</div>
+            <div class="wc-rec-title">Tighten your “tell me about yourself”</div>
+            <div class="wc-rec-body">Your opener ran three minutes. Keep it to 90 seconds: current role, your best win, why this job.</div>
             <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 09:14</span>
-              <span class="wc-rec-link">Practice the direct version →</span>
+              <span class="wc-rec-play">▶ 02:14</span>
+              <span class="wc-rec-link">Practice the tight version →</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Advocate for yourself</div>
-      <h3>Make sure the room remembers it was yours</h3>
-      <p>Great work goes unrewarded when you let someone else reframe it, restate it, or run with it. Your coach catches the moments you undersold a win or let your point get buried, then helps you rehearse the version where you take the credit and hold the floor, so your impact is impossible to overlook when it counts.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Credit &amp; visibility</div>
-        <div class="wc-meta">Coach read · Q3 Planning · 52 min · 5 attendees</div>
-        <div class="wc-stats-row">
-          <div class="wc-stat-pill">
-            <div class="sp-label">Your ideas adopted</div>
-            <div class="sp-value" style="color: var(--accent);">2</div>
-            <div class="sp-detail">by the group</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Credited to you</div>
-            <div class="sp-value" style="color: var(--red);">0</div>
-            <div class="sp-detail">you let it slide</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Floor reclaimed</div>
-            <div class="sp-value" style="color: var(--amber);">1<span class="unit">/3</span></div>
-            <div class="sp-detail">after interruptions</div>
           </div>
         </div>
         <div class="wc-rec">
           <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div>
-            <div class="wc-rec-title">Your idea, someone else's name</div>
-            <div class="wc-rec-body">At 18:42 you proposed the staffing fix. At 31:10 it came back as "Jake's plan" and you didn't step in. Next time, claim it: "Glad this landed. It's the approach I raised earlier."</div>
+            <div class="wc-rec-title">Your numbers did the selling</div>
+            <div class="wc-rec-body">“We cut churn 22%” was the line they wrote down. Do that in every story.</div>
             <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 18:42</span>
-              <span class="wc-rec-play">▶ 31:10</span>
-              <span class="wc-rec-link">Rehearse the reclaim →</span>
+              <span class="wc-rec-play">▶ 08:42</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="feature-row reverse">
     <div class="feature-text">
-      <div class="feature-eyebrow">Get the most from your team</div>
-      <h3>Become the manager people do their best work for</h3>
-      <p>Your team is always telling you what they need: in what gets raised, what gets dropped, and what goes unsaid. Your coach connects those signals across every 1:1 and team meeting so you can lead each person deliberately, catch the small problems before they grow, and build a team people don't want to leave.</p>
+      <div class="feature-eyebrow">Voice &amp; delivery</div>
+      <h3>Feel more confident in how you speak</h3>
+      <p>Confidence isn't a personality trait. It's pace, energy, and conviction, and all three are measurable. Work Coach scores how you actually sound in real conversations, points you at the exact seconds where your delivery gave you away, and tracks you getting stronger week over week.</p>
     </div>
     <div class="feature-visual" aria-hidden="true">
       <div class="wc-content">
-        <div class="wc-meeting-title">Your team this sprint</div>
-        <div class="wc-meta">Coach read · 6 1:1s · 2 team meetings · last 14 days</div>
+        <div class="wc-meeting-title">Voice delivery</div>
+        <div class="wc-meta">Scored on your last 6 real conversations</div>
         <div class="wc-stats-row">
           <div class="wc-stat-pill">
-            <div class="sp-label">Flight risk</div>
-            <div class="sp-value" style="color: var(--red);">1</div>
-            <div class="sp-detail">Jake: disengaging</div>
+            <div class="sp-label">Pace</div>
+            <div class="sp-value" style="color: var(--accent);">82<span class="unit">/100</span></div>
+            <div class="sp-detail">strong</div>
           </div>
           <div class="wc-stat-pill">
-            <div class="sp-label">Ready for more</div>
-            <div class="sp-value" style="color: var(--accent);">1</div>
-            <div class="sp-detail">Priya: give scope</div>
+            <div class="sp-label">Filler words</div>
+            <div class="sp-value" style="color: var(--amber);">64<span class="unit">/100</span></div>
+            <div class="sp-detail">improving</div>
           </div>
           <div class="wc-stat-pill">
-            <div class="sp-label">Unowned actions</div>
-            <div class="sp-value" style="color: var(--amber);">3</div>
-            <div class="sp-detail">no clear owner</div>
-          </div>
-        </div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Jake is telling you he's stuck</div>
-            <div class="wc-rec-body">Resource concerns in 3 of his last 5 1:1s, each conversation shorter than the one before. That's what disengagement sounds like before someone leaves. Address it before the next planning cycle.</div>
-            <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 22:17</span>
-              <span class="wc-rec-link">Prep the conversation →</span>
-            </div>
-          </div>
-        </div>
-        <div class="wc-rec wc-rec-secondary">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Priya is ready for more</div>
-            <div class="wc-rec-body">She's solved everything you've handed her and started pushing on scope beyond her role. Stretch her now, or risk losing her to a team that will.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Get a promotion</div>
-      <h3>No one is coming to promote you. Captain it yourself</h3>
-      <p>The people who get promoted drive the process instead of waiting to be noticed. Your coach helps you own it: build a plan, score yourself honestly against the rubric, and name your gaps and exactly what you're doing about them. Then it preps you to ask your manager for guidance on that plan, and to relentlessly communicate every win along the way, so your manager has everything they need to champion your case for you.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Your case for the next level</div>
-        <div class="wc-meta">Coach read · measured against the Senior PM bar · review in 6 weeks</div>
-        <div class="wc-stats-row">
-          <div class="wc-stat-pill">
-            <div class="sp-label">Operating at next level</div>
-            <div class="sp-value" style="color: var(--amber);">4<span class="unit">/9</span></div>
-            <div class="sp-detail">meetings, trending up</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Proof points captured</div>
-            <div class="sp-value" style="color: var(--accent);">6</div>
-            <div class="sp-detail">ready for your packet</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Sponsors in your corner</div>
-            <div class="sp-value" style="color: var(--amber);">1<span class="unit">/3</span></div>
-            <div class="sp-detail">build more advocates</div>
+            <div class="sp-label">Vocal energy</div>
+            <div class="sp-value" style="color: var(--amber);">58<span class="unit">/100</span></div>
+            <div class="sp-detail">your focus area</div>
           </div>
         </div>
         <div class="trend-list" style="margin-bottom: 14px;">
           <div class="trend-row">
-            <span class="trend-label">Influence</span>
-            <span class="trend-spark"><svg viewBox="0 0 120 28" preserveAspectRatio="none"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,22 20,18 40,20 60,14 80,12 100,8 120,6"/></svg></span>
-            <span class="trend-delta up">+18%</span>
+            <span class="trend-label">Vocal energy</span>
+            <span class="trend-spark"><svg viewBox="0 0 120 28" preserveAspectRatio="none"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,23 20,21 40,19 60,17 80,13 100,10 120,7"/></svg></span>
+            <span class="trend-delta up">+21%</span>
           </div>
-          <div class="trend-row">
-            <span class="trend-label">Ownership</span>
-            <span class="trend-spark"><svg viewBox="0 0 120 28" preserveAspectRatio="none"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,24 20,20 40,18 60,16 80,12 100,11 120,7"/></svg></span>
-            <span class="trend-delta up">+24%</span>
+        </div>
+        <div class="wc-rec">
+          <div class="wc-rec-icon">
+            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          </div>
+          <div>
+            <div class="wc-rec-title">Your best points deserve a pause</div>
+            <div class="wc-rec-body">You rush past your strongest lines. A one-second pause before the big number makes the room lean in.</div>
+            <div class="wc-rec-actions">
+              <span class="wc-rec-play">▶ 12:07</span>
+              <span class="wc-rec-link">Hear it yourself →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-text">
+      <div class="feature-eyebrow">Roleplay practice</div>
+      <h3>Rehearse it before it counts</h3>
+      <p>Reading tips doesn't change how you show up. Reps do. Practice the conversation out loud with an AI playing the other side — your interviewer, your manager, the skeptical exec — and get scored on every rep until the strong version is the one that comes out on its own.</p>
+    </div>
+    <div class="feature-visual" aria-hidden="true">
+      <div class="wc-content">
+        <div class="wc-meeting-title">Practice: “Tell me about yourself”</div>
+        <div class="wc-meta">An AI is playing your interviewer · 3 reps today</div>
+        <div class="wc-stats-row">
+          <div class="wc-stat-pill">
+            <div class="sp-label">Rep 1</div>
+            <div class="sp-value" style="color: var(--red);">58<span class="unit">/100</span></div>
+            <div class="sp-detail">3-minute wind-up</div>
+          </div>
+          <div class="wc-stat-pill">
+            <div class="sp-label">Rep 2</div>
+            <div class="sp-value" style="color: var(--amber);">72<span class="unit">/100</span></div>
+            <div class="sp-detail">headline came first</div>
+          </div>
+          <div class="wc-stat-pill">
+            <div class="sp-label">Rep 3</div>
+            <div class="sp-value" style="color: var(--accent);">86<span class="unit">/100</span></div>
+            <div class="sp-detail">steady under follow-ups</div>
           </div>
         </div>
         <div class="wc-rec">
@@ -2989,13 +2896,59 @@ a:focus {
             <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
           <div>
-            <div class="wc-rec-title">You're closing the gap. Make it undeniable</div>
-            <div class="wc-rec-body">Your last three staff meetings showed clear senior-level judgment. Capture those moments now so your case writes itself at review instead of scrambling to remember wins six weeks from now.</div>
+            <div class="wc-rec-title">Practice is working</div>
+            <div class="wc-rec-body">You now open with the headline in 7 seconds, down from 48. Ready for the real one.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <div class="feature-eyebrow">Job &amp; interview prep</div>
+      <h3>Walk in knowing what they'll ask</h3>
+      <p>Paste a job description and Work Coach builds your prep: what the role is really hiring for, the questions you're likely to face, and where you're strong or exposed against the bar. Then practice each question out loud before anyone asks it for real.</p>
+    </div>
+    <div class="feature-visual" aria-hidden="true">
+      <div class="wc-content">
+        <div class="wc-meeting-title">Senior PM · Acme</div>
+        <div class="wc-meta">Role brief · fit map · likely questions by interviewer</div>
+        <div class="jd-questions">
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Walk me through a product you took from zero to one.”</span><span class="jd-q-tag">High</span></div>
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“How would you improve activation for our platform?”</span><span class="jd-q-tag">High</span></div>
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Tell me about a bet that didn't pay off.”</span><span class="jd-q-tag">Medium</span></div>
+        </div>
+        <div class="wc-rec">
+          <div class="wc-rec-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div>
+            <div class="wc-rec-title">Your fit map</div>
+            <div class="wc-rec-body">Strengths: zero-to-one, growth instrumentation. Watch-out: thin marketplace story, prep your adjacent example.</div>
             <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ Apr 18 · 41:22</span>
-              <span class="wc-rec-link">Add to promotion packet →</span>
+              <span class="wc-rec-link">Practice these questions →</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-text">
+      <div class="feature-eyebrow">Coach chat</div>
+      <h3>Ask what you can't ask your manager</h3>
+      <p>"Did I talk too much in that meeting?" "Is my promotion ask reasonable?" Your coach was in the room, knows your role, industry, and goals, and has no stake in flattering you. Ask the questions you'd never say out loud at work, and get a straight answer.</p>
+      <a href="#pricing" class="usecase-cta">See coaching plans →</a>
+    </div>
+    <div class="feature-visual" aria-hidden="true">
+      <div class="wc-content">
+        <div class="wc-meeting-title">Coach chat</div>
+        <div class="wc-meta">Grounded in yesterday's team review</div>
+        <div class="fchat">
+          <div class="fchat-msg is-you">Was I too defensive when Sarah pushed back on the timeline?</div>
+          <div class="fchat-msg">Not defensive — but you conceded fast. At 14:32 you agreed to the new date without naming the tradeoff. Next time: “We can do that if we drop X.” Want to practice saying it?</div>
         </div>
       </div>
     </div>
@@ -3094,30 +3047,6 @@ a:focus {
   </div>
 </section>
 
-<section class="founder-section" aria-labelledby="founder-title">
-  <div class="founder-inner">
-    <div class="founder-copy">
-      <div class="founder-eyebrow">From the founder</div>
-      <h2 id="founder-title">Hi, I'm Dan. I've spent 20 years learning what makes careers work</h2>
-      <p>I started in management consulting and at Microsoft, earned my MBA at Yale, then founded a company that HubSpot acquired. At HubSpot I helped launch product-led growth and stand up a brand-new line of business: Sales Hub, now a $1B ARR product.</p>
-      <p>Then I spent seven years at Reforge, helping grow the team from 5 to 200 people and revenue from $2M to $30M in ARR, and raising $90M from A16Z and others along the way. Work Coach is everything I've learned about getting better at work, distilled into a coach that's in your corner every day.</p>
-      <div class="founder-logos" aria-label="PwC, Microsoft, Yale, HubSpot, and Reforge">
-        <img src="img/logos/pwc.svg" alt="PwC">
-        <img src="img/logos/microsoft.svg" alt="Microsoft">
-        <img src="img/logos/yale.svg" alt="Yale">
-        <img src="img/logos/hubspot.svg" alt="HubSpot">
-        <img src="img/logos/reforge.svg" alt="Reforge">
-      </div>
-    </div>
-    <div class="founder-portrait" aria-hidden="true">
-      <video autoplay muted loop playsinline data-founder-video>
-        <source src="img/founder-wave.mov?v=2" type="video/quicktime">
-        <source src="img/founder-wave.webm?v=2" type="video/webm">
-      </video>
-      <span class="founder-portrait-badge"><i></i>Dan · Founder</span>
-    </div>
-  </div>
-</section>
 
 <section class="cta-section">
   <h2>Find out what everyone else already sees</h2>
@@ -3152,74 +3081,11 @@ a:focus {
     'advocate for yourself',
     'be confident at work'
   ];
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var i = 0;
   setInterval(function() {
     i = (i + 1) % phrases.length;
-    if (reduce) {
-      el.textContent = phrases[i];
-      return;
-    }
-    el.style.opacity = '0';
-    setTimeout(function() {
-      el.textContent = phrases[i];
-      el.style.opacity = '1';
-    }, 220);
+    el.textContent = phrases[i];
   }, 2600);
-})();
-
-(function() {
-  var list = document.querySelector('[data-job-anim]');
-  if (!list) return;
-  var items = Array.prototype.slice.call(list.querySelectorAll('.job-list-item'));
-  var fill = document.querySelector('[data-job-fill]');
-  var label = document.querySelector('[data-job-label]');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function setProgress(n) {
-    if (fill) fill.style.width = (n / items.length * 100) + '%';
-    if (label) label.textContent = 'Step ' + Math.max(1, n) + ' of ' + items.length;
-  }
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    items.forEach(function(item) { item.classList.add('is-done'); });
-    setProgress(items.length);
-    return;
-  }
-
-  var i = -1, timer = null;
-
-  function tick() {
-    if (i >= 0) {
-      items[i].classList.remove('is-active');
-      items[i].classList.add('is-done');
-    }
-    i++;
-    if (i >= items.length) {
-      setProgress(items.length);
-      timer = setTimeout(start, 2600);
-      return;
-    }
-    items[i].classList.add('is-active');
-    setProgress(i + 1);
-    timer = setTimeout(tick, 2400);
-  }
-
-  function start() {
-    items.forEach(function(item) { item.classList.remove('is-active', 'is-done'); });
-    list.classList.add('is-live');
-    i = -1;
-    setProgress(1);
-    timer = setTimeout(tick, 600);
-  }
-
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) start();
-      else clearTimeout(timer);
-    });
-  }, { threshold: 0.4 });
-  io.observe(list);
 })();
 
 (function() {
@@ -3385,6 +3251,72 @@ a:focus {
         { speaker: 'You', time: 45.76, text: 'And the data backed this up. We were seeing about 12,000 support tickets a month just about notifications.' },
         { speaker: 'You', time: 168.05, moment: true, text: 'Notification-related support tickets are down 38%, which is, yeah, that’s significant. That’s roughly 4,500 fewer tickets a month.' },
         { speaker: 'You', time: 266, text: 'So yeah, that’s what we’ve been up to. Thanks, everyone. Happy to take any questions if there’s time.' }
+      ]
+    },
+    recruiterScreen: {
+      title: 'Example: Recruiter Screen — Horizon Labs', type: 'Recruiter Screen', meta: 'Monday · 3:48 · Zoom',
+      person: 'Priya Shah · Recruiter, Horizon Labs', personInitial: 'P', duration: 228, durationLabel: '03:48',
+      summary: 'Maya did a first-round screen for the Senior PM role. Her energy was warm and Priya responded well, but her “tell me about yourself” ran nearly three minutes, and she answered the compensation question with a hedge that gave up negotiating room. Priya\u2019s verdict to the hiring team will be one line. Make sure you know what it says.',
+      audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_recruiter_screen.m4a',
+      coaching: [
+        { label: 'Coaching point', title: 'Your Opener Buried Your Best Material', body: 'Your “tell me about yourself” ran 2:51 and reached the notification platform rebuild — your strongest credential — at the two-minute mark. Recruiters decide in the first 90 seconds. Lead with it.' },
+        { label: 'What worked', title: 'You Matched Her Energy', body: 'You mirrored Priya\u2019s pace and warmth, and she extended the call four minutes past the slot. Recruiters fight for candidates they enjoy talking to.' }
+      ],
+      practiceCopy: 'Rehearse a 90-second “tell me about yourself” that leads with your biggest win.', practiceTitle: '90-Second Tell Me About Yourself', practicePerson: 'Priya · Recruiter',
+      voice: {
+        score: 59,
+        assessment: 'Nerves showed up as speed. Your opener accelerated as it went, filler words clustered under the compensation question, and your energy — genuinely warm through the middle — arrived too late to rescue the first impression. The gap between your rushed start and your relaxed close is the whole opportunity.',
+        dimensions: [
+          { name: 'Pace', score: 54, assessment: 'Rushed' },
+          { name: 'Filler Density', score: 51, assessment: 'Needs work' },
+          { name: 'Vocal Energy', score: 72, assessment: 'Solid' },
+          { name: 'Clarity', score: 62, assessment: 'Mixed' }
+        ],
+        moments: [
+          { title: 'The 2:51 opener', time: 14, excerpt: '“So, um, I guess going back a bit, I started out in customer support, actually…”' },
+          { title: 'Filler cluster under the comp question', time: 160, excerpt: '“Um, so, I mean, in terms of, like, compensation…”' },
+          { title: 'The hedged salary answer', time: 167, excerpt: '“I\u2019m, um, pretty flexible on comp, whatever the band is.”' },
+          { title: 'The warm close', time: 211, excerpt: '“This was genuinely fun — I hope we get to keep talking.”' }
+        ]
+      },
+      transcript: [
+        { speaker: 'Priya', time: 9, text: 'So before we get into the role — tell me about yourself.' },
+        { speaker: 'You', time: 14, moment: true, text: 'So, um, I guess going back a bit, I started out in customer support, actually, and then I moved into analytics for a while…' },
+        { speaker: 'You', time: 167, moment: true, text: 'I\u2019m, um, pretty flexible on comp, whatever the band is. I\u2019d just be excited to be part of it.' },
+        { speaker: 'You', time: 211, text: 'This was genuinely fun — I hope we get to keep talking.' }
+      ]
+    },
+    finalInterview: {
+      title: 'Example: Final Interview — Horizon Labs', type: 'Final Interview', meta: 'Thursday · 4:12 · Zoom',
+      person: 'Alex Morgan · Hiring Manager, Horizon Labs', personInitial: 'A', duration: 252, durationLabel: '04:12',
+      summary: 'After three practice reps, Maya\u2019s opener came in at 82 seconds — down from 2:51 in the recruiter screen — and led with the outcome. Her metrics story landed: Alex wrote down the churn number. She held steady through two pushback questions and closed with a question that turned the interview into a conversation.',
+      audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_final_interview.m4a',
+      coaching: [
+        { label: 'What worked', title: 'Your Numbers Did the Selling', body: '“We cut churn 22%” was the line Alex wrote down. Quantified wins are what get repeated to the hiring committee.' },
+        { label: 'Coaching point', title: 'Pause Before the Big Number', body: 'You rushed past the 22% the first time and had to repeat it. One beat of silence before the number makes the room lean in.' }
+      ],
+      practiceCopy: 'Rehearse the metrics story with a deliberate pause before the number.', practiceTitle: 'Pause Before the Big Number', practicePerson: 'Alex · Hiring manager',
+      voice: {
+        score: 81,
+        assessment: 'This is what three practice reps buys. Your opener was tight and led with the outcome, your pace stayed level under pushback, and the conviction that was missing in the recruiter screen showed up exactly where it mattered — on the numbers. Next: give your biggest lines a beat of air before you deliver them.',
+        dimensions: [
+          { name: 'Pace', score: 84, assessment: 'Strong' },
+          { name: 'Filler Density', score: 78, assessment: 'Solid' },
+          { name: 'Vocal Energy', score: 76, assessment: 'Solid' },
+          { name: 'Conviction', score: 83, assessment: 'Strong' }
+        ],
+        moments: [
+          { title: 'The 82-second opener', time: 11, excerpt: '“I\u2019m a product manager who fixes retention problems…”' },
+          { title: 'The churn number lands', time: 118, excerpt: '“We cut churn 22% — and it held through the next two quarters.”' },
+          { title: 'Steady under pushback', time: 185, excerpt: '“Fair challenge. Here\u2019s the tradeoff I\u2019d make and why.”' },
+          { title: 'The confident close', time: 237, excerpt: '“What would a great first 90 days look like to you?”' }
+        ]
+      },
+      transcript: [
+        { speaker: 'Alex', time: 6, text: 'I\u2019ve read the resume — give me the short version. Who are you?' },
+        { speaker: 'You', time: 11, moment: true, text: 'I\u2019m a product manager who fixes retention problems. Last year my team cut churn 22% on our self-serve tier, and it held.' },
+        { speaker: 'You', time: 118, moment: true, text: 'We cut churn 22% — and it held through the next two quarters. The unlock was instrumenting the first API call, not the signup.' },
+        { speaker: 'You', time: 237, moment: true, text: 'What would a great first 90 days look like to you?' }
       ]
     }
   };
@@ -3760,6 +3692,7 @@ a:focus {
     }
     message.appendChild(document.createTextNode(text));
     chatMessages.insertBefore(message, suggestions || null);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
   function coachReply(prompt) {
     var lower = prompt.toLowerCase();
