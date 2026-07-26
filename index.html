@@ -452,18 +452,25 @@ nav {
 }
 .feedback-gap-head p { font-size: 17px; color: var(--muted); line-height: 1.65; }
 .no-orphan { white-space: nowrap; }
-.gap-pairs { display: grid; gap: 44px; }
+.gap-pairs {
+  display: grid;
+  gap: 40px;
+  padding: 30px 34px 38px;
+  border-radius: 24px;
+  background: linear-gradient(175deg, #232f28, #1b241f);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 60px rgba(24, 32, 27, .18);
+}
 .gap-pair-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: -26px;
+  margin-bottom: -22px;
   padding: 0 4px;
   font-size: 14px;
   font-weight: 800;
   letter-spacing: .13em;
   text-transform: uppercase;
-  color: #5a6b5e;
+  color: rgba(245, 240, 232, .72);
   text-align: center;
 }
 .gap-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
@@ -485,7 +492,7 @@ nav {
 .gap-card {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(33, 42, 36, .07);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .32);
   text-align: left;
 }
 
@@ -600,20 +607,13 @@ nav {
   border: 1px solid rgba(49, 193, 120, 0.35);
 }
 .feedback-gap-turn p { font-size: 16.5px; line-height: 1.6; color: var(--text); }
-.turn-chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
-.turn-chips span {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #fffdf8;
-  border: 1px solid rgba(49, 193, 120, 0.45);
-  color: var(--accent-2);
-  font-size: 13.5px;
-  font-weight: 700;
-}
 .feedback-gap-turn strong { color: var(--accent-2); }
 @media (max-width: 760px) {
   .feedback-gap-section { padding: 64px 16px 68px; }
+  .gap-pairs { padding: 20px 14px 24px; gap: 26px; border-radius: 18px; }
   .gap-pair { grid-template-columns: 1fr; gap: 12px; }
+  .gap-pair + .gap-pair { border-top: 1px solid rgba(245, 240, 232, .15); padding-top: 26px; }
+  .gap-artifact figcaption { color: rgba(245, 240, 232, .75); }
   .gap-pair-head { display: none; }
   .gap-artifact figcaption { display: flex; }
   .gap-pair + .gap-pair { margin-top: 10px; }
@@ -1521,7 +1521,7 @@ a:focus {
   .founder-inner { grid-template-columns: 1fr; gap: 10px; }
   .founder-copy { max-width: 100%; }
   .founder-portrait video { width: 100%; margin-left: 0; }
-  .founder-logos { gap: 12px 16px; }
+  .founder-logos { gap: 12px 16px; justify-content: center; }
   .founder-logos img { height: 15px; }
   .founder-portrait { width: min(320px, 80vw); margin: 0 auto; }
 }
@@ -1633,7 +1633,7 @@ a:focus {
 .story-video-name { position: absolute; left: 7px; bottom: 6px; padding: 3px 5px; border-radius: 3px; background: rgba(9,13,17,.8); color: white; font-size: 8px; }
 .story-video-controls { height: 59px; display: flex; align-items: center; justify-content: center; gap: 9px; }
 .story-call-control { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: #414a55; color: #d8dde2; font-size: 10px; }
-.story-call-leave { min-width: 54px; height: 27px; display: grid; place-items: center; border-radius: 999px; background: #e45a55; color: white; font-size: 9px; font-weight: 800; padding: 0 12px; }
+.story-call-leave { min-width: 54px; height: 27px; display: grid; place-items: center; border-radius: 999px; background: #e45a55; color: white; font-size: 9px; font-weight: 800; padding: 0 12px; pointer-events: auto; cursor: pointer; }
 .story-card { background: white; border: 1px solid #e0e5df; border-radius: 13px; box-shadow: 0 7px 20px rgba(33,50,39,.05); }
 .meeting-prompt {
   position: absolute;
@@ -1692,7 +1692,6 @@ a:focus {
 .coach-observe-copy strong { display: flex; align-items: center; gap: 9px; font-size: 18px; line-height: 1.15; }
 .coach-observe-copy .recording-dot { background: #31c178; flex: 0 0 auto; }
 .coach-observe-time { color: #59685f; font: 750 14px/1 ui-monospace, monospace; }
-.end-meeting { background: #eaf7f0; color: #187344; padding: 10px 14px; border: 1px solid #cce8d8; border-radius: 10px; white-space: nowrap; }
 .notify-scene {
   display: flex;
   flex-direction: column;
@@ -1763,7 +1762,7 @@ a:focus {
 .story-cursor::before { content: ''; position: absolute; inset: 0; background: #183124; clip-path: polygon(0 0, 0 83%, 28% 64%, 43% 100%, 56% 94%, 41% 59%, 72% 58%); }
 .story-cursor::after { content: ''; position: absolute; width: 12px; height: 12px; left: -5px; top: -5px; border: 2px solid #31c178; border-radius: 50%; opacity: 0; animation: cursorClick 3.2s ease-out infinite; }
 @keyframes cursorClick { 72% { opacity: 0; transform: scale(.4); } 78% { opacity: .85; } 93% { opacity: 0; transform: scale(2.6); } }
-[data-story-state="recording"] .story-cursor { --cx: 77%; --cy: 19%; }
+[data-story-state="recording"] .story-cursor { --cx: 53%; --cy: 86%; }
 [data-story-state="analyzed"] .story-cursor,
 [data-story-state="coaching"] .story-cursor,
 [data-story-state="practice"] .story-cursor { opacity: 0; }
@@ -2248,7 +2247,7 @@ a:focus {
   .story-video-call { width: calc(100% - 28px); height: 400px; }
   .meeting-prompt { top: 10px; }
   [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 30%; }
-  [data-story-state="recording"] .story-cursor { --cx: 79%; --cy: 18%; }
+  [data-story-state="recording"] .story-cursor { --cx: 54%; --cy: 82%; }
 }
 @media (max-width: 470px) {
   .product-story-head h2 { font-size: 25px; }
@@ -2272,9 +2271,8 @@ a:focus {
   .coach-observe-icon { width: 38px; height: 38px; border-radius: 10px; }
   .coach-observe-copy strong { gap: 5px; font-size: 11.5px; }
   .coach-observe-time { font-size: 9px; }
-  .end-meeting { padding: 8px 9px; font-size: 10px; }
   [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 31%; }
-  [data-story-state="recording"] .story-cursor { --cx: 79%; --cy: 23%; }
+  [data-story-state="recording"] .story-cursor { --cx: 54%; --cy: 80%; }
   .story-scene h3 { font-size: 23px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2405,7 +2403,7 @@ a:focus {
                   <span class="story-video-name">You</span>
                 </div>
               </div>
-              <div class="story-video-controls"><span class="story-call-control">◼</span><span class="story-call-control">●</span><span class="story-call-leave">Leave</span></div>
+              <div class="story-video-controls"><span class="story-call-control">◼</span><span class="story-call-control">●</span><span class="story-call-leave" data-tour-next>Leave</span></div>
             </div>
           </div>
 
@@ -2432,7 +2430,6 @@ a:focus {
               <span class="coach-observe-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span>
               <span class="coach-observe-copy"><strong><span class="recording-dot"></span>Work Coach is observing</strong></span>
               <span class="coach-observe-time" data-meeting-clock>00:00</span>
-              <button class="story-button end-meeting" type="button" data-tour-next>End meeting</button>
             </div>
           </div>
 
@@ -2496,24 +2493,24 @@ a:focus {
     <div class="feedback-gap-head">
       <div class="section-label">The feedback gap</div>
       <h2>Everyone sees how you could grow. <span class="no-orphan">Nobody tells you</span></h2>
-      <p>Nobody's out to get you. Telling you the hard stuff is awkward and risky, so most people just don't. The feedback that could change your career is sitting in other people's heads. You just never hear it.</p>
+      <p>Nobody's out to get you. The hard stuff is awkward and risky to say, so people don't. The feedback that could change your career never reaches you.</p>
     </div>
     <div class="gap-pairs">
       <div class="gap-pair-head" aria-hidden="true">
-        <span>What they said</span>
-        <span>What you heard</span>
+        <span>What they say about you</span>
+        <span>What they say to you</span>
       </div>
 
       <div class="gap-pair">
         <figure class="gap-artifact">
-          <figcaption class="is-said">They said · Slack</figcaption>
+          <figcaption class="is-said">About you · Slack</figcaption>
           <div class="gap-card ui-slack">
             <div class="ui-slack-top"><span class="ui-slack-chan"><i>#</i> hiring</span><span class="ui-slack-lock">🔒 Private channel</span></div>
             <div class="ui-slack-msg">
               <span class="ui-slack-avatar"><img src="img/avatars/alex.jpg" alt=""></span>
               <div>
                 <div class="ui-slack-meta"><b>Alex Morgan</b><span>3:42 PM</span></div>
-                <p>Debrief take: she's clearly strong, but every answer started with two minutes of context before the point. She blew right past her best win.</p>
+                <p>She's clearly strong. I just felt like I had to pull the insights out of her, and she rushed right past her best win.</p>
                 <div class="ui-slack-reacts"><span>💯 3</span><span>👍 2</span></div>
                 <div class="ui-slack-thread">
                   <span class="ui-slack-thread-faces"><img src="img/avatars/priya.jpg" alt=""><img src="img/avatars/rob.jpg" alt=""><img src="img/avatars/jamie.jpg" alt=""></span>
@@ -2525,13 +2522,13 @@ a:focus {
               <span class="ui-slack-avatar"><img src="img/avatars/priya.jpg" alt=""></span>
               <div>
                 <div class="ui-slack-meta"><b>Priya Shah</b><span>3:51 PM</span></div>
-                <p>Felt the same. If she leads with the outcome, this probably goes differently.</p>
+                <p>If her communication was a little stronger this could have gone the other way</p>
               </div>
             </div>
           </div>
         </figure>
         <figure class="gap-artifact">
-          <figcaption class="is-heard">You heard · Email</figcaption>
+          <figcaption class="is-heard">To you · Email</figcaption>
           <div class="gap-card ui-mail">
             <div class="ui-mail-subject">Re: Final Round Interview</div>
             <div class="ui-mail-collapsed">
@@ -2550,19 +2547,20 @@ a:focus {
 
       <div class="gap-pair">
         <figure class="gap-artifact">
-          <figcaption class="is-said">They said · the group text</figcaption>
+          <figcaption class="is-said">About you · the group text</figcaption>
           <div class="gap-card ui-imsg">
             <div class="ui-imsg-head"><span class="ui-imsg-ava is-stack"><img src="img/avatars/jamie.jpg" alt=""><img src="img/avatars/rob.jpg" alt=""></span><b>Work Crew</b><span class="ui-imsg-count">4 people</span></div>
             <div class="ui-imsg-body">
               <div class="ui-imsg-time">Today 4:02 PM</div>
               <div class="ui-imsg-group"><small>Jamie</small><div class="ui-imsg-row"><span class="ui-imsg-face"><img src="img/avatars/jamie.jpg" alt=""></span><div class="ui-imsg-bubble">those status updates could be 5 min shorter 😅</div></div></div>
               <div class="ui-imsg-group"><small>Rob</small><div class="ui-imsg-row"><span class="ui-imsg-face"><img src="img/avatars/rob.jpg" alt=""></span><div class="ui-imsg-bubble has-tapback">I zone out every time<span class="ui-imsg-tapback">😂</span></div></div></div>
-              <div class="ui-imsg-group"><small>Jamie</small><div class="ui-imsg-row"><span class="ui-imsg-face"><img src="img/avatars/jamie.jpg" alt=""></span><div class="ui-imsg-bubble">someone should tell her</div></div></div>
+              <div class="ui-imsg-group"><small>Jamie</small><div class="ui-imsg-row"><span class="ui-imsg-face"><img src="img/avatars/jamie.jpg" alt=""></span><div class="ui-imsg-bubble">ok someone should tell her</div></div></div>
+              <div class="ui-imsg-group"><small>Rob</small><div class="ui-imsg-row"><span class="ui-imsg-face"><img src="img/avatars/rob.jpg" alt=""></span><div class="ui-imsg-bubble">not gonna be me, last time I gave feedback it got weird</div></div></div>
             </div>
           </div>
         </figure>
         <figure class="gap-artifact">
-          <figcaption class="is-heard">You heard · Slack DM</figcaption>
+          <figcaption class="is-heard">To you · Slack DM</figcaption>
           <div class="gap-card ui-slack">
             <div class="ui-slack-top"><span class="ui-slack-chan"><i class="ui-slack-presence"></i> Rob</span><span class="ui-slack-lock">Direct message</span></div>
             <div class="ui-slack-msg">
@@ -2585,17 +2583,17 @@ a:focus {
 
       <div class="gap-pair">
         <figure class="gap-artifact">
-          <figcaption class="is-said">They said · calibration</figcaption>
+          <figcaption class="is-said">About you · calibration</figcaption>
           <div class="gap-card ui-hr">
             <div class="ui-hr-top"><span class="ui-hr-logo">▦</span>Talent Review · H1 Calibration<span class="ui-hr-badge">🔒 Internal only</span></div>
             <div class="ui-hr-body">
               <div class="ui-hr-field"><label>Promotion readiness</label><span class="ui-hr-select"><b class="is-no">Not this cycle</b><i>▾</i></span></div>
-              <div class="ui-hr-field"><label>Panel notes</label><p>Presence in exec reviews isn’t there yet. Revisit in H2.</p></div>
+              <div class="ui-hr-field"><label>Panel notes</label><p>The work is there, but she softens every recommendation in front of execs. Revisit in H2.</p></div>
             </div>
           </div>
         </figure>
         <figure class="gap-artifact">
-          <figcaption class="is-heard">You heard · your review</figcaption>
+          <figcaption class="is-heard">To you · your review</figcaption>
           <div class="gap-card ui-hr">
             <div class="ui-hr-top is-review"><span class="ui-hr-logo">✦</span>Performance Review<span class="ui-hr-badge is-shared">Shared with you</span></div>
             <div class="ui-hr-body">
@@ -2608,12 +2606,7 @@ a:focus {
     </div>
 
     <div class="feedback-gap-turn">
-      <p><strong>Everything up there is coachable. You just never got to hear it.</strong> Work Coach hears what they hear in your real meetings and tells you to your face, privately, while there's still time to fix it.</p>
-      <div class="turn-chips" aria-label="The same feedback, as Work Coach coaching points">
-        <span>✦ Lead with the point</span>
-        <span>✦ Tighten your updates</span>
-        <span>✦ Build executive presence</span>
-      </div>
+      <p><strong>Everything up there is coachable. You just never got to hear it.</strong> Work Coach observes you and tells you privately while there's still time to fix it.</p>
     </div>
   </div>
 </section>
