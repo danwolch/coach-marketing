@@ -2022,9 +2022,9 @@ a:focus {
 .wcx-job-company { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 10px; font-weight: 850; }
 .wcx-company-mark { width: 26px; height: 26px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 7px; background: #1e6b42; color: white; font-size: 9px; font-weight: 850; }
 .wcx-job-status { flex: 0 0 auto; padding: 4px 7px; border-radius: 999px; background: rgba(255,255,255,.65); color: #1e6b42; font-size: 7px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
-.wcx-job-card-body { padding: 14px; }
-.wcx-job-card-body h4 { font-size: 14px; }
-.wcx-job-card-body p { min-height: 43px; margin-top: 6px; color: #5d6d63; font-size: 9px; line-height: 1.45; }
+.wcx-job-card-body { display: block; padding: 14px; }
+.wcx-job-title { display: block; color: #21382a; font-size: 14px; font-weight: 750; line-height: 1.25; }
+.wcx-job-blurb { display: block; min-height: 43px; margin-top: 6px; color: #5d6d63; font-size: 9px; line-height: 1.45; }
 .wcx-job-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 13px; padding-top: 11px; border-top: 1px solid #ded7cc; }
 .wcx-job-metric small { display: block; color: #7a877f; font-size: 7px; }
 .wcx-job-metric strong { display: block; margin-top: 2px; color: #405247; font-size: 9px; }
@@ -2143,8 +2143,8 @@ a:focus {
 .wcx-person-fact strong { font-size: 13px; }
 .wcx-job-company { font-size: 13px; }
 .wcx-job-status { font-size: 9px; }
-.wcx-job-card-body h4 { font-size: 17px; }
-.wcx-job-card-body p { font-size: 12.5px; }
+.wcx-job-title { font-size: 17px; }
+.wcx-job-blurb { font-size: 12.5px; }
 .wcx-job-metric small { font-size: 9px; }
 .wcx-job-metric strong { font-size: 11px; }
 
@@ -2205,7 +2205,7 @@ a:focus {
   .wcx-roleplay-call, .wcx-roleplay-result { min-height: 440px; }
   .wcx-call-card { padding: 18px 12px; }
   .wcx-person-detail { padding: 14px; }
-  .wcx-job-card-body p { min-height: 0; }
+  .wcx-job-blurb { min-height: 0; }
   .wcx-job-detail-head { flex-direction: column; gap: 14px; margin-bottom: 20px; }
   .wcx-job-detail-head h3 { font-size: 25px; }
   .wcx-job-primary-action { width: 100%; padding: 12px 14px; font-size: 13px; }
@@ -2844,11 +2844,11 @@ a:focus {
             <div class="wcx-jobs-grid" data-wcx-job-list>
               <button class="wcx-card wcx-job-card" type="button" data-wcx-open-job data-wcx-job-id="openai" data-job-search="openai data scientist api developer analytics">
                 <span class="wcx-job-card-head"><span class="wcx-job-company"><span class="wcx-company-mark">O</span>OpenAI</span><span class="wcx-job-status">Ready</span></span>
-                <span class="wcx-job-card-body"><h4>Data Scientist, API</h4><p>Own the KPI framework for developer adoption, engagement, retention, and platform health.</p><span class="wcx-job-metrics"><span class="wcx-job-metric"><small>Added</small><strong>Today</strong></span><span class="wcx-job-metric"><small>Fit signals</small><strong>4</strong></span><span class="wcx-job-metric"><small>Questions</small><strong>4</strong></span></span></span>
+                <span class="wcx-job-card-body"><span class="wcx-job-title">Data Scientist, API</span><span class="wcx-job-blurb">Own the KPI framework for developer adoption, engagement, retention, and platform health.</span><span class="wcx-job-metrics"><span class="wcx-job-metric"><small>Added</small><strong>Today</strong></span><span class="wcx-job-metric"><small>Fit signals</small><strong>4</strong></span><span class="wcx-job-metric"><small>Questions</small><strong>4</strong></span></span></span>
               </button>
               <button class="wcx-card wcx-job-card" type="button" data-wcx-open-job data-wcx-job-id="anthropic" data-job-search="anthropic product manager api growth claude developer platform">
                 <span class="wcx-job-card-head"><span class="wcx-job-company"><span class="wcx-company-mark">A</span>Anthropic</span><span class="wcx-job-status">Ready</span></span>
-                <span class="wcx-job-card-body"><h4>Product Manager, API Growth</h4><p>Grow Claude’s developer platform from first API call through sustained paid usage.</p><span class="wcx-job-metrics"><span class="wcx-job-metric"><small>Added</small><strong>Yesterday</strong></span><span class="wcx-job-metric"><small>Fit signals</small><strong>3</strong></span><span class="wcx-job-metric"><small>Questions</small><strong>4</strong></span></span></span>
+                <span class="wcx-job-card-body"><span class="wcx-job-title">Product Manager, API Growth</span><span class="wcx-job-blurb">Grow Claude’s developer platform from first API call through sustained paid usage.</span><span class="wcx-job-metrics"><span class="wcx-job-metric"><small>Added</small><strong>Yesterday</strong></span><span class="wcx-job-metric"><small>Fit signals</small><strong>3</strong></span><span class="wcx-job-metric"><small>Questions</small><strong>4</strong></span></span></span>
               </button>
             </div>
             <div class="wcx-empty-search" data-wcx-empty-job-search>No jobs match that search.</div>
