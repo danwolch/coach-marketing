@@ -1375,7 +1375,7 @@ a:focus {
 
 /* LOGO STRIP */
 .logo-strip { padding: 10px 0 34px; background: #fffdf9; border-top: 1px solid var(--border); text-align: center; }
-.logo-strip-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.logo-strip-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; margin-bottom: 6px; }
 .logo-marquee { position: relative; overflow: hidden; }
 .logo-marquee::before,
 .logo-marquee::after {
@@ -1837,6 +1837,7 @@ a:focus {
 .wcx-section-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; color: #2a3f32; font-size: 11px; font-weight: 850; }
 .wcx-focus-card { padding: 16px; background: #e0f5eb; border-color: #c4e4d1; }
 .wcx-focus-icon { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; background: #1e6b42; color: white; margin-bottom: 18px; }
+.wcx-focus-icon svg { width: 15px; height: 15px; display: block; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .wcx-focus-card strong { display: block; font-size: 14px; }
 .wcx-focus-card p { color: #526159; font-size: 10px; line-height: 1.45; margin-top: 6px; }
 .wcx-focus-proof { appearance: none; display: block; margin-top: 14px; padding: 0; border: 0; background: none; color: #1e6b42; font-family: inherit; font-size: 9px; font-weight: 800; text-align: left; cursor: pointer; }
@@ -1944,6 +1945,8 @@ a:focus {
 .wcx-moments { display: grid; gap: 7px; margin-top: 10px; }
 .wcx-moment { width: 100%; display: grid; grid-template-columns: 25px minmax(0,1fr) auto; align-items: center; gap: 9px; padding: 9px 10px; border: 1px solid #d9d2c7; border-radius: 9px; background: rgba(255,255,255,.4); color: inherit; text-align: left; cursor: pointer; }
 .wcx-moment-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: #dcefe3; color: #1e6b42; font-size: 8px; }
+.wcx-coach-play { appearance: none; display: inline-block; margin-top: 10px; padding: 0; border: 0; background: none; color: #1e6b42; font-family: inherit; font-size: 11.5px; font-weight: 800; cursor: pointer; }
+.wcx-coach-play:hover { text-decoration: underline; }
 .wcx-moment strong { display: block; font-size: 10px; }
 .wcx-moment span { color: #6b7a6e; font-size: 8px; }
 .wcx-transcript { display: grid; gap: 8px; }
@@ -2635,13 +2638,13 @@ a:focus {
             <div class="wcx-section-label">Your coaching focus</div>
             <div class="wcx-home-grid">
               <div class="wcx-card wcx-focus-card">
-                <div class="wcx-focus-icon">↗</div>
+                <div class="wcx-focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5v14"/><path d="M15 5v14"/></svg></div>
                 <strong>Pause before the big number</strong>
                 <p>You rushed past the 22% the first time and had to repeat it. One beat of silence before the number makes the room lean in.</p>
                 <button class="wcx-focus-proof" type="button" data-wcx-open-meeting data-wcx-meeting-id="finalInterview">From your final interview →</button>
               </div>
               <div class="wcx-card wcx-focus-card">
-                <div class="wcx-focus-icon">↗</div>
+                <div class="wcx-focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M12 7.5v5"/><path d="M12 15.5h.01"/></svg></div>
                 <strong>Stop undermining your own ideas</strong>
                 <p>You opened your Friday demo suggestion with “this might be kind of dumb.” Lead with the observation directly and let it stand.</p>
                 <button class="wcx-focus-proof" type="button" data-wcx-open-meeting data-wcx-meeting-id="oneOnOne">From your 1:1 with Sarah →</button>
@@ -2718,8 +2721,8 @@ a:focus {
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="insights">
                   <div class="wcx-coaching-grid">
-                    <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-one>Pattern</div><strong data-wcx-coach-title-one>Stop Undermining Your Own Ideas</strong><p data-wcx-coach-body-one>At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb,” signaling low confidence before the idea even landed.</p></div>
-                    <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-two>What worked</div><strong data-wcx-coach-title-two>Great Receptivity When Challenged</strong><p data-wcx-coach-body-two>When Sarah pushed back, you acknowledged the blind spot without becoming defensive. That openness to reframing is a real strength.</p></div>
+                    <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-one>Pattern</div><strong data-wcx-coach-title-one>Stop Undermining Your Own Ideas</strong><p data-wcx-coach-body-one>At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb,” signaling low confidence before the idea even landed.</p><button class="wcx-coach-play" type="button" data-wcx-coach-play-one>▶ Hear the moment</button></div>
+                    <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-two>What worked</div><strong data-wcx-coach-title-two>Great Receptivity When Challenged</strong><p data-wcx-coach-body-two>When Sarah pushed back, you acknowledged the blind spot without becoming defensive. That openness to reframing is a real strength.</p><button class="wcx-coach-play" type="button" data-wcx-coach-play-two>▶ Hear the moment</button></div>
                   </div>
                 </div>
               </section>
@@ -3281,8 +3284,8 @@ a:focus {
       summary: '<h4>Updates</h4><ul><li>Q3 migration timeline has shifted twice; platform-team dependencies still unclear</li><li>Leadership wants a firm migration date by end of month</li></ul><h4>Discussion Highlights</h4><ul><li>Maya proposed replacing <strong>Friday demos</strong> with async video updates</li><li>Sarah pushed back: demos are how Anita tracks cross-team progress</li></ul><h4>Action Items</h4><ul><li>Maya to bring a concrete async-demo proposal to the next 1:1</li><li>Sarah to chase down the platform-team dependency</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_1_1.m4a',
       coaching: [
-        { label: 'Pattern', title: 'Stop Undermining Your Own Ideas', body: 'At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb” — signaling low confidence before the idea even landed. Lead with the observation directly and let it stand on its own merits.' },
-        { label: 'What worked', title: 'Great Receptivity When Challenged', body: 'When Sarah pushed back on the demo proposal and asked you to consider Anita’s perspective, you immediately acknowledged the blind spot without getting defensive.' }
+        { time: 144, label: 'Pattern', title: 'Stop Undermining Your Own Ideas', body: 'At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb” — signaling low confidence before the idea even landed. Lead with the observation directly and let it stand on its own merits.' },
+        { time: 191, label: 'What worked', title: 'Great Receptivity When Challenged', body: 'When Sarah pushed back on the demo proposal and asked you to consider Anita’s perspective, you immediately acknowledged the blind spot without getting defensive.' }
       ],
       practiceCopy: 'Rehearse proposing the Friday demo change without undermining it.', practiceTitle: 'Stop Undermining Your Own Ideas', practicePerson: 'Sarah · Your manager',
       voice: {
@@ -3350,8 +3353,8 @@ a:focus {
       summary: '<h4>What Shipped</h4><ul><li><strong>Smart notification profiles</strong> launched Jan 15, replacing 47 toggles with 3 presets: <em>Essential Only</em>, <em>Work Hours</em>, and <em>Everything</em></li><li>Marcus built a unified routing layer across 3 previously disconnected dispatch services; Priya led design</li></ul><h4>Results (~6 Weeks Post-Launch)</h4><ul><li>Notification support tickets down <strong>38%</strong> (~4,500 fewer/month)</li><li>Transactional email unsubscribe rate dropped from <strong>8.2% to 3.1%</strong></li><li>DAUs interacting with notification settings up <strong>3x</strong></li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_team_presentation.m4a',
       coaching: [
-        { label: 'What worked', title: 'Exceptional Data-Driven Storytelling', body: 'Your specific, contrasting metrics — 12,000 tickets down to 7,500, unsubscribe rate from 8.2% to 3.1%, settings engagement up 3x — made the impact undeniable.' },
-        { label: 'Growth area', title: 'You’re Underselling Strong Wins', body: 'After announcing a 3x increase in engagement and 4,500 fewer support tickets per month, you said “so that’s cool.” Match your language to the magnitude of the win.' }
+        { time: 168.05, label: 'What worked', title: 'Exceptional Data-Driven Storytelling', body: 'Your specific, contrasting metrics — 12,000 tickets down to 7,500, unsubscribe rate from 8.2% to 3.1%, settings engagement up 3x — made the impact undeniable.' },
+        { time: 207, label: 'Growth area', title: 'You’re Underselling Strong Wins', body: 'After announcing a 3x increase in engagement and 4,500 fewer support tickets per month, you said “so that’s cool.” Match your language to the magnitude of the win.' }
       ],
       practiceCopy: 'Rehearse closing the all-hands with the same energy as the results.', practiceTitle: 'Close with Confident Metrics', practicePerson: 'Engineering team',
       voice: {
@@ -3400,8 +3403,8 @@ a:focus {
       summary: '<h4>Key Takeaways</h4><ul><li>First-round screen for the <strong>Senior PM</strong> role on the activation team</li><li>Hiring manager is <strong>Alex Morgan</strong>; process is recruiter screen, HM call, then a final panel</li><li>Priya extended the call 4 minutes past the slot</li></ul><h4>Compensation</h4><ul><li>Priya asked for a target range; Maya said she was <em>flexible, whatever the band is</em></li></ul><h4>Next Steps</h4><ul><li>Priya debriefs the hiring team this week; HM call expected within 5 business days</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_recruiter_screen.m4a',
       coaching: [
-        { label: 'Coaching point', title: 'Your Opener Buried Your Best Material', body: 'Your “tell me about yourself” ran 2:51 and reached the notification platform rebuild — your strongest credential — at the two-minute mark. Recruiters decide in the first 90 seconds. Lead with it.' },
-        { label: 'What worked', title: 'You Matched Her Energy', body: 'You mirrored Priya\u2019s pace and warmth, and she extended the call four minutes past the slot. Recruiters fight for candidates they enjoy talking to.' }
+        { time: 14, label: 'Coaching point', title: 'Your Opener Buried Your Best Material', body: 'Your “tell me about yourself” ran 2:51 and reached the notification platform rebuild — your strongest credential — at the two-minute mark. Recruiters decide in the first 90 seconds. Lead with it.' },
+        { time: 211, label: 'What worked', title: 'You Matched Her Energy', body: 'You mirrored Priya\u2019s pace and warmth, and she extended the call four minutes past the slot. Recruiters fight for candidates they enjoy talking to.' }
       ],
       practiceCopy: 'Rehearse a 90-second “tell me about yourself” that leads with your biggest win.', practiceTitle: '90-Second Tell Me About Yourself', practicePerson: 'Priya · Recruiter',
       voice: {
@@ -3433,8 +3436,8 @@ a:focus {
       summary: '<h4>Key Takeaways</h4><ul><li>Final round with <strong>Alex Morgan</strong> for the Senior PM role</li><li>Maya led with the notification platform rebuild and the <strong>22% churn reduction</strong>; Alex wrote the number down</li><li>Held her prioritization recommendation through two rounds of pushback</li></ul><h4>Next Steps</h4><ul><li>Alex takes a recommendation to the hiring committee this week</li><li>Decision expected by <strong>Friday</strong>; references may be requested</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_final_interview.m4a',
       coaching: [
-        { label: 'What worked', title: 'Your Numbers Did the Selling', body: '“We cut churn 22%” was the line Alex wrote down. Quantified wins are what get repeated to the hiring committee.' },
-        { label: 'Coaching point', title: 'Pause Before the Big Number', body: 'You rushed past the 22% the first time and had to repeat it. One beat of silence before the number makes the room lean in.' }
+        { time: 118, label: 'What worked', title: 'Your Numbers Did the Selling', body: '“We cut churn 22%” was the line Alex wrote down. Quantified wins are what get repeated to the hiring committee.' },
+        { time: 11, label: 'Coaching point', title: 'Pause Before the Big Number', body: 'You rushed past the 22% the first time and had to repeat it. One beat of silence before the number makes the room lean in.' }
       ],
       practiceCopy: 'Rehearse the metrics story with a deliberate pause before the number.', practiceTitle: 'Pause Before the Big Number', practicePerson: 'Alex · Hiring manager',
       voice: {
@@ -3520,6 +3523,10 @@ a:focus {
     setText('[data-wcx-coach-label-two]', data.coaching[1].label);
     setText('[data-wcx-coach-title-two]', data.coaching[1].title);
     setText('[data-wcx-coach-body-two]', data.coaching[1].body);
+    var coachPlayOne = app.querySelector('[data-wcx-coach-play-one]');
+    if (coachPlayOne) coachPlayOne.dataset.time = data.coaching[0].time;
+    var coachPlayTwo = app.querySelector('[data-wcx-coach-play-two]');
+    if (coachPlayTwo) coachPlayTwo.dataset.time = data.coaching[1].time;
     setText('[data-wcx-practice-title]', data.practiceTitle);
     setText('[data-wcx-practice-copy]', data.practiceCopy);
     setText('[data-wcx-voice-score]', data.voice.score);
@@ -3814,6 +3821,9 @@ a:focus {
       if (audioTime) audioTime.textContent = formatClock(Math.floor(audioElement.currentTime || 0));
     });
   }
+  Array.prototype.slice.call(app.querySelectorAll('.wcx-coach-play')).forEach(function(button) {
+    button.addEventListener('click', function() { playAudioAt(Number(button.dataset.time) || 0); });
+  });
   var transcriptPane = app.querySelector('[data-wcx-transcript]');
   if (transcriptPane) {
     transcriptPane.addEventListener('click', function(event) {
