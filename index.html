@@ -1464,6 +1464,8 @@ a:focus {
 .founder-portrait {
   position: relative;
   width: 100%;
+  align-self: start;
+  margin-top: -40px;
 }
 .founder-portrait video {
   display: block;
@@ -1831,22 +1833,14 @@ a:focus {
 .wcx-subtitle { color: #6b7a6e; font-size: 11px; line-height: 1.4; margin-top: 4px; }
 .wcx-link-button { appearance: none; border: 0; background: none; color: #1e6b42; padding: 0; font: 800 10px/1 'Source Sans 3', sans-serif; cursor: pointer; }
 .wcx-card { border: 1px solid #d9d2c7; border-radius: 11px; background: rgba(255,255,255,.48); }
-.wcx-home-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 16px; }
+.wcx-home-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .wcx-section-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; color: #2a3f32; font-size: 11px; font-weight: 850; }
-.wcx-calendar { padding: 14px; }
-.wcx-calendar-row { display: grid; grid-template-columns: 58px 3px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 2px; }
-.wcx-calendar-row + .wcx-calendar-row { border-top: 1px solid #ded7cc; }
-.wcx-date strong { display: block; font-size: 22px; font-weight: 500; line-height: .95; }
-.wcx-date span { color: #6b7a6e; font-size: 8px; text-transform: uppercase; }
-.wcx-event-bar { width: 3px; height: 32px; border-radius: 3px; background: #3a9361; }
-.wcx-event strong { display: block; font-size: 11px; }
-.wcx-event span { color: #6b7a6e; font-size: 9px; }
-.wcx-event-time { color: #4a5e52; font: 750 9px/1 ui-monospace, monospace; }
 .wcx-focus-card { padding: 16px; background: #e0f5eb; border-color: #c4e4d1; }
 .wcx-focus-icon { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; background: #1e6b42; color: white; margin-bottom: 18px; }
 .wcx-focus-card strong { display: block; font-size: 14px; }
 .wcx-focus-card p { color: #526159; font-size: 10px; line-height: 1.45; margin-top: 6px; }
-.wcx-focus-proof { margin-top: 14px; color: #1e6b42; font-size: 9px; font-weight: 800; }
+.wcx-focus-proof { appearance: none; display: block; margin-top: 14px; padding: 0; border: 0; background: none; color: #1e6b42; font-family: inherit; font-size: 9px; font-weight: 800; text-align: left; cursor: pointer; }
+.wcx-focus-proof:hover { text-decoration: underline; }
 .wcx-recent { margin-top: 22px; }
 .wcx-meeting-row { width: 100%; display: grid; grid-template-columns: 34px minmax(0, 1fr) auto 16px; align-items: center; gap: 11px; padding: 10px 12px; border: 0; border-top: 1px solid #ded7cc; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .wcx-meeting-row:first-child { border-top: 0; }
@@ -1924,6 +1918,7 @@ a:focus {
 .wcx-detail-section-body .wcx-practice-strip { grid-column: auto; padding: 14px 15px; }
 .wcx-detail-section-body .wcx-practice-strip strong { font-size: 13px; }
 .wcx-detail-section-body .wcx-practice-strip small { display: block; margin-top: 4px; font-size: 11px; line-height: 1.4; }
+.wcx-detail-section-body .wcx-transcript { max-height: 380px; overflow-y: auto; padding-right: 4px; }
 .wcx-detail-section-body .wcx-transcript-line { padding: 11px 12px; }
 .wcx-detail-section-body .wcx-transcript-line p { font-size: 11.5px; line-height: 1.5; }
 .wcx-coaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -1953,7 +1948,9 @@ a:focus {
 .wcx-moment span { color: #6b7a6e; font-size: 8px; }
 .wcx-transcript { display: grid; gap: 8px; }
 .wcx-transcript-line { display: grid; grid-template-columns: 48px minmax(0,1fr); gap: 10px; padding: 9px 11px; border-radius: 8px; background: rgba(255,255,255,.32); }
-.wcx-transcript-line.is-moment { border-left: 3px solid #1e8a50; background: #e0f5eb; }
+.wcx-transcript-line.is-moment { border-left: 3px solid #1e8a50; background: #e0f5eb; cursor: pointer; }
+.wcx-transcript-line.is-moment:hover { background: #d3efe1; }
+.wcx-transcript-line.is-moment:focus-visible { outline: 3px solid rgba(30,107,66,.22); outline-offset: -3px; }
 .wcx-speaker { color: #1e6b42; font-size: 8px; font-weight: 850; }
 .wcx-transcript-line p { color: #4a5e52; font-size: 9.5px; line-height: 1.4; }
 .wcx-chat-layout { height: 530px; display: flex; flex-direction: column; max-width: 690px; margin: 0 auto; }
@@ -2089,9 +2086,6 @@ a:focus {
 .wcx-subtitle { font-size: 13px; }
 .wcx-link-button { font-size: 12px; }
 .wcx-section-label { font-size: 13px; }
-.wcx-date span { font-size: 10px; }
-.wcx-event strong { font-size: 13px; }
-.wcx-event span, .wcx-event-time { font-size: 11px; }
 .wcx-focus-card strong { font-size: 16px; }
 .wcx-focus-card p { font-size: 13px; }
 .wcx-focus-proof { font-size: 11px; }
@@ -2177,8 +2171,6 @@ a:focus {
   .wcx-home-grid, .wcx-coaching-grid, .wcx-people-layout, .wcx-jobs-grid, .wcx-fit-grid { grid-template-columns: 1fr; }
   .wcx-focus-card { padding: 14px; }
   .wcx-focus-icon { margin-bottom: 10px; }
-  .wcx-calendar-row { grid-template-columns: 46px 3px minmax(0,1fr); gap: 8px; }
-  .wcx-event-time { display: none; }
   .wcx-meeting-row { grid-template-columns: 31px minmax(0,1fr) 12px; gap: 8px; }
   .wcx-meeting-meta { display: none; }
   .wcx-meeting-head h3 { font-size: 24px; }
@@ -2640,28 +2632,19 @@ a:focus {
               <div><div class="wcx-eyebrow">Wednesday, July 15</div><h3>Good afternoon, Maya.</h3><p class="wcx-subtitle">Here’s what your coach is paying attention to.</p></div>
             </div>
 
+            <div class="wcx-section-label">Your coaching focus</div>
             <div class="wcx-home-grid">
-              <div>
-                <div class="wcx-section-label"><span>Coming up</span><span class="wcx-subtitle">Calendar connected</span></div>
-                <div class="wcx-card wcx-calendar">
-                  <div class="wcx-calendar-row">
-                    <div class="wcx-date"><strong>15</strong><span>Jul · Wed</span></div><span class="wcx-event-bar"></span>
-                  <div class="wcx-event"><strong>Launch Readiness Sync</strong><span>Marcus Rivera · Zoom</span></div><span class="wcx-event-time">4:00 PM</span>
-                  </div>
-                  <div class="wcx-calendar-row">
-                    <div class="wcx-date"><strong>16</strong><span>Jul · Thu</span></div><span class="wcx-event-bar"></span>
-                  <div class="wcx-event"><strong>Platform Migration Decision</strong><span>Priya Patel + Platform Guild · Zoom</span></div><span class="wcx-event-time">2:00 PM</span>
-                  </div>
-                </div>
+              <div class="wcx-card wcx-focus-card">
+                <div class="wcx-focus-icon">↗</div>
+                <strong>Pause before the big number</strong>
+                <p>You rushed past the 22% the first time and had to repeat it. One beat of silence before the number makes the room lean in.</p>
+                <button class="wcx-focus-proof" type="button" data-wcx-open-meeting data-wcx-meeting-id="finalInterview">From your final interview →</button>
               </div>
-              <div>
-                <div class="wcx-section-label">Your coaching focus</div>
-                <div class="wcx-card wcx-focus-card">
-                  <div class="wcx-focus-icon">↗</div>
-                  <strong>Stop undermining your own ideas</strong>
-                  <p>You opened your Friday demo suggestion with “this might be kind of dumb.” Lead with the observation directly and let it stand.</p>
-                  <div class="wcx-focus-proof">From your 1:1 with Sarah →</div>
-                </div>
+              <div class="wcx-card wcx-focus-card">
+                <div class="wcx-focus-icon">↗</div>
+                <strong>Stop undermining your own ideas</strong>
+                <p>You opened your Friday demo suggestion with “this might be kind of dumb.” Lead with the observation directly and let it stand.</p>
+                <button class="wcx-focus-proof" type="button" data-wcx-open-meeting data-wcx-meeting-id="oneOnOne">From your 1:1 with Sarah →</button>
               </div>
             </div>
 
@@ -3320,10 +3303,45 @@ a:focus {
         ]
       },
       transcript: [
+        { speaker: 'Sarah', time: 0, text: 'Hey, how’s it going?' },
+        { speaker: 'You', time: 1, text: 'Good, good. Weekend was nice. Finally got outside a bit.' },
         { speaker: 'Sarah', time: 5, text: 'Nice, same here. Okay, so what’s on your mind today? Anything you want to dig into?' },
-        { speaker: 'You', time: 10, moment: true, text: 'Um, not really. I don’t have like a formal agenda or anything. Things are fine, I guess.' },
+        { speaker: 'You', time: 10, moment: true, text: 'Um, not really. I don’t have like a formal agenda or anything. Things are fine, I guess. I mean, there’s some stuff bugging me, but nothing major.' },
+        { speaker: 'Sarah', time: 20, text: 'That’s okay. Let’s start with the stuff bugging you. What’s going on?' },
+        { speaker: 'You', time: 24, moment: true, text: 'Yeah, so the migration project is kind of a mess. Like the timeline keeps shifting and I feel like nobody really knows what’s going on. And I talked to James about it and he was like, yeah, it’s fine, but it doesn’t feel fine to me.' },
+        { speaker: 'Sarah', time: 39, text: 'Okay. When you say the timeline keeps shifting, what specifically changed?' },
+        { speaker: 'You', time: 44, text: 'Um, well, originally we said end of Q2 for the database cutover, but then there was that thing with the schema changes, and now I think Marcus is saying maybe July? But I’m not sure if that’s official or just him guessing.' },
+        { speaker: 'Sarah', time: 58, text: 'Got it. So you’re not sure if the new date is a real commitment or just a loose estimate. What’s the actual impact on your work right now?' },
+        { speaker: 'You', time: 73, text: 'I mean, it’s just frustrating. Like, I had planned my stuff around the original date and now I don’t know what to prioritize. Should I keep working on the data validation scripts, or should I switch to the API work that Priya needs?' },
+        { speaker: 'Sarah', time: 80, text: 'That’s a fair question. Have you talked to Priya about what she needs and when?' },
+        { speaker: 'You', time: 85, text: 'Not directly. I think she mentioned it in Slack, but I didn’t really follow up.' },
+        { speaker: 'Sarah', time: 91, text: 'Okay. So if you had to pick one of those two things right now, which one do you think matters more?' },
+        { speaker: 'You', time: 98, text: 'Uh, probably the API stuff, but I’m not sure. That’s kind of the problem. Like, I don’t know which one is blocking more people.' },
+        { speaker: 'Sarah', time: 107, text: 'Right. So it sounds like the real issue isn’t the migration timeline, it’s that you’re not sure what to work on next, and you haven’t gotten the information you need to make that call. Is that fair?' },
+        { speaker: 'You', time: 118, text: 'Yeah, I guess so. I just… I don’t want to be the person who’s like bugging everyone asking what to do.' },
+        { speaker: 'Sarah', time: 125, text: 'I hear you. But there’s a difference between asking people what to do and asking people what they need. If you reach out to Priya and say, hey, when do you actually need this? And what’s the minimum I need to hand off to unblock you? That’s you being proactive, not dependent.' },
+        { speaker: 'You', time: 141, text: 'Yeah, that makes sense.' },
+        { speaker: 'Sarah', time: 144, text: 'What else is on your mind?' },
         { speaker: 'You', time: 144, moment: true, text: 'Um, the other thing is, and this might be kind of dumb, but I think we should stop doing the Friday demos.' },
-        { speaker: 'You', time: 191, text: 'Harder, probably. Because she’d have to chase people down instead of just seeing it.' }
+        { speaker: 'Sarah', time: 154, text: 'Really? Why?' },
+        { speaker: 'You', time: 156, text: 'They just feel like a waste of time. Like, half the people don’t even show up, and the ones who do are just on their laptops anyway.' },
+        { speaker: 'Sarah', time: 164, text: 'Okay, so what would you want to do instead?' },
+        { speaker: 'You', time: 167, text: 'I don’t know. Like, maybe just not do them?' },
+        { speaker: 'Sarah', time: 170, text: 'So, if we stopped doing Friday demos, how would the rest of the team know what’s shipping? How would product stay in the loop?' },
+        { speaker: 'You', time: 177, text: 'I mean, I guess we could do, like, a Slack update or something.' },
+        { speaker: 'Sarah', time: 181, text: 'Maybe, but think about it from Anita’s side. She’s the one presenting our progress to leadership. If we go from a live demo to a Slack post, does that make her job easier or harder?' },
+        { speaker: 'You', time: 191, moment: true, text: 'Harder, probably. Because she’d have to chase people down instead of just seeing it.' },
+        { speaker: 'Sarah', time: 196, text: 'Right. So the demos might feel low value to you, but they might be serving a purpose you’re not seeing day to day. I’m not saying we can’t improve them. Maybe we shorten them or change the format. But I want you to think about who else benefits from that meeting before we kill it. Does that make sense?' },
+        { speaker: 'You', time: 214, text: 'Yeah, no, that’s a good point. I was kind of just thinking about it from my side.' },
+        { speaker: 'Sarah', time: 220, text: 'That’s normal. We all do that. But if you’re gonna propose cutting something, come with the full picture. Who loses what and what replaces it? Then it’s a much stronger argument.' },
+        { speaker: 'You', time: 232, text: 'Okay, yeah, I’ll think about that more.' },
+        { speaker: 'Sarah', time: 235, text: 'Anything else?' },
+        { speaker: 'You', time: 237, text: 'Nah, I think that’s it. Sorry I didn’t have more of a structured list or whatever.' },
+        { speaker: 'Sarah', time: 242, text: 'You don’t need a formal agenda, but it does help if you spend even five minutes before we meet jotting down what’s top of mind. Doesn’t have to be polished, even bullet points in a doc. It’ll make these way more useful for you.' },
+        { speaker: 'You', time: 252, text: 'Yeah, I’ll try that next time.' },
+        { speaker: 'Sarah', time: 255, text: 'Cool. So to recap, you’re going to talk to Priya this week to figure out what she needs and by when, and you’re going to think through the Friday demo thing more holistically. Sound right?' },
+        { speaker: 'You', time: 263, moment: true, text: 'Yep, sounds good.' },
+        { speaker: 'Sarah', time: 264, text: 'Great. Talk soon.' }
       ]
     },
     presentation: {
@@ -3354,10 +3372,26 @@ a:focus {
         ]
       },
       transcript: [
+        { speaker: 'You', time: 0, text: 'Hey everyone, I’m a software engineer on the notifications team. Thanks for having us today.' },
         { speaker: 'You', time: 6.44, moment: true, text: 'So I’m going to walk you through something we shipped last month that we’re pretty excited about. It should only take a few minutes.' },
-        { speaker: 'You', time: 45.76, text: 'And the data backed this up. We were seeing about 12,000 support tickets a month just about notifications.' },
+        { speaker: 'You', time: 17.74, text: 'Okay, so for context, if you’ve ever looked at our notifications settings page, you know it’s kind of a nightmare. We had like 47 individual toggles, and they were organized by system category, not by what the user actually cares about.' },
+        { speaker: 'You', time: 32.84, text: 'So if you wanted to turn off email digests but keep Slack alerts you had to hunt through three different sections and toggle six different things. It was really confusing.' },
+        { speaker: 'You', time: 45.76, moment: true, text: 'And the data backed this up. We were seeing about 12,000 support tickets a month just about notifications. How do I stop getting these emails? Why am I getting pinged about stuff I don’t care about? That kind of thing.' },
+        { speaker: 'You', time: 58.24, text: 'And our unsubscribe rate on transactional emails was climbing, which, that’s not great, because some of those emails are actually important, like billing alerts and security stuff. People were just nuking everything because the controls were too hard to use.' },
+        { speaker: 'You', time: 75.09, text: 'So what we built is, let me pull this up, we call it smart notification profiles. Instead of 47 toggles, you now pick from one of three presets.' },
+        { speaker: 'You', time: 86.99, text: 'There’s essential only, which is just billing, security, and outages. There’s work hours, which layers in product updates and team mentions, but only between 8 a.m. and 6 p.m. in your local time zone. And then everything, which is basically what the old default was.' },
+        { speaker: 'You', time: 106.23, text: 'And then if you want to customize from there, you can. But the key thing is you start from a sane default instead of staring at this wall of checkboxes.' },
+        { speaker: 'You', time: 115.77, text: 'The other piece, and honestly, this was the harder engineering lift, is we added channel preference per notification type. So you can say, send me billing stuff by email, but team mentions only in Slack. Before, it was like all or nothing per channel.' },
+        { speaker: 'You', time: 131, moment: true, text: 'Marcus actually figured out the routing architecture for this, which was, um, not trivial because we had three different notification dispatch services that had never talked to each other. He basically had to build a unified routing layer from scratch.' },
+        { speaker: 'You', time: 148.21, text: 'And then Priya did all the design work and user testing. She ran, I think, like seven or eight usability sessions to get the preset categories right. So big shout out to both of them.' },
+        { speaker: 'You', time: 160.15, text: 'We rolled this out to general availability on January 15th, so we’ve got about five, almost six weeks of data now.' },
         { speaker: 'You', time: 168.05, moment: true, text: 'Notification-related support tickets are down 38%, which is, yeah, that’s significant. That’s roughly 4,500 fewer tickets a month.' },
-        { speaker: 'You', time: 266, text: 'So yeah, that’s what we’ve been up to. Thanks, everyone. Happy to take any questions if there’s time.' }
+        { speaker: 'You', time: 178.17, text: 'The unsubscribe rate on transactional emails dropped from 8.2% to 3.1%, which is great because it means people are actually tuning their preferences instead of just opting out of everything.' },
+        { speaker: 'You', time: 190.77, text: 'And then the one that I think surprised us a bit, daily active users who have interacted with notification settings went up 3x. So people are actually going in and setting their preferences now, which they just weren’t doing before because the page was too intimidating. So that’s cool.' },
+        { speaker: 'You', time: 209, text: 'So for the next month, the team is focused on a couple things. First, we’re building a quiet hours feature on top of the profiles. So you can set like do not disturb windows that suppress everything except critical alerts. That was a number one request from the usability sessions.' },
+        { speaker: 'You', time: 226.32, text: 'Second, we’re working on notification analytics for admins, so workspace admins can see which notification types are getting muted the most. The idea is if 80% of your users are muting a certain alert, maybe that alert shouldn’t be on by default.' },
+        { speaker: 'You', time: 248.4, text: 'And then third, we’re starting early scoping on like AI-driven notification bundling, grouping related notifications into a single digest instead of pinging you six times in 10 minutes. That one’s more exploratory, but we’re hoping to have a prototype by end of March.' },
+        { speaker: 'You', time: 266, moment: true, text: 'So yeah, that’s what we’ve been up to. Thanks, everyone. Happy to take any questions if there’s time.' }
       ]
     },
     recruiterScreen: {
@@ -3530,6 +3564,7 @@ a:focus {
       transcript.textContent = '';
       data.transcript.forEach(function(line) {
         var row = document.createElement('div'); row.className = 'wcx-transcript-line' + (line.moment ? ' is-moment' : '');
+        if (line.moment) { row.dataset.time = line.time; row.setAttribute('role', 'button'); row.tabIndex = 0; row.setAttribute('aria-label', 'Play this moment'); }
         var speaker = document.createElement('span'); speaker.className = 'wcx-speaker'; speaker.appendChild(document.createTextNode(line.speaker)); speaker.appendChild(document.createElement('br')); speaker.appendChild(document.createTextNode(formatClock(Math.floor(line.time))));
         var copy = document.createElement('p'); copy.textContent = line.text;
         row.appendChild(speaker); row.appendChild(copy); transcript.appendChild(row);
@@ -3777,6 +3812,18 @@ a:focus {
     audioElement.addEventListener('ended', function() { updateAudioState(false); });
     audioElement.addEventListener('timeupdate', function() {
       if (audioTime) audioTime.textContent = formatClock(Math.floor(audioElement.currentTime || 0));
+    });
+  }
+  var transcriptPane = app.querySelector('[data-wcx-transcript]');
+  if (transcriptPane) {
+    transcriptPane.addEventListener('click', function(event) {
+      var row = event.target.closest('.is-moment');
+      if (row && audioElement) playAudioAt(Number(row.dataset.time) || 0);
+    });
+    transcriptPane.addEventListener('keydown', function(event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      var row = event.target.closest('.is-moment');
+      if (row && audioElement) { event.preventDefault(); playAudioAt(Number(row.dataset.time) || 0); }
     });
   }
   var voiceMoments = app.querySelector('[data-wcx-voice-moments]');
