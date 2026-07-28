@@ -630,113 +630,6 @@ nav {
   box-shadow: var(--shadow);
 }
 
-/* COMPATIBILITY */
-.compat-section {
-  padding: 56px 20px 60px;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.compat-grid {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
-.compat-text .section-label { margin-bottom: 10px; }
-.compat-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 3.1vw, 34px);
-  font-weight: 400;
-  margin-bottom: 14px;
-}
-.compat-text p {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.compat-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 280px;
-}
-.context-card {
-  width: 100%;
-  max-width: 380px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow), 0 8px 32px rgba(0,0,0,.06);
-  padding: 22px 24px;
-}
-.context-card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.context-title {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--text);
-}
-.context-pill {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-2);
-  background: var(--green-soft);
-  padding: 4px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-.context-sources { display: grid; gap: 12px; margin-bottom: 18px; }
-.ctx-source {
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 12px;
-  align-items: center;
-}
-.ctx-source-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-  background: var(--green-soft);
-  color: var(--accent-2);
-  display: grid;
-  place-items: center;
-}
-.ctx-source-icon svg { width: 17px; height: 17px; }
-.ctx-source-name { font-size: 14px; font-weight: 600; color: var(--text); }
-.ctx-source-desc { font-size: 12.5px; color: var(--muted); line-height: 1.4; }
-.ctx-compare {
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-  display: grid;
-  gap: 9px;
-}
-.ctx-line {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 10px;
-  align-items: baseline;
-}
-.ctx-who {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-}
-.ctx-what { font-size: 13px; line-height: 1.35; }
-.ctx-line.them .ctx-what { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--border); }
-.ctx-line.us .ctx-what { color: var(--accent-2); font-weight: 600; }
 
 /* CTA */
 .cta-section {
@@ -796,6 +689,9 @@ footer p { color: var(--muted); font-size: 14px; }
 /* PULLQUOTE / POSITIONING */
 .pullquote-section {
   padding: 100px 20px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #fffdf9;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -1320,8 +1216,7 @@ a:focus {
      line so the hero's height never changes as they cycle. */
   .rotator-line { min-height: 1.2em; }
   .hero .subtitle { font-size: 17px; max-width: 340px; }
-  .compat-grid { grid-template-columns: 1fr; gap: 32px; }
-  .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .feature-row, .feature-row.reverse { grid-template-columns: 1fr; gap: 32px; }
   .feature-row.reverse .feature-text { order: 1; }
   .feature-row.reverse .feature-visual { order: 2; }
   .coaching-grid { grid-template-columns: 1fr; }
@@ -1351,43 +1246,94 @@ a:focus {
   margin-bottom: 14px;
 }
 .foryou-head p { font-size: 17px; color: var(--muted); line-height: 1.65; }
-.foryou-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
-.foryou-card {
-  padding: 30px 30px 32px;
-  border-radius: var(--radius);
+.fork-wrap { max-width: 880px; margin: 0 auto; }
+.fork-src {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fffdf8;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.45);
+  box-shadow: 0 10px 28px rgba(33,42,36,.09);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
 }
-.foryou-card.is-you {
-  background: var(--card);
-  border-color: rgba(49,193,120,.45);
-  box-shadow: 0 18px 44px rgba(33,50,39,.1);
+.fork-wrap.is-live .fork-src { opacity: 1; transform: none; }
+.sum-caption { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; font-size: 12.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.sum-caption i { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex: 0 0 auto; }
+.sum-caption.is-us i { background: var(--accent); }
+.sum-head { display: flex; align-items: center; gap: 10px; padding-bottom: 11px; margin-bottom: 11px; border-bottom: 1px solid var(--border); }
+.sum-ico { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px; background: var(--surface); font-size: 16px; flex: 0 0 auto; }
+.sum-head b { display: block; font-size: 14.5px; }
+.sum-head small { display: block; color: var(--muted); font-size: 11px; margin-top: 1px; }
+.sum-label { font-size: 10.5px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.sum-skel { display: grid; gap: 7px; }
+.sum-skel i { display: block; height: 9px; border-radius: 999px; background: #e6e1d4; }
+.fork-arms { position: relative; height: 44px; }
+.fork-arms::before { content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 15px; margin-left: -1px; background: #d5cec0; }
+.fork-arms i { position: absolute; left: 25%; right: 25%; top: 15px; height: 2px; background: #d5cec0; transform: scaleX(0); transition: transform .45s ease .35s; }
+.fork-wrap.is-live .fork-arms i { transform: scaleX(1); }
+.fork-arms i::before, .fork-arms i::after { content: ''; position: absolute; top: 0; width: 2px; height: 29px; background: #d5cec0; }
+.fork-arms i::before { left: -1px; }
+.fork-arms i::after { right: -1px; }
+.fork-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.fork-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fffdf8;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 28px rgba(33,42,36,.08);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease .7s, transform .5s ease .7s;
 }
-.foryou-card-label {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 18px;
+.fork-panel.is-us { border-color: rgba(49,193,120,.5); box-shadow: 0 14px 34px rgba(49,193,120,.13); transition-delay: 1.9s; }
+.fork-wrap.is-live .fork-panel { opacity: 1; transform: none; }
+.sum-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.sum-actions span { padding: 8px 12px; border-radius: 9px; background: #fff; border: 1px solid #d9d3c6; color: #4c5a50; font-size: 12.5px; font-weight: 650; box-shadow: 0 2px 5px rgba(33,42,36,.05); opacity: 0; transform: scale(.85); }
+.fork-wrap.is-live .sum-actions span { animation: forkBtn .35s cubic-bezier(.3,1.4,.4,1) forwards; }
+.fork-wrap.is-live .sum-actions span:nth-child(1) { animation-delay: 1s; }
+.fork-wrap.is-live .sum-actions span:nth-child(2) { animation-delay: 1.12s; }
+.fork-wrap.is-live .sum-actions span:nth-child(3) { animation-delay: 1.24s; }
+.fork-wrap.is-live .sum-actions span:nth-child(4) { animation-delay: 1.36s; }
+.fork-wrap.is-live .sum-actions span:nth-child(5) { animation-delay: 1.48s; }
+.fork-wrap.is-live .sum-actions span:nth-child(6) { animation-delay: 1.6s; }
+@keyframes forkBtn { to { opacity: 1; transform: none; } }
+.fork-chips { display: flex; gap: 7px; margin-top: 12px; }
+.fork-chips span { padding: 5px 10px; border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 10.5px; font-weight: 750; }
+.wc-scores { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.wc-scores span { display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px; border-radius: 999px; background: #fff; border: 1px solid rgba(49,193,120,.35); color: var(--muted); font-size: 11.5px; font-weight: 750; }
+.wc-scores b { font-size: 14px; color: var(--accent-2); }
+.wc-scores b.is-low { color: var(--amber); }
+.wc-moment { display: flex; align-items: center; gap: 10px; padding: 11px 12px; margin-bottom: 14px; border-radius: 11px; background: var(--green-soft); border: 1px solid rgba(49,193,120,.35); }
+.wc-play { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #fff; font-size: 10px; flex: 0 0 auto; }
+.wc-moment b { display: block; font-size: 13.5px; line-height: 1.2; }
+.wc-moment small { display: block; color: #4a584e; font-size: 11.5px; margin-top: 2px; line-height: 1.35; }
+.wc-moment > div { flex: 1; min-width: 0; }
+.wc-ts { color: var(--accent-2); font: 750 11px/1 ui-monospace, monospace; }
+.wc-reps { display: flex; align-items: center; gap: 14px; }
+.wc-rep-bars { display: flex; align-items: flex-end; gap: 5px; height: 40px; }
+.wc-rep-bars i { width: 14px; height: calc(40px * var(--s)); border-radius: 4px 4px 2px 2px; background: #9fd1b3; }
+.wc-rep-bars i:last-child { background: var(--accent); }
+
+.sum-reflect b { display: block; font-size: 14px; line-height: 1.35; margin-bottom: 4px; }
+.sum-reflect p { color: #4a584e; font-size: 13px; line-height: 1.45; margin-bottom: 12px; }
+.sum-practice { display: inline-block; padding: 9px 14px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 13px; font-weight: 750; }
+.sum-note { margin-top: auto; padding-top: 14px; text-align: center; color: var(--muted); font-size: 12px; font-style: italic; }
+.sum-note.is-green { color: var(--accent-2); }
+@media (prefers-reduced-motion: reduce) {
+  .fork-src, .fork-panel, .fork-arms i { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .sum-actions span { opacity: 1; transform: none; animation: none !important; }
 }
-.foryou-card.is-you .foryou-card-label { color: var(--accent-2); }
-.foryou-card ul { list-style: none; display: grid; gap: 13px; }
-.foryou-card li { position: relative; padding-left: 28px; font-size: 15.5px; line-height: 1.5; color: var(--muted); }
-.foryou-card.is-them li::before { content: '✕'; position: absolute; left: 2px; top: 1px; color: #b0a99a; font-size: 13px; font-weight: 700; }
-.foryou-card.is-you li { color: var(--text); }
-.foryou-card.is-you li::before { content: '✓'; position: absolute; left: 0; top: 1px; color: var(--accent); font-size: 14px; font-weight: 800; }
-.foryou-note {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  color: var(--accent-2);
-  font-size: 13.5px;
-  font-weight: 700;
-}
+.sum-bottom { margin-top: 26px; text-align: center; color: var(--text); font-size: 17px; font-weight: 650; }
 @media (max-width: 760px) {
   .foryou-section { padding: 68px 16px 72px; }
-  .foryou-grid { grid-template-columns: 1fr; }
+  .fork-panels { grid-template-columns: 1fr; gap: 16px; }
+  .fork-arms { height: 18px; }
+  .fork-arms i { display: none; }
   .foryou-head p { font-size: 15px; }
 }
 
@@ -1495,7 +1441,7 @@ a:focus {
 }
 .founder-portrait-badge {
   position: absolute;
-  left: 50%;
+  left: calc(50% - 28px);
   bottom: 14px;
   transform: translateX(-50%);
   display: inline-flex;
@@ -1521,6 +1467,7 @@ a:focus {
   .founder-inner { grid-template-columns: 1fr; gap: 10px; }
   .founder-copy { max-width: 100%; }
   .founder-portrait video { width: 100%; margin-left: 0; }
+  .founder-portrait-badge { left: 50%; }
   .founder-logos { gap: 12px 16px; justify-content: center; }
   .founder-logos img { height: 15px; }
   .founder-portrait { width: min(320px, 80vw); margin: 0 auto; }
@@ -1598,7 +1545,7 @@ a:focus {
 [data-story-scene="analyzed"] .notify-chips i { font-size: 14px; padding: 8px 14px; }
 [data-story-state="analyzed"] .story-video-layer,
 [data-story-state="coaching"] .story-video-layer,
-[data-story-state="practice"] .story-video-layer { opacity: .4; filter: saturate(.6) blur(1px); }
+[data-story-state="practice"] .story-video-layer { opacity: 0; }
 .story-video-call {
   width: min(650px, calc(100% - 86px));
   height: 390px;
@@ -1696,9 +1643,9 @@ a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
-  padding: 14px 20px 0;
+  padding: 0 20px;
 }
 .story-notification {
   width: min(600px, 100%);
@@ -2242,7 +2189,7 @@ a:focus {
   .story-frame { height: 470px; }
   .story-scene { padding: 26px 22px; }
   .home-scene { padding: 0; }
-  .notify-scene { padding: 20px 10px 0; }
+  .notify-scene { padding: 0 10px; }
   .story-video-layer { padding-top: 20px; }
   .story-video-call { width: calc(100% - 28px); height: 400px; }
   .meeting-prompt { top: 10px; }
@@ -2254,7 +2201,7 @@ a:focus {
       .story-frame { height: 430px; }
   .story-scene { padding: 22px 16px; }
   .home-scene, .recording-scene { padding: 0; }
-  .notify-scene { padding: 16px 6px 0; gap: 8px; }
+  .notify-scene { padding: 0 6px; gap: 8px; }
   .story-notification { padding: 14px 15px; }
   .story-notification strong { font-size: 16px; }
   .story-notification p { font-size: 12.5px; }
@@ -2606,275 +2553,7 @@ a:focus {
     </div>
 
     <div class="feedback-gap-turn">
-      <p><strong>Everything up there is coachable. You just never got to hear it.</strong> Work Coach observes you and tells you privately while there's still time to fix it.</p>
-    </div>
-  </div>
-</section>
-
-<section class="foryou-section" aria-labelledby="foryou-title">
-  <div class="foryou-inner">
-    <div class="foryou-head">
-      <div class="section-label">Built for you, not your company</div>
-      <h2 id="foryou-title">The only meeting tool on your side</h2>
-      <p>Every other AI note-taker wants to be your company's brain: the notes, the CRM fields, the workflows. That's their job. Work Coach has a different one: private feedback on every interview, 1:1, and presentation to help you improve.</p>
-    </div>
-    <div class="foryou-grid">
-      <div class="foryou-card is-them">
-        <div class="foryou-card-label">Other AI meeting tools</div>
-        <ul>
-          <li>Sold to your company, not you</li>
-          <li>Flood the CRM and inbox with auto-summaries</li>
-          <li>Create more docs and more busywork</li>
-          <li>Never make you better at your job</li>
-        </ul>
-      </div>
-      <div class="foryou-card is-you">
-        <div class="foryou-card-label">Work Coach</div>
-        <ul>
-          <li>Feedback on how you came across in the interview</li>
-          <li>Coaching for the 1:1s with your manager</li>
-          <li>Practice reps before the big presentation</li>
-          <li>Built to make you better</li>
-        </ul>
-        <div class="foryou-note">Private to you. Never shared with your company.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="feature-section" id="features">
-  <div class="feature-head">
-    <div class="section-label">Inside the app</div>
-    <h2>Every goal, powered by what happens in your meetings</h2>
-    <p>Generic advice is easy to ignore. Every feature in Work Coach works off your real conversations, so the feedback is about you, and the practice is for the moment you're about to walk into.</p>
-  </div>
-
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Interview feedback</div>
-      <h3>What recruiters don't tell you</h3>
-      <p>Rejections come with silence. "We went in another direction" teaches you nothing. Work Coach analyzes every interview you do: where you rambled, which answers landed, and how you sounded under pressure, so you know exactly what to fix before the next round.</p>
-      <a href="job-search" class="usecase-cta">See the whole job search flow →</a>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Final interview</div>
-        <div class="wc-meta">Analyzed · job interview detected · 2 coaching points</div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Tighten your “tell me about yourself”</div>
-            <div class="wc-rec-body">Your opener ran three minutes. Keep it to 90 seconds: current role, your best win, why this job.</div>
-            <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 02:14</span>
-              <span class="wc-rec-link">Practice the tight version →</span>
-            </div>
-          </div>
-        </div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Your numbers did the selling</div>
-            <div class="wc-rec-body">“We cut churn 22%” was the line they wrote down. Do that in every story.</div>
-            <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 08:42</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Voice &amp; delivery</div>
-      <h3>Feel more confident in how you speak</h3>
-      <p>Confidence isn't a personality trait. It's pace, energy, and conviction, and all three are measurable. Work Coach scores how you actually sound in real conversations, points you at the exact seconds where your delivery gave you away, and tracks you getting stronger week over week.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Voice delivery</div>
-        <div class="wc-meta">Scored on your last 6 real conversations</div>
-        <div class="wc-stats-row">
-          <div class="wc-stat-pill">
-            <div class="sp-label">Pace</div>
-            <div class="sp-value" style="color: var(--accent);">82<span class="unit">/100</span></div>
-            <div class="sp-detail">strong</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Filler words</div>
-            <div class="sp-value" style="color: var(--amber);">64<span class="unit">/100</span></div>
-            <div class="sp-detail">improving</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Vocal energy</div>
-            <div class="sp-value" style="color: var(--amber);">58<span class="unit">/100</span></div>
-            <div class="sp-detail">your focus area</div>
-          </div>
-        </div>
-        <div class="trend-list" style="margin-bottom: 14px;">
-          <div class="trend-row">
-            <span class="trend-label">Vocal energy</span>
-            <span class="trend-spark"><svg viewBox="0 0 120 28" preserveAspectRatio="none"><polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0,23 20,21 40,19 60,17 80,13 100,10 120,7"/></svg></span>
-            <span class="trend-delta up">+21%</span>
-          </div>
-        </div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Your best points deserve a pause</div>
-            <div class="wc-rec-body">You rush past your strongest lines. A one-second pause before the big number makes the room lean in.</div>
-            <div class="wc-rec-actions">
-              <span class="wc-rec-play">▶ 12:07</span>
-              <span class="wc-rec-link">Hear it yourself →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Roleplay practice</div>
-      <h3>Rehearse it before it counts</h3>
-      <p>Reading tips doesn't change how you show up. Reps do. Practice the conversation out loud with an AI playing the other side — your interviewer, your manager, the skeptical exec — and get scored on every rep until the strong version is the one that comes out on its own.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Practice: “Tell me about yourself”</div>
-        <div class="wc-meta">An AI is playing your interviewer · 3 reps today</div>
-        <div class="wc-stats-row">
-          <div class="wc-stat-pill">
-            <div class="sp-label">Rep 1</div>
-            <div class="sp-value" style="color: var(--red);">58<span class="unit">/100</span></div>
-            <div class="sp-detail">3-minute wind-up</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Rep 2</div>
-            <div class="sp-value" style="color: var(--amber);">72<span class="unit">/100</span></div>
-            <div class="sp-detail">headline came first</div>
-          </div>
-          <div class="wc-stat-pill">
-            <div class="sp-label">Rep 3</div>
-            <div class="sp-value" style="color: var(--accent);">86<span class="unit">/100</span></div>
-            <div class="sp-detail">steady under follow-ups</div>
-          </div>
-        </div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Practice is working</div>
-            <div class="wc-rec-body">You now open with the headline in 7 seconds, down from 48. Ready for the real one.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature-row reverse">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Job &amp; interview prep</div>
-      <h3>Walk in knowing what they'll ask</h3>
-      <p>Paste a job description and Work Coach builds your prep: what the role is really hiring for, the questions you're likely to face, and where you're strong or exposed against the bar. Then practice each question out loud before anyone asks it for real.</p>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Senior PM · Acme</div>
-        <div class="wc-meta">Role brief · fit map · likely questions by interviewer</div>
-        <div class="jd-questions">
-          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Walk me through a product you took from zero to one.”</span><span class="jd-q-tag">High</span></div>
-          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“How would you improve activation for our platform?”</span><span class="jd-q-tag">High</span></div>
-          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Tell me about a bet that didn't pay off.”</span><span class="jd-q-tag">Medium</span></div>
-        </div>
-        <div class="wc-rec">
-          <div class="wc-rec-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
-          </div>
-          <div>
-            <div class="wc-rec-title">Your fit map</div>
-            <div class="wc-rec-body">Strengths: zero-to-one, growth instrumentation. Watch-out: thin marketplace story, prep your adjacent example.</div>
-            <div class="wc-rec-actions">
-              <span class="wc-rec-link">Practice these questions →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-eyebrow">Coach chat</div>
-      <h3>Ask what you can't ask your manager</h3>
-      <p>"Did I talk too much in that meeting?" "Is my promotion ask reasonable?" Your coach was in the room, knows your role, industry, and goals, and has no stake in flattering you. Ask the questions you'd never say out loud at work, and get a straight answer.</p>
-      <a href="#pricing" class="usecase-cta">See coaching plans →</a>
-    </div>
-    <div class="feature-visual" aria-hidden="true">
-      <div class="wc-content">
-        <div class="wc-meeting-title">Coach chat</div>
-        <div class="wc-meta">Grounded in yesterday's team review</div>
-        <div class="fchat">
-          <div class="fchat-msg is-you">Was I too defensive when Sarah pushed back on the timeline?</div>
-          <div class="fchat-msg">Not defensive — but you conceded fast. At 14:32 you agreed to the new date without naming the tradeoff. Next time: “We can do that if we drop X.” Want to practice saying it?</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="compat-section">
-  <div class="compat-grid">
-    <div class="compat-text">
-      <div class="section-label">A coach with full context</div>
-      <h2>Focus on your next step</h2>
-      <p>A human coach can't sit in your meetings, and doesn't have time to read your transcripts, so every session starts with you explaining what happened. Work Coach already knows. It sees your meetings through its own recorder, or reads the transcripts you already keep in Granola, so you skip the recap and go straight to your reaction, and what you want to do about it.</p>
-    </div>
-    <div class="compat-visual">
-      <div class="context-card" aria-hidden="true">
-        <div class="context-card-head">
-          <span class="context-title">Work Coach has full context</span>
-          <span class="context-pill">No recap needed</span>
-        </div>
-        <div class="context-sources">
-          <div class="ctx-source">
-            <span class="ctx-source-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-            </span>
-            <div>
-              <div class="ctx-source-name">Built-in recorder</div>
-              <div class="ctx-source-desc">Captures your meetings locally. No bot, and nothing leaves your Mac.</div>
-            </div>
-          </div>
-          <div class="ctx-source">
-            <span class="ctx-source-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>
-            </span>
-            <div>
-              <div class="ctx-source-name">Granola transcripts</div>
-              <div class="ctx-source-desc">Already taking notes in Granola? Just import what you have.</div>
-            </div>
-          </div>
-        </div>
-        <div class="ctx-compare">
-          <div class="ctx-line them">
-            <span class="ctx-who">Human coach</span>
-            <span class="ctx-what">First 20 min: catching them up</span>
-          </div>
-          <div class="ctx-line us">
-            <span class="ctx-who">Work Coach</span>
-            <span class="ctx-what">Already knows. Straight to what you'll do</span>
-          </div>
-        </div>
-      </div>
+      <p><strong>Everything up there is coachable. You just never got to hear it.</strong> Work Coach observes you and helps you improve in your next meeting.</p>
     </div>
   </div>
 </section>
@@ -3165,21 +2844,6 @@ a:focus {
   </div>
 </section>
 
-<section class="pullquote-section">
-  <div class="pullquote-inner">
-    <h2>Executives already know coaching works</h2>
-    <p>The best leaders have always had someone in their corner who challenges their thinking, watches their blind spots, and helps them navigate complexity. That's why they pay <strong>$5,000 a month</strong> for it.</p>
-    <p>Now there's something for everyone who wants to improve. Work Coach gives you the same advantage: real feedback, real patterns, real coaching, starting with your next meeting or your next interview.</p>
-    <div class="pullquote-traits">
-      <div class="pullquote-trait"><span class="trait-accent">Observes</span>: sees you in your real meetings</div>
-      <div class="pullquote-trait"><span class="trait-accent">Conversational</span>: talk through anything, anytime</div>
-      <div class="pullquote-trait"><span class="trait-accent">Practice</span>: rehearse before it counts</div>
-      <div class="pullquote-trait"><span class="trait-accent">Knows you</span>: your role, industry, and goals</div>
-      <div class="pullquote-trait"><span class="trait-accent">Private</span>: honest in a way you can't be with your manager</div>
-    </div>
-  </div>
-</section>
-
 <section class="founder-section" aria-labelledby="founder-title">
   <div class="founder-inner">
     <div class="founder-copy">
@@ -3204,6 +2868,140 @@ a:focus {
     </div>
   </div>
 </section>
+
+<section class="foryou-section" aria-labelledby="foryou-title">
+  <div class="foryou-inner">
+    <div class="foryou-head">
+      <div class="section-label">Built for you, not your company</div>
+      <h2 id="foryou-title">The only meeting tool on your side</h2>
+      <p>Every other AI note-taker wants to be your company's brain: the notes, the CRM fields, the workflows. That's their job. Work Coach has a different one: private feedback on every interview, 1:1, and presentation to help you improve.</p>
+    </div>
+    <div class="fork-wrap" data-fork>
+      <div class="fork-src">
+        <div class="sum-head"><span class="sum-ico">🎙</span><div><b>Client call</b><small>41 min · one summary, like every tool makes</small></div></div>
+        <div class="sum-label">Summary</div>
+        <div class="sum-skel" aria-hidden="true"><i style="width:97%"></i><i style="width:89%"></i><i style="width:64%"></i></div>
+        <div class="fork-chips" aria-label="Every tool produces these"><span>✓ Notes</span><span>✓ Action items</span><span>✓ Transcript</span></div>
+      </div>
+      <div class="fork-arms" aria-hidden="true"><i></i></div>
+      <div class="fork-panels">
+        <div class="fork-panel">
+          <div class="sum-caption is-them"><i></i>What comes next · their tools</div>
+          <div class="sum-label">Next steps</div>
+          <div class="sum-actions">
+            <span>✉️ Draft follow-up</span>
+            <span>🗄️ Sync to CRM</span>
+            <span>📤 Share with team</span>
+            <span>📊 Draft slides</span>
+            <span>✅ Create tasks</span>
+            <span>⚡ Run workflow</span>
+          </div>
+          <div class="sum-note">Busywork for your company, done.</div>
+        </div>
+        <div class="fork-panel is-us">
+          <div class="sum-caption is-us"><i></i>What comes next · Work Coach</div>
+          <div class="sum-label">How you sounded</div>
+          <div class="wc-scores">
+            <span>Pace <b>82</b></span>
+            <span>Filler words <b>64</b></span>
+            <span>Conviction <b class="is-low">58</b></span>
+          </div>
+          <div class="sum-label">The moment that mattered</div>
+          <div class="wc-moment">
+            <span class="wc-play">▶</span>
+            <div><b>You rushed the close</b><small>The ask deserved thirty steady seconds. It got eight.</small></div>
+            <span class="wc-ts">12:07</span>
+          </div>
+          <div class="sum-label">Then get better at it</div>
+          <div class="wc-reps">
+            <span class="wc-rep-bars" aria-hidden="true"><i style="--s:.58"></i><i style="--s:.72"></i><i style="--s:.86"></i></span>
+            <span class="sum-practice">Practice the close →</span>
+          </div>
+          <div class="sum-note is-green">Scores, moments, reps. All private to you.</div>
+        </div>
+      </div>
+    </div>
+    <p class="sum-bottom">Same summary. Different job.</p>
+  </section>
+
+
+</section>
+
+<section class="feature-section" id="features">
+  <div class="feature-head">
+    <div class="section-label">Beyond the meeting</div>
+    <h2>Your coach works between meetings, too</h2>
+    <p>You've seen what happens around your meetings. Work Coach also preps you before the high-stakes ones, and gives you straight answers in between.</p>
+  </div>
+
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <div class="feature-eyebrow">Job &amp; interview prep</div>
+      <h3>Walk in knowing what they'll ask</h3>
+      <p>Paste a job description and Work Coach builds your prep: what the role is really hiring for, the questions you're likely to face, and where you're strong or exposed against the bar. Then practice each question out loud before anyone asks it for real.</p>
+      <a href="job-search" class="usecase-cta">See the whole job search flow →</a>
+    </div>
+    <div class="feature-visual" aria-hidden="true">
+      <div class="wc-content">
+        <div class="wc-meeting-title">Senior PM · Acme</div>
+        <div class="wc-meta">Role brief · fit map · likely questions by interviewer</div>
+        <div class="jd-questions">
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Walk me through a product you took from zero to one.”</span><span class="jd-q-tag">High</span></div>
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“How would you improve activation for our platform?”</span><span class="jd-q-tag">High</span></div>
+          <div class="jd-q"><span class="jd-dot"></span><span class="jd-q-text">“Tell me about a bet that didn't pay off.”</span><span class="jd-q-tag">Medium</span></div>
+        </div>
+        <div class="wc-rec">
+          <div class="wc-rec-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div>
+            <div class="wc-rec-title">Your fit map</div>
+            <div class="wc-rec-body">Strengths: zero-to-one, growth instrumentation. Watch-out: thin marketplace story, prep your adjacent example.</div>
+            <div class="wc-rec-actions">
+              <span class="wc-rec-link">Practice these questions →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature-text">
+      <div class="feature-eyebrow">Coach chat</div>
+      <h3>Ask what you can't ask your manager</h3>
+      <p>"Did I talk too much in that meeting?" "Is my promotion ask reasonable?" Your coach was in the room, knows your role, industry, and goals, and has no stake in flattering you. Ask the questions you'd never say out loud at work, and get a straight answer.</p>
+      <a href="#pricing" class="usecase-cta">See coaching plans →</a>
+    </div>
+    <div class="feature-visual" aria-hidden="true">
+      <div class="wc-content">
+        <div class="wc-meeting-title">Coach chat</div>
+        <div class="wc-meta">Grounded in yesterday's team review</div>
+        <div class="fchat">
+          <div class="fchat-msg is-you">Was I too defensive when Sarah pushed back on the timeline?</div>
+          <div class="fchat-msg">Not defensive — but you conceded fast. At 14:32 you agreed to the new date without naming the tradeoff. Next time: “We can do that if we drop X.” Want to practice saying it?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pullquote-section">
+  <div class="pullquote-inner">
+    <h2>Executives already know coaching works</h2>
+    <p>The best leaders have always had someone in their corner who challenges their thinking, watches their blind spots, and helps them navigate complexity. That's why they pay <strong>$5,000 a month</strong> for it.</p>
+    <p>Now there's something for everyone who wants to improve. Work Coach gives you the same advantage: real feedback, real patterns, real coaching, starting with your next meeting or your next interview.</p>
+    <div class="pullquote-traits">
+      <div class="pullquote-trait"><span class="trait-accent">Observes</span>: sees you in your real meetings</div>
+      <div class="pullquote-trait"><span class="trait-accent">Conversational</span>: talk through anything, anytime</div>
+      <div class="pullquote-trait"><span class="trait-accent">Practice</span>: rehearse before it counts</div>
+      <div class="pullquote-trait"><span class="trait-accent">Knows you</span>: your role, industry, and goals</div>
+      <div class="pullquote-trait"><span class="trait-accent">Private</span>: honest in a way you can't be with your manager</div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -3340,6 +3138,18 @@ a:focus {
     i = (i + 1) % phrases.length;
     el.textContent = phrases[i];
   }, 2600);
+})();
+
+(function() {
+  var wrap = document.querySelector('[data-fork]');
+  if (!wrap) return;
+  if (!('IntersectionObserver' in window)) { wrap.classList.add('is-live'); return; }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { wrap.classList.add('is-live'); io.disconnect(); }
+    });
+  }, { threshold: 0.35 });
+  io.observe(wrap);
 })();
 
 (function() {
