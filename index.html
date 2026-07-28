@@ -1238,7 +1238,8 @@ a:focus {
 /* FOR YOU */
 .foryou-section { padding: 96px 20px 100px; background: var(--bg); }
 .foryou-inner { max-width: 1000px; margin: 0 auto; }
-.foryou-head { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+.foryou-head { max-width: 940px; margin: 0 auto 44px; text-align: center; }
+.foryou-head p { max-width: 720px; margin-left: auto; margin-right: auto; }
 .foryou-head h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(30px, 3.8vw, 40px);
@@ -1302,7 +1303,7 @@ a:focus {
 .fork-panel { position: relative; }
 .fork-stamp {
   position: absolute;
-  top: 58px;
+  top: 116px;
   right: 16px;
   z-index: 2;
   padding: 5px 16px;
@@ -1363,7 +1364,7 @@ a:focus {
   .fork-stamp.is-you { transform: rotate(-7deg) scale(1); }
   .sum-actions span { opacity: 1; transform: none; animation: none !important; }
 }
-.sum-bottom { margin-top: 26px; text-align: center; color: var(--text); font-size: 17px; font-weight: 650; }
+.sum-bottom { margin-top: 26px; text-align: center; color: var(--muted); font-size: 17px; font-weight: 400; }
 @media (max-width: 760px) {
   .foryou-section { padding: 68px 16px 72px; }
   .fork-panels { grid-template-columns: 1fr; gap: 12px; }
@@ -2898,8 +2899,8 @@ a:focus {
 <section class="foryou-section" aria-labelledby="foryou-title">
   <div class="foryou-inner">
     <div class="foryou-head">
-      <div class="section-label">Built for you, not your company</div>
-      <h2 id="foryou-title">The only meeting tool on your side</h2>
+      <div class="section-label">Built for you</div>
+      <h2 id="foryou-title">Work Coach works for you, not your company</h2>
       <p>Every other AI note-taker wants to be your company's brain: the notes, the CRM fields, the workflows. That's their job. Work Coach has a different one: private feedback on every interview, 1:1, and presentation to help you improve.</p>
     </div>
     <div class="fork-wrap" data-fork>
@@ -2952,7 +2953,7 @@ a:focus {
         </div>
       </div>
     </div>
-    <p class="sum-bottom">Same summary. Different job.</p>
+    <p class="sum-bottom">Work Coach plays nice: run it alongside your note-taker, or connect the transcripts you already have.</p>
   </div>
 </section>
 
@@ -3390,7 +3391,8 @@ a:focus {
         { speaker: 'You', time: 160.15, text: 'We rolled this out to general availability on January 15th, so we’ve got about five, almost six weeks of data now.' },
         { speaker: 'You', time: 168.05, moment: true, text: 'Notification-related support tickets are down 38%, which is, yeah, that’s significant. That’s roughly 4,500 fewer tickets a month.' },
         { speaker: 'You', time: 178.17, text: 'The unsubscribe rate on transactional emails dropped from 8.2% to 3.1%, which is great because it means people are actually tuning their preferences instead of just opting out of everything.' },
-        { speaker: 'You', time: 190.77, text: 'And then the one that I think surprised us a bit, daily active users who have interacted with notification settings went up 3x. So people are actually going in and setting their preferences now, which they just weren’t doing before because the page was too intimidating. So that’s cool.' },
+        { speaker: 'You', time: 190.77, text: 'And then the one that I think surprised us a bit, daily active users who have interacted with notification settings went up 3x. So people are actually going in and setting their preferences now, which they just weren’t doing before because the page was too intimidating.' },
+        { speaker: 'You', time: 207, text: 'So that’s cool.' },
         { speaker: 'You', time: 209, text: 'So for the next month, the team is focused on a couple things. First, we’re building a quiet hours feature on top of the profiles. So you can set like do not disturb windows that suppress everything except critical alerts. That was a number one request from the usability sessions.' },
         { speaker: 'You', time: 226.32, text: 'Second, we’re working on notification analytics for admins, so workspace admins can see which notification types are getting muted the most. The idea is if 80% of your users are muting a certain alert, maybe that alert shouldn’t be on by default.' },
         { speaker: 'You', time: 248.4, text: 'And then third, we’re starting early scoping on like AI-driven notification bundling, grouping related notifications into a single digest instead of pinging you six times in 10 minutes. That one’s more exploratory, but we’re hoping to have a prototype by end of March.' },
@@ -3418,16 +3420,31 @@ a:focus {
         ],
         moments: [
           { title: 'The 2:51 opener', time: 14, excerpt: '“So, um, I guess going back a bit, I started out in customer support, actually…”' },
-          { title: 'Filler cluster under the comp question', time: 160, excerpt: '“Um, so, I mean, in terms of, like, compensation…”' },
-          { title: 'The hedged salary answer', time: 167, excerpt: '“I\u2019m, um, pretty flexible on comp, whatever the band is.”' },
+          { title: 'Filler cluster under the comp question', time: 201, excerpt: '“Um, so, I mean, in terms of, like, compensation…”' },
+          { title: 'The hedged salary answer', time: 206, excerpt: '“I\u2019m, um, pretty flexible on comp, whatever the band is.”' },
           { title: 'The warm close', time: 211, excerpt: '“This was genuinely fun — I hope we get to keep talking.”' }
         ]
       },
       transcript: [
+        { speaker: 'Priya', time: 0, text: 'Hi Maya, thanks for hopping on. I’m Priya, I run recruiting for the product org here at Horizon Labs. This will be pretty relaxed, I just want to get to know you a bit.' },
+        { speaker: 'You', time: 7, text: 'Sounds great. I’ve been looking forward to it.' },
         { speaker: 'Priya', time: 9, text: 'So before we get into the role — tell me about yourself.' },
         { speaker: 'You', time: 14, moment: true, text: 'So, um, I guess going back a bit, I started out in customer support, actually, and then I moved into analytics for a while…' },
-        { speaker: 'You', time: 167, moment: true, text: 'I\u2019m, um, pretty flexible on comp, whatever the band is. I\u2019d just be excited to be part of it.' },
-        { speaker: 'You', time: 211, text: 'This was genuinely fun — I hope we get to keep talking.' }
+        { speaker: 'You', time: 36, text: 'Support was, like, my first real job out of school, and I was the one building little dashboards nobody asked for, which, um, in hindsight was probably the sign.' },
+        { speaker: 'You', time: 58, text: 'So the analytics team kind of adopted me, and I did about two years of funnel work there, mostly reporting at first, then more experiment design, A/B tests, that kind of thing.' },
+        { speaker: 'You', time: 82, text: 'And then I moved into product because I kept, like, ending up in the room where the decisions were getting made anyway, so it felt natural.' },
+        { speaker: 'You', time: 110, text: 'My first PM project was honestly pretty small, um, just cleaning up our settings pages, but it went well and I got more scope from there.' },
+        { speaker: 'You', time: 134, text: 'And the big one is probably the notification platform rebuild I led last year. We replaced 47 toggles with three smart presets, support tickets dropped 38%, and unsubscribes fell from about 8% to 3%.' },
+        { speaker: 'You', time: 162, text: 'Oh, and I also did a rotation with the growth team for a couple of months, that was, um, mostly email experiments, probably not that relevant.' },
+        { speaker: 'You', time: 178, text: 'So, yeah, that’s the long version. Sorry, I know that was a lot.' },
+        { speaker: 'Priya', time: 185, text: 'No, that’s really helpful, and the rebuild story is great. Okay, we’re tight on time, so the quick version: the role sits on the activation team and you’d report to Alex Morgan, our head of product. After this it’s a call with Alex, then a final panel with the team.' },
+        { speaker: 'Priya', time: 197, text: 'Last thing before I let you go, what are you targeting for compensation?' },
+        { speaker: 'You', time: 201, moment: true, text: 'Um, so, I mean, in terms of, like, compensation… I haven’t really nailed down a number.' },
+        { speaker: 'You', time: 206, moment: true, text: 'I’m, um, pretty flexible on comp, whatever the band is. I’d just be excited to be part of it.' },
+        { speaker: 'Priya', time: 209, text: 'Totally fair.' },
+        { speaker: 'You', time: 211, moment: true, text: 'This was genuinely fun — I hope we get to keep talking.' },
+        { speaker: 'Priya', time: 215, text: 'Same! I’ll debrief the hiring team this week, and you’ll hear about next steps within five business days. We also ran four minutes over, which is usually a good sign.' },
+        { speaker: 'You', time: 225, text: 'Ha, thanks Priya. Talk soon.' }
       ]
     },
     finalInterview: {
@@ -3457,10 +3474,27 @@ a:focus {
         ]
       },
       transcript: [
-        { speaker: 'Alex', time: 6, text: 'I\u2019ve read the resume — give me the short version. Who are you?' },
-        { speaker: 'You', time: 11, moment: true, text: 'I\u2019m a product manager who fixes retention problems. Last year my team cut churn 22% on our self-serve tier, and it held.' },
+        { speaker: 'Alex', time: 0, text: 'Maya, good to see you again. Let’s jump right in, we’ve got a lot to cover.' },
+        { speaker: 'Alex', time: 6, text: 'I’ve read the resume — give me the short version. Who are you?' },
+        { speaker: 'You', time: 11, moment: true, text: 'I’m a product manager who fixes retention problems. Last year my team cut churn 22% on our self-serve tier, and it held.' },
+        { speaker: 'You', time: 22, text: 'I got there sideways: customer support first, then analytics, then product. Which means I default to the data, but I’ve learned the numbers only move when you fix the experience behind them.' },
+        { speaker: 'You', time: 45, text: 'Most recently I led our notification platform rebuild: three smart presets instead of 47 toggles, support tickets down 38%. And before that, the retention work I mentioned, which is the muscle I’d bring to your activation problem.' },
+        { speaker: 'You', time: 70, text: 'So the short version is: I find the moment users decide to stay, and I build the product around it.' },
+        { speaker: 'Alex', time: 93, text: 'Okay. You went past that churn number fast — what was it again, and what actually drove it?' },
+        { speaker: 'You', time: 100, text: 'Sorry, yes. So the context: our self-serve tier was losing customers in month one faster than we could add them, and everyone assumed it was pricing.' },
         { speaker: 'You', time: 118, moment: true, text: 'We cut churn 22% — and it held through the next two quarters. The unlock was instrumenting the first API call, not the signup.' },
-        { speaker: 'You', time: 237, moment: true, text: 'What would a great first 90 days look like to you?' }
+        { speaker: 'Alex', time: 130, text: 'That’s a real number. I’m writing that one down.' },
+        { speaker: 'You', time: 135, text: 'It also changed how we staffed onboarding, which I think is the part that transfers here.' },
+        { speaker: 'Alex', time: 145, text: 'Let me push on that. If the first API call matters most, why wouldn’t you put the entire quarter into onboarding and let the rest of the roadmap wait?' },
+        { speaker: 'You', time: 158, text: 'Because onboarding only compounds if the product underneath keeps its promises. I’d hold the split: two-thirds on the first-call experience, one-third on the reliability work that keeps month-two retention flat.' },
+        { speaker: 'Alex', time: 178, text: 'Okay, different angle. Say leadership tells you enterprise features are the priority this quarter. Do you still hold that split?' },
+        { speaker: 'You', time: 185, moment: true, text: 'Fair challenge. Here’s the tradeoff I’d make and why. Enterprise deals close faster when you can prove the platform retains users, so I’d keep the activation work and cut scope elsewhere. I’d rather ship one enterprise feature late than lose the retention gains.' },
+        { speaker: 'Alex', time: 205, text: 'You’re consistent, I’ll give you that. Okay, a few minutes left. What’s your read on where activation breaks today, from the outside?' },
+        { speaker: 'You', time: 213, text: 'From the outside? Your docs are great and your first-run experience isn’t. I’d bet the drop is between key issued and first successful call, and I’d start by instrumenting that gap.' },
+        { speaker: 'Alex', time: 228, text: 'We’re about at time. Questions for me?' },
+        { speaker: 'You', time: 237, moment: true, text: 'What would a great first 90 days look like to you?' },
+        { speaker: 'Alex', time: 242, text: 'Good question. Honestly: exactly what you just described. I’m taking my recommendation to the committee this week, and you’ll hear from us by Friday.' },
+        { speaker: 'You', time: 250, text: 'Perfect. Thanks, Alex.' }
       ]
     }
   };
