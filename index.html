@@ -109,7 +109,7 @@ nav {
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   transition: color 0.2s;
 }
@@ -176,7 +176,7 @@ nav {
 }
 .hero h1 em { font-style: italic; color: var(--accent-2); }
 .hero .subtitle {
-  font-size: 22px;
+  font-size: 15px;
   color: color-mix(in oklab, var(--muted) 86%, white 14%);
   max-width: 640px;
   margin: 0 auto 34px;
@@ -1247,23 +1247,12 @@ a:focus {
   margin-bottom: 14px;
 }
 .foryou-head p { font-size: 17px; color: var(--muted); line-height: 1.65; }
-.fork-wrap { max-width: 880px; margin: 0 auto; }
-.fork-src {
-  max-width: 460px;
-  margin: 0 auto;
-  padding: 16px 18px;
-  border-radius: 14px;
-  background: #fffdf8;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 28px rgba(33,42,36,.09);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .5s ease, transform .5s ease;
-}
-.fork-wrap.is-live .fork-src { opacity: 1; transform: none; }
-.sum-caption { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; font-size: 12.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.sum-caption i { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex: 0 0 auto; }
-.sum-caption.is-us i { background: var(--accent); }
+.fork-wrap { max-width: 820px; margin: 0 auto; }
+.sum-caption { display: flex; align-items: center; gap: 9px; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--border); font-size: 15px; font-weight: 800; color: var(--text); }
+.sum-caption.is-us { color: var(--accent-2); }
+.cap-ico { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; background: var(--surface); font-size: 13px; flex: 0 0 auto; }
+.cap-ico.is-app { overflow: hidden; background: none; }
+.cap-ico.is-app img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sum-head { display: flex; align-items: center; gap: 10px; padding-bottom: 11px; margin-bottom: 11px; border-bottom: 1px solid var(--border); }
 .sum-ico { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 9px; background: var(--surface); font-size: 16px; flex: 0 0 auto; }
 .sum-head b { display: block; font-size: 14.5px; }
@@ -1271,14 +1260,31 @@ a:focus {
 .sum-label { font-size: 10.5px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 .sum-skel { display: grid; gap: 7px; }
 .sum-skel i { display: block; height: 9px; border-radius: 999px; background: #e6e1d4; }
-.fork-arms { position: relative; height: 44px; }
-.fork-arms::before { content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 15px; margin-left: -1px; background: #d5cec0; }
-.fork-arms i { position: absolute; left: 25%; right: 25%; top: 15px; height: 2px; background: #d5cec0; transform: scaleX(0); transition: transform .45s ease .35s; }
-.fork-wrap.is-live .fork-arms i { transform: scaleX(1); }
-.fork-arms i::before, .fork-arms i::after { content: ''; position: absolute; top: 0; width: 2px; height: 29px; background: #d5cec0; }
-.fork-arms i::before { left: -1px; }
-.fork-arms i::after { right: -1px; }
-.fork-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.fork-vs {
+  position: absolute;
+  left: 50%;
+  top: 92px;
+  z-index: 3;
+  transform: translateX(-50%) scale(0);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #1e6b42;
+  border: 3px solid #fffdf8;
+  box-shadow: 0 8px 22px rgba(24, 81, 47, .35);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.fork-wrap.is-live .fork-vs { animation: vsPop .4s cubic-bezier(.3,1.5,.4,1) .7s forwards; }
+@keyframes vsPop { to { transform: translateX(-50%) scale(1); } }
+@keyframes vsPopM { to { transform: scale(1); } }
+.fork-panels { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 58px; align-items: stretch; }
+.panel-call { opacity: .5; filter: grayscale(.4); padding-bottom: 13px; margin-bottom: 13px; border-bottom: 1px dashed var(--border); }
+.panel-call .sum-head { padding-bottom: 0; margin-bottom: 9px; border-bottom: 0; }
 .fork-panel {
   display: flex;
   flex-direction: column;
@@ -1289,12 +1295,36 @@ a:focus {
   box-shadow: 0 10px 28px rgba(33,42,36,.08);
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity .5s ease .7s, transform .5s ease .7s;
+  transition: opacity .5s ease .15s, transform .5s ease .15s;
 }
-.fork-panel.is-us { border-color: rgba(49,193,120,.5); box-shadow: 0 14px 34px rgba(49,193,120,.13); transition-delay: 1.9s; }
+.fork-panel.is-us { border-color: rgba(49,193,120,.5); box-shadow: 0 14px 34px rgba(49,193,120,.13); transition-delay: .35s; }
 .fork-wrap.is-live .fork-panel { opacity: 1; transform: none; }
-.sum-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.sum-actions span { padding: 8px 12px; border-radius: 9px; background: #fff; border: 1px solid #d9d3c6; color: #4c5a50; font-size: 12.5px; font-weight: 650; box-shadow: 0 2px 5px rgba(33,42,36,.05); opacity: 0; transform: scale(.85); }
+.fork-panel { position: relative; }
+.fork-stamp {
+  position: absolute;
+  top: 58px;
+  right: 16px;
+  z-index: 2;
+  padding: 5px 16px;
+  border: 3px solid rgba(196, 137, 26, .6);
+  border-radius: 9px;
+  color: rgba(176, 122, 20, .78);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transform: rotate(7deg) scale(0);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.fork-stamp.is-you { border-color: rgba(49, 193, 120, .55); color: rgba(24, 115, 68, .8); transform: rotate(-7deg) scale(0); }
+.fork-wrap.is-live .fork-stamp { animation: stampIn .35s cubic-bezier(.2,1.6,.4,1) 1.75s forwards; }
+.fork-wrap.is-live .fork-stamp.is-you { animation-delay: 2.7s; }
+@keyframes stampIn { from { transform: rotate(7deg) scale(1.9); opacity: 0; } to { transform: rotate(7deg) scale(1); opacity: 1; } }
+.fork-wrap.is-live .fork-stamp.is-you { animation-name: stampInYou; }
+@keyframes stampInYou { from { transform: rotate(-7deg) scale(1.9); opacity: 0; } to { transform: rotate(-7deg) scale(1); opacity: 1; } }
+.sum-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.sum-actions span { padding: 12px 16px; border-radius: 11px; background: #fff; border: 1px solid #d9d3c6; color: #3e4a42; font-size: 14.5px; font-weight: 700; box-shadow: 0 3px 8px rgba(33,42,36,.07); opacity: 0; transform: scale(.85); }
 .fork-wrap.is-live .sum-actions span { animation: forkBtn .35s cubic-bezier(.3,1.4,.4,1) forwards; }
 .fork-wrap.is-live .sum-actions span:nth-child(1) { animation-delay: 1s; }
 .fork-wrap.is-live .sum-actions span:nth-child(2) { animation-delay: 1.12s; }
@@ -1302,6 +1332,7 @@ a:focus {
 .fork-wrap.is-live .sum-actions span:nth-child(4) { animation-delay: 1.36s; }
 .fork-wrap.is-live .sum-actions span:nth-child(5) { animation-delay: 1.48s; }
 .fork-wrap.is-live .sum-actions span:nth-child(6) { animation-delay: 1.6s; }
+.fork-wrap.is-live .sum-actions span:nth-child(7) { animation-delay: 1.72s; }
 @keyframes forkBtn { to { opacity: 1; transform: none; } }
 .fork-chips { display: flex; gap: 7px; margin-top: 12px; }
 .fork-chips span { padding: 5px 10px; border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 10.5px; font-weight: 750; }
@@ -1326,15 +1357,18 @@ a:focus {
 .sum-note { margin-top: auto; padding-top: 14px; text-align: center; color: var(--muted); font-size: 12px; font-style: italic; }
 .sum-note.is-green { color: var(--accent-2); }
 @media (prefers-reduced-motion: reduce) {
-  .fork-src, .fork-panel, .fork-arms i { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fork-panel { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fork-vs { animation: none !important; transform: translateX(-50%) scale(1); }
+  .fork-stamp { animation: none !important; opacity: 1; transform: rotate(7deg) scale(1); }
+  .fork-stamp.is-you { transform: rotate(-7deg) scale(1); }
   .sum-actions span { opacity: 1; transform: none; animation: none !important; }
 }
 .sum-bottom { margin-top: 26px; text-align: center; color: var(--text); font-size: 17px; font-weight: 650; }
 @media (max-width: 760px) {
   .foryou-section { padding: 68px 16px 72px; }
-  .fork-panels { grid-template-columns: 1fr; gap: 16px; }
-  .fork-arms { height: 18px; }
-  .fork-arms i { display: none; }
+  .fork-panels { grid-template-columns: 1fr; gap: 12px; }
+  .fork-vs { position: static; margin: 2px auto; transform: scale(0); }
+  .fork-wrap.is-live .fork-vs { animation-name: vsPopM; }
   .foryou-head p { font-size: 15px; }
 }
 
@@ -1861,7 +1895,8 @@ a:focus {
 .wcx-detail-toggle:focus-visible { outline: 3px solid rgba(30,107,66,.23); outline-offset: -3px; }
 .wcx-detail-chevron { color: #718078; font-size: 20px; line-height: 1; transform-origin: center; transition: transform .18s ease; }
 .wcx-detail-section-card.is-open .wcx-detail-chevron { transform: rotate(90deg); }
-.wcx-detail-section-icon { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; background: #e0f5eb; color: #1e6b42; font-size: 12px; font-weight: 850; }
+.wcx-detail-section-icon { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; background: #e0f5eb; color: #1e6b42; }
+.wcx-detail-section-icon svg { width: 15px; height: 15px; display: block; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .wcx-detail-section-title { min-width: 0; color: #21382a; font-size: 15.5px; font-weight: 800; line-height: 1.15; }
 .wcx-detail-section-title small { display: block; margin-top: 4px; color: #718078; font-size: 10.5px; font-weight: 600; line-height: 1.25; }
 .wcx-detail-status { padding: 5px 8px; border-radius: 999px; background: #e0f5eb; color: #1e6b42; font-size: 8px; font-weight: 850; white-space: nowrap; }
@@ -1870,7 +1905,11 @@ a:focus {
 .wcx-detail-section-body { padding: 0 17px 18px 71px; animation: wcxDetailBodyIn .2s ease; }
 .wcx-detail-section-body[hidden] { display: none !important; }
 @keyframes wcxDetailBodyIn { from { opacity: .25; transform: translateY(-3px); } }
-.wcx-summary-copy { max-width: 720px; color: #415348; font-size: 13.5px; line-height: 1.58; }
+.wcx-summary-md { max-width: 720px; color: #415348; font-size: 13.5px; line-height: 1.58; }
+.wcx-summary-md h4 { font-size: 14px; font-weight: 700; color: #1a2e22; margin: 14px 0 6px; letter-spacing: 0; }
+.wcx-summary-md h4:first-child { margin-top: 0; }
+.wcx-summary-md ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; }
+.wcx-summary-md strong { color: #1a2e22; font-weight: 600; }
 .wcx-section-context { margin-bottom: 12px; color: #718078; font-size: 11.5px; line-height: 1.4; }
 .wcx-detail-section-body .wcx-coach-card { padding: 15px; }
 .wcx-detail-section-body .wcx-coach-card strong { margin: 6px 0; font-size: 14px; }
@@ -2254,7 +2293,7 @@ a:focus {
   <div class="hero-inner">
     <div class="hero-copy">
       <h1>
-        <span class="line">The AI coach that helps you</span>
+        <span class="line">Coaching that helps you</span>
         <span class="line rotator-line"><em class="rotator" data-rotator>get your next job</em></span>
       </h1>
       <p class="subtitle">Shine a light on your blind spots</p>
@@ -2459,7 +2498,7 @@ a:focus {
               <span class="ui-slack-avatar"><img src="img/avatars/alex.jpg" alt=""></span>
               <div>
                 <div class="ui-slack-meta"><b>Alex Morgan</b><span>3:42 PM</span></div>
-                <p>She's clearly strong. I just felt like I had to pull the insights out of her, and she rushed right past her best win.</p>
+                <p>Tough one. She knows her stuff, but I had to drag it out, only got the churn story after asking twice. Other finalist made it easy for us. That was the whole difference.</p>
                 <div class="ui-slack-reacts"><span>💯 3</span><span>👍 2</span></div>
                 <div class="ui-slack-thread">
                   <span class="ui-slack-thread-faces"><img src="img/avatars/priya.jpg" alt=""><img src="img/avatars/rob.jpg" alt=""><img src="img/avatars/jamie.jpg" alt=""></span>
@@ -2471,7 +2510,7 @@ a:focus {
               <span class="ui-slack-avatar"><img src="img/avatars/priya.jpg" alt=""></span>
               <div>
                 <div class="ui-slack-meta"><b>Priya Shah</b><span>3:51 PM</span></div>
-                <p>If her communication was a little stronger this could have gone the other way</p>
+                <p>agreed, and honestly the churn work is really impressive once you hear it. it was all in how it came out</p>
               </div>
             </div>
           </div>
@@ -2481,13 +2520,13 @@ a:focus {
           <div class="gap-card ui-mail">
             <div class="ui-mail-subject">Re: Final Round Interview</div>
             <div class="ui-mail-collapsed">
-              <div class="ui-mail-crow"><span class="ui-mail-cava"><img src="img/avatars/you.jpg" alt=""></span><b>You</b><span class="ui-mail-snip">Confirmed, looking forward to meeting the team!</span><i>Jul 21</i></div>
-              <div class="ui-mail-crow"><span class="ui-mail-cava"><img src="img/avatars/alex.jpg" alt=""></span><b>Alex Morgan</b><span class="ui-mail-snip">Great, see you Thursday at 10:00.</span><i>Jul 22</i></div>
+              <div class="ui-mail-crow"><span class="ui-mail-cava"><img src="img/avatars/you.jpg" alt=""></span><b>You</b><span class="ui-mail-snip">Confirmed, looking forward to meeting the team!</span><i>6 days ago</i></div>
+              <div class="ui-mail-crow"><span class="ui-mail-cava"><img src="img/avatars/alex.jpg" alt=""></span><b>Alex Morgan</b><span class="ui-mail-snip">Great, see you Thursday at 10:00.</span><i>5 days ago</i></div>
             </div>
             <div class="ui-mail-row">
               <span class="ui-mail-avatar"><img src="img/avatars/alex.jpg" alt=""></span>
               <div class="ui-mail-meta"><b>Alex Morgan</b> <i>&lt;alex@horizonlabs.com&gt;</i><small>to me ▾</small></div>
-              <span class="ui-mail-time">9:12 AM</span>
+              <span class="ui-mail-time">2 hours ago</span>
             </div>
             <p>Thank you so much for making the time to talk with the team, we genuinely enjoyed getting to know you. While we were really impressed, we’ve decided to move forward with another candidate. We’d love to keep your info on file for future roles. Wishing you the very best in your search!</p>
           </div>
@@ -2516,7 +2555,7 @@ a:focus {
               <span class="ui-slack-avatar"><img src="img/avatars/you.jpg" alt=""></span>
               <div>
                 <div class="ui-slack-meta"><b>You</b><span>4:07 PM</span></div>
-                <p>Any feedback on the meeting today?</p>
+                <p>What did you think of the meeting today?</p>
               </div>
             </div>
             <div class="ui-slack-msg">
@@ -2537,7 +2576,7 @@ a:focus {
             <div class="ui-hr-top"><span class="ui-hr-logo">▦</span>Talent Review · H1 Calibration<span class="ui-hr-badge">🔒 Internal only</span></div>
             <div class="ui-hr-body">
               <div class="ui-hr-field"><label>Promotion readiness</label><span class="ui-hr-select"><b class="is-no">Not this cycle</b><i>▾</i></span></div>
-              <div class="ui-hr-field"><label>Panel notes</label><p>The work is there, but she softens every recommendation in front of execs. Revisit in H2.</p></div>
+              <div class="ui-hr-field"><label>Panel notes</label><p>The work is there, but she softens every recommendation, buries her headline, and rushes when execs push back. Coachable, just not there yet. Revisit in H2.</p></div>
             </div>
           </div>
         </figure>
@@ -2685,17 +2724,16 @@ a:focus {
             <div class="wcx-detail-stack" data-wcx-detail-stack>
               <section class="wcx-detail-section-card">
                 <button class="wcx-detail-toggle" type="button" aria-expanded="false" data-wcx-detail-toggle="summary">
-                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">▤</span><span class="wcx-detail-section-title">Summary<small>A concise recap of the conversation</small></span>
+                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></span><span class="wcx-detail-section-title">Summary<small>A concise recap of the conversation</small></span>
                 </button>
-                <div class="wcx-detail-section-body" data-wcx-detail-section="summary" hidden><p class="wcx-summary-copy" data-wcx-summary></p></div>
+                <div class="wcx-detail-section-body" data-wcx-detail-section="summary" hidden><div class="wcx-summary-md" data-wcx-summary></div></div>
               </section>
 
               <section class="wcx-detail-section-card is-open">
                 <button class="wcx-detail-toggle" type="button" aria-expanded="true" data-wcx-detail-toggle="insights">
-                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">✦</span><span class="wcx-detail-section-title">Coaching Insights<small>The patterns that mattered most</small></span><span class="wcx-detail-status">2 insights</span>
+                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><span class="wcx-detail-section-title">Coaching Insights<small>The patterns that mattered most</small></span><span class="wcx-detail-status">2 insights</span>
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="insights">
-                  <p class="wcx-section-context">The most useful moments from this meeting—not a grade for the whole conversation.</p>
                   <div class="wcx-coaching-grid">
                     <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-one>Pattern</div><strong data-wcx-coach-title-one>Stop Undermining Your Own Ideas</strong><p data-wcx-coach-body-one>At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb,” signaling low confidence before the idea even landed.</p></div>
                     <div class="wcx-card wcx-coach-card"><div class="wcx-coach-label" data-wcx-coach-label-two>What worked</div><strong data-wcx-coach-title-two>Great Receptivity When Challenged</strong><p data-wcx-coach-body-two>When Sarah pushed back, you acknowledged the blind spot without becoming defensive. That openness to reframing is a real strength.</p></div>
@@ -2705,7 +2743,7 @@ a:focus {
 
               <section class="wcx-detail-section-card">
                 <button class="wcx-detail-toggle" type="button" aria-expanded="false" data-wcx-detail-toggle="voice">
-                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">≋</span><span class="wcx-detail-section-title">Voice Delivery<small>Pace, energy, clarity, and conviction</small></span><span class="wcx-detail-score"><strong data-wcx-voice-score>61</strong>/100</span>
+                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4"/><path d="M8 7v10"/><path d="M12 4v16"/><path d="M16 7v10"/><path d="M20 10v4"/></svg></span><span class="wcx-detail-section-title">Voice Delivery<small>Pace, energy, clarity, and conviction</small></span><span class="wcx-detail-score"><strong data-wcx-voice-score>61</strong>/100</span>
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="voice" hidden>
                   <div class="wcx-voice-read"><strong>Delivery in the moments that mattered</strong><p data-wcx-voice-assessment>Your delivery in this 1:1 undercuts your content. In the moments that mattered, your volume dropped, sentences trailed upward into questions, and filler words clustered where conviction was needed.</p></div>
@@ -2716,7 +2754,7 @@ a:focus {
 
               <section class="wcx-detail-section-card">
                 <button class="wcx-detail-toggle" type="button" aria-expanded="false" data-wcx-detail-toggle="practice">
-                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">◇</span><span class="wcx-detail-section-title">Practice Scenarios<small>Turn the feedback into a live rep</small></span><span class="wcx-detail-status">1 ready</span>
+                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l1.768-1.768a2 2 0 1 1 2.828 2.828z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg></span><span class="wcx-detail-section-title">Practice Scenarios<small>Turn the feedback into a live rep</small></span><span class="wcx-detail-status">1 ready</span>
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="practice" hidden>
                   <div class="wcx-practice-strip"><span><strong data-wcx-practice-title>Stop Undermining Your Own Ideas</strong><small data-wcx-practice-copy>Rehearse proposing the Friday demo change without undermining it.</small></span><button class="wcx-green-button" type="button" data-wcx-start-roleplay data-roleplay-title="Stop Undermining Your Own Ideas" data-roleplay-person="Sarah · Your manager">Start practice</button></div>
@@ -2725,7 +2763,7 @@ a:focus {
 
               <section class="wcx-detail-section-card">
                 <button class="wcx-detail-toggle" type="button" aria-expanded="false" data-wcx-detail-toggle="transcript">
-                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true">“</span><span class="wcx-detail-section-title">Transcript<small>Click a highlighted moment to hear it</small></span>
+                  <span class="wcx-detail-chevron" aria-hidden="true">›</span><span class="wcx-detail-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 13.5a2 2 0 0 0 2-2V9H8"/><path d="M14 13.5a2 2 0 0 0 2-2V9h-2"/></svg></span><span class="wcx-detail-section-title">Transcript<small>Click a highlighted moment to hear it</small></span>
                 </button>
                 <div class="wcx-detail-section-body" data-wcx-detail-section="transcript" hidden><div class="wcx-transcript" data-wcx-transcript></div></div>
               </section>
@@ -2852,7 +2890,7 @@ a:focus {
       <div class="founder-eyebrow">From the founder</div>
       <h2 id="founder-title">Hi, I'm Dan. I've spent 20 years learning what makes careers work</h2>
       <p>I started in management consulting and at Microsoft, earned my MBA at Yale, then founded a company that HubSpot acquired. At HubSpot I helped launch product-led growth and stand up a brand-new line of business: Sales Hub, now a $1B ARR product.</p>
-      <p>Then I spent seven years at Reforge, helping grow the team from 5 to 200 people and revenue from $2M to $30M in ARR, and raising $90M from A16Z and others along the way. Work Coach is everything I've learned about getting better at work, distilled into a coach that's in your corner every day.</p>
+      <p>Then I spent seven years at Reforge, helping grow the team from 5 to 200 people and revenue from $2M to $30M in ARR, and raising $90M from A16Z and others along the way. Work Coach is everything I've learned about getting better at work, distilled into a coach that's in your corner.</p>
       <div class="founder-logos" aria-label="PwC, Microsoft, Yale, HubSpot, and Reforge">
         <img src="img/logos/pwc.svg?v=2" alt="PwC">
         <img src="img/logos/microsoft.svg" alt="Microsoft">
@@ -2879,16 +2917,14 @@ a:focus {
       <p>Every other AI note-taker wants to be your company's brain: the notes, the CRM fields, the workflows. That's their job. Work Coach has a different one: private feedback on every interview, 1:1, and presentation to help you improve.</p>
     </div>
     <div class="fork-wrap" data-fork>
-      <div class="fork-src">
-        <div class="sum-head"><span class="sum-ico">🎙</span><div><b>Client call</b><small>41 min · one summary, like every tool makes</small></div></div>
-        <div class="sum-label">Summary</div>
-        <div class="sum-skel" aria-hidden="true"><i style="width:97%"></i><i style="width:89%"></i><i style="width:64%"></i></div>
-        <div class="fork-chips" aria-label="Every tool produces these"><span>✓ Notes</span><span>✓ Action items</span><span>✓ Transcript</span></div>
-      </div>
-      <div class="fork-arms" aria-hidden="true"><i></i></div>
       <div class="fork-panels">
         <div class="fork-panel">
-          <div class="sum-caption is-them"><i></i>What comes next · their tools</div>
+          <div class="fork-stamp" aria-hidden="true">Company slop</div>
+          <div class="sum-caption is-them"><span class="cap-ico">📊</span>Other AI note-takers</div>
+          <div class="panel-call" aria-label="The same client call and summary">
+            <div class="sum-head"><span class="sum-ico">🎙</span><div><b>Client call</b><small>41 min · the same summary every tool makes</small></div></div>
+            <div class="sum-skel" aria-hidden="true"><i style="width:96%"></i><i style="width:62%"></i></div>
+          </div>
           <div class="sum-label">Next steps</div>
           <div class="sum-actions">
             <span>✉️ Draft follow-up</span>
@@ -2897,11 +2933,18 @@ a:focus {
             <span>📊 Draft slides</span>
             <span>✅ Create tasks</span>
             <span>⚡ Run workflow</span>
+            <span>📋 Create project plan</span>
           </div>
           <div class="sum-note">Busywork for your company, done.</div>
         </div>
+        <span class="fork-vs" aria-hidden="true">vs</span>
         <div class="fork-panel is-us">
-          <div class="sum-caption is-us"><i></i>What comes next · Work Coach</div>
+          <div class="fork-stamp is-you" aria-hidden="true">Self improvement</div>
+          <div class="sum-caption is-us"><span class="cap-ico is-app"><img src="img/app-icon/icon-128.png" alt=""></span>Work Coach</div>
+          <div class="panel-call" aria-label="The same client call and summary">
+            <div class="sum-head"><span class="sum-ico">🎙</span><div><b>Client call</b><small>41 min · the same summary every tool makes</small></div></div>
+            <div class="sum-skel" aria-hidden="true"><i style="width:96%"></i><i style="width:62%"></i></div>
+          </div>
           <div class="sum-label">How you sounded</div>
           <div class="wc-scores">
             <span>Pace <b>82</b></span>
@@ -3252,7 +3295,7 @@ a:focus {
     oneOnOne: {
       title: 'Example: 1:1 with Sarah — Q3 Planning', type: 'Manager 1:1', meta: 'Today · 4:25 · Zoom',
       person: 'Sarah Chen · Your manager', personInitial: 'S', duration: 265, durationLabel: '04:25',
-      summary: 'Sarah and Maya reviewed the Q3 migration plan, shifting timelines, and the Friday demo ritual. Maya raised concerns about the process and agreed to bring a concrete proposal to the next conversation.',
+      summary: '<h4>Updates</h4><ul><li>Q3 migration timeline has shifted twice; platform-team dependencies still unclear</li><li>Leadership wants a firm migration date by end of month</li></ul><h4>Discussion Highlights</h4><ul><li>Maya proposed replacing <strong>Friday demos</strong> with async video updates</li><li>Sarah pushed back: demos are how Anita tracks cross-team progress</li></ul><h4>Action Items</h4><ul><li>Maya to bring a concrete async-demo proposal to the next 1:1</li><li>Sarah to chase down the platform-team dependency</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_1_1.m4a',
       coaching: [
         { label: 'Pattern', title: 'Stop Undermining Your Own Ideas', body: 'At 2:24, you opened your Friday demo suggestion with “this might be kind of dumb” — signaling low confidence before the idea even landed. Lead with the observation directly and let it stand on its own merits.' },
@@ -3286,7 +3329,7 @@ a:focus {
     presentation: {
       title: 'Example: Team All-Hands — Platform Update', type: 'Team Presentation', meta: 'Yesterday · 4:32 · Zoom',
       person: 'Engineering Team · All-hands', personInitial: 'A', duration: 272, durationLabel: '04:32',
-      summary: 'Maya walked the engineering team through the notification platform update, including a 38% drop in support tickets, a lower unsubscribe rate, and a threefold increase in settings engagement.',
+      summary: '<h4>What Shipped</h4><ul><li><strong>Smart notification profiles</strong> launched Jan 15, replacing 47 toggles with 3 presets: <em>Essential Only</em>, <em>Work Hours</em>, and <em>Everything</em></li><li>Marcus built a unified routing layer across 3 previously disconnected dispatch services; Priya led design</li></ul><h4>Results (~6 Weeks Post-Launch)</h4><ul><li>Notification support tickets down <strong>38%</strong> (~4,500 fewer/month)</li><li>Transactional email unsubscribe rate dropped from <strong>8.2% to 3.1%</strong></li><li>DAUs interacting with notification settings up <strong>3x</strong></li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_team_presentation.m4a',
       coaching: [
         { label: 'What worked', title: 'Exceptional Data-Driven Storytelling', body: 'Your specific, contrasting metrics — 12,000 tickets down to 7,500, unsubscribe rate from 8.2% to 3.1%, settings engagement up 3x — made the impact undeniable.' },
@@ -3320,7 +3363,7 @@ a:focus {
     recruiterScreen: {
       title: 'Example: Recruiter Screen — Horizon Labs', type: 'Recruiter Screen', meta: 'Monday · 3:48 · Zoom',
       person: 'Priya Shah · Recruiter, Horizon Labs', personInitial: 'P', duration: 228, durationLabel: '03:48',
-      summary: 'Maya did a first-round screen for the Senior PM role. Her energy was warm and Priya responded well, but her “tell me about yourself” ran nearly three minutes, and she answered the compensation question with a hedge that gave up negotiating room. Priya\u2019s verdict to the hiring team will be one line. Make sure you know what it says.',
+      summary: '<h4>Key Takeaways</h4><ul><li>First-round screen for the <strong>Senior PM</strong> role on the activation team</li><li>Hiring manager is <strong>Alex Morgan</strong>; process is recruiter screen, HM call, then a final panel</li><li>Priya extended the call 4 minutes past the slot</li></ul><h4>Compensation</h4><ul><li>Priya asked for a target range; Maya said she was <em>flexible, whatever the band is</em></li></ul><h4>Next Steps</h4><ul><li>Priya debriefs the hiring team this week; HM call expected within 5 business days</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_recruiter_screen.m4a',
       coaching: [
         { label: 'Coaching point', title: 'Your Opener Buried Your Best Material', body: 'Your “tell me about yourself” ran 2:51 and reached the notification platform rebuild — your strongest credential — at the two-minute mark. Recruiters decide in the first 90 seconds. Lead with it.' },
@@ -3353,7 +3396,7 @@ a:focus {
     finalInterview: {
       title: 'Example: Final Interview — Horizon Labs', type: 'Final Interview', meta: 'Thursday · 4:12 · Zoom',
       person: 'Alex Morgan · Hiring Manager, Horizon Labs', personInitial: 'A', duration: 252, durationLabel: '04:12',
-      summary: 'After three practice reps, Maya\u2019s opener came in at 82 seconds — down from 2:51 in the recruiter screen — and led with the outcome. Her metrics story landed: Alex wrote down the churn number. She held steady through two pushback questions and closed with a question that turned the interview into a conversation.',
+      summary: '<h4>Key Takeaways</h4><ul><li>Final round with <strong>Alex Morgan</strong> for the Senior PM role</li><li>Maya led with the notification platform rebuild and the <strong>22% churn reduction</strong>; Alex wrote the number down</li><li>Held her prioritization recommendation through two rounds of pushback</li></ul><h4>Next Steps</h4><ul><li>Alex takes a recommendation to the hiring committee this week</li><li>Decision expected by <strong>Friday</strong>; references may be requested</li></ul>',
       audio: 'https://your.work.coach/storage/v1/object/public/public_files/onboarding/demo_meeting_recordings/example_final_interview.m4a',
       coaching: [
         { label: 'What worked', title: 'Your Numbers Did the Selling', body: '“We cut churn 22%” was the line Alex wrote down. Quantified wins are what get repeated to the hiring committee.' },
@@ -3434,7 +3477,8 @@ a:focus {
     setText('[data-wcx-detail-meta]', data.meta);
     setText('[data-wcx-detail-person-initial]', data.personInitial);
     setText('[data-wcx-detail-person]', data.person);
-    setText('[data-wcx-summary]', data.summary);
+    var summaryNode = app.querySelector('[data-wcx-summary]');
+    if (summaryNode) summaryNode.innerHTML = data.summary;
     setText('[data-wcx-audio-duration]', data.durationLabel);
     setText('[data-wcx-coach-label-one]', data.coaching[0].label);
     setText('[data-wcx-coach-title-one]', data.coaching[0].title);
