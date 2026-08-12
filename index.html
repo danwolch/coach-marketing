@@ -142,6 +142,14 @@ nav {
 }
 .btn-outline:hover { border-color: color-mix(in oklab, var(--border) 50%, var(--accent) 50%); }
 .btn-lg { padding: 16px 32px; font-size: 15px; }
+.section-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+.section-cta-row .btn-primary { box-shadow: 0 8px 22px rgba(49, 193, 120, 0.2); }
 
 /* HERO */
 .hero {
@@ -607,9 +615,14 @@ nav {
   border-radius: var(--radius);
   background: var(--green-soft);
   border: 1px solid rgba(49, 193, 120, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
-.feedback-gap-turn p { font-size: 16.5px; line-height: 1.6; color: var(--text); }
+.feedback-gap-turn p { flex: 1; font-size: 16.5px; line-height: 1.6; color: var(--text); }
 .feedback-gap-turn strong { color: var(--accent-2); }
+.feedback-gap-turn .btn-primary { flex: 0 0 auto; white-space: nowrap; }
 @media (max-width: 760px) {
   .feedback-gap-section { padding: 64px 16px 68px; }
   .gap-pairs { padding: 20px 14px 24px; gap: 26px; border-radius: 18px; }
@@ -620,7 +633,7 @@ nav {
   .gap-artifact figcaption { display: flex; }
   .gap-pair + .gap-pair { margin-top: 10px; }
   .feedback-gap-head p { font-size: 15px; }
-  .feedback-gap-turn { padding: 20px; }
+  .feedback-gap-turn { padding: 20px; flex-direction: column; align-items: flex-start; }
 }
 
 .feature-text .usecase-cta { margin-top: 16px; }
@@ -1317,6 +1330,7 @@ a:focus {
   .sum-actions span { opacity: 1; transform: none; animation: none !important; }
 }
 .sum-bottom { margin-top: 26px; text-align: center; color: var(--muted); font-size: 17px; font-weight: 400; }
+.sum-bottom + .section-cta-row { margin-top: 20px; }
 @media (max-width: 760px) {
   .foryou-section { padding: 68px 16px 72px; }
   .fork-panels { grid-template-columns: 1fr; gap: 12px; }
@@ -2418,6 +2432,9 @@ a:focus {
         <div class="story-cursor" aria-hidden="true"></div>
       </div>
     </div>
+    <div class="section-cta-row">
+      <a href="/download" class="btn-primary" data-app-cta>Coach my next meeting →</a>
+    </div>
   </div>
 </section>
 
@@ -2543,6 +2560,7 @@ a:focus {
 
     <div class="feedback-gap-turn">
       <p><strong>Everything up there is coachable. You just never got to hear it.</strong> Work Coach observes you and helps you improve in your next meeting.</p>
+      <a href="/download" class="btn-primary" data-app-cta>Get the feedback you're missing →</a>
     </div>
   </div>
 </section>
@@ -2820,6 +2838,9 @@ a:focus {
         </div>
       </div>
     </div>
+    <div class="section-cta-row">
+      <a href="/download" class="btn-primary" data-app-cta>Try the full Work Coach app →</a>
+    </div>
   </div>
 </section>
 
@@ -2906,6 +2927,9 @@ a:focus {
       </div>
     </div>
     <p class="sum-bottom">Work Coach plays nice: run it alongside your note-taker, or connect the transcripts you already have.</p>
+    <div class="section-cta-row">
+      <a href="/download" class="btn-primary" data-app-cta>Start private coaching →</a>
+    </div>
   </div>
 </section>
 
