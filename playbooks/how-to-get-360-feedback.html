@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="How to run your own 360: pick a challenge network, ask questions people can actually answer, take the feedback so it keeps coming, and turn one round into a system.">
+<meta name="color-scheme" content="light">
+<title>How to Get 360 Feedback, With or Without the Official Process | Work Coach</title>
+<link rel="canonical" href="https://work.coach/playbooks/how-to-get-360-feedback">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Get 360 Feedback, With or Without the Official Process","description":"How to run your own 360: pick a challenge network, ask questions people can actually answer, take the feedback so it keeps coming, and turn one round into a system.","author":{"@type":"Organization","name":"Work Coach"},"mainEntityOfPage":"https://work.coach/playbooks/how-to-get-360-feedback"}</script>
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://work.coach/playbooks/how-to-get-360-feedback">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="How to Get 360 Feedback, With or Without the Official Process">
+<meta property="og:description" content="How to run your own 360: pick a challenge network, ask questions people can actually answer, take the feedback so it keeps coming, and turn one round into a system.">
+<meta property="og:image" content="https://work.coach/img/og-image-whistle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Get 360 Feedback, With or Without the Official Process">
+<meta name="twitter:description" content="How to run your own 360: pick a challenge network, ask questions people can actually answer, take the feedback so it keeps coming, and turn one round into a system.">
+<meta name="twitter:image" content="https://work.coach/img/og-image-whistle.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ebe5da;
+  --muted: #6b7a6e;
+  --text: #1a2e22;
+  --card: #fffdf8;
+  --border: #d6d0c4;
+  --accent: #31c178;
+  --accent-2: #1e6b42;
+  --accent-dark: #28a366;
+  --shadow: 0 10px 30px rgba(0,0,0,.07);
+  --radius: 16px;
+  --maxw: 1100px;
+  --green-soft: rgba(49, 193, 120, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+article h2[id] { scroll-margin-top: 96px; }
+body {
+  font-family: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 max(20px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; text-decoration: none; color: var(--text); font-size: 16px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 999px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 15px; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px; font-weight: 700;
+  border-radius: 999px;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: color-mix(in oklab, var(--accent) 85%, white); }
+.btn-lg { padding: 16px 32px; font-size: 15px; }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* ARTICLE */
+.post-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 20px 12px;
+}
+.post-kicker {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.post-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+.post-hero .post-sub {
+  font-size: 19px;
+  color: color-mix(in oklab, var(--muted) 86%, white 14%);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+article {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+}
+article h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 44px 0 14px;
+}
+article h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 32px 0 10px;
+}
+article p { font-size: 17px; margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 18px 24px; font-size: 17px; }
+article li { margin-bottom: 8px; }
+article a { color: var(--accent-2); }
+article strong { font-weight: 700; }
+
+/* Expert nugget card */
+.nugget {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 26px 20px;
+  margin: 26px 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.nugget::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin: -24px -26px 20px;
+}
+.nugget blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.nugget .nugget-who {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.nugget .nugget-who strong { color: var(--text); }
+.nugget .nugget-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+.nugget .nugget-watch:hover { text-decoration: underline; }
+.nugget .video-embed { margin: 18px 0 4px; box-shadow: none; }
+.nugget-lead { font-size: 15px; color: var(--muted); margin-bottom: 14px; line-height: 1.55; }
+.nugget-lead strong { color: var(--text); }
+.video-lead { font-size: 15px; color: var(--muted); margin: 26px 0 10px; line-height: 1.55; }
+.video-lead strong { color: var(--text); }
+.video-lead + .video-embed { margin-top: 0; margin-bottom: 26px; }
+.audio-embed iframe {
+  width: 100%;
+  height: 175px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Watch/Listen toggle for sources with both video and audio */
+.media-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.media-tab {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.media-tab:hover { color: var(--text); }
+.media-tab.active { background: var(--green-soft); border-color: var(--accent-dark); color: var(--accent-2); }
+.media-pane .video-embed { margin: 0; }
+.media-pane .audio-embed { margin: 0; }
+
+/* LAYOUT WITH FLOATING TOC */
+.layout {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 240px;
+  gap: 56px;
+  align-items: start;
+  justify-content: center;
+}
+.layout article { max-width: none; margin: 0; padding: 0; }
+.toc {
+  position: sticky;
+  top: 105px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.toc strong { display: block; margin-bottom: 12px; font-size: 15px; }
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 7px 0;
+  transition: color 0.15s;
+}
+.toc a:hover { color: var(--text); }
+.toc a.active { color: var(--accent-2); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* Callout / template box */
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 26px 0;
+}
+.callout h4 {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.callout p, .callout li { font-size: 16px; }
+.callout ul, .callout ol { margin-left: 22px; }
+
+/* Mid-article CTA */
+.cta-band {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.cta-band h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.cta-band p { font-size: 15.5px; color: var(--muted); margin-bottom: 18px; }
+.cta-band .fine-print { font-size: 13px; color: var(--muted); opacity: 0.6; margin: 10px 0 0; }
+
+/* Sources */
+.sources {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.sources h2 { margin-top: 0; }
+.sources li { font-size: 15.5px; color: var(--muted); }
+
+
+/* Cluster nav */
+.cluster-nav {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 30px 26px;
+  margin-top: 48px;
+  box-shadow: var(--shadow);
+}
+.cluster-nav h2 { margin: 0 0 6px; font-size: 24px; }
+.cluster-nav .cluster-nav-lead { font-size: 15.5px; color: var(--muted); margin-bottom: 16px; }
+.cluster-nav ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.cluster-nav li { margin: 0; font-size: 15.5px; }
+.cluster-nav ul a { font-weight: 600; color: var(--accent-2); text-decoration: none; }
+.cluster-nav ul a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .cluster-nav ul { grid-template-columns: 1fr; } }
+
+/* FOOTER */
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+footer p { color: var(--muted); font-size: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/playbooks/">Playbooks</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="post-kicker">Career Growth</div>
+  <h1>How to get 360 feedback, with or without the official process</h1>
+  <p class="post-sub">Kim Scott, a retired Amazon VP, Netflix's CTO, and Zapier's CEO on collecting the feedback your annual review won't give you: who to ask, what to ask, and how to take it so people keep telling you the truth.</p>
+  <div class="post-meta">14 min read</div>
+</div>
+
+<main class="layout">
+<article>
+<p>A 360 is just feedback from every side of your work: your manager, your peers, the people who report to you, and the partners on other teams who see a version of you that none of the others do. Companies run formal versions once or twice a year. You don't need one to get the benefits, and if you wait for one, most of what you learn will arrive months after you could have used it.</p>
+
+<p>This playbook covers how to run the informal version yourself: choosing the reviewers, asking questions people can actually answer, receiving the answers so a second round happens, and turning one round into a rhythm. It also covers how to work the official process when your company has one, and where 360s go wrong. If the problem is getting even one person to tell you the truth, start with the <a href="/playbooks/getting-honest-feedback-at-work">honest feedback playbook</a>; this one is about assembling the full picture from many people at once.</p>
+
+<p>The advice comes from people who have run this at every altitude, from Kim Scott, who wrote Radical Candor, to executives at Amazon, Netflix, Zapier, and Bridgewater. Every quote plays at the moment it was said.</p>
+
+<h2 id="why-you-can-t-wait-for-the-official-cycle">Why you can't wait for the official cycle</h2>
+
+<p>The annual review is the worst place to hear about a problem for the first time. It's attached to pay and promotion, so everyone involved is careful, and it batches a year of observations into one document. Ethan Evans's blunt version: if the first time you hear about a weakness is in the review that sets your raise, you've already paid for it.</p>
+
+<p>Even the best-run cycles deliver their news late. Elizabeth Stone gets about 300 pieces of feedback in Netflix's annual 360, and some of them describe things that happened six months earlier. "I think, oh, I wish you had told me this at the time."</p>
+
+<p>The weaker versions have a different problem: the tool teaches people to soften. Liz Christo, a general partner at Stage 2 Capital, watched formal 360s come back "kind of nice" while the real conversation happened somewhere else, and the anonymity rarely survived contact: "we all know who it's from" (<a href="https://podcasts.apple.com/us/podcast/i-had-to-dramatically-change-my-working-style-ft-liz/id1676766133?i=1000654057110&t=2068">34:28 in her Delivering Value episode</a>).</p>
+
+<p>So the version you run yourself is not a substitute for the official one. It's the thing the official one is a periodic approximation of.</p>
+
+<h2 id="pick-a-challenge-network-not-a-fan-club">Pick a challenge network, not a fan club</h2>
+
+<p>The instinct when choosing who to ask is to pick people who like you. Adam Grant's research points the other way: left alone, we quietly drop our critics and surround ourselves with cheerleaders, which is exactly how blind spots survive. His fix is what he calls a challenge network: "the group of people that you trust to push you to get better. They tell you the stuff you don't want to hear, but need to hear" (<a href="https://podcasts.apple.com/us/podcast/worklife-with-adam-grant-how-to-love-criticism/id1346314086?i=1000404159792&t=731">12:11 in the WorkLife episode</a>).</p>
+
+<p>For a working 360, seven to ten people covers every side without becoming a survey program:</p>
+
+<div class="callout">
+  <h4>The reviewer list</h4>
+  <ul>
+    <li><strong>Your manager</strong>, who sees your output and how it lands above you.</li>
+    <li><strong>Your manager's manager.</strong> A skip-level sees your scope and your trajectory rather than your day-to-day, and their read on how you're perceived above the line is data nobody else on this list has. If you already run <a href="/playbooks/skip-level-meeting-with-bosses-boss">skip-level meetings</a>, this is one question added to the next one.</li>
+    <li><strong>Three or more peers</strong>, at least one of whom has pushed back on you before. That's your challenge network seat.</li>
+    <li><strong>Your reports, if you have them.</strong> They hold the data nobody above you can see, and skipping them is how managers stay surprised.</li>
+    <li><strong>One or two cross-functional partners</strong>, the people who experience you as a dependency rather than a teammate.</li>
+  </ul>
+  <p>Ask people close enough to your work to have real observations. Evans warns against sending requests to distant colleagues: they decline, and in tools where declines are visible, a trail of declines reads worse than a short list. And if any group will answer anonymously, it needs at least three people to actually be anonymous, which is what sets the minimum sizes above.</p>
+</div>
+
+<h2 id="give-people-permission-before-you-ask">Give people permission before you ask</h2>
+
+<p>Nobody owes you candor, and most people have learned that giving it is risky. The person who tells you the truth pays a social cost if you flinch, so their rational default is "everything's fine." That means the first move isn't a question, it's permission.</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Permission first.</strong> The player below is queued to 8:29, the exact moment Ethan Evans says it. <a href="https://www.youtube.com/watch?v=ISQUwDiTmDo&t=509s">Watch on YouTube</a>.</p>
+  <blockquote>"First, if you want to get honest feedback from somebody you need to give them permission."</blockquote>
+  <div class="nugget-who"><strong>Ethan Evans</strong>, retired Amazon VP · Level Up</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/ISQUwDiTmDo?start=509" title="Ethan Evans at 8:29" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Permission sounds like naming the risk out loud: "I'm working on how I run meetings, and I'd genuinely rather hear it from you than keep guessing. Trust me, I'm open to it." Say why you're asking, say what you'll do with it, and mean the last part, because the second round depends entirely on what you did with the first. Our <a href="/playbooks/getting-honest-feedback-at-work">honest feedback playbook</a> covers why the people around you softened in the first place; this is the antidote applied deliberately.</p>
+
+<h2 id="ask-a-question-someone-can-actually-answer">Ask a question someone can actually answer</h2>
+
+<p>The question most people ask is the one guaranteed to fail. Kim Scott has watched it fail for years:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The question that wastes your breath.</strong> The player below is queued to 37:49, the exact moment Kim Scott says it. <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc&t=2269s">Watch on YouTube</a>.</p>
+  <blockquote>"So if you say, do you have any feedback for me? You're wasting your breath. The other person's going to say, oh no, everything's fine."</blockquote>
+  <div class="nugget-who"><strong>Kim Scott</strong>, author of Radical Candor · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/V7tnbx-6Ayc?start=2269" title="Kim Scott at 37:49" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Her replacement is a go-to question you write once and keep: hers is "What could I do or stop doing that would make it easier to work with me?" The wording is doing real work there. It assumes something exists, it's scoped to working with you rather than judging you, and it can't be answered with "fine." But she's emphatic that you shouldn't borrow her sentence, because a script in someone else's voice reads as a script: "there's no such thing as emotional novocaine." Write one that sounds like you.</p>
+
+<div class="callout">
+  <h4>Go-to questions that have worked</h4>
+  <ul>
+    <li><strong>Kim Scott:</strong> "What could I do or stop doing that would make it easier to work with me?"</li>
+    <li><strong>Christa Quarles, CEO of OpenTable:</strong> "Tell me why I'm wrong."</li>
+    <li><strong>Jason Rosoff, CEO of Radical Candor:</strong> "What could I have done this week to better support you?"</li>
+    <li><strong>Lenny Rachitsky:</strong> "What's one way I could help you be more successful?"</li>
+    <li><strong>The positive half, from Ethan Evans:</strong> "What am I doing well that I could double down on?"</li>
+  </ul>
+</div>
+
+<p>Wade Foster runs Zapier's formal 360s twice a year, and his personal technique for getting useful answers is to stop asking about himself entirely:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Ask about the project, not the performance.</strong> The player below is queued to 9:40, the exact moment Wade Foster says it. <a href="https://www.youtube.com/watch?v=Nkx2yJP2op8&t=580s">Watch on YouTube</a>.</p>
+  <blockquote>"To get better feedback, I usually try not to ask feedback for my performance. How do you think I'm doing on the job? No one has feedback about that."</blockquote>
+  <div class="nugget-who"><strong>Wade Foster</strong>, CEO of Zapier · Mochary Method</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/Nkx2yJP2op8?start=580" title="Wade Foster at 9:40" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>His version anchors to a shared artifact instead: "How could we have done twice as well on this project?" The answers are about the work, but you own the work, so the feedback is about you without anyone having to say so. It's the easiest question on this page for a nervous colleague to answer honestly.</p>
+
+<p>Jules Walter, a product leader at YouTube, adds the version for when the power gap runs the other way, when people see giving you feedback as a risk they didn't sign up for:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Make it safe to say.</strong> The player below is queued to 46:12, the exact moment Jules Walter says it. <a href="https://www.youtube.com/watch?v=zn2JNbZwf00&t=2772s">Watch on YouTube</a>.</p>
+  <blockquote>"So I basically learned to go out of my way and make people comfortable giving me feedback."</blockquote>
+  <div class="nugget-who"><strong>Jules Walter</strong>, product leader at YouTube · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/zn2JNbZwf00?start=2772" title="Jules Walter at 46:12" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>Two of his techniques travel well. Ask about one named dimension you're already working on, "to what extent did I show executive presence in that meeting?", so the other person is confirming or adjusting rather than initiating. Or criticize yourself first and let them calibrate: "I thought I lost the room in the second half, does that match what you saw?" Agreeing with you costs them almost nothing, and disagreeing with you is, technically, a compliment.</p>
+
+<div class="cta-band">
+  <h3>The feedback nobody has to write</h3>
+  <p>A 360 asks busy people to remember how you show up. Work Coach watches the meetings themselves and surfaces what a candid colleague would point out, every week — <a href="/360-feedback">continuous evidence to read your reviewers' answers against</a>.</p>
+  <a href="https://my.work.coach" class="btn-primary btn-lg">Start Free Trial</a>
+  <p class="fine-print">2-week trial, no credit card needed. Your data is never shared with your employer.</p>
+</div>
+
+<h2 id="take-it-so-the-second-round-happens">Take it so the second round happens</h2>
+
+<p>Everything before this point buys you one honest answer. Whether you ever get a second one depends on the thirty seconds after you hear the first.</p>
+
+<p>Kim Scott's mechanical trick for those thirty seconds: "the simplest way to embrace the discomfort is to close your mouth and count to six." Six seconds of silence feels endless, and it's usually where the real sentence arrives, because the speaker fills it with the thing they softened the first time. Ethan Evans supplies the only acceptable opening reply: "The correct answer to all feedback is thank you. Now, you can say more than thank you, but you don't argue." Then ask for a concrete example, and if they can't produce one, make the ask that turns one conversation into a standing arrangement: "the next time you see it, could you point it out in the moment?"</p>
+
+<p>Ray Dalio got a written D-minus from an employee for a rambling meeting, and his response, asking every attendee to grade him and sharing the results with the company, is extreme. The idea underneath it isn't:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>The second score.</strong> This one is audio only. The quote is at 33:19; the player starts from the top, or <a href="https://podcasts.apple.com/us/podcast/worklife-with-adam-grant-how-to-love-criticism/id1346314086?i=1000404159792&t=1999">open it on Apple Podcasts cued to 33:19</a>.</p>
+  <blockquote>"I can control the second score, which is how well did I take the first score? And so even if I got a D-minus for my performance, I can get an A-plus for how I took the feedback."</blockquote>
+  <div class="nugget-who"><strong>Ray Dalio</strong>, founder of Bridgewater · WorkLife with Adam Grant</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/worklife-with-adam-grant-how-to-love-criticism/id1346314086?i=1000404159792&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="WorkLife with Adam Grant: How to Love Criticism - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>You can't control the grade. You fully control how you take it, and the people watching you take it are deciding whether to ever grade you honestly again. Mellody Hobson, co-CEO of Ariel Investments, held back tears through brutal feedback from Bill Bradley for exactly this reason: "if I cry, he won't ever give me feedback again" (<a href="https://podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675&t=483">7:56 in her WorkLife episode</a>). Her coach's repetition rule is also worth carrying into any 360 read-out: one person's comment is a data point, but "the third time they call you a horse's ass, buy a saddle."</p>
+
+<p>One logistical rule from Matt Mochary's coaching curriculum: never take serious feedback over Slack or email, and budget twenty to thirty minutes when you receive it live. Hard words in text hit the threat response with no tone and no repair loop, and his observation is that within a day or two, confirmation bias starts doing permanent damage that a live conversation would have resolved in minutes (<a href="https://www.youtube.com/watch?v=JLkYgUnnbU8">Mochary Method Class 2</a>).</p>
+
+<h2 id="close-the-loop-then-make-it-a-rhythm">Close the loop, then make it a rhythm</h2>
+
+<p>Feedback you visibly acted on is the only advertisement that gets you more. Report back to each person: what you heard, what you changed, and what you'd like them to watch for next. Then ask the follow-up that proves you meant it, Scott's favorite: "Did I overcorrect?"</p>
+
+<p>For cadence, Scott's floor for managers is startlingly high: solicit feedback "every week, from each of your direct reports," which in practice means budgeting the last five minutes of every 1:1 and asking your go-to question until answering it stops being scary. For everyone else, the same question aimed at a peer or your boss once every few weeks keeps the channel open at nearly zero cost.</p>
+
+<p>And when something real needs to change, make the loop measurable. After Samantha Leal, a growth leader, learned secondhand that her team was afraid of her, she convened the whole team, apologized, asked for specifics, wrote every item on the board, and committed to a follow-up meeting a month out. Then she added the step that turned an apology into a system:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Put a number on the change.</strong> This one is audio only. The quote is at 29:00; the player starts from the top, or <a href="https://podcasts.apple.com/us/podcast/i-decided-to-hold-a-no-holds-barred-feedback/id1676766133?i=1000659403405&t=1740">open it on Apple Podcasts cued to 29:00</a>.</p>
+  <blockquote>"And I asked them to score me from zero to 10 so that I know whether I'm improving or not."</blockquote>
+  <div class="nugget-who"><strong>Samantha Leal</strong>, growth leader and advisor · Delivering Value</div>
+  <div class="audio-embed">
+    <iframe src="https://embed.podcasts.apple.com/us/podcast/i-decided-to-hold-a-no-holds-barred-feedback/id1676766133?i=1000659403405&theme=auto" height="175" frameborder="0" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" loading="lazy" title="Delivering Value: No-Holds-Barred Feedback Session with Samantha Leal - Apple Podcasts"></iframe>
+  </div>
+</div>
+
+<p>The scores took three or four months to move. That's the honest timescale for a reputation changing, and the monthly number is what kept both sides from giving up in month two. Team members thanked her privately; she calls the whole episode career-defining.</p>
+
+<h2 id="pick-the-channel-conversations-a-form-or-a-tool">Pick the channel: conversations, a form, or a tool</h2>
+
+<p>Two decisions here: which channel carries which conversations, and who stays anonymous. The everyday conversations are named by nature; anonymity is a property of the deliberate written round, and there it follows a working convention. Feedback from people above you, your manager and your skip-level, is unmasked, because they're paid to tell you directly and there's no way to anonymize a bucket of one. Feedback from your level and below, peers, reports, and the people you influence without authority, goes anonymous, because that's the direction where candor carries real risk. The mechanics follow from the convention.</p>
+
+<p><strong>Conversations</strong> carry the unmasked tier and the continuous rhythm. Your go-to question in 1:1s, the skip-level ask, the project debrief with a peer who'll say it to your face: named, live, and the only channel where the follow-up question works. Everything earlier on this page is this channel.</p>
+
+<p><strong>A quick anonymous form</strong> carries the lateral-and-below tier for the deliberate once-or-twice-a-year round. A Google Form set to collect no email addresses is genuinely enough: your go-to question as an open text box, a "what should I keep doing?" box, and one 0-to-10 score you can track between rounds, the way Samantha Leal did. Keep it under five questions so people finish it. The three-person rule is what keeps the promise honest: if a bucket has fewer than three respondents, merge it into the next one or drop the segmentation, because "anonymous" feedback from a bucket of two is a guessing game you've invited people into.</p>
+
+<p><strong>Tools</strong> take over when you want the round to run without you administering it. If your company already pays for an engagement platform, it can usually run a personal 360; Zapier runs its formal cycle on Culture Amp twice a year. And <a href="/360-feedback">Work Coach's 360 feedback</a> covers the layer none of these channels can: it observes your actual meetings and surfaces what a candid colleague would point out, continuously. It isn't your colleagues' own words, but it's the evidence to read them against, it never goes stale, and it needs no anonymity plan.</p>
+
+<h2 id="if-your-company-runs-a-formal-360">If your company runs a formal 360</h2>
+
+<p>Work the official process instead of just submitting to it. Evans's advice from the inside: if you've changed teams or managers recently, your record is thin, so prompt your current and former managers and the peers who actually saw your work to submit input. A 360 populated by the right eight people is a different document from one populated by whoever the tool guessed.</p>
+
+<p>At the receiving end, compress before you react. Elizabeth Stone's method for her 300 pieces:</p>
+
+<div class="nugget">
+  <p class="nugget-lead"><strong>Distill themes, then bring them to your manager.</strong> The player below is queued to 34:43, the exact moment Elizabeth Stone says it. <a href="https://www.youtube.com/watch?v=2XgU6T4DalY&t=2083s">Watch on YouTube</a>.</p>
+  <blockquote>"We do have an annual cycle of 360 feedback, where you request and receive feedback from a lot of people. But it's not an input to some output."</blockquote>
+  <div class="nugget-who"><strong>Elizabeth Stone</strong>, CTO of Netflix · Lenny's Podcast</div>
+  <div class="video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/2XgU6T4DalY?start=2083" title="Elizabeth Stone at 34:43" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<p>She distills the themes and proactively tees them up with her manager, which turns the pile into two or three workstreams and signals exactly the second score Dalio was talking about. Netflix deliberately decouples the cycle from compensation so people write the truth; if yours is attached to comp, read it knowing everyone was careful.</p>
+
+<p>One caution on the themes themselves: interrogate them before adopting them. The executive coach Donna Lichaw tells the story of a client whose 360s kept praising her "attention to detail," a label she hated and that kept earning her more detail work (<a href="https://podcasts.apple.com/us/podcast/how-to-discover-your-superpowers-own-your-story-and/id1627920305?i=1000646757352&t=2798">46:38 on Lenny's Podcast</a>). A repeated theme is real signal, but it describes what people have seen you do, not what you should do more of. Sometimes the right response to a theme is to change the work, not to lean in.</p>
+
+<h2 id="the-asks-on-one-page">The asks on one page</h2>
+
+<div class="callout">
+  <h4>Copy these</h4>
+  <ul>
+    <li><strong>Permission:</strong> "I'm working on X and I'd rather hear it from you than keep guessing. Trust me, I'm open to it."</li>
+    <li><strong>The go-to question (write your own version):</strong> "What could I do or stop doing that would make it easier to work with me?"</li>
+    <li><strong>Project-anchored:</strong> "How could we have done twice as well on this project?"</li>
+    <li><strong>Dimension-specific:</strong> "To what extent did I show [the thing you're working on] in that meeting?"</li>
+    <li><strong>Self-critique first:</strong> "I thought I lost the room in the second half. Does that match what you saw?"</li>
+    <li><strong>When they blank:</strong> "Nothing's ever zero. Would you notice for next time and tell me then?"</li>
+    <li><strong>On receiving:</strong> "Thank you." Then: "Can you give me an example?" Then: "Next time you see it, would you point it out in the moment?"</li>
+    <li><strong>Closing the loop:</strong> "You told me X. Here's what I changed. Did I overcorrect?"</li>
+  </ul>
+</div>
+
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+
+<h3>How many people should I ask?</h3>
+<p>Seven to ten: your manager and your skip-level, three or more peers including one critic, your reports if you have them, and one or two cross-functional partners. The floor is set by anonymity, at least three people in any bucket that answers anonymously, and the ceiling by follow-through: more reviewers than you can close the loop with is a survey, not a 360.</p>
+
+<h3>Should the feedback be anonymous?</h3>
+<p>Only in the written round, and only below the line. Your everyday conversations stay named, and feedback from your manager and skip-level comes to your face in any channel, since a bucket of one can't be anonymized anyway. In the written round, peers and reports answer anonymously, with at least three people per bucket so the promise is real. Just don't let anonymity become the whole system: the anonymous form finds the theme, and the named conversation is where the follow-up question turns the theme into something you can act on.</p>
+
+<h3>How often should I run this?</h3>
+<p>Two rhythms. Continuous and small: the go-to question in 1:1s, weekly with reports, every few weeks with everyone else. Deliberate and deeper: the full seven-to-ten-person round once or twice a year, ideally offset from the official cycle so you hear things while they're still fixable.</p>
+
+<h3>What if my manager never gives me anything?</h3>
+<p>Bring the structure to them. Christian Idiodi of SVPG suggests handing your leader the frame: "You are the closest person to me. You see things I will not see. Where do you think I can get better, and if you had to come up with a plan for it, what would it look like?" Then reward whatever comes back, "I got tremendous value from your feedback", because a manager's first attempt at candor is as fragile as anyone else's.</p>
+
+<h3>Do I share what I heard?</h3>
+<p>Share the themes and what you're doing about them, at minimum with the people who contributed. You don't need Dalio-grade transparency, but a one-paragraph "here's what I heard and what I'm changing" note is the strongest possible signal that talking to you was worth it.</p>
+
+<div class="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=V7tnbx-6Ayc">Radical Candor: From theory to practice, with Kim Scott</a> (Dec 2023)</li>
+    <li>Level Up (Ethan Evans): <a href="https://www.youtube.com/watch?v=ISQUwDiTmDo">Maximizing Your Performance Review and Goal Setting</a> (May 2023)</li>
+    <li>WorkLife with Adam Grant: <a href="https://podcasts.apple.com/us/podcast/worklife-with-adam-grant-how-to-love-criticism/id1346314086?i=1000404159792">How to Love Criticism, with Ray Dalio</a> (Feb 2018)</li>
+    <li>Mochary Method: <a href="https://www.youtube.com/watch?v=Nkx2yJP2op8">CEO of Zapier: What most people get wrong about feedback, with Wade Foster</a> (Sep 2020)</li>
+    <li>Mochary Method: <a href="https://www.youtube.com/watch?v=JLkYgUnnbU8">How to deliver feedback and onboard new hires, Class 2</a> (Oct 2021)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=zn2JNbZwf00">Leveraging mentors to uplevel your career, with Jules Walter</a> (Jan 2023)</li>
+    <li>Lenny's Podcast: <a href="https://www.youtube.com/watch?v=2XgU6T4DalY">How Netflix builds a culture of excellence, with Elizabeth Stone</a> (Feb 2024)</li>
+    <li>Delivering Value: <a href="https://podcasts.apple.com/us/podcast/i-decided-to-hold-a-no-holds-barred-feedback/id1676766133?i=1000659403405">I Decided to Hold a No-Holds-Barred Feedback Session with my Team, with Samantha Leal</a> (Jun 2024)</li>
+    <li>Delivering Value: <a href="https://podcasts.apple.com/us/podcast/i-had-to-dramatically-change-my-working-style-ft-liz/id1676766133?i=1000654057110">I Had to Dramatically Change My Working Style, with Liz Christo</a> (Apr 2024)</li>
+    <li>WorkLife with Adam Grant: <a href="https://podcasts.apple.com/us/podcast/rethinking-mellody-hobson-on-taking-tough-feedback/id1346314086?i=1000525532675">Mellody Hobson on Taking Tough Feedback</a> (Jun 2021)</li>
+    <li>Product Therapy: <a href="https://podcasts.apple.com/us/podcast/coaching-up/id1738373011?i=1000724973673">Coaching Up, with Christian Idiodi and Leah Hickman</a> (Sep 2025)</li>
+    <li>Lenny's Podcast: <a href="https://podcasts.apple.com/us/podcast/how-to-discover-your-superpowers-own-your-story-and/id1627920305?i=1000646757352">How to discover your superpowers, with Donna Lichaw</a> (Feb 2024)</li>
+  </ul>
+</div>
+
+<div class="cluster-nav">
+  <h2>More playbooks in this series</h2>
+  <p class="cluster-nav-lead">This playbook is part of the <a href="/get-promoted">Get Promoted</a> series. Keep going with the rest:</p>
+  <ul>
+    <li><a href="/playbooks/getting-honest-feedback-at-work">Get honest feedback at work</a></li>
+    <li><a href="/playbooks/how-to-ask-for-a-promotion">Ask for a promotion</a></li>
+    <li><a href="/playbooks/promotion-denied-questions">Promotion denied? 9 questions to ask</a></li>
+    <li><a href="/playbooks/ask-for-raise-after-more-responsibility">Ask for a raise after taking on more</a></li>
+    <li><a href="/playbooks/take-ownership-of-your-career">Take ownership of your career</a></li>
+    <li><a href="/playbooks/respond-to-performance-improvement-plan">Respond to a performance improvement plan</a></li>
+    <li><a href="/playbooks/skip-level-meeting-with-bosses-boss">Skip-level meetings with your boss's boss</a></li>
+  </ul>
+</div>
+</article>
+<aside class="toc">
+  <strong>In this playbook</strong>
+  <a href="#why-you-can-t-wait-for-the-official-cycle">Why you can't wait for the official cycle</a>
+  <a href="#pick-a-challenge-network-not-a-fan-club">Pick a challenge network, not a fan club</a>
+  <a href="#give-people-permission-before-you-ask">Give people permission before you ask</a>
+  <a href="#ask-a-question-someone-can-actually-answer">Ask a question someone can actually answer</a>
+  <a href="#take-it-so-the-second-round-happens">Take it so the second round happens</a>
+  <a href="#close-the-loop-then-make-it-a-rhythm">Close the loop, then make it a rhythm</a>
+  <a href="#pick-the-channel-conversations-a-form-or-a-tool">Pick the channel: conversations, a form, or a tool</a>
+  <a href="#if-your-company-runs-a-formal-360">If your company runs a formal 360</a>
+  <a href="#the-asks-on-one-page">The asks on one page</a>
+  <a href="#frequently-asked-questions">Frequently asked questions</a>
+  <a href="#sources">Sources</a>
+</aside>
+</main>
+
+<script>
+document.querySelectorAll('.media-tabs').forEach(function (tabs) {
+  tabs.addEventListener('click', function (e) {
+    var btn = e.target.closest('.media-tab');
+    if (!btn) return;
+    var card = tabs.parentElement;
+    tabs.querySelectorAll('.media-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+    card.querySelectorAll('.media-pane').forEach(function (p) {
+      var show = p.getAttribute('data-pane') === btn.getAttribute('data-target');
+      p.hidden = !show;
+      if (show) {
+        var f = p.querySelector('iframe[data-src]');
+        if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      }
+    });
+  });
+});
+
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (current) current.classList.remove('active');
+        current = map[e.target.id];
+        if (current) current.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  document.querySelectorAll('article h2[id]').forEach(function (h) { obs.observe(h); });
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
