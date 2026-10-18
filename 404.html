@@ -122,7 +122,19 @@
     (function () {
       var path = window.location.pathname;
 
-      // Handle /macapp/ deep links -> workcoach:// redirect
+      // Phones and tablets can't run the desktop app, so conversation links open
+      // the web app instead. iPadOS reports a Mac user agent; touch support tells it apart.
+      var ua = navigator.userAgent;
+      var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua) ||
+        (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+      var conversation = path.match(/^\/macapp\/(?:conversation|chat)\/([^\/]+)/i);
+      if (isMobile && conversation) {
+        window.location.replace('https://my.work.coach/chat/' + conversation[1]);
+        return;
+      }
+
+      // Handle /macapp/ deep links -> workcoach:// redirect (Mac and Windows apps
+      // both register the scheme)
       if (path.match(/^\/macapp(\/|$)/)) {
         var route = path.replace(/^\/macapp\/?/, '') || 'home';
         var search = window.location.search || '';
