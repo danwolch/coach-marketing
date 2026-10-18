@@ -96,11 +96,22 @@
       cursor: pointer;
     }
     .hidden { display: none; }
+    #loading h1 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
   </style>
+  <noscript><style>#loading { display: none; } #fallback { display: block !important; }</style></noscript>
 </head>
 <body>
   <div class="container">
     <div class="icon" aria-hidden="true"></div>
+
+    <!-- Shown on arrival, until the script picks where this link goes -->
+    <div id="loading">
+      <h1>Loading&hellip;</h1>
+    </div>
 
     <!-- Deep link redirect state (macapp paths) -->
     <div id="opening" class="hidden">
@@ -109,7 +120,7 @@
     </div>
 
     <!-- Fallback after redirect timeout or non-macapp 404 -->
-    <div id="fallback">
+    <div id="fallback" class="hidden">
       <h1>Open in Coach</h1>
       <p>This link is meant to open in the Coach app. Download it to continue.</p>
       <a href="https://work.coach/download" class="button">Download</a>
@@ -129,6 +140,7 @@
         (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
       var conversation = path.match(/^\/macapp\/(?:conversation|chat)\/([^\/]+)/i);
       if (isMobile && conversation) {
+        document.querySelector('#loading h1').innerHTML = 'Loading your conversation&hellip;';
         window.location.replace('https://my.work.coach/chat/' + conversation[1]);
         return;
       }
@@ -141,8 +153,8 @@
         var deepLink = 'workcoach://' + route + search;
 
         // Show the "opening" state
+        document.getElementById('loading').classList.add('hidden');
         document.getElementById('opening').classList.remove('hidden');
-        document.getElementById('fallback').classList.add('hidden');
 
         // Attempt redirect
         window.location.href = deepLink;
@@ -161,6 +173,10 @@
             window.location.href = deepLink;
           });
         }, 3000);
+      } else {
+        // An ordinary 404, not an app link
+        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('fallback').classList.remove('hidden');
       }
     })();
   </script>
