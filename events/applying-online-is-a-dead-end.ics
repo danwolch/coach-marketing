@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Work Coach//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:applying-online-is-a-dead-end-20261110@work.coach
+DTSTAMP:20261027T000000Z
+DTSTART:20261110T170000Z
+DTEND:20261110T180000Z
+SUMMARY:Applying Online Is a Dead End
+DESCRIPTION:How to get hired through people\, not portals. With Brian Cope 
+ (Motif Leadership) and Dan Wolchonok (Work Coach). The join link will be 
+ emailed to you.\n\nhttps://work.coach/events/applying-online-is-a-dead-end
+LOCATION:Online
+URL:https://work.coach/events/applying-online-is-a-dead-end
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Applying Online Is a Dead End starts in 15 minutes
+END:VALARM
+END:VEVENT
+END:VCALENDAR
