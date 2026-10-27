@@ -137,8 +137,8 @@
   </article>
 
   <aside class="register-card" id="register">
-    <!-- TODO: replace "your.work.coach" with the real lead-capture host (same endpoint as /get-started) -->
-    <form id="register-form" action="https://your.work.coach/functions/v1/lead-capture" method="POST" novalidate>
+    <!-- Registrations are stored in PostHog as event_registered events (see script below) -->
+    <form id="register-form" novalidate>
       <h2>Save your spot</h2>
       <p class="card-sub">Free. We'll send the join link and a reminder before the session.</p>
 
@@ -258,10 +258,6 @@
     }
     if (form.elements._gotcha.value) return;
 
-    var btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Registering…';
-
     var data = Object.fromEntries(new FormData(form));
     delete data._gotcha;
     data.email = data.email.trim().toLowerCase();
@@ -273,17 +269,9 @@
       posthog.capture('event_registered', data);
     }
 
-    fetch(form.action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .catch(function() { /* network error — PostHog still has the registration, don't block the user */ })
-    .finally(function() {
-      form.style.display = 'none';
-      success.classList.add('show');
-      document.querySelectorAll('a[href="#register"]').forEach(function(a) { a.style.display = 'none'; });
-    });
+    form.style.display = 'none';
+    success.classList.add('show');
+    document.querySelectorAll('a[href="#register"]').forEach(function(a) { a.style.display = 'none'; });
   });
 
   success.addEventListener('click', function(e) {
