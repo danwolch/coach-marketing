@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Free live sessions from Work Coach on job searching, interviewing, and growing your career, with coaches and operators who've done it.">
+<meta name="color-scheme" content="light">
+<title>Events: Free Live Career Sessions | Work Coach</title>
+<link rel="canonical" href="https://work.coach/events/">
+<link rel="icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://work.coach/events/">
+<meta property="og:site_name" content="Work Coach">
+<meta property="og:title" content="Work Coach Events: Free Live Career Sessions">
+<meta property="og:description" content="Free live sessions on job searching, interviewing, and growing your career.">
+<meta property="og:image" content="https://work.coach/img/og-image-whistle.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Work Coach Events: Free Live Career Sessions">
+<meta name="twitter:description" content="Free live sessions on job searching, interviewing, and growing your career.">
+<meta name="twitter:image" content="https://work.coach/img/og-image-whistle.png">
+
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_1qX2rgCW83ghyqnBLTO6ZADUvTvceD36DwDochmrxfB',{api_host:'https://us.i.posthog.com', defaults:'2025-11-30'})
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="events.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Work Coach</a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">What you get</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/playbooks/">Playbooks</a>
+      <a href="/events/">Events</a>
+    </div>
+    <a href="https://my.work.coach" class="btn-primary">Start Free Trial</a>
+  </div>
+</nav>
+
+<main>
+<section class="events-hero">
+  <span class="eyebrow">Events</span>
+  <h1>Free live sessions for your career.</h1>
+  <p>Practical, one-hour sessions with coaches and operators on job searching, interviewing, and growing at work.</p>
+</section>
+
+<section class="events-list">
+  <h2 id="upcoming-heading">Upcoming</h2>
+  <div id="upcoming">
+    <!-- Add new events here, newest first. data-end drives the upcoming/past split. -->
+    <a class="event-card" href="/events/applying-online-is-a-dead-end" data-end="2026-11-10T13:00:00-05:00">
+      <div class="date-badge" aria-hidden="true"><span class="mon">Nov</span><span class="day">10</span></div>
+      <div>
+        <h3>Applying Online Is a Dead End</h3>
+        <div class="meta">Tue, Nov 10, 2026 · 12:00–1:00 PM ET · Online · Free</div>
+        <p>How to get hired through people, not portals. With Brian Cope (Motif Leadership) and Dan Wolchonok (Work Coach).</p>
+        <span class="cta">Register free →</span>
+      </div>
+    </a>
+  </div>
+  <p class="empty-note" id="upcoming-empty" hidden>Nothing scheduled right now. Check back soon.</p>
+
+  <h2 id="past-heading" hidden>Past events</h2>
+  <div id="past"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>Your data is never shared with your employer.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // Move events whose end time has passed into "Past events".
+  var now = Date.now();
+  var upcoming = document.getElementById('upcoming');
+  var past = document.getElementById('past');
+  Array.prototype.slice.call(upcoming.querySelectorAll('.event-card')).forEach(function(card) {
+    if (new Date(card.dataset.end).getTime() < now) {
+      var cta = card.querySelector('.cta');
+      if (cta) cta.textContent = 'View event →';
+      past.appendChild(card);
+    }
+  });
+  document.getElementById('upcoming-empty').hidden = upcoming.querySelector('.event-card') !== null;
+  document.getElementById('past-heading').hidden = past.querySelector('.event-card') === null;
+})();
+</script>
+
+</body>
+</html>

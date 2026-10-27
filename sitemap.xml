@@ -79,6 +79,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://work.coach/events/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://work.coach/events/applying-online-is-a-dead-end</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://work.coach/playbooks/</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
