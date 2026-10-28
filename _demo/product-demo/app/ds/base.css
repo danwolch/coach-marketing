@@ -1,0 +1,10 @@
+:root { color-scheme: light; }
+body { background: var(--bg-1); color: var(--fg-0); font-family: var(--font-sans); font-size: var(--text-md); line-height: var(--leading-relaxed); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: var(--weight-regular); line-height: var(--leading-snug); color: var(--fg-0); }
+h1 { font-size: var(--text-display-xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--text-display-md); } h3 { font-size: var(--text-display-sm); }
+h1 em, h2 em, h3 em { font-style: italic; color: var(--accent-deep); }
+a { color: var(--text-link); text-decoration: none; }
+.wc-eyebrow { font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: var(--weight-bold); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--accent); }
+::selection { background: var(--accent-tint); color: var(--fg-0); }
+:focus-visible { outline: 2px solid color-mix(in oklab, var(--accent) 60%, white); outline-offset: 2px; }

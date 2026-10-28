@@ -1,0 +1,8 @@
+:root {
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px; --space-20: 80px; --space-24: 96px;
+  --radius-xs: 6px; --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 22px; --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(26,46,34,0.05); --shadow-card: 0 10px 30px rgba(0,0,0,0.07); --shadow-lg: 0 16px 50px rgba(0,0,0,0.10); --shadow-xl: 0 20px 60px rgba(0,0,0,0.10);
+  --shadow-accent: 0 10px 26px rgba(49,193,120,0.28); --ring-accent: 0 0 0 1px var(--accent-dark), 0 6px 18px rgba(0,0,0,0.06);
+  --maxw-content: 1100px; --maxw-prose: 800px; --maxw-app: 1120px; --nav-height: 88px;
+  --ease-standard: cubic-bezier(0.4,0,0.2,1); --dur-fast: 0.18s; --dur-base: 0.25s; --dur-slow: 0.5s;
+}

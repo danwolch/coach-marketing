@@ -1506,218 +1506,17 @@ a:focus {
 .story-frame {
   position: relative;
   width: 100%;
-  max-width: 880px;
-  height: 430px;
-  margin: 28px auto 0;
-  touch-action: pan-y;
-  background: transparent;
-  isolation: isolate;
-}
-.story-body { position: absolute; inset: 0; }
-.story-canvas {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  overflow: visible;
-}
-.story-scene {
-  position: absolute;
-  inset: 0;
-  padding: 34px 40px;
-  opacity: 0;
-  transform: translateY(10px) scale(.99);
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity .45s ease, transform .45s ease, visibility 0s linear .45s;
-}
-.story-scene.is-visible { opacity: 1; transform: none; pointer-events: auto; visibility: visible; transition: opacity .45s ease, transform .45s ease; }
-.story-scene h3 { font-family: 'Playfair Display', serif; font-size: 27px; font-weight: 400; line-height: 1.2; }
-.story-sub { color: #718078; font-size: 13px; margin-top: 4px; }
-.home-scene { padding: 0; }
-.story-video-layer {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: start center;
-  padding-top: 22px;
-  background: transparent;
-  opacity: 1;
-  transition: opacity .35s ease, filter .35s ease;
-  pointer-events: none;
-}
-[data-story-scene="analyzed"] .story-notification strong { font-size: 26px; }
-[data-story-scene="analyzed"] .notify-chips { gap: 8px; margin-top: 13px; }
-[data-story-scene="analyzed"] .notify-chips i { font-size: 14px; padding: 8px 14px; }
-[data-story-state="analyzed"] .story-video-layer,
-[data-story-state="coaching"] .story-video-layer,
-[data-story-state="practice"] .story-video-layer { opacity: 0; }
-.story-video-call {
-  width: min(650px, calc(100% - 86px));
-  height: 390px;
-  border: 1px solid #343d48;
-  border-radius: 13px;
+  max-width: 960px;
+  aspect-ratio: 16 / 10;
+  margin: 32px auto 0;
   overflow: hidden;
-  background: #1d242d;
-  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  border-radius: 14px;
+  background: #1d3b32;
+  box-shadow: 0 0 0 1px rgba(26,46,34,.08), 0 28px 70px rgba(26,46,34,.22), 0 8px 20px rgba(26,46,34,.10);
 }
-.story-video-titlebar {
-  height: 30px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  color: #9ba4af;
-  background: #202832;
-  font: 600 9px/1 ui-sans-serif, system-ui, sans-serif;
-}
-.story-video-lights { display: flex; gap: 5px; }
-.story-video-lights i { width: 8px; height: 8px; border-radius: 50%; background: #626d77; }
-.story-video-lights i:first-child { background: #f36a5f; }
-.story-video-lights i:nth-child(2) { background: #eab64b; }
-.story-video-lights i:nth-child(3) { background: #5fc255; }
-.story-video-title { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.story-video-clock { position: absolute; right: 10px; color: #c0c7ce; font: 700 9px/1 ui-monospace, monospace; }
-.story-video-tiles { height: calc(100% - 89px); display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 9px; }
-.story-video-tile { position: relative; display: grid; place-items: center; border: 1px solid #36414c; border-radius: 9px; background: #252e39; overflow: hidden; }
-.story-video-tile.is-speaking { border-color: #46a978; box-shadow: inset 0 0 0 1px #46a978; }
-.story-video-avatar { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #4e9a71; color: white; font-size: 14px; font-weight: 800; }
-.story-video-tile:nth-child(2) .story-video-avatar { background: #c4933e; }
-.story-video-name { position: absolute; left: 7px; bottom: 6px; padding: 3px 5px; border-radius: 3px; background: rgba(9,13,17,.8); color: white; font-size: 8px; }
-.story-video-controls { height: 59px; display: flex; align-items: center; justify-content: center; gap: 9px; }
-.story-call-control { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: #414a55; color: #d8dde2; font-size: 10px; }
-.story-call-leave { border: 0; font-family: inherit; min-width: 54px; height: 27px; display: grid; place-items: center; border-radius: 999px; background: #e45a55; color: white; font-size: 9px; font-weight: 800; padding: 0 12px; pointer-events: auto; cursor: pointer; }
-.story-card { background: white; border: 1px solid #e0e5df; border-radius: 13px; box-shadow: 0 7px 20px rgba(33,50,39,.05); }
-.meeting-prompt {
-  position: absolute;
-  z-index: 9;
-  width: min(560px, calc(100% - 28px));
-  left: 50%;
-  top: 12px;
-  padding: 17px 18px;
-  background: rgba(255,255,255,.99);
-  border: 1px solid #cfe1d6;
-  border-radius: 16px;
-  box-shadow: 0 18px 48px rgba(20,35,27,.2);
-  transform: translate(-50%, -18px);
-  opacity: 0;
-}
-[data-story-state="prompt"] .meeting-prompt { animation: storyPromptIn .55s .35s cubic-bezier(.2,.8,.2,1) forwards; }
-@keyframes storyPromptIn { to { transform: translate(-50%, 0); opacity: 1; } }
-.prompt-top { display: flex; gap: 12px; align-items: flex-start; }
-.prompt-icon { width: 42px; height: 42px; border-radius: 11px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 6px 14px rgba(20,64,36,.24); }
-.prompt-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.prompt-brand { color: #187344; font-size: 11.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
-.prompt-copy { min-width: 0; }
-.prompt-copy strong { display: block; color: #233a2c; font-size: 22px; line-height: 1.2; }
-.prompt-copy span { display: block; color: #758179; font-size: 15px; line-height: 1.4; }
-.prompt-copy b { color: #536158; font-weight: 650; }
-.prompt-explainer { margin-top: 4px; }
-.prompt-meeting-info { margin-top: 7px; padding-top: 7px; border-top: 1px solid #e5ebe6; }
-.prompt-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
-.story-button { border: 0; border-radius: 10px; padding: 11px 18px; font: 700 14.5px/1 'Source Sans 3', sans-serif; cursor: pointer; }
-.story-button-muted { background: #f0f2ef; color: #5f6c63; }
-.story-button-green { background: #31c178; color: white; }
-.recording-scene { padding: 0; }
-.recording-dot { width: 7px; height: 7px; border-radius: 50%; background: #ef5147; animation: storyBlink 1.2s ease infinite; }
+.story-video { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; }
+/* still used by the playground's live call label */
 @keyframes storyBlink { 50% { opacity: .35; } }
-.coach-observe-bar {
-  position: absolute;
-  z-index: 8;
-  top: 34px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  width: min(620px, calc(100% - 24px));
-  padding: 14px 14px 14px 16px;
-  border: 1px solid #cfe1d6;
-  border-radius: 17px;
-  background: rgba(255,255,255,.98);
-  box-shadow: 0 18px 46px rgba(20,35,27,.24);
-  color: #233a2c;
-  backdrop-filter: blur(10px);
-}
-.coach-observe-icon { width: 44px; height: 44px; border-radius: 12px; flex: 0 0 auto; overflow: hidden; box-shadow: 0 7px 16px rgba(20,64,36,.24); }
-.coach-observe-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.coach-observe-copy { min-width: 0; flex: 1; }
-.coach-observe-copy strong { display: flex; align-items: center; gap: 9px; font-size: 18px; line-height: 1.15; }
-.coach-observe-copy .recording-dot { background: #31c178; flex: 0 0 auto; }
-.coach-observe-time { color: #59685f; font: 750 14px/1 ui-monospace, monospace; }
-.notify-scene {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 20px;
-}
-.story-notification {
-  width: min(600px, 100%);
-  padding: 19px 22px;
-  background: rgba(255,255,255,.99);
-  border: 1px solid #cfe1d6;
-  border-radius: 15px;
-  box-shadow: 0 18px 48px rgba(20,35,27,.2);
-  opacity: 0;
-  transform: translateY(-14px);
-}
-.story-scene.is-visible .story-notification { animation: notifyIn .5s cubic-bezier(.2,.8,.2,1) forwards; }
-.story-scene.is-visible .story-notification:nth-child(2) { animation-delay: .55s; }
-.story-scene.is-visible .story-notification:nth-child(3) { animation-delay: 1.1s; }
-@keyframes notifyIn { to { opacity: 1; transform: none; } }
-.notify-head { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
-.notify-app-icon { width: 24px; height: 24px; border-radius: 6px; overflow: hidden; flex: 0 0 auto; box-shadow: 0 3px 8px rgba(20,64,36,.2); }
-.notify-app-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.notify-app-name { color: #187344; font-size: 10.5px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-.notify-time { margin-left: auto; color: #9aa79e; font-size: 10.5px; font-weight: 650; }
-.story-notification strong { display: block; color: #233a2c; font-size: 21px; line-height: 1.25; }
-.story-notification p { color: #68766d; font-size: 15px; line-height: 1.5; margin-top: 5px; }
-.notify-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
-.notify-chips i { font-style: normal; padding: 7px 13px; border-radius: 999px; background: #e2f6ea; color: #187344; font-size: 12.5px; font-weight: 800; }
-.notify-label { color: #23935a; font-size: 11.5px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
-.notify-label.is-warm { color: #b07f1c; }
-.practice-chart { position: relative; display: flex; align-items: flex-end; gap: 26px; margin-top: 14px; padding: 0 6px; }
-.practice-bar { flex: 0 0 66px; display: flex; flex-direction: column; align-items: center; }
-.practice-bar b { font-size: 16px; font-weight: 800; color: #526159; margin-bottom: 5px; opacity: 0; }
-.practice-bar i { display: block; width: 100%; height: calc(96px * var(--s)); border-radius: 8px 8px 3px 3px; background: #d5ddd5; transform: scaleY(0); transform-origin: bottom; }
-.practice-bar.is-mid i { background: #9fd1b3; }
-.practice-bar.is-best i { background: var(--accent); }
-.practice-bar.is-best b { color: #187344; }
-.practice-bar small { margin-top: 7px; color: #93a198; font-size: 9px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
-.practice-delta { position: absolute; right: 2px; top: 0; padding: 6px 11px; border-radius: 999px; background: #e5f7ec; border: 1px solid #b7e3c8; color: #187344; font-size: 12px; font-weight: 800; opacity: 0; }
-.story-scene.is-visible .practice-bar i { animation: barGrow .5s cubic-bezier(.2,.8,.2,1) forwards; }
-.story-scene.is-visible .practice-bar b { animation: notifyIn .3s ease forwards; }
-.story-scene.is-visible .practice-bar:nth-child(1) i { animation-delay: .45s; }
-.story-scene.is-visible .practice-bar:nth-child(1) b { animation-delay: .8s; }
-.story-scene.is-visible .practice-bar:nth-child(2) i { animation-delay: .85s; }
-.story-scene.is-visible .practice-bar:nth-child(2) b { animation-delay: 1.2s; }
-.story-scene.is-visible .practice-bar:nth-child(3) i { animation-delay: 1.25s; }
-.story-scene.is-visible .practice-bar:nth-child(3) b { animation-delay: 1.6s; }
-.story-scene.is-visible .practice-delta { animation: notifyIn .4s ease 1.85s forwards; }
-@keyframes barGrow { to { transform: scaleY(1); } }
-.notify-footnote .story-button { margin-left: auto; text-decoration: none; color: white; }
-.notify-footnote { display: flex; align-items: center; gap: 7px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5ebe6; color: #187344; font-size: 13px; font-weight: 750; }
-.notify-footnote::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #31c178; }
-.story-cursor {
-  --cx: 70%; --cy: 30%;
-  position: absolute;
-  z-index: 18;
-  left: var(--cx);
-  top: var(--cy);
-  width: 20px;
-  height: 25px;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
-  transition: left 1.05s cubic-bezier(.2,.8,.2,1), top 1.05s cubic-bezier(.2,.8,.2,1), opacity .25s;
-  pointer-events: none;
-}
-.story-cursor::before { content: ''; position: absolute; inset: 0; background: #183124; clip-path: polygon(0 0, 0 83%, 28% 64%, 43% 100%, 56% 94%, 41% 59%, 72% 58%); }
-.story-cursor::after { content: ''; position: absolute; width: 12px; height: 12px; left: -5px; top: -5px; border: 2px solid #31c178; border-radius: 50%; opacity: 0; animation: cursorClick 3.2s ease-out infinite; }
-@keyframes cursorClick { 72% { opacity: 0; transform: scale(.4); } 78% { opacity: .85; } 93% { opacity: 0; transform: scale(2.6); } }
-[data-story-state="recording"] .story-cursor { --cx: 53%; --cy: 86%; }
-[data-story-state="analyzed"] .story-cursor,
-[data-story-state="coaching"] .story-cursor,
-[data-story-state="practice"] .story-cursor { opacity: 0; }
 
 /* CLICKABLE APP PLAYGROUND */
 .app-playground {
@@ -2189,48 +1988,10 @@ a:focus {
   .product-story { padding: 44px 12px 56px; }
   .product-story-head h2 { font-size: 29px; }
   .product-story-head p { font-size: 14px; }
-  .story-frame { height: 470px; }
-  .story-scene { padding: 26px 22px; }
-  .home-scene { padding: 0; }
-  .notify-scene { padding: 0 10px; }
-  .story-video-layer { padding-top: 20px; }
-  .story-video-call { width: calc(100% - 28px); height: 400px; }
-  .meeting-prompt { top: 10px; }
-  [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 30%; }
-  [data-story-state="recording"] .story-cursor { --cx: 54%; --cy: 82%; }
+  .story-frame { margin-top: 24px; border-radius: 10px; }
 }
 @media (max-width: 470px) {
   .product-story-head h2 { font-size: 25px; }
-      .story-frame { height: 430px; }
-  .story-scene { padding: 22px 16px; }
-  .home-scene, .recording-scene { padding: 0; }
-  .notify-scene { padding: 0 6px; gap: 8px; }
-  .story-notification { padding: 14px 15px; }
-  .story-notification strong { font-size: 16px; }
-  .story-notification p { font-size: 12.5px; }
-  .practice-chart { gap: 16px; }
-  .practice-bar { flex-basis: 52px; }
-  .practice-bar i { height: calc(74px * var(--s)); }
-  .story-video-layer { padding-top: 18px; }
-  .story-video-call { height: 360px; }
-  .story-video-avatar { width: 42px; height: 42px; font-size: 12px; }
-  .meeting-prompt { top: 8px; padding: 14px; }
-  .prompt-top { gap: 10px; }
-  .prompt-actions { margin-top: 10px; }
-  .coach-observe-bar { top: 30px; width: calc(100% - 18px); gap: 8px; padding: 10px; border-radius: 14px; }
-  .coach-observe-icon { width: 38px; height: 38px; border-radius: 10px; }
-  .coach-observe-copy strong { gap: 5px; font-size: 11.5px; }
-  .coach-observe-time { font-size: 9px; }
-  [data-story-state="prompt"] .story-cursor { --cx: 70%; --cy: 31%; }
-  [data-story-state="recording"] .story-cursor { --cx: 54%; --cy: 80%; }
-  .story-scene h3 { font-size: 23px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .story-scene, .story-cursor { transition: none; }
-  .meeting-prompt { animation: none !important; opacity: 1; transform: translate(-50%, 0); }
-  .story-notification { animation: none !important; opacity: 1; transform: none; }
-  .practice-bar i, .practice-bar b, .practice-delta { animation: none !important; transform: none; opacity: 1; }
-  .recording-dot, .story-cursor::after { animation: none !important; }
 }
 </style>
 </head>
@@ -2333,104 +2094,11 @@ a:focus {
       <h2 id="product-story-title">An app that coaches you<br>without joining the meeting</h2>
     </div>
 
-    <div class="story-frame" data-product-story data-story-state="prompt" aria-label="Animated walkthrough of Work Coach observing, coaching, and helping you practice">
-      <div class="story-body">
-        <div class="story-canvas">
-          <div class="story-video-layer" aria-hidden="true">
-            <div class="story-video-call">
-              <div class="story-video-titlebar">
-                <div class="story-video-lights"><i></i><i></i><i></i></div>
-                <span class="story-video-title"><span data-story-field="meetingName">Final interview</span> · Zoom</span>
-                <span class="story-video-clock" data-meeting-clock>00:00</span>
-              </div>
-              <div class="story-video-tiles">
-                <div class="story-video-tile is-speaking">
-                  <div class="story-video-avatar" data-story-field="otherInitial">A</div>
-                  <span class="story-video-name" data-story-field="otherName">Alex</span>
-                </div>
-                <div class="story-video-tile">
-                  <div class="story-video-avatar">M</div>
-                  <span class="story-video-name">You</span>
-                </div>
-              </div>
-              <div class="story-video-controls"><span class="story-call-control">◼</span><span class="story-call-control">●</span><button class="story-call-leave" type="button" data-tour-next>Leave</button></div>
-            </div>
-          </div>
-
-          <div class="story-scene home-scene is-visible" data-story-scene="prompt">
-            <div class="meeting-prompt">
-              <div class="prompt-top">
-                <div class="prompt-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></div>
-                <div class="prompt-copy">
-                  <div class="prompt-brand">Work Coach</div>
-                  <strong>Observe this interview?</strong>
-                  <span class="prompt-explainer">Private coaching. No bot joins.</span>
-                  <span class="prompt-meeting-info"><b data-story-field="meetingName">Final interview</b> · <b data-story-field="promptMeta">10:00 AM · Alex Morgan</b></span>
-                </div>
-              </div>
-              <div class="prompt-actions">
-                <button class="story-button story-button-muted" type="button" data-tour-next>Not now</button>
-                <button class="story-button story-button-green" type="button" data-tour-next>Observe meeting</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="story-scene recording-scene" data-story-scene="recording">
-            <div class="coach-observe-bar">
-              <span class="coach-observe-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span>
-              <span class="coach-observe-copy"><strong><span class="recording-dot"></span>Work Coach is observing</strong></span>
-              <span class="coach-observe-time" data-meeting-clock>00:00</span>
-            </div>
-          </div>
-
-          <div class="story-scene notify-scene" data-story-scene="analyzed">
-            <div class="story-notification">
-              <div class="notify-head">
-                <span class="notify-app-icon" aria-hidden="true"><img src="img/app-icon/icon-128.png" alt=""></span>
-                <span class="notify-app-name">Work Coach</span>
-                <span class="notify-time">now</span>
-              </div>
-              <strong>Your coaching is ready</strong>
-              <div class="notify-chips"><i>✓ Job interview detected</i><i>2 coaching points</i><i>1 practice rep</i></div>
-              <div class="prompt-actions">
-                <button class="story-button story-button-green" type="button" data-tour-next>See coaching</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="story-scene notify-scene" data-story-scene="coaching">
-            <div class="story-notification">
-              <div class="notify-label">Coaching point</div>
-              <strong>Tighten your “tell me about yourself”</strong>
-              <p>Your opener ran three minutes. Keep it to 90 seconds: current role, your best win, why this job.</p>
-            </div>
-            <div class="story-notification">
-              <div class="notify-label">What worked</div>
-              <strong>Your numbers did the selling</strong>
-              <p>“We cut churn 22%” was the line Alex wrote down. That’s what gets repeated to the hiring committee.</p>
-              <div class="prompt-actions">
-                <button class="story-button story-button-green" type="button" data-tour-next>Practice this →</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="story-scene notify-scene" data-story-scene="practice">
-            <div class="story-notification">
-              <div class="notify-label">Roleplay practice</div>
-              <strong>Practice until it sticks</strong>
-              <p>Three reps of “tell me about yourself” with an AI interviewer.</p>
-              <div class="practice-chart" aria-label="Scores improving across three practice reps: 58, then 72, then 86">
-                <div class="practice-bar" style="--s: .58" aria-hidden="true"><b>58</b><i></i><small>Rep 1</small></div>
-                <div class="practice-bar is-mid" style="--s: .72" aria-hidden="true"><b>72</b><i></i><small>Rep 2</small></div>
-                <div class="practice-bar is-best" style="--s: .86" aria-hidden="true"><b>86</b><i></i><small>Rep 3</small></div>
-                <span class="practice-delta" aria-hidden="true">+28 pts</span>
-              </div>
-              <div class="notify-footnote">Ready for the real interview<a href="/download" class="story-button story-button-green" data-app-cta>Practice now →</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="story-cursor" aria-hidden="true"></div>
-      </div>
+    <div class="story-frame">
+      <video class="story-video" data-product-video muted loop playsinline preload="metadata" poster="img/product-demo-poster.jpg?v=1" aria-label="Screen recording: Work Coach offers to record a Google Meet interview, then shows the moment the candidate shared their current salary and what to say next time">
+        <source src="img/product-demo.webm?v=1" type="video/webm">
+        <source src="img/product-demo.mp4?v=1" type="video/mp4">
+      </video>
     </div>
     <div class="section-cta-row">
       <a href="/download" class="btn-primary" data-app-cta>Coach my next meeting →</a>
@@ -3143,91 +2811,18 @@ a:focus {
 })();
 
 (function() {
-  var story = document.querySelector('[data-product-story]');
-  if (!story) return;
-
-  var states = ['prompt', 'recording', 'analyzed', 'coaching', 'practice'];
-  var durations = [3200, 3200, 3000, 4200, 4200];
-  var scenes = Array.prototype.slice.call(story.querySelectorAll('[data-story-scene]'));
-  var nextButtons = Array.prototype.slice.call(story.querySelectorAll('[data-tour-next]'));
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var timer = null;
-  var meetingClockTimer = null;
-  var meetingElapsed = 0;
-  var meetingClocks = Array.prototype.slice.call(story.querySelectorAll('[data-meeting-clock]'));
-  var current = 0;
-  var inView = false;
-
-  function updateMeetingClock() {
-    var minutes = Math.floor(meetingElapsed / 60);
-    var seconds = meetingElapsed % 60;
-    var value = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-    meetingClocks.forEach(function(clock) { clock.textContent = value; });
+  var video = document.querySelector('[data-product-video]');
+  if (!video) return;
+  // Plays only while on screen. With reduced motion it stays on the poster and gets controls.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.controls = true;
+    return;
   }
-
-  function resetMeetingClock() {
-    meetingElapsed = 0;
-    updateMeetingClock();
-  }
-
-  function syncMeetingClock() {
-    clearInterval(meetingClockTimer);
-    meetingClockTimer = null;
-    if (!inView || reduce || current > 1) return;
-    meetingClockTimer = setInterval(function() {
-      meetingElapsed += 15;
-      updateMeetingClock();
-    }, 60);
-  }
-
-  function render(index) {
-    var previousState = story.getAttribute('data-story-state');
-    current = Math.max(0, Math.min(index, states.length - 1));
-    var state = states[current];
-    if (state === 'prompt' && previousState !== 'prompt') resetMeetingClock();
-    story.setAttribute('data-story-state', state);
-    scenes.forEach(function(scene) {
-      scene.classList.toggle('is-visible', scene.dataset.storyScene === state);
-    });
-    syncMeetingClock();
-  }
-
-  function schedule() {
-    clearTimeout(timer);
-    if (!inView || reduce) return;
-    timer = setTimeout(function() {
-      render(current === states.length - 1 ? 0 : current + 1);
-      schedule();
-    }, durations[current]);
-  }
-
-  function go(index) {
-    render(index);
-    schedule();
-  }
-
-  nextButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      go(current + 1);
-    });
-  });
-
-  render(reduce ? 3 : 0);
-
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        inView = entry.isIntersecting;
-        syncMeetingClock();
-        if (inView) schedule(); else clearTimeout(timer);
-      });
-    }, { threshold: 0.3 });
-    observer.observe(story);
-  } else {
-    inView = true;
-    syncMeetingClock();
-    schedule();
-  }
+  function play() { var p = video.play(); if (p && p.catch) p.catch(function() {}); }
+  if (!('IntersectionObserver' in window)) { play(); return; }
+  new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) play(); else video.pause(); });
+  }, { threshold: 0.25 }).observe(video);
 })();
 
 (function() {

@@ -1,0 +1,12 @@
+:root {
+  --fg-0: #1A2E22; --fg-1: #2A3F32; --fg-2: #4A5E52; --fg-3: #6B7A6E; --fg-4: #8A9990;
+  --bg-0: #FBF8F2; --bg-card: #FFFDF8; --bg-1: #F5F0E8; --bg-2: #EBE5DA; --bg-3: #DFD8CB;
+  --border: #D6D0C4; --border-strong: #C7C0B1;
+  --accent: #31C178; --accent-dark: #28A366; --accent-deep: #1E6B42; --accent-tint: #E0F5EB; --accent-tint-2: rgba(49,193,120,0.10);
+  --success-fg: #1E8A50; --success-bg: #E0F5EB;
+  --warning-fg: #C4891A; --warning-bg: #FDF3E0; --warning-tint: rgba(196,137,26,0.10);
+  --error-fg: #C94A4A; --error-bg: #FDE8E8; --error-tint: rgba(201,74,74,0.08);
+  --text-primary: var(--fg-0); --text-secondary: var(--fg-2); --text-muted: var(--fg-3); --text-placeholder: var(--fg-4); --text-on-accent: #FFFFFF; --text-link: var(--accent-deep);
+  --surface-canvas: var(--bg-1); --surface-card: var(--bg-card); --surface-raised: var(--bg-2); --surface-input: var(--bg-3); --surface-accent: var(--accent-tint);
+  --action-primary: var(--accent); --action-primary-hover: var(--accent-dark);
+}

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work Coach product demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* The whole video is this 1280x800 stage. Every moving part is set by renderAt(t) in the script
+   below; nothing here animates on its own, so record.js can capture any frame exactly. */
+:root {
+  --fg0: #1A2E22; --fg1: #2A3F32; --fg2: #4A5E52; --fg3: #6B7A6E; --fg4: #8A9990;
+  --bg1: #F5F0E8; --bg3: #DFD8CB; --accent-deep: #1E6B42; --accent-tint: #E0F5EB;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #111; overflow: hidden; }
+body { font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+#viewport { position: absolute; left: 0; top: 0; width: 1280px; height: 800px; overflow: hidden; transform-origin: 0 0; }
+#cam { position: absolute; inset: 0; transform-origin: 0 0; }
+
+/* desktop */
+#wall { position: absolute; inset: 0; background:
+  radial-gradient(120% 90% at 15% 10%, #3f7a62 0%, transparent 55%),
+  radial-gradient(90% 80% at 90% 90%, #c9a46a 0%, transparent 55%),
+  linear-gradient(160deg, #1d3b32 0%, #2c5546 45%, #8a7a55 100%); }
+#menubar { position: absolute; left: 0; top: 0; right: 0; height: 26px; display: flex; align-items: center; gap: 18px; padding: 0 14px;
+  background: rgba(236, 233, 228, .78); backdrop-filter: blur(20px); color: #1d1d1f; font-size: 13px; z-index: 50; }
+#menubar .apple { width: 15px; height: 15px; margin-right: 2px; }
+#menubar b { font-weight: 700; }
+#menubar .sp { flex: 1; }
+#menubar .ico { width: 17px; height: 17px; display: block; color: #1d1d1f; }
+#menubar .wc { position: relative; width: 17px; height: 17px; background: #1d1d1f;
+  -webkit-mask: url(img/menubar-whistle.png) center / contain no-repeat; mask: url(img/menubar-whistle.png) center / contain no-repeat; }
+#menubar .wcwrap { position: relative; display: flex; }
+#menubar .recdot { position: absolute; right: -3px; top: -1px; width: 7px; height: 7px; border-radius: 50%; background: #e5483d; box-shadow: 0 0 0 1.5px rgba(236,233,228,.9); opacity: 0; }
+#menubar .clock { font-variant-numeric: tabular-nums; }
+
+/* browser */
+#browser { position: absolute; left: 24px; top: 38px; width: 1232px; height: 744px; border-radius: 11px; overflow: hidden;
+  background: #202124; box-shadow: 0 0 0 .5px rgba(0,0,0,.6), 0 22px 60px rgba(0,0,0,.45); }
+.tabs { height: 40px; background: #1b1c1e; display: flex; align-items: flex-end; padding-left: 82px; position: relative; }
+.lights { position: absolute; left: 14px; top: 14px; display: flex; gap: 8px; }
+.lights i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; box-shadow: inset 0 0 0 .5px rgba(0,0,0,.25); }
+.lights i:nth-child(2) { background: #febc2e; } .lights i:nth-child(3) { background: #28c840; }
+.tab { height: 32px; width: 250px; border-radius: 9px 9px 0 0; background: #35363a; color: #e8eaed; font: 12px Roboto, sans-serif;
+  display: flex; align-items: center; gap: 8px; padding: 0 12px; }
+.tab .fav { width: 16px; height: 16px; border-radius: 3px; background: linear-gradient(135deg,#00832d 0 50%, #0066da 50% 75%, #ffba00 75%); }
+.tab .ttl { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tab .spk { width: 14px; height: 14px; color: #e8eaed; }
+.toolbar { height: 38px; background: #35363a; display: flex; align-items: center; gap: 12px; padding: 0 12px; color: #9aa0a6; }
+.toolbar .nav { width: 16px; height: 16px; }
+.omni { flex: 1; height: 28px; border-radius: 14px; background: #202124; color: #e8eaed; font: 13px Roboto, sans-serif; display: flex; align-items: center; gap: 8px; padding: 0 14px; }
+.omni span { color: #9aa0a6; }
+#meet { position: absolute; left: 0; top: 78px; right: 0; bottom: 0; background: #202124; font-family: Roboto, sans-serif; }
+.tiles { position: absolute; left: 16px; right: 16px; top: 22px; height: 470px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tile { position: relative; border-radius: 12px; overflow: hidden; background: #3c4043; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 50% 40%; }
+.tile .name { position: absolute; left: 12px; bottom: 10px; color: #fff; font-size: 14px; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.tile .ring { position: absolute; inset: 0; border-radius: 12px; box-shadow: inset 0 0 0 3px #8ab4f8; opacity: 0; }
+.tile .lvl { position: absolute; right: 10px; top: 10px; width: 26px; height: 26px; border-radius: 50%; background: #1a73e8; display: flex; align-items: center; justify-content: center; gap: 2px; opacity: 0; }
+.tile .lvl i { width: 3px; border-radius: 2px; background: #fff; height: 4px; }
+.caption { position: absolute; left: 50%; bottom: 92px; width: 760px; margin-left: -380px; display: flex; gap: 12px; align-items: flex-start;
+  padding: 12px 16px; border-radius: 10px; background: rgba(32,33,36,.82); color: #fff; opacity: 0; }
+.caption img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex: none; }
+.caption .who { font-size: 13px; font-weight: 500; color: #e8eaed; margin-bottom: 3px; }
+.caption .say { font-size: 21px; line-height: 1.35; }
+.bar { position: absolute; left: 0; right: 0; bottom: 0; height: 80px; display: flex; align-items: center; padding: 0 20px; color: #e8eaed; }
+.bar .meta { width: 340px; font-size: 15px; white-space: nowrap; }
+.bar .ctrls { flex: 1; display: flex; justify-content: center; gap: 10px; }
+.bar .btn { width: 44px; height: 44px; border-radius: 50%; background: #3c4043; display: flex; align-items: center; justify-content: center; }
+.bar .btn.on { background: #8ab4f8; } .bar .btn.on svg { fill: #202124; }
+.bar .btn svg { width: 22px; height: 22px; fill: #e8eaed; }
+.bar .hang { width: 60px; border-radius: 22px; background: #ea4335; }
+.bar .hang svg { width: 26px; height: 26px; fill: #fff; }
+.bar .right { width: 340px; display: flex; justify-content: flex-end; gap: 22px; }
+.bar .right svg { width: 22px; height: 22px; fill: #e8eaed; }
+#left { position: absolute; inset: 0; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; opacity: 0; font-family: Roboto, sans-serif; }
+#left h2 { margin: 0; font-weight: 400; font-size: 34px; color: #1f1f1f; }
+#left .row { display: flex; gap: 12px; }
+#left .b { height: 40px; padding: 0 22px; border-radius: 20px; font-size: 14px; font-weight: 500; display: flex; align-items: center; border: 1px solid #747775; color: #0b57d0; }
+#left .b.fill { background: #0b57d0; border-color: #0b57d0; color: #fff; }
+
+/* WorkCoach floating cards (PromptChrome.swift) */
+.card { position: absolute; right: 14px; top: 34px; width: 320px; padding: 16px; border-radius: 14px; background: var(--bg1);
+  box-shadow: 0 0 0 1px rgba(42,63,50,.08), 0 12px 32px rgba(0,0,0,.22); overflow: hidden; z-index: 40; opacity: 0; }
+.card .hdr { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--fg3); letter-spacing: .2px; }
+.card .hdr i { width: 13px; height: 13px; background: var(--accent-deep); -webkit-mask: url(img/menubar-whistle.png) center / contain no-repeat; mask: url(img/menubar-whistle.png) center / contain no-repeat; }
+.card .title { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--fg0); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card .sub { margin-top: 3px; font-size: 12px; color: var(--fg3); }
+.card .acts { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.card .sec { font-size: 13px; font-weight: 500; color: var(--fg2); padding: 6px 12px; border-radius: 8px; background: rgba(223,216,203,.5); }
+.card .pri { font-size: 13px; font-weight: 600; color: #fff; padding: 6px 14px; border-radius: 8px; background: var(--accent-deep); }
+.card .count { position: absolute; left: 0; bottom: 0; height: 3px; background: rgba(42,63,50,.18); }
+.card .dots { position: absolute; right: 16px; top: 44px; display: flex; gap: 4px; }
+.card .dots i { width: 6px; height: 6px; border-radius: 50%; background: #31C178; }
+.card .prog { margin-top: 14px; height: 4px; border-radius: 2px; background: rgba(42,63,50,.12); overflow: hidden; }
+.card .prog i { display: block; height: 100%; width: 0; background: var(--accent-deep); border-radius: 2px; }
+.card .swap { position: relative; }
+.card .swap > div { transition: none; }
+#hud { position: absolute; right: 8px; top: 360px; width: 32px; padding: 8px 6px; border-radius: 10px; background: rgba(245,240,232,.94);
+  box-shadow: 0 0 0 .5px rgba(138,153,144,.3), -2px 2px 8px rgba(0,0,0,.12); display: flex; flex-direction: column; align-items: center; gap: 6px; opacity: 0; z-index: 40; }
+#hud .wave { width: 16px; height: 20px; display: flex; align-items: center; justify-content: center; gap: 2.5px; }
+#hud .wave i { width: 3px; height: 2px; border-radius: 1.5px; background: rgba(30,107,66,.85); }
+#hud img { width: 20px; height: 20px; display: block; }
+
+/* the Work Coach window */
+#appwin { position: absolute; left: 64px; top: 44px; width: 1152px; height: 728px; border-radius: 12px; overflow: hidden; display: flex; opacity: 0;
+  background: #FBF8F2; box-shadow: 0 0 0 .5px rgba(0,0,0,.35), 0 28px 70px rgba(0,0,0,.42); z-index: 30; transform-origin: 50% 60%; }
+.side { width: 210px; flex: none; background: #EEE8DD; border-right: 1px solid #D7D0C5; padding: 46px 10px 12px; display: flex; flex-direction: column; position: relative; }
+.side .lights { left: 16px; top: 16px; }
+.brand { display: flex; align-items: center; gap: 9px; padding: 0 8px 18px; font-size: 14px; font-weight: 700; color: var(--fg0); }
+.brand img { width: 28px; height: 28px; border-radius: 8px; box-shadow: 0 5px 12px rgba(30,107,66,.2); }
+.navi { display: flex; align-items: center; gap: 10px; padding: 8px 9px; border-radius: 7px; color: var(--fg2); font-size: 13px; font-weight: 600; }
+.navi svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.navi.cur { background: #DBEADF; color: #174E31; }
+.side .foot { margin-top: auto; border-top: 1px solid #D7D0C5; padding: 12px 8px 0; display: flex; gap: 9px; align-items: center; font-size: 12px; color: var(--fg2); line-height: 1.35; }
+.side .foot b { width: 26px; height: 26px; border-radius: 50%; background: var(--accent-tint); color: var(--accent-deep); display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.mainwin { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.wtool { height: 44px; flex: none; display: flex; align-items: center; gap: 10px; padding: 0 18px; border-bottom: 1px solid #E4DED3; font-size: 13px; color: var(--fg3); }
+.wtool b { color: var(--fg0); font-weight: 600; }
+#frame { flex: 1; width: 100%; border: 0; display: block; background: #FBF8F2; }
+
+#cursor { position: absolute; left: 0; top: 0; width: 26px; height: 26px; z-index: 100; transform-origin: 3px 2px; pointer-events: none; filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.35)); }
+#click { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: rgba(255, 214, 10, .55); z-index: 99; opacity: 0; pointer-events: none; }
+#fade { position: absolute; inset: 0; background: #000; opacity: 0; z-index: 200; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="viewport">
+ <div id="cam">
+  <div id="wall"></div>
+
+  <div id="menubar">
+    <svg class="apple" viewBox="0 0 24 24"><path fill="#1d1d1f" d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.01.73c1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.46-3.72zM14.08 5.85c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg>
+    <b id="appname">Google Chrome</b><span>File</span><span>Edit</span><span>View</span><span>History</span><span>Bookmarks</span><span>Window</span><span>Help</span>
+    <span class="sp"></span>
+    <span class="wcwrap"><span class="wc"></span><span class="recdot" id="recdot"></span></span>
+    <svg class="ico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zm-4.6-2.9 1.4 1.4a4.6 4.6 0 0 1 6.4 0l1.4-1.4a6.6 6.6 0 0 0-9.2 0zM4.2 12.4l1.4 1.4a9.1 9.1 0 0 1 12.8 0l1.4-1.4a11.1 11.1 0 0 0-15.6 0zM1 9.2l1.4 1.4a13.6 13.6 0 0 1 19.2 0L23 9.2a15.6 15.6 0 0 0-22 0z"/></svg>
+    <svg class="ico" viewBox="0 0 28 24" style="width:25px"><rect x="1.5" y="6.5" width="21" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".55"/><rect x="3.5" y="8.5" width="14" height="7" rx="1.5" fill="currentColor"/><rect x="23.5" y="10" width="2" height="4" rx="1" fill="currentColor" opacity=".55"/></svg>
+    <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="5.5" rx="2.75" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="7.5" cy="7.75" r="1.6" fill="currentColor"/><rect x="3" y="13.5" width="18" height="5.5" rx="2.75" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="16.25" r="1.6" fill="currentColor"/></svg>
+    <span class="clock" id="clock">Tue Oct 28&nbsp;&nbsp;10:02 AM</span>
+  </div>
+
+  <div id="browser">
+    <div class="tabs"><div class="lights"><i></i><i></i><i></i></div>
+      <div class="tab"><span class="fav"></span><span class="ttl" id="tabttl">Meet – Final Round Interview: Larkspur</span>
+        <svg class="spk" viewBox="0 0 24 24"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg></div>
+    </div>
+    <div class="toolbar">
+      <svg class="nav" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z"/></svg>
+      <svg class="nav" viewBox="0 0 24 24"><path fill="currentColor" d="M4 13h12.2l-5.6 5.6L12 20l8-8-8-8-1.4 1.4 5.6 5.6H4z"/></svg>
+      <svg class="nav" viewBox="0 0 24 24"><path fill="currentColor" d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+      <div class="omni"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#9aa0a6" d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 0 1 6 0v2H9V6z"/></svg>meet.google.com<span>/kvt-pmhr-xqa</span></div>
+    </div>
+    <div id="meet">
+      <div class="tiles">
+        <div class="tile" id="tPriya"><img src="img/priya.jpg" alt=""><div class="ring"></div><div class="lvl"><i></i><i></i><i></i></div><span class="name">Priya Natarajan</span></div>
+        <div class="tile" id="tMarcus"><img src="img/marcus.jpg" alt=""><div class="ring"></div><div class="lvl"><i></i><i></i><i></i></div><span class="name">Marcus Lee (You)</span></div>
+      </div>
+      <div class="caption" id="capP"><img src="img/priya.jpg" alt="" style="object-position:52% 18%"><div><div class="who">Priya Natarajan</div><div class="say" data-say="Before we wrap up, what are you making today?"></div></div></div>
+      <div class="caption" id="capM"><img src="img/marcus.jpg" alt="" style="object-position:45% 18%"><div><div class="who">You</div><div class="say" data-say="Um, about 165 base."></div></div></div>
+      <div class="bar">
+        <div class="meta">10:02 AM&nbsp; | &nbsp;Final Round Interview: Larkspur</div>
+        <div class="ctrls">
+          <span class="btn"><svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg></span>
+          <span class="btn"><svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></span>
+          <span class="btn on"><svg viewBox="0 0 24 24"><path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-8 7H9.5v-.5h-2v3h2V13H11v1c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1zm7 0h-1.5v-.5h-2v3h2V13H18v1c0 .55-.45 1-1 1h-3c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1z"/></svg></span>
+          <span class="btn"><svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H3V5h18v14zM10 12H8l4-4 4 4h-2v4h-4v-4z"/></svg></span>
+          <span class="btn"><svg viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></span>
+          <span class="btn hang" id="hang"><svg viewBox="0 0 24 24"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.996.996 0 0 1 0-1.41C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28a11.27 11.27 0 0 0-2.67-1.85.996.996 0 0 1-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg></span>
+        </div>
+        <div class="right">
+          <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+        </div>
+      </div>
+      <div id="left"><h2>You left the meeting</h2><div class="row"><span class="b">Rejoin</span><span class="b fill">Return to home screen</span></div></div>
+    </div>
+  </div>
+
+  <div class="card" id="prompt">
+    <div class="hdr"><i></i>WorkCoach</div>
+    <div class="title">Final Round Interview: Larkspur</div>
+    <div class="sub">10:00 AM – 10:45 AM&nbsp;&nbsp;·&nbsp;&nbsp;with Priya Natarajan</div>
+    <div class="acts"><span class="sec">Not now</span><span class="pri" id="startBtn">Start recording</span></div>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="card" id="analyzing">
+    <div class="hdr"><i></i>WorkCoach</div>
+    <div class="swap">
+      <div id="anA"><div class="title">Analyzing your interview…</div><div class="sub">Final Round Interview: Larkspur</div><div class="prog"><i id="prog"></i></div></div>
+      <div id="anB" style="position:absolute;left:0;top:0;right:0;opacity:0"><div class="title">Your coaching is ready</div><div class="sub">2 things to work on&nbsp;&nbsp;·&nbsp;&nbsp;2 that went well</div>
+        <div class="acts"><span class="sec">Later</span><span class="pri" id="openBtn">See coaching</span></div></div>
+    </div>
+    <div class="dots" id="dots"><i></i><i></i><i></i></div>
+  </div>
+
+  <div id="hud"><div class="wave"><i></i><i></i><i></i></div><img src="img/icon-128.png" alt=""></div>
+
+  <div id="appwin">
+    <div class="side">
+      <div class="lights"><i></i><i></i><i></i></div>
+      <div class="brand"><img src="img/icon-128.png" alt="">Work Coach</div>
+      <div class="navi"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>Home</div>
+      <div class="navi cur"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Meetings</div>
+      <div class="navi"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 8h8M8 13h5"/></svg>Coach chat</div>
+      <div class="navi"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg>Practice</div>
+      <div class="navi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>People</div>
+      <div class="navi"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg>Jobs</div>
+      <div class="foot"><b>M</b><span>Marcus Lee<br>Pro trial</span></div>
+    </div>
+    <div class="mainwin">
+      <div class="wtool"><span>‹</span><span>Meetings</span><span>/</span><b>Final Round Interview: Larkspur</b></div>
+      <iframe id="frame" src="app/page.html#demo-larkspur&ch=2" title="Meeting page"></iframe>
+    </div>
+  </div>
+
+  <div id="click"></div>
+  <svg id="cursor" viewBox="0 0 26 26"><path d="M3 2 L3 20.5 L7.6 16.4 L10.7 23.4 L13.9 22 L10.9 15.2 L17 15.2 Z" fill="#000" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+ </div>
+ <div id="fade"></div>
+</div>
+
+<script>
+const W = 1280, H = 800;
+const LEAD = 0.6;         // record.js trims this much off the start into the closing crossfade
+const T = 25.8;           // seconds; record.js crossfades the end into the start so the loop is seamless
+const $ = s => document.querySelector(s);
+const clamp01 = x => Math.max(0, Math.min(1, x));
+const seg = (t, a, b) => clamp01((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+const inOut = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const out3 = x => 1 - Math.pow(1 - x, 3);
+const bump = (t, at, len) => { const k = (t - at) / len; return k < 0 || k > 1 ? 0 : Math.sin(Math.PI * k); };
+
+// ---------------------------------------------------------------- timing (seconds)
+const S = {
+  promptIn: [0.5, 0.95], toStart: [1.45, 2.45], clickStart: 2.6, promptOut: [2.8, 3.1], rest: [3.3, 4.3], hudIn: [3.0, 3.3],
+  priya: [3.4, 6.3], marcus: [6.5, 8.8], toHang: [8.3, 9.25], clickHang: 9.4, left: 9.55, hudOut: [9.5, 9.8],
+  anIn: [9.9, 10.35], prog: [10.4, 12.5], ready: 12.6, toOpen: [12.85, 13.65], clickOpen: 13.8, anOut: [13.95, 14.2],
+  appIn: [14.0, 14.5], toSalary: [14.85, 15.85], hover: 15.8, clickSalary: 16.45,
+  zoom1: [16.9, 18.0], scroll: [16.8, 17.9], toHeadline: [17.2, 18.3], zoom2: [19.0, 20.1], toNext: [19.3, 20.4], zoomOut: [22.9, 23.9],
+};
+
+// ---------------------------------------------------------------- the meeting page in the iframe
+const frame = $("#frame");
+let fw = null;                // iframe window, once app.js has rendered
+let shown = { open: 2, hover: null, scroll: 0 };
+function appReady() {
+  try { fw = frame.contentWindow; return !!fw.document.querySelector('.ch[data-n="4"]'); } catch { return false; }
+}
+function syncApp(t) {
+  if (!fw) return;
+  const open = t >= S.clickSalary ? 4 : 2;
+  if (shown.open !== open) { fw.eval(`state.open = ${open}; renderOpen();`); shown.open = open; }
+  const hover = t >= S.hover && t < S.zoom1[0] ? 4 : null;
+  if (shown.hover !== hover) {
+    const el = fw.document.querySelector('.ch[data-n="4"]');
+    el.classList.toggle("hov", hover != null);
+    el.dispatchEvent(new fw.MouseEvent(hover != null ? "mouseenter" : "mouseleave"));
+    shown.hover = hover;
+  }
+  const target = open === 4 ? panelScroll() : 0;
+  const y = Math.round(lerp(0, target, inOut(seg(t, ...S.scroll))));
+  if (shown.scroll !== y) { fw.scrollTo(0, y); shown.scroll = y; }
+}
+let panelY = null;
+function panelScroll() {
+  if (panelY == null) { const p = fw.document.querySelector("#openpanel"); panelY = p.getBoundingClientRect().top + fw.scrollY - 18; }
+  return panelY;
+}
+
+// ---------------------------------------------------------------- geometry
+// Where an element sits on the stage before the camera moves it (the cursor lives inside the camera).
+let cam = { s: 1, x: 0, y: 0 };   // the camera now on #cam; stagePoint undoes it
+let fit = 1;
+function stagePoint(el, fx = .5, fy = .5, inFrame = false) {
+  let r = el.getBoundingClientRect(), x = r.left + r.width * fx, y = r.top + r.height * fy;
+  if (inFrame) { const f = frame.getBoundingClientRect(), k = f.width / frame.clientWidth; x = f.left + x * k; y = f.top + y * k; }
+  const v = $("#viewport").getBoundingClientRect();
+  return { x: ((x - v.left) / fit - cam.x) / cam.s, y: ((y - v.top) / fit - cam.y) / cam.s };
+}
+const inApp = (sel, fx, fy) => () => stagePoint(fw.document.querySelector(sel), fx, fy, true);
+const at = (sel, fx, fy) => () => stagePoint($(sel), fx, fy);
+
+// ---------------------------------------------------------------- camera
+function camFor(s, fx, fy) {
+  const x = Math.min(0, Math.max(W - W * s, W / 2 - s * fx)), y = Math.min(0, Math.max(H - H * s, H / 2 - s * fy));
+  return { s, x, y };
+}
+function camAt(t) {
+  const base = { s: 1, x: 0, y: 0 };
+  if (!fw || t < S.zoom1[0]) return base;
+  const pane = inApp("#openpanel .panel", .5, .36)(), next = inApp("#openpanel .try", .5, .5)();
+  const A = camFor(1.42, pane.x, pane.y), B = camFor(1.8, next.x, next.y);
+  const mix = (p, q, k) => ({ s: lerp(p.s, q.s, k), x: lerp(p.x, q.x, k), y: lerp(p.y, q.y, k) });
+  if (t < S.zoom2[0]) return mix(base, A, inOut(seg(t, ...S.zoom1)));
+  if (t < S.zoomOut[0]) return mix(A, B, inOut(seg(t, ...S.zoom2)));
+  return mix(B, base, inOut(seg(t, ...S.zoomOut)));
+}
+
+// ---------------------------------------------------------------- cursor
+const HOME = { x: 760, y: 610 };
+const moves = [
+  { span: S.toStart, to: at("#startBtn", .55, .6), arc: -40 },
+  { span: S.rest, to: () => ({ x: 940, y: 700 }), arc: 20 },
+  { span: S.toHang, to: at("#hang", .5, .55), arc: 50 },
+  { span: S.toOpen, to: at("#openBtn", .5, .6), arc: -40 },
+  { span: S.toSalary, to: inApp('.ch[data-n="4"]', .45, .62), arc: 40 },
+  { span: S.toHeadline, to: inApp("#openpanel .headline", .62, .75), arc: -30 },
+  { span: S.toNext, to: inApp("#openpanel .try .text", .78, .9), arc: 30 },
+];
+function cursorAt(t) {
+  let from = HOME;
+  for (const m of moves) {
+    if (t < m.span[0]) return from;
+    const to = m.to();
+    if (t < m.span[1]) {
+      const k = inOut(seg(t, ...m.span)), dx = to.x - from.x, dy = to.y - from.y, len = Math.hypot(dx, dy) || 1;
+      const a = Math.sin(Math.PI * k) * m.arc;
+      return { x: lerp(from.x, to.x, k) - dy / len * a, y: lerp(from.y, to.y, k) + dx / len * a };
+    }
+    from = to;
+  }
+  return from;
+}
+const CLICKS = [S.clickStart, S.clickHang, S.clickOpen, S.clickSalary];
+
+// ---------------------------------------------------------------- frame
+function words(el, t, a, per) {
+  const all = el.dataset.say.split(" "), n = Math.max(0, Math.min(all.length, Math.floor((t - a) / per) + 1));
+  const text = all.slice(0, n).join(" ");
+  if (el.textContent !== text) el.textContent = text;
+}
+function level(t, seed) { return .35 + .65 * Math.abs(Math.sin(t * 9.1 + seed) * Math.sin(t * 4.3 + seed * 2.1)); }
+
+function renderAt(t) {
+  t -= LEAD;
+  // desktop and Meet
+  const left = t >= S.left;
+  const pIn = out3(seg(t, ...S.promptIn)), pOut = seg(t, ...S.promptOut);
+  const prompt = $("#prompt");
+  prompt.style.opacity = pIn * (1 - pOut);
+  prompt.style.transform = `translateX(${(1 - pIn) * 340 + pOut * 30}px)`;
+  $("#count").style.width = `${seg(t, S.promptIn[0], S.promptIn[0] + 180) * 100}%`;
+  $("#startBtn").style.background = bump(t, S.clickStart - .02, .22) > 0 ? "#185a37" : "";
+
+  const rec = t >= S.clickStart && t < S.clickHang;
+  $("#recdot").style.opacity = rec ? 1 : 0;
+  const hud = $("#hud"), hudK = seg(t, ...S.hudIn) * (1 - seg(t, ...S.hudOut));
+  hud.style.opacity = hudK; hud.style.transform = `translateX(${(1 - hudK) * 30}px)`;
+
+  const speakingP = t >= S.priya[0] && t < S.priya[0] + 2.2, speakingM = t >= S.marcus[0] && t < S.marcus[0] + 1.5;
+  [["#tPriya", speakingP, 0], ["#tMarcus", speakingM, 1.7]].forEach(([id, on, seed]) => {
+    const tile = $(id);
+    tile.querySelector(".ring").style.opacity = on ? 1 : 0;
+    tile.querySelector(".lvl").style.opacity = on ? 1 : 0;
+    tile.querySelectorAll(".lvl i").forEach((b, i) => b.style.height = `${on ? 4 + 9 * level(t, seed + i) : 4}px`);
+    tile.querySelector("img").style.transform = `scale(${1.02 + .012 * Math.sin(t * .5 + seed)})`;
+  });
+  const wave = $("#hud .wave").children, lvl = speakingP ? level(t, 3) * .7 : speakingM ? level(t, 5) : .12 + .08 * Math.abs(Math.sin(t * 3));
+  [.6, 1, .5].forEach((sc, i) => wave[i].style.height = `${Math.pow(lvl, .45) * sc * 18 + 2}px`);
+
+  const capP = $("#capP"), capM = $("#capM");
+  capP.style.opacity = seg(t, S.priya[0], S.priya[0] + .2) * (1 - seg(t, S.priya[1] - .2, S.priya[1]));
+  capM.style.opacity = seg(t, S.marcus[0], S.marcus[0] + .2) * (1 - seg(t, S.marcus[1] - .2, S.marcus[1]));
+  words(capP.querySelector(".say"), t, S.priya[0], .2);
+  words(capM.querySelector(".say"), t, S.marcus[0] + .15, .26);
+  $("#hang").style.background = bump(t, S.clickHang - .02, .22) > 0 ? "#c5372b" : "";
+  $("#left").style.opacity = left ? 1 : 0;
+  $("#tabttl").textContent = left ? "Meet" : "Meet – Final Round Interview: Larkspur";
+  $("#clock").innerHTML = `Tue Oct 28&nbsp;&nbsp;${t < S.left ? "10:02" : "10:44"} AM`;
+
+  // analyzing, then ready
+  const an = $("#analyzing"), aIn = out3(seg(t, ...S.anIn)), aOut = seg(t, ...S.anOut);
+  an.style.opacity = aIn * (1 - aOut); an.style.transform = `translateX(${(1 - aIn) * 340 + aOut * 30}px)`;
+  $("#prog").style.width = `${inOut(seg(t, ...S.prog)) * 100}%`;
+  const rk = seg(t, S.ready, S.ready + .25);
+  $("#anA").style.opacity = 1 - rk; $("#anB").style.opacity = rk;
+  $("#analyzing .swap").style.height = `${lerp($("#anA").offsetHeight, $("#anB").offsetHeight, inOut(rk))}px`;
+  $("#dots").style.opacity = 1 - rk;
+  [...$("#dots").children].forEach((d, i) => d.style.opacity = .3 + .7 * Math.max(0, Math.sin(t * 6 - i * .9)));
+  $("#openBtn").style.background = bump(t, S.clickOpen - .02, .22) > 0 ? "#185a37" : "";
+
+  // the app window
+  const w = $("#appwin"), wk = out3(seg(t, ...S.appIn));
+  w.style.opacity = wk; w.style.transform = `scale(${.95 + .05 * wk})`;
+  $("#appname").textContent = t >= S.clickOpen ? "Work Coach" : "Google Chrome";
+  syncApp(t);
+
+  // camera, then the cursor inside it
+  cam = camAt(t);
+  $("#cam").style.transform = `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})`;
+  const c = cursorAt(t), press = CLICKS.reduce((m, ct) => Math.max(m, bump(t, ct - .06, .2)), 0);
+  const cur = $("#cursor");
+  cur.style.transform = `translate(${c.x - 3}px, ${c.y - 2}px) scale(${(1 - .14 * press) / Math.sqrt(cam.s)})`;
+  const ring = CLICKS.reduce((m, ct) => (t >= ct - .05 && t < ct + .45) ? ct : m, null), clk = $("#click");
+  if (ring != null) { const k = seg(t, ring - .05, ring + .45); clk.style.opacity = .9 * (1 - k); clk.style.left = `${c.x}px`; clk.style.top = `${c.y}px`; clk.style.transform = `scale(${.5 + .7 * out3(k)})`; }
+  else clk.style.opacity = 0;
+}
+
+// ---------------------------------------------------------------- boot
+function fitToWindow() {
+  fit = Math.min(innerWidth / W, innerHeight / H);
+  const v = $("#viewport");
+  v.style.transform = `translate(${(innerWidth - W * fit) / 2}px, ${(innerHeight - H * fit) / 2}px) scale(${fit})`;
+}
+window.demoReady = new Promise(resolve => {
+  const wait = async () => {
+    if (!appReady()) return setTimeout(wait, 50);
+    await document.fonts.ready; await fw.document.fonts.ready;
+    fw.eval("layoutStrip()");   // again, now that the chapter labels are measured in the real fonts
+    resolve();
+  };
+  frame.addEventListener("load", wait);
+});
+window.renderAt = renderAt;
+window.DEMO_LENGTH = T;
+if (new URLSearchParams(location.search).has("record")) {
+  document.body.style.background = "#000";
+} else {
+  fitToWindow(); addEventListener("resize", fitToWindow);
+  window.demoReady.then(() => {
+    const t0 = performance.now();
+    const tick = () => { renderAt(((performance.now() - t0) / 1000) % T); requestAnimationFrame(tick); };
+    tick();
+  });
+}
+</script>
+</body>
+</html>
