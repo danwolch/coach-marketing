@@ -551,6 +551,112 @@ nav {
 }
 .manual-link:hover { color: var(--accent); }
 
+/* ─── WRITTEN INSTALL GUIDE ─── */
+.download-page .redirect-notice { margin: -32px 0 28px; }
+.install-guide {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+  text-align: left;
+}
+.guide-phase + .guide-phase {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.guide-phase-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 14px;
+}
+.guide-steps { list-style: none; display: grid; gap: 18px; }
+.guide-step {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.guide-num {
+  width: 28px; height: 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guide-text { font-size: 16px; line-height: 1.5; color: var(--text); padding-top: 2px; }
+.guide-text > strong { font-weight: 700; }
+.guide-note {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.guide-note strong { color: var(--text); font-weight: 600; }
+.anim-caption {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Pointer toward the browser's downloads button (top right in Chrome, Edge, Safari, Firefox) */
+.dl-pointer {
+  position: fixed;
+  top: 88px;
+  right: 20px;
+  z-index: 60;
+  background: var(--text);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-width: 240px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s, transform 0.4s;
+  pointer-events: none;
+}
+.dl-pointer::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 22px;
+  border: 7px solid transparent;
+  border-top: 0;
+  border-bottom-color: var(--text);
+}
+.dl-pointer.visible { opacity: 1; transform: none; animation: dl-nudge 1.6s ease-in-out 0.4s infinite; }
+@keyframes dl-nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (max-width: 560px) {
+  .install-guide { padding: 22px 20px; }
+  .steps-indicator { gap: 14px; }
+  .step-dot-label { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dl-pointer.visible { animation: none; }
+}
+
 /* ─── WINDOWS / MOBILE VIEWS ─── */
 .alt-view {
   text-align: center;
@@ -1002,9 +1108,55 @@ footer {
   <!-- ─── MAC VIEW ─── -->
   <div id="mac-view" class="download-page" style="display:none;">
     <h1>Your download is <em>starting</em></h1>
-    <p class="download-subtitle">It observes you in any meeting without joining the call. Setup in a minute.</p>
+    <p class="download-subtitle">Two parts to finish setup: open the file in your browser, then install it on your Mac.</p>
+
+    <div class="redirect-notice">
+      <p><span id="status-text">Your download will begin in <span class="countdown" id="countdown">3</span> seconds.</span> <a href="https://work.coach/download/mac" class="manual-link" id="manual-download">Download manually</a></p>
+    </div>
+
+    <div class="install-guide">
+      <div class="guide-phase">
+        <div class="guide-phase-label">In your browser</div>
+        <ol class="guide-steps">
+          <li class="guide-step">
+            <span class="guide-num">1</span>
+            <div class="guide-text" id="mac-browser-step">
+              <strong>Open WorkCoach.dmg from your browser&rsquo;s downloads.</strong>
+              <span class="guide-note">Can&rsquo;t find it? Open the <strong>Downloads</strong> folder in Finder and double-click <strong>WorkCoach.dmg</strong>.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="guide-phase">
+        <div class="guide-phase-label">On your Mac</div>
+        <ol class="guide-steps" start="2">
+          <li class="guide-step">
+            <span class="guide-num">2</span>
+            <div class="guide-text">
+              <strong>Drag the Work Coach icon onto the Applications folder.</strong>
+              <span class="guide-note">Do this in the window that pops up after you open the file.</span>
+            </div>
+          </li>
+          <li class="guide-step">
+            <span class="guide-num">3</span>
+            <div class="guide-text">
+              <strong>Open your Applications folder and double-click Work Coach.</strong>
+              <span class="guide-note">If your Mac asks &ldquo;Are you sure you want to open it?&rdquo;, click <strong>Open</strong>.</span>
+            </div>
+          </li>
+          <li class="guide-step">
+            <span class="guide-num">4</span>
+            <div class="guide-text">
+              <strong>Click Record when your next meeting starts.</strong>
+              <span class="guide-note">If your Mac asks for microphone or screen recording access, click <strong>Allow</strong>. Work Coach needs it to observe your meetings.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
 
     <div class="install-animation">
+      <p class="anim-caption">Here&rsquo;s what that looks like</p>
       <div class="steps-indicator">
         <div class="step-dot active" data-step="1">
           <div class="step-dot-circle"></div>
@@ -1074,6 +1226,7 @@ footer {
               </div>
             </div>
           </div>
+          <p class="open-instruction">Drag <strong>Work Coach</strong> onto the <strong>Applications</strong> folder</p>
         </div>
 
         <!-- Scene 3: Open Applications folder (Finder list view) -->
@@ -1140,19 +1293,60 @@ footer {
 
       </div>
     </div>
-
-    <div class="redirect-notice">
-      <p>Your download will begin in <span class="countdown" id="countdown">3</span> seconds</p>
-      <a href="https://work.coach/download/mac" class="manual-link" id="manual-download">Download manually</a>
-    </div>
   </div>
 
   <!-- ─── WINDOWS VIEW ─── -->
   <div id="windows-view" class="download-page" style="display:none;">
     <h1>Your download is <em>starting</em></h1>
-    <p class="download-subtitle">It observes you in any meeting without joining the call. Setup in a minute.</p>
+    <p class="download-subtitle">Two parts to finish setup: open the file in your browser, then install it on your PC.</p>
+
+    <div class="redirect-notice">
+      <p><span id="win-status-text">Your download will begin in <span class="countdown" id="win-countdown">3</span> seconds.</span> <a href="https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe" class="manual-link" id="win-manual-download">Download manually</a></p>
+    </div>
+
+    <div class="install-guide">
+      <div class="guide-phase">
+        <div class="guide-phase-label">In your browser</div>
+        <ol class="guide-steps">
+          <li class="guide-step">
+            <span class="guide-num">1</span>
+            <div class="guide-text" id="win-browser-step">
+              <strong>Open WorkCoach-win-Setup.exe from your browser&rsquo;s downloads.</strong>
+              <span class="guide-note">Press <strong>Ctrl+J</strong> to see your downloads, or open the <strong>Downloads</strong> folder in File Explorer and double-click the file.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="guide-phase">
+        <div class="guide-phase-label">On your PC</div>
+        <ol class="guide-steps" start="2">
+          <li class="guide-step">
+            <span class="guide-num">2</span>
+            <div class="guide-text">
+              <strong>Let Windows run the installer.</strong>
+              <span class="guide-note">If a blue &ldquo;Windows protected your PC&rdquo; box appears, click <strong>More info</strong>, then <strong>Run anyway</strong>.</span>
+            </div>
+          </li>
+          <li class="guide-step">
+            <span class="guide-num">3</span>
+            <div class="guide-text">
+              <strong>Wait for the installer to finish, then open Work Coach.</strong>
+              <span class="guide-note">It takes under a minute. If Work Coach doesn&rsquo;t open on its own, find it in the <strong>Start</strong> menu.</span>
+            </div>
+          </li>
+          <li class="guide-step">
+            <span class="guide-num">4</span>
+            <div class="guide-text">
+              <strong>Click Record when your next meeting starts.</strong>
+              <span class="guide-note">If Windows asks for microphone access, click <strong>Yes</strong>. Work Coach needs it to observe your meetings.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
 
     <div class="install-animation">
+      <p class="anim-caption">Here&rsquo;s what that looks like</p>
       <div class="steps-indicator">
         <div class="step-dot active" data-win-step="1">
           <div class="step-dot-circle"></div>
@@ -1208,7 +1402,7 @@ footer {
               <div class="win-setup-track"><div class="win-setup-fill" id="win-setup-fill"></div></div>
             </div>
           </div>
-          <p class="open-instruction">Click through the installer to set up <strong>Work Coach</strong></p>
+          <p class="open-instruction">Wait for the installer to finish setting up <strong>Work Coach</strong></p>
         </div>
 
         <!-- Scene 3: Launch from taskbar -->
@@ -1263,12 +1457,9 @@ footer {
 
       </div>
     </div>
-
-    <div class="redirect-notice">
-      <p>Your download will begin in <span class="countdown" id="win-countdown">3</span> seconds</p>
-      <a href="https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe" class="manual-link" id="win-manual-download">Download manually</a>
-    </div>
   </div>
+
+  <div class="dl-pointer" id="dl-pointer" aria-hidden="true">Your download is up here. Click it to open the file.</div>
 
   <!-- ─── MOBILE VIEW ─── -->
   <div id="mobile-view" class="download-page" style="display:none;">
@@ -1311,10 +1502,56 @@ footer {
   console.log('[WorkCoach] platform:', navigator.platform);
   console.log('[WorkCoach] isMobile:', isMobile, 'isMac:', isMac, 'isWindows:', isWindows);
 
+  // ─── Browser detection (for browser-specific step 1) ───
+  var browser = /Edg\//.test(ua) ? 'edge'
+    : /Firefox\//.test(ua) ? 'firefox'
+    : /OPR\//.test(ua) ? 'other'
+    : /Chrome\//.test(ua) ? 'chrome'
+    : /Safari\//.test(ua) ? 'safari'
+    : 'other';
+
+  var BROWSER_STEPS = {
+    mac: {
+      safari: '<strong>Click the Downloads arrow at the top right of Safari, then double-click WorkCoach.dmg.</strong>' +
+        '<span class="guide-note">If Safari asks to allow downloads from work.coach, click <strong>Allow</strong>.</span>',
+      chrome: '<strong>Click the Downloads icon at the top right of Chrome, then click WorkCoach.dmg.</strong>',
+      edge: '<strong>Click the Downloads icon at the top right of Edge, then click Open file under WorkCoach.dmg.</strong>',
+      firefox: '<strong>Click the Downloads arrow at the top right of Firefox, then click WorkCoach.dmg.</strong>'
+    },
+    windows: {
+      edge: '<strong>Click the Downloads icon at the top right of Edge, then click Open file under WorkCoach-win-Setup.exe.</strong>' +
+        '<span class="guide-note">If Edge says the file isn&rsquo;t commonly downloaded, click <strong>&middot;&middot;&middot;</strong>, then <strong>Keep</strong>, then <strong>Show more</strong> &rarr; <strong>Keep anyway</strong>.</span>',
+      chrome: '<strong>Click the Downloads icon at the top right of Chrome, then click WorkCoach-win-Setup.exe.</strong>' +
+        '<span class="guide-note">If Chrome warns that the file isn&rsquo;t commonly downloaded, choose <strong>Keep</strong>.</span>',
+      firefox: '<strong>Click the Downloads arrow at the top right of Firefox, then click WorkCoach-win-Setup.exe.</strong>'
+    }
+  };
+  var FALLBACK_NOTE = {
+    mac: '<span class="guide-note">Can&rsquo;t find it? Open the <strong>Downloads</strong> folder in Finder and double-click <strong>WorkCoach.dmg</strong>.</span>',
+    windows: '<span class="guide-note">Can&rsquo;t find it? Press <strong>Ctrl+J</strong>, or open the <strong>Downloads</strong> folder in File Explorer and double-click the file.</span>'
+  };
+
+  function setBrowserStep(platform, elId) {
+    var html = BROWSER_STEPS[platform][browser];
+    var el = document.getElementById(elId);
+    if (html && el) el.innerHTML = html + FALLBACK_NOTE[platform];
+  }
+
   // ─── Download navigation ───
   function goToDownload(url) {
     if (typeof url !== 'undefined') window.location = url;
     return false;
+  }
+
+  // After the download fires: point at the browser's downloads button and update the status line
+  function onDownloadStarted(statusId) {
+    var status = document.getElementById(statusId);
+    if (status) status.textContent = 'Download started. Now follow the steps below.';
+    var pointer = document.getElementById('dl-pointer');
+    if (pointer && browser !== 'other') {
+      pointer.classList.add('visible');
+      setTimeout(function() { pointer.classList.remove('visible'); }, 15000);
+    }
   }
 
   if (isMobile) {
@@ -1325,11 +1562,13 @@ footer {
     console.log('[WorkCoach] Showing: windows-view');
     document.getElementById('windows-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'windows' });
+    setBrowserStep('windows', 'win-browser-step');
     startWindowsFlow();
   } else {
     console.log('[WorkCoach] Showing: mac-view');
     document.getElementById('mac-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mac' });
+    setBrowserStep('mac', 'mac-browser-step');
     startMacFlow();
   }
 
@@ -1355,8 +1594,8 @@ footer {
     var DOWNLOAD_URL = 'https://work.coach/download/mac';
     var countdown = 3;
     var countdownEl = document.getElementById('countdown');
-    var scenes = document.querySelectorAll('.scene');
-    var stepDots = document.querySelectorAll('.step-dot');
+    var scenes = document.querySelectorAll('#mac-view .scene');
+    var stepDots = document.querySelectorAll('#mac-view .step-dot');
 
     function showScene(n) {
       scenes.forEach(function(s) {
@@ -1443,6 +1682,7 @@ footer {
       if (countdown <= 0) {
         clearInterval(timer);
         goToDownload(DOWNLOAD_URL);
+        onDownloadStarted('status-text');
       }
     }, 1000);
 
@@ -1452,6 +1692,7 @@ footer {
       clearInterval(timer);
       posthog.capture('download_manual_click');
       goToDownload(this.href);
+      onDownloadStarted('status-text');
     });
   }
 
@@ -1551,6 +1792,7 @@ footer {
       if (countdown <= 0) {
         clearInterval(timer);
         goToDownload(DOWNLOAD_URL);
+        onDownloadStarted('win-status-text');
       }
     }, 1000);
 
@@ -1560,6 +1802,7 @@ footer {
       clearInterval(timer);
       posthog.capture('download_manual_click', { platform: 'windows' });
       goToDownload(this.href);
+      onDownloadStarted('win-status-text');
     });
   }
 })();
