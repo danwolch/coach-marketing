@@ -212,113 +212,153 @@ nav {
 }
 .scene.active { opacity: 1; }
 
-/* ─── Scene 1: Open from Downloads (dock close-up) ─── */
-.dock-closeup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
+/* ─── Scene 1 (Mac + Windows): browser downloads button, tailored per browser ─── */
+.mini-browser {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border: 1px solid #d6d0c4;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  text-align: left;
 }
-.dock-tooltip {
-  background: #f0ece3;
-  border: 1px solid var(--border);
+.mb-tabs {
+  height: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 0 12px;
+  background: #ece8e1;
+  border-radius: 12px 12px 0 0;
+}
+.mb-lights { display: flex; gap: 6px; align-self: center; }
+.mb-lights span { width: 10px; height: 10px; border-radius: 999px; }
+.mb-lights span:nth-child(1) { background: #ec6a5e; }
+.mb-lights span:nth-child(2) { background: #f4bf4f; }
+.mb-lights span:nth-child(3) { background: #61c554; }
+.mb-tab {
+  height: 23px;
+  padding: 0 14px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+.mb-winctl {
+  margin-left: auto;
+  align-self: center;
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  color: #8a8a8a;
+}
+.os-mac .mb-winctl, .os-win .mb-lights { display: none; }
+.mb-toolbar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 0 14px;
+  border-bottom: 1px solid #e6e1d8;
+}
+.mb-nav { font-size: 16px; color: #b5b0a6; letter-spacing: 6px; }
+.mb-address {
+  flex: 1;
+  min-width: 0;
+  height: 26px;
+  border-radius: 999px;
+  background: #f1eee8;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.br-safari .mb-address { justify-content: center; border-radius: 8px; }
+.mb-dl-btn {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
   border-radius: 8px;
-  padding: 6px 18px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-  position: relative;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.dock-tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: -7px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 12px; height: 12px;
-  background: #f0ece3;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.dock-tray {
-  background: linear-gradient(180deg, #b8cc9e 0%, #8fb56e 100%);
-  border-radius: 18px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  position: relative;
-}
-.dock-tray-divider {
-  width: 1px;
-  height: 60px;
-  background: rgba(255,255,255,0.3);
-  flex-shrink: 0;
-}
-.dock-tray-item {
-  width: 64px; height: 64px;
-  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  color: #555;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
 }
-.dock-tray-item.app-placeholder {
-  background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(255,255,255,0.5);
+.mb-dl-btn svg { width: 18px; height: 18px; }
+.mini-browser.s-hover .mb-dl-btn,
+.mini-browser.s-open .mb-dl-btn {
+  background: rgba(49,193,120,0.15);
+  color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(49,193,120,0.35);
 }
-.dock-tray-item.dmg-file {
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  position: relative;
-  width: 56px; height: 68px;
-}
-.dock-tray-item.dmg-file::before {
-  content: '';
+.mb-page { height: 150px; padding: 22px 18px; display: flex; flex-direction: column; gap: 10px; }
+.mb-line { height: 10px; border-radius: 999px; background: #f0ece5; }
+.mb-popup {
   position: absolute;
-  top: 0; right: 0;
-  width: 16px; height: 16px;
-  background: linear-gradient(135deg, #e8e3db 50%, white 50%);
-  border-bottom-left-radius: 4px;
-}
-.dmg-file-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  padding-top: 8px;
-}
-.dmg-file-inner .dmg-disk {
-  width: 28px; height: 28px;
-  background: linear-gradient(180deg, #c0bdb5 0%, #8a877f 100%);
-  border-radius: 4px;
-  border: 1px solid #a0a0a0;
-}
-.dmg-file-inner .dmg-ext {
-  font-size: 8px;
-  font-weight: 700;
-  color: #888;
-  letter-spacing: 0.5px;
-}
-.dock-tray-item.trash {
-  background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(255,255,255,0.5);
-}
-.dock-cursor {
-  position: absolute;
-  right: 60px;
-  bottom: 8px;
-  width: 28px; height: 34px;
+  top: 78px;
+  right: 8px;
+  width: 270px;
+  max-width: calc(100% - 16px);
+  background: #fff;
+  border: 1px solid #ddd7cc;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 10px;
   opacity: 0;
-  transition: opacity 0.4s;
-  z-index: 10;
+  transform: translateY(-6px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 5;
 }
-.dock-cursor.visible { opacity: 1; }
+.mini-browser.s-open .mb-popup { opacity: 1; transform: none; }
+.mb-popup-title { font-size: 12px; font-weight: 700; color: var(--text); margin: 0 6px 6px; }
+.mb-popup-title:empty { display: none; }
+.mb-file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.mini-browser.s-file .mb-file { background: rgba(49,193,120,0.14); }
+.mb-file-icon {
+  width: 28px; height: 34px;
+  flex-shrink: 0;
+  border: 1px solid #d6d0c4;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 3px;
+}
+.mb-file-name { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.mb-file-sub { font-size: 11px; color: var(--muted); line-height: 1.3; }
+.mb-open-link { display: none; font-size: 12px; font-weight: 600; color: #1a73e8; text-decoration: underline; line-height: 1.4; }
+.br-edge .mb-open-link { display: block; }
+.mb-cursor {
+  position: absolute;
+  width: 24px; height: 30px;
+  right: 45%;
+  top: 150px;
+  opacity: 0;
+  transition: right 0.6s ease, top 0.6s ease, opacity 0.3s;
+  z-index: 10;
+  pointer-events: none;
+}
+.mini-browser.s-start .mb-cursor { opacity: 1; }
+.mini-browser.s-hover .mb-cursor { right: 10px; top: 54px; }
+.mini-browser.s-file .mb-cursor { right: 150px; top: 116px; }
+.br-edge.s-file .mb-cursor { right: 189px; top: 156px; }
 
 .open-instruction {
   font-size: 14px;
@@ -838,71 +878,6 @@ nav {
 
 /* ─── WINDOWS INSTALLATION ANIMATION ─── */
 
-/* Scene 1: Browser download bar */
-.win-download-bar {
-  background: #ffffff;
-  border: 1px solid #d6d0c4;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-  width: 100%;
-  max-width: 440px;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  position: relative;
-}
-.win-dl-icon {
-  width: 44px; height: 44px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #eef2f7 0%, #dbe3ec 100%);
-  border: 1px solid #cdd6e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-.win-dl-icon .win-gear {
-  width: 26px; height: 26px;
-  color: #4a7cc9;
-}
-.win-dl-meta { flex: 1; min-width: 0; }
-.win-dl-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.win-dl-sub {
-  font-size: 12px;
-  color: var(--muted);
-}
-.win-dl-progress {
-  height: 4px;
-  border-radius: 999px;
-  background: #e5e5e5;
-  margin-top: 6px;
-  overflow: hidden;
-}
-.win-dl-progress-bar {
-  height: 100%;
-  width: 100%;
-  background: var(--accent);
-  border-radius: 999px;
-}
-.win-dl-open {
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-  background: var(--accent);
-  border-radius: 8px;
-  padding: 8px 14px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
 .win-cursor {
   position: absolute;
   width: 28px; height: 34px;
@@ -911,10 +886,6 @@ nav {
   z-index: 10;
 }
 .win-cursor.visible { opacity: 1; }
-.win-scene-open .win-cursor {
-  right: 34px;
-  bottom: 6px;
-}
 
 /* Scene 2: Setup wizard */
 .win-setup-window {
@@ -1178,29 +1149,40 @@ footer {
 
       <div class="anim-stage">
 
-        <!-- Scene 1: Open from Downloads -->
+        <!-- Scene 1: Open the file from the browser's downloads button -->
         <div class="scene scene-open active" data-scene="1">
-          <div class="dock-closeup" id="downloads-icon">
-            <div class="dock-tooltip">Downloads</div>
-            <div class="dock-tray">
-              <div class="dock-tray-item app-placeholder"></div>
-              <div class="dock-tray-divider"></div>
-              <div class="dock-tray-item dmg-file">
-                <div class="dmg-file-inner">
-                  <div class="dmg-disk"></div>
-                  <div class="dmg-ext">.dmg</div>
+          <div class="mini-browser os-mac" id="mac-mini-browser">
+            <div class="mb-tabs">
+              <span class="mb-lights"><span></span><span></span><span></span></span>
+              <span class="mb-tab">Download Work Coach</span>
+              <span class="mb-winctl"><span>&#8211;</span><span>&#9633;</span><span>&#10005;</span></span>
+            </div>
+            <div class="mb-toolbar">
+              <span class="mb-nav">&lsaquo;&rsaquo;</span>
+              <div class="mb-address">work.coach/download</div>
+              <div class="mb-dl-btn"></div>
+            </div>
+            <div class="mb-page">
+              <div class="mb-line" style="width:55%"></div>
+              <div class="mb-line" style="width:80%"></div>
+              <div class="mb-line" style="width:68%"></div>
+            </div>
+            <div class="mb-popup">
+              <div class="mb-popup-title">Downloads</div>
+              <div class="mb-file">
+                <div class="mb-file-icon">.dmg</div>
+                <div>
+                  <div class="mb-file-name">WorkCoach.dmg</div>
+                  <div class="mb-file-sub">Download complete</div>
+                  <span class="mb-open-link">Open file</span>
                 </div>
               </div>
-              <div class="dock-tray-item trash">
-                <svg viewBox="0 0 24 24" fill="none" width="32" height="32"><path d="M5 7h14M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M7 7l1 12a2 2 0 002 2h4a2 2 0 002-2l1-12" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>
-              </div>
-              <!-- Cursor SVG -->
-              <svg class="dock-cursor" id="dock-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
             </div>
+            <svg class="mb-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <p class="open-instruction">Open <strong>WorkCoach.dmg</strong> from your Downloads</p>
+          <p class="open-instruction" id="mac-scene1-caption">Open <strong>WorkCoach.dmg</strong> from your browser&rsquo;s downloads</p>
         </div>
 
         <!-- Scene 2: DMG installer — drag to Applications -->
@@ -1368,24 +1350,40 @@ footer {
 
       <div class="anim-stage">
 
-        <!-- Scene 1: Open installer from browser download bar -->
+        <!-- Scene 1: Open the installer from the browser's downloads button -->
         <div class="scene win-scene-open active" data-win-scene="1">
-          <div class="win-download-bar">
-            <div class="win-dl-icon">
-              <svg class="win-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <div class="mini-browser os-win" id="win-mini-browser">
+            <div class="mb-tabs">
+              <span class="mb-lights"><span></span><span></span><span></span></span>
+              <span class="mb-tab">Download Work Coach</span>
+              <span class="mb-winctl"><span>&#8211;</span><span>&#9633;</span><span>&#10005;</span></span>
             </div>
-            <div class="win-dl-meta">
-              <div class="win-dl-name">WorkCoach-win-Setup.exe</div>
-              <div class="win-dl-sub">Download complete</div>
-              <div class="win-dl-progress"><div class="win-dl-progress-bar"></div></div>
+            <div class="mb-toolbar">
+              <span class="mb-nav">&lsaquo;&rsaquo;</span>
+              <div class="mb-address">work.coach/download</div>
+              <div class="mb-dl-btn"></div>
             </div>
-            <div class="win-dl-open">Open</div>
-            <!-- Cursor SVG -->
-            <svg class="win-cursor" id="win-open-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="mb-page">
+              <div class="mb-line" style="width:55%"></div>
+              <div class="mb-line" style="width:80%"></div>
+              <div class="mb-line" style="width:68%"></div>
+            </div>
+            <div class="mb-popup">
+              <div class="mb-popup-title">Downloads</div>
+              <div class="mb-file">
+                <div class="mb-file-icon">.exe</div>
+                <div>
+                  <div class="mb-file-name">WorkCoach-win-Setup.exe</div>
+                  <div class="mb-file-sub">Download complete</div>
+                  <span class="mb-open-link">Open file</span>
+                </div>
+              </div>
+            </div>
+            <svg class="mb-cursor" viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 1L3 24.5L8.5 19L14 27L18 25L12.5 17H21L3 1Z" fill="black" stroke="white" stroke-width="2" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="open-instruction">Open <strong>WorkCoach-win-Setup.exe</strong> from your downloads</p>
+          <p class="open-instruction" id="win-scene1-caption">Open <strong>WorkCoach-win-Setup.exe</strong> from your browser&rsquo;s downloads</p>
         </div>
 
         <!-- Scene 2: Setup wizard installing -->
@@ -1468,12 +1466,12 @@ footer {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-width="3" stroke-linecap="round"/></svg>
       </div>
       <h2>Work Coach is a desktop app</h2>
-      <p>It runs on your Mac during meetings. Drop your email and we'll send you a download link for when you're back at your computer.</p>
+      <p>It runs on your Mac or Windows computer during meetings. Drop your email and we'll send you a download link for when you're back at your computer.</p>
       <form class="email-form" id="mobile-form" onsubmit="return false;">
         <input type="email" placeholder="you@example.com" required>
         <button type="submit">Send me the link</button>
       </form>
-      <div class="form-success" id="mobile-success">Got it! Check your inbox next time you're at your Mac.</div>
+      <div class="form-success" id="mobile-success">Got it! Check your inbox next time you're at your computer.</div>
       <a href="/" class="back-link">&larr; Back to Work Coach</a>
     </div>
   </div>
@@ -1531,6 +1529,41 @@ footer {
     windows: '<span class="guide-note">Can&rsquo;t find it? Press <strong>Ctrl+J</strong>, or open the <strong>Downloads</strong> folder in File Explorer and double-click the file.</span>'
   };
 
+  var BROWSER_NAME = { safari: 'Safari', chrome: 'Chrome', edge: 'Edge', firefox: 'Firefox' };
+  var DL_ICON = {
+    safari: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v8M8.5 12.5l3.5 3.5 3.5-3.5"/></svg>',
+    tray: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>'
+  };
+  var POPUP_TITLE = { safari: 'Downloads', chrome: 'Recent download history', edge: 'Downloads', firefox: '', other: 'Downloads' };
+
+  // Make animation scene 1 look like the visitor's browser and say where to click
+  function setupMiniBrowser(prefix, fileName) {
+    var mb = document.getElementById(prefix + '-mini-browser');
+    var caption = document.getElementById(prefix + '-scene1-caption');
+    if (!mb) return;
+    mb.classList.add('br-' + browser);
+    mb.querySelector('.mb-dl-btn').innerHTML = browser === 'safari' ? DL_ICON.safari : DL_ICON.tray;
+    mb.querySelector('.mb-popup-title').textContent = POPUP_TITLE[browser];
+    if (caption && BROWSER_NAME[browser]) {
+      caption.innerHTML = 'Click <strong>Downloads</strong> at the top right of ' + BROWSER_NAME[browser] +
+        ', then open <strong>' + fileName + '</strong>';
+    }
+  }
+
+  // Scene 1 steps: cursor appears, hovers the downloads button, popup opens, cursor clicks the file
+  function playMiniBrowser(prefix) {
+    var mb = document.getElementById(prefix + '-mini-browser');
+    if (!mb) return;
+    setTimeout(function() { mb.classList.add('s-start'); }, 300);
+    setTimeout(function() { mb.classList.add('s-hover'); }, 800);
+    setTimeout(function() { mb.classList.add('s-open'); }, 1500);
+    setTimeout(function() { mb.classList.add('s-file'); }, 2100);
+  }
+  function resetMiniBrowser(prefix) {
+    var mb = document.getElementById(prefix + '-mini-browser');
+    if (mb) mb.classList.remove('s-start', 's-hover', 's-open', 's-file');
+  }
+
   function setBrowserStep(platform, elId) {
     var html = BROWSER_STEPS[platform][browser];
     var el = document.getElementById(elId);
@@ -1563,12 +1596,14 @@ footer {
     document.getElementById('windows-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'windows' });
     setBrowserStep('windows', 'win-browser-step');
+    setupMiniBrowser('win', 'WorkCoach-win-Setup.exe');
     startWindowsFlow();
   } else {
     console.log('[WorkCoach] Showing: mac-view');
     document.getElementById('mac-view').style.display = 'flex';
     posthog.capture('download_page_viewed', { platform: 'mac' });
     setBrowserStep('mac', 'mac-browser-step');
+    setupMiniBrowser('mac', 'WorkCoach.dmg');
     startMacFlow();
   }
 
@@ -1609,8 +1644,7 @@ footer {
     }
 
     function resetAnimState() {
-      var dockCursor = document.getElementById('dock-cursor');
-      if (dockCursor) dockCursor.classList.remove('visible');
+      resetMiniBrowser('mac');
 
       document.getElementById('dmg-app-icon').classList.remove('dragging');
       document.getElementById('dmg-apps-folder').classList.remove('received');
@@ -1630,11 +1664,8 @@ footer {
       resetAnimState();
       showScene(1);
 
-      // Scene 1: Open from Downloads (show cursor on dmg)
-      setTimeout(function() {
-        var dockCursor = document.getElementById('dock-cursor');
-        if (dockCursor) dockCursor.classList.add('visible');
-      }, 400);
+      // Scene 1: Open the .dmg from the browser's downloads button
+      playMiniBrowser('mac');
 
       // Scene 2: DMG drag to Applications
       setTimeout(function() {
@@ -1645,7 +1676,7 @@ footer {
             document.getElementById('dmg-apps-folder').classList.add('received');
           }, 800);
         }, 800);
-      }, 2500);
+      }, 3200);
 
       // Scene 3: Open Applications (show cursor on Work Coach row)
       setTimeout(function() {
@@ -1654,7 +1685,7 @@ footer {
           var finderCursor = document.getElementById('finder-cursor');
           if (finderCursor) finderCursor.classList.add('visible');
         }, 400);
-      }, 5000);
+      }, 5700);
 
       // Scene 4: Meeting notification
       setTimeout(function() {
@@ -1663,14 +1694,14 @@ footer {
           var btn = document.getElementById('notif-record-btn');
           if (btn) btn.classList.add('clicked');
         }, 1200);
-      }, 7500);
+      }, 8200);
 
       // Loop: restart after pause
       setTimeout(function() {
         var btn = document.getElementById('notif-record-btn');
         if (btn) btn.classList.remove('clicked');
         runCycle();
-      }, 10500);
+      }, 11200);
     }
 
     runCycle();
@@ -1716,8 +1747,7 @@ footer {
     }
 
     function resetAnimState() {
-      var openCursor = document.getElementById('win-open-cursor');
-      if (openCursor) openCursor.classList.remove('visible');
+      resetMiniBrowser('win');
 
       var tile = document.getElementById('win-app-tile');
       if (tile) tile.classList.remove('launching');
@@ -1740,16 +1770,13 @@ footer {
       resetAnimState();
       showScene(1);
 
-      // Scene 1: Open installer (show cursor on Open button)
-      setTimeout(function() {
-        var openCursor = document.getElementById('win-open-cursor');
-        if (openCursor) openCursor.classList.add('visible');
-      }, 400);
+      // Scene 1: Open the installer from the browser's downloads button
+      playMiniBrowser('win');
 
       // Scene 2: Setup wizard installing (progress bar fills via CSS)
       setTimeout(function() {
         showScene(2);
-      }, 2500);
+      }, 3200);
 
       // Scene 3: Launch from taskbar
       setTimeout(function() {
@@ -1764,7 +1791,7 @@ footer {
           var taskbarWc = document.getElementById('win-taskbar-wc');
           if (taskbarWc) taskbarWc.classList.add('running');
         }, 1000);
-      }, 5000);
+      }, 5700);
 
       // Scene 4: Meeting notification
       setTimeout(function() {
@@ -1773,14 +1800,14 @@ footer {
           var btn = document.getElementById('win-notif-record-btn');
           if (btn) btn.classList.add('clicked');
         }, 1200);
-      }, 7500);
+      }, 8200);
 
       // Loop: restart after pause
       setTimeout(function() {
         var btn = document.getElementById('win-notif-record-btn');
         if (btn) btn.classList.remove('clicked');
         runCycle();
-      }, 10500);
+      }, 11200);
     }
 
     runCycle();
