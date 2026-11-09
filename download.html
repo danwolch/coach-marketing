@@ -980,7 +980,7 @@ footer {
     <p class="download-subtitle">Two parts to finish setup: open the file in your browser, then install it on your PC.</p>
 
     <div class="redirect-notice">
-      <p><span id="win-status-text">Your download will begin in <span class="countdown" id="win-countdown">3</span> seconds.</span> <a href="https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe" class="manual-link" id="win-manual-download">Download manually</a></p>
+      <p><span id="win-status-text">Your download will begin in <span class="countdown" id="win-countdown">3</span> seconds.</span> <a href="https://downloads.work.coach/winapp/WorkCoach-win-Setup.exe" class="manual-link" id="win-manual-download">Download manually</a></p>
     </div>
 
     <div class="install-guide">
@@ -1514,7 +1514,7 @@ footer {
 
   // ─── Windows installation animation + download ───
   function startWindowsFlow() {
-    var DOWNLOAD_URL = 'https://work-coach-public-downloads.s3.us-east-1.amazonaws.com/winapp/WorkCoach-win-Setup.exe';
+    var DOWNLOAD_URL = 'https://downloads.work.coach/winapp/WorkCoach-win-Setup.exe';
     var countdown = 3;
     var countdownEl = document.getElementById('win-countdown');
     startSim('win');
