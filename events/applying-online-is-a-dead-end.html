@@ -47,7 +47,7 @@
       <a href="/playbooks/">Playbooks</a>
       <a href="/events/">Events</a>
     </div>
-    <a href="#register" class="btn-primary">Register free</a>
+    <a href="#register" class="btn-primary" data-cta="nav">Register free</a>
   </div>
 </nav>
 
@@ -66,7 +66,7 @@
     </div>
     <div class="hero-when">
       <span class="when" data-event-when>Tue, Nov 10, 2026 · 12:00–1:00 PM ET</span>
-      <a href="#register" class="btn-primary btn-lg">Save your spot</a>
+      <a href="#register" class="btn-primary btn-lg" data-cta="hero">Save your spot</a>
     </div>
   </div>
 </header>
@@ -82,7 +82,7 @@
       </div>
       <div class="fact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
-        <div>Online<span class="sub">We'll email you the link to join after you register.</span></div>
+        <div>Online<span class="sub" id="join-fact">We'll email you the link to join after you register.</span></div>
       </div>
       <div class="fact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
@@ -139,8 +139,8 @@
   <aside class="register-card" id="register">
     <!-- Registrations are stored in PostHog as event_registered events (see script below) -->
     <form id="register-form" novalidate>
-      <h2>Save your spot</h2>
-      <p class="card-sub">Free. We'll send the join link and a reminder before the session.</p>
+      <h2 id="form-title">Save your spot</h2>
+      <p class="card-sub" id="form-sub">Free. We'll send the join link and a reminder before the session.</p>
 
       <div class="field">
         <label for="name">Name <span class="req">*</span></label>
@@ -164,7 +164,7 @@
       </div>
       <p class="fine-print" style="text-align:left;margin:-8px 0 18px">Between roles? Use your most recent one.</p>
 
-      <div class="field">
+      <div class="field" id="interest-field">
         <label for="interest">What do you want to get out of this session? <span class="opt">(optional)</span>
           <span class="hint">Where you are in your search and what you're stuck on. Brian will use this to shape the session.</span>
         </label>
@@ -178,7 +178,7 @@
              style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
 
       <div class="submit-row">
-        <button type="submit" class="btn-primary btn-lg">Register for free</button>
+        <button type="submit" class="btn-primary btn-lg" id="form-submit">Register for free</button>
       </div>
       <p class="fine-print">We'll only email you about this event and Work Coach. Unsubscribe anytime.</p>
     </form>
@@ -187,18 +187,21 @@
       <div class="success-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <h2>You're registered.</h2>
-      <p>We'll email you the link to join before the session. Put it on your calendar so you don't miss it.</p>
-      <div class="calendar-buttons">
+      <h2 id="success-title">You're registered.</h2>
+      <p id="success-text">We'll email you the link to join before the session. Put it on your calendar so you don't miss it.</p>
+      <div class="calendar-buttons" id="calendar-buttons">
         <a class="btn-secondary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Applying%20Online%20Is%20a%20Dead%20End&amp;dates=20261110T170000Z%2F20261110T180000Z&amp;details=How%20to%20get%20hired%20through%20people%2C%20not%20portals.%20With%20Brian%20Cope%20(Motif%20Leadership)%20and%20Dan%20Wolchonok%20(Work%20Coach).%20The%20join%20link%20will%20be%20emailed%20to%20you.%0A%0Ahttps%3A%2F%2Fwork.coach%2Fevents%2Fapplying-online-is-a-dead-end&amp;location=Online" data-cal="google">Add to Google Calendar</a>
         <a class="btn-secondary" href="applying-online-is-a-dead-end.ics" download data-cal="ics">Add to Apple / Outlook (.ics)</a>
       </div>
     </div>
 
-    <div class="ended" id="ended">
-      <h2>This event has ended.</h2>
-      <p>Thanks to everyone who joined. Check out what's coming up next.</p>
-      <a class="btn-primary" href="/events/">See upcoming events</a>
+    <!-- Shown on event day from LIVE_AT until ENDED_AT (see script below) -->
+    <div class="live" id="live">
+      <div class="live-badge"><span class="live-dot" aria-hidden="true"></span> Today</div>
+      <h2>Join the webinar</h2>
+      <p><span data-event-when>Tue, Nov 10, 2026 · 12:00–1:00 PM ET</span> on Google Meet. No registration needed. Just click to join.</p>
+      <a class="btn-primary btn-lg" id="join-button" href="#" target="_blank" rel="noopener">Join on Google Meet</a>
+      <a class="join-url" id="join-url" href="#" target="_blank" rel="noopener"></a>
     </div>
   </aside>
 </div>
@@ -221,10 +224,20 @@
   var START = new Date('2026-11-10T12:00:00-05:00');
   var END = new Date('2026-11-10T13:00:00-05:00');
 
+  // ===== Event-day settings =====
+  // Paste the Google Meet link here. Until it's filled in, the page keeps saying
+  // "we'll email you the link" even on event day.
+  var MEET_URL = 'https://meet.google.com/hwx-dsmu-vir';
+  // From this moment the page shows the Meet link instead of the registration form.
+  var LIVE_AT = new Date('2026-11-10T09:00:00-05:00');   // 9:00 AM ET, event day
+  // From this moment the page says the event happened and offers the recording.
+  // (30 min after the scheduled end, in case the session runs long.)
+  var ENDED_AT = new Date('2026-11-10T13:30:00-05:00');  // 1:30 PM ET
+  // ==============================
+
   var form = document.getElementById('register-form');
   var success = document.getElementById('success');
-  var ended = document.getElementById('ended');
-
+  var live = document.getElementById('live');
   // Show the time in the visitor's own timezone (static fallback is ET).
   try {
     var day = START.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
@@ -233,11 +246,48 @@
     document.querySelectorAll('[data-event-when]').forEach(function(el) { el.textContent = day + ' · ' + range; });
   } catch (e) { /* keep the ET fallback */ }
 
-  if (Date.now() > END.getTime()) {
+  // Which state the page is in. ?preview=before|live|after overrides the clock for testing.
+  var preview = new URLSearchParams(location.search).get('preview');
+  var now = Date.now();
+  var phase = preview || (now >= ENDED_AT.getTime() ? 'after' : now >= LIVE_AT.getTime() ? 'live' : 'before');
+  // Safety net: if the Meet link was never filled in, keep the "we'll email you" version.
+  if (phase === 'live' && MEET_URL.indexOf('REPLACE') !== -1) phase = 'before';
+
+  var ctas = document.querySelectorAll('[data-cta]');
+  var joinFact = document.getElementById('join-fact');
+
+  if (phase === 'live') {
     form.style.display = 'none';
-    ended.classList.add('show');
-    document.querySelectorAll('a[href="#register"]').forEach(function(a) { a.style.display = 'none'; });
-    return;
+    live.classList.add('show');
+    var joinButton = document.getElementById('join-button');
+    var joinUrl = document.getElementById('join-url');
+    joinButton.href = joinUrl.href = MEET_URL;
+    joinUrl.textContent = MEET_URL.replace(/^https?:\/\//, '');
+    joinFact.innerHTML = 'Google Meet: <a target="_blank" rel="noopener" data-join></a>';
+    var factLink = joinFact.querySelector('a');
+    factLink.href = MEET_URL;
+    factLink.textContent = joinUrl.textContent;
+    ctas.forEach(function(a) {
+      a.href = MEET_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('data-join', '');
+      a.textContent = a.dataset.cta === 'nav' ? 'Join now' : 'Join on Google Meet';
+    });
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest('#join-button, #join-url, [data-join]');
+      if (a && window.posthog) posthog.capture('event_join_clicked', { event: EVENT_SLUG, location: a.dataset.cta || a.id || 'fact' });
+    });
+  } else if (phase === 'after') {
+    document.getElementById('form-title').textContent = 'This event has happened.';
+    document.getElementById('form-sub').textContent = "But we'll send you the recording. Leave your email and it'll be in your inbox once it's ready.";
+    document.getElementById('interest-field').style.display = 'none';
+    document.getElementById('form-submit').textContent = 'Send me the recording';
+    document.getElementById('success-title').textContent = "You're on the list.";
+    document.getElementById('success-text').textContent = "We'll email you the recording as soon as it's ready.";
+    document.getElementById('calendar-buttons').style.display = 'none';
+    joinFact.textContent = 'Missed it? Leave your email to get the recording.';
+    ctas.forEach(function(a) { a.textContent = 'Get the recording'; });
   }
 
   // Keep UTM params so we know which channel each registration came from.
@@ -248,7 +298,7 @@
   });
   if (document.referrer) attribution.referrer = document.referrer;
 
-  if (window.posthog) posthog.capture('event_page_viewed', Object.assign({ event: EVENT_SLUG }, attribution));
+  if (window.posthog) posthog.capture('event_page_viewed', Object.assign({ event: EVENT_SLUG, phase: phase }, attribution));
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -263,6 +313,7 @@
     data.email = data.email.trim().toLowerCase();
     Object.assign(data, attribution);
     data.source = 'event:' + EVENT_SLUG;
+    data.registration_type = phase === 'after' ? 'recording' : 'live';
 
     if (window.posthog) {
       posthog.identify(data.email, { email: data.email, name: data.name, job_title: data.job_title, company: data.company });
