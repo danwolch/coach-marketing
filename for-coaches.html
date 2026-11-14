@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Work Coach for coaches. Your clients use Work Coach in their real interviews, negotiations, and meetings, then send you the ones that matter. You see what actually happened, grounded in what they said, before your next session.">
+<meta name="description" content="Work Coach for coaches. See whether your client used the story, the ask, and the reframe you worked on, how it went over, and how confident they sounded. Checked against your session notes, from their real conversations.">
 <meta name="color-scheme" content="light">
-<title>For Coaches: See How Your Clients Actually Show Up | Work Coach</title>
+<title>For Coaches: Did Your Client Use What You Worked On? | Work Coach</title>
 <link rel="canonical" href="https://work.coach/for-coaches">
 <link rel="icon" href="img/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -15,15 +15,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://work.coach/for-coaches">
 <meta property="og:site_name" content="Work Coach">
-<meta property="og:title" content="For Coaches: See How Your Clients Actually Show Up | Work Coach">
-<meta property="og:description" content="Your clients tell you how it went. Now you can see how it went. Catch up on their real conversations between sessions, in minutes.">
+<meta property="og:title" content="For Coaches: Did Your Client Use What You Worked On? | Work Coach">
+<meta property="og:description" content="Did they use the story, the ask, the reframe? Did they hedge and apologize, or own it? See both from your client's real conversations, checked against your session notes.">
 <meta property="og:image" content="https://work.coach/img/og-image-whistle.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="For Coaches: See How Your Clients Actually Show Up | Work Coach">
-<meta name="twitter:description" content="Your clients tell you how it went. Now you can see how it went. Catch up on their real conversations between sessions, in minutes.">
+<meta name="twitter:title" content="For Coaches: Did Your Client Use What You Worked On? | Work Coach">
+<meta name="twitter:description" content="Did they use the story, the ask, the reframe? Did they hedge and apologize, or own it? See both from your client's real conversations, checked against your session notes.">
 <meta name="twitter:image" content="https://work.coach/img/og-image-whistle.png">
 
 <script>
@@ -134,7 +134,7 @@ nav {
   font-size: clamp(38px, 5.8vw, 70px);
   line-height: 1.08;
   letter-spacing: -0.015em;
-  max-width: 13em;
+  max-width: 12em;
   margin-bottom: 22px;
   text-wrap: balance;
 }
@@ -396,11 +396,22 @@ mark.good { background: var(--mark-good); }
 .tx-read b { font-weight: 700; }
 .tx-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 
+.tx-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.tally { font-size: 14px; color: var(--muted); padding: 0 0 14px 54px; }
+.tally b { color: var(--text); font-weight: 700; }
+
 /* Progress */
 .cmp { width: 100%; border-collapse: collapse; font-size: 14.5px; }
 .cmp th, .cmp td { text-align: left; padding: 9px 0; border-top: 1px solid var(--border); font-weight: 400; }
 .cmp thead th { font-size: 13px; color: var(--muted); font-weight: 600; }
-.cmp td, .cmp thead th + th { width: 76px; font-variant-numeric: tabular-nums; }
+.cmp td, .cmp thead th + th { width: 84px; font-variant-numeric: tabular-nums; }
 .cmp td:last-child { font-weight: 700; }
 .then-now { border-top: 1px solid var(--border); }
 .tn { padding: 12px 0; }
@@ -633,8 +644,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <h1>See how your clients actually did.</h1>
-    <p class="subtitle">Your clients use Work Coach in their real interviews, negotiations, and meetings, then send you the ones that matter. You walk into the next session already knowing how it went.</p>
+    <h1>Did your client use what you worked on?</h1>
+    <p class="subtitle">And did they sound like they believed it? Work Coach checks your client's real interviews, negotiations, and meetings against your session notes, so you walk into the next session knowing both.</p>
     <div class="cta-row">
       <a href="#pilot" class="btn-primary btn-lg">Run a pilot</a>
       <a href="#how" class="text-link">See how it works</a>
@@ -654,78 +665,77 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
             <div class="view-sub">Job search, moving from ops lead to director</div>
           </div>
         </div>
-        <div class="view-when">Last session 9 days ago. Next session Thursday.</div>
+        <div class="view-when">Since your session 9 days ago: 2 interviews, 1 networking call, 2 practice sessions</div>
       </div>
 
       <div class="view-body">
         <div class="view-col">
-          <div class="view-h">Since your last session</div>
-          <div class="view-h-note">2 interviews, 1 networking call, 2 practice sessions. Maya sent you all of it.</div>
+          <div class="view-h">Did Maya use what you worked on?</div>
+          <div class="view-h-note">Taken from your session notes, checked against both interviews.</div>
           <ul class="rows">
-            <li class="row line">
-              <div>
-                <div class="row-title">"Tell me about yourself"</div>
-                <div class="row-meta">3 reps, the night before the screen</div>
+            <li class="row">
+              <div class="row-top">
+                <span class="row-title">The story: open the migration with the result</span>
+                <span class="status mid">1 of 2 interviews</span>
               </div>
-              <span class="row-side">Practice, 11 min</span>
+              <div class="row-meta">Skipped in the hiring manager screen. Used in the panel, and the VP wanted to hear more.</div>
+              <p class="said">VP Ops: "Nine days to five? Walk me through how you did that."</p>
+              <div class="said-src"><span class="clip">08:15</span> Panel round</div>
             </li>
-            <li class="row line">
-              <div>
-                <div class="row-title">Hiring manager screen</div>
-                <div class="row-meta">Director of Ops at a Series B fintech</div>
+            <li class="row">
+              <div class="row-top">
+                <span class="row-title">The reframe: "I've been doing the director's job without the title"</span>
+                <span class="status ok">Used</span>
               </div>
-              <span class="row-side">Interview, 42 min</span>
+              <div class="row-meta">In the panel, when asked about the title gap. Nobody pushed back on it.</div>
+              <p class="said">Panel: "That makes sense. How big is the team you run now?"</p>
+              <div class="said-src"><span class="clip">19:22</span> Panel round</div>
             </li>
-            <li class="row line">
-              <div>
-                <div class="row-title">Coffee chat with a former colleague</div>
-                <div class="row-meta">Asked for one intro, got two</div>
+            <li class="row">
+              <div class="row-top">
+                <span class="row-title">The ask: next steps, before the call ends</span>
+                <span class="status no">Not used</span>
               </div>
-              <span class="row-side">Networking, 28 min</span>
-            </li>
-            <li class="row line">
-              <div>
-                <div class="row-title">Closing the interview</div>
-                <div class="row-meta">2 reps on asking about next steps</div>
-              </div>
-              <span class="row-side">Practice, 6 min</span>
-            </li>
-            <li class="row line">
-              <div>
-                <div class="row-title">Panel round</div>
-                <div class="row-meta">VP Ops and two peers, healthcare</div>
-              </div>
-              <span class="row-side">Interview, 55 min</span>
+              <div class="row-meta">Practiced twice. Both interviews ended without it.</div>
             </li>
           </ul>
         </div>
 
         <div class="view-col">
-          <div class="view-h">What you're working on together</div>
-          <div class="view-h-note">From your coaching sessions, checked against what Maya said.</div>
+          <div class="view-h">How Maya sounded answering</div>
+          <div class="view-h-note">Marked in the transcript. Press play to hear the tone yourself.</div>
           <ul class="rows">
             <li class="row">
               <div class="row-top">
-                <span class="row-title">Lead the pitch with the outcome</span>
-                <span class="status ok">Doing it</span>
+                <span class="row-title">Hedging</span>
+                <span class="row-side">9 times</span>
               </div>
-              <div class="row-meta">Opened with the result in all three conversations.</div>
-            </li>
-            <li class="row">
-              <div class="row-top">
-                <span class="row-title">Stop giving the credit away</span>
-                <span class="status mid">Slips under pressure</span>
-              </div>
-              <div class="row-meta">Clean in practice. Twice in the hiring manager screen.</div>
-              <p class="said">"Honestly I was kind of just one of the people on the project, so I can't take too much credit."</p>
+              <p class="said">"I was kind of just one of the people on the project."</p>
               <div class="said-src"><span class="clip">14:32</span> Hiring manager screen</div>
             </li>
             <li class="row">
               <div class="row-top">
-                <span class="row-title">Ask about next steps before the call ends</span>
-                <span class="status no">Not yet</span>
+                <span class="row-title">Apologizing</span>
+                <span class="row-side">3 times</span>
               </div>
-              <div class="row-meta">Practiced the line twice. The panel still ended without it.</div>
+              <p class="said">"Sorry, that's a big question."</p>
+              <div class="said-src"><span class="clip">27:40</span> Hiring manager screen</div>
+            </li>
+            <li class="row">
+              <div class="row-top">
+                <span class="row-title">Trailing off</span>
+                <span class="row-side">4 answers</span>
+              </div>
+              <p class="said">"…and I think people would say I'm ready, so… yeah."</p>
+              <div class="said-src"><span class="clip">27:58</span> Hiring manager screen</div>
+            </li>
+            <li class="row">
+              <div class="row-top">
+                <span class="row-title">Owning it</span>
+                <span class="row-side">6 answers</span>
+              </div>
+              <p class="said">"I led the onboarding migration. We took it from nine days to five."</p>
+              <div class="said-src"><span class="clip">08:02</span> Panel round</div>
             </li>
           </ul>
         </div>
@@ -739,17 +749,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <div class="moments">
           <div class="moment">
             <span class="clip">14:20, 45 sec</span>
-            <div class="moment-what">Undercut the migration story</div>
+            <div class="moment-what">Skipped the story and gave the credit away</div>
             <div class="moment-where">Hiring manager screen</div>
           </div>
           <div class="moment">
-            <span class="clip">02:10, 90 sec</span>
-            <div class="moment-what">Strongest pitch so far</div>
+            <span class="clip">08:02, 90 sec</span>
+            <div class="moment-what">Used the story, and the VP's follow-up</div>
             <div class="moment-where">Panel round</div>
           </div>
           <div class="moment">
             <span class="clip">51:40, 50 sec</span>
-            <div class="moment-what">Call wraps up, no ask about next steps</div>
+            <div class="moment-what">Call wraps up without the ask</div>
             <div class="moment-where">Panel round</div>
           </div>
         </div>
@@ -773,7 +783,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       <div class="gap-side">
         <div class="gap-label">What they actually said</div>
         <p class="gap-quote">"Honestly I was <mark>kind of just one of the people</mark> on the project, so <mark>I can't take too much credit</mark>."</p>
-        <div class="gap-foot"><span class="clip">14:32</span> Gave away the win you rehearsed together.</div>
+        <div class="gap-foot"><span class="clip">14:32</span> The story you rebuilt together never came out, and the credit went to the team.</div>
       </div>
     </div>
     <div class="gap-pair">
@@ -784,10 +794,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       <div class="gap-side">
         <div class="gap-label">What they actually said</div>
         <p class="gap-quote">"Based on the scope we discussed, <mark class="good">I'm looking for 185</mark>. Is there flexibility in the band?"</p>
-        <div class="gap-foot"><span class="clip">31:05</span> Named the number first, then waited.</div>
+        <div class="gap-foot"><span class="clip">31:05</span> The ask, as you scripted it. No apology, and then they waited.</div>
       </div>
     </div>
-    <p class="gap-close">These two clients need very different things from you next session. You can only tell which if you heard it yourself.</p>
+    <p class="gap-close">One client didn't use what you worked on and thinks they did. The other used it well and thinks they failed. You can only tell which is which if you heard it yourself.</p>
   </div>
 </section>
 
@@ -809,7 +819,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <span class="step-n">2</span>
         <div>
           <h3>You run your sessions as usual</h3>
-          <p>Work Coach takes in your coaching sessions, so it knows the two or three things you and your client are working on right now.</p>
+          <p>Work Coach takes in your coaching sessions and keeps the notes: the story you rebuilt, the ask you scripted, the reframe you practiced. Everything after is checked against them.</p>
         </div>
       </li>
       <li>
@@ -824,7 +834,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <span class="step-n">4</span>
         <div>
           <h3>You catch up in minutes</h3>
-          <p>You see what they've done since you last spoke, whether they did what you agreed on, and the few moments worth hearing for yourself.</p>
+          <p>You see whether the story, the ask, and the reframe got used, how they went over, and how your client sounded saying them.</p>
         </div>
       </li>
     </ol>
@@ -833,6 +843,137 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 <section class="feature-section" id="features">
   <div class="wrap">
+    <div class="feature-row" id="used">
+      <div class="feature-text">
+        <h3>Did the advice make it into the conversation?</h3>
+        <p>You worked on a story, an ask, a reframe. Work Coach takes each one from your session notes and checks it against what your client said in the real conversation. You see whether it was used, the exact words, and what the other person said next, so you can judge for yourself how it went over.</p>
+        <p><strong>You don't sit through hours of recordings.</strong> Each item links to the minute it happened. Read the exchange or press play.</p>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="fv-title">The story: open the migration with the result</div>
+        <div class="fv-meta">From your session notes, checked in 2 interviews</div>
+        <div class="tx">
+          <div class="tx-h"><span>Hiring manager screen</span><span class="status no">Not used</span></div>
+          <div class="tx-line them">
+            <span class="tx-time">14:20</span>
+            <span><span class="tx-who">Interviewer:</span> Tell me about the migration. What was your part in it?</span>
+          </div>
+          <div class="tx-line">
+            <span class="tx-time">14:32</span>
+            <span><span class="tx-who">Maya:</span> Honestly I was <mark>kind of just one of the people</mark> on the project, so <mark>I can't take too much credit</mark>.</span>
+          </div>
+        </div>
+        <div class="tx">
+          <div class="tx-h"><span>Panel round</span><span class="status ok">Used</span></div>
+          <div class="tx-line">
+            <span class="tx-time">08:02</span>
+            <span><span class="tx-who">Maya:</span> I led the onboarding migration. We took it from nine days to five.</span>
+          </div>
+          <div class="tx-line them">
+            <span class="tx-time">08:15</span>
+            <span><span class="tx-who">VP Ops:</span> Nine days to five? Walk me through how you did that.</span>
+          </div>
+        </div>
+        <div class="tx-read">
+          <b>How it went over.</b> The VP asked two follow-up questions and came back to it at the end of the call.
+          <div class="tx-actions">
+            <span class="clip">Play 08:02, 90 sec</span>
+            <span class="clip">Play 14:20, 45 sec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row reverse" id="sounded">
+      <div class="feature-text">
+        <h3>Did they sound like they meant it?</h3>
+        <p>A good answer can still come out as an apology. Work Coach marks where your client hedged, apologized, or trailed off when answering a question, and where they said it plainly and stopped.</p>
+        <p>The language is marked in the transcript. For tone, press play on that answer and hear it for yourself.</p>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="fv-title">"Why are you ready for director?"</div>
+        <div class="fv-meta">Maya R., the same question in two interviews</div>
+        <div class="tx">
+          <div class="tx-h"><span>Hiring manager screen</span><span class="clip">27:40</span></div>
+          <div class="tx-line">
+            <span class="tx-time">27:40</span>
+            <span><span class="tx-who">Maya:</span> <mark>Sorry</mark>, that's a big question. <mark>I guess</mark> I've <mark>sort of</mark> been doing a lot of the director work already, and <mark>I think</mark> people would say I'm ready, <mark>so… yeah</mark>.</span>
+          </div>
+        </div>
+        <div class="tally"><b>3</b> hedges, <b>1</b> apology, trailed off</div>
+        <div class="tx">
+          <div class="tx-h"><span>Panel round</span><span class="clip">19:05</span></div>
+          <div class="tx-line">
+            <span class="tx-time">19:05</span>
+            <span><span class="tx-who">Maya:</span> I've been doing the director's job without the title for a year. I run planning for a team of thirty-four.</span>
+          </div>
+        </div>
+        <div class="tally">No hedges, no apology, finished the thought</div>
+      </div>
+    </div>
+
+    <div class="feature-row" id="progress">
+      <div class="feature-text">
+        <h3>Progress you can point to.</h3>
+        <p>Clients rarely feel themselves getting better, least of all in a job search, where every rejection is harder to take than the one before. Now you can show them how they answered in week one and how they answered yesterday.</p>
+        <p>It's easier to encourage someone, or to be tough with them, when you can both look at the evidence.</p>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="fv-title">Maya over time</div>
+        <div class="fv-meta">6 conversations in 5 weeks</div>
+        <table class="cmp">
+          <thead>
+            <tr><th></th><th>First call</th><th>Latest</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Opened the story with the result</th><td>No</td><td>Yes</td></tr>
+            <tr><th>Hedges</th><td>14</td><td>2</td></tr>
+            <tr><th>Apologies</th><td>4</td><td>0</td></tr>
+            <tr><th>Answers that trailed off</th><td>5</td><td>1</td></tr>
+            <tr><th>Made the ask</th><td>No</td><td>No</td></tr>
+          </tbody>
+        </table>
+        <div class="then-now">
+          <div class="tn">
+            <div class="tn-head"><span>Week 1, first networking call</span><span class="clip">01:05</span></div>
+            <div class="tn-quote">"So, um, I've sort of done a bit of everything in ops, I guess…"</div>
+          </div>
+          <div class="tn">
+            <div class="tn-head"><span>Week 5, panel round</span><span class="clip">08:02</span></div>
+            <div class="tn-quote">"I led the onboarding migration. We took it from nine days to five."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row reverse" id="prepared">
+      <div class="feature-text">
+        <h3>Walk in with your own read.</h3>
+        <p>Start the session with: "I went through your interviews since we last talked. Here's what I saw. Does that match how it felt?" Then spend the hour on what to do next, and skip reconstructing what happened.</p>
+        <p>Or don't wait for the session. Send a note the same afternoon, while the conversation is still fresh for both of you.</p>
+      </div>
+      <div class="feature-visual" aria-hidden="true">
+        <div class="fv-title">Before Thursday</div>
+        <div class="fv-meta">Your note to Maya, and your plan for the session</div>
+        <div class="note-box">
+          <div class="note-to">To <b>Maya R.</b></div>
+          <div class="note-body">Went through both interviews. In the panel you opened the migration story with the result, and the VP asked you to walk through it. That's the version to keep. In the screen you gave the credit away again. Listen to these two back to back.</div>
+          <div class="note-foot">
+            <div class="note-clips">
+              <span class="clip">Panel, 08:02</span>
+              <span class="clip">Screen, 14:20</span>
+            </div>
+            <span class="note-send">Send</span>
+          </div>
+        </div>
+        <ul class="prep">
+          <li><b>Open with</b><span>The panel story and the VP's follow-up. Name what worked.</span></li>
+          <li><b>Work on</b><span>The ask. It hasn't been said to an interviewer yet.</span></li>
+          <li><b>Agree on</b><span>The exact point in the call where the ask goes.</span></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="feature-row" id="clients">
       <div class="feature-text">
         <h3>Every client, in one place.</h3>
@@ -878,95 +1019,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         </ul>
       </div>
     </div>
-
-    <div class="feature-row reverse" id="grounded">
-      <div class="feature-text">
-        <h3>Every observation points to the moment it came from.</h3>
-        <p>You aren't asked to trust an AI summary. Each note is tied to what your client said, word for word, with the timestamp. Read the quote, or press play and hear how they said it, including the pace, the hesitation, and the nervous laugh after the number.</p>
-        <p><strong>You don't sit through hours of recordings.</strong> Work Coach pulls the few minutes that bear on what the two of you are working on. Deciding what they mean is still your job.</p>
-      </div>
-      <div class="feature-visual" aria-hidden="true">
-        <div class="fv-title">Hiring manager screen</div>
-        <div class="fv-meta">Maya R., 42 min, moment 1 of 2</div>
-        <div class="tx">
-          <div class="tx-line them">
-            <span class="tx-time">14:20</span>
-            <span><span class="tx-who">Interviewer:</span> Tell me about the migration. What was your part in it?</span>
-          </div>
-          <div class="tx-line">
-            <span class="tx-time">14:32</span>
-            <span><span class="tx-who">Maya:</span> Honestly I was <mark>kind of just one of the people</mark> on the project, so <mark>I can't take too much credit</mark>. But we did get onboarding down from nine days to five.</span>
-          </div>
-        </div>
-        <div class="tx-read">
-          <b>Stop giving the credit away.</b> Two hedges before the result. In Monday's practice, Maya opened this same story with the nine days to five.
-          <div class="tx-actions">
-            <span class="clip">Play 14:20, 45 sec</span>
-            <span class="clip">Compare with practice</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="feature-row" id="progress">
-      <div class="feature-text">
-        <h3>Progress you can point to.</h3>
-        <p>Clients rarely feel themselves getting better, least of all in a job search, where every rejection is harder to take than the one before. Now you can show them how they told a story in week one and how they told it yesterday.</p>
-        <p>It's easier to encourage someone, or to be tough with them, when you can both look at the evidence.</p>
-      </div>
-      <div class="feature-visual" aria-hidden="true">
-        <div class="fv-title">Maya's pitch over time</div>
-        <div class="fv-meta">6 conversations in 5 weeks</div>
-        <table class="cmp">
-          <thead>
-            <tr><th></th><th>Week 1</th><th>Week 5</th></tr>
-          </thead>
-          <tbody>
-            <tr><th>Time before the outcome comes up</th><td>2:40</td><td>0:20</td></tr>
-            <tr><th>Times the credit was given away</th><td>6</td><td>2</td></tr>
-            <tr><th>Asked about next steps</th><td>No</td><td>No</td></tr>
-          </tbody>
-        </table>
-        <div class="then-now">
-          <div class="tn">
-            <div class="tn-head"><span>Week 1, first networking call</span><span class="clip">01:05</span></div>
-            <div class="tn-quote">"So, um, I've sort of done a bit of everything in ops, I guess…"</div>
-          </div>
-          <div class="tn">
-            <div class="tn-head"><span>Week 5, panel round</span><span class="clip">02:10</span></div>
-            <div class="tn-quote">"I took onboarding from nine days to five at a 300-person company. I want to do that at a bigger scale."</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="feature-row reverse" id="prepared">
-      <div class="feature-text">
-        <h3>Walk in with your own read.</h3>
-        <p>Start the session with: "I went through your interviews since we last talked. Here's what I saw. Does that match how it felt?" Then spend the hour on what to do next, and skip reconstructing what happened.</p>
-        <p>Or don't wait for the session. Send a note the same afternoon, while the conversation is still fresh for both of you.</p>
-      </div>
-      <div class="feature-visual" aria-hidden="true">
-        <div class="fv-title">Before Thursday</div>
-        <div class="fv-meta">Your note to Maya, and your plan for the session</div>
-        <div class="note-box">
-          <div class="note-to">To <b>Maya R.</b></div>
-          <div class="note-body">Went through both interviews and the coffee chat. Your pitch in the panel was the best I've heard from you. One thing for Thursday: you're still handing the credit away when a senior person asks. Listen to these two back to back.</div>
-          <div class="note-foot">
-            <div class="note-clips">
-              <span class="clip">Panel, 02:10</span>
-              <span class="clip">Screen, 14:20</span>
-            </div>
-            <span class="note-send">Send</span>
-          </div>
-        </div>
-        <ul class="prep">
-          <li><b>Open with</b><span>The panel pitch. Name what worked so it gets repeated.</span></li>
-          <li><b>Work on</b><span>The migration story, without the hedges.</span></li>
-          <li><b>Agree on</b><span>One line for asking about next steps.</span></li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -974,20 +1026,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   <div class="wrap split">
     <div class="split-head">
       <h2>Whatever you coach, it happens when you're not there.</h2>
-      <p>Work Coach fits the coaching you already do. Here is what each kind of coach gets to see for the first time.</p>
+      <p>The advice is different for every kind of coaching. The question afterward is the same: did they use it, and how did they sound?</p>
     </div>
     <dl class="who">
       <div>
         <dt>Interview and job search</dt>
-        <dd>Whether the story they rehearsed with you is the story they told, and how many conversations they really had this week.</dd>
+        <dd>Whether the story you rebuilt together is the story they told, and whether they asked about next steps.</dd>
       </div>
       <div>
         <dt>Negotiation</dt>
-        <dd>Who named the first number, and what your client did the moment the other side pushed back.</dd>
+        <dd>Whether they made the ask the way you scripted it, or apologized for the number while saying it.</dd>
       </div>
       <div>
         <dt>Leadership and management</dt>
-        <dd>How they run a 1:1, deliver the hard feedback, and respond when someone challenges them.</dd>
+        <dd>Whether the hard feedback came out as directly as you rehearsed it, and what their report said back.</dd>
       </div>
       <div>
         <dt>Promotion and career growth</dt>
@@ -999,7 +1051,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       </div>
       <div>
         <dt>Communication and speaking</dt>
-        <dd>Pace, filler, and hedging in real meetings, where they're actually nervous.</dd>
+        <dd>Hedging, apologizing, and trailing off in real meetings, where they're actually nervous.</dd>
       </div>
     </dl>
   </div>
@@ -1049,12 +1101,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <p>No. Work Coach handles the part you could never do, which is being present for every conversation and remembering exactly what was said. Deciding what it means, what your client is ready to hear, and what to work on next is still your job.</p>
       </details>
       <details>
+        <summary>Where do the session notes come from?</summary>
+        <p>From your coaching sessions. Work Coach takes in each session and keeps notes on what you and your client worked on, such as the story, the ask, or the reframe. Everything your client sends you afterward is checked against those notes.</p>
+      </details>
+      <details>
+        <summary>Can it tell how confident my client sounded?</summary>
+        <p>It marks the language: hedges, apologies, and answers that trail off, next to the answers where your client said it plainly. For tone of voice, every marked answer has a play button so you can listen and judge for yourself.</p>
+      </details>
+      <details>
         <summary>Who decides what I get to see?</summary>
         <p>Your client does. Nothing reaches you unless they send it. They record their own conversations in Work Coach and choose which ones go to you, one at a time.</p>
       </details>
       <details>
         <summary>How much extra time will this take me?</summary>
-        <p>A few minutes per client between sessions. You don't listen to full recordings unless you want to. Work Coach summarizes what happened, checks it against what the two of you are working on, and points you to the short moments worth hearing yourself.</p>
+        <p>A few minutes per client between sessions. You don't listen to full recordings unless you want to. Work Coach checks each conversation against your session notes and points you to the short moments worth hearing yourself.</p>
       </details>
       <details>
         <summary>How do I know the summary is accurate?</summary>
