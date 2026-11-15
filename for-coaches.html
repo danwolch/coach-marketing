@@ -534,6 +534,9 @@ fieldset.field { border: none; }
 .field .choice input { accent-color: var(--accent-2); width: 17px; height: 17px; flex-shrink: 0; margin: 0; }
 .submit-row { margin-top: 22px; }
 .pilot-card .fine-print { font-size: 14px; color: var(--muted); margin-top: 12px; }
+.form-error { font-size: 15.5px; line-height: 1.55; color: var(--red-text); margin-top: 14px; }
+.form-error a { color: inherit; font-weight: 700; }
+.btn-primary:disabled { opacity: 0.7; cursor: default; }
 .success { display: none; padding: 12px 0; }
 .success.show { display: block; }
 .success h3 { margin-bottom: 8px; }
@@ -1189,6 +1192,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <div class="submit-row">
           <button type="submit" class="btn-primary btn-lg">Ask about a pilot</button>
         </div>
+        <p class="form-error" id="pilot-error" role="alert" hidden>That didn't go through, so we don't have your request yet. Try again, or <a href="mailto:support@work.coach">email support@work.coach</a> and we'll set up your pilot.</p>
         <p class="fine-print">We'll only email you about the pilot.</p>
       </form>
 
@@ -1214,9 +1218,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 <script>
 (function() {
+  // Requests go to the lead-capture function: it saves the lead and emails the team.
+  var ENDPOINT = 'https://your.work.coach/functions/v1/lead-capture';
+  var PILOT_LABELS = { self: 'on myself first', client: 'with one of my clients', unsure: 'not sure yet' };
+
   var form = document.getElementById('pilot-form');
   var success = document.getElementById('success');
+  var errorBox = document.getElementById('pilot-error');
   if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  var btnLabel = btn.textContent;
 
   // Keep UTM params so we know which outreach each request came from.
   var params = new URLSearchParams(location.search);
@@ -1225,6 +1236,21 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     if (params.get(k)) attribution[k] = params.get(k);
   });
   if (document.referrer) attribution.referrer = document.referrer;
+
+  function track(event, props) {
+    if (window.posthog && posthog.capture) posthog.capture(event, props);
+  }
+
+  // The request was not saved: say so, keep what they typed, and offer email.
+  function showError(data) {
+    var body = 'Name: ' + data.name + '\nEmail: ' + data.email + '\nWhat I coach: ' + (data.coaching_focus || '') +
+      '\nPilot: ' + (PILOT_LABELS[data.pilot_type] || '');
+    var a = errorBox.querySelector('a');
+    a.href = 'mailto:support@work.coach?subject=' + encodeURIComponent('Coach pilot') + '&body=' + encodeURIComponent(body);
+    errorBox.hidden = false;
+    btn.disabled = false;
+    btn.textContent = btnLabel;
+  }
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -1236,28 +1262,49 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
     var data = Object.fromEntries(new FormData(form));
     delete data._gotcha;
+    data.name = data.name.trim();
     data.email = data.email.trim().toLowerCase();
+    data.coaching_focus = (data.coaching_focus || '').trim();
     Object.assign(data, attribution);
     data.source = 'for-coaches';
+    // The notification email shows `message`, so put the answers there in plain words.
+    data.message = [
+      data.coaching_focus ? 'Coaches: ' + data.coaching_focus : '',
+      data.pilot_type ? 'Wants to start: ' + PILOT_LABELS[data.pilot_type] : ''
+    ].filter(Boolean).join('. ') || 'Asked about a coach pilot.';
 
-    // Requests are recorded in PostHog. If it never loaded (blocked or offline),
-    // say so and offer email, so a request is never silently lost.
-    var recorded = !!(window.posthog && posthog.__loaded);
-    if (recorded) {
-      posthog.identify(data.email, { email: data.email, name: data.name, coaching_focus: data.coaching_focus });
-      posthog.capture('coach_pilot_requested', data);
-    } else {
-      var body = 'Name: ' + data.name + '\nWhat I coach: ' + (data.coaching_focus || '') + '\nPilot: ' + (data.pilot_type || '');
-      var mail = 'mailto:support@work.coach?subject=' + encodeURIComponent('Coach pilot') + '&body=' + encodeURIComponent(body);
-      document.getElementById('success-title').textContent = "That didn't go through.";
-      document.getElementById('success-text').innerHTML = 'Something on this page was blocked, so we didn\'t get your request. Please <a></a> and we\'ll set up your pilot.';
-      var a = document.querySelector('#success-text a');
-      a.href = mail;
-      a.textContent = 'email support@work.coach';
-    }
+    errorBox.hidden = true;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
 
-    form.style.display = 'none';
-    success.classList.add('show');
+    var ctrl = new AbortController();
+    var timer = setTimeout(function() { ctrl.abort(); }, 15000);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      signal: ctrl.signal
+    })
+    .then(function(res) {
+      return res.json().catch(function() { return {}; }).then(function(json) {
+        if (!res.ok || json.status !== 'ok') throw new Error('status ' + res.status);
+      });
+    })
+    .then(function() {
+      clearTimeout(timer);
+      if (window.posthog && posthog.identify) {
+        posthog.identify(data.email, { email: data.email, name: data.name, coaching_focus: data.coaching_focus });
+      }
+      track('coach_pilot_requested', data);
+      form.style.display = 'none';
+      success.classList.add('show');
+    })
+    .catch(function(err) {
+      clearTimeout(timer);
+      track('coach_pilot_request_failed', { reason: String(err && err.message || err), source: 'for-coaches' });
+      showError(data);
+    });
   });
 })();
 </script>
