@@ -125,6 +125,8 @@
       <p>This link is meant to open in the Coach app. Download it to continue.</p>
       <a href="https://work.coach/download" class="button">Download</a>
       <br>
+      <a id="web-open" class="button hidden">Open on the web</a>
+      <br>
       <a id="manual-open" class="manual-link hidden">Try opening again</a>
     </div>
   </div>
@@ -138,10 +140,41 @@
       var ua = navigator.userAgent;
       var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua) ||
         (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
-      var conversation = path.match(/^\/macapp\/(?:conversation|chat)\/([^\/]+)/i);
-      if (isMobile && conversation) {
-        document.querySelector('#loading h1').innerHTML = 'Loading your conversation&hellip;';
-        window.location.replace('https://my.work.coach/chat/' + conversation[1]);
+      // App links that have the same page in the web app (my.work.coach). Phones and
+      // tablets go straight there; on a computer the app opens, and the web page is offered
+      // if it does not.
+      var WEB = 'https://my.work.coach';
+      var webUrl = null;
+      var loadingText = 'Loading&hellip;';
+      var m;
+      if ((m = path.match(/^\/macapp\/(?:conversation|chat)\/([^\/]+)\/?$/i))) {
+        webUrl = WEB + '/chat/' + m[1];
+        loadingText = 'Loading your conversation&hellip;';
+      } else if ((m = path.match(/^\/macapp\/coachee\/([^\/]+)\/meeting\/([^\/]+)\/?$/i))) {
+        // A meeting a coachee shared with their coach.
+        webUrl = WEB + '/coachees/' + m[1] + '/meetings/' + m[2];
+        loadingText = 'Loading the shared meeting&hellip;';
+      } else if ((m = path.match(/^\/macapp\/coachee\/([^\/]+)\/practice\/([^\/]+)\/?$/i))) {
+        // A practice session a coachee shared with their coach.
+        webUrl = WEB + '/coachees/' + m[1] + '/practice/' + m[2];
+        loadingText = 'Loading the shared practice session&hellip;';
+      } else if ((m = path.match(/^\/macapp\/coachee\/([^\/]+)\/?$/i))) {
+        // The coach's page for one coachee (a message from them).
+        webUrl = WEB + '/coachees/' + m[1];
+        loadingText = 'Loading your coachee&hellip;';
+      } else if (/^\/macapp\/coachees\/?$/i.test(path)) {
+        webUrl = WEB + '/coachees';
+        loadingText = 'Loading your coachees&hellip;';
+      } else if (/^\/macapp\/coach-messages\/?$/i.test(path)) {
+        // The coachee's thread with their coach.
+        webUrl = WEB + '/chat/coach';
+        loadingText = 'Loading your messages&hellip;';
+      }
+      if (webUrl) webUrl += window.location.search || '';
+
+      if (isMobile && webUrl) {
+        document.querySelector('#loading h1').innerHTML = loadingText;
+        window.location.replace(webUrl);
         return;
       }
 
@@ -166,6 +199,14 @@
           fb.classList.remove('hidden');
           fb.querySelector('h1').textContent = "Tried to open Work Coach";
           fb.querySelector('p').textContent = 'If it didn\'t open, update to the latest version';
+          if (webUrl) {
+            // The same page in the browser, for a computer without the app.
+            fb.querySelector('p').textContent = 'If it didn\'t open, open this page on the web, or update to the latest version of the app.';
+            var web = document.getElementById('web-open');
+            web.href = webUrl;
+            web.classList.remove('hidden');
+            fb.querySelector('a.button[href="https://work.coach/download"]').classList.add('hidden');
+          }
           var manual = document.getElementById('manual-open');
           manual.classList.remove('hidden');
           manual.addEventListener('click', function (e) {
