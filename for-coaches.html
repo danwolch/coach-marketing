@@ -719,6 +719,11 @@ mark.good { background: var(--mark-good); }
 .pr-note { display: flex; align-items: baseline; gap: 12px; margin-top: 8px; font-family: 'Playfair Display', serif; font-size: 19.5px; line-height: 1.45; }
 .pr-note .clip { flex: none; font-family: 'Source Sans 3', sans-serif; }
 
+/* SIGN UP: the close at the bottom of the page */
+.signup { background: var(--surface); border-top: 1px solid var(--border); padding: 92px 0 104px; }
+.signup h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.12; margin-bottom: 14px; }
+.signup p { max-width: 560px; margin-bottom: 30px; font-size: 18.5px; color: var(--muted); line-height: 1.6; }
+
 /* LONELY */
 .prose-section { border-top: 1px solid var(--border); padding: 96px 0; }
 .prose { max-width: 760px; }
@@ -744,56 +749,6 @@ mark.good { background: var(--mark-good); }
 .faq summary::after { content: "+"; font-size: 22px; font-weight: 400; color: var(--muted); line-height: 1; }
 .faq details[open] summary::after { content: "−"; }
 .faq details p { margin-top: 10px; color: var(--muted); font-size: 16.5px; line-height: 1.7; max-width: 62ch; }
-
-/* PILOT */
-.pilot-section { background: var(--surface); border-top: 1px solid var(--border); padding: 92px 0 104px; }
-.pilot-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
-.pilot-text h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.12; margin-bottom: 16px; }
-.pilot-text > p { font-size: 18px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
-.pilot-way { padding: 18px 0 20px; border-top: 1px solid var(--border); }
-.pilot-way h3 { font-family: inherit; font-size: 18px; font-weight: 700; margin-bottom: 2px; }
-.pilot-way p { font-size: 16.5px; color: var(--muted); line-height: 1.6; }
-.pilot-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 30px 32px 28px; }
-.pilot-card h3 { font-size: 24px; margin-bottom: 2px; }
-.pilot-card .card-sub { font-size: 16px; color: var(--muted); margin-bottom: 22px; }
-.field { margin-bottom: 18px; }
-.field label, .field legend { display: block; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-.field .opt { font-weight: 400; color: var(--muted); }
-.field input[type="text"],
-.field input[type="email"] {
-  width: 100%;
-  font-family: inherit;
-  font-size: 16px;
-  color: var(--text);
-  background: #fff;
-  border: 1px solid #b9b2a4;
-  border-radius: 6px;
-  padding: 11px 12px;
-}
-.field input:focus { outline: 2px solid var(--accent-2); outline-offset: 1px; }
-.field input::placeholder { color: #66716a; }
-fieldset.field { border: none; }
-.field .choice {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  padding: 5px 0;
-  margin: 0;
-  cursor: pointer;
-}
-.field .choice input { accent-color: var(--accent-2); width: 17px; height: 17px; flex-shrink: 0; margin: 0; }
-.submit-row { margin-top: 22px; }
-.pilot-card .fine-print { font-size: 14px; color: var(--muted); margin-top: 12px; }
-.form-error { font-size: 15.5px; line-height: 1.55; color: var(--red-text); margin-top: 14px; }
-.form-error a { color: inherit; font-weight: 700; }
-.btn-primary:disabled { opacity: 0.7; cursor: default; }
-.success { display: none; padding: 12px 0; }
-.success.show { display: block; }
-.success h3 { margin-bottom: 8px; }
-.success p { font-size: 17px; color: var(--muted); line-height: 1.6; }
-.success a { color: var(--accent-2); font-weight: 600; }
 
 /* FOOTER (shared with the rest of the site) */
 footer { padding: 32px 0; background: var(--bg); border-top: 1px solid var(--border); }
@@ -853,7 +808,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 @media (max-width: 880px) {
   .split { grid-template-columns: 1fr; gap: 28px; }
-  .pilot-inner { grid-template-columns: 1fr; gap: 40px; }
   .split-section { padding: 72px 0; }
   .feature { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
   .basics-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -900,7 +854,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .hero .subtitle { font-size: 18.5px; }
   .who > div { grid-template-columns: 1fr; gap: 4px; }
   .gap-side { padding: 18px 18px 20px; }
-  .pilot-card { padding: 24px 20px; }
   .prose-section { padding: 72px 0; }
   /* The step number runs into its heading ("1. You record..."), so the text lines up with the card under it */
   .basics { padding: 52px 0 56px; }
@@ -935,6 +888,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .pr-table td { width: 62px; }
   .pr-shared { margin: 0 -16px; padding: 14px 16px 18px; }
   .pr-note { flex-direction: column; gap: 6px; font-size: 18.5px; }
+}
+
+@media (max-width: 600px) {
+  .signup { padding: 68px 0 76px; }
 }
 </style>
 </head>
@@ -1409,64 +1366,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   </div>
 </section>
 
-<section class="pilot-section" id="pilot">
-  <div class="wrap pilot-inner">
-    <div class="pilot-text">
-      <h2>See it with one client.</h2>
-      <p>We're working with a small group of coaches while this is in early access. There are two ways to find out whether it changes how you coach.</p>
-      <div class="pilot-way">
-        <h3>Try it on yourself</h3>
-        <p>Use Work Coach in your own meetings for a week and look at what a coach would see about you.</p>
-      </div>
-      <div class="pilot-way">
-        <h3>Try it with one client</h3>
-        <p>Pick someone with real conversations coming up, like a run of interviews, a negotiation, or a hard quarter with their team. Run your next two sessions with it and compare.</p>
-      </div>
-    </div>
-
-    <div class="pilot-card">
-      <form id="pilot-form" novalidate>
-        <h3>Ask about a pilot</h3>
-        <p class="card-sub">Tell us a little about your practice and we'll be in touch.</p>
-
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-        </div>
-
-        <div class="field">
-          <label for="coaching">What do you coach? <span class="opt">(optional)</span></label>
-          <input type="text" id="coaching" name="coaching_focus" placeholder="e.g. interview prep for product managers">
-        </div>
-
-        <fieldset class="field">
-          <legend>How would you like to start? <span class="opt">(optional)</span></legend>
-          <label class="choice"><input type="radio" name="pilot_type" value="self"> On myself first</label>
-          <label class="choice"><input type="radio" name="pilot_type" value="client"> With one of my clients</label>
-          <label class="choice"><input type="radio" name="pilot_type" value="unsure"> Not sure yet</label>
-        </fieldset>
-
-        <!-- honeypot: hidden from humans, bots fill it and get silently dropped -->
-        <input name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
-               style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
-
-        <div class="submit-row">
-          <button type="submit" class="btn-primary btn-lg">Ask about a pilot</button>
-        </div>
-        <p class="form-error" id="pilot-error" role="alert" hidden>That didn't go through, so we don't have your request yet. Try again, or <a href="mailto:support@work.coach">email support@work.coach</a> and we'll set up your pilot.</p>
-        <p class="fine-print">We'll only email you about the pilot.</p>
-      </form>
-
-      <div class="success" id="success" role="status">
-        <h3 id="success-title">Thanks. We'll be in touch.</h3>
-        <p id="success-text">We'll email you to set up your pilot.</p>
-      </div>
-    </div>
+<!-- SIGN UP -->
+<section class="signup" id="signup">
+  <div class="wrap">
+    <h2>Try it with one client.</h2>
+    <p>Setup takes a couple of minutes. Send one client your link and see how their next call really went.</p>
+    <a href="https://my.work.coach/coach/setup" class="btn-primary btn-lg">Sign up</a>
   </div>
 </section>
 </main>
@@ -1485,99 +1390,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     </div>
   </div>
 </footer>
-
-<script>
-(function() {
-  // Requests go to the lead-capture function: it saves the lead and emails the team.
-  var ENDPOINT = 'https://your.work.coach/functions/v1/lead-capture';
-  var PILOT_LABELS = { self: 'on myself first', client: 'with one of my clients', unsure: 'not sure yet' };
-
-  var form = document.getElementById('pilot-form');
-  var success = document.getElementById('success');
-  var errorBox = document.getElementById('pilot-error');
-  if (!form) return;
-  var btn = form.querySelector('button[type="submit"]');
-  var btnLabel = btn.textContent;
-
-  // Keep UTM params so we know which outreach each request came from.
-  var params = new URLSearchParams(location.search);
-  var attribution = {};
-  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'ref'].forEach(function(k) {
-    if (params.get(k)) attribution[k] = params.get(k);
-  });
-  if (document.referrer) attribution.referrer = document.referrer;
-
-  function track(event, props) {
-    if (window.posthog && posthog.capture) posthog.capture(event, props);
-  }
-
-  // The request was not saved: say so, keep what they typed, and offer email.
-  function showError(data) {
-    var body = 'Name: ' + data.name + '\nEmail: ' + data.email + '\nWhat I coach: ' + (data.coaching_focus || '') +
-      '\nPilot: ' + (PILOT_LABELS[data.pilot_type] || '');
-    var a = errorBox.querySelector('a');
-    a.href = 'mailto:support@work.coach?subject=' + encodeURIComponent('Coach pilot') + '&body=' + encodeURIComponent(body);
-    errorBox.hidden = false;
-    btn.disabled = false;
-    btn.textContent = btnLabel;
-  }
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    if (form.elements._gotcha.value) return;
-
-    var data = Object.fromEntries(new FormData(form));
-    delete data._gotcha;
-    data.name = data.name.trim();
-    data.email = data.email.trim().toLowerCase();
-    data.coaching_focus = (data.coaching_focus || '').trim();
-    Object.assign(data, attribution);
-    data.source = 'for-coaches';
-    // The notification email shows `message`, so put the answers there in plain words.
-    data.message = [
-      data.coaching_focus ? 'Coaches: ' + data.coaching_focus : '',
-      data.pilot_type ? 'Wants to start: ' + PILOT_LABELS[data.pilot_type] : ''
-    ].filter(Boolean).join('. ') || 'Asked about a coach pilot.';
-
-    errorBox.hidden = true;
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    var ctrl = new AbortController();
-    var timer = setTimeout(function() { ctrl.abort(); }, 15000);
-
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-      signal: ctrl.signal
-    })
-    .then(function(res) {
-      return res.json().catch(function() { return {}; }).then(function(json) {
-        if (!res.ok || json.status !== 'ok') throw new Error('status ' + res.status);
-      });
-    })
-    .then(function() {
-      clearTimeout(timer);
-      if (window.posthog && posthog.identify) {
-        posthog.identify(data.email, { email: data.email, name: data.name, coaching_focus: data.coaching_focus });
-      }
-      track('coach_pilot_requested', data);
-      form.style.display = 'none';
-      success.classList.add('show');
-    })
-    .catch(function(err) {
-      clearTimeout(timer);
-      track('coach_pilot_request_failed', { reason: String(err && err.message || err), source: 'for-coaches' });
-      showError(data);
-    });
-  });
-})();
-</script>
 
 <script>
 (function() {
