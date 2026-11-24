@@ -724,6 +724,21 @@ mark.good { background: var(--mark-good); }
 .signup h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.12; margin-bottom: 14px; }
 .signup p { max-width: 560px; margin-bottom: 30px; font-size: 18.5px; color: var(--muted); line-height: 1.6; }
 
+/* PRICING: the two prices side by side, then a slider that adds them up for a number of clients */
+.price-card { background: var(--card); border: 1px solid #c9c2b4; border-radius: 8px; padding: 28px 32px 30px; max-width: 620px; }
+.price-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.price-row + .price-row { padding-left: 28px; border-left: 1px solid var(--border); }
+.price-amt { font-family: 'Playfair Display', serif; font-size: 44px; line-height: 1.1; font-variant-numeric: lining-nums; white-space: nowrap; }
+.price-amt span { font-family: 'Source Sans 3', sans-serif; font-size: 16px; color: var(--muted); }
+.price-for { margin-top: 6px; font-size: 16.5px; font-weight: 600; }
+.price-calc { margin: 26px 0 24px; padding-top: 22px; border-top: 1px solid var(--border); }
+.price-calc label { display: block; font-size: 15.5px; font-weight: 700; color: var(--muted); }
+.price-calc input[type="range"] { display: block; width: 100%; height: 28px; margin: 8px 0 6px; accent-color: var(--accent-2); cursor: pointer; }
+.price-calc input[type="range"]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+.price-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 17px; color: var(--muted); }
+.price-total strong { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 400; color: var(--text); font-variant-numeric: lining-nums; }
+#price-count { min-width: 5.4em; color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+
 /* LONELY */
 .prose-section { border-top: 1px solid var(--border); padding: 96px 0; }
 .prose { max-width: 760px; }
@@ -893,6 +908,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (max-width: 600px) {
   .signup { padding: 68px 0 76px; }
 }
+
+@media (max-width: 600px) {
+  .price-card { padding: 22px 20px 24px; }
+  .price-rows { grid-template-columns: 1fr; gap: 18px; }
+  .price-row + .price-row { padding-left: 0; padding-top: 18px; border-left: 0; border-top: 1px solid var(--border); }
+  .price-amt { font-size: 40px; }
+}
+
+/* Seven nav links: keep each on one line, and drop them before they crowd the logo and the button */
+.nav-links a, .logo, nav .btn-primary { white-space: nowrap; }
+@media (max-width: 1080px) { .nav-links { display: none; } }
 </style>
 </head>
 <body>
@@ -907,6 +933,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       <a href="#assistants">Claude and ChatGPT</a>
       <a href="#clients">For your clients</a>
       <a href="#ai">You and AI</a>
+      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
     <a href="https://my.work.coach/coach/setup" class="btn-primary">Sign up</a>
@@ -1323,6 +1350,34 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   </div>
 </section>
 
+<!-- PRICING: two prices and a slider that adds them up -->
+<section class="split-section ruled" id="pricing">
+  <div class="wrap split">
+    <div class="split-head">
+      <h2>Pricing</h2>
+      <p>$100 a month, plus $25 a month for each client.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-rows">
+        <div class="price-row">
+          <div class="price-amt">$100 <span>/ month</span></div>
+          <div class="price-for">Your coach account</div>
+        </div>
+        <div class="price-row">
+          <div class="price-amt">$25 <span>/ client / month</span></div>
+          <div class="price-for">Each client you add</div>
+        </div>
+      </div>
+      <div class="price-calc">
+        <label for="price-n">How many clients do you have?</label>
+        <input type="range" id="price-n" min="1" max="30" step="1" value="5">
+        <p class="price-total" aria-live="polite"><span id="price-count">5 clients</span><strong id="price-sum">$225</strong><span>a month</span></p>
+      </div>
+      <a href="https://my.work.coach/coach/setup" class="btn-primary">Sign up</a>
+    </div>
+  </div>
+</section>
+
 <section class="split-section ruled" id="faq">
   <div class="wrap split">
     <div class="split-head">
@@ -1557,6 +1612,23 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
       });
     }, { threshold: 0.3 });
     seenFlow.observe(flow);
+  }
+
+  // Pricing: the slider adds up $100 a month plus $25 a month for each client.
+  var priceN = document.getElementById('price-n');
+  if (priceN) {
+    var priceCount = document.getElementById('price-count');
+    var priceSum = document.getElementById('price-sum');
+    var showPrice = function() {
+      var n = +priceN.value;
+      priceCount.textContent = n + (n === 1 ? ' client' : ' clients');
+      priceSum.textContent = '$' + (100 + 25 * n).toLocaleString('en-US');
+    };
+    priceN.addEventListener('input', showPrice);
+    priceN.addEventListener('change', function() {
+      if (window.posthog && posthog.capture) posthog.capture('coach_pricing_clients', { clients: +priceN.value });
+    });
+    showPrice();
   }
 
   // Screenshots open larger in place. Without <dialog> the link just opens the image.
